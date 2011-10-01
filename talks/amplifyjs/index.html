@@ -108,6 +108,11 @@
               font-size: 40px;
               letter-spacing: -1px;
             }
+            #title-slide p {
+              line-height: 35px;
+              padding-left: 200px;
+              padding-right: 200px;
+            }
           </style>
           <section class="middle">
             <hgroup>
@@ -118,8 +123,24 @@
                 by Elijah Manor
               </h2>
             </hgroup>
-            <p>Taking an existing web app &amp; add 3 AmplifyJS components</p>
+            <p>Taking an existing web application and slowing adding 3 AmplifyJS components</p>
           </section>
+        </div>
+
+        <div class="slide" id="amplifyJs">
+          <header>AmplifyJS JavaScript Library</header>
+          <section>
+            <p>AmplifyJS is a set of components designed to solve common web application problems with a simplistic API. </p>
+            <ul>
+              <li>Client Side Component Communication (publish/subscribe) </li>
+              <li>Client Side Browser &amp; Mobile Device Storage (store)</li>
+              <li>Ajax Request Managment (request)</li>
+            </ul>
+          </section>
+          <aside class="note">
+            <section>
+            </section>
+          </aside> 
         </div>
 
         <div class="slide" id="agenda">
@@ -128,7 +149,7 @@
               <p>Show an example of a <em>typical</em> web application that you may encounter</p>
               <p>Show how to <em>extend</em> the application with <a href="http://amplifyjs.com">AmplifyJS</a></p>
               <p>Show an easy approach to <em>unit test</em> your code</p>
-              <p>Show a helpful tool to help you <em>quickly prototype</em> your user interface</p>
+              <!--<p>Show a helpful tool to help you <em>quickly prototype</em> your user interface</p>-->
           </section>
           <aside class="note">
             <section>
@@ -214,22 +235,6 @@ hackerNews.getAndDisplayNews();
           </aside> 
         </div>
 
-        <div class="slide" id="amplifyJs">
-          <header>AmplifyJS JavaScript Library</header>
-          <section>
-            <p>AmplifyJS is a set of components designed to solve common web application problems with a simplistic API. </p>
-            <ul>
-              <li>Client Side Component Communication (publish/subscribe) </li>
-              <li>Client Side Browser &amp; Mobile Device Storage (store)</li>
-              <li>Ajax Request Managment (request)</li>
-            </ul>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>
-
         <div class="slide transitionSlide" id="pub-sub-title">
           <section class="middle">
             <h2>AmplifyJS Pub / Sub Component</h2>
@@ -275,14 +280,15 @@ amplify.publish( &quot;contactUpdated&quot;, {
         </div>
 
         <div class="slide" id="pubSubscribe">
-          <header>AmplifyJS Pub / Sub API</header>
+          <header>AmplifyJS Pub / Sub API…</header>
           <section>
             <h2>Subscribe to a Topic</h2>
 
 <pre>
 amplify.subscribe( string topic, function callback )
 amplify.subscribe( string topic, object context, function callback )
-amplify.subscribe( string topic, function callback, number priority )
+amplify.subscribe( string topic, function callback, 
+  number priority )
 amplify.subscribe( string topic, object context, function callback, 
   number priority )
 </pre>
@@ -303,6 +309,16 @@ amplify.subscribe( &quot;contactUpdated&quot;,
           </section>
           <aside class="note">
             <section>
+              <h2>Remove a subscription</h2>
+
+<pre>
+amplify.unsubscribe( string topic, function callback )
+</pre>
+
+              <ul>
+                <li>topic: The topic being unsubscribed from.</li>
+                <li>callback: The callback that was originally subscribed.</li>
+              </ul>
             </section>
           </aside> 
         </div>
@@ -376,13 +392,40 @@ hackerNews.getAndDisplayNews();
           </aside> 
         </div>
 
+        <div class="slide transitionSlide" id="store-title">
+          <section class="middle">
+            <h2>AmplifyJS Store Component</h2>
+          </section>
+        </div>
+
         <div class="slide" id="store">
-          <header>AmplifyJS Store Component</header>
+          <header>AmplifyJS Store Component…</header>
           <section>
-            <p>Client Side Browser &amp; Mobile Device Storage - amplify.store takes the confusion out of HTML5 localStorage. It doesn't get simpler than using amplify.store(key, data)! It even works flawlessly on mobile devices.</p>
+            <h3>Client Side Browser &amp; Mobile Device Storage</h3> 
+
+            <p><code>amplify.store</code> takes the confusion out of HTML5 localStorage. It doesn't get simpler than using <code>amplify.store( key, data )</code>! It even works flawlessly on mobile devices.</p>
+
+            <p><code>amplify.store</code> supports IE 5+, Firefox 2+, Safari 4+, Chrome, Opera 10.5+, iPhone 2+, Android 2+ and provides a consistent API to handle storage cross-browser.</p>
+
+            <br /><br /><br />
+            <br /><br /><br />
+            <br /><br /><br />
+            <br /><br /><br />
           </section>
           <aside class="note">
             <section>
+              <p>Various forms of persistance storage have lived around for a very long time...</p>
+
+              <ul>
+                <li>localStorage (IE 8+, Firefox 3.5+, Safari 4+, Chrome, Opera 10.5+, iPhone 2+, Android 2+
+)</li>
+                <li>sessionStorage (IE 8+, Firefox 2+, Safari 4+, Chrome, Opera 10.5+, iPhone 2+, Android 2+
+)</li>
+                <li>globalStorage (Firefox 2+)</li>
+                <li>userData (IE 5 - 7)</li>
+              </ul>
+
+              <p></p>
             </section>
           </aside> 
         </div>
@@ -523,6 +566,12 @@ hackerNews.getAndDisplayNews();
             </section>
           </aside> 
         </div>           
+
+        <div class="slide transitionSlide" id="request-title">
+          <section class="middle">
+            <h2>AmplifyJS Request Component</h2>
+          </section>
+        </div>
 
         <div class="slide" id="request">
           <header>AmplifyJS Request Component</header>
@@ -824,7 +873,7 @@ amplify.request.define( &quot;getNews&quot;, function( settings ) {
         </div>   
 
         <div class="slide" id="mockingTests">
-          <header>Mocking with Unit Tests <a href="http://jsfiddle.net/elijahmanor/2NA3F" target="_blank">✎</a></header>
+          <header>Mocking with Unit Tests <a href="http://jsfiddle.net/elijahmanor/2NA3F/embedded/js,html,css,result/presentation/" target="_blank">✎</a></header>
           <section>
 <pre style="overflow-y: scroll; height: 525px;">
 pavlov.specify.globalApi = true;
@@ -1123,7 +1172,7 @@ function transformRssData( data ) {
         </div>  
 
         <div class="slide" id="appGeneric">
-          <header>Reusable Generic News Reader <a href="http://jsfiddle.net/elijahmanor/rJfaC" target="_blank">✎</a></header>
+          <header>Reusable Generic News Reader <a href="http://jsfiddle.net/elijahmanor/rJfaC/embedded/js,html,css,result/presentation/" target="_blank">✎</a></header>
           <section>
             <p>After creating your custom type and decoder you can now change your amplify.request.define to look like the following and you <em>don't</em> have to change the code that actually makes the request!</p>
 

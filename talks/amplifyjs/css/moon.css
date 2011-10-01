@@ -14,7 +14,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.slides header a {
+.slide header a {
   text-decoration: none;
   border-bottom: none;
 }
@@ -332,7 +332,7 @@ h1 {
 h2 {
   font-family: Arial;
   color: black;
-  font-size: 20px;
+  font-size: 22px;
   padding: 0;
   margin: 15px 0 5px 0;
 }
