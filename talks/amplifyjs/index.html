@@ -261,8 +261,8 @@ hackerNews.getAndDisplayNews();
 amplify.publish( string topic, ... )
 </pre>
             <ul>
-              <li><em>topic</em>: The name of the message to publish</li>
-              <li><em>...</em>: Any additional parameters that will be passed to the subscriptions</li>
+              <li><code>topic</code>: The name of the message to publish</li>
+              <li><code>...</code>: Any additional parameters that will be passed to the subscriptions</li>
             </ul>
 
 <pre>
@@ -294,10 +294,10 @@ amplify.subscribe( string topic, object context, function callback,
 </pre>
 
             <ul>
-              <li><em>topic</em>: Name of the message to subscribe to</li>
-              <li><em>context</em>: What this will be when the callback is invoked</li>
-              <li><em>callback</em>: Function to invoke when the message is published</li>
-              <li><em>priority</em>: Priority relative to other subscriptions for the same message</li>
+              <li><code>topic</code>: Name of the message to subscribe to</li>
+              <li><code>context</code>: What this will be when the callback is invoked</li>
+              <li><code>callback</code>: Function to invoke when the message is published</li>
+              <li><code>priority</code>: Priority relative to other subscriptions for the same message</li>
             </ul>
 
 <pre>
@@ -306,6 +306,7 @@ amplify.subscribe( &quot;contactUpdated&quot;,
     console.log( contact.firstName ); // John
   }, 5 );
 </pre>          
+            <br /><br /><br />
           </section>
           <aside class="note">
             <section>
@@ -316,8 +317,8 @@ amplify.unsubscribe( string topic, function callback )
 </pre>
 
               <ul>
-                <li>topic: The topic being unsubscribed from.</li>
-                <li>callback: The callback that was originally subscribed.</li>
+                <li><code>topic</code>: The topic being unsubscribed from.</li>
+                <li><code>callback</code>: The callback that was originally subscribed.</li>
               </ul>
             </section>
           </aside> 
@@ -439,9 +440,9 @@ amplify.store( string key, mixed value [, hash options ] )
 </pre>
 
             <ul>
-              <li><em>key</em>: identifier for the value being store</li>
-              <li><em>value</em>: The value to store. The value can be anything that can be serialized as JSON</li>
-              <li><em>options (optional)</em>: A set of key/value paris that relate to settings for storing the value</li>
+              <li><code>key</code>: identifier for the value being store</li>
+              <li><code>value</code>: The value to store. The value can be anything that can be serialized as JSON</li>
+              <li><code>options (optional)</code>: A set of key/value paris that relate to settings for storing the value (<code>expires</code>)</li>
             </ul>
 
 <pre>
@@ -490,7 +491,7 @@ store.contact.firstName; // John
         </div>   
 
         <div class="slide" id="appStore">
-          <header>Extending with Store <a href="http://jsfiddle.net/kuY7V/embedded/js,html,css,result/presentation/" target="_blank">✎</a></header>
+          <header>Extending with Store <a href="http://jsfiddle.net/FHS65/embedded/js,html,css,result/presentation/" target="_blank">✎</a></header>
           <section>
 <pre style="overflow-y: scroll; height: 525px;">
 var hackerNews = (function( $, undefined ) {
@@ -520,17 +521,14 @@ var hackerNews = (function( $, undefined ) {
     };
 
     function getNews( callback ) {
-        var <b>news = amplify.store( &quot;news&quot; ),</b>
-            thisTime = new Date().getTime();
+        var <b>news = amplify.store( &quot;news&quot; );</b>
 
-        if ( !news || ( thisTime - news.timeStamp &gt; 5000 ) ) {
-            lastTime = thisTime;
+        if ( !news ) {
             $.ajax({
                 url: &quot;http://api.ihackernews.com/page?format=jsonp&quot;,
                 dataType: &quot;jsonp&quot;,
                 success: function( data, textStatus, jqXHR ) {
-                    data.timeStamp = thisTime;
-                    <b>amplify.store( &quot;news&quot;, data );</b>
+                    <b>amplify.store( &quot;news&quot;, data, { expires: 5000 } );</b>
                     callback &amp;&amp; callback( data );
                 },
                 error: function( jqXHR, textStatus, errorThrown ) {
@@ -594,13 +592,13 @@ amplify.request.define(string resourceId, string requestType [, hash settings ])
 </pre>
 
             <ul>
-              <li><em>resourceId</em>: Identifier string for the resource</li>
-              <li><em>requestType</em>: Type of data retrieval method from the server.</li>
-              <li><em>settings (optional)</em>: Set of key/value pairs
+              <li><code>resourceId</code>: Identifier string for the resource</li>
+              <li><code>requestType</code>: Type of data retrieval method from the server.</li>
+              <li><code>settings (optional)</code>: Set of key/value pairs
                 <ul>
-                  <li>Any settings found in jQuery.ajax()</li>
-                  <li>cache: Different caching algorithms (boolean, number, string)</li>
-                  <li>decoder: Parse response before calling success or error callback</li>
+                  <li>Any settings found in <code>jQuery.ajax()</code></li>
+                  <li><code>cache</code>: Different caching algorithms (boolean, number, string)</li>
+                  <li><code>decoder</code>: Parse response before calling success or error callback</li>
                 </ul>
               </li>
             </ul>
@@ -630,9 +628,9 @@ amplify.request( string resourceId [, hash data [, function callback ] ] )
 </pre>
 
           <ul>
-            <li><em>resourceId</em>: Identifier string for the resource</li>
-            <li><em> data (optional)</em>: an object literal of data to be sent to the resource</li>
-            <li><em>callback (optional)</em>: a function to call once the resource has been retrieved</li>
+            <li><code>resourceId</code>: Identifier string for the resource</li>
+            <li><code> data (optional)</code>: an object literal of data to be sent to the resource</li>
+            <li><code>callback (optional)</code>: a function to call once the resource has been retrieved</li>
           </ul>
 
 <pre>
@@ -810,7 +808,7 @@ amplify.request.define( &quot;getContactDetails&quot;, function( settings ) {
         </div>   
 
         <div class="slide" id="appMocking">
-          <header>Mocking Hacker News <a href="http://jsfiddle.net/elijahmanor/qHqY3/embedded/js,html,css,result/presentation/" target="_blank">✎</a></header>
+          <header>Mocking Hacker News <a href="http://jsfiddle.net/D2egG/embedded/js,html,css,result/presentation/" target="_blank">✎</a></header>
           <section>
 <pre style="overflow-y: scroll; height: 525px;">
 amplify.request.define( &quot;getNews&quot;, function( settings ) {
