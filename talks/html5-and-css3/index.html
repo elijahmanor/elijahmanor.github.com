@@ -1,0 +1,1331 @@
+
+<!DOCTYPE html>
+<!--
+  Copyright 2011 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Chrome DevRel Team (chrome-devrel@googlegroups.com)
+                 Alex Russell (slightlyoff@chromium.org)
+                 Brad Neuberg
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
+    <title>HTML5 Presentation</title>
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono" rel="stylesheet" type="text/css" />
+    <link id="prettify-link" href="src/prettify/prettify.css" rel="stylesheet" disabled />
+    <link href="css/moon.css" class="theme" rel="stylesheet" />
+    <link href="css/sand.css" class="theme" rel="stylesheet" />
+    <link href="css/sea_wave.css" class="theme" rel="stylesheet" />
+    <link href="css/default.css" class="theme" rel="stylesheet" media="screen"  />
+    <link href="css/common.css" rel="stylesheet" media="screen" />
+	<link href="http://view.jqueryui.com/grid/themes/base/jquery.ui.all.css" rel="stylesheet" />
+	<!-- ><link href="http://view.jqueryui.com/grid/demos/demos.css" rel="stylesheet" /> -->
+	<!-- <script src="http://code.jquery.com/jquery-1.7rc1.min.js"></script> -->
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://view.jqueryui.com/grid/external/jquery.tmpl.js"></script>
+	<script src="http://view.jqueryui.com/grid/ui/jquery.ui.core.js"></script>
+	<script src="http://view.jqueryui.com/grid/ui/jquery.ui.widget.js"></script>
+	<script src="http://view.jqueryui.com/grid/ui/jquery.ui.grid.js"></script>
+  </head>
+  <body>
+    <nav id="helpers">
+      <button title="Previous slide" id="nav-prev" class="nav-prev">⇽</button>
+      <button title="Jump to a random slide" id="slide-no">5</button>
+      <button title="Next slide" id="nav-next" class="nav-next">⇾</button>
+      <menu>
+        <button type="checkbox" data-command="toc" title="Table of Contents" class="toc">TOC</button>
+        <!-- <button type="checkbox" data-command="resources" title="View Related Resources">☆</button> -->
+        <button type="checkbox" data-command="notes" title="View Slide Notes">✏</button>
+        <button type="checkbox" data-command="source" title="View slide source">↻</button>
+        <button type="checkbox" data-command="help" title="View Help">?</button>
+      </menu>
+    </nav>
+    <div class="presentation">
+      <div id="presentation-counter">Loading...</div>
+      <div class="slides">
+        <div class="slide" id="landing-slide">
+          <style>
+            #landing-slide p {
+              font-size: 35px;
+            }
+            p#disclaimer-message {
+              font-size: 20px;
+            }
+          </style>
+          <section class="middle">
+            <p>This presentation is an HTML5 website</p>
+            <p>Press <span id="left-init-key" class="key">&rarr;</span> key to advance.</p>
+            <p id="disclaimer-message">Having issues seeing the presentation? Read the <a href="disclaimer.html">disclaimer</a></p>
+          </section>
+          <aside class="note">
+            <section>
+              Welcome! (This field is for presenter notes and commentary.)
+            </section>
+          </aside>
+        </div>
+
+        <div class="slide" id="controls-slide">
+          <header>Slides controls</header>
+          <style>
+            #controls-slide li, #controls-slide p {
+              font-size: 32px;
+            }
+            #controls-slide .key {
+              bottom: 2px;
+            }
+          </style>
+          <section>
+            <ul>
+              <li><span class="key">&larr;</span> and <span class="key">&rarr;</span> to move around.</li>
+              <li><span class="key">Ctrl/Command</span> and <span class="key">+</span> or <span class="key">-</span> to zoom in and out.</li>
+              <li><span class="key">S</span> to view page source.</li>
+              <li><span class="key">T</span> to change the theme.</li>
+              <li><span class="key">H</span> to toggle syntax highlight.</li>
+              <li><span class="key">N</span> to toggle speaker notes.</li>
+              <li><span class="key">3</span> to toggle 3D effect.</li>
+              <li><span class="key">0</span> to toggle help.</li>
+            </ul>
+          </section>
+        </div>
+
+		<div class="slide" id="title-slide">
+			<style>
+				#title-slide h1, #title-slide h2 {
+					color: black;
+				}
+				#title-slide h1 {
+					letter-spacing: -2px;
+					font-size: 96px;
+				}
+				#title-slide h1 div {
+					margin-bottom: 50px;
+				}
+				#title-slide h2 {
+					margin-top: -5px;
+					font-size: 40px;
+					letter-spacing: -1px;
+				}
+				#title-slide p {
+					line-height: 35px;
+					padding-left: 200px;
+					padding-right: 200px;
+				}
+			</style>
+			<section class="middle">
+				<hgroup>
+					<h1>
+						<div>What is</div>
+						<div>HTML5 &amp; CSS3</div>
+					<h2>...and how can I use it today?</h2>
+				</hgroup>
+				<p>by Elijah Manor ( <a href="http://twtiter.com/elijahmanor"
+					target="_blank">@elijahmanor</a> )</p>
+			</section>
+		</div>
+
+		<div class="slide" id="what-is-html5">
+			<style>
+				div#multicolumn1 {
+					-moz-column-count: 4;
+					-moz-column-gap: 100px;
+					-webkit-column-count: 4;
+					-webkit-column-gap: 100px;
+					column-count: 4;
+					column-gap: 100px;
+				}
+			</style>
+			<header>What is HTML5?</header>
+			<section>
+				<div style="text-align: center; margin-bottom: 25px;">
+					<img src="./images/HTML5_Badge_256.png" />
+				</div>
+				<div id="multicolumn1">
+					<img src="./images/HTML5_Semantics_128.png" title="Semantics" />
+					<img src="./images/HTML5_Offline_Storage_128.png" title="Offline and Storage" />
+					<img src="./images/HTML5_Device_Access_128.png" title="Device Access" />
+					<img src="./images/HTML5_Connectivity_128.png" title="Connectivity" />
+					<img src="./images/HTML5_Multimedia_128.png" title="Multimedia" />
+					<img src="./images/HTML5_3D_effects_128.png" title="3D, Graphics &amp; Effects" />
+					<img src="./images/HTML5_Performance_128.png" title="Performance &amp; Integration" />
+					<img src="./images/HTML5_Styling_128.png" title="CSS3" />
+				</div>
+			</section>
+		</div>
+
+		<div class="slide" id="what-does-that-mean">
+			<style>
+				div#multicolumn2 {
+					-moz-column-count: 4;
+					-moz-column-gap: 0px;
+					-webkit-column-count: 4;
+					-webkit-column-gap: 0px;
+					column-count: 4;
+					column-gap: 0px;
+				}
+				#multicolumn2 ul { margin: 0; list-style-type: none; }
+				#multicolumn2 ul li { float: left; padding: 4px 0px; }
+				#multicolumn2 ul li a { border-bottom: none; text-decoration: none; }
+			</style>
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-connectivity-css3-device-graphics-multimedia-performance-semantics-storage.png" width="357" height="64" alt="HTML5 Powered with Connectivity / Realtime, CSS3 / Styling, Device Access, Graphics, 3D &amp; Effects, Multimedia, Performance &amp; Integration, Semantics, and Offline &amp; Storage" title="HTML5 Powered with Connectivity / Realtime, CSS3 / Styling, Device Access, Graphics, 3D &amp; Effects, Multimedia, Performance &amp; Integration, Semantics, and Offline &amp; Storage">
+				</a>
+				What!?!
+			</header>
+			<section>
+				<div id="multicolumn2">
+					<ul>
+						<li><a href="audio">Audio element</a></li>
+						<li><a href="canvas">Canvas</a></li>
+						<li><a href="contenteditable">contenteditable attribute</a></li>
+						<li><a href="datalist">Datalist element</a></li>
+						<li><a href="dataset">dataset &amp; data-* attributes</a></li>
+						<li><a href="details">Details &amp; Summary elements</a></li>
+						<li><a href="dragndrop">Drag and Drop</a></li>
+						<li><a href="form-validation">Form validation</a></li>
+						<li><a href="forms">HTML5 form features</a></li>
+						<li><a href="html5semantic">New semantic elements</a></li>
+						<li><a href="offline-apps">Offline web applications</a></li>
+						<li><a href="progressmeter">Progress &amp; Meter</a></li>
+						<li><a href="ruby">Ruby annotation</a></li>
+						<li><a href="history">Session history management</a></li>
+						<li><a href="canvas-text">Text API for Canvas</a></li>
+						<li><a href="menu">Toolbar/context menu</a></li>
+						<li><a href="video">Video element</a></li>
+						<li><a href="webgl">WebGL</a></li>
+
+						<li><a href="bloburls">Blob URLs</a></li>
+						<li><a href="x-doc-messaging">Cross-document messaging</a></li>
+						<li><a href="cors">Cross-Origin Resource Sharing</a></li>
+						<li><a href="deviceorientation">Device Orientation events</a></li>
+						<li><a href="fileapi">File API</a></li>
+						<li><a href="filereader">FileReader API</a></li>
+						<li><a href="filesystem">Filesystem &amp; FileWriter API</a></li>
+						<li><a href="geolocation">Geolocation</a></li>
+						<li><a href="hashchange">Hashchange event</a></li>
+						<li><a href="indexeddb">IndexedDB</a></li>
+						<!-- <li><a href="json">JSON parsing</a></li> -->
+						<li><a href="matchesselector">matchesSelector</a></li>
+						<li><a href="nav-timing">Navigation Timing API</a></li>
+						<li><a href="eventsource">Server-sent DOM events</a></li>
+						<li><a href="typedarrays">Typed Arrays</a></li>
+						<li><a href="notifications">Web Notifications</a></li>
+						<li><a href="websockets">Web Sockets</a></li>
+						<li><a href="namevalue-storage">Web Storage</a></li>
+						<li><a href="webworkers">Web Workers</a></li>
+						<li class="unoff"><a href="audio-api">Audio API</a></li>
+						<li class="unoff"><a href="stream">Stream API</a></li>
+						<li class="unoff"><a href="sql-storage">Web SQL Database</a></li>
+
+						<li><a href="svg">SVG</a></li>
+						<!--
+						<li><a href="svg-html5">Inline SVG in HTML5</a></li>
+						<li><a href="svg-html">SVG effects for HTML</a></li>
+						<li><a href="svg-filters">SVG filters</a></li>
+						<li><a href="svg-fonts">SVG fonts</a></li>
+						<li><a href="svg-css">SVG in CSS backgrounds</a></li>
+						<li><a href="svg-img">SVG in HTML img element</a></li>
+						<li><a href="svg-smil">SVG SMIL animation</a></li>
+						-->
+
+						<li><a href="fontface">@font-face Web fonts</a></li>
+						<li><a href="calc">calc()</a></li>
+						<li><a href="css-sel2">2.1 selectors</a></li>
+						<li><a href="css-gencontent">Generated content</a></li>
+						<li><a href="css-gradients">Gradients</a></li>
+						<li><a href="css-grid">Grid Layout</a></li>
+						<li><a href="inline-block">inline-block</a></li>
+						<li><a href="minmaxwh">min/max-width/height</a></li>
+						<li><a href="css-fixed">position: fixed</a></li>
+						<li><a href="css-regions">Regions</a></li>
+						<li><a href="css-table">Table display</a></li>
+						<li><a href="transforms3d">3D Transforms</a></li>
+						<li><a href="css-animation">Animation</a></li>
+						<li><a href="background-img-opts">Background-image</a></li>
+						<li><a href="border-image">Border images</a></li>
+						<li><a href="border-radius">Border-radius</a></li>
+						<li><a href="css-boxshadow">Box-shadow</a></li>
+						<li><a href="css3-boxsizing">Box-sizing</a></li>
+						<li><a href="css3-colors">Colors</a></li>
+						<li><a href="css-mediaqueries">Media Queries</a></li>
+						<li><a href="multibackgrounds">Multiple backgrounds</a></li>
+						<li><a href="multicolumn">Multiple column layout</a></li>
+						<!-- <li><a href="object-fit">object-fit/object-position</a></li> -->
+						<li><a href="css-opacity">Opacity</a></li>
+						<li><a href="css-sel3">selectors</a></li>
+						<li><a href="css-textshadow">Text-shadow</a></li>
+						<li><a href="transforms2d">Transforms</a></li>
+						<li><a href="css-transitions">Transitions</a></li>
+						<li><a href="wordwrap">Word-wrap</a></li>
+						<li><a href="flexbox">Flexible Box Layout Module</a></li>
+						<!-- <li><a href="rem">rem units</a></li> -->
+						<li><a href="ttf">TTF/OTF support</a></li>
+						<li class="unoff"><a href="css-canvas">Canvas Drawings</a></li>
+						<li class="unoff"><a href="css-masks">Masks</a></li>
+						<li class="unoff"><a href="css-reflections">Reflections</a></li>
+						<li class="unoff"><a href="text-stroke">text-stroke</a></li>
+						<li class="unoff"><a href="text-overflow">Text-overflow</a></li>
+						<li class="unoff"><a href="pointer-events">pointer-events</a></li>
+
+						<li><a href="script-async">async attribute for external scripts</a></li>
+						<!-- <li><a href="classlist">classList</a></li> -->
+						<!-- <li><a href="datauri">Data URLs</a></li> -->
+						<li><a href="script-defer">defer attribute for external scripts</a></li>
+						<li><a href="getelementsbyclassname">getElementsByClassName</a></li>
+						<li><a href="mathml">MathML</a></li>
+						<!-- <li><a href="mpeg4">MPEG-4/H.264 video format</a></li> -->
+						<!-- <li><a href="ogv">Ogg/Theora video format</a></li> -->
+						<!-- <li><a href="png-alpha">PNG alpha transparency</a></li> -->
+						<li><a href="queryselector">querySelector/querySelectorAll</a></li>
+						<li><a href="touch">Touch events</a></li>
+						<li><a href="wai-aria">WAI-ARIA Accessibility features</a></li>
+						<!-- <li><a href="webm">WebM/VP8 video format</a></li> -->
+						<!-- <li><a href="woff">WOFF - Web Open Font Format</a></li> -->
+						<!-- <li><a href="xhtml">XHTML served as application/xhtml+xml</a></li> -->
+						<li><a href="xhr2">XMLHttpRequest 2</a></li>
+						<!-- <li class="unoff"><a href="apng">Animated PNG (APNG)</a></li> -->
+						<!-- <li class="unoff"><a href="eot">EOT - Embedded OpenType fonts</a></li> -->
+						<!-- <li class="unoff"><a href="xhtmlsmil">XHTML+SMIL animation</a></li> -->
+
+						<li>...and MORE!!!</li>
+
+					</ul>
+				</div>
+			</section>
+		</div>
+
+		<div class="slide" id="support">
+			<style>
+				div#multicolumn3 {
+					-moz-column-count: 3;
+					-moz-column-gap: 0px;
+					-webkit-column-count: 3;
+					-webkit-column-gap: 0px;
+					column-count: 3;
+					column-gap: 0px;
+				}
+				#multicolumn2 ul { margin: 0; list-style-type: none; }
+				#multicolumn2 ul li { float: left; padding: 4px 0px; }
+				#multicolumn2 ul li a { border-bottom: none; text-decoration: none; }
+			</style>
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-connectivity-css3-device-graphics-multimedia-performance-semantics-storage.png" width="357" height="64" alt="HTML5 Powered with Connectivity / Realtime, CSS3 / Styling, Device Access, Graphics, 3D &amp; Effects, Multimedia, Performance &amp; Integration, Semantics, and Offline &amp; Storage" title="HTML5 Powered with Connectivity / Realtime, CSS3 / Styling, Device Access, Graphics, 3D &amp; Effects, Multimedia, Performance &amp; Integration, Semantics, and Offline &amp; Storage">
+				</a>
+				Who Supports It?
+			</header>
+			<section>
+				<div id="multicolumn3">
+					<img src="./images/256-firefox.png" title="Mozilla Firefox" />
+					<img src="./images/256-ie.png" title="Internet Explorer" />
+					<img src="./images/256-safari.png" title="Safari" />
+					<img src="./images/256-chrome.png" title="Google Chrome"
+						style="padding-left: 28px; padding-top: 13px;" />
+					<img src="./images/Opera_256x256.png" title="Opera" />
+					<img src="./images/QuestionMark.png" title="Question"
+						style="width: 270px; height: 270px;" />
+				</div>
+			</section>
+		</div>
+
+		<div class="slide transitionSlide" id="get-started-title">
+			<section class="middle">
+				<h2>How Do I Get Started?</h2>
+				<p>&nbsp;</p>
+				<img src="./images/HTML5_Badge_64.png" title="HTML5 Semantics" alt="HTML5 Semantics">
+			</section>
+			<span class="counter"></span>
+		</div>
+
+		<div class="slide transitionSlide" id="semanitcs-title">
+			<section class="middle">
+				<h2>Semantics</h2>
+				<p>&nbsp;</p>
+				<img src="./images/HTML5_Semantics_64.png" title="HTML5 Semantics" alt="HTML5 Semantics">
+			</section>
+			<span class="counter"></span>
+		</div>
+
+		<div class="slide" id="getting-started">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-semantics.png" width="133" height="64" alt="HTML5 Powered with Semantics" title="HTML5 Powered with Semantics">
+				</a>
+				Does This Look Familiar?
+			</header>
+			<section>
+				<pre>
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+	&lt;meta http-equiv="Content-Type"
+		content="text/html; charset=utf-8"&gt;
+	&lt;link rel="stylesheet" href="site.css" type="text/css" /&gt;
+	&lt;style type="text/css"&gt;
+  		h1 { color: red; }
+	&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;script type="text/javascript" src="common.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+				</pre>
+			</section>
+		</div>
+
+		<div class="slide" id="simplified-markup">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-semantics.png" width="133" height="64" alt="HTML5 Powered with Semantics" title="HTML5 Powered with Semantics">
+				</a>
+				HTML5 Simplifies Your Markup
+			</header>
+			<section>
+				<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+	&lt;meta charset="utf-8"&gt;
+	&lt;link rel="stylesheet" href="site.css" /&gt;
+	&lt;style&gt;
+		h1 { color: red; }
+	&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;script src="common.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+				</pre>
+			</section>
+			<aside class="note">
+				<section>
+					The HTML5 Doctype is case-insensitive, so technically you could do something like...
+					<pre>
+&lt;!DoCtYpE hTml&gt;
+					</pre>
+				</section>
+			</aside>
+		</div>
+
+		<div class="slide" id="semantics-chart-class-markup">
+			<script src="https://www.google.com/jsapi"></script>
+			<script>
+				var classFrequency = {
+					"footer": 179528,
+					"menu": 146673,
+					"style1": 138308,
+					"msonormal": 123374,
+					"text": 122911,
+					"content": 113951,
+					"title": 91957,
+					"style2": 89851,
+					"header": 89274,
+					"copyright": 86979,
+					"button": 81503,
+					"main": 69620,
+					"style3": 69349,
+					"small": 68995,
+					"nav": 68634,
+					"clear": 68571,
+					"search": 59802,
+					"style4": 56032,
+					"logo": 48831,
+					"body": 48052
+				};
+				google.load( "visualization", "1", { packages: [ "corechart" ] } );
+				google.setOnLoadCallback( drawChart );
+				function drawChart() {
+					var data = new google.visualization.DataTable(), index = 0;
+
+					data.addColumn( 'string', 'Class' );
+					data.addColumn( 'number', 'Frequency' );
+					data.addRows( 20 );
+
+					for ( var className in classFrequency ) {
+						data.setValue( index, 0, className );
+						data.setValue( index, 1, classFrequency[ className ] );
+						index++;
+					}
+
+					var chart = new google.visualization.BarChart( document.getElementById( 'chart_div' ) );
+					chart.draw( data, {
+						width: 850,
+						height: 525,
+						title: 'Opera MAMA Study: Class Frequency',
+						backgroundColor: "white", // "transparent",
+						vAxis: { title: 'Class Name', titleTextStyle: { color: 'red' } },
+						hAxis: { title: 'Frequency based on 3.5 million URLs', titleTextStyle: { color: 'red' } }
+					});
+				}
+			</script>
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-semantics.png" width="133" height="64" alt="HTML5 Powered with Semantics" title="HTML5 Powered with Semantics">
+				</a>
+				MAMA Case Study: Class Names
+			</header>
+			<section>
+				<div id="chart_div"></div>
+
+				<small><a href="http://devfiles.myopera.com/articles/572/classlist-url.htm">http://devfiles.myopera.com/articles/572/classlist-url.htm</a></small>
+			</section>
+			<aside class="note">
+				<section>
+					<p>During the creation of HTML5 Ian Hickson data mined over a billion web pages, identifying the most commonly used class names <a href="http://code.google.com/webstats/2005-12/classes.html">http://code.google.com/webstats/2005-12/classes.html</a>.</p>
+
+					<p>Unfortunately only the top 20 class names were shared and not all the associated data. Also I can't find any data about common ID names used from the study.<p>
+				</section>
+			</aside>
+		</div>
+
+		<div class="slide" id="semantics-chart-id-markup">
+			<script src="https://www.google.com/jsapi"></script>
+			<script>
+				var idFrequency = {
+					"footer": 288061,
+					"content": 228661,
+					"header": 223726,
+					"logo": 121352,
+					"container": 119877,
+					"main": 106327,
+					"table1": 101677,
+					"menu": 96161,
+					"layer1": 93920,
+					"autonumber1": 77350,
+					"search": 74887,
+					"nav": 72057,
+					"wrapper": 66730,
+					"top": 66615,
+					"table2": 57934,
+					"layer2": 56823,
+					"sidebar": 52416,
+					"image1": 48922,
+					"banner": 44592,
+					"navigation": 43664
+				};
+				google.setOnLoadCallback( drawChart2 );
+				function drawChart2() {
+					var data = new google.visualization.DataTable(), index = 0;
+
+					data.addColumn( 'string', 'Class' );
+					data.addColumn( 'number', 'Frequency' );
+					data.addRows( 20 );
+
+					for ( var idName in idFrequency ) {
+						data.setValue( index, 0, idName );
+						data.setValue( index, 1, idFrequency[ idName ] );
+						index++;
+					}
+
+					var chart = new google.visualization.BarChart( document.getElementById( 'chart_div2' ) );
+					chart.draw( data, {
+						width: 850,
+						height: 525,
+						title: 'Opera MAMA Study: ID Frequency',
+						backgroundColor: "white", // "transparent",
+						vAxis: { title: 'ID Name', titleTextStyle: { color: 'red' } },
+						hAxis: { title: 'Frequency based on 3.5 million URLs', titleTextStyle: { color: 'red' } }
+					});
+				}
+			</script>
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-semantics.png" width="133" height="64" alt="HTML5 Powered with Semantics" title="HTML5 Powered with Semantics">
+				</a>
+				MAMA Case Study: ID Names
+			</header>
+			<section>
+				<div id="chart_div2"></div>
+				<small><a href="http://devfiles.myopera.com/articles/572/idlist-url.htm" target="_blank">http://devfiles.myopera.com/articles/572/idlist-url.htm</a></small>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside>
+		</div>
+
+		<div class="slide" id="new-semantic-elements">
+			<style>
+				#new-semantic-elements .html5 { margin: 15px; }
+			</style>
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-semantics.png" width="133" height="64" alt="HTML5 Powered with Semantics" title="HTML5 Powered with Semantics">
+				</a>
+				New Semantic Elements
+			</header>
+			<section>
+				<span class="html5">footer</span>
+				<span class="html5">header</span>
+				<span class="html5">nav</span>
+				<span class="html5">section</span>
+				<span class="html5">article</span>
+				<span class="html5">aside</span>
+				<span class="html5">hgroup</span>
+				<span class="html5">figure</span>
+				<span class="html5">figcaption</span>
+				<span class="html5">video</span>
+				<span class="html5">audio</span>
+				<span class="html5">source</span>
+				<span class="html5">track</span>
+				<span class="html5">embed</span>
+				<span class="html5">mark</span>
+				<span class="html5">progress</span>
+				<span class="html5">meter</span>
+				<span class="html5">time</span>
+				<span class="html5">ruby</span>
+				<span class="html5">rt</span>
+				<span class="html5">rp</span>
+				<span class="html5">bdi</span>
+				<span class="html5">wbr</span>
+				<span class="html5">canvas</span>
+				<span class="html5">command</span>
+				<span class="html5">details</span>
+				<span class="html5">datalist</span>
+				<span class="html5">keygen</span>
+				<span class="html5">output</span>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside>
+		</div>
+
+		<div class="slide transitionSlide" id="offline-storage-title">
+			<section class="middle">
+				<h2>Offline &amp; Storage</h2>
+				<p>&nbsp;</p>
+				<img src="./images/HTML5_Offline_Storage_64.png" title="HTML5 Offline &amp; Storage" alt="HTML5 Offline &amp; Storage">
+			</section>
+			<span class="counter"></span>
+		</div>
+
+		<div class="slide" id="application-cache">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-storage.png" width="133" height="64" alt="HTML5 Powered with Offline &amp; Storage" title="HTML5 Powered with Offline &amp; Storage">
+				</a>
+				Application Cache
+			</header>
+			<section>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside>
+		</div>
+
+		<div class="slide" id="web-storage">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-storage.png" width="133" height="64" alt="HTML5 Powered with Offline &amp; Storage" title="HTML5 Powered with Offline &amp; Storage">
+				</a>
+				Web Storage ( Local &amp; Session )
+			</header>
+			<section>
+				<pre>
+try {
+	window.localStorage.setItem( "firstName", "Mike" );
+	window.localStorage.firstName = "Jonathan";
+	window.localStorage[ "firstName" ] = "Doug";
+	localStorage[ "firstName" ] = "Scott";
+} catch ( e ) {
+	if ( e === QUOTA_EXCEEDED_ERR ) { }
+}
+
+localStorage.getItem( "firstName" );
+
+localStorage.length;
+
+localStorage.removeItem( "firstName" )
+
+localStorage.clear();
+				</pre>
+
+				<div id="web-store-example">
+					<div>
+						<textarea class="storeKey" placeholder="Enter key here..."></textarea>
+						<textarea class="storeValue" placeholder="Enter value here..."></textarea>
+					</div>
+					<div>
+						<button class="set">Set</button>
+						<button class="get">Get</button>
+						<button class="remove">Remove</button>
+						<button class="clear">Clear</button>
+						<span><span class="count">0</span> Stored</span>
+					</div>
+				</div>
+
+				<script>
+					$( function() {
+						var example = $( "#web-store-example" ),
+							key = example.find( ".storeKey" ),
+							value = example.find( ".storeValue" ),
+							count = example.find( ".count" );
+
+						updateCount();
+
+						example.delegate( ".set", "click", function( e ) {
+							localStorage[ key.val() ] = value.val();
+							updateCount();
+							clearInputs();
+						});
+
+						example.delegate( ".get", "click", function( e ) {
+							value.val( localStorage[ key.val() ] );
+							updateCount();
+						});
+
+						example.delegate( ".remove", "click", function( e ) {
+							localStorage.removeItem( key.val() );
+							updateCount();
+							clearInputs();
+						});
+
+						example.delegate( ".clear", "click", function( e ) {
+							localStorage.clear();
+							updateCount();
+							clearInputs();
+						});
+
+						$( window ).bind( "storage", function( e ) {
+							alert( "storage event fired" );
+						});
+
+						function updateCount() {
+							count.text( localStorage.length );
+						}
+
+						function clearInputs() {
+							key.val( "" );
+							value.val( "" );
+						}
+					});
+				</script>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside>
+		</div>
+
+		<div class="slide" id="web-sql-database">
+			<style>
+			#web-sql-example button { width: 100px; }
+			#web-sql-example .tweetCount, #web-sql-example .filterCount { width: 50px; }
+			#web-sql-example .tweets { display: none; }
+			#web-sql-example .ui-grid { padding-top: 15px; }
+			</style>
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-storage.png" width="133" height="64" alt="HTML5 Powered with Offline &amp; Storage" title="HTML5 Powered with Offline &amp; Storage">
+				</a>
+				Web SQL Database
+			</header>
+			<section>
+				<pre>
+var db = openDatabase( "HTML5", '1.0', "My Local Database", 5 * 1024 * 1024 );
+
+db.transaction( function ( tx ) {
+  tx.executeSql( "CREATE TABLE IF NOT EXISTS Tweets " + 
+	"( id real unique, tweet text )" );
+
+  tx.executeSql( "INSERT INTO Tweets ( id, text ) VALUES ( ?, ? )",
+    [ tweet.id, tweet.text ] );
+
+  tx.executeSql( "SELECT * FROM Tweets", [], function ( tx, results ) {
+    for ( var i = 0, length = results.rows.length; i &lt; length; i++ ) {
+      console.log( results.rows.item( i ) );
+    }
+  });
+});
+				</pre>
+
+				<div id="web-sql-example">
+					<div>
+						<input type="text" class="search" value="#html" />
+						<button class="loadButton">Load</button> <button class="deleteButton">Delete</button>
+						<span class="tweetCount">0</span>
+					</div>
+					<div>
+						<input type="text" class="filter" />
+						<button class="filterButton">Filter</button> <button class="clearButton">Clear</button>
+						<span class="filterCount">0</span>
+					</div>
+					<table class="tweets">
+						<colgroup>
+							<col width="20%" style="width: 20%;">
+							<col width="20%" style="width: 20%;">
+							<col width="60%" style="width: 60%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th data-property="created_at">Date</th>
+								<th data-property="from_user">From</th>
+								<th data-property="text">Tweet</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+
+					<script>
+						$( function() {
+							var db = openDatabase( "HTML5", '1.0', "Offline Database", 5 * 1024 * 1024 ),
+								example = $( "#web-sql-example" ),
+								search = example.find( ".search" ),
+								tweets = example.find( ".tweets" ),
+								filter = example.find( ".filter" ),
+								filterCount = example.find( ".filterCount" ),
+								tweetCount = example.find( ".tweetCount" );
+
+							db.transaction( function( tx ) {
+								tx.executeSql( "CREATE TABLE IF NOT EXISTS Tweets ( id real unique, created_at text, from_user text, from_user_id text, text text, source text, profile_image_url text )" );
+							});
+
+							updateTweetCount();
+
+							example.delegate( ".loadButton", "click", function( e ) {
+								db.transaction( function( tx ) {
+									tx.executeSql( "SELECT * FROM Tweets ORDER BY id DESC LIMIT 1", [],
+										function( tx, results ) {
+											getTweets( search.val(), results.rows.length ? results.rows.item( 0 ).id : null );
+										});
+								});
+							});
+
+							example.delegate( ".deleteButton", "click", function( e ) {
+								db.transaction( function( tx ) {
+									tx.executeSql( "DELETE FROM Tweets", [], function() {
+										updateTweetCount();
+									});
+								});
+							});
+
+							example.delegate( ".filterButton", "click", function( e ) {
+								db.transaction( function( tx ) {
+									tx.executeSql( "SELECT * FROM Tweets WHERE text LIKE '%" + filter.val() + "%' ORDER BY id DESC", [],
+										function( tx, results ) {
+											var items = [];
+											for ( var i = 0, length = results.rows.length; i < length && i < 3; i++ ) {
+												items.push( results.rows.item( i ) );
+											}
+											tweets.grid({
+												source: items
+											}).grid( "refresh" ).fadeIn( "slow" );
+											filterCount.text( results.rows.length );
+										});
+								});
+							});
+
+							example.delegate( ".clearButton", "click", function( e ) {
+								tweets.find( "tbody" ).empty();
+								filter.val( "" );
+								filterCount.text( "0" );
+							});
+
+							function updateTweetCount() {
+								db.transaction( function( tx ) {
+									tx.executeSql( "SELECT COUNT( * ) FROM Tweets", [],
+										function( tx, results ) {
+											tweetCount.text( results.rows.item( 0 )[ "COUNT( * )" ] );
+										});
+								});
+							}
+
+							function getTweets( search, sinceId ) {
+								$.ajax({
+									url: "http://search.twitter.com/search.json",
+									data: {
+										q: search,
+										rpp: 100,
+										include_entities: true,
+										with_twitter_user_id: true,
+										result_type: "recent",
+										since_id: sinceId
+									},
+									type: "GET",
+									dataType: "jsonp",
+									success: function( data, textStatus, jqXHR ) {
+										db.transaction( function ( tx ) {
+											$.each( data.results, function( index, tweet ) {
+												tx.executeSql( "INSERT INTO Tweets ( id, created_at, from_user, from_user_id, text, source, profile_image_url ) VALUES ( ?, ?, ?, ?, ?, ?, ? )", [ tweet.id, tweet.created_at, tweet.from_user, tweet.from_user_id, tweet.text, tweet.source, tweet.profile_image_url ] );
+											});
+										});
+										updateTweetCount();
+									},
+									error: function( jqXHR, textStatus, errorThrown ) {
+										console.log( textStatus );
+									}
+								});
+							}
+						});
+					</script>
+				</div>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside>
+		</div>
+
+		<div class="slide" id="indexed-db">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-storage.png" width="133" height="64" alt="HTML5 Powered with Offline &amp; Storage" title="HTML5 Powered with Offline &amp; Storage">
+				</a>
+				Indexed DB
+			</header>
+			<section>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside>
+		</div>
+
+		<div class="slide transitionSlide" id="device-access-title">
+			<section class="middle">
+				<h2>Device Access</h2>
+				<p>&nbsp;</p>
+				<img src="./images/HTML5_Device_Access_64.png" title="HTML5 Device Access" alt="HTML5 Device Access">
+			</section>
+			<span class="counter"></span>
+		</div>
+
+		<div class="slide" id="device-access">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-device.png" width="133" height="64" alt="HTML5 Powered with Device Access" title="HTML5 Powered with Device Access">
+				</a>
+				Device Access
+			</header>
+			<section>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside>
+		</div>
+
+		<div class="slide transitionSlide" id="connectivity-title">
+			<section class="middle">
+				<h2>Connectivity / Realtime</h2>
+				<p>&nbsp;</p>
+				<img src="./images/HTML5_Connectivity_64.png" title="HTML5 Connectivity / Realtime" alt="HTML5 Connectivity / Realtime">
+			</section>
+			<span class="counter"></span>
+		</div>
+
+		<div class="slide" id="connectivity">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-connectivity.png" width="133" height="64" alt="HTML5 Powered with Connectivity / Realtime" title="HTML5 Powered with Connectivity / Realtime">
+				</a>
+				Connectivity / Realtime
+			</header>
+			<section>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside>
+		</div>
+
+		<div class="slide transitionSlide" id="multimedia-title">
+			<section class="middle">
+				<h2>Multimedia</h2>
+				<p>&nbsp;</p>
+				<img src="./images/HTML5_Multimedia_64.png" title="HTML5 Multimedia" alt="HTML5 Multimedia">
+			</section>
+			<span class="counter"></span>
+		</div>
+
+		<div class="slide" id="multimedia">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-multimedia.png" width="133" height="64" alt="HTML5 Powered with Multimedia" title="HTML5 Powered with Multimedia">
+				</a>
+				Multimedia
+			</header>
+			<section>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside>
+		</div>
+
+		<div class="slide transitionSlide" id="effects-title">
+			<section class="middle">
+				<h2>3D, Graphics &amp; Effects</h2>
+				<p>&nbsp;</p>
+				<img src="./images/HTML5_3D_Effects_64.png" title="HTML5 Graphics, 3D &amp; Effects" alt="HTML5 Graphics, 3D &amp; Effects">
+			</section>
+			<span class="counter"></span>
+		</div>
+
+		<div class="slide" id="effects">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-graphics.png" width="133" height="64" alt="HTML5 Powered with Graphics, 3D &amp; Effects" title="HTML5 Powered with Graphics, 3D &amp; Effects">
+				</a>
+				3D, Graphics &amp; Effects
+			</header>
+			<section></section>
+			<aside class="note"></aside>
+		</div>
+
+		<div class="slide transitionSlide" id="performance-integration-title">
+			<section class="middle">
+				<h2>Performance &amp; Integration</h2>
+				<p>&nbsp;</p>
+				<img src="./images/HTML5_Performance_64.png" title="HTML5Performance &amp; Integration" alt="HTML5 Performance &amp; Integration">
+			</section>
+			<span class="counter"></span>
+		</div>
+
+		<div class="slide" id="performance-integration">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-performance.png" width="133" height="64" alt="HTML5 Powered with Performance &amp; Integration" title="HTML5 Powered with Performance &amp; Integration">
+				</a>
+				Performance &amp; Integration
+			</header>
+			<section>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside>
+		</div>
+
+		<div class="slide transitionSlide" id="css3-title">
+			<section class="middle">
+				<h2>CSS3 / Styling</h2>
+				<p>&nbsp;</p>
+				<img src="./images/HTML5_Styling_64.png" title="HTML5 CSS3 / Styling" alt="HTML5 CSS3 / Styling">
+			</section>
+			<span class="counter"></span>
+		</div>
+
+		<div class="slide" id="css3">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3.png" width="133" height="64" alt="HTML5 Powered with CSS3 / Styling" title="HTML5 Powered with CSS3 / Styling">
+				</a>
+				CSS3
+			</header>
+			<section>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside>
+		</div>
+
+<!--
+
+<a href="http://www.w3.org/html/logo/">
+<img src="http://www.w3.org/html/logo/badge/html5-badge-h-solo.png" width="63" height="64" alt="HTML5 Powered" title="HTML5 Powered">
+</a>
+
+<section data-build> <-- does manual bullet slideshow
+
+<pre style="overflow-y: scroll; height: 525px;">
+
+
+Slide with lots of browser icons
+
+How do I start!?!
+
+
+	& now!?!...
+
+
+
+
+http://html5readiness.com/
+http://caniuse.com/
+http://mobilehtml5.org/
+http://html5boilerplate.com/
+http://www.initializr.com/
+
+Adoption Strategies
+	Graceful Degradation
+		Build for Latest Browsers and Degrade
+	Progressive Enhancements
+		Build for Oldest Browsers and Enhance
+	Regressive Enhancement a.k.a. Polyfill
+		Modernizr
+		https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
+	TAFEE (pronounced: taffy): tiered, adaptive front-end experiences. Customizing the experience to the unique capabilities of each browser, prioritizing a fast and good UX over consistency
+		http://paulirish.com/2011/tiered-adaptive-front-end-experiences/
+		http://www.slideshare.net/nzakas/progressive-enhancement-20-conference-agnostic
+
+SEMANTICS
+
+
+
+
+	HTML5 Forms
+		Elements
+			meter, progress, output, keygen
+		Types
+			Email, Tel, Url, Search, Color, Number, Range, Date
+		Attributes
+			Placeholder, autofocus, maxlength, min/max/step, list, autocomplete, accept, multiple, required, pattern, novalidate, formnovalidate, formaction, formmethod, formtarget, formenctype, spellecheck
+
+		http://wufoo.com/html5/
+		http://miketaylr.com/code/input-type-attr.html
+
+	Need Modernizr or HTML5 Shiv to trigger styling in old IE
+		http://modernizr.github.com/Modernizr/test/index.html
+	html5shim by remy sharp, jon neal & community. enables for print use, as well http://code.google.com/p/html5shim
+	innerShiv by joe bartlett - enables elements for innerhtml use http://jdbartlett.github.com/innershiv/
+
+OFFLINE & STORAGE
+	App Cache
+	Local Storage / Session Storage
+		5 MB limit
+		AmplifyJS Store
+	Web SQL Storage
+		5 MB -> 10 MB Limit
+		persistance
+		-- look up that localstorage sql library
+	Index DB
+		Replacement for Web SQL Storage
+	File API
+
+DEVICE ACCESS
+	Geolocation API
+		Polyfill with IP lookup
+	Audio / Video
+	Microphones
+	Camera
+	Tilt Orientation
+		window.addEventListener('deviceorientation', function(event) {
+		  var a = event.alpha; //
+		  var b = event.beta;  //-2.2814938370474303
+		  var g = event.gamma; //-3.4260920461605613
+		}, false);
+
+
+CONNECTIVITY
+	Web Sockets
+		socket.io by guillermo rauch abstracts API and adds features - http://socket.io/
+
+	Server-Sent Evetns
+
+MULTIMEDIA
+	Audio
+		SoundManager 2 - http://www.schillmania.com/projects/soundmanager2/
+		jPlayer
+
+	Video
+		<video width="320"
+		        src="intro.mp4"
+		        height="240"
+		        poster="intro.jpg"
+		        autoplay
+		        controls
+		        loop
+		        autobuffer
+		        >
+		        This content appears if the video tag or the codec is not supported.
+		</video>
+
+		<script type="text/javascript">
+		    var vid = function() {
+		        return {
+		        play: function() {
+		            var v = document.getElementById("myVideo");
+		            v.play();
+		        },
+		        pause: function() {
+		            var v = document.getElementById("myVideo");
+		            v.pause();
+		      }
+		    }
+		} ();
+		</script>
+		<body>
+		    <h1>Video and legacy browser fallback</h1>
+		    <video width="320"
+		            height="240"
+		            poster="intro.jpg"
+		            id="myVideo">
+		        This content appears if the video tag or the codec is not supported.
+		        <source src="intro.mp4" type="video/mp4" />
+		        <source src="intro.webm" type="video/webm" />
+		        <source src="intro.ogv" type="video/ogg" />
+		    </video>
+		    <br />
+		    <button onclick="vid.play();">Play</button>
+		    <button onclick="vid.pause();">Pause</button>
+		</body>
+
+		<video width="640" height="360" controls>
+			<source src="__VIDEO__.MP4"  type="video/mp4" />
+			<source src="__VIDEO__.OGV"  type="video/ogg" />
+			<object width="640" height="360" type="application/x-shockwave-flash" data="__FLASH__.SWF">
+				<param name="movie" value="__FLASH__.SWF" />
+				<param name="flashvars" value="controlbar=over&amp;image=__POSTER__.JPG&amp;file=__VIDEO__.MP4" />
+				<img src="__VIDEO__.JPG" width="640" height="360" alt="__TITLE__"
+				     title="No video playback capabilities, please download the video below" />
+			</object>
+		</video>
+
+		popcorn.js
+		vid.ly
+		http://www.delphiki.com/html5/playr/
+
+3D, GRAPHICS, & EFFECTS
+	SVG
+		XML, Interaction, Vector
+		has a dom: can change it dynamically
+	Canvas
+		JavaScript, Animation, Bitmap
+		Explorer Canvas by google, erik arvidsson http://code.google.com/p/explorercanvas/
+		FlashCanvas http://flashcanvas.net/ by Shinya Muramatsu (reported to be 33x better performance compared to Explorer Canvas)
+	WebGL
+		3d Canvas API
+	CSS3 3D
+
+PERFORMANCE & INTEGRATION
+	Web Workers
+	XMLHttpRequest 2
+
+CSS3
+
+--. Browser Prefixes
+	-webkit
+	-moz
+	-o
+	-ms
+
+--. CSS3 Selectors
+	selectivizr by Keith Clark http://selectivizr.com/
+
+01. CSS3 Basic (opacity, backgrounds, text effects, rounded corners)
+
+02. CSS3 Transforms 2D (rotate, translate, scale, skew, matrix)
+	Transformie by Paul Bakaus http://transformie.com/index.html
+
+03. CSS3 Transforms 3D (scale3d, translate3d, perspective, backface)
+
+04. CSS3 Transitions (animations between two states)
+
+05. CSS3 Animations (animations with keyframes)
+
+06. font-face
+	http://code.google.com/webfonts
+	http://www.fontsquirrel.com
+	http://typekit.com/libraries
+
+Color (HSL & RGB)
+media queries
+http://css3please.com/
+
+
+
+Chrome Frame
+	html5labs.interoperabilitybridges.com
+	ie.microsoft.com/testdrive
+
+Enhances to Visual Studio
+	IntelliSense & Schema Validation to VS 2008/2010 pre SP1
+
+-->
+
+        <div class="slide" id="whoAmI">
+          <header>Questions?</header>
+          <section>
+            <h3>Elijah Manor</h3>
+
+            <ul>
+              <li>ASP.NET MVP, ASPInsider</li>
+              <li>Senior Architect at appendTo</li>
+            </ul>
+
+            <h3>Referenced Sources</h3>
+
+            <ul>
+              <li>AmplifyJS - http://bit.ly/amplifyjs</li>
+            </ul>
+
+            <h3>Contact Information</h3>
+
+            <ul>
+              <li>elijah.manor@gmail.com</li>
+              <li>http://twitter.com/elijahmanor</li>
+              <li>http://gplus.to/elijahmanor</li>
+            </ul>
+
+          </section>
+          <aside class="note">
+            <section>
+            </section>
+          </aside>
+        </div>
+
+      </div> <!-- slides -->
+      <div id="speaker-note" class="invisible" style="display: none;">
+      </div> <!-- speaker note -->
+      <aside id="help" class="sidebar invisible" style="display: hidden;">
+        <table>
+          <caption>Help</caption>
+          <tbody>
+            <tr>
+              <th>Move Around</th>
+              <td>&larr;&nbsp;&rarr;</td>
+            </tr>
+            <tr>
+              <th>Source File</th>
+              <td>s</td>
+            </tr>
+            <tr>
+              <th>Change Theme</th>
+              <td>t</td>
+            </tr>
+            <tr>
+              <th>Syntax Highlight</th>
+              <td>h</td>
+            </tr>
+            <tr>
+              <th>Speaker Notes</th>
+              <td>n</td>
+            </tr>
+            <tr>
+              <th>Toggle 3D</th>
+              <td>3</td>
+            </tr>
+            <tr>
+              <th>Help</th>
+              <td>0</td>
+            </tr>
+          </tbody>
+        </table>
+      </aside>
+    </div> <!-- presentation -->
+
+    <script src="src/prettify/prettify.js" onload="prettyPrint();" defer></script>
+    <script src="js/utils.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+  </body>
+</html>

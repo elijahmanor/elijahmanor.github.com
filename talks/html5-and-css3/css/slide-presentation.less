@@ -1,0 +1,232 @@
+/**
+ * Copyright 2011 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@stage-width: 1150px;
+@stage-height: 675px;
+
+.box-sizing (@type: border-box) {
+  -webkit-box-sizing: @type;
+  -moz-box-sizing: @type;
+  box-sizing: @type;
+}
+
+.background-size(@val) {
+  -webkit-background-size: @val;
+  -moz-background-size: @val;
+  -o-background-size: @val;
+  background-size: @val;
+}
+
+.display-box() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -o-box;
+  display: -ms-box;
+  display: box;
+}
+
+.box-pack(@val: center) {
+  -webkit-box-pack: @val;
+  -moz-box-pack: @val;
+  -o-box-pack: @val;
+  box-pack: @val;
+}
+
+.box-align(@val: center) {
+  -webkit-box-align: @val;
+  -moz-box-align: @val;
+  -o-box-align: @val;
+  box-align: @val;
+}
+
+.box-orient(@val: horizontal) {
+  -webkit-box-orient: @val;
+  -moz-box-orient: @val;
+  -o-box-orient: @val;
+  box-orient: @val;
+}
+
+.transition(@val: none) {
+  -webkit-transition: @val;
+  -moz-transition: @val;
+  transition: @val;
+}
+
+.transform(@val: none) {
+  -webkit-transform: @val;
+  -moz-transform: @val;
+  -o-transform: @val;
+  transform: @val;
+}
+
+/* ========================================================================== */
+
+body, html, .background, #stage, #background {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body, html, #background {
+  background-color: #fff;
+}
+body {
+  overflow: hidden;
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  .display-box;
+  .box-pack(center);
+  .box-align(center);
+}
+.background, #stage {
+  background-color: transparent;
+}
+.background {
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  .background-size(cover);
+  .transition(opacity 1s ease-in-out);
+
+  &.last {
+    z-index: 2;
+    opacity: 1;
+  }
+
+  &.active {
+    z-index: 3;
+    opacity: 1;
+    display: block;
+  }
+}
+
+#stage {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  -webkit-transform-style: e("preserve-3d");
+  -moz-transform-style: e("preserve-3d");
+  z-index: 8;
+  width: @stage-width;
+  height: @stage-height;
+}
+
+.slide {
+  width: @stage-width;
+  height: @stage-height;
+  position: absolute;
+  .box-sizing;
+  border-radius: 40px;
+  background: #fff;
+  padding: 20px 40px;
+  -webkit-transition: -webkit-transform 0.8s ease-in-out, opacity 1.2s ease-in-out;
+  -moz-transition: -moz-transform 0.8s ease-in-out, opacity 1.2s ease-in-out;
+  box-shadow: 0 3px 15px #000;
+  font: 30px Arial;
+
+  &.current {
+    opacity: 1;
+    z-index: 9;
+    .transform(translateZ(-600px) rotateY(0deg) translateZ(600px));
+  }
+  &.past {
+    opacity: 0.0;
+    .transform(translateZ(-600px) rotateY(-90deg) translateZ(600px));
+  }
+  &.far-past {
+    opacity: 0;
+    .transform(translateZ(-600px) rotateY(-180deg) translateZ(600px));
+  }
+  &.future {
+    opacity: 0;
+    .transform(translateZ(-600px) rotateY(90deg) translateZ(600px));
+  }
+  &.far-future {
+    opacity: 0;
+    .transform(translateZ(-600px) rotateY(180deg) translateZ(600px));
+  }
+  &.transparent {
+    background: transparent;
+    color: #fff;
+    box-shadow: none;
+  }
+}
+
+#overlay {
+  z-index: 10;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font: 80px 'Lato', Arial;
+  color: #fff;
+  padding: 20px;
+  text-shadow: 0 5px 10px #000;
+  opacity: 0;
+  .transition(opacity 1.5s linear);
+}
+
+#background {
+  z-index: 7;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+iframe[data-src] {
+  width: 100%;
+  .box-sizing;
+  border: 0;
+}
+
+/*******************************************************************************
+ * TWEAKY STYLES
+ ******************************************************************************/
+.slide {
+  .box-orient(vertical);
+  padding-top: 30px;
+  overflow: hidden;
+
+  > section {
+    max-width: 85%;
+    margin: 20px 0;
+  }
+
+  > header {
+    position: absolute;
+    left: 40px;
+    top: 20px;
+  }
+}
+ul {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+}
+
+.centercontents {
+  .display-box;
+  .box-pack(center);
+  .box-align(center);
+}
+.centertext {
+  text-align: center;
+}
+.wide {
+  width: 100% !important;
+  max-width: 100% !important;
+  .box-sizing;
+}
