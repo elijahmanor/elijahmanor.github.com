@@ -623,9 +623,39 @@
 				Application Cache
 			</header>
 			<section>
+				<pre>&lt;html manifest="example.appcache"&gt;&lt;/html&gt;</pre>
+				<pre>
+CACHE MANIFEST
+# Version 2
+
+CACHE: # Explicitly cached after downloaded
+/favicon.ico
+/index.html
+/css/default.css
+/img/default.png
+/js/default.js
+
+NETWORK: # White-listed that require connection to server. Requests bypass cache
+/login.php
+/myapi
+http://api.twitter.com
+
+FALLBACK: # Provide fallback pages if resource inaccessible
+/main.py /static.html
+/img/large/ images/offline.jpg
+*.html /offline.html
+				</pre>
+				
+				<pre>
+window.applicationCache.status // UNCACHED, IDLE, CHECKING, DOWNLOADING, UPDATEREADY, OBSOLETE
+window.applicationCache.swapCache();
+var appCacheEvents = [ "cached", "checking", "downloading", "error", "noupdate", "obsolete", "progress", "updateready" ];
+$( window ).bind( appCacheEvents.join( " "), function( e ) {});
+				</pre>
 			</section>
 			<aside class="note">
 				<section>
+					<p>Sometimes you'll just see a <code>*</code> reference under the NETWORK section, which means all other resources require the user to be online.</p>
 				</section>
 			</aside>
 		</div>
@@ -742,7 +772,7 @@ localStorage.clear();
 var db = openDatabase( "HTML5", '1.0', "My Local Database", 5 * 1024 * 1024 );
 
 db.transaction( function ( tx ) {
-  tx.executeSql( "CREATE TABLE IF NOT EXISTS Tweets " + 
+  tx.executeSql( "CREATE TABLE IF NOT EXISTS Tweets " +
 	"( id real unique, tweet text )" );
 
   tx.executeSql( "INSERT INTO Tweets ( id, text ) VALUES ( ?, ? )",

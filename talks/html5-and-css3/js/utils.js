@@ -500,7 +500,7 @@
 
   // disable style theme stylesheets
   var linkEls = queryAll('link.theme');
-  var stylesheetPath = sessionStorage['theme'] || 'css/default.css';
+  var stylesheetPath = sessionStorage['theme'] || 'css/moon.css';
   linkEls.forEach(function(stylesheet) {
     stylesheet.disabled = !(stylesheet.href.indexOf(stylesheetPath) != -1);
   });
