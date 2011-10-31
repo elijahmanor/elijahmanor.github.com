@@ -601,3 +601,22 @@ video {
   background-color: #F3F3F3;
   border-right: 5px solid #987;
 }
+
+/* .slide section iframe, */
+.slide section object[data^="http"] {
+	-webkit-transform: scale(0.8);  
+	-moz-transform: scale(0.8);  
+	-o-transform: scale(0.8);  
+	transform: scale(0.8);  
+
+	-webkit-transform-origin: 15% 50%;
+	-moz-transform-origin: 15% 50%;
+	-o-transform-origin: 15% 50%;
+	transform-origin: 15% 50%;
+
+	height:740px;
+	width:980px;
+
+	top: -65px;
+	position: relative;
+}

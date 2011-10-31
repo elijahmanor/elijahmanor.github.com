@@ -342,6 +342,54 @@
 			</section>
 		</div>
 
+		<div class="slide" id="desktop-feature-breakdown">
+			<style>
+			</style>
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-connectivity-css3-device-graphics-multimedia-performance-semantics-storage.png" width="357" height="64" alt="HTML5 Powered with Connectivity / Realtime, CSS3 / Styling, Device Access, Graphics, 3D &amp; Effects, Multimedia, Performance &amp; Integration, Semantics, and Offline &amp; Storage" title="HTML5 Powered with Connectivity / Realtime, CSS3 / Styling, Device Access, Graphics, 3D &amp; Effects, Multimedia, Performance &amp; Integration, Semantics, and Offline &amp; Storage">
+				</a>
+				Browser Support
+			</header>
+			<section>
+				<object data="http://html5readiness.com/">
+					<object data="static/images/html5rnss.png"></object>
+				</object>				
+			</section>
+		</div>
+
+		<div class="slide" id="mobile-feature-breakdown">
+			<style>
+			#mobile-feature-breakdown.slide section iframe, 
+			#mobile-feature-breakdown.slide section object[data^="http"] {
+				-webkit-transform: scale(0.7);  
+				-moz-transform: scale(0.7);  
+				-o-transform: scale(0.7);  
+				transform: scale(0.7);  
+				
+				-webkit-transform-origin: 5% 50%;
+				-moz-transform-origin: 5% 50%;
+				-o-transform-origin: 5% 50%;
+				transform-origin: 5% 50%;
+				height: 840px;
+				width: 1120px;
+				top: -93px;
+				position: relative;
+				-webkit-transform-origin-x: 5%;
+				-webkit-transform-origin-y: 50%;
+			}			
+			</style>
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-connectivity-css3-device-graphics-multimedia-performance-semantics-storage.png" width="357" height="64" alt="HTML5 Powered with Connectivity / Realtime, CSS3 / Styling, Device Access, Graphics, 3D &amp; Effects, Multimedia, Performance &amp; Integration, Semantics, and Offline &amp; Storage" title="HTML5 Powered with Connectivity / Realtime, CSS3 / Styling, Device Access, Graphics, 3D &amp; Effects, Multimedia, Performance &amp; Integration, Semantics, and Offline &amp; Storage">
+				</a>
+				Mobile Support
+			</header>
+			<section>
+				<object data="http://mobilehtml5.org/"></object>				
+			</section>
+		</div>
+		
 		<div class="slide transitionSlide" id="get-started-title">
 			<section class="middle">
 				<h2>How Do I Get Started?</h2>
@@ -369,19 +417,19 @@
 			</header>
 			<section>
 				<pre>
-&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;!DOCTYPE html <b>PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"</b>&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
-	&lt;meta http-equiv="Content-Type"
-		content="text/html; charset=utf-8"&gt;
-	&lt;link rel="stylesheet" href="site.css" type="text/css" /&gt;
-	&lt;style type="text/css"&gt;
+	&lt;meta <b>http-equiv="Content-Type"
+		content="text/html; charset=utf-8"</b>&gt;
+	&lt;link rel="stylesheet" href="site.css" <b>type="text/css"</b> /&gt;
+	&lt;style <b>type="text/css"</b>&gt;
   		h1 { color: red; }
 	&lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-	&lt;script type="text/javascript" src="common.js"&gt;&lt;/script&gt;
+	&lt;script <b>type="text/javascript"</b> src="common.js"&gt;&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 				</pre>
@@ -423,6 +471,10 @@
 		</div>
 
 		<div class="slide" id="semantics-chart-class-markup">
+			<style>
+				#semantics-chart-class-markup .chart { position: relative; top: -75px; }
+				/* #semantics-chart-class-markup small { position: relative; top: -114px; } */
+			</style>
 			<script src="https://www.google.com/jsapi"></script>
 			<script>
 				var classFrequency = {
@@ -465,9 +517,9 @@
 					var chart = new google.visualization.BarChart( document.getElementById( 'chart_div' ) );
 					chart.draw( data, {
 						width: 850,
-						height: 525,
+						height: 600,
 						title: 'Opera MAMA Study: Class Frequency',
-						backgroundColor: "white", // "transparent",
+						backgroundColor: "transparent", // "white",
 						vAxis: { title: 'Class Name', titleTextStyle: { color: 'red' } },
 						hAxis: { title: 'Frequency based on 3.5 million URLs', titleTextStyle: { color: 'red' } }
 					});
@@ -480,9 +532,11 @@
 				MAMA Case Study: Class Names
 			</header>
 			<section>
-				<div id="chart_div"></div>
+				<div class="chart">
+					<div id="chart_div"></div>
 
-				<small><a href="http://devfiles.myopera.com/articles/572/classlist-url.htm">http://devfiles.myopera.com/articles/572/classlist-url.htm</a></small>
+					<small><a href="http://devfiles.myopera.com/articles/572/classlist-url.htm">http://devfiles.myopera.com/articles/572/classlist-url.htm</a></small>
+				</div>
 			</section>
 			<aside class="note">
 				<section>
@@ -494,6 +548,9 @@
 		</div>
 
 		<div class="slide" id="semantics-chart-id-markup">
+			<style>
+				#semantics-chart-id-markup .chart { position: relative; top: -75px; }
+			</style>
 			<script src="https://www.google.com/jsapi"></script>
 			<script>
 				var idFrequency = {
@@ -535,9 +592,9 @@
 					var chart = new google.visualization.BarChart( document.getElementById( 'chart_div2' ) );
 					chart.draw( data, {
 						width: 850,
-						height: 525,
+						height: 600,
 						title: 'Opera MAMA Study: ID Frequency',
-						backgroundColor: "white", // "transparent",
+						backgroundColor: "transparent", // "white",
 						vAxis: { title: 'ID Name', titleTextStyle: { color: 'red' } },
 						hAxis: { title: 'Frequency based on 3.5 million URLs', titleTextStyle: { color: 'red' } }
 					});
@@ -550,8 +607,10 @@
 				MAMA Case Study: ID Names
 			</header>
 			<section>
-				<div id="chart_div2"></div>
-				<small><a href="http://devfiles.myopera.com/articles/572/idlist-url.htm" target="_blank">http://devfiles.myopera.com/articles/572/idlist-url.htm</a></small>
+				<div class="chart">				
+					<div id="chart_div2"></div>
+					<small><a href="http://devfiles.myopera.com/articles/572/idlist-url.htm" target="_blank">http://devfiles.myopera.com/articles/572/idlist-url.htm</a></small>
+				</div>
 			</section>
 			<aside class="note">
 				<section>
@@ -1088,9 +1147,6 @@ How do I start!?!
 	& now!?!...
 
 
-
-
-http://html5readiness.com/
 http://caniuse.com/
 http://mobilehtml5.org/
 http://html5boilerplate.com/
