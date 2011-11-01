@@ -684,37 +684,50 @@
 			<section>
 				<pre>&lt;html manifest="example.appcache"&gt;&lt;/html&gt;</pre>
 				<pre>
-CACHE MANIFEST
-# Version 2
+<b>CACHE MANIFEST</b>
 
-CACHE: # Explicitly cached after downloaded
-/favicon.ico
-/index.html
-/css/default.css
-/img/default.png
-/js/default.js
+<b># Version 2</b>
 
-NETWORK: # White-listed that require connection to server. Requests bypass cache
-/login.php
-/myapi
-http://api.twitter.com
+<b>CACHE:</b>       # Explicitly cached after downloaded
+/index.html  # ... Include css, img, js, favicon, html files here
 
-FALLBACK: # Provide fallback pages if resource inaccessible
-/main.py /static.html
-/img/large/ images/offline.jpg
-*.html /offline.html
-				</pre>
+<b>NETWORK:</b>     # White-listed that require connection to server. Requests bypass cache
+/login.aspx  # Maps to a file
+/server      # Maps to a folder
+
+<b>FALLBACK:</b>    # Provide fallback pages if resource inaccessible
+/dashboard.aspx /static.html    # Maps to a file
+/img/profile/ /img/offline.jpg  # Maps a folder to a file</pre>
 				
 				<pre>
-window.applicationCache.status // UNCACHED, IDLE, CHECKING, DOWNLOADING, UPDATEREADY, OBSOLETE
-window.applicationCache.swapCache();
-var appCacheEvents = [ "cached", "checking", "downloading", "error", "noupdate", "obsolete", "progress", "updateready" ];
-$( window ).bind( appCacheEvents.join( " "), function( e ) {});
-				</pre>
+// UNCACHED, IDLE, CHECKING, DOWNLOADING, UPDATEREADY, OBSOLETE
+window.<b>applicationCache.status</b>; 
+
+window.<b>applicationCache.update()</b>;     // Attempts to update cache if manifest changed
+window.<b>applicationCache.swapCache()</b>;  // Swaps out the old cache for the new one
+
+var appCacheEvents = [ <b>"cached"</b>, <b>"checking"</b>, <b>"downloading"</b>, <b>"error"</b>, <b>"noupdate"</b>, 
+	<b>"obsolete"</b>, <b>"progress"</b>, <b>"updateready"</b> ];
+$( window ).bind( appCacheEvents.join( " " ), function( e ) {} );</pre>
+				
 			</section>
 			<aside class="note">
 				<section>
 					<p>Sometimes you'll just see a <code>*</code> reference under the NETWORK section, which means all other resources require the user to be online.</p>
+					<pre>
+window.<b>navigator.onLine</b>;
+$( window ).bind( <b>"offline"</b>, function( e ) { console.log( "offline" ); } );
+$( window ).bind( <b>"online"</b>,  function( e ) { console.log( "online" );  } );</pre>
+					
+					<p>Even if you call <code>window.applicationCache.swapCache()</code>, any new content will only show up on the next browser refresh.</p>
+					
+					<pre>
+$( window ).bind( "updateready", function( e ) {
+	window.applicationCache.swapCache();
+	if ( confirm( "New Version Available. Update?") ) {
+		window.location.reload();
+	}
+});</pre>
 				</section>
 			</aside>
 		</div>
@@ -969,6 +982,12 @@ db.transaction( function ( tx ) {
 			</section>
 			<aside class="note">
 				<section>
+					<blockquote cite="http://www.html5rocks.com/en/tutorials/indexeddb/todo/">
+						<p>On November 18, 2010, the W3C announced that Web SQL database is a deprecated specification. This is a recommendation for web developers to no longer use the technology as effectively the spec will receive no new updates and browser vendors aren't encouraged to support this technology.</p>
+
+						<p>Many major browsers including Chrome, Safari, Opera and nearly all Webkit based mobile devices support WebSQL and will likely maintain support for the foreseeable future.</p>
+					</blockquote>
+					<small><a href="http://www.html5rocks.com/en/tutorials/indexeddb/todo/">http://www.html5rocks.com/en/tutorials/indexeddb/todo/</a></small>					
 				</section>
 			</aside>
 		</div>
@@ -981,9 +1000,53 @@ db.transaction( function ( tx ) {
 				Indexed DB
 			</header>
 			<section>
+				<!-- http://jsfiddle.net/NS8rV/ -->
+				<pre>
+var tweet = {
+    open: function( callback ) {
+        var request = window.IndexedDB.open( "HTML5 IndexDB" ),
+            version = "1.0";
+
+        request.onsuccess = function( e ) {
+            var db = tweet.db = e.target.result;
+            db.createObjectStore( "tweet", { keyPath: "id" } );
+            callback.apply( this, arguments );
+        };
+    },
+    add: function( id, tweet ) {
+        var trans = this.db.transaction(["tweet"], IDBTransaction.READ_WRITE, 0),
+            store = trans.objectStore( "tweet" ),
+            request = store.add({ "id": id, "tweet": tweet });
+    },
+    getList: function() {
+        var trans = this.db.transaction(["tweet"], IDBTransaction.READ_WRITE, 0),
+            store = trans.objectStore( "tweet" ),
+            keyRange = IDBKeyRange.lowerBound( 0 ),
+            cursorRequest = store.openCursor( keyRange );
+
+        cursorRequest.onsuccess = function( e ) {
+            var result = e.target.result;
+            if ( result ) { console.log( result.value ); result.continue(); }
+        };
+    }
+};</pre>
 			</section>
 			<aside class="note">
 				<section>
+					<p>You would normally also check for the version number and also check if the store was already created.</p>
+					<pre>
+if ( db.version !== version ) {  
+    var versionRequest = db.setVersion( version );
+    versionRequest.onsuccess = function( e ) {
+        !db.objectStoreNames.contains("tweet") && db.createObjectStore("tweet",{keyPath:"id"});
+    }
+}</pre>
+					<p><code>window.indexedDB</code> is not implemented yet. Feature Detect &amp; polyfill using <code>mozIndexedDB</code> and <code>webkitIndexedDB</code></p>
+					<pre>
+window.indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB;
+if ( "webkitIndexedDB" in window ) {
+    IDBTransaction = window.webkitIDBTransaction; IDBKeyRange = window.webkitIDBKeyRange;
+}</pre>
 				</section>
 			</aside>
 		</div>
