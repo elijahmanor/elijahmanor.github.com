@@ -1060,15 +1060,136 @@ if ( "webkitIndexedDB" in window ) {
 			<span class="counter"></span>
 		</div>
 
-		<div class="slide" id="device-access">
+<!-- 
+Geolocation API, Web Applications can present rich, device-aware features and experiences. Incredible device access innovations are being developed and implemented, from audio/video input access to microphones and cameras, to local data such as contacts & events, and even tilt orientation.
+DEVICE ACCESS
+	Geolocation API
+		Polyfill with IP lookup
+-->
+
+		<div class="slide" id="geolocation">
 			<header>
 				<a href="http://www.w3.org/html/logo/">
 					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-device.png" width="133" height="64" alt="HTML5 Powered with Device Access" title="HTML5 Powered with Device Access">
 				</a>
-				Device Access
+				Geolocation API
 			</header>
 			<section>
+				<!-- http://jsfiddle.net/QRGT9/ -->
+				<pre>
+var errors = {
+    1: "Permission denied",
+    2: "Position unavailable",
+    3: "Request timeout"
+};
+
+if ( navigator.geolocation ) {
+    navigator.geolocation.getCurrentPosition(
+        function( position ) {
+            console.log( "lat: "  + position.coords.latitude + ", " + 
+                         "long: " + position.coords.longitude );
+        },
+        function( error ) {
+            console.log( "error: " + errors[ error.code ] );
+        }, {
+            enableHighAccuracy: true,  // want best accuracy, but may take longer
+            timeout: 10 * 1000,        // maximum length of time to wait
+            maximumAge: 0              // maximum age of cached position
+        }
+    );
+}
+else {
+    console.log( "Geolocation not available" );
+}</pre>
+				<p class="output"></p>
 			</section>
+			<script>
+				$( function() {
+					var errors = {
+						1: "Permission denied",
+						2: "Position unavailable",
+						3: "Request timeout"
+					};
+
+					if (navigator.geolocation) {
+						navigator.geolocation.getCurrentPosition(
+							function( position ) {
+								$( "#geolocation .output" ).html( JSON.stringify( position, null, "\t" ) );
+							},
+							function( error ) {
+								$( "#geolocation .output" ).html( "error: " + errors[ error.code ] );
+							}, {
+								enableHighAccuracy: true,  // want best accuracy, but may take longer
+								timeout: 10 * 1000,		   // maximum length of time to wait
+								maximumAge: 0			   // maximum age of cached position
+							}
+						);
+					}
+					else {
+						$( "#geolocation .output" ).html( "Geolocation not available" );
+					}
+				});
+			</script>
+			<aside class="note">
+				<section>
+					<p>TODO: Add note about watchPosition...</p>
+				</section>
+			</aside>
+		</div>
+
+		<div class="slide" id="device-orientation">
+			<style>
+				#device-orientation .demo {
+					position: absolute;
+					left: 317px;
+					top: 345px;
+				}
+				#device-orientation img.a, #device-orientation img.b, #device-orientation img.g {
+					position: absolute;
+					top: 0px; left: 0px;
+				}
+				#device-orientation img.a { opacity: 0.7; }
+				#device-orientation img.b { opacity: 0.5; }
+				#device-orientation img.g { opacity: 0.3; }
+				#device-orientation .output { top: 100px; }
+			</style>
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-device.png" width="133" height="64" alt="HTML5 Powered with Device Access" title="HTML5 Powered with Device Access">
+				</a>
+				Tilt Orientation
+			</header>
+			<section>
+				<pre>
+$( window ).bind( "deviceorientation MozOrientation", function( event ) {
+    event = event.originalEvent;
+
+    var a = event.alpha, // <span class="alpha">0</span>
+        b = event.beta,  // <span class="beta">0</span>
+        g = event.gamma; // <span class="gamma">0</span>
+});</pre>
+				<div class="demo">
+					<img class="a" src="./images/HTML5_Badge_256.png" />
+					<img class="b" src="./images/HTML5_Badge_256.png" />
+					<img class="g" src="./images/HTML5_Badge_256.png" />
+				</div>
+				<p class="output"></p>
+			</section>
+			<script>
+				$( function() {
+					$( window ).bind( "deviceorientation MozOrientation", function( event ) {
+						event = event.originalEvent;
+						$( "#device-orientation .alpha" ).html( event.alpha );
+						$( "#device-orientation .beta" ).html( event.beta );
+						$( "#device-orientation .gamma" ).html( event.gamma );
+						
+						var example = $( "#device-orientation" ),
+							a = example.find( "img.a" ),
+							b = example.find( "img.b" ).css({ top: event.beta, left: event.gamma }),
+							g = example.find( "img.g" ).css({ top: event.beta * 2, left: event.gamma * 2 });
+					});
+				});
+			</script>
 			<aside class="note">
 				<section>
 				</section>
@@ -1228,10 +1349,6 @@ Adoption Strategies
 		http://www.slideshare.net/nzakas/progressive-enhancement-20-conference-agnostic
 
 SEMANTICS
-
-
-
-
 	HTML5 Forms
 		Elements
 			meter, progress, output, keygen
@@ -1261,18 +1378,6 @@ OFFLINE & STORAGE
 		Replacement for Web SQL Storage
 	File API
 
-DEVICE ACCESS
-	Geolocation API
-		Polyfill with IP lookup
-	Audio / Video
-	Microphones
-	Camera
-	Tilt Orientation
-		window.addEventListener('deviceorientation', function(event) {
-		  var a = event.alpha; //
-		  var b = event.beta;  //-2.2814938370474303
-		  var g = event.gamma; //-3.4260920461605613
-		}, false);
 
 
 CONNECTIVITY
