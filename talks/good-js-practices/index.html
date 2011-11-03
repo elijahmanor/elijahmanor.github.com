@@ -1,41 +1,568 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <!--
-  Copyright 2011 Google Inc.
-
+  Copyright 2010 Google Inc.
+ 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
-
+ 
      http://www.apache.org/licenses/LICENSE-2.0
-
+ 
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
-
+ 
   Original slides: Marcin Wichary (mwichary@google.com)
-  Modifications: Chrome DevRel Team (chrome-devrel@googlegroups.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
                  Alex Russell (slightlyoff@chromium.org)
                  Brad Neuberg
--->
-<html manifest="cache.appcache">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
-    <title>HTML5 Presentation</title>
-    <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono" rel="stylesheet" type="text/css" />
-    <link id="prettify-link" href="src/prettify/prettify.css" rel="stylesheet" disabled />
-    <link href="css/moon.css" class="theme" rel="stylesheet" />
-    <link href="css/sand.css" class="theme" rel="stylesheet" />
-    <link href="css/sea_wave.css" class="theme" rel="stylesheet" />
-    <link href="css/default.css" class="theme" rel="stylesheet" media="screen"  />
-    <link href="css/common.css" rel="stylesheet" media="screen" />
-  </head>
-  <body>
+--> 
+<html manifest="cache.manifest"> 
+  <head> 
+    <meta charset="utf-8" /> 
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" /> 
+    <title>HTML5 Presentation</title> 
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono" rel="stylesheet" type="text/css" /> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <style> 
+      body {
+        font: 16px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0px; top: 0px;
+      }
+ 
+      .presentation {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0px;
+        top: 0px;
+        display: block;
+        overflow: hidden;
+        background: #778;
+      }
+ 
+      .slides {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        display: block;
+        -webkit-transition: -webkit-transform 1s ease-in-out;
+        -moz-transition: -moz-transform 1s ease-in-out;
+        -o-transition: -o-transform 1s ease-in-out;
+        transition: transform 1s ease-in-out;
+      }
+ 
+      .slide {
+        display: none;
+        position: absolute;
+        overflow: hidden;
+        width: 900px;
+        height: 700px;
+        left: 50%;
+        top: 50%;
+        margin-top: -350px;
+        background-color: #eee;
+        background: -webkit-gradient(linear, left bottom, left top, from(#bbd), to(#fff));
+        background: -moz-linear-gradient(bottom, #bbd, #fff);
+        background: linear-gradient(bottom, #bbd, #fff);
+        -webkit-transition: margin 0.25s ease-in-out;
+        -moz-transition: margin 0.25s ease-in-out;
+        -o-transition: margin 0.25s ease-in-out;
+        transition: margin 0.25s ease-in-out;
+      }
+ 
+      .slide:nth-child(even) {
+        -moz-border-radius: 20px 0;
+        -khtml-border-radius: 20px 0;
+        border-radius: 20px 0; /* includes Opera 10.5+ */
+        -webkit-border-top-left-radius: 20px;
+        -webkit-border-bottom-right-radius: 20px;
+      }
+ 
+      .slide:nth-child(odd) {
+        -moz-border-radius: 0 20px;
+        -khtml-border-radius: 0 20px;
+        border-radius: 0 20px;
+        -webkit-border-top-right-radius: 20px;
+        -webkit-border-bottom-left-radius: 20px;
+      }
+ 
+      .slide p, .slide textarea {
+        font-size: 20px;
+      }
+ 
+      .slide .counter {
+        color: #999999;
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
+        display: block;
+        font-size: 12px;
+      }
+ 
+      .slide.title > .counter,
+      .slide.segue > .counter,
+      .slide.mainTitle > .counter {
+        display: none;
+      }
+ 
+      .force-render {
+        display: block;
+        visibility: hidden;
+      }
+      
+      .slide.far-past {
+        display: block;
+        margin-left: -2400px;
+      }
+      
+      .slide.past {
+        visibility: visible;
+        display: block;
+        margin-left: -1400px;
+      }
+      
+      .slide.current {
+        visibility: visible;
+        display: block;
+        margin-left: -450px;
+      }
+      
+      .slide.future {
+        visibility: visible;
+        display: block;
+        margin-left: 500px;
+      }
+      
+      .slide.far-future {
+        display: block;
+        margin-left: 1500px;
+      }
+ 
+      body.three-d div.presentation {
+        /*background: -webkit-gradient(radial, 50% 50%, 10, 50% 50%, 1000, from(#333), to(#000));        */
+      }
+      
+      body.three-d div.slides {
+        -webkit-transform: translateX(50px) scale(0.8) rotateY(10deg);
+        -moz-transform: translateX(50px) scale(0.8) rotateY(10deg);
+        -o-transform: translateX(50px) scale(0.8) rotateY(10deg);
+        transform: translateX(50px) scale(0.8) rotateY(10deg);
+      }
+      
+      /* Content */
+      /*
+        Font sizes:
+        header h1 - 50px
+        h2, p - 20px
+        default, pre, input - 16px
+      */
+      
+      @font-face { font-family: 'Junction'; src: url(src/Junction02.otf); }
+      @font-face { font-family: 'LeagueGothic'; src: url(src/LeagueGothic.otf); }
+      
+      header {
+        font-family: 'Droid Sans';
+        font-weight: normal;
+        letter-spacing: -.05em;
+        color: black;
+        text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
+        position: absolute;
+        left: 30px;
+        top: 25px;
+        margin: 0;
+        padding: 0;
+        font-size: 50px;
+      }
+      
+      h1 {
+        font-size: 100%;
+        display: inline;
+      	font-weight: normal;
+      	padding: 0;
+      	margin: 0;
+      }
+      
+      h2 {
+        font-family: 'Droid Sans';
+        color: black;
+        font-size: 20px;
+        padding: 0;
+        margin: 15px 0 5px 0;
+      }
+            
+      h2:first-child {
+        margin-top: 0;
+      }
+ 
+		h3 {font-size: 25px;}
+
+      section, footer {
+        font-family: 'Droid Sans';
+        color: #3f3f3f;
+        text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
+        margin: 100px 30px 0;
+        display: block;
+        overflow: hidden;
+      }
+      
+      footer {
+        font-size: 12px;
+        margin: 20px 0 0 30px;
+      }
+ 
+      a {
+        color: inherit;
+        display: inline-block;
+        text-decoration: none;
+        line-height: 110%;
+        border-bottom: 2px solid #3f3f3f;
+      }
+ 
+      .gmap a {
+        line-height: 100%;
+        border-bottom: none;
+      }
+ 
+      li {
+        /*list-style: none;*/
+        padding: 10px 0;
+		font-size: 25px;
+      }
+ 
+      button {
+        font-size: 20px;
+      }
+      
+      pre button {
+        margin: 2px;
+      }
+      
+      .summary {
+        font-size: 30px;
+      }
+ 
+      .bullets {
+        font-size: 40px;
+      }
+      
+      section.left {
+        float: left;
+        width: 390px;
+      }
+      
+      section.small {
+        font-size: 24px;
+      }
+      
+      section.small ul {
+        margin: 0 0 0 15px;
+        padding: 0;
+      }
+      
+      section.small li {
+        padding-bottom: 0;
+      }
+            
+      section.middle {
+        line-height: 68px;
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+        height: 700px;
+        width: 900px;
+      }
+
+      
+      pre {
+        text-align: left;
+        font-family: 'Droid Sans Mono', Courier;        
+        padding: 10px 20px;
+        background: rgba(255, 0, 0, 0.05);
+        -webkit-border-radius: 8px;
+        -khtml-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 0, 0, 0.2);
+      }
+      
+      pre select {
+        font-family: Monaco, Courier;
+        border: 1px solid #c61800;
+      }
+        
+      input {
+        font-size: 16px;
+        margin-right: 10px;
+        font-family: Helvetica;
+        padding: 3px;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      
+      button {
+        margin: 20px 10px 0 0;
+        font-family: Verdana;
+      }
+      
+      button.large {
+        font-size: 32px;
+      }
+        
+      pre b {
+        font-weight: normal;
+        color: #c61800;
+        text-shadow: #c61800 0 0 1px;
+        /*letter-spacing: -1px;*/
+      }
+      pre em {
+        font-weight: normal;
+        font-style: normal;
+        color: #18a600;
+        text-shadow: #18a600 0 0 1px;
+      }
+      pre input[type="range"] {
+        height: 6px;
+        cursor: pointer;
+        width: auto;
+      }
+      
+      div.example {
+        display: block;
+        padding: 10px 20px;
+        color: black;
+        background: rgba(255, 255, 255, 0.4);
+        -webkit-border-radius: 8px;
+        -khtml-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+      }
+      
+      video {
+        -moz-border-radius: 8px;
+        -khtml-border-radius: 8px;
+        -webkit-border-radius: 8px;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+      }
+      
+      .css,
+      .js,
+      .html,
+      .key {
+        font-family: 'Droid Sans';
+        color: black;
+        display: inline-block;
+        padding: 6px 10px 3px 10px;
+        font-size: 25px;
+        line-height: 30px;
+        text-shadow: none;
+        letter-spacing: 0;
+        bottom: 10px;
+        position: relative;
+        -moz-border-radius: 10px;
+        -khtml-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        background: white;
+        box-shadow: rgba(0, 0, 0, 0.1) 0 2px 5px;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 5px;
+        -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 5px;
+        -o-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 5px;
+      }
+      
+      .key { font-family: Arial; }
+      
+      :not(header) > .css,
+      :not(header) > .js,
+      :not(header) > .html,
+      :not(header) > .key {
+        margin: 0 5px;
+        bottom: 4px;
+      }
+      
+      .css {
+        background: -webkit-gradient(linear, left top, left bottom, from(#ff4), to(#ffa));
+        background-color: #ff4;
+        background: -moz-linear-gradient(left top, #ff4, #ffa);
+      }
+      .js {
+        background: -webkit-gradient(linear, left top, left bottom, from(#4f4), to(#afa));
+        background-color: #4f4;
+        background: -moz-linear-gradient(left top, #4f4, #afa);
+      }
+      .html {
+        background: -webkit-gradient(linear, left top, left bottom, from(#e88), to(#fee));
+        background-color: #e88;
+        background: -moz-linear-gradient(left top, #e88, #fee);
+      }
+ 
+      .two-column {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+      }
+      
+      .summary li::before, .bullets li::before {
+        content: '· ';
+      }
+ 
+      .stroke {
+        -webkit-text-stroke-color: red;
+        -webkit-text-stroke-width: 1px;
+      } /* currently webkit-only */
+      
+      .center {
+        text-align: center;
+      }
+      
+      .formula {
+        font-size: 50px;
+      }
+      
+      #presentation-counter {
+        color: #ccc;
+        font-size: 100px;
+        letter-spacing: 1px;
+        position: absolute;
+        top: 40%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+      }
+      
+      .hsl-value {
+        display: inline-block;
+        width: 50px;
+      }
+
+	.slide,
+	.boxcenter {
+	  -webkit-box-pack: center;
+	  -moz-box-pack: center;
+	  box-pack: center;
+	}
 	
-<!--
+
+	/*.slide section iframe,*/ .slide section object[data^="http"] {
+	  -webkit-transform: scale(0.8);  
+	  -moz-transform: scale(0.8);  
+	  -o-transform: scale(0.8);  
+	  transform: scale(0.8);  
+
+	  -webkit-transform-origin: 15% 30%;
+	  -moz-transform-origin: 15% 30%;
+	  -o-transform-origin: 15% 30%;
+	  transform-origin: 15% 30%;
+
+	  height:740px;
+	  width:980px;
+	}
+
+	.slide section iframe {
+		background-color: white;
+	}
+	.meframes { 
+	  margin-top: 100px;
+	}
+
+	html body .slide .meframes iframe { 
+
+	  -webkit-transform: scale(0.45);  
+	  -moz-transform: scale(0.45);  
+	  -o-transform: scale(0.45);  
+	  transform: scale(0.45);  
+
+	  -webkit-transform-origin: 0% 0%;
+	  -moz-transform-origin: 0% 0%;
+	  -o-transform-origin: 0% 0%;
+	  transform-origin: 0% 0%;
+	}
+	.meframes div {
+
+	  float: left;
+	  overflow:hidden;
+	  width: 420px;
+	  height: 300px;
+	}	
+	
+	.slide,
+	.boxcenter {
+	  -webkit-box-pack: center;
+	  -moz-box-pack: center;
+	  box-pack: center;
+	}
+	
+	.whoami td {
+		font-size: 24px; 
+		text-shadow: none; 
+	}
+	
+    .middle h2 {
+      color: black;
+      font-size: 72px;
+	  line-height: 100px;
+     }	
+
+     .mixLogo {
+     margin: auto;
+     padding-bottom: 30px;
+   }
+    </style> 
+    
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script> 
+  </head> 
+  <body> 
+    <div class="presentation"> 
+      <div id="presentation-counter"></div> 
+      <div class="slides"> 
+        <div class="slide"> 
+          <style> 
+            .landing p {
+              font-size: 35px;
+            }
+            #disclaimer-message {
+              font-size: 20px;
+            }
+          </style> 
+          <section class="middle landing"> 
+            <p>This presentation is an HTML5 website</p> 
+            <p>Press <span class="key">&rarr;</span> key to advance.</p> 
+            <p>Zoom in/out: <span class="key">Ctrl or Command</span> + <span class="key">+/-</span></p> 
+            <p id="disclaimer-message">Having issues seeing the presentation? Read the <a href="disclaimer.html">disclaimer</a></p> 
+          </section> 
+        </div> 
+                
+        <div class="slide"> 
+          <style> 
+            .intro hgroup h1, .intro hgroup h2 {
+              color: black;
+            }
+            .intro hgroup h1 {
+              letter-spacing: -2px;
+              font-size: 96px;
+			  line-height: 64px;
+            }
+            .intro hgroup h2 {
+              margin-top: 15px;
+              font-size: 40px;
+              letter-spacing: -1px;
+    	      line-height: 52px;
+            }
+          </style> 
           <section class="middle intro"> 
             <div class="mixLogo"><img src="http://dl.dropbox.com/u/200135/talks/images/MIX11_logo_rgb.png" /></div><hgroup> 
               <h1> 
@@ -48,14 +575,44 @@
             <p>*Concepts also apply to other Classical Languages (Java, C++, etc...)</p> 
          </section> 
         </div> 
+ 
+        <div class="slide"> 
+	      <style> 
+
+          </style> 
+          <header><h1>Who Am I?</h1></header> 
+          <section class="middle intro"> 
+            <h2><span>Elijah Manor</span></h2> 
+			<p class="whoami" style="margin-top: 45px; line-height: 22px;">
+				<center>
+					<table class="whoami" style="width: 75%; margin: clear;">
+						<tr>
+							<td style="text-align: left;">Microsoft MVP ASP.NET</td>
+							<td style="text-align: right;">elijah.manor@gmail.com</td>
+						</tr>
+						<tr>
+							<td style="text-align: left;">ASPInsiders</td>
+							<td style="text-align: right;">http://elijahmanor.com</td>
+						</tr>
+						<tr>
+							<td style="text-align: left;">.appendTo()</td>
+							<td style="text-align: right;">http://twitter.com/elijahmanor</td>
+						</tr>
+					</table>
+				</center>
+            </p>
+          </section> 
+        </div>
 
 		<div class="slide transitionSlide"> 
 		 <header>Enterprise jQuery</header> 
 		 <section class="flex hbox boxcenter"> 
-		     <object data="http://enterprisejquery.com/"></object> 
+		     <!-- <object data="http://enterprisejquery.com/"></object> -->
+		     <iframe style="width: 100%; height: 500px" src="http://enterprisejquery.com/"></iframe>
 		 </section> 
 		</div>
 		
+		<!-- BEGIN ETM: Not Understanding Fasle-y Values -->
         <div class="slide"> 
           <section class="middle"> 
             <h2>Not Understanding <br/>False-y Values</h2> 
@@ -68,7 +625,9 @@
 			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/789Rt/1/embedded/js,result/presentation/"></iframe>
           </section> 
         </div> 
+		<!-- END ETM: Not Understanding Fasle-y Values -->
 
+		<!-- BEGIN ETM: Not Testing & Setting Default Values Correctly -->
         <div class="slide"> 
           <section class="middle"> 
             <h2>Not Testing &amp; Setting Default Values Correctly</h2> 
@@ -110,8 +669,10 @@
 				<li>Based on the false-y rules we learned earlier, if we want to check if a variable is undefined, not null, and has a value then all we need to do is check the object itself.</li>
 			</ul>
 		  </section> 
-		</div>
+		</div>				
+		<!-- END ETM: Not Testing & Setting Default Values Correctly -->
 
+		<!-- BEGIN ETM: Using the Wrong Comparison Operators -->
 		<div class="slide"> 
 		  <section class="middle"> 
 		    <h2>Using the Wrong Comparison Operators</h2> 
@@ -140,7 +701,9 @@
 			</ul>
 		  </section> 
 		</div>				
-
+		<!-- END ETM: Using the Wrong Comparison Operators -->
+		
+		<!-- BEGIN ETM: Not Declaring Arrays & Objects Correctly -->
 		<div class="slide"> 
 		  <section class="middle"> 
 		    <h2>Not Declaring Arrays &amp; Objects Correctly</h2> 
@@ -178,7 +741,9 @@
 			</ul>
 		  </section> 
 		</div>				
-		
+		<!-- END ETM: Not Declaring Arrays & Objects Correctly -->
+
+		<!-- BEGIN ETM: Not Using The for...in Statement Correctly -->
 		<div class="slide"> 
 		  <section class="middle"> 
 		    <h2>Not Using The for…in Statement Correctly</h2> 
@@ -236,7 +801,9 @@
 			</ul>
 		  </section> 
 		</div>
-
+		<!-- END ETM: Not Using The for...in Statement Correctly -->
+		
+		<!-- BEGIN ETM: Misunderstanding Scope in JavaScript -->
 		<div class="slide"> 
 		  <section class="middle"> 
 		    <h2>Misunderstanding <br/>Scope in JavaScript</h2> 
@@ -266,7 +833,9 @@
 			</ul>
 		  </section> 
 		</div>				
+		<!-- END ETM: Misunderstanding Scope in JavaScript -->
 
+		<!-- BEGIN ETM: Not Knowing Variable And Function Hoisting -->
 		<div class="slide"> 
 		  <section class="middle"> 
 		    <h2>Not Knowing Variable <br/>And <br/>Function Hoisting</h2> 
@@ -503,8 +1072,9 @@
 				<li>There is no pattern that is a Silver Bullet, but rather you should assess where you are at and examine the pros and cons of each pattern to address your situation.</li>
 			</ul>
 		  </section> 
-		</div>	
-		
+		</div>						
+		<!-- END ETM: Having Variables & Functions in Global Scope -->
+	
 		<div class="slide">
 		  <header><h1>Tools to Help You</h1></header> 			
 		  <section class="flex hbox boxcenter"> 
@@ -567,1289 +1137,360 @@
           </section> 
         </div>
  
-      </div> 
+      </div> <!-- slides --> 
  
-    </div>
--->	
-	
-	
-    <nav id="helpers">
-      <button title="Previous slide" id="nav-prev" class="nav-prev">⇽</button> 
-      <button title="Jump to a random slide" id="slide-no">5</button> 
-      <button title="Next slide" id="nav-next" class="nav-next">⇾</button>
-      <menu>
-        <button type="checkbox" data-command="toc" title="Table of Contents" class="toc">TOC</button>
-        <!-- <button type="checkbox" data-command="resources" title="View Related Resources">☆</button> -->
-        <button type="checkbox" data-command="notes" title="View Slide Notes">✏</button>
-        <button type="checkbox" data-command="source" title="View slide source">↻</button>
-        <button type="checkbox" data-command="help" title="View Help">?</button>
-      </menu>
-    </nav>
-    <div class="presentation">
-      <div id="presentation-counter">Loading...</div>
-      <div class="slides">
-        <div class="slide" id="landing-slide">
-          <style>
-            #landing-slide p {
-              font-size: 35px;
-            }
-            p#disclaimer-message {
-              font-size: 20px;
-            }
-          </style>
-          <section class="middle">
-            <p>This presentation is an HTML5 website</p>
-            <p>Press <span id="left-init-key" class="key">&rarr;</span> key to advance.</p>
-            <p id="disclaimer-message">Having issues seeing the presentation? Read the <a href="disclaimer.html">disclaimer</a></p>
-          </section>
-          <aside class="note">
-            <section>
-              Welcome! (This field is for presenter notes and commentary.)
-            </section>
-          </aside> 
-        </div>
-
-        <div class="slide" id="controls-slide">
-          <header>Slides controls</header>
-          <style>
-            #controls-slide li, #controls-slide p {
-              font-size: 32px;
-            }
-            #controls-slide .key {
-              bottom: 2px;
-            }
-          </style>
-          <section>
-            <ul>
-              <li><span class="key">&larr;</span> and <span class="key">&rarr;</span> to move around.</li>
-              <li><span class="key">Ctrl/Command</span> and <span class="key">+</span> or <span class="key">-</span> to zoom in and out.</li>
-              <li><span class="key">S</span> to view page source.</li>
-              <li><span class="key">T</span> to change the theme.</li>
-              <li><span class="key">H</span> to toggle syntax highlight.</li>
-              <li><span class="key">N</span> to toggle speaker notes.</li>
-              <li><span class="key">3</span> to toggle 3D effect.</li>
-              <li><span class="key">0</span> to toggle help.</li>
-            </ul>
-          </section>
-        </div>
-
-        <div class="slide" id="tips">
-          <header>Slide Notes</header>
-          <section>
-            <p>When you see the '✎' in the title of the slide you can click on it to launch jsFiddle to run the associated code example.</p>
-            <p>Once you launch the jsFiddle you can remove the embedded/... from the URL if you want to tweak the results and play with the code.
-            <ul>
-              <li>http://jsfiddle.net/ng4Qt/embedded/js,html,css,result/presentation/</li>
-              c<li>http://jsfiddle.net/ng4Qt</li>
-            </ul></p>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>
-
-        <div class="slide" id="title-slide">
-          <style>
-            #title-slide h1, #title-slide h2 {
-              color: black;
-            }
-            #title-slide h1 {
-              letter-spacing: -2px;
-              font-size: 96px;
-            }
-            #title-slide h2 {
-              margin-top: -5px;
-              font-size: 40px;
-              letter-spacing: -1px;
-            }
-            #title-slide p {
-              line-height: 35px;
-              padding-left: 200px;
-              padding-right: 200px;
-            }
-          </style>
-          <section class="middle">
-            <hgroup>
-              <h1>
-                Good JavaScript Practices
-              </h1>
-              <h2>
-                by Elijah Manor
-              </h2>
-            </hgroup>
-            <p></p>
-          </section>
-        </div>
-
-        <div class="slide" id="amplifyJs">
-          <header>AmplifyJS JavaScript Library</header>
-          <section>
-            <p>AmplifyJS is a set of components designed to solve common web application problems with a simplistic API. </p>
-            <ul>
-              <li>Client Side Component Communication (publish/subscribe) </li>
-              <li>Client Side Browser &amp; Mobile Device Storage (store)</li>
-              <li>Ajax Request Managment (request)</li>
-            </ul>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>
-
-        <div class="slide" id="agenda">
-          <header>Today We Will...</header>
-          <section>
-              <p>Show an example of a <em>typical</em> web application that you may encounter</p>
-              <p>Show how to <em>extend</em> the application with <a href="http://amplifyjs.com">AmplifyJS</a></p>
-              <p>Show how to <em>easily</em> mock web service calls to let you continue developing the font-end</p>
-              <p>Show an easy approach to <em>unit test</em> your code</p>
-              <!--<p>Show a helpful tool to help you <em>quickly prototype</em> your user interface</p>-->
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>
-
-        <div class="slide" id="challenge">
-          <header>Front-End Challenge</header>
-          <section>
-            <p>As your application grows you will find that it is important to abstract the various pieces of your implementation to help you easily extend the functionality and make it less painful to maintain.</p>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>
-
-        <div class="slide" id="appBefore">
-          <header>Hacker News Web Application <a href="http://jsfiddle.net/ng4Qt/embedded/js,html,css,result/presentation/" target="_blank">✎</a></header>
-          <section>
-<pre style="overflow-y: scroll; height: 525px;">
-var hackerNews = (function( $, undefined ) {
-    var pub = {};
-
-    pub.init = function() {
-        $( &quot;#btnRefresh&quot; ).live( &quot;click&quot;, function() {
-            pub.getAndDisplayNews();
-        });        
-    };
-
-    pub.getAndDisplayNews = function() {
-        $.mobile.pageLoading();  
-
-        getNews( function( data ) {
-            displayNews( data );    
-
-            $.mobile.pageLoading( true ); 
-        });
-    };
-
-    function getNews( callback ) { 
-        $.<b>ajax</b>({
-            <b>url</b>: &quot;http://api.ihackernews.com/page?format=jsonp&quot;,
-            <b>dataType</b>: &quot;jsonp&quot;,
-            <b>success</b>: function( data, textStatus, jqXHR ) {
-                if ( callback ) callback ( data );
-            },
-            <b>error</b>: function( jqXHR, textStatus, errorThrown ) {
-                console.log( textStatus + &quot;: &quot; + errorThrown );
-            }
-        });                
-    }
-
-    function displayNews( news ) {
-        var newsList = $( &quot;#hackerNews&quot; ).find( &quot;.newsList&quot; );
-
-        newsList.empty();
-        $( &quot;#newsItem&quot; ).tmpl( news.items ).<b>appendTo</b>( newsList );
-        newsList.listview( &quot;refresh&quot; );        
-        $( &quot;#itemCount&quot; ).<b>text</b>( news.items.length );        
-    }
-
-    return pub;
-}( jQuery ));
-
-hackerNews.init();
-hackerNews.getAndDisplayNews();
-</pre>
-          </section>
-          <aside class="note">
-            <section>
-              <p>The implementation uses a lot of best practices such as: 
-                <ul>
-                  <li>IIFE</li> 
-                  <li>public and private methods</li>
-                  <li>small methods with focused purpose</li>
-                  <li>etc...</li>
-                </ul>
-              </p>
-              <p>However, there the various portions of the UI are tightly coupled to the retrieval of the data.</p>
-            </section>
-          </aside> 
-        </div>
-
-        <div class="slide transitionSlide" id="pub-sub-title">
-          <section class="middle">
-            <h2>AmplifyJS Pub / Sub Component</h2>
-          </section>
-        </div>
-
-        <div class="slide" id="pubSub">
-          <header>AmplifyJS Pub / Sub Component</header>
-          <section>
-            <p>Client Side Component Communication - amplify.publish/subscribe provides a clean, performant API for component to component communication.</p>
-            <p>Note: You could use jQuery Custom Events to simulate this interaction, but it is tightly bound to a DOM element and the syntax isn't as graceful when all you want is just a pub/sub component.</p>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>
-
-        <div class="slide" id="publishSub">
-          <header>AmplifyJS Pub / Sub API</header>
-          <section>
-            <h2>Publish a Topic</h2>
-<pre>
-amplify.publish( string topic, ... )
-</pre>
-            <ul>
-              <li><code>topic</code>: The name of the message to publish</li>
-              <li><code>...</code>: Any additional parameters that will be passed to the subscriptions</li>
-            </ul>
-
-<pre>
-amplify.publish( &quot;contactUpdated&quot;, { 
-  firstName: &quot;John&quot;, lastName: &quot;Smith&quot; 
-});
-</pre>
-
-            <p>The publish will return a boolean indicating whether any subscribers returned false. If a subscriber returns false, then it prevents any additional subscriptions from being invoked.</p>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>
-
-        <div class="slide" id="pubSubscribe">
-          <header>AmplifyJS Pub / Sub API…</header>
-          <section>
-            <h2>Subscribe to a Topic</h2>
-
-<pre>
-amplify.subscribe( string topic, function callback )
-amplify.subscribe( string topic, object context, function callback )
-amplify.subscribe( string topic, function callback, 
-  number priority )
-amplify.subscribe( string topic, object context, function callback, 
-  number priority )
-</pre>
-
-            <ul>
-              <li><code>topic</code>: Name of the message to subscribe to</li>
-              <li><code>context</code>: What this will be when the callback is invoked</li>
-              <li><code>callback</code>: Function to invoke when the message is published</li>
-              <li><code>priority</code>: Priority relative to other subscriptions for the same message</li>
-            </ul>
-
-<pre>
-amplify.subscribe( &quot;contactUpdated&quot;, 
-  function( contact ) {
-    console.log( contact.firstName ); // John
-  }, 5 );
-</pre>          
-            <br /><br /><br />
-          </section>
-          <aside class="note">
-            <section>
-              <h2>Remove a subscription</h2>
-
-<pre>
-amplify.unsubscribe( string topic, function callback )
-</pre>
-
-              <ul>
-                <li><code>topic</code>: The topic being unsubscribed from.</li>
-                <li><code>callback</code>: The callback that was originally subscribed.</li>
-              </ul>
-            </section>
-          </aside> 
-        </div>
-
-        <div class="slide" id="appPubSub">
-          <header>Extending with Pub / Sub <a href="http://jsfiddle.net/t5G4n/embedded/js,html,css,result/presentation/" target="_blank">✎</a></header>
-          <section>
-<pre style="overflow-y: scroll; height: 525px;">
-var hackerNews = (function( $, undefined ) {
-    var pub = {};
-
-    pub.init = function() {
-        $( &quot;#btnRefresh&quot; ).live( &quot;click&quot;, function() {
-            pub.getAndDisplayNews();
-        });
-
-        <b>amplify.subscribe( &quot;news.updated&quot;, function( news ) {
-            displayNews( news );
-        });</b>
-
-        <b>amplify.subscribe( &quot;news.updated&quot;, function( news ) {
-            displayItemCount( news.items.length );
-        });</b>
-    };
-
-    pub.getAndDisplayNews = function() {
-        $.mobile.pageLoading();  
-
-        getNews( function( data ) {
-            <b>amplify.publish( &quot;news.updated&quot;, data );</b>
-
-            $.mobile.pageLoading( true ); 
-        });
-    };
-
-    function getNews( callback ) { 
-        $.ajax({
-            url: &quot;http://api.ihackernews.com/page?format=jsonp&quot;,
-            dataType: &quot;jsonp&quot;,
-            success: function( data, textStatus, jqXHR ) {
-                if ( callback ) callback ( data );
-            },
-            error: function( jqXHR, textStatus, errorThrown ) {
-                console.log( textStatus + &quot;: &quot; + errorThrown );
-            }
-        });                
-    }
-
-    function displayNews( news ) {
-        var newsList = $( &quot;#hackerNews&quot; ).find( &quot;.newsList&quot; );
-
-        newsList.empty();
-        $( &quot;#newsItem&quot; ).tmpl( news.items ).appendTo( newsList );
-        newsList.listview( &quot;refresh&quot; );        
-    }
-
-    function displayItemCount( count ) {
-        $( &quot;#itemCount&quot; ).text( count );    
-    }
-
-    return pub;
-}( jQuery ));
-
-hackerNews.init();
-hackerNews.getAndDisplayNews();
-</pre>          
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>
-
-        <div class="slide transitionSlide" id="store-title">
-          <section class="middle">
-            <h2>AmplifyJS Store Component</h2>
-          </section>
-        </div>
-
-        <div class="slide" id="store">
-          <header>AmplifyJS Store Component…</header>
-          <section>
-            <h3>Client Side Browser &amp; Mobile Device Storage</h3> 
-
-            <p><code>amplify.store</code> takes the confusion out of HTML5 localStorage. It doesn't get simpler than using <code>amplify.store( key, data )</code>! It even works flawlessly on mobile devices.</p>
-
-            <p><code>amplify.store</code> supports IE 5+, Firefox 2+, Safari 4+, Chrome, Opera 10.5+, iPhone 2+, Android 2+ and provides a consistent API to handle storage cross-browser.</p>
-
-            <br /><br /><br />
-            <br /><br /><br />
-            <br /><br /><br />
-            <br /><br /><br />
-          </section>
-          <aside class="note">
-            <section>
-              <p>Various forms of persistance storage have lived around for a very long time...</p>
-
-              <ul>
-                <li>localStorage (IE 8+, Firefox 3.5+, Safari 4+, Chrome, Opera 10.5+, iPhone 2+, Android 2+
-)</li>
-                <li>sessionStorage (IE 8+, Firefox 2+, Safari 4+, Chrome, Opera 10.5+, iPhone 2+, Android 2+
-)</li>
-                <li>globalStorage (Firefox 2+)</li>
-                <li>userData (IE 5 - 7)</li>
-              </ul>
-
-              <p></p>
-            </section>
-          </aside> 
-        </div>
-
-        <div class="slide" id="storeSet">
-          <header>AmplifyJS Store API</header>
-          <section>
-            <h2>Set a Value to Storage</h2>
-<pre>
-amplify.store( string key, mixed value [, hash options ] )
-</pre>
-
-            <ul>
-              <li><code>key</code>: identifier for the value being store</li>
-              <li><code>value</code>: The value to store. The value can be anything that can be serialized as JSON</li>
-              <li><code>options (optional)</code>: A set of key/value paris that relate to settings for storing the value (<code>expires</code>)</li>
-            </ul>
-
-<pre>
-amplify.store( &quot;contact&quot;, { 
-  firstName: &quot;John&quot;, lastName: &quot;Smith&quot; 
-});
-</pre>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>        
-
-        <div class="slide" id="storeGet">
-          <header>AmplifyJS Store API</header>
-          <section>
-            <h2>Get a Value from Storage</h2>
-
-<pre>
-amplify.store( string key )
-</pre>
-
-            <ul>
-              <li><em>key</em>: Identifier for the value stored</li>
-            </ul>
-
-<pre>
-var contact = ampilfy.store( &quot;contact&quot; );
-contact.firstName; // John
-</pre>
-
-            <h2>Get a Hash of All Stored Values</h2>
-
-<pre>
-amplify.store();
-
-var store = amplify.store();
-store.contact.firstName; // John
-</pre>          
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>   
-
-        <div class="slide" id="appStore">
-          <header>Extending with Store <a href="http://jsfiddle.net/FHS65/embedded/js,html,css,result/presentation/" target="_blank">✎</a></header>
-          <section>
-<pre style="overflow-y: scroll; height: 525px;">
-var hackerNews = (function( $, undefined ) {
-    var pub = {};
-
-    pub.init = function() {
-        $( &quot;#btnRefresh&quot; ).live( &quot;click&quot;, function() {
-            pub.getAndDisplayNews();
-        });
-
-        amplify.subscribe( &quot;news.updated&quot;, function( news ) {
-            displayNews( news );
-        });
-
-        amplify.subscribe( &quot;news.updated&quot;, function( news ) {
-            displayItemCount( news.items.length );
-        });              
-    };
-
-    pub.getAndDisplayNews = function() {
-        $.mobile.pageLoading();  
-
-        getNews( function( data ) {
-            amplify.publish( &quot;news.updated&quot;, data );            
-            $.mobile.pageLoading( true ); 
-        });
-    };
-
-    function getNews( callback ) {
-        var <b>news = amplify.store( &quot;news&quot; );</b>
-
-        if ( !news ) {
-            $.ajax({
-                url: &quot;http://api.ihackernews.com/page?format=jsonp&quot;,
-                dataType: &quot;jsonp&quot;,
-                success: function( data, textStatus, jqXHR ) {
-                    <b>amplify.store( &quot;news&quot;, data, { expires: 5000 } );</b>
-                    callback &amp;&amp; callback( data );
-                },
-                error: function( jqXHR, textStatus, errorThrown ) {
-                    console.log( textStatus + &quot;: &quot; + errorThrown );
-                }
-            });
-        } else {
-            callback &amp;&amp; callback( news );
-        }
-    }
-
-    function displayNews( news ) {
-        var newsList = $( &quot;#hackerNews&quot; ).find( &quot;.newsList&quot; );
-
-        newsList.empty();
-        $( &quot;#newsItem&quot; ).tmpl( news.items ).appendTo( newsList );
-        newsList.listview( &quot;refresh&quot; );        
-    }
-
-    function displayItemCount( count ) {
-        $( &quot;#itemCount&quot; ).text( count );    
-    }
-
-    return pub;
-}( jQuery ));
-
-hackerNews.init();
-hackerNews.getAndDisplayNews();
-</pre> 
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>           
-
-        <div class="slide transitionSlide" id="request-title">
-          <section class="middle">
-            <h2>AmplifyJS Request Component</h2>
-          </section>
-        </div>
-
-        <div class="slide" id="request">
-          <header>AmplifyJS Request Component</header>
-          <section>
-            <p>The amplify.request component sets out to make data retrieval more maintainable. It does this by separating the definition of a request from the actual request of the data.</p>
-            <p>The goal of amplify.request is to abstract the layer of implementation from the actual request and response so that you can minimize code changes to your project.</p>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>  
-
-        <div class="slide" id="requestDefine">
-          <header>AmplifyJS Request Define API</header>
-          <section>
-<pre>
-// Define a Request
-amplify.request.define(string resourceId, string requestType [, hash settings ]) 
-</pre>
-
-            <ul>
-              <li><code>resourceId</code>: Identifier string for the resource</li>
-              <li><code>requestType</code>: Type of data retrieval method from the server.</li>
-              <li><code>settings (optional)</code>: Set of key/value pairs
-                <ul>
-                  <li>Any settings found in <code>jQuery.ajax()</code></li>
-                  <li><code>cache</code>: Different caching algorithms (boolean, number, string)</li>
-                  <li><code>decoder</code>: Parse response before calling success or error callback</li>
-                </ul>
-              </li>
-            </ul>
-
-<pre>
-amplify.request.define( &quot;getContactDetails&quot;, &quot;ajax&quot;, {
-    //AmplifyJS will replace {id} with data passed to it
-    url: &quot;/Contact/Details/{id}&quot;, 
-    dataType: &quot;json&quot;,
-    type: &quot;GET&quot;, 
-    //Response will be cached for 15 seconds
-    cache: 15000     
-});</pre>          
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>  
-        
-        <div class="slide" id="requestSimple">
-          <header>AmplifyJS Request Simple API</header>
-          <section>
-<pre>
-// Simplified Request
-amplify.request( string resourceId [, hash data [, function callback ] ] )
-</pre>
-
-          <ul>
-            <li><code>resourceId</code>: Identifier string for the resource</li>
-            <li><code> data (optional)</code>: an object literal of data to be sent to the resource</li>
-            <li><code>callback (optional)</code>: a function to call once the resource has been retrieved</li>
-          </ul>
-
-<pre>
-amplify.request( &quot;getContactDetails&quot;, 
-    { id: 4 }, // Resolve URL to &quot;/Contact/Details/4&quot;
-    function( data ) {
-        console.log( data );
-    });
-</pre>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>                  
-
-        <div class="slide" id="requestHash">
-          <header>AmplifyJS Request Hash API</header>
-          <section>
-<pre>
-// Request with Hash Settings
-amplify.request( hash settings )
-</pre>
-
-            <ul>
-              <li>settings
-                <ul>
-                  <li><em>resourceId</em>: Identifier string for the resource</li>
-                  <li><em>data (optional)</em>: Data associated with the request</li>
-                  <li><em>success (optional)</em>: Function to invoke on success</li>
-                  <li><em>error (optional)</em>: Function to invoke on error</li>
-                </ul>
-              </li>
-            </ul>
-
-<pre>
-amplify.request({ 
-    resourceId: &quot;getContactDetails&quot;,
-    data: { id: 4 }, // Resolve URL to &quot;/Contact/Details/4&quot;
-    success: function( data ) { console.log( data ); },
-    error: function( message, level ) { 
-      console.log( level + &quot;: &quot; + message ); 
-    }
-});
-</pre>          
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>   
-
-        <div class="slide" id="appRequest">
-          <header>Extending with Request <a href="http://jsfiddle.net/jdDue/embedded/js,html,css,result/presentation/" target="_blank">✎</a></header>
-          <section>
-<pre style="overflow-y: scroll; height: 525px;">
-<b>amplify.request.define( &quot;getNews&quot;, &quot;ajax&quot;, {
-    url: &quot;http://api.ihackernews.com/page?format=jsonp&quot;, 
-    dataType: &quot;jsonp&quot;,
-    cache: 3000
-});</b>  
-
-var hackerNews = (function( $, undefined ) {
-    var pub = {};
-
-    pub.init = function() {
-        $( &quot;#btnRefresh&quot; ).live( &quot;click&quot;, function() {
-            pub.getAndDisplayNews();
-        });
-
-        amplify.subscribe( &quot;news.updated&quot;, function( news ) {
-            displayNews( news );
-        });
-
-        amplify.subscribe( &quot;news.updated&quot;, function( news ) {
-            displayItemCount( news.items.length );
-        });    
-    };
-
-    pub.getAndDisplayNews = function() {
-        $.mobile.pageLoading();  
-
-        getNews( function( data ) {
-            amplify.publish( &quot;news.updated&quot;, data );            
-            $.mobile.pageLoading( true ); 
-        });
-    };
-
-    function getNews( callback ) {
-        <b>amplify.request({
-            resourceId: &quot;getNews&quot;,
-            success: function( data ) {
-                if ( callback ) callback ( data );
-            },
-            error: function( message, level ) {
-                console.log( level + &quot;: &quot; + message );
-            }
-        });</b>        
-    }
-
-    function displayNews( news ) {
-        var newsList = $( &quot;#hackerNews&quot; ).find( &quot;.newsList&quot; );
-
-        newsList.empty();
-        $( &quot;#newsItem&quot; ).tmpl( news.items ).appendTo( newsList );
-        newsList.listview( &quot;refresh&quot; );        
-    }
-
-    function displayItemCount( count ) {
-        $( &quot;#itemCount&quot; ).text( count );    
-    }
-
-    return pub;
-}( jQuery ));
-
-hackerNews.init();
-hackerNews.getAndDisplayNews();</pre>          
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>   
-        
-        <div class="slide" id="mocking">
-          <header>Mocking with AmplifyJS Require</header>
-          <section>
-            <p>It seems that even those that are aware of the AmplifyJS library <em>aren't</em> aware that you can easily you it to mock the response from your server. Mocking the User Interface interactions can be very beneficial for numerous reasons.</p>
-
-            <p>Let's say that you are working on a client and the back-end RESTful or Web Services are...</p>
-
-            <ul>
-              <li>Not yet developed</li>
-              <li>Extremely unstable</li>
-              <li>Not accessible due to VPN or cross-domain concerns </li>
-            </ul>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>                   
-
-        <div class="slide" id="mockingApi">
-          <header>Mocking with AmplifyJS Require API</header>
-          <section>
-            <p>Whatever amplify.request.define is defined last will be used. </p>
-
-<pre>
-// Define a Mock Request
-amplify.request.define( string resourceId, function response ) 
-</pre>
-
-            <ul>
-              <li><em>resourceId</em>: Identifier string for the resource (should match previous string)</li>
-              <li><em>response</em>: Function that will return either a success or failure response</li>
-            </ul>
-
-<pre>
-amplify.request.define( &quot;getContactDetails&quot;, function( settings ) {
-  settings.success({
-    status: &quot;success&quot;,
-    contacts: [
-      { firstName: &quot;Mike&quot; },
-      { firstName: &quot;Jonathan&quot; },
-      { firstName: &quot;Scott&quot; }
-    ]
-  });
-});</pre>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>   
-
-        <div class="slide" id="appMocking">
-          <header>Mocking Hacker News <a href="http://jsfiddle.net/D2egG/embedded/js,html,css,result/presentation/" target="_blank">✎</a></header>
-          <section>
-<pre style="overflow-y: scroll; height: 525px;">
-amplify.request.define( &quot;getNews&quot;, function( settings ) {
-    settings.success({
-        status: &quot;success&quot;,
-        items: [
-            {
-                commentCount: 1,
-                id: 1,
-                points: 1,
-                postedAgo: &quot;1 hours ago&quot;,
-                postedBy: &quot;jkeesh&quot;,
-                title: &quot;1 Title&quot;,
-                url: &quot;http://1.com&quot;
-            },
-            {
-                commentCount: 2,
-                id: 2,
-                points: 2,
-                postedAgo: &quot;2 hours ago&quot;,
-                postedBy: &quot;jkeesh&quot;,
-                title: &quot;2 Title&quot;,
-                url: &quot;http://2.com&quot;                
-            },
-            {
-                commentCount: 3,
-                id: 3,
-                points: 3,
-                postedAgo: &quot;3 hours ago&quot;,
-                postedBy: &quot;jkeesh&quot;,
-                title: &quot;3 Title&quot;,
-                url: &quot;http://3.com&quot;                
-            },
-            {
-                commentCount: 4,
-                id: 4,
-                points: 4,
-                postedAgo: &quot;1 hours ago&quot;,
-                postedBy: &quot;jkeesh&quot;,
-                title: &quot;4 Title&quot;,
-                url: &quot;http://4.com&quot;                
-            },
-            {
-                commentCount: 5,
-                id: 5,
-                points: 5,
-                postedAgo: &quot;5 hours ago&quot;,
-                postedBy: &quot;jkeesh&quot;,
-                title: &quot;5 Title&quot;,
-                url: &quot;http://5.com&quot;                
-            }
-        ]
-    });
-});</pre>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>   
-
-        <div class="slide" id="mockingTests">
-          <header>Mocking with Unit Tests <a href="http://jsfiddle.net/elijahmanor/2NA3F/embedded/js,html,css,result/presentation/" target="_blank">✎</a></header>
-          <section>
-<pre style="overflow-y: scroll; height: 525px;">
-pavlov.specify.globalApi = true;
-pavlov.specify( &quot;News Aggregator&quot;, function() {
-
-    describe( &quot;User Interactions&quot;, function() {
-
-        var button = $( &quot;#btnRefresh&quot; ),
-            isUpdated = false, news,
-            newsUpdatedCallback = function( data ) {
-                isUpdated = true;
-                news = data;
-            };
-
-        before( function() {
-            isUpdated = false;
-
-            hackerNews.init();
-
-            amplify.request.define( &quot;getNews&quot;, function( settings ) {
-                settings.success({
-                    status: &quot;success&quot;,
-                    items: [
-                        { commentCount: 5, id: 1, points: 50, postedAgo: &quot;1 hour ago&quot;, postedBy: &quot;davidedicillo&quot;, title: &quot;Five four three...&quot;, url: &quot;http://techcrunch.com/5&quot; }, 
-                        { commentCount: 4, id: 2, points: 40, postedAgo: &quot;2 hour ago&quot;, postedBy: &quot;davidedicillo&quot;, title: &quot;Four three two...&quot;, url: &quot;http://techcrunch.com/4&quot; }, 
-                        { commentCount: 3, id: 3, points: 30, postedAgo: &quot;3 hour ago&quot;, postedBy: &quot;davidedicillo&quot;, title: &quot;Three two one...&quot;, url: &quot;http://techcrunch.com/3&quot; }, 
-                        { commentCount: 2, id: 4, points: 20, postedAgo: &quot;4 hour ago&quot;, postedBy: &quot;davidedicillo&quot;, title: &quot;Two, one, zero...&quot;, url: &quot;http://techcrunch.com/2&quot; }, 
-                        { commentCount: 1, id: 5, points: 10, postedAgo: &quot;5 hour ago&quot;, postedBy: &quot;davidedicillo&quot;, title: &quot;One, zero, negative one...&quot;, url: &quot;http://techcrunch.com/1&quot; }
-                    ]
-                });
-            });          
-
-            amplify.subscribe( &quot;news.updated&quot;, newsUpdatedCallback );
-        });
-
-        after( function() {
-            amplify.unsubscribe( newsUpdatedCallback );
-        });
-
-        it( &quot;should publish a news updated message&quot;, function() {
-            button.trigger( &quot;click&quot; );
-            stop();
-
-            setTimeout( function() {
-                start();
-                assert( isUpdated ).isTrue();
-            }, 2000 );
-        });
-
-        it( &quot;should return 5 news items&quot;, function() {
-            button.trigger( &quot;click&quot; );
-            stop();
-
-            setTimeout( function() {
-                start();
-                assert( news ).isDefined();
-                assert( news.items.length ).isEqualTo(5);
-            }, 2000 );
-        });
-
-    });
-
-});</pre>         
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>   
-
-<!-- 
-
-<li class="slide"><header><h1>Prototyping with MockJSON</h1></header><div class="content"><p><code>mockJSON</code> is a jQuery Plugin that has a valuable templating mechnaism that lets you <em>quickly build up complex set of objects</em> that can be used to quickly prototype your User Interface.</p></div></li>
-
-<li class="slide"><header><h1>MockJSON: Built-in Types</h1></header><div class="content"><pre class="javascript"><code>// Numbers
-{ &quot;age|0-99&quot; : 0 } // { &quot;age&quot; : 42 }
-
-// Boolean
-{ &quot;married|0-1&quot; : true } // { &quot;married&quot;: false }
-
-// Strings
-{ &quot;name&quot; : &quot;@LAST_NAME, @MALE_FIRST_NAME&quot; } // { &quot;name&quot; : &quot;Hall, Kevin&quot; }
-{ &quot;initials|1-5&quot; : &quot;@LETTER_UPPER.&quot; } // { &quot;initials&quot;: &quot;V.M.J.&quot; }
-
-// Arrays
-{ &quot;contacts|0-3&quot; : [ { &quot;Name&quot; : &quot;@FEMALE_FIRST_NAME&quot; } ] } 
-// { &quot;contacts&quot;: [{ Name: &quot;Laura&quot; }, { Name: &quot;Ruth&quot; }] }</code></pre></div></li>
-
-<li class="slide"><header><h1>MockJSON: Custom Types</h1></header><div class="content"><pre class="javascript"><code>// Adding the @US_STATE keyword
-$.mockJSON.data.US_STATE = [
-    &quot;Alabama&quot;, &quot;Alaska&quot;, ... , &quot;Wisconsin&quot;, &quot;Wyoming&quot;
-];
-{ &quot;state&quot; : &quot;@US_STATE&quot; } // { &quot;state&quot;: &quot;Alaska&quot; }</code></pre></div></li>
-
-<li class="slide"><header><h1>MockJSON Template Syntax</h1></header><div class="content"><pre class="javascript"><code>$.mockJSON.generateFromTemplate({
-    &quot;contacts|2-4&quot;: [{
-        &quot;firstName&quot;: &quot;@MALE_FIRST_NAME&quot;,
-        &quot;lastName&quot;: &quot;@LAST_NAME&quot;,
-        &quot;city&quot;: &quot;@CITY_NAME&quot;,
-        &quot;state&quot;: &quot;@STATE_ABBREVIATION&quot;
-    }]
-});</code></pre></div></li>
-
-<li class="slide"><header><h1>MockJSON'ing Hacker News <a href="http://jsfiddle.net/elijahmanor/bH6pa" target="_blank">✎</a></h1></header><div class="content"><pre class="javascript"><code>amplify.request.define( &quot;getNews&quot;, function( settings ) {
-    settings.success($.mockJSON.generateFromTemplate({
-        &quot;status&quot;: true,
-        &quot;items|20-30&quot;: [
-            {
-                &quot;id|+1&quot; : 0,
-                &quot;commentCount|2-15&quot;: 0,
-                &quot;points|20-80&quot;: 0,
-                &quot;postedAgo&quot;: &quot;@DATE_MM/@DATE_DD/@DATE_YYYY&quot;,
-                &quot;postedBy&quot;: &quot;@MALE_FIRST_NAME @LAST_NAME&quot;,
-                &quot;title&quot;: &quot;@LOREM_IPSUM&quot;,
-                &quot;url&quot;: &quot;@URL&quot;
-            }
-        ]
-    }));
-});
-
-$.mockJSON.data.URL = [
-    &quot;http://google.com&quot;, &quot;http://yahoo.com&quot;, &quot;http://microsoft.com&quot;, &quot;http://apple.com&quot;
-];</code></pre></div></li>
-
--->
-
-        <div class="slide" id="refactor">
-          <header>Warning: Major Refactor Ahead!</header>
-          <section>
-            <p>What if our back-end datasource totally change!?! What if instead of always getting a Hacker News feed that our boss came and said, &quot;Why don't you use your same code to pull in any news feed?&quot;. How would you go about doing that?</p>
-
-            <p>AmplifyJS Request is architected in such a way that we can use Uncle Bob's SOLID principle of OCP (The Open Closed Principle) stating that we should be able to extend the behavior, without modifying it.</p>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>   
-
-        <div class="slide" id="yql">
-          <header>New DataSource: YQL <a href="http://developer.yahoo.com/yql/console/#h=select%20*%20from%20feed%20where%20url%3D%27http%3A//feeds2.feedburner.com/readwriteweb/hack%27%20limit%2010" target="_blank">✎</a></header>
-          <section>
-            <p>In YQL you an query a RSS or Atom feed and it will proxy the results and make it accessible for you via XML or JSON. </p><p>The following is an example of a query you might use...</p>
-
-            <ul>
-              <li>select * from feed where url='http://feeds2.feedburner.com/readwriteweb/hack' limit 10</li>
-            </ul>
-
-            <p>The above select query translates into the following encoded URL with all the necessary parameters for the query</p>
-
-            <ul>
-              <li>http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20feed%20where%20url%3D'http%3A%2F%2Ffeeds2.feedburner.com%2Freadwriteweb%2Fhack'%20limit%2010&amp;format=json&amp;callback=cbfunc</li>
-            </ul>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>   
-
-        <div class="slide" id="customRequestType">
-          <header>Custom Request Type</header>
-          <section>
-            <p>In order to start creating our new RSS request type, I usually start by copying the native <code>ajax</code> type that is shipped with AmplifyJS Request and then I tweak out any changes that I need.</p>
-
-            <p>Here is a snippet of what this might look like...</p>
-
-<pre>
-amplify.request.types.rss = function( typeSettings ) {
-    typeSettings = $.extend({
-        type: &quot;GET&quot;,
-        dataType: &quot;jsonp&quot;,
-        itemsToRetrieve: 5
-    }, typeSettings );
-
-    return function( settings, request ) {        
-        var url = 
-            stringFormat( &quot;http://query.yahooapis.com/v1/public/yql?q={0}&amp;format=json&quot;,
-                encodeURIComponent( stringFormat( 
-                    &quot;select * from feed where url='{0}' LIMIT {1};&quot;, 
-                    typeSettings.url, typeSettings.itemsToRetrieve ) ) ),
-
-    /* ... more code ... */
-
-};
-</pre>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>   
-
-        <div class="slide" id="customRequestDecoderFrom">
-          <header>Custom Request Decoder</header>
-          <section>
-            <p>Since the YQL data looks different than the data from Hacker News we will need to map the results from one to the other.</p>
-
-            <p>To do this, we will define a new decoder that will take this format... </p>
-
-<pre>
-{
-  query: {
-    count: 10,
-    created: &quot;2011-08-18T04:32:16Z&quot;,
-    lang: &quot;en-US&quot;,
-    results: {
-      item: [
-        {
-          title: &quot;This is a test title&quot;,
-          description: &quot;This is a test description&quot;,
-          link: &quot;http://google.com&quot;,
-          guid: { isPermaLink: &quot;true&quot;, content: &quot;&quot; },
-          category: &quot;TEST&quot;,
-          pubDate: &quot;2011-08-18T04:32:16Z&quot;,
-          author: &quot;Spider-Manor&quot;,
-          origLink: &quot;http://google.com&quot;
-        }
-      ]
-    }
-  }
-}
-</pre>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>  
-
-        <div class="slide" id="customRequestDecoderTo">
-          <header>Custom Request Decoder</header>
-          <section>
-            <p>...and map it to the following format that our web applicaiton is expecting...</p>
-
-<pre>
-{
-  cachedOnUTC: &quot;/Date(1313643183975)/&quot;
-  items: [
-    {
-      commentCount: 20
-      id: 2897740
-      points: 81
-      postedAgo: &quot;2 hours ago&quot;
-      postedBy: &quot;jkeesh&quot;
-      title: &quot;Who Does Facebook Think You Are Searching For?&quot;
-      url: &quot;http://thekeesh.com/2011/08/who-does-facebook-think-you-are-searching-for/&quot;
-    }
-  ]
-  nextId: &quot;m97628CrNN&quot;
-  version: &quot;1.0&quot;
-}
-</pre>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>  
-
-        <div class="slide" id="customRequestDecoderImpl">
-          <header>Custom Request Decoder</header>
-          <section>
-<pre>
-amplify.request.decoders.rssEnvelope = 
-    function ( data, status, xhr, success, error ) {
-        if ( status === &quot;success&quot; ) {
-            success ( { items: transformRssData( data ) } );
-        } else if ( status === &quot;fail&quot; || status === &quot;error&quot; ) {
-            error( data.message, status );
-        } else {
-            error( data.message , &quot;fatal&quot; );
-        }
-    };
-
-function transformRssData( data ) {    
-    if ( !data || !data.query || 
-         !data.query.results || !data.query.results.item ) { return false; }
-
-    return $.map( data.query.results.item, function(element, index) {
-        var date = new Date( element.pubDate );
-        return {
-            title: element.title,
-            url: element.link,
-            postedAgo: date.toLocaleDateString() + &quot; &quot; + date.toLocaleTimeString(),
-            postedBy: element.author
+    </div> <!-- presentation --> 
+ 
+    <script> 
+      (function() {
+        var doc = document;
+        var disableBuilds = true;
+ 
+        var ctr = 0;
+        var spaces = /\s+/, a1 = [''];
+ 
+        var toArray = function(list) {
+          return Array.prototype.slice.call(list || [], 0);
         };
-    });   
-}   
-</pre>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>  
-
-        <div class="slide" id="appGeneric">
-          <header>Reusable Generic News Reader <a href="http://jsfiddle.net/elijahmanor/rJfaC/embedded/js,html,css,result/presentation/" target="_blank">✎</a></header>
-          <section>
-            <p>After creating your custom type and decoder you can now change your amplify.request.define to look like the following and you <em>don't</em> have to change the code that actually makes the request!</p>
-
-<pre>
-//Define getNews RSS JSONP request using YQL in Amplify Request
-amplify.request.define( &quot;getNews&quot;, &quot;rss&quot;, {
-    url: &quot;http://feeds2.feedburner.com/readwriteweb/hack&quot;,
-    decoder: &quot;rssEnvelope&quot;,
-    itemsToRetrieve: 10
-});  
-</pre>   
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>  
-
-        <div class="slide" id="whoAmI">
-          <header>Questions?</header>
-          <section>
-            <h3>Elijah Manor</h3>
-
-            <ul>
-              <li>ASP.NET MVP, ASPInsider</li>
-              <li>Senior Architect at appendTo</li>
-            </ul>
-
-            <h3>Referenced Scripts</h3>
-
-            <ul>
-              <li>AmplifyJS - http://bit.ly/amplifyjs</li>
-              <li>mockJSON - http://bit.ly/mockjson</li>
-            </ul>
-
-            <h3>Contact Information</h3>
-
-            <ul>
-              <li>elijah.manor@gmail.com</li>
-              <li>http://twitter.com/elijahmanor</li>
-              <li>http://gplus.to/elijahmanor</li>
-            </ul>
-
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>
-
-      </div> <!-- slides -->
-      <div id="speaker-note" class="invisible" style="display: none;">
-      </div> <!-- speaker note -->
-      <aside id="help" class="sidebar invisible" style="display: hidden;">
-        <table>
-          <caption>Help</caption>
-          <tbody>
-            <tr>
-              <th>Move Around</th>
-              <td>&larr;&nbsp;&rarr;</td>
-            </tr>
-            <tr>
-              <th>Source File</th>
-              <td>s</td>
-            </tr>
-            <tr>
-              <th>Change Theme</th>
-              <td>t</td>
-            </tr>
-            <tr>
-              <th>Syntax Highlight</th>
-              <td>h</td>
-            </tr>
-            <tr>
-              <th>Speaker Notes</th>
-              <td>n</td>
-            </tr>
-            <tr>
-              <th>Toggle 3D</th>
-              <td>3</td>
-            </tr>
-            <tr>
-              <th>Help</th>
-              <td>0</td>
-            </tr>
-          </tbody>
-        </table>
-      </aside>
-    </div> <!-- presentation -->
-
-    <!--[if lt IE 9]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
-    </script>
-    <script>CFInstall.check({ mode: "overlay" });</script>
-    <![endif]-->
-
-    <script src="src/prettify/prettify.js" onload="prettyPrint();" defer></script>
-    <script src="js/utils.js"></script>
-    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-    <script>
-      // Check if new appcache is available, load it, and reload page.
-      if (window.applicationCache) {
-        window.applicationCache.addEventListener('updateready', function(e) {
-          if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
-            window.applicationCache.swapCache();
-            if (confirm('A new version of this site is available. Load it?')) {
-              window.location.reload();
+ 
+        var byId = function(id) {
+          if (typeof id == 'string') { return doc.getElementById(id); }
+          return id;
+        };
+ 
+        var query = function(query, root) {
+          if (!query) { return []; }
+          if (typeof query != 'string') { return toArray(query); }
+          if (typeof root == 'string') {
+            root = byId(root);
+            if(!root){ return []; }
+          }
+ 
+          root = root || document;
+          var rootIsDoc = (root.nodeType == 9);
+          var doc = rootIsDoc ? root : (root.ownerDocument || document);
+ 
+          // rewrite the query to be ID rooted
+          if (!rootIsDoc || ('>~+'.indexOf(query.charAt(0)) >= 0)) {
+            root.id = root.id || ('qUnique' + (ctr++));
+            query = '#' + root.id + ' ' + query;
+          }
+          // don't choke on something like ".yada.yada >"
+          if ('>~+'.indexOf(query.slice(-1)) >= 0) { query += ' *'; }
+ 
+          return toArray(doc.querySelectorAll(query));
+        };
+ 
+        var strToArray = function(s) {
+          if (typeof s == 'string' || s instanceof String) {
+            if (s.indexOf(' ') < 0) {
+              a1[0] = s;
+              return a1;
+            } else {
+              return s.split(spaces);
             }
           }
-        }, false);
-      }
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-15028909-5']);
-      _gaq.push(['_trackPageview']);
-      _gaq.push(['_trackPageLoadTime']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          return s;
+        };
+ 
+        var addClass = function(node, classStr) {
+          classStr = strToArray(classStr);
+          var cls = ' ' + node.className + ' ';
+          for (var i = 0, len = classStr.length, c; i < len; ++i) {
+            c = classStr[i];
+            if (c && cls.indexOf(' ' + c + ' ') < 0) {
+              cls += c + ' ';
+            }
+          }
+          node.className = cls.trim();
+        };
+ 
+        var removeClass = function(node, classStr) {
+          var cls;
+          if (classStr !== undefined) {
+            classStr = strToArray(classStr);
+            cls = ' ' + node.className + ' ';
+            for (var i = 0, len = classStr.length; i < len; ++i) {
+              cls = cls.replace(' ' + classStr[i] + ' ', ' ');
+            }
+            cls = cls.trim();
+          } else {
+            cls = '';
+          }
+          if (node.className != cls) {
+            node.className = cls;
+          }
+        };
+ 
+        var toggleClass = function(node, classStr) {
+          var cls = ' ' + node.className + ' ';
+          if (cls.indexOf(' ' + classStr.trim() + ' ') >= 0) {
+            removeClass(node, classStr);
+          } else {
+            addClass(node, classStr);
+          }
+        };
+ 
+        var ua = navigator.userAgent;
+        var isFF = parseFloat(ua.split('Firefox/')[1]) || undefined;
+        var isWK = parseFloat(ua.split('WebKit/')[1]) || undefined;
+        var isOpera = parseFloat(ua.split('Opera/')[1]) || undefined;
+ 
+        var canTransition = (function() {
+          var ver = parseFloat(ua.split('Version/')[1]) || undefined;
+          // test to determine if this browser can handle CSS transitions.
+          var cachedCanTransition = 
+            (isWK || (isFF && isFF > 3.6 ) || (isOpera && ver >= 10.5));
+          return function() { return cachedCanTransition; }
+        })();
+ 
+        //
+        // Slide class
+        //
+        var Slide = function(node, idx) {
+          this._node = node;
+          if (idx >= 0) {
+            this._count = idx + 1;
+          }
+          if (this._node) {
+            addClass(this._node, 'slide distant-slide');
+          }
+          this._makeCounter();
+          this._makeBuildList();
+        };
+ 
+        Slide.prototype = {
+          _node: null,
+          _count: 0,
+          _buildList: [],
+          _visited: false,
+          _currentState: '',
+          _states: [ 'distant-slide', 'far-past',
+                     'past', 'current', 'future',
+                     'far-future', 'distant-slide' ],
+          setState: function(state) {
+            if (typeof state != 'string') {
+              state = this._states[state];
+            }
+            if (state == 'current' && !this._visited) {
+              this._visited = true;
+              this._makeBuildList();
+            }
+            removeClass(this._node, this._states);
+            addClass(this._node, state);
+            this._currentState = state;
+ 
+            // delay first auto run. Really wish this were in CSS.
+            /*
+            this._runAutos();
+            */
+            var _t = this;
+            setTimeout(function(){ _t._runAutos(); } , 400);
+          },
+          _makeCounter: function() {
+            if(!this._count || !this._node) { return; }
+            var c = doc.createElement('span');
+            c.innerHTML = this._count;
+            c.className = 'counter';
+            this._node.appendChild(c);
+          },
+          _makeBuildList: function() {
+            this._buildList = [];
+            if (disableBuilds) { return; }
+            if (this._node) {
+              this._buildList = query('[data-build] > *', this._node);
+            }
+            this._buildList.forEach(function(el) {
+              addClass(el, 'to-build');
+            });
+          },
+          _runAutos: function() {
+            if (this._currentState != 'current') {
+              return;
+            }
+            // find the next auto, slice it out of the list, and run it 
+            var idx = -1;
+            this._buildList.some(function(n, i) {
+              if (n.hasAttribute('data-auto')) {
+                idx = i;
+                return true;
+              }
+              return false;
+            });
+            if (idx >= 0) {
+              var elem = this._buildList.splice(idx, 1)[0];
+              var transitionEnd = isWK ? 'webkitTransitionEnd' : (isFF ? 'mozTransitionEnd' : 'oTransitionEnd');
+              var _t = this;
+              if (canTransition()) {
+                var l = function(evt) {
+                  elem.parentNode.removeEventListener(transitionEnd, l, false);
+                  _t._runAutos();
+                };
+                elem.parentNode.addEventListener(transitionEnd, l, false);
+                removeClass(elem, 'to-build');
+              } else {
+                setTimeout(function() {
+                  removeClass(elem, 'to-build');
+                  _t._runAutos();
+                }, 400);
+              }
+            }
+          },
+          buildNext: function() {
+            if (!this._buildList.length) {
+              return false;
+            }
+            removeClass(this._buildList.shift(), 'to-build');
+            return true;
+          },
+        };
+ 
+        //
+        // SlideShow class
+        //
+        var SlideShow = function(slides) {
+          this._slides = (slides || []).map(function(el, idx) {
+            return new Slide(el, idx);
+          });
+          var h = window.location.hash;
+          try {
+            this.current = parseInt(h.split('#slide')[1], 10);
+          } catch (e) { /* squeltch */ }
+          this.current = isNaN(this.current) ? 1 : this.current;
+          var _t = this;
+          doc.addEventListener('keydown', 
+              function(e) { _t.handleKeys(e); }, false);
+          doc.addEventListener('mousewheel', 
+              function(e) { _t.handleWheel(e); }, false);
+          doc.addEventListener('DOMMouseScroll', 
+              function(e) { _t.handleWheel(e); }, false);
+          doc.addEventListener('touchstart', 
+              function(e) { _t.handleTouchStart(e); }, false);
+          doc.addEventListener('touchend', 
+              function(e) { _t.handleTouchEnd(e); }, false);
+          window.addEventListener('popstate', 
+              function(e) { if (e.state) { _t.go(e.state); } }, false);
+          this._update();          
+        };
+ 
+        SlideShow.prototype = {
+          _slides: [],
+          _update: function(dontPush) {
+            document.querySelector('#presentation-counter').innerText = this.current;
+            if (history.pushState) {
+              if (!dontPush) {
+                history.replaceState(this.current, 'Slide ' + this.current, '#slide' + this.current);
+              }
+            } else {
+              window.location.hash = 'slide' + this.current;
+            }
+            for (var x = this.current-1; x < this.current + 7; x++) {
+              if (this._slides[x-4]) {
+                this._slides[x-4].setState(Math.max(0, x-this.current));
+              }
+            }
+          },
+ 
+          current: 0,
+          next: function() {
+            if (!this._slides[this.current-1].buildNext()) {
+              this.current = Math.min(this.current + 1, this._slides.length);
+              this._update();
+            }
+          },
+          prev: function() {
+            this.current = Math.max(this.current-1, 1);
+            this._update();
+          },
+          go: function(num) {
+            this.current = num;
+            this._update(true);
+          },
+ 
+          _notesOn: false,
+          showNotes: function() {
+            var isOn = this._notesOn = !this._notesOn;
+            query('.notes').forEach(function(el) {
+              el.style.display = (notesOn) ? 'block' : 'none';
+            });
+          },
+          switch3D: function() {
+            toggleClass(document.body, 'three-d');
+          },
+          handleWheel: function(e) {
+            var delta = 0;
+            if (e.wheelDelta) {
+              delta = e.wheelDelta/120;
+              if (isOpera) {
+                delta = -delta;
+              }
+            } else if (e.detail) {
+              delta = -e.detail/3;
+            }
+ 
+            if (delta > 0 ) {
+              this.prev();
+              return;
+            }
+            if (delta < 0 ) {
+              this.next();
+              return;
+            }
+          },
+          handleKeys: function(e) {
+            
+            if (/^(input|textarea)$/i.test(e.target.nodeName)) return;
+            
+            switch (e.keyCode) {
+              case 37: // left arrow
+                this.prev(); break;
+              case 39: // right arrow
+              case 32: // space
+                this.next(); break;
+              case 50: // 2
+                this.showNotes(); break;
+              case 51: // 3
+                this.switch3D(); break;
+            }
+          },
+          _touchStartX: 0,
+          handleTouchStart: function(e) {
+            this._touchStartX = e.touches[0].pageX;
+          },
+          handleTouchEnd: function(e) {
+            var delta = this._touchStartX - e.changedTouches[0].pageX;
+            var SWIPE_SIZE = 150;
+            if (delta > SWIPE_SIZE) {
+              this.next();
+            } else if (delta< -SWIPE_SIZE) {
+              this.prev();
+            }
+          },
+        };
+ 
+        // Initialize
+        var slideshow = new SlideShow(query('.slide'));
       })();
-    </script>
-  </body>
+    </script> 
+ 
+	<script>
+	function copy(inElement) {
+	  if (inElement.createTextRange) {
+	    var range = inElement.createTextRange();
+	    if (range && BodyLoaded==1)
+	      range.execCommand('Copy');
+	  } else {
+	    var flashcopier = 'flashcopier';
+	    if(!document.getElementById(flashcopier)) {
+	      var divholder = document.createElement('div');
+	      divholder.id = flashcopier;
+	      document.body.appendChild(divholder);
+	    }
+	    document.getElementById(flashcopier).innerHTML = '';
+	    var divinfo = '<embed src="_clipboard.swf" FlashVars="clipboard='+encodeURIComponent(inElement.value)+'" width="0" height="0" type="application/x-shockwave-flash"></embed>';
+	    document.getElementById(flashcopier).innerHTML = divinfo;
+	  }
+	}	
+	</script>
+  </body> 
 </html>
