@@ -20,7 +20,7 @@
                  Alex Russell (slightlyoff@chromium.org)
                  Brad Neuberg
 -->
-<html manifest="cache.appcache">
+<html><!-- manifest="cache.appcache"> -->
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
@@ -32,6 +32,7 @@
     <link href="css/sea_wave.css" class="theme" rel="stylesheet" />
     <link href="css/default.css" class="theme" rel="stylesheet" media="screen"  />
     <link href="css/common.css" rel="stylesheet" media="screen" />
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
   </head>
   <body>
     <nav id="helpers">
@@ -129,9 +130,32 @@
 			</section>
 		</div>
 	
-		<!-- TODO: who am I -->
+		<div class="slide" id="who-am-i">
+		  <header>Who Am I?</header>
+		  <section>
+			<h3>Elijah Manor</h3>
+
+			<ul>
+			  <li>ASP.NET MVP, ASPInsider</li>
+			  <li>Senior Architect at appendTo</li>
+			</ul>
+
+			<h3>Contact Information</h3>
+
+			<ul>
+			  <li>elijah.manor@gmail.com</li>
+			  <li>http://twitter.com/elijahmanor</li>
+			  <li>http://gplus.to/elijahmanor</li>
+			</ul>
+
+		  </section>
+		  <aside class="note">
+			<section>
+			</section>
+		  </aside>
+		</div>
 	
-		<div class="slide" id="1">
+		<div class="slide" id="slide-1">
 			<header>1. What is <code>this</code>?</header>
 			<section>
 				<ul>
@@ -144,7 +168,7 @@
 			</aside> 
 		</div>
 
-		<div class="slide" id="1-a">
+		<div class="slide" id="slide-1a">
 			<header>1. What is <code>this</code>?</header>
 			<section>
 				<ul>
@@ -152,9 +176,9 @@
 				</ul>
 				<pre class="javascript run">/* Binding to an event */
 $( "a.demo" ).click( function( e ) {
-	alert( this.href );
+    alert( this.href );
 
-	e.preventDefault();
+    e.preventDefault();
 });</pre>
 				<ul>
 					<li><a class="demo" href="http://www.google.com">Google</a></li>
@@ -163,7 +187,7 @@ $( "a.demo" ).click( function( e ) {
 			</section>
 			<script>
 				$( function() {
-					$( "#1-a a.demo" ).click( function( e ) {
+					$( "#slide-1a a.demo" ).click( function( e ) {
 						alert( this.href );
 
 						e.preventDefault();
@@ -176,7 +200,7 @@ $( "a.demo" ).click( function( e ) {
 			</aside> 
 		</div>
 
-		<div class="slide" id="1-b">
+		<div class="slide" id="slide-1b">
 			<header>1b. What is <code>this</code>?</header>
 			<section>
 				<ul>
@@ -186,17 +210,17 @@ $( "a.demo" ).click( function( e ) {
 				</ul>
 				<pre class="javascript">
 (function( $ ) {
-	$.fn.myPlugin = function() {
-		/* this refers to jQuery object from jQuery selection */
-		alert( "this.length = " + this.length );
-		return this.each( function() {
-			/* this refers to DOM element from jQuery selection */
-			alert( "this.id = " + this.id );
-		});
-	}
+    $.fn.myPlugin = function() {
+        /* this refers to jQuery object from jQuery selection */
+        alert( "this.length = " + this.length );
+        return this.each( function() {
+            /* this refers to DOM element from jQuery selection */
+            alert( "this.id = " + this.id );
+        });
+    }
 })( jQuery );
 
-$( "a.demo" ).myPlugin();</pre>
+<div class="run">$( "a.demo" ).myPlugin();</div></pre>
 				<ul>
 					<li>
 						<a id="googleLink" class="demo"
@@ -221,7 +245,9 @@ $( "a.demo" ).myPlugin();</pre>
 				})( jQuery );
 
 				$( function() {
-					$( "#1-b a.demo").myPlugin();
+					$( "#slide-1b .run" ).click( function( e ) {
+						$( "#1b a.demo").myPlugin();						
+					});
 				});
 			</script>
 			<aside class="note">
@@ -230,7 +256,7 @@ $( "a.demo" ).myPlugin();</pre>
 			</aside> 
 		</div>	
 
-		<div class="slide" id="1-c">
+		<div class="slide" id="slide-1c">
 			<header>1c. What is <code>this</code>?</header>
 			<section>
 				<ul>
@@ -240,8 +266,8 @@ $( "a.demo" ).myPlugin();</pre>
 				</ul>
 				<pre class="javascript run">
 var twitter = {
-	userName: "elijahmanor",
-	tweet: function() { alert( "Hello " + this.userName ); } 
+    userName: "elijahmanor",
+    tweet: function() { alert( "Hello " + this.userName ); } 
 };
 
 /* Using event helper, bind(), or live() */
@@ -268,13 +294,13 @@ $( "#update3" ).click( $.proxy( twitter, "tweet" ) );</pre>
 					};
 
 					/* Using event helper, bind(), or live() */
-					$( "#1-c .update1" ).click( twitter.tweet ); /* Undefined */
+					$( "#slide-1c .update1" ).click( twitter.tweet ); /* Undefined */
 
 					/* Option #1: jQuery.proxy( function, context ) */
-					$( "#1-c .update2" ).click( $.proxy( twitter.tweet, twitter ) );
+					$( "#slide-1c .update2" ).click( $.proxy( twitter.tweet, twitter ) );
 
 					/* Option #2: jQuery.proxy( context, name ) */
-					$( "#1-c .update3" ).click( $.proxy( twitter, "tweet" ) );
+					$( "#slide-1c .update3" ).click( $.proxy( twitter, "tweet" ) );
 				});
 			</script>
 			<aside class="note">
@@ -283,7 +309,7 @@ $( "#update3" ).click( $.proxy( twitter, "tweet" ) );</pre>
 			</aside> 
 		</div>
 
-		<div class="slide" id="2">
+		<div class="slide" id="slide-2">
 			<header>2. $ Object | DOM Element</header>
 			<section>
 				<ul>
@@ -301,7 +327,7 @@ $( "#update3" ).click( $.proxy( twitter, "tweet" ) );</pre>
 			</aside> 
 		</div>
 		
-		<div class="slide" id="2-a">
+		<div class="slide" id="slide-2a">
 			<header>2a. $ Object | DOM Element</header>
 			<section>
 				<ul>
@@ -332,7 +358,7 @@ $( "a" ).click( function() {
 			</aside> 
 		</div>		
 		
-		<div class="slide" id="2-b">
+		<div class="slide" id="slide-2b">
 			<header>2b. $ Object | DOM Element</header>
 			<section>
 				<ul>
@@ -353,7 +379,7 @@ $( "a" ).click( function( e ) {
 			</aside> 
 		</div>
 
-		<div class="slide" id="2-c">
+		<div class="slide" id="slide-2c">
 			<header>2c. $ Object | DOM Element</header>
 			<section>
 				<ul>
@@ -379,7 +405,7 @@ $( "a" )[ 0 ];</pre>
 			</aside> 
 		</div>
 
-		<div class="slide" id="3">
+		<div class="slide" id="slide-3">
 			<header>3. Knowing Selectors</header>
 			<section>
 				<ul>
@@ -398,7 +424,7 @@ $( "a" )[ 0 ];</pre>
 			</aside> 
 		</div>
 
-		<div class="slide" id="3-a">
+		<div class="slide" id="slide-3a">
 			<header>3a. Knowing Selectors</header>
 			<section>
 				<ul>
@@ -406,13 +432,13 @@ $( "a" )[ 0 ];</pre>
 				</ul>
 				<pre class="javascript">
 //Selects all the anchor tags in the DOM
-$('a')
+$( "a" )
 
 //Selects all the anchor tags inside of div elements in the DOM
-$('div a')
+$( "div a" )
 
 //Selects all the tr elements with a class of 'odd'
-$('tr.odd')</pre>
+$( "tr.odd" )</pre>
 			</section>
 			<aside class="note">
 				<section>
@@ -420,7 +446,7 @@ $('tr.odd')</pre>
 			</aside> 
 		</div>
 
-		<div class="slide" id="3-b">
+		<div class="slide" id="slide-3b">
 			<header>3b. Knowing Selectors</header>
 			<section>
 				<ul>
@@ -434,7 +460,7 @@ $( "a[href$='mp3']" )
 $( "a[target='_blank']" ) 
 
 //Selects all links that have a class that begins with "custom"
-$( "a[class^='custom']" )</pre>	
+$( "a[class^='custom']" )</pre>
 			</section>
 			<aside class="note">
 				<section>
@@ -448,7 +474,7 @@ $( "a[class^='custom']" )</pre>
 			</aside> 
 		</div>
 		
-		<div class="slide" id="3-c">
+		<div class="slide" id="slide-3c">
 			<header>3c. Knowing Selectors</header>
 			<section>
 				<ul>
@@ -483,7 +509,7 @@ $( "li:contains('Abby')" )</pre>
 			</aside> 
 		</div>
 
-		<div class="slide" id="3-d">
+		<div class="slide" id="slide-3d">
 			<header>3d. Knowing Selectors</header>
 			<section>
 				<ul>
@@ -518,7 +544,7 @@ $( "#myDiv").find( "span a.myClass" ).addClass( "highlight" );</pre>
 			</aside> 
 		</div>
 
-		<div class="slide" id="3-e">
+		<div class="slide" id="slide-3e">
 			<header>3e. Knowing Selectors</header>
 			<section>
 				<ul>
@@ -555,8 +581,8 @@ $.expr[ ":" ].elementNameStartsWith =
 				        return element.nodeName.match( regEx ) !== null;
 				    };
 
-				$( "#3-e .run" ).click( function( e ) {
-					$( "#3-e *:elementNameStartsWith('d')" ).each( function() {
+				$( "#slide-3e .run" ).click( function( e ) {
+					$( "#slide-3e .demo *:elementNameStartsWith('d')" ).each( function() {
 					    alert( this.nodeName ); 
 					});
 				});
@@ -564,11 +590,20 @@ $.expr[ ":" ].elementNameStartsWith =
 			</script>
 			<aside class="note">
 				<section>
+					<pre>
+&lt;div&gt;
+    <&lt;dl&gt;
+      &lt;dt&gt;Coffee&lt;/dt&gt;
+        &lt;dd&gt;- black hot drink&lt;/dd&gt;
+      &lt;dt&gt;Milk&lt;/dt&gt;
+        &lt;dd&gt;- white cold drink&lt;/dd&gt;
+    &lt;/dl&gt;
+&lt;/div&gt;</pre>
 				</section>
 			</aside> 
 		</div>
 
-		<div class="slide" id="3-f">
+		<div class="slide" id="slide-3f">
 			<header>3f. Knowing Selectors</header>
 			<section>
 				<ul>
@@ -595,7 +630,7 @@ $( "#myButton" ).click(function() {  // Better
 			</aside> 
 		</div>
 				
-		<div class="slide" id="3-g">
+		<div class="slide" id="slide-3g">
 			<header>3g. Knowing Selectors</header>
 			<section>
 				<ul>
@@ -603,15 +638,15 @@ $( "#myButton" ).click(function() {  // Better
 				</ul>
 				<pre class="javascript">
 $( "#myButton" ).click( function() {  // Bad
-	$( "#alertMessage" ).hide();
-	$( "#alertMessage" ).html( "&lt;strong>Really Bad Error&lt;/strong>" );
-	$( "#alertMessage" ).fadeIn( "slow" );
+    $( "#alertMessage" ).hide();
+    $( "#alertMessage" ).html( "&lt;strong>Really Bad Error&lt;/strong>" );
+    $( "#alertMessage" ).fadeIn( "slow" );
 });
 
 $( "#myButton" ).click( function() {  // Best?
-	$( "#alertMessage" ).hide()
-		.html( "&lt;strong>Really Bad Error&lt;/strong>" )
-		.fadeIn( "slow" );
+    $( "#alertMessage" ).hide()
+        .html( "&lt;strong>Really Bad Error&lt;/strong>" )
+        .fadeIn( "slow" );
 });</pre>
 			</section>
 			<aside class="note">
@@ -620,7 +655,7 @@ $( "#myButton" ).click( function() {  // Best?
 			</aside> 
 		</div>
 
-		<div class="slide" id="3-h">
+		<div class="slide" id="slide-3h">
 			<header>3h. Knowing Selectors</header>
 			<section>
 				<ul>
@@ -648,7 +683,21 @@ $( "#myButton" ).click( function() {  // Best?
 			</aside> 
 		</div>
 
-		<div class="slide" id="4">
+		<div class="slide" id="slide-4">
+			<style>
+				/*
+				#slide-4 table { border: 1px solid red !important; }
+				#slide-4 table tr { border: 1px solid green !important; }
+				#slide-4 table tr td { border: 1px slide blue !important; }
+				*/
+
+				#slide-4 table, #slide-4 table tbody tr, #slide-4 table tr td {
+					margin: 1.5em;
+					padding: 1.5em;
+					border: solid 1px red;
+				}
+				
+			</style>
 			<header>4. Dos &amp; Don'ts of Events</header>
 			<section>
 				<ul>
@@ -663,7 +712,7 @@ $( "#myButton" ).click( function() {  // Best?
 $( "table" ).click( function( e ) {
     alert( "You clicked the " + e.target.nodeName + "!" );
 });</pre>
-				<table class="demo" cellpadding="25" cellspacing="25">
+				<table cellpadding="25" cellspacing="25">
 					<tr>
 						<td>jQuery</td>
 						<td>Rocks!</td>
@@ -672,14 +721,14 @@ $( "table" ).click( function( e ) {
 			</section>
 			<script>
 				$( function() {
-					$( "#4 table" ).click( function( e ) {
+					$( "#slide-4 table" ).click( function( e ) {
 					    alert( "You clicked the " + e.target.nodeName + "!" );
 					});
 				});
 			</script>
 			<aside class="note">
 				<section>
-					<pre class="html lite">
+					<pre>
 &lt;table&gt;
     &lt;tr&gt;
         &lt;td>jQuery&lt;/td&gt;
@@ -691,7 +740,7 @@ $( "table" ).click( function( e ) {
 			</aside> 
 		</div>
 
-		<div class="slide" id="4-a">
+		<div class="slide" id="slide-4a">
 			<header>4a. Dos &amp; Don'ts of Events</header>
 			<section>
 				<ul>
@@ -704,12 +753,12 @@ $( "table" ).click( function( e ) {
 				</ul>
 				<pre class="javascript run">
 $( "ul.demo" ).click( function() {
-	alert( "Click Handler for Unordered List" );
+    alert( "Click Handler for Unordered List" );
 });
 
 $( "ul.demo li a" ).click( function( e ) {
-	alert( "Click Handler for Anchor" );
-	e.preventDefault();
+    alert( "Click Handler for Anchor" );
+    e.preventDefault();
 });</pre>
 				<ul class="demo">
 					<li><a href="http://twitter.com/elijahmanor">@elijahmanor</a></li>
@@ -717,19 +766,19 @@ $( "ul.demo li a" ).click( function( e ) {
 			</section>
 			<aside class="note">
 				<section>
-					<pre class="html lite">
+					<pre>
 &lt;ul class="demo"&gt;
-	&lt;li"&gt;
-		&lt;a href="http://twitter.com/elijahmanor"&gt;
-			@elijahmanor
-		&lt;/a&gt;
-	&lt;/li&gt;
+    &lt;li"&gt;
+        &lt;a href="http://twitter.com/elijahmanor"&gt;
+            @elijahmanor
+        &lt;/a&gt;
+    &lt;/li&gt;
 &lt;/ul&gt;</pre>
 				</section>
 			</aside> 
 		</div>
 
-		<div class="slide" id="4-b">
+		<div class="slide" id="slide-4b">
 			<header>4b. Dos &amp; Don'ts of Events</header>
 			<section>
 				<ul>
@@ -754,19 +803,19 @@ $( "ul.demo li a" ).click( function( e ) {
 			</section>
 			<aside class="note">
 				<section>
-					<pre class="html lite">
+					<pre class="">
 &lt;ul class="demo"&gt;
-	&lt;li&gt;
-		&lt;a href="http://twitter.com/elijahmanor"&gt;
-			@elijahmanor
-		&lt;/a&gt;
-	&lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href="http://twitter.com/elijahmanor"&gt;
+            @elijahmanor
+        &lt;/a&gt;
+    &lt;/li&gt;
 &lt;/ul&gt;</pre>
 				</section>
 			</aside> 
 		</div>
 
-		<div class="slide" id="4-c">
+		<div class="slide" id="slide-4c">
 			<header>4c. Dos &amp; Don'ts of Events</header>
 			<section>
 				<ul>
@@ -782,7 +831,7 @@ var hoverOverMe = function() {
 };
 
 $( "p.clickMe" ).click( hoverOverMe )
-	.dblclick( hoverOverMe );</pre>
+    .dblclick( hoverOverMe );</pre>
 				<ul>
 					<li>These Event Helpers are just convenient wrappers around the bind() method...</li>
 				</ul>
@@ -793,7 +842,7 @@ $( "p.clickMe" ).click( hoverOverMe )
 			</aside> 
 		</div>
 
-		<div class="slide" id="4-d">
+		<div class="slide" id="slide-4d">
 			<header>4d. Dos &amp; Don'ts of Events</header>
 			<section>
 				<ul>
@@ -801,14 +850,19 @@ $( "p.clickMe" ).click( hoverOverMe )
 				</ul>
 				<pre class="javascript">
 var clickMe = function() {
-	console.log( "Hello World!" );
+    console.log( "Hello World!" );
 };
 
 $( "p.clickMe" ).bind( "click dblclick", clickMe );
 
-$( "p.clickMe" ).unbind();                            // really dangerous
-$( "p.clickMe" ).unbind( "click dblclick" );          // moderately dangerous
-$( "p.clickMe" ).unbind( "click dblclick", clickMe ); // safe</pre>				
+// really dangerous
+$( "p.clickMe" ).unbind();
+
+// moderately dangerous
+$( "p.clickMe" ).unbind( "click dblclick" );          
+
+// safe
+$( "p.clickMe" ).unbind( "click dblclick", clickMe );</pre>				
 			</section>
 			<aside class="note">
 				<section>
@@ -816,7 +870,7 @@ $( "p.clickMe" ).unbind( "click dblclick", clickMe ); // safe</pre>
 			</aside> 
 		</div>
 
-		<div class="slide" id="4-e">
+		<div class="slide" id="slide-4e">
 			<header>4e. Dos &amp; Don'ts of Events</header>
 			<section>
 				<ul>
@@ -830,21 +884,28 @@ var clickMe = function() {
 
 $( "ul.demo li" ).bind( "click", clickMe );
 
-<div class="run">$( "ul.demo" ).append( "&lt;li&gt;Dynamic Item&lt;/li&gt;" );</div>  // Doesn't work</pre>
+<span class="run">$( "ul.demo" ).append( "&lt;li&gt;Dynamic Item&lt;/li&gt;" );</span>  // Doesn't work</pre>
 				<ul class="demo">
 					<li>Static Item</li>
 				</ul>
 			</section>
 			<script>
 				$( function() {
-					$( "#4-e .run" ).click( function() {
-						$( "#4-e ul.demo" ).append( "<li>Dynamic Item</li>" );
+					var clickMe = function() {
+					    var element = $( this );
+					    element.text( element.text() + " :)" );
+					};
+
+					$( "#slide-4e ul.demo li" ).bind( "click", clickMe );
+					
+					$( "#slide-4e .run" ).click( function() {
+						$( "#slide-4e ul.demo" ).append( "<li>Dynamic Item</li>" );
 					});
 				});
 			</script>
 			<aside class="note">
 				<section>
-						<pre class="html lite">
+						<pre class="">
 &lt;ul class="demo"&gt;
     &lt;li&gt;Static Item&lt;/li&gt;
 &lt;/ul&gt;</pre>
@@ -852,7 +913,7 @@ $( "ul.demo li" ).bind( "click", clickMe );
 			</aside> 
 		</div>
 
-		<div class="slide" id="4-f">
+		<div class="slide" id="slide-4f">
 			<header>4f. Dos &amp; Don'ts of Events</header>
 			<section>
 				<ul>
@@ -860,28 +921,35 @@ $( "ul.demo li" ).bind( "click", clickMe );
 				</ul>
 				<pre class="javascript run">
 var clickMe = function() {
-	var element = $( this );
-	element.text(element.text() + " :)" );
+    var element = $( this );
+    element.text(element.text() + " :)" );
 };
 
 $( "ul.demo li" ).live( "click", clickMe );
 /* die() || die( "click" ) || die( "click", clickMe ) */
 
-<div class="run">$( "ul.demo" ).append( "&lt;li>Dynamic Item&lt;/li>" );</div>  // Works!</pre>
+<span class="run">$( "ul.demo" ).append( "&lt;li>Dynamic Item&lt;/li>" );</span>  // Works!</pre>
 				<ul class="demo">
 					<li>Static Item</li>
 				</ul>
 			</section>
 			<script>
 				$( function() {
-					$( "#4-f .run" ).click( function() {
-						$( "#4-f ul.demo" ).append( "<li>Dynamic Item</li>" );
+					var clickMe = function() {
+					    var element = $( this );
+					    element.text(element.text() + " :)" );
+					};
+
+					$( "#slide-4f ul.demo li" ).live( "click", clickMe );
+					
+					$( "#slide-4f .run" ).click( function() {
+						$( "#slide-4f ul.demo" ).append( "<li>Dynamic Item</li>" );
 					});
 				});
 			</script>
 			<aside class="note">
 				<section>
-					<pre class="html lite">
+					<pre class="">
 &lt;ul class="demo"&gt;
     &lt;li&gt;Static Item&lt;/li&gt;
 &lt;/ul&gt;</pre>
@@ -889,7 +957,7 @@ $( "ul.demo li" ).live( "click", clickMe );
 			</aside> 
 		</div>
 			
-		<div class="slide" id="4-g">
+		<div class="slide" id="slide-4g">
 			<header>4g. Dos &amp; Don'ts of Events</header>
 			<section>
 				<ul>
@@ -897,22 +965,36 @@ $( "ul.demo li" ).live( "click", clickMe );
 				</ul>
 				<pre class="javascript run">
 var clickMe = function() {
-	var element = $( this );
-	element.text( element.text() + " :)" );
+    var element = $( this );
+    element.text( element.text() + " :)" );
 };
 
 $( "ul.demo" ).delegate( "li", "click", clickMe );
 /* undelegate(), undelegate( "li", "click" ),
 	undelegate( "li", "click", clickMe ) */
 
-$( "ul.demo" ).append( "&lt;li&gt;Dynamic Item&lt;/li&gt;" );  // Works</pre>
+<span class="run">$( "ul.demo" ).append( "&lt;li&gt;Dynamic Item&lt;/li&gt;" );</span>  // Works</pre>
 				<ul class="demo">
 					<li>Static Item</li>
 				</ul>
 			</section>
+			<script>
+			$( function() {
+				var clickMe = function() {
+					var element = $( this );
+					element.text( element.text() + " :)" );
+				};
+
+				$( "#slide-4g ul.demo" ).delegate( "li", "click", clickMe );
+				
+				$( "#slide-4g .run" ).click( function() {
+					$( "#slide-4g ul.demo" ).append( "<li>Dynamic Item</li>" );
+				});
+			});
+			</script>
 			<aside class="note">
 				<section>
-					<pre class="html lite">
+					<pre class="">
 &lt;ul class="demo"&gt;
 	&lt;li&gt;Static Item&lt;/li&gt;
 &lt;/ul&gt;</pre>
@@ -920,21 +1002,24 @@ $( "ul.demo" ).append( "&lt;li&gt;Dynamic Item&lt;/li&gt;" );  // Works</pre>
 			</aside> 
 		</div>
 		
-		<div class="slide" id="">
+		<div class="slide" id="slide-4h">
 			<header>4h. Dos &amp; Don'ts of Events</header>
 			<section>
 				<ul>
 					<li>
-						jQuery 1.7 rewrote events from the group up and introduced two new binding methods called <code>on</code and <code>off</code>
-						<ul><li>The bind/live/delegate methods are now just one line pass throughs to the new <code>on</code> &amp; the same applies to unbind/die/undelegate mapping to the <code>off</code> method.</li></ul>
+						jQuery 1.7 rewrote events from the group up and introduced two new binding methods called <code>on</code> and <code>off</code>
+						<ul><li>The <code>bind</code>/<code>live</code>/<code>delegate</code> methods are now just one line pass throughs to the new <code>on</code> &amp; the same applies to <code>unbind</code>/<code>die</code>/<code>undelegate</code> mapping to the <code>off</code> method.</li></ul>
 						</li>
 				</ul>
 				<pre class="javascript run">
-$( ".customer" ).on( "click", function( e ) {} );                // behave like bind
+// behave like bind
+$( ".customer" ).on( "click", function( e ) {} );                
 
-$( document ).on( "click", ".customer", function( e ) {} );      // behave like live
+// behave like live
+$( document ).on( "click", ".customer", function( e ) {} );      
 
-$( ".customers" ).on( "click", ".customer", function( e ) {} );  // behave like delegate</pre>
+// behave like delegate
+$( ".customers" ).on( "click", ".customer", function( e ) {} );</pre>
 			</section>
 			<aside class="note">
 				<section>
@@ -942,7 +1027,7 @@ $( ".customers" ).on( "click", ".customer", function( e ) {} );  // behave like 
 			</aside> 
 		</div>	
 					
-		<div class="slide" id="5">
+		<div class="slide" id="slide-5">
 			<header>5. Ways of Storing Data</header>
 			<section>
 				<ul>
@@ -961,7 +1046,7 @@ $( ".customers" ).on( "click", ".customer", function( e ) {} );  // behave like 
 			</aside> 
 		</div>
 		
-		<div class="slide" id="5-a">
+		<div class="slide" id="slide-5a">
 			<header>5a. Ways of Storing Data</header>
 			<section>
 				<ul>
@@ -980,7 +1065,7 @@ $( "a" ).attr( "alt" )</pre>
 			</aside> 
 		</div>
 		
-		<div class="slide" id="5-b">
+		<div class="slide" id="slide-5b">
 			<header>5b. Ways of Storing Data</header>
 			<section>
 				<ul>
@@ -1002,7 +1087,7 @@ alert( $( "li.demo" ).data( "specialInfo" ) );</pre>
 			</aside> 
 		</div>	
 
-		<div class="slide" id="5-c">
+		<div class="slide" id="slide-5c">
 			<header>5c. Ways of Storing Data</header>
 			<section>
 				<ul>
@@ -1032,7 +1117,7 @@ alert( $( "li.demo" ).data( "specialInfo" ).firstName );</pre>
 			</aside> 
 		</div>	
 
-		<div class="slide" id="5-d">
+		<div class="slide" id="slide-5d">
 			<header>5d. Ways of Storing Data</header>
 			<section>
 				<ul>
@@ -1063,7 +1148,7 @@ console.log($("li.demo").data().someKey.firstName);</pre>
 			</aside> 
 		</div>	
 
-		<div class="slide" id="5-e">
+		<div class="slide" id="slide-5e">
 			<header>5e. Ways of Storing Data</header>
 			<section>
 				<ul>
@@ -1089,14 +1174,17 @@ alert( "After removeData(): " + $( "li.demo" ).data( "specialInfo" ) );</pre>
 			</aside> 
 		</div>	
 		
-		<div class="slide" id="5-f">
+		<div class="slide" id="slide-5f">
 			<header>5f. Ways of Storing Data</header>
 			<section>
 				<ul>
 					<li>HTML5 data- Attributes</li>
 				</ul>
 				<pre class="javascript">
-<div data-role="page" data-last-value="43" data-hidden="true" data-options='{"name":"John"}'></div></pre>
+&lt;div data-role="page" 
+    data-last-value="43" 
+    data-hidden="true" 
+    data-options='{"name":"John"}'&gt;&lt;/div&gt;</pre>
 				<p>Support added in 1.4.3 and in 1.6 change was made to conform to W3C HTML5 specification (embedded dashes)</p>
 				<pre>
 $( "div" ).data( "role" ) === "page";
@@ -1114,10 +1202,16 @@ $( "div" ).data( "options" ).name === "John";
 			</aside> 
 		</div>	
 
-		<div class="slide" id="6">
+		<div class="slide" id="slide-6">
 			<header>6. Ins &amp; Outs of AJAX</header>
 			<section>
-				
+				<ul>
+					<li>Helper Methods</li>
+					<li>Global AJAX Events</li>
+					<li>Low Level AJAX Method</li>
+					<li>Deferreds</li>
+					<li>When Method</li>
+				</ul>
 			</section>
 			<aside class="note">
 				<section>
@@ -1125,10 +1219,25 @@ $( "div" ).data( "options" ).name === "John";
 			</aside> 
 		</div>	
 
-		<div class="slide" id="6a">
-			<header></header>
+		<div class="slide" id="slide-6a">
+			<header>6a. Ins &amp; Outs of AJAX</header>
 			<section>
-				helper methods
+				<ul>
+					<li>Helper Methods</li>
+				</ul>				
+<pre>
+$.get( "/Pet/Details/3", function ( data, textStatus, xhr ) {} );
+
+$getJSON( "/Pet/Details/3", function ( data, textStatus, xhr ) {} );
+
+$.getScript( "../../Scripts/jquery.corner.js", 
+    function ( data, textStatus ) {} );
+
+$( "#output" ).load( "/Pet/Index table" );
+
+var formData = $( "form" ).serialize(); 
+$.post( "/Pet/Create", formData, 
+    function ( data, textStatus, xhr ) {} );</pre>
 			</section>
 			<aside class="note">
 				<section>
@@ -1136,43 +1245,26 @@ $( "div" ).data( "options" ).name === "John";
 			</aside> 
 		</div>	
 
-		<div class="slide" id="">
-			<header></header>
+		<div class="slide" id="slide-6b">
+			<header>6b. Ins &amp; Outs of AJAX</header>
 			<section>
-				ajax method
-			</section>
-			<aside class="note">
-				<section>
-				</section>
-			</aside> 
-		</div>	
+				<ul>
+					<li>Global AJAX Events</li>
+				</ul>
+				<pre>
+.ajaxStart()
+.ajaxSend( handler( event, XMLHttpRequest, ajaxOptions ) )
+.ajaxSuccess( handler( event, XMLHttpRequest, ajaxOptions ) )
+.ajaxError( handler( event, XMLHttpRequest, ajaxOptions, 
+    thrownError ) )
+.ajaxComplete( handler( event, XMLHttpRequest, ajaxOptions ) )
+.ajaxStop()</pre>
 
-		<div class="slide" id="">
-			<header></header>
-			<section>
-				deferreds - adding success/error after fact
-			</section>
-			<aside class="note">
-				<section>
-				</section>
-			</aside> 
-		</div>	
-
-		<div class="slide" id="">
-			<header></header>
-			<section>
-				deferreds - using when
-			</section>
-			<aside class="note">
-				<section>
-				</section>
-			</aside> 
-		</div>	
-
-		<div class="slide" id="">
-			<header></header>
-			<section>
-				deferreds - this is not specific to ajax... example of something else
+				<pre>
+$( "#output" ).ajaxError( function( event, xhr, ajaxOptions, thrownError ) {
+    // Either display the error in a message... this is fired for all AJAX errors
+});					
+</pre>
 			</section>
 			<aside class="note">
 				<section>
@@ -1180,6 +1272,104 @@ $( "div" ).data( "options" ).name === "John";
 			</aside> 
 		</div>
 
+		<div class="slide" id="slide-6c">
+			<header>6c. Ins &amp; Outs of AJAX</header>
+			<section>
+				<ul>
+					<li>Low Level AJAX Method</li>
+				</ul>
+				
+				<pre>
+var formData = $( "form" ).serialize(); 
+
+$.post( "/Pet/Create", formData, 
+    function ( data, textStatus, xhr ) {} );					
+
+$.ajax({
+    type: 'POST',
+    url: "/Pet/Create",
+    data: formData,
+    success: function ( data, textStatus, xhr ) {} );
+    // etc...
+});</pre>				
+				<p>There are a lot of properties you can set in the <code>$.ajax</code> method...<p>
+				<ul>
+					<li>async, beforeSend, cache, complete, contentType, context, data, dataFilter, dataType, error, password, success, timeout, url, username, etc...</li>
+				</ul>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>	
+
+		<div class="slide" id="slide-6d">
+			<header>6d. Ins &amp; Outs of AJAX</header>
+			<section>
+				<ul>
+					<li>Deferreds</li>
+				</ul>
+
+				<p>jQuery 1.5 added the concept of Deferreds. Instead of having to add your callbacks to success and error during the definition of your AJAX call, you can now decide to define those later or append to them.</p>
+				
+				<pre>
+// Save off the special jQuery XMLHTTPRequest Deferred 
+var jqXhr = $.ajax( "/Pet/Details/3" ) 
+    .done( function() { alert( "success" ); })
+    .fail( function() { alert( "error"); })
+    .always( function() { alert( "complete" ); });
+
+jqXhr.always( function() { alert( "second complete" ); });</pre>		
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>	
+
+		<div class="slide" id="slide-6e">
+			<header>6e. Ins &amp; Outs of AJAX</header>
+			<section>
+				<ul>
+					<li>When Method</li>
+				</ul>
+
+				<p>Sometimes you want to know when several async operations have finished before doing something else. The <code>$.when</code> method is useful for such scenarios.</p>				
+
+				<pre>
+$.when( $.ajax( "/page1.php" ), $.ajax( "/page2.php" ) )
+    .then( successCallback, failureCallback );</pre>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>	
+
+		<div class="slide" id="questions">
+		  <header>Questions?</header>
+		  <section>
+			<h3>Elijah Manor</h3>
+
+			<ul>
+			  <li>ASP.NET MVP, ASPInsider</li>
+			  <li>Senior Architect at appendTo</li>
+			</ul>
+
+			<h3>Contact Information</h3>
+
+			<ul>
+			  <li>elijah.manor@gmail.com</li>
+			  <li>http://twitter.com/elijahmanor</li>
+			  <li>http://gplus.to/elijahmanor</li>
+			</ul>
+
+		  </section>
+		  <aside class="note">
+			<section>
+			</section>
+		  </aside>
+		</div>
 
       </div> <!-- slides -->
       <div id="speaker-note" class="invisible" style="display: none;">
