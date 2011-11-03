@@ -47,1196 +47,1139 @@
       </menu>
     </nav>
     <div class="presentation">
-      <div id="presentation-counter">Loading...</div>
-      <div class="slides">
-        <div class="slide" id="landing-slide">
-          <style>
-            #landing-slide p {
-              font-size: 35px;
-            }
-            p#disclaimer-message {
-              font-size: 20px;
-            }
-          </style>
-          <section class="middle">
-            <p>This presentation is an HTML5 website</p>
-            <p>Press <span id="left-init-key" class="key">&rarr;</span> key to advance.</p>
-            <p id="disclaimer-message">Having issues seeing the presentation? Read the <a href="disclaimer.html">disclaimer</a></p>
-          </section>
-          <aside class="note">
-            <section>
-              Welcome! (This field is for presenter notes and commentary.)
-            </section>
-          </aside> 
-        </div>
-
-        <div class="slide" id="controls-slide">
-          <header>Slides controls</header>
-          <style>
-            #controls-slide li, #controls-slide p {
-              font-size: 32px;
-            }
-            #controls-slide .key {
-              bottom: 2px;
-            }
-          </style>
-          <section>
-            <ul>
-              <li><span class="key">&larr;</span> and <span class="key">&rarr;</span> to move around.</li>
-              <li><span class="key">Ctrl/Command</span> and <span class="key">+</span> or <span class="key">-</span> to zoom in and out.</li>
-              <li><span class="key">S</span> to view page source.</li>
-              <li><span class="key">T</span> to change the theme.</li>
-              <li><span class="key">H</span> to toggle syntax highlight.</li>
-              <li><span class="key">N</span> to toggle speaker notes.</li>
-              <li><span class="key">3</span> to toggle 3D effect.</li>
-              <li><span class="key">0</span> to toggle help.</li>
-            </ul>
-          </section>
-        </div>
-
-        <div class="slide" id="tips">
-          <header>Slide Notes</header>
-          <section>
-            <p>When you see the '✎' in the title of the slide you can click on it to launch jsFiddle to run the associated code example.</p>
-            <p>Once you launch the jsFiddle you can remove the embedded/... from the URL if you want to tweak the results and play with the code.
-            <ul>
-              <li>http://jsfiddle.net/ng4Qt/embedded/js,html,css,result/presentation/</li>
-              c<li>http://jsfiddle.net/ng4Qt</li>
-            </ul></p>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>
-
-        <div class="slide" id="title-slide">
-          <style>
-            #title-slide h1, #title-slide h2 {
-              color: black;
-            }
-            #title-slide h1 {
-              letter-spacing: -2px;
-              font-size: 96px;
-            }
-            #title-slide h2 {
-              margin-top: -5px;
-              font-size: 40px;
-              letter-spacing: -1px;
-            }
-            #title-slide p {
-              line-height: 35px;
-              padding-left: 200px;
-              padding-right: 200px;
-            }
-          </style>
-          <section class="middle">
-            <hgroup>
-              <h1>
-                Extending Your jQuery App with AmplifyJS
-              </h1>
-              <h2>
-                by Elijah Manor
-              </h2>
-            </hgroup>
-            <p>Taking an existing web application and slowing adding 3 AmplifyJS components</p>
-          </section>
-        </div>
-
-        <div class="slide" id="amplifyJs">
-          <header>AmplifyJS JavaScript Library</header>
-          <section>
-            <p>AmplifyJS is a set of components designed to solve common web application problems with a simplistic API. </p>
-            <ul>
-              <li>Client Side Component Communication (publish/subscribe) </li>
-              <li>Client Side Browser &amp; Mobile Device Storage (store)</li>
-              <li>Ajax Request Managment (request)</li>
-            </ul>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>
-
-        <div class="slide" id="agenda">
-          <header>Today We Will...</header>
-          <section>
-              <p>Show an example of a <em>typical</em> web application that you may encounter</p>
-              <p>Show how to <em>extend</em> the application with <a href="http://amplifyjs.com">AmplifyJS</a></p>
-              <p>Show how to <em>easily</em> mock web service calls to let you continue developing the font-end</p>
-              <p>Show an easy approach to <em>unit test</em> your code</p>
-              <!--<p>Show a helpful tool to help you <em>quickly prototype</em> your user interface</p>-->
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>
-
-        <div class="slide" id="challenge">
-          <header>Front-End Challenge</header>
-          <section>
-            <p>As your application grows you will find that it is important to abstract the various pieces of your implementation to help you easily extend the functionality and make it less painful to maintain.</p>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>
-
-        <div class="slide" id="appBefore">
-          <header>Hacker News Web Application <a href="http://jsfiddle.net/ng4Qt/embedded/js,html,css,result/presentation/" target="_blank">✎</a></header>
-          <section>
-<pre style="overflow-y: scroll; height: 525px;">
-var hackerNews = (function( $, undefined ) {
-    var pub = {};
-
-    pub.init = function() {
-        $( &quot;#btnRefresh&quot; ).live( &quot;click&quot;, function() {
-            pub.getAndDisplayNews();
-        });        
-    };
-
-    pub.getAndDisplayNews = function() {
-        $.mobile.pageLoading();  
-
-        getNews( function( data ) {
-            displayNews( data );    
-
-            $.mobile.pageLoading( true ); 
-        });
-    };
-
-    function getNews( callback ) { 
-        $.<b>ajax</b>({
-            <b>url</b>: &quot;http://api.ihackernews.com/page?format=jsonp&quot;,
-            <b>dataType</b>: &quot;jsonp&quot;,
-            <b>success</b>: function( data, textStatus, jqXHR ) {
-                if ( callback ) callback ( data );
-            },
-            <b>error</b>: function( jqXHR, textStatus, errorThrown ) {
-                console.log( textStatus + &quot;: &quot; + errorThrown );
-            }
-        });                
-    }
-
-    function displayNews( news ) {
-        var newsList = $( &quot;#hackerNews&quot; ).find( &quot;.newsList&quot; );
-
-        newsList.empty();
-        $( &quot;#newsItem&quot; ).tmpl( news.items ).<b>appendTo</b>( newsList );
-        newsList.listview( &quot;refresh&quot; );        
-        $( &quot;#itemCount&quot; ).<b>text</b>( news.items.length );        
-    }
-
-    return pub;
-}( jQuery ));
-
-hackerNews.init();
-hackerNews.getAndDisplayNews();
-</pre>
-          </section>
-          <aside class="note">
-            <section>
-              <p>The implementation uses a lot of best practices such as: 
-                <ul>
-                  <li>IIFE</li> 
-                  <li>public and private methods</li>
-                  <li>small methods with focused purpose</li>
-                  <li>etc...</li>
-                </ul>
-              </p>
-              <p>However, there the various portions of the UI are tightly coupled to the retrieval of the data.</p>
-            </section>
-          </aside> 
-        </div>
-
-        <div class="slide transitionSlide" id="pub-sub-title">
-          <section class="middle">
-            <h2>AmplifyJS Pub / Sub Component</h2>
-          </section>
-        </div>
-
-        <div class="slide" id="pubSub">
-          <header>AmplifyJS Pub / Sub Component</header>
-          <section>
-            <p>Client Side Component Communication - amplify.publish/subscribe provides a clean, performant API for component to component communication.</p>
-            <p>Note: You could use jQuery Custom Events to simulate this interaction, but it is tightly bound to a DOM element and the syntax isn't as graceful when all you want is just a pub/sub component.</p>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>
-
-        <div class="slide" id="publishSub">
-          <header>AmplifyJS Pub / Sub API</header>
-          <section>
-            <h2>Publish a Topic</h2>
-<pre>
-amplify.publish( string topic, ... )
-</pre>
-            <ul>
-              <li><code>topic</code>: The name of the message to publish</li>
-              <li><code>...</code>: Any additional parameters that will be passed to the subscriptions</li>
-            </ul>
-
-<pre>
-amplify.publish( &quot;contactUpdated&quot;, { 
-  firstName: &quot;John&quot;, lastName: &quot;Smith&quot; 
-});
-</pre>
-
-            <p>The publish will return a boolean indicating whether any subscribers returned false. If a subscriber returns false, then it prevents any additional subscriptions from being invoked.</p>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>
-
-        <div class="slide" id="pubSubscribe">
-          <header>AmplifyJS Pub / Sub API…</header>
-          <section>
-            <h2>Subscribe to a Topic</h2>
-
-<pre>
-amplify.subscribe( string topic, function callback )
-amplify.subscribe( string topic, object context, function callback )
-amplify.subscribe( string topic, function callback, 
-  number priority )
-amplify.subscribe( string topic, object context, function callback, 
-  number priority )
-</pre>
-
-            <ul>
-              <li><code>topic</code>: Name of the message to subscribe to</li>
-              <li><code>context</code>: What this will be when the callback is invoked</li>
-              <li><code>callback</code>: Function to invoke when the message is published</li>
-              <li><code>priority</code>: Priority relative to other subscriptions for the same message</li>
-            </ul>
-
-<pre>
-amplify.subscribe( &quot;contactUpdated&quot;, 
-  function( contact ) {
-    console.log( contact.firstName ); // John
-  }, 5 );
-</pre>          
-            <br /><br /><br />
-          </section>
-          <aside class="note">
-            <section>
-              <h2>Remove a subscription</h2>
-
-<pre>
-amplify.unsubscribe( string topic, function callback )
-</pre>
-
-              <ul>
-                <li><code>topic</code>: The topic being unsubscribed from.</li>
-                <li><code>callback</code>: The callback that was originally subscribed.</li>
-              </ul>
-            </section>
-          </aside> 
-        </div>
-
-        <div class="slide" id="appPubSub">
-          <header>Extending with Pub / Sub <a href="http://jsfiddle.net/t5G4n/embedded/js,html,css,result/presentation/" target="_blank">✎</a></header>
-          <section>
-<pre style="overflow-y: scroll; height: 525px;">
-var hackerNews = (function( $, undefined ) {
-    var pub = {};
-
-    pub.init = function() {
-        $( &quot;#btnRefresh&quot; ).live( &quot;click&quot;, function() {
-            pub.getAndDisplayNews();
-        });
-
-        <b>amplify.subscribe( &quot;news.updated&quot;, function( news ) {
-            displayNews( news );
-        });</b>
-
-        <b>amplify.subscribe( &quot;news.updated&quot;, function( news ) {
-            displayItemCount( news.items.length );
-        });</b>
-    };
-
-    pub.getAndDisplayNews = function() {
-        $.mobile.pageLoading();  
-
-        getNews( function( data ) {
-            <b>amplify.publish( &quot;news.updated&quot;, data );</b>
-
-            $.mobile.pageLoading( true ); 
-        });
-    };
-
-    function getNews( callback ) { 
-        $.ajax({
-            url: &quot;http://api.ihackernews.com/page?format=jsonp&quot;,
-            dataType: &quot;jsonp&quot;,
-            success: function( data, textStatus, jqXHR ) {
-                if ( callback ) callback ( data );
-            },
-            error: function( jqXHR, textStatus, errorThrown ) {
-                console.log( textStatus + &quot;: &quot; + errorThrown );
-            }
-        });                
-    }
-
-    function displayNews( news ) {
-        var newsList = $( &quot;#hackerNews&quot; ).find( &quot;.newsList&quot; );
-
-        newsList.empty();
-        $( &quot;#newsItem&quot; ).tmpl( news.items ).appendTo( newsList );
-        newsList.listview( &quot;refresh&quot; );        
-    }
-
-    function displayItemCount( count ) {
-        $( &quot;#itemCount&quot; ).text( count );    
-    }
-
-    return pub;
-}( jQuery ));
-
-hackerNews.init();
-hackerNews.getAndDisplayNews();
-</pre>          
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>
-
-        <div class="slide transitionSlide" id="store-title">
-          <section class="middle">
-            <h2>AmplifyJS Store Component</h2>
-          </section>
-        </div>
-
-        <div class="slide" id="store">
-          <header>AmplifyJS Store Component…</header>
-          <section>
-            <h3>Client Side Browser &amp; Mobile Device Storage</h3> 
-
-            <p><code>amplify.store</code> takes the confusion out of HTML5 localStorage. It doesn't get simpler than using <code>amplify.store( key, data )</code>! It even works flawlessly on mobile devices.</p>
-
-            <p><code>amplify.store</code> supports IE 5+, Firefox 2+, Safari 4+, Chrome, Opera 10.5+, iPhone 2+, Android 2+ and provides a consistent API to handle storage cross-browser.</p>
-
-            <br /><br /><br />
-            <br /><br /><br />
-            <br /><br /><br />
-            <br /><br /><br />
-          </section>
-          <aside class="note">
-            <section>
-              <p>Various forms of persistance storage have lived around for a very long time...</p>
-
-              <ul>
-                <li>localStorage (IE 8+, Firefox 3.5+, Safari 4+, Chrome, Opera 10.5+, iPhone 2+, Android 2+
-)</li>
-                <li>sessionStorage (IE 8+, Firefox 2+, Safari 4+, Chrome, Opera 10.5+, iPhone 2+, Android 2+
-)</li>
-                <li>globalStorage (Firefox 2+)</li>
-                <li>userData (IE 5 - 7)</li>
-              </ul>
-
-              <p></p>
-            </section>
-          </aside> 
-        </div>
-
-        <div class="slide" id="storeSet">
-          <header>AmplifyJS Store API</header>
-          <section>
-            <h2>Set a Value to Storage</h2>
-<pre>
-amplify.store( string key, mixed value [, hash options ] )
-</pre>
-
-            <ul>
-              <li><code>key</code>: identifier for the value being store</li>
-              <li><code>value</code>: The value to store. The value can be anything that can be serialized as JSON</li>
-              <li><code>options (optional)</code>: A set of key/value paris that relate to settings for storing the value (<code>expires</code>)</li>
-            </ul>
-
-<pre>
-amplify.store( &quot;contact&quot;, { 
-  firstName: &quot;John&quot;, lastName: &quot;Smith&quot; 
-});
-</pre>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>        
-
-        <div class="slide" id="storeGet">
-          <header>AmplifyJS Store API</header>
-          <section>
-            <h2>Get a Value from Storage</h2>
-
-<pre>
-amplify.store( string key )
-</pre>
-
-            <ul>
-              <li><em>key</em>: Identifier for the value stored</li>
-            </ul>
-
-<pre>
-var contact = ampilfy.store( &quot;contact&quot; );
-contact.firstName; // John
-</pre>
-
-            <h2>Get a Hash of All Stored Values</h2>
-
-<pre>
-amplify.store();
-
-var store = amplify.store();
-store.contact.firstName; // John
-</pre>          
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>   
-
-        <div class="slide" id="appStore">
-          <header>Extending with Store <a href="http://jsfiddle.net/FHS65/embedded/js,html,css,result/presentation/" target="_blank">✎</a></header>
-          <section>
-<pre style="overflow-y: scroll; height: 525px;">
-var hackerNews = (function( $, undefined ) {
-    var pub = {};
-
-    pub.init = function() {
-        $( &quot;#btnRefresh&quot; ).live( &quot;click&quot;, function() {
-            pub.getAndDisplayNews();
-        });
-
-        amplify.subscribe( &quot;news.updated&quot;, function( news ) {
-            displayNews( news );
-        });
-
-        amplify.subscribe( &quot;news.updated&quot;, function( news ) {
-            displayItemCount( news.items.length );
-        });              
-    };
-
-    pub.getAndDisplayNews = function() {
-        $.mobile.pageLoading();  
-
-        getNews( function( data ) {
-            amplify.publish( &quot;news.updated&quot;, data );            
-            $.mobile.pageLoading( true ); 
-        });
-    };
-
-    function getNews( callback ) {
-        var <b>news = amplify.store( &quot;news&quot; );</b>
-
-        if ( !news ) {
-            $.ajax({
-                url: &quot;http://api.ihackernews.com/page?format=jsonp&quot;,
-                dataType: &quot;jsonp&quot;,
-                success: function( data, textStatus, jqXHR ) {
-                    <b>amplify.store( &quot;news&quot;, data, { expires: 5000 } );</b>
-                    callback &amp;&amp; callback( data );
-                },
-                error: function( jqXHR, textStatus, errorThrown ) {
-                    console.log( textStatus + &quot;: &quot; + errorThrown );
-                }
-            });
-        } else {
-            callback &amp;&amp; callback( news );
-        }
-    }
-
-    function displayNews( news ) {
-        var newsList = $( &quot;#hackerNews&quot; ).find( &quot;.newsList&quot; );
-
-        newsList.empty();
-        $( &quot;#newsItem&quot; ).tmpl( news.items ).appendTo( newsList );
-        newsList.listview( &quot;refresh&quot; );        
-    }
-
-    function displayItemCount( count ) {
-        $( &quot;#itemCount&quot; ).text( count );    
-    }
-
-    return pub;
-}( jQuery ));
-
-hackerNews.init();
-hackerNews.getAndDisplayNews();
-</pre> 
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>           
-
-        <div class="slide transitionSlide" id="request-title">
-          <section class="middle">
-            <h2>AmplifyJS Request Component</h2>
-          </section>
-        </div>
-
-        <div class="slide" id="request">
-          <header>AmplifyJS Request Component</header>
-          <section>
-            <p>The amplify.request component sets out to make data retrieval more maintainable. It does this by separating the definition of a request from the actual request of the data.</p>
-            <p>The goal of amplify.request is to abstract the layer of implementation from the actual request and response so that you can minimize code changes to your project.</p>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>  
-
-        <div class="slide" id="requestDefine">
-          <header>AmplifyJS Request Define API</header>
-          <section>
-<pre>
-// Define a Request
-amplify.request.define(string resourceId, string requestType [, hash settings ]) 
-</pre>
-
-            <ul>
-              <li><code>resourceId</code>: Identifier string for the resource</li>
-              <li><code>requestType</code>: Type of data retrieval method from the server.</li>
-              <li><code>settings (optional)</code>: Set of key/value pairs
-                <ul>
-                  <li>Any settings found in <code>jQuery.ajax()</code></li>
-                  <li><code>cache</code>: Different caching algorithms (boolean, number, string)</li>
-                  <li><code>decoder</code>: Parse response before calling success or error callback</li>
-                </ul>
-              </li>
-            </ul>
-
-<pre>
-amplify.request.define( &quot;getContactDetails&quot;, &quot;ajax&quot;, {
-    //AmplifyJS will replace {id} with data passed to it
-    url: &quot;/Contact/Details/{id}&quot;, 
-    dataType: &quot;json&quot;,
-    type: &quot;GET&quot;, 
-    //Response will be cached for 15 seconds
-    cache: 15000     
-});</pre>          
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>  
-        
-        <div class="slide" id="requestSimple">
-          <header>AmplifyJS Request Simple API</header>
-          <section>
-<pre>
-// Simplified Request
-amplify.request( string resourceId [, hash data [, function callback ] ] )
-</pre>
-
-          <ul>
-            <li><code>resourceId</code>: Identifier string for the resource</li>
-            <li><code> data (optional)</code>: an object literal of data to be sent to the resource</li>
-            <li><code>callback (optional)</code>: a function to call once the resource has been retrieved</li>
-          </ul>
-
-<pre>
-amplify.request( &quot;getContactDetails&quot;, 
-    { id: 4 }, // Resolve URL to &quot;/Contact/Details/4&quot;
-    function( data ) {
-        console.log( data );
-    });
-</pre>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>                  
-
-        <div class="slide" id="requestHash">
-          <header>AmplifyJS Request Hash API</header>
-          <section>
-<pre>
-// Request with Hash Settings
-amplify.request( hash settings )
-</pre>
-
-            <ul>
-              <li>settings
-                <ul>
-                  <li><em>resourceId</em>: Identifier string for the resource</li>
-                  <li><em>data (optional)</em>: Data associated with the request</li>
-                  <li><em>success (optional)</em>: Function to invoke on success</li>
-                  <li><em>error (optional)</em>: Function to invoke on error</li>
-                </ul>
-              </li>
-            </ul>
-
-<pre>
-amplify.request({ 
-    resourceId: &quot;getContactDetails&quot;,
-    data: { id: 4 }, // Resolve URL to &quot;/Contact/Details/4&quot;
-    success: function( data ) { console.log( data ); },
-    error: function( message, level ) { 
-      console.log( level + &quot;: &quot; + message ); 
-    }
-});
-</pre>          
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>   
-
-        <div class="slide" id="appRequest">
-          <header>Extending with Request <a href="http://jsfiddle.net/jdDue/embedded/js,html,css,result/presentation/" target="_blank">✎</a></header>
-          <section>
-<pre style="overflow-y: scroll; height: 525px;">
-<b>amplify.request.define( &quot;getNews&quot;, &quot;ajax&quot;, {
-    url: &quot;http://api.ihackernews.com/page?format=jsonp&quot;, 
-    dataType: &quot;jsonp&quot;,
-    cache: 3000
-});</b>  
-
-var hackerNews = (function( $, undefined ) {
-    var pub = {};
-
-    pub.init = function() {
-        $( &quot;#btnRefresh&quot; ).live( &quot;click&quot;, function() {
-            pub.getAndDisplayNews();
-        });
-
-        amplify.subscribe( &quot;news.updated&quot;, function( news ) {
-            displayNews( news );
-        });
-
-        amplify.subscribe( &quot;news.updated&quot;, function( news ) {
-            displayItemCount( news.items.length );
-        });    
-    };
-
-    pub.getAndDisplayNews = function() {
-        $.mobile.pageLoading();  
-
-        getNews( function( data ) {
-            amplify.publish( &quot;news.updated&quot;, data );            
-            $.mobile.pageLoading( true ); 
-        });
-    };
-
-    function getNews( callback ) {
-        <b>amplify.request({
-            resourceId: &quot;getNews&quot;,
-            success: function( data ) {
-                if ( callback ) callback ( data );
-            },
-            error: function( message, level ) {
-                console.log( level + &quot;: &quot; + message );
-            }
-        });</b>        
-    }
-
-    function displayNews( news ) {
-        var newsList = $( &quot;#hackerNews&quot; ).find( &quot;.newsList&quot; );
-
-        newsList.empty();
-        $( &quot;#newsItem&quot; ).tmpl( news.items ).appendTo( newsList );
-        newsList.listview( &quot;refresh&quot; );        
-    }
-
-    function displayItemCount( count ) {
-        $( &quot;#itemCount&quot; ).text( count );    
-    }
-
-    return pub;
-}( jQuery ));
-
-hackerNews.init();
-hackerNews.getAndDisplayNews();</pre>          
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>   
-        
-        <div class="slide" id="mocking">
-          <header>Mocking with AmplifyJS Require</header>
-          <section>
-            <p>It seems that even those that are aware of the AmplifyJS library <em>aren't</em> aware that you can easily you it to mock the response from your server. Mocking the User Interface interactions can be very beneficial for numerous reasons.</p>
-
-            <p>Let's say that you are working on a client and the back-end RESTful or Web Services are...</p>
-
-            <ul>
-              <li>Not yet developed</li>
-              <li>Extremely unstable</li>
-              <li>Not accessible due to VPN or cross-domain concerns </li>
-            </ul>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>                   
-
-        <div class="slide" id="mockingApi">
-          <header>Mocking with AmplifyJS Require API</header>
-          <section>
-            <p>Whatever amplify.request.define is defined last will be used. </p>
-
-<pre>
-// Define a Mock Request
-amplify.request.define( string resourceId, function response ) 
-</pre>
-
-            <ul>
-              <li><em>resourceId</em>: Identifier string for the resource (should match previous string)</li>
-              <li><em>response</em>: Function that will return either a success or failure response</li>
-            </ul>
-
-<pre>
-amplify.request.define( &quot;getContactDetails&quot;, function( settings ) {
-  settings.success({
-    status: &quot;success&quot;,
-    contacts: [
-      { firstName: &quot;Mike&quot; },
-      { firstName: &quot;Jonathan&quot; },
-      { firstName: &quot;Scott&quot; }
-    ]
-  });
+        <div id="presentation-counter">Loading...</div>
+
+        <div class="slides">
+	
+		<div class="slide" id="landing-slide">
+			<style>
+				#landing-slide p {
+					font-size: 35px;
+				}
+				p#disclaimer-message {
+					font-size: 20px;
+				}
+			</style>
+			<section class="middle">
+				<p>This presentation is an HTML5 website</p>
+				<p>Press <span id="left-init-key" class="key">&rarr;</span> key to advance.</p>
+				<p id="disclaimer-message">Having issues seeing the presentation? Read the <a href="disclaimer.html">disclaimer</a></p>
+			</section>
+			<aside class="note">
+				<section>
+					Welcome! (This field is for presenter notes and commentary.)
+				</section>
+			</aside> 
+		</div>
+
+		<div class="slide" id="controls-slide">
+			<header>Slides controls</header>
+			<style>
+				#controls-slide li, #controls-slide p {
+					font-size: 32px;
+				}
+				#controls-slide .key {
+					bottom: 2px;
+				}
+			</style>
+			<section>
+				<ul>
+					<li><span class="key">&larr;</span> and <span class="key">&rarr;</span> to move around.</li>
+					<li><span class="key">Ctrl/Command</span> and <span class="key">+</span> or <span class="key">-</span> to zoom in and out.</li>
+					<li><span class="key">S</span> to view page source.</li>
+					<li><span class="key">T</span> to change the theme.</li>
+					<li><span class="key">H</span> to toggle syntax highlight.</li>
+					<li><span class="key">N</span> to toggle speaker notes.</li>
+					<li><span class="key">3</span> to toggle 3D effect.</li>
+					<li><span class="key">0</span> to toggle help.</li>
+				</ul>
+			</section>
+		</div>
+
+		<div class="slide" id="title-slide">
+			<style>
+				#title-slide h1, #title-slide h2 {
+					color: black;
+				}
+				#title-slide h1 {
+					letter-spacing: -2px;
+					font-size: 96px;
+				}
+				#title-slide h2 {
+					margin-top: -5px;
+					font-size: 40px;
+					letter-spacing: -1px;
+				}
+				#title-slide p {
+					line-height: 35px;
+					padding-left: 200px;
+					padding-right: 200px;
+				}
+			</style>
+			<section class="middle">
+				<hgroup>
+					<h1>
+						6 Things Every jQuery Developer Should Know
+					</h1>
+					<h2>
+						by Elijah Manor
+					</h2>
+				</hgroup>
+				<p></p>
+			</section>
+		</div>
+	
+		<!-- TODO: who am I -->
+	
+		<div class="slide" id="1">
+			<header>1. What is <code>this</code>?</header>
+			<section>
+				<ul>
+					<li>Whether you are a beginner or intermediate jQuery developer, if you don't have a good understanding of the <code>this</code> statement then you'll most likely find yourself stumbling along.</li>
+				</ul>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>
+
+		<div class="slide" id="1-a">
+			<header>1. What is <code>this</code>?</header>
+			<section>
+				<ul>
+					<li>Under normal circumstances <code>this</code> refers to a DOM element</li>
+				</ul>
+				<pre class="javascript run">/* Binding to an event */
+$( "a.demo" ).click( function( e ) {
+	alert( this.href );
+
+	e.preventDefault();
 });</pre>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>   
+				<ul>
+					<li><a class="demo" href="http://www.google.com">Google</a></li>
+					<li><a class="demo" href="http://www.microsoft.com">Microsoft</a></li>
+				</ul>
+			</section>
+			<script>
+				$( function() {
+					$( "#1-a a.demo" ).click( function( e ) {
+						alert( this.href );
 
-        <div class="slide" id="appMocking">
-          <header>Mocking Hacker News <a href="http://jsfiddle.net/D2egG/embedded/js,html,css,result/presentation/" target="_blank">✎</a></header>
-          <section>
-<pre style="overflow-y: scroll; height: 525px;">
-amplify.request.define( &quot;getNews&quot;, function( settings ) {
-    settings.success({
-        status: &quot;success&quot;,
-        items: [
-            {
-                commentCount: 1,
-                id: 1,
-                points: 1,
-                postedAgo: &quot;1 hours ago&quot;,
-                postedBy: &quot;jkeesh&quot;,
-                title: &quot;1 Title&quot;,
-                url: &quot;http://1.com&quot;
-            },
-            {
-                commentCount: 2,
-                id: 2,
-                points: 2,
-                postedAgo: &quot;2 hours ago&quot;,
-                postedBy: &quot;jkeesh&quot;,
-                title: &quot;2 Title&quot;,
-                url: &quot;http://2.com&quot;                
-            },
-            {
-                commentCount: 3,
-                id: 3,
-                points: 3,
-                postedAgo: &quot;3 hours ago&quot;,
-                postedBy: &quot;jkeesh&quot;,
-                title: &quot;3 Title&quot;,
-                url: &quot;http://3.com&quot;                
-            },
-            {
-                commentCount: 4,
-                id: 4,
-                points: 4,
-                postedAgo: &quot;1 hours ago&quot;,
-                postedBy: &quot;jkeesh&quot;,
-                title: &quot;4 Title&quot;,
-                url: &quot;http://4.com&quot;                
-            },
-            {
-                commentCount: 5,
-                id: 5,
-                points: 5,
-                postedAgo: &quot;5 hours ago&quot;,
-                postedBy: &quot;jkeesh&quot;,
-                title: &quot;5 Title&quot;,
-                url: &quot;http://5.com&quot;                
-            }
-        ]
-    });
-});</pre>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>   
+						e.preventDefault();
+					});
+				});
+			</script>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>
 
-        <div class="slide" id="mockingTests">
-          <header>Mocking with Unit Tests <a href="http://jsfiddle.net/elijahmanor/2NA3F/embedded/js,html,css,result/presentation/" target="_blank">✎</a></header>
-          <section>
-<pre style="overflow-y: scroll; height: 525px;">
-pavlov.specify.globalApi = true;
-pavlov.specify( &quot;News Aggregator&quot;, function() {
+		<div class="slide" id="1-b">
+			<header>1b. What is <code>this</code>?</header>
+			<section>
+				<ul>
+					<li>
+						<span>Exception #1</span>: jQuery Plugin
+					</li>
+				</ul>
+				<pre class="javascript">
+(function( $ ) {
+	$.fn.myPlugin = function() {
+		/* this refers to jQuery object from jQuery selection */
+		alert( "this.length = " + this.length );
+		return this.each( function() {
+			/* this refers to DOM element from jQuery selection */
+			alert( "this.id = " + this.id );
+		});
+	}
+})( jQuery );
 
-    describe( &quot;User Interactions&quot;, function() {
+$( "a.demo" ).myPlugin();</pre>
+				<ul>
+					<li>
+						<a id="googleLink" class="demo"
+							 href="http://www.google.com">
+								  Google</a>
+						<a id="microsoftLink" class="demo"
+							href="http://www.microsoft.com">
+								 Microsoft</a>
+					</li>
+				</ul>				
+			</section>
+			<script>
+				(function( $ ) {
+					$.fn.myPlugin = function() {
+						/* this refers to jQuery object from jQuery selection */
+						alert( "this.length = " + this.length );
+						return this.each( function() {
+							/* this refers to DOM element from jQuery selection */
+							alert( "this.id = " + this.id );
+						});
+					}
+				})( jQuery );
 
-        var button = $( &quot;#btnRefresh&quot; ),
-            isUpdated = false, news,
-            newsUpdatedCallback = function( data ) {
-                isUpdated = true;
-                news = data;
-            };
+				$( function() {
+					$( "#1-b a.demo").myPlugin();
+				});
+			</script>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>	
 
-        before( function() {
-            isUpdated = false;
-
-            hackerNews.init();
-
-            amplify.request.define( &quot;getNews&quot;, function( settings ) {
-                settings.success({
-                    status: &quot;success&quot;,
-                    items: [
-                        { commentCount: 5, id: 1, points: 50, postedAgo: &quot;1 hour ago&quot;, postedBy: &quot;davidedicillo&quot;, title: &quot;Five four three...&quot;, url: &quot;http://techcrunch.com/5&quot; }, 
-                        { commentCount: 4, id: 2, points: 40, postedAgo: &quot;2 hour ago&quot;, postedBy: &quot;davidedicillo&quot;, title: &quot;Four three two...&quot;, url: &quot;http://techcrunch.com/4&quot; }, 
-                        { commentCount: 3, id: 3, points: 30, postedAgo: &quot;3 hour ago&quot;, postedBy: &quot;davidedicillo&quot;, title: &quot;Three two one...&quot;, url: &quot;http://techcrunch.com/3&quot; }, 
-                        { commentCount: 2, id: 4, points: 20, postedAgo: &quot;4 hour ago&quot;, postedBy: &quot;davidedicillo&quot;, title: &quot;Two, one, zero...&quot;, url: &quot;http://techcrunch.com/2&quot; }, 
-                        { commentCount: 1, id: 5, points: 10, postedAgo: &quot;5 hour ago&quot;, postedBy: &quot;davidedicillo&quot;, title: &quot;One, zero, negative one...&quot;, url: &quot;http://techcrunch.com/1&quot; }
-                    ]
-                });
-            });          
-
-            amplify.subscribe( &quot;news.updated&quot;, newsUpdatedCallback );
-        });
-
-        after( function() {
-            amplify.unsubscribe( newsUpdatedCallback );
-        });
-
-        it( &quot;should publish a news updated message&quot;, function() {
-            button.trigger( &quot;click&quot; );
-            stop();
-
-            setTimeout( function() {
-                start();
-                assert( isUpdated ).isTrue();
-            }, 2000 );
-        });
-
-        it( &quot;should return 5 news items&quot;, function() {
-            button.trigger( &quot;click&quot; );
-            stop();
-
-            setTimeout( function() {
-                start();
-                assert( news ).isDefined();
-                assert( news.items.length ).isEqualTo(5);
-            }, 2000 );
-        });
-
-    });
-
-});</pre>         
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>   
-
-<!-- 
-
-<li class="slide"><header><h1>Prototyping with MockJSON</h1></header><div class="content"><p><code>mockJSON</code> is a jQuery Plugin that has a valuable templating mechnaism that lets you <em>quickly build up complex set of objects</em> that can be used to quickly prototype your User Interface.</p></div></li>
-
-<li class="slide"><header><h1>MockJSON: Built-in Types</h1></header><div class="content"><pre class="javascript"><code>// Numbers
-{ &quot;age|0-99&quot; : 0 } // { &quot;age&quot; : 42 }
-
-// Boolean
-{ &quot;married|0-1&quot; : true } // { &quot;married&quot;: false }
-
-// Strings
-{ &quot;name&quot; : &quot;@LAST_NAME, @MALE_FIRST_NAME&quot; } // { &quot;name&quot; : &quot;Hall, Kevin&quot; }
-{ &quot;initials|1-5&quot; : &quot;@LETTER_UPPER.&quot; } // { &quot;initials&quot;: &quot;V.M.J.&quot; }
-
-// Arrays
-{ &quot;contacts|0-3&quot; : [ { &quot;Name&quot; : &quot;@FEMALE_FIRST_NAME&quot; } ] } 
-// { &quot;contacts&quot;: [{ Name: &quot;Laura&quot; }, { Name: &quot;Ruth&quot; }] }</code></pre></div></li>
-
-<li class="slide"><header><h1>MockJSON: Custom Types</h1></header><div class="content"><pre class="javascript"><code>// Adding the @US_STATE keyword
-$.mockJSON.data.US_STATE = [
-    &quot;Alabama&quot;, &quot;Alaska&quot;, ... , &quot;Wisconsin&quot;, &quot;Wyoming&quot;
-];
-{ &quot;state&quot; : &quot;@US_STATE&quot; } // { &quot;state&quot;: &quot;Alaska&quot; }</code></pre></div></li>
-
-<li class="slide"><header><h1>MockJSON Template Syntax</h1></header><div class="content"><pre class="javascript"><code>$.mockJSON.generateFromTemplate({
-    &quot;contacts|2-4&quot;: [{
-        &quot;firstName&quot;: &quot;@MALE_FIRST_NAME&quot;,
-        &quot;lastName&quot;: &quot;@LAST_NAME&quot;,
-        &quot;city&quot;: &quot;@CITY_NAME&quot;,
-        &quot;state&quot;: &quot;@STATE_ABBREVIATION&quot;
-    }]
-});</code></pre></div></li>
-
-<li class="slide"><header><h1>MockJSON'ing Hacker News <a href="http://jsfiddle.net/elijahmanor/bH6pa" target="_blank">✎</a></h1></header><div class="content"><pre class="javascript"><code>amplify.request.define( &quot;getNews&quot;, function( settings ) {
-    settings.success($.mockJSON.generateFromTemplate({
-        &quot;status&quot;: true,
-        &quot;items|20-30&quot;: [
-            {
-                &quot;id|+1&quot; : 0,
-                &quot;commentCount|2-15&quot;: 0,
-                &quot;points|20-80&quot;: 0,
-                &quot;postedAgo&quot;: &quot;@DATE_MM/@DATE_DD/@DATE_YYYY&quot;,
-                &quot;postedBy&quot;: &quot;@MALE_FIRST_NAME @LAST_NAME&quot;,
-                &quot;title&quot;: &quot;@LOREM_IPSUM&quot;,
-                &quot;url&quot;: &quot;@URL&quot;
-            }
-        ]
-    }));
-});
-
-$.mockJSON.data.URL = [
-    &quot;http://google.com&quot;, &quot;http://yahoo.com&quot;, &quot;http://microsoft.com&quot;, &quot;http://apple.com&quot;
-];</code></pre></div></li>
-
--->
-
-        <div class="slide" id="refactor">
-          <header>Warning: Major Refactor Ahead!</header>
-          <section>
-            <p>What if our back-end datasource totally change!?! What if instead of always getting a Hacker News feed that our boss came and said, &quot;Why don't you use your same code to pull in any news feed?&quot;. How would you go about doing that?</p>
-
-            <p>AmplifyJS Request is architected in such a way that we can use Uncle Bob's SOLID principle of OCP (The Open Closed Principle) stating that we should be able to extend the behavior, without modifying it.</p>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>   
-
-        <div class="slide" id="yql">
-          <header>New DataSource: YQL <a href="http://developer.yahoo.com/yql/console/#h=select%20*%20from%20feed%20where%20url%3D%27http%3A//feeds2.feedburner.com/readwriteweb/hack%27%20limit%2010" target="_blank">✎</a></header>
-          <section>
-            <p>In YQL you an query a RSS or Atom feed and it will proxy the results and make it accessible for you via XML or JSON. </p><p>The following is an example of a query you might use...</p>
-
-            <ul>
-              <li>select * from feed where url='http://feeds2.feedburner.com/readwriteweb/hack' limit 10</li>
-            </ul>
-
-            <p>The above select query translates into the following encoded URL with all the necessary parameters for the query</p>
-
-            <ul>
-              <li>http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20feed%20where%20url%3D'http%3A%2F%2Ffeeds2.feedburner.com%2Freadwriteweb%2Fhack'%20limit%2010&amp;format=json&amp;callback=cbfunc</li>
-            </ul>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>   
-
-        <div class="slide" id="customRequestType">
-          <header>Custom Request Type</header>
-          <section>
-            <p>In order to start creating our new RSS request type, I usually start by copying the native <code>ajax</code> type that is shipped with AmplifyJS Request and then I tweak out any changes that I need.</p>
-
-            <p>Here is a snippet of what this might look like...</p>
-
-<pre>
-amplify.request.types.rss = function( typeSettings ) {
-    typeSettings = $.extend({
-        type: &quot;GET&quot;,
-        dataType: &quot;jsonp&quot;,
-        itemsToRetrieve: 5
-    }, typeSettings );
-
-    return function( settings, request ) {        
-        var url = 
-            stringFormat( &quot;http://query.yahooapis.com/v1/public/yql?q={0}&amp;format=json&quot;,
-                encodeURIComponent( stringFormat( 
-                    &quot;select * from feed where url='{0}' LIMIT {1};&quot;, 
-                    typeSettings.url, typeSettings.itemsToRetrieve ) ) ),
-
-    /* ... more code ... */
-
+		<div class="slide" id="1-c">
+			<header>1c. What is <code>this</code>?</header>
+			<section>
+				<ul>
+					<li>
+						<span>Exception #2</span>: <code>$.proxy()</code><sup class="new">new</sup> in jQuery 1.4
+					</li>
+				</ul>
+				<pre class="javascript run">
+var twitter = {
+	userName: "elijahmanor",
+	tweet: function() { alert( "Hello " + this.userName ); } 
 };
-</pre>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>   
 
-        <div class="slide" id="customRequestDecoderFrom">
-          <header>Custom Request Decoder</header>
-          <section>
-            <p>Since the YQL data looks different than the data from Hacker News we will need to map the results from one to the other.</p>
+/* Using event helper, bind(), or live() */
+$( "#update1" ).click( twitter.tweet ); /* Undefined */
 
-            <p>To do this, we will define a new decoder that will take this format... </p>
+/* Option #1: jQuery.proxy( function, context ) */
+$( "#update2" ).click( $.proxy( twitter.tweet, twitter ) );
 
-<pre>
-{
-  query: {
-    count: 10,
-    created: &quot;2011-08-18T04:32:16Z&quot;,
-    lang: &quot;en-US&quot;,
-    results: {
-      item: [
-        {
-          title: &quot;This is a test title&quot;,
-          description: &quot;This is a test description&quot;,
-          link: &quot;http://google.com&quot;,
-          guid: { isPermaLink: &quot;true&quot;, content: &quot;&quot; },
-          category: &quot;TEST&quot;,
-          pubDate: &quot;2011-08-18T04:32:16Z&quot;,
-          author: &quot;Spider-Manor&quot;,
-          origLink: &quot;http://google.com&quot;
-        }
-      ]
-    }
-  }
-}
-</pre>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>  
+/* Option #2: jQuery.proxy( context, name ) */
+$( "#update3" ).click( $.proxy( twitter, "tweet" ) );</pre>
+				<ul>
+					<li>
+						<button class="update1">Update 1</button>
+						<button class="update2">Update 2</button>
+						<button class="update3">Update 3</button>
+					</li>
+				</ul>
+			</section>
+			<script>
+				$(function() {
+					var twitter = {
+						userName: "elijahmanor",
+						tweet: function() { alert( "Hello " + this.userName ); } 
+					};
 
-        <div class="slide" id="customRequestDecoderTo">
-          <header>Custom Request Decoder</header>
-          <section>
-            <p>...and map it to the following format that our web applicaiton is expecting...</p>
+					/* Using event helper, bind(), or live() */
+					$( "#1-c .update1" ).click( twitter.tweet ); /* Undefined */
 
-<pre>
-{
-  cachedOnUTC: &quot;/Date(1313643183975)/&quot;
-  items: [
-    {
-      commentCount: 20
-      id: 2897740
-      points: 81
-      postedAgo: &quot;2 hours ago&quot;
-      postedBy: &quot;jkeesh&quot;
-      title: &quot;Who Does Facebook Think You Are Searching For?&quot;
-      url: &quot;http://thekeesh.com/2011/08/who-does-facebook-think-you-are-searching-for/&quot;
-    }
-  ]
-  nextId: &quot;m97628CrNN&quot;
-  version: &quot;1.0&quot;
-}
-</pre>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>  
+					/* Option #1: jQuery.proxy( function, context ) */
+					$( "#1-c .update2" ).click( $.proxy( twitter.tweet, twitter ) );
 
-        <div class="slide" id="customRequestDecoderImpl">
-          <header>Custom Request Decoder</header>
-          <section>
-<pre>
-amplify.request.decoders.rssEnvelope = 
-    function ( data, status, xhr, success, error ) {
-        if ( status === &quot;success&quot; ) {
-            success ( { items: transformRssData( data ) } );
-        } else if ( status === &quot;fail&quot; || status === &quot;error&quot; ) {
-            error( data.message, status );
-        } else {
-            error( data.message , &quot;fatal&quot; );
-        }
+					/* Option #2: jQuery.proxy( context, name ) */
+					$( "#1-c .update3" ).click( $.proxy( twitter, "tweet" ) );
+				});
+			</script>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>
+
+		<div class="slide" id="2">
+			<header>2. $ Object | DOM Element</header>
+			<section>
+				<ul>
+					<li>Now that we know what <code>this</code> refers to, it doesn't end the confusion</li>
+					<li>It is common practice to wrap <code>this</code> in a jQuery object and save it in a variable for later use</li>
+				</ul>
+				<pre class="javascript">var jQueryWrappedElement = $( this );</pre>
+				<ul>
+					<li>The confusion comes if a developer forgets if the variable refers to the jQuery Object or the DOM Element</li>
+				</ul>				
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>
+		
+		<div class="slide" id="2-a">
+			<header>2a. $ Object | DOM Element</header>
+			<section>
+				<ul>
+					<li>To alleviate this confusion some prepend a '<code>$</code>' to the variable where they save the value of <code>this</code>.
+						<ul>
+							<li>Hungarian Notation - <span style="text-decoration: line-through;">Good</span>, <b><u>Bad</u></b>, <span style="color: red;">Ugly</span>...</li>
+						</ul>
+					</li>
+				</ul>
+				<pre class="javascript large">
+$( "a" ).click( function() {
+	var $anchor = $( this );
+
+	$anchor.fadeOut();
+})</pre>
+				<ul>
+					<li><em class="note">Note: This is highly debated, but if it helps you... go ahead &amp; use it ;)</em></li>
+				</ul>
+			</section>
+			<script>
+				$( function() {
+					
+				});
+			</script>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>		
+		
+		<div class="slide" id="2-b">
+			<header>2b. $ Object | DOM Element</header>
+			<section>
+				<ul>
+					<li>Wrapping the DOM element with the jQuery object</li>
+				</ul>
+				<pre class="javascript large">
+$( "a" ).click( function( e ) {
+    var anchor = $( this );
+
+    anchor.fadeOut();
+
+    e.preventDefault();
+})</pre>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>
+
+		<div class="slide" id="2-c">
+			<header>2c. $ Object | DOM Element</header>
+			<section>
+				<ul>
+					<li>Unwrapping the DOM element from the jQuery object</li>
+				</ul>
+				<pre class="javascript large">
+//Gets collection of anchor tags from jQuery array
+$( "a" ).get();
+
+//Get method returning jQuery array &amp; indexing 0th item
+$( "a" ).get()[ 0 ];
+
+//Get method accessing DOM element at 0th index
+$( "a" ).get( 0 );
+
+//Array accessor syntax getting the 0th indexed item
+$( "a" )[ 0 ];</pre>
+				
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>
+
+		<div class="slide" id="3">
+			<header>3. Knowing Selectors</header>
+			<section>
+				<ul>
+					<li>
+						<span>Selectors are really the beginning place for most of what you do in jQuery</span>
+						<ul>
+							<li>You find something &amp; then you perform some action on it</li>
+						</ul>
+					</li>
+					<li>In order to be a proficient jQuery developer, you must know the full extent of jQuery's powerful selectors</li>
+				</ul>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>
+
+		<div class="slide" id="3-a">
+			<header>3a. Knowing Selectors</header>
+			<section>
+				<ul>
+					<li>Simple selectors</li>
+				</ul>
+				<pre class="javascript">
+//Selects all the anchor tags in the DOM
+$('a')
+
+//Selects all the anchor tags inside of div elements in the DOM
+$('div a')
+
+//Selects all the tr elements with a class of 'odd'
+$('tr.odd')</pre>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>
+
+		<div class="slide" id="3-b">
+			<header>3b. Knowing Selectors</header>
+			<section>
+				<ul>
+					<li>Uncommon selectors</li>
+				</ul>
+				<pre class="javascript">
+//Selects all links that ends with mp3 in the href
+$( "a[href$='mp3']" ) 
+
+//Selects all links that are set to open a new window
+$( "a[target='_blank']" ) 
+
+//Selects all links that have a class that begins with "custom"
+$( "a[class^='custom']" )</pre>	
+			</section>
+			<aside class="note">
+				<section>
+					<pre>
+&lt;a href="DevoWhipIt.mp3">Devo - "Whip It"&lt;/a>
+
+&lt;a href="http://jquery.com" target="_blank">jQuery&lt;/a>
+
+&lt;a href="http://jqueryui.com" class="customClass">jQuery UI&lt;/a></pre>
+				</section>
+			</aside> 
+		</div>
+		
+		<div class="slide" id="3-c">
+			<header>3c. Knowing Selectors</header>
+			<section>
+				<ul>
+					<li>Advanced selectors</li>
+				</ul>
+				<pre class="javascript">
+//Selects all the input elements (text, password, radio, etc...)
+$( ":input" )
+
+//Selects all the disabled input elements
+$( ":disabled" )
+
+//Selects the 4rd (0 based) list item
+$( "li:contains('Abby')" )</pre>
+			</section>
+			<aside class="note">
+				<section>
+					<pre class="html lite">
+&lt;input type="text" />
+
+&lt;textarea rows="5" cols="5">&lt;/textarea>
+
+&lt;input type="text" disabled="disabled" />
+
+&lt;ul>
+	&lt;li>Elijah&lt;/li>
+	&lt;li>Andrea&lt;/li>
+	&lt;li>[Abby]&lt;/li>
+	&lt;li>Enoch&lt;/li>
+&lt;/ul></pre>
+				</section>
+			</aside> 
+		</div>
+
+		<div class="slide" id="3-d">
+			<header>3d. Knowing Selectors</header>
+			<section>
+				<ul>
+					<li><span>Selector Context</span>
+						<ul>
+							<li><code>jQuery( selector, [ context ] )</code></li>
+						</ul>
+					</li>
+				</ul>
+				<pre class="javascript">
+//Start at #myDiv context &amp; use "span a" selector to find the link
+$( "span a.myClass", $( "#myDiv" ) ).addClass( "highlight" );
+
+//Danger, don't use complicated selectors!
+$( "span a.myClass", $( "form .startHere" ) ).addClass( "highlight" );
+
+//Alternate Preferable Syntax
+$( "#myDiv").find( "span a.myClass" ).addClass( "highlight" );</pre>
+			</section>
+			<aside class="note">
+				<section>
+					<pre class="html lite">
+&lt;form&gt;
+	&lt;div id="myDiv" class="startHere"&gt;
+		&lt;span&gt;
+			&lt;a href="http://jquery.com"
+				class="myClass"&gt;&lt;/a&gt;
+		&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/form&gt;</pre>					
+				</section>
+			</aside> 
+		</div>
+
+		<div class="slide" id="3-e">
+			<header>3e. Knowing Selectors</header>
+			<section>
+				<ul>
+					<li>Custom Selector Filter - Extreme Flexibility</li>
+				</ul>
+				<pre class="javascript">
+$.expr[ ":" ].elementNameStartsWith =
+    function( element, index, metadata, stack ) {
+        var regEx = new RegExp( "^" + metadata[ 3 ], "i" );
+        return element.nodeName.match( regEx ) !== null;
     };
 
-function transformRssData( data ) {    
-    if ( !data || !data.query || 
-         !data.query.results || !data.query.results.item ) { return false; }
+<div class="run">$( "*:elementNameStartsWith('d')" ).each( function() {
+    alert( this.nodeName ); 
+});</div></pre>
+				<ul style="padding-bottom: 0px;">
+					<li class="demo">
+						<div>
+							<dl>
+							  <dt>Coffee</dt>
+								<dd>- black hot drink</dd>
+							  <dt>Milk</dt>
+								<dd>- white cold drink</dd>
+							</dl>
+						</div>
+					</li>
+				</ul>				
+			</section>
+			<script>
+			$( function() {
+				$.expr[ ":" ].elementNameStartsWith =
+				    function( element, index, metadata, stack ) {
+				        var regEx = new RegExp( "^" + metadata[ 3 ], "i" );
+				        return element.nodeName.match( regEx ) !== null;
+				    };
 
-    return $.map( data.query.results.item, function(element, index) {
-        var date = new Date( element.pubDate );
-        return {
-            title: element.title,
-            url: element.link,
-            postedAgo: date.toLocaleDateString() + &quot; &quot; + date.toLocaleTimeString(),
-            postedBy: element.author
-        };
-    });   
-}   
-</pre>
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>  
+				$( "#3-e .run" ).click( function( e ) {
+					$( "#3-e *:elementNameStartsWith('d')" ).each( function() {
+					    alert( this.nodeName ); 
+					});
+				});
+			});
+			</script>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>
 
-        <div class="slide" id="appGeneric">
-          <header>Reusable Generic News Reader <a href="http://jsfiddle.net/elijahmanor/rJfaC/embedded/js,html,css,result/presentation/" target="_blank">✎</a></header>
-          <section>
-            <p>After creating your custom type and decoder you can now change your amplify.request.define to look like the following and you <em>don't</em> have to change the code that actually makes the request!</p>
+		<div class="slide" id="3-f">
+			<header>3f. Knowing Selectors</header>
+			<section>
+				<ul>
+					<li>Caching Selectors</li>
+				</ul>
+				<pre class="javascript">
+$( "#myButton" ).click( function() {  // Bad
+    $( "#alertMessage" ).hide();
+    $( "#alertMessage" ).html( "&lt;strong>Really Bad Error&lt;/strong>" );
+    $( "#alertMessage" ).fadeIn( "slow" );
+});
 
-<pre>
-//Define getNews RSS JSONP request using YQL in Amplify Request
-amplify.request.define( &quot;getNews&quot;, &quot;rss&quot;, {
-    url: &quot;http://feeds2.feedburner.com/readwriteweb/hack&quot;,
-    decoder: &quot;rssEnvelope&quot;,
-    itemsToRetrieve: 10
-});  
-</pre>   
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>  
+$( "#myButton" ).click(function() {  // Better
+    var alertMessage = $( "#alertMessage" );
 
-        <div class="slide" id="whoAmI">
-          <header>Questions?</header>
-          <section>
-            <h3>Elijah Manor</h3>
+    alertMessage.hide();
+    alertMessage.html( "&lt;strong>Really Bad Error&lt;/strong>" );
+    alertMessage.fadeIn( "slow" );
+});</pre>				
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>
+				
+		<div class="slide" id="3-g">
+			<header>3g. Knowing Selectors</header>
+			<section>
+				<ul>
+					<li>Chaining Selectors</li>
+				</ul>
+				<pre class="javascript">
+$( "#myButton" ).click( function() {  // Bad
+	$( "#alertMessage" ).hide();
+	$( "#alertMessage" ).html( "&lt;strong>Really Bad Error&lt;/strong>" );
+	$( "#alertMessage" ).fadeIn( "slow" );
+});
 
-            <ul>
-              <li>ASP.NET MVP, ASPInsider</li>
-              <li>Senior Architect at appendTo</li>
-            </ul>
+$( "#myButton" ).click( function() {  // Best?
+	$( "#alertMessage" ).hide()
+		.html( "&lt;strong>Really Bad Error&lt;/strong>" )
+		.fadeIn( "slow" );
+});</pre>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>
 
-            <h3>Referenced Scripts</h3>
+		<div class="slide" id="3-h">
+			<header>3h. Knowing Selectors</header>
+			<section>
+				<ul>
+					<li>
+						<span>Useful Selector Playgrounds and Tools</span>
+						<ul>
+							<li><a href="http://getfirebug.com" target="_blank">Firebug Add-on</a> &amp; <a href="http://firequery.binaryage.com/" target="_blank">FireQuery Plug-in</a></li>
+							<li>
+								<a href="http://www.learningjquery.com/2009/04/better-stronger-safer-jquerify-bookmarklet"
+								   target="_blank">jQueryify Bookmarklet</a> by <a href="http://twitter.com/kswedberg" target="_blank">@kswedberg</a></li>
+							<li>
+								<a href="http://codylindley.com/jqueryselectors/" target="_blank">jQuery Selector Playground</a> by <a href="http://twitter.com/kswedberg" target="_blank">@kswedberg</a> & <a href="http://twitter.com/codylindley" target="_blank">@codylindley</a>
+							</li>
+							<li><a href="http://www.selectorgadget.com/" target="_blank">Selector Gadget Bookmarklet</a></li>
+							<li>
+								<a href="http://encosia.com/2009/09/21/updated-see-how-i-used-firebug-to-learn-jquery/" target="_blank">See how I used Firebug to learn jQuery</a> by <a href="http://twitter.com/encosia" target="_blank">@encosia</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>
 
-            <ul>
-              <li>AmplifyJS - http://bit.ly/amplifyjs</li>
-              <li>mockJSON - http://bit.ly/mockjson</li>
-            </ul>
+		<div class="slide" id="4">
+			<header>4. Dos &amp; Don'ts of Events</header>
+			<section>
+				<ul>
+					<li>
+						<span>Event Bubbling</span>
+						<ul>
+							<li>Event propagates up the the DOM tree until it reaches the document root node</li>
+						</ul>
+					</li>
+				</ul>
+				<pre class="javascript run">
+$( "table" ).click( function( e ) {
+    alert( "You clicked the " + e.target.nodeName + "!" );
+});</pre>
+				<table class="demo" cellpadding="25" cellspacing="25">
+					<tr>
+						<td>jQuery</td>
+						<td>Rocks!</td>
+					</tr>
+				</table>
+			</section>
+			<script>
+				$( function() {
+					$( "#4 table" ).click( function( e ) {
+					    alert( "You clicked the " + e.target.nodeName + "!" );
+					});
+				});
+			</script>
+			<aside class="note">
+				<section>
+					<pre class="html lite">
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td>jQuery&lt;/td&gt;
+        &lt;td>Rocks!&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</pre>
+					
+				</section>
+			</aside> 
+		</div>
 
-            <h3>Contact Information</h3>
+		<div class="slide" id="4-a">
+			<header>4a. Dos &amp; Don'ts of Events</header>
+			<section>
+				<ul>
+					<li>
+						<span>Preventing Default Behavior</span>
+						<ul>
+							<li><code>e.preventDefault</code> - Event propagates</li>
+						</ul>
+					</li>
+				</ul>
+				<pre class="javascript run">
+$( "ul.demo" ).click( function() {
+	alert( "Click Handler for Unordered List" );
+});
 
-            <ul>
-              <li>elijah.manor@gmail.com</li>
-              <li>http://twitter.com/elijahmanor</li>
-              <li>http://gplus.to/elijahmanor</li>
-            </ul>
+$( "ul.demo li a" ).click( function( e ) {
+	alert( "Click Handler for Anchor" );
+	e.preventDefault();
+});</pre>
+				<ul class="demo">
+					<li><a href="http://twitter.com/elijahmanor">@elijahmanor</a></li>
+				</ul>
+			</section>
+			<aside class="note">
+				<section>
+					<pre class="html lite">
+&lt;ul class="demo"&gt;
+	&lt;li"&gt;
+		&lt;a href="http://twitter.com/elijahmanor"&gt;
+			@elijahmanor
+		&lt;/a&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;</pre>
+				</section>
+			</aside> 
+		</div>
 
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside> 
-        </div>
+		<div class="slide" id="4-b">
+			<header>4b. Dos &amp; Don'ts of Events</header>
+			<section>
+				<ul>
+					<li>
+						<span>Preventing Default Behavior</span>
+						<ul>
+							<li><code>return false</code> - e.preventDefault & e.stopPropagation</li>
+						</ul>
+					</li>
+				</ul>
+				<pre class="javascript run">
+$( "ul.demo" ).click( function() {
+    alert( "Click Handler for Unordered List" );
+});
+
+$( "ul.demo li a" ).click( function( e ) {
+    alert( "Click Handler for Anchor" ); return false;
+});</pre>
+				<ul class="demo">
+					<li><a href="http://twitter.com/elijahmanor">@elijahmanor</a></li>
+				</ul>
+			</section>
+			<aside class="note">
+				<section>
+					<pre class="html lite">
+&lt;ul class="demo"&gt;
+	&lt;li&gt;
+		&lt;a href="http://twitter.com/elijahmanor"&gt;
+			@elijahmanor
+		&lt;/a&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;</pre>
+				</section>
+			</aside> 
+		</div>
+
+		<div class="slide" id="4-c">
+			<header>4c. Dos &amp; Don'ts of Events</header>
+			<section>
+				<ul>
+					<li>
+					<span>Event Helpers</span>
+					<ul>
+						<li><code>click, dblclick, mouseover, etc...</code></li>
+					</ul>
+				</ul>
+				<pre class="javascript">
+var hoverOverMe = function() {
+    $( this ).toggleClass( "over" );
+};
+
+$( "p.clickMe" ).click( hoverOverMe )
+	.dblclick( hoverOverMe );</pre>
+				<ul>
+					<li>These Event Helpers are just convenient wrappers around the bind() method...</li>
+				</ul>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>
+
+		<div class="slide" id="4-d">
+			<header>4d. Dos &amp; Don'ts of Events</header>
+			<section>
+				<ul>
+					<li><code>bind()</code> &amp; <code>unbind()</code></li>
+				</ul>
+				<pre class="javascript">
+var clickMe = function() {
+	console.log( "Hello World!" );
+};
+
+$( "p.clickMe" ).bind( "click dblclick", clickMe );
+
+$( "p.clickMe" ).unbind();                            // really dangerous
+$( "p.clickMe" ).unbind( "click dblclick" );          // moderately dangerous
+$( "p.clickMe" ).unbind( "click dblclick", clickMe ); // safe</pre>				
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>
+
+		<div class="slide" id="4-e">
+			<header>4e. Dos &amp; Don'ts of Events</header>
+			<section>
+				<ul>
+					<li>When you can get into a <code>bind()</code>...</li>
+				</ul>
+				<pre class="javascript run">
+var clickMe = function() {
+    var element = $( this );
+    element.text( element.text() + " :)" );
+};
+
+$( "ul.demo li" ).bind( "click", clickMe );
+
+<div class="run">$( "ul.demo" ).append( "&lt;li&gt;Dynamic Item&lt;/li&gt;" );</div>  // Doesn't work</pre>
+				<ul class="demo">
+					<li>Static Item</li>
+				</ul>
+			</section>
+			<script>
+				$( function() {
+					$( "#4-e .run" ).click( function() {
+						$( "#4-e ul.demo" ).append( "<li>Dynamic Item</li>" );
+					});
+				});
+			</script>
+			<aside class="note">
+				<section>
+						<pre class="html lite">
+&lt;ul class="demo"&gt;
+    &lt;li&gt;Static Item&lt;/li&gt;
+&lt;/ul&gt;</pre>
+				</section>
+			</aside> 
+		</div>
+
+		<div class="slide" id="4-f">
+			<header>4f. Dos &amp; Don'ts of Events</header>
+			<section>
+				<ul>
+					<li>The <code>live()</code> &amp; let <code>die()</code> solution (Event Delegation)</li>
+				</ul>
+				<pre class="javascript run">
+var clickMe = function() {
+	var element = $( this );
+	element.text(element.text() + " :)" );
+};
+
+$( "ul.demo li" ).live( "click", clickMe );
+/* die() || die( "click" ) || die( "click", clickMe ) */
+
+<div class="run">$( "ul.demo" ).append( "&lt;li>Dynamic Item&lt;/li>" );</div>  // Works!</pre>
+				<ul class="demo">
+					<li>Static Item</li>
+				</ul>
+			</section>
+			<script>
+				$( function() {
+					$( "#4-f .run" ).click( function() {
+						$( "#4-f ul.demo" ).append( "<li>Dynamic Item</li>" );
+					});
+				});
+			</script>
+			<aside class="note">
+				<section>
+					<pre class="html lite">
+&lt;ul class="demo"&gt;
+    &lt;li&gt;Static Item&lt;/li&gt;
+&lt;/ul&gt;</pre>
+				</section>
+			</aside> 
+		</div>
+			
+		<div class="slide" id="4-g">
+			<header>4g. Dos &amp; Don'ts of Events</header>
+			<section>
+				<ul>
+					<li><code>delegate()</code> &amp; <code>undelegate()</code> <sup class="new">new</sup> in jQuery 1.4.2</li>
+				</ul>
+				<pre class="javascript run">
+var clickMe = function() {
+	var element = $( this );
+	element.text( element.text() + " :)" );
+};
+
+$( "ul.demo" ).delegate( "li", "click", clickMe );
+/* undelegate(), undelegate( "li", "click" ),
+	undelegate( "li", "click", clickMe ) */
+
+$( "ul.demo" ).append( "&lt;li&gt;Dynamic Item&lt;/li&gt;" );  // Works</pre>
+				<ul class="demo">
+					<li>Static Item</li>
+				</ul>
+			</section>
+			<aside class="note">
+				<section>
+					<pre class="html lite">
+&lt;ul class="demo"&gt;
+	&lt;li&gt;Static Item&lt;/li&gt;
+&lt;/ul&gt;</pre>
+				</section>
+			</aside> 
+		</div>
+		
+		<div class="slide" id="">
+			<header>4h. Dos &amp; Don'ts of Events</header>
+			<section>
+				<ul>
+					<li>
+						jQuery 1.7 rewrote events from the group up and introduced two new binding methods called <code>on</code and <code>off</code>
+						<ul><li>The bind/live/delegate methods are now just one line pass throughs to the new <code>on</code> &amp; the same applies to unbind/die/undelegate mapping to the <code>off</code> method.</li></ul>
+						</li>
+				</ul>
+				<pre class="javascript run">
+$( ".customer" ).on( "click", function( e ) {} );                // behave like bind
+
+$( document ).on( "click", ".customer", function( e ) {} );      // behave like live
+
+$( ".customers" ).on( "click", ".customer", function( e ) {} );  // behave like delegate</pre>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>	
+					
+		<div class="slide" id="5">
+			<header>5. Ways of Storing Data</header>
+			<section>
+				<ul>
+					<li>It is common practice to store additional information about your DOM elements</li>
+					<li>
+						<span>Fortunately, there are various ways of doing this</span>
+						<ul>
+							<li>Some are better than others...</li>
+						</ul>
+					</li>
+				</ul>				
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>
+		
+		<div class="slide" id="5-a">
+			<header>5a. Ways of Storing Data</header>
+			<section>
+				<ul>
+					<li>Don't Use Attributes</li>
+				</ul>
+<pre class="javascript">
+// Storing special info about the anchor in the alt attribute
+$( "a" ).attr( "alt", "Special info about this HTML tag" );
+
+// Getting the special information from the anchor's alt attribute
+$( "a" ).attr( "alt" )</pre>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>
+		
+		<div class="slide" id="5-b">
+			<header>5b. Ways of Storing Data</header>
+			<section>
+				<ul>
+					<li>Utilizing the jQuery data() Method - Storing data into jQuery's internal data store
+						<ul>
+							<li class="demo">Simple Data Types</li>
+						</ul>
+					</li>
+				</ul>
+				<pre class="javascript">
+$( "li.demo" )
+    .data( "specialInfo", "Special info about this HTML tag" );
+
+alert( $( "li.demo" ).data( "specialInfo" ) );</pre>			
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>	
+
+		<div class="slide" id="5-c">
+			<header>5c. Ways of Storing Data</header>
+			<section>
+				<ul>
+					<li>Utilizing the jQuery data() Method
+						<ul>
+							<li class="demo">Complex Data Types</li>
+						</ul>
+					</li>
+				</ul>
+				<pre class="javascript">
+/* Storing a complex data structure under the specialInfo key */
+$( "li.demo" )
+    .data( "specialInfo", {
+        firstName: "Elijah",
+        lastName: "Manor"
+    });
+
+/* Getting the complex specialInfo &amp; accessing the firstName */
+alert( $( "li.demo" ).data( "specialInfo" ).firstName );</pre>
+				<ul>
+					<li><em class="note">Note: Check out FireQuery Plug-in for Firebug</em></li>
+				</ul>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>	
+
+		<div class="slide" id="5-d">
+			<header>5d. Ways of Storing Data</header>
+			<section>
+				<ul>
+					<li>Utilizing the jQuery data() Method
+						<ul>
+							<li class="demo">Alternate syntax...</li>
+						</ul>
+					</li>
+				</ul>
+				<pre class="javascript">
+$("li.demo").data({ firstName: "Elijah", lastName: "Manor" });
+
+console.dir($("li.demo").data());
+
+$("li.demo").data("someKey",
+    { firstName: "Andrea", lastName: "Manor" });
+
+console.dir($("li.demo").data());
+
+console.log($("li.demo").data().someKey.firstName);</pre>
+				<ul>
+					<li><em class="note">Note: Check out FireQuery Plug-in for Firebug</em></li>
+				</ul>			
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>	
+
+		<div class="slide" id="5-e">
+			<header>5e. Ways of Storing Data</header>
+			<section>
+				<ul>
+					<li>Utilizing the jQuery data() Method
+						<ul>
+							<li class="demo">Removing the data()</li>
+						</ul>
+					</li>
+				</ul>
+				<pre class="javascript">
+$( "li.demo" )
+    .data( "specialInfo", "Special info about this HTML tag" );
+
+alert( "Before removeData(): " + $( "li.demo" ).data( "specialInfo" ) );
+
+$( "li.demo" ).removeData( "specialInfo" );
+
+alert( "After removeData(): " + $( "li.demo" ).data( "specialInfo" ) );</pre>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>	
+		
+		<div class="slide" id="5-f">
+			<header>5f. Ways of Storing Data</header>
+			<section>
+				<ul>
+					<li>HTML5 data- Attributes</li>
+				</ul>
+				<pre class="javascript">
+<div data-role="page" data-last-value="43" data-hidden="true" data-options='{"name":"John"}'></div></pre>
+				<p>Support added in 1.4.3 and in 1.6 change was made to conform to W3C HTML5 specification (embedded dashes)</p>
+				<pre>
+$( "div" ).data( "role" ) === "page";
+$( "div" ).data( "lastValue" ) === 43;
+$( "div" ).data( "hidden" ) === true;
+$( "div" ).data( "options" ).name === "John";
+				</pre>
+				<p>jQuery attemps to convert the string to the desired value. If you want the string, then you can use the attr() method.</p>
+			</section>
+			<aside class="note">
+				<section>
+					<p>There is a great article about all the ins &amp; outs of this topic by <a href="" target="_blank">Dave Methvin</a> entitled <a href="http://www.learningjquery.com/2011/09/using-jquerys-data-apis" target="_blank">Using jQuery’s Data APIs</a>.
+					</p>
+				</section>
+			</aside> 
+		</div>	
+
+		<div class="slide" id="6">
+			<header>6. Ins &amp; Outs of AJAX</header>
+			<section>
+				
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>	
+
+		<div class="slide" id="6a">
+			<header></header>
+			<section>
+				helper methods
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>	
+
+		<div class="slide" id="">
+			<header></header>
+			<section>
+				ajax method
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>	
+
+		<div class="slide" id="">
+			<header></header>
+			<section>
+				deferreds - adding success/error after fact
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>	
+
+		<div class="slide" id="">
+			<header></header>
+			<section>
+				deferreds - using when
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>	
+
+		<div class="slide" id="">
+			<header></header>
+			<section>
+				deferreds - this is not specific to ajax... example of something else
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside> 
+		</div>
+
 
       </div> <!-- slides -->
       <div id="speaker-note" class="invisible" style="display: none;">

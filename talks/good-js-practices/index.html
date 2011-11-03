@@ -34,6 +34,545 @@
     <link href="css/common.css" rel="stylesheet" media="screen" />
   </head>
   <body>
+	
+<!--
+          <section class="middle intro"> 
+            <div class="mixLogo"><img src="http://dl.dropbox.com/u/200135/talks/images/MIX11_logo_rgb.png" /></div><hgroup> 
+              <h1> 
+                Good Habits <br/>Gone Wild!
+              </h1> 
+              <h2> 
+                Good JavaScript Habits<br/>For C# Developers
+              </h2> 
+            </hgroup> 
+            <p>*Concepts also apply to other Classical Languages (Java, C++, etc...)</p> 
+         </section> 
+        </div> 
+
+		<div class="slide transitionSlide"> 
+		 <header>Enterprise jQuery</header> 
+		 <section class="flex hbox boxcenter"> 
+		     <object data="http://enterprisejquery.com/"></object> 
+		 </section> 
+		</div>
+		
+        <div class="slide"> 
+          <section class="middle"> 
+            <h2>Not Understanding <br/>False-y Values</h2> 
+          </section> 
+        </div> 
+        <div class="slide"> 
+          <header><h1>1. Not Understanding False-y Values</h1></header> 
+          <section> 
+            <h2><span class="html">Bad Habit</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/789Rt/1/embedded/js,result/presentation/"></iframe>
+          </section> 
+        </div> 
+
+        <div class="slide"> 
+          <section class="middle"> 
+            <h2>Not Testing &amp; Setting Default Values Correctly</h2> 
+          </section> 
+        </div> 
+        <div class="slide"> 
+          <header><h1>2a. Not Testing Values Correctly</h1></header> 
+          <section> 
+            <h2><span class="html">Bad Habit</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/amwWP/embedded/js,result/presentation/"></iframe>
+          </section> 
+        </div> 
+        <div class="slide"> 
+          <header><h1>2a. Not Testing Values Correctly</h1></header> 
+          <section> 
+            <h2><span class="js">Best Practice</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/W9cRJ/embedded/js,result/presentation/"></iframe>
+          </section> 
+        </div> 
+        <div class="slide"> 
+          <header><h1>2b. Not Setting Default Values Correctly</h1></header> 
+          <section> 
+            <h2><span class="html">Bad Habit</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/sAEmt/2/embedded/js,result/presentation/"></iframe>
+          </section> 
+        </div> 
+        <div class="slide"> 
+          <header><h1>2b. Not Setting Default Values Correctly</h1></header> 
+          <section> 
+            <h2><span class="js">Best Practice</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/z6Gwj/embedded/js,result/presentation/"></iframe>
+          </section> 
+        </div> 
+		<div class="slide"> 
+		  <header><h1>Testing &amp; Setting Default Values Correctly</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span> <span class="key">Summary</span></h2> 
+			<ul>
+				<li>Based on the false-y rules we learned earlier, if we want to check if a variable is undefined, not null, and has a value then all we need to do is check the object itself.</li>
+			</ul>
+		  </section> 
+		</div>
+
+		<div class="slide"> 
+		  <section class="middle"> 
+		    <h2>Using the Wrong Comparison Operators</h2> 
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>3. Using Wrong Comparison Operators</h1></header> 
+		  <section> 
+		    <h2><span class="html">Bad Habit</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/gFDPj/9/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>3. Using Wrong Comparison Operators</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/GGWeb/4/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide"> 
+		  <header><h1>Using the Right Comparison Operators</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span> <span class="key">Summary</span></h2> 
+			<ul>
+				<li>When you are comparing two values in JavaScript you should use the Identify Comparison Operators (=== &amp; !==).</li>
+			</ul>
+		  </section> 
+		</div>				
+
+		<div class="slide"> 
+		  <section class="middle"> 
+		    <h2>Not Declaring Arrays &amp; Objects Correctly</h2> 
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>4. Not Declaring Arrays &amp; Objects Correctly</h1></header> 
+		  <section> 
+		    <h2><span class="html">Bad Habit</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/9A56T/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>4. Not Declaring Arrays &amp; Objects Correctly</h1></header> 
+		  <section> 
+		    <h2><span class="js">Good Practice</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/rR9sU/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide"> 
+		  <header><h1>4. Not Declaring Arrays &amp; Objects Correctly</h1></header> 
+		  <section> 
+		    <h2><span class="js">Better Practice</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/tBgne/5/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide"> 
+		  <header><h1>Declaring Arrays &amp; Objects Correctly</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span> <span class="key">Summary</span></h2> 
+			<ul>
+				<li>Declare all of your variables using their literal notation instead of using the new operation.</li>
+				<li>You shouldn’t use the new keyword for Boolean, Number, String, or Function. All they do is add additional bloat and slow things down.</li>
+				<li>Use the new keyword is if you are creating a new object and you want it to use a constructor that you defined.</li>
+			</ul>
+		  </section> 
+		</div>				
+		
+		<div class="slide"> 
+		  <section class="middle"> 
+		    <h2>Not Using The for…in Statement Correctly</h2> 
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>5a. Using the for…in Statement on Arrays</h1></header> 
+		  <section> 
+		    <h2><span class="html">Bad Habit</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/x23Jh/23/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>5a. Using the for…in Statement on Arrays</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span> <span class="key">Using for Statement on Arrays</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/J7SQC/4/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>		
+		<div class="slide"> 
+		  <header><h1>5a. Using the for…in Statement on Arrays</h1></header> 
+		  <section> 
+		    <h2><span class="html">Bad Habit</span> <span class="key">Prototypes Bleed Through</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/Vgx7E/8/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>		
+		<div class="slide"> 
+		  <header><h1>5b. Using for…in Incorrectly with Objects</h1></header> 
+		  <section> 
+		    <h2><span class="html">Bad Habit</span> <span class="key">Prototypes Still Bleed Through</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/P5Dce/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>		
+		<div class="slide"> 
+		  <header><h1>5b. Using for…in Incorrectly with Objects</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/s4Hdd/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide"> 
+		  <header><h1>5b. Using for…in Incorrectly with Objects</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/AVVaH/8/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>		
+		<div class="slide"> 
+		  <header><h1>Not Using The for…in Statement Correctly</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span> <span class="key">Summary</span></h2> 
+			<ul>
+				<li>Use the for statement for arrays</li>
+				<li>Use the for…in statement when iterating over objects and check the hasOwnProperty method</li>
+			</ul>
+		  </section> 
+		</div>
+
+		<div class="slide"> 
+		  <section class="middle"> 
+		    <h2>Misunderstanding <br/>Scope in JavaScript</h2> 
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>6. Misunderstanding Scope in JavaScript</h1></header> 
+		  <section> 
+		    <h2><span class="html">Bad Habit</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/E2Rmw/22/embedded/js,html,result/presentation/"></iframe>
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>6. Misunderstanding Scope in JavaScript</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/qANjt/6/embedded/js,html,result/presentation/"></iframe>
+		  </section> 
+		</div>		
+		<div class="slide"> 
+		  <header><h1>Understanding Scope in JavaScript</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span> <span class="key">Summary</span></h2> 
+			<ul>
+				<li>It is considered best practice to declare all of your variables at the top of your function. By declaring your variables at the top of your function, you are sending a message to yourself and anyone else that those variables are available to anything inside of the function.</li>
+				<li>It turns out there is an even more compelling reason to declare your variables at the top of your function.</li>
+			</ul>
+		  </section> 
+		</div>				
+
+		<div class="slide"> 
+		  <section class="middle"> 
+		    <h2>Not Knowing Variable <br/>And <br/>Function Hoisting</h2> 
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>7a. Variable Hoisting</h1></header> 
+		  <section> 
+		    <h2><span class="html">Bad Habit</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/UZyue/5/embedded/js,html,result/presentation/"></iframe>
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>7a. Variable Hoisting</h1></header> 
+		  <section> 
+		    <h2><span class="html">How JavaScript Interprets It</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/Fg4QV/4/embedded/js,html,result/presentation/"></iframe>
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>7a. Variable Hoisting</h1></header> 
+		  <section> 
+		    <h2><span class="html">Where Things Can Get Confusing: Part 1</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/K3NXB/embedded/js,html,result/presentation/"></iframe>
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>7a. Variable Hoisting</h1></header> 
+		  <section> 
+		    <h2><span class="html">Where Things Can Get Confusing: Part 2</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/Ty8dN/20/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide"> 
+		  <header><h1>7a. Variable Hoisting</h1></header> 
+		  <section> 
+		    <h2><span class="html">Where Things Can Get Confusing: Part 2</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/UQ9TL/2/embedded/js,html,result/presentation/"></iframe>
+		  </section> 
+		</div>		
+		<div class="slide"> 
+		  <header><h1>7b. Function Hoisting</h1></header> 
+		  <section> 
+		    <h2><span class="js">How You Might Write It</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/9F9da/5/embedded/js,html,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide"> 
+		  <header><h1>7b. Function Hoisting</h1></header> 
+		  <section> 
+		    <h2><span class="js">How JavaScript Interprets It</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/BSuWQ/5/embedded/js,html,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide">
+		  <header><h1>Knowing Variable And Function Hoisting</h1></header>
+		  <section>
+		    <h2><span class="js">Best Practice</span> <span class="key">Summary</span></h2> 
+			<ul>
+			    <li>Declare all of your variables at the top of your function</li>
+			</ul>
+			</section> 
+		</div>		
+		<!-- END ETM: Not Knowing Variable And Function Hoisting -->
+
+		<!-- BEGIN ETM: Not Using Closures Correctly Or At All -->
+		<div class="slide"> 
+		  <section class="middle"> 
+		    <h2>Not Using Closures Correctly Or At All</h2> 
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>8. Not Using Closures Correctly Or At All</h1></header> 
+		  <section> 
+		    <h2><span class="html">Looping Without A Closure</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/cQ7Ug/5/embedded/js,html,css,result/presentation/"></iframe>
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>8. What is a Closure?</h1></header> 
+		  <section> 
+		    <h2><span class="js">A Simple Example with a Visual</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/CzDc2/3/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>		
+		<div class="slide"> 
+		  <header><h1>8. Not Using Closures Correctly Or At All</h1></header> 
+		  <section> 
+		    <h2><span class="js">Looping With A Closure: Part 1</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/XS7BE/8/embedded/js,html,css,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide"> 
+		  <header><h1>8. Not Using Closures Correctly Or At All</h1></header> 
+		  <section> 
+		    <h2><span class="js">Looping With A Closure: Part 2</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/A6tTF/5/embedded/js,html,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide"> 
+		  <header><h1>Using Closures When Necessary</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span> <span class="key">Summary</span></h2> 
+			<ul>
+				<li>A closure can be very helpful when trying to persist certain variable states.</li> 
+				<li>Using the concept of closures to simulate private methods and properties as you might expect from C#. We will cover this in a later point.</li>
+			</ul>
+			<span class="css">Note</span>
+			<p>For more examples of when to use closures appropriately in your code there is a great post by <a href="http://twitter.com/kangax" target="_blank">Juriy Zaytsev</a> on Script Junkie entitled <a href="http://msdn.microsoft.com/en-us/scriptjunkie/ff696765.aspx" target="_blank">Use Cases for JavaScript Closures</a></p>
+		  </section> 
+		</div>				
+		<!-- END ETM: Not Using Closures Correctly Or At All -->
+
+		<!-- BEGIN ETM: Having Variables & Functions in Global Scope -->
+		<div class="slide"> 
+		  <section class="middle"> 
+		    <h2>Having Variables <br/>&amp; Functions <br/>in Global Scope</h2> 
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>9. Having Vars &amp; Funcs in Global Scope</h1></header> 
+		  <section> 
+		    <h2><span class="html">Bad Habit</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/teW4J/4/embedded/js,html,result/presentation/"></iframe>
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>9. Having Vars &amp; Funcs in Global Scope</h1></header> 
+		  <section> 
+		    <h2><span class="js">Object Literal (All Public)</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/ahfgk/8/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide">
+		  <header><h1>Object Literal (All Public)</h1></header>
+		  <section>
+		    <h2><span class="js">Pros &amp; Cons</span></h2> 
+		 	<h3>Pros</h3>
+			<ul>
+			    <li>Cleans up the global namespace by adding a namespace to your properties and methods</li>
+			    <li>You can add functionality to the object literal at a later point</li>
+			    <li>All the properties and methods are public</li>
+			</ul>
+			<h3>Cons</h3>
+			<ul>
+			    <li>Uses the Object Literal syntax to define your properties and methods that some may find cumbersome</li>
+			    <li>There isn’t the ability to have private properties or methods</li>
+		  	</ul>
+			</section> 
+		</div>		
+		<div class="slide"> 
+		  <header><h1>9. Having Vars &amp; Funcs in Global Scope</h1></header> 
+		  <section> 
+		    <h2><span class="js">Self-Executing Anonymous Function: Part 1 (All Private)</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/zxR3P/8/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide">
+		  <header><h1>SEAF: Part 1 (All Private)</h1></header>
+		  <section> 
+		    <h2><span class="js">Pros &amp; Cons</span></h2> 
+		 	<h3>Pros</h3>
+			<ul>
+			    <li>Hides all your implementation from external code</li>
+			    <li>The function runs once and only once</li>
+			    <li>The code inside doesn’t use the Object Literal notation</li>
+			</ul>
+			<h3>Cons</h3>
+			<ul>
+			    <li>All information is hidden, which may not be what you want</li>
+			    <li>Slightly more complicated technique, but not really</li>
+			</ul>
+		  </section> 
+		</div>		
+
+		<div class="slide"> 
+		  <header><h1>9. Having Vars &amp; Funs in Global Scope</h1></header> 
+		  <section> 
+		    <h2><span class="js">Revealing Module Pattern (Public &amp; Private)</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/CDDer/15/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide"> 
+		  <header><h1>Revealing Module (Public &amp; Private)</h1></header>
+		  <section> 
+		    <h2><span class="js">Pros &amp; Cons</span></h2> 
+		 	<h3>Pros</h3>
+			<ul>
+			    <li>Allows for public and private properties and methods</li>
+			    <li>The Technique is Easy to understand</li>
+			    <li>The code inside doesn’t use the Object Literal notation</li>
+			</ul>
+			<h3>Cons</h3>
+			<ul>
+			    <li>Doesn’t allow for a way to add private properties to be used in new public methods</li>
+			</ul>
+		  </section> 
+		</div>
+
+		<div class="slide"> 
+		  <header><h1>9. Having Vars &amp; Funs in Global Scope</h1></header> 
+		  <section> 
+		    <h2><span class="js">Self-Executing Anonymous Function: Part 2 (Public &amp; Private)</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/MVNBz/22/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide"> 
+		  <header><h1>SEAF: Part 2 (Public &amp; Private)</h1></header>
+		  <section> 
+		    <h2><span class="js">Pros &amp; Cons</span></h2> 
+		 	<h3>Pros</h3>
+			<ul>
+			    <li>Gives ability to have public &amp; private properties &amp; methods</li>
+			    <li>The code inside doesn’t use the Object Literal notation</li>
+			    <li>Keeps undefined’s value as undefined in case someone overrode</li>
+			    <li>You can use $ in your code without worrying about library clashing</li>
+			    <li>Allows your library to grow across files using the “window.namespace = window.namespace || {}” technique</li>
+			    <li>A common pattern that you will see in libraries, widgets, and plugins</li>
+			</ul>
+			<h3>Cons</h3>
+			<ul>
+			    <li>Slightly more complicated pattern, but not overly difficult</li>
+			</ul>
+		  </section> 
+		</div>
+		
+		<div class="slide"> 
+		  <header><h1>Minimizing Vars &amp; Funs in Global Scope</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span> <span class="key">Summary</span></h2> 
+			<ul>
+				<li>In JavaScript it is very important to declare all of your variables and it is considered a best practice to limit the number of objects in the global namespace.</li>
+				<li>Depending on the situation you are developing you may need one or more of the concepts listed above to organize your code and keep it from colliding with other libraries.</li> 
+				<li>There is no pattern that is a Silver Bullet, but rather you should assess where you are at and examine the pros and cons of each pattern to address your situation.</li>
+			</ul>
+		  </section> 
+		</div>	
+		
+		<div class="slide">
+		  <header><h1>Tools to Help You</h1></header> 			
+		  <section class="flex hbox boxcenter"> 
+        <h2><a class="js" href="http://jsfiddle.net/elijahmanor/Z2ZGa/1/">Best Practice</a> <span class="key"><a href="http://jslint.com" style="text-decoration: none; border-bottom: 0;" target="_blank">JSLint</a></span> or <span class="key"><a href="http://jshint.com" style="text-decoration: none; border-bottom: 0;" target="_blank">JSHint</a></span></h2>
+             <iframe style="width: 100%; height: 500px" src="http://jslint.com/"></iframe> 
+		       <!-- <object data="http://jshint.com/"></object> -->
+		 	</section>
+		</div>
+
+		<div class="slide"> 
+		  <header><h1>Additional Resources</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span> <span class="key">Learn</span></h2>
+		 	<h3>Books</h3>
+			<ul>
+				<li><a href="http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742">JavaScript: The Good Parts</a> by Douglas Crockford</li>
+				<li><a href="http://www.amazon.com/JavaScript-Patterns-Stoyan-Stefanov/dp/0596806752">JavaScript Patterns</a> by Stoyan Stefanov</li>
+			</ul>
+			<h3>Articles</h3>
+			<ul>
+				<li><a href="http://msdn.microsoft.com/en-us/scriptjunkie/ff852808.aspx">Prototypes and Inheritance in JavaScript</a> by <a href="http://twitter.com/odetocode">Scott Allen</a></li>
+				<li><a href="http://msdn.microsoft.com/en-us/scriptjunkie/ff696765.aspx">Use Cases for JavaScript Closures</a> by <a href="http://twitter.com/kangax/">Juriy Zaytsev</a></li>
+				<li><a href="http://blog.boyet.com/blog/javascriptlessons/">JavaScript for C# Programmers</a> series by <a href="">Julian Bucknall</a></li>
+			</ul>		
+			<h3>Video</h3>
+			<ul>
+				<li><a href="http://yuiblog.com/crockford/">Crockford on JavaScript</a> video series on Yahoo!</li>
+			</ul>
+		  </section> 
+		</div>	
+	
+        <div class="slide"> 
+	      <style> 
+
+          </style> 
+          <header><h1>Questions?</h1></header> 
+          <section class="middle intro"> 
+ 
+            <h2><span>Elijah Manor</span></h2> 
+
+			<p class="whoami" style="margin-top: 45px; line-height: 22px;">
+				<center>
+					<table class="whoami" style="width: 75%; margin: clear;">
+						<tr>
+							<td style="text-align: left;">Microsoft MVP ASP.NET</td>
+							<td style="text-align: right;">elijah.manor@gmail.com</td>
+						</tr>
+						<tr>
+							<td style="text-align: left;">ASPInsiders</td>
+							<td style="text-align: right;">http://elijahmanor.com</td>
+						</tr>
+						<tr>
+							<td style="text-align: left;">.appendTo()</td>
+							<td style="text-align: right;">http://twitter.com/elijahmanor</td>
+						</tr>
+					</table>
+				</center>
+			</p>
+  
+          </section> 
+        </div>
+ 
+      </div> 
+ 
+    </div>
+-->	
+	
+	
     <nav id="helpers">
       <button title="Previous slide" id="nav-prev" class="nav-prev">⇽</button> 
       <button title="Jump to a random slide" id="slide-no">5</button> 
@@ -133,13 +672,13 @@
           <section class="middle">
             <hgroup>
               <h1>
-                Extending Your jQuery App with AmplifyJS
+                Good JavaScript Practices
               </h1>
               <h2>
                 by Elijah Manor
               </h2>
             </hgroup>
-            <p>Taking an existing web application and slowing adding 3 AmplifyJS components</p>
+            <p></p>
           </section>
         </div>
 

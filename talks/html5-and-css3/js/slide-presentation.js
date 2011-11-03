@@ -428,18 +428,23 @@ SlideManager.prototype.onKeyDown = function(evt) {
       evt.target.isContentEditable) {
     return;
   }
+  console.log( evt.keyCode );
   switch (evt.keyCode) {
     case 37: // left arrow
+	//case 33: // left presenter mouse
       this.prev();
       break;
     case 39: // right arrow
     case 32: // space
+	//case 34: // right presenter mouse
       this.next();
       break;
     case 78: // N
+	//case 190: // bottom right button presenter mouse
       this.toggleSpeakerNotes();
       break;
     case 72: // H
+	//case 27: // left bottom right button presenter mouse
       this.highlightImportantCode();
       break;
   }

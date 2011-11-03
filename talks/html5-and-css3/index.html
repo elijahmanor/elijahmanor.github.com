@@ -137,6 +137,31 @@
 			</section>
 		</div>
 
+		<div class="slide" id="who-am-i">
+		  <header>Questions?</header>
+		  <section>
+			<h3>Elijah Manor</h3>
+
+			<ul>
+			  <li>ASP.NET MVP, ASPInsider</li>
+			  <li>Senior Architect at appendTo</li>
+			</ul>
+
+			<h3>Contact Information</h3>
+
+			<ul>
+			  <li>elijah.manor@gmail.com</li>
+			  <li>http://twitter.com/elijahmanor</li>
+			  <li>http://gplus.to/elijahmanor</li>
+			</ul>
+
+		  </section>
+		  <aside class="note">
+			<section>
+			</section>
+		  </aside>
+		</div>
+
 		<div class="slide" id="what-is-html5">
 			<style>
 				div#multicolumn1 {
@@ -390,6 +415,56 @@
 			</section>
 		</div>
 		
+		<div class="slide" id="adoption-strategies">
+			<style>
+				#adoption-strategies a { text-decoration: none; border-bottom: none; }
+				#adoption-strategies ul { 
+					padding-top: 0px; 
+					padding-bottom: 0px; 
+					margin-top: 0px; 
+					margin-bottom: 0px; 
+				}
+				#adoption-strategies img.tafee {
+					position: relative;
+					top: -500px;
+					width: 100%;
+				}
+			</style>
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-semantics.png" width="133" height="64" alt="HTML5 Powered with Semantics" title="HTML5 Powered with Semantics">
+				</a>
+				Adoption Strategies
+			</header>
+			<section data-build>
+				<ul>
+					<li>
+						<h4>Graceful Degradation</h4>
+						<span>Build for Latest Browsers and Degrade</span>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<h4>Progressive Enhancements</h4>
+						<span>Build for Oldest Browsers and Enhance</span>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<h4>Regressive Enhancement a.k.a. Polyfill</h4>
+						<span>Modernizr &amp; <a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills" target="_blank">Polyfills</a></span>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<h4><a href="http://paulirish.com/2011/tiered-adaptive-front-end-experiences/" target="_blank">TAFEE (pronounced: taffy)</a></h4>
+						<span><a href="http://www.slideshare.net/nzakas/progressive-enhancement-20-conference-agnostic" target="_blank">Tiered, adaptive front-end experiences. Customizing the experience to the unique capabilities of each browser, prioritizing a fast and good UX over consistency</a></span>
+					</li>	
+				</ul>
+				<img class="tafee" src="./images/tafee.png" />
+			</section>
+		</div>
+					
 		<div class="slide transitionSlide" id="get-started-title">
 			<section class="middle">
 				<h2>How Do I Get Started?</h2>
@@ -658,6 +733,60 @@
 				<span class="html5">datalist</span>
 				<span class="html5">keygen</span>
 				<span class="html5">output</span>
+				
+				<ul>
+					<li>Need Modernizr or HTML5 Shiv to trigger styling in old IE</li>
+					<li><a href="http://code.google.com/p/html5shim" target="_blank">html5shim</a> by Remy Sharp, Jon Neal &amp community. enables for print use, as well</li>
+					<li>innerShiv by Joe Bartlett - enables elements for innerhtml use http://jdbartlett.github.com/innershiv/ *Note: no longer necessary if you use jQuery 1.7
+					
+			</section>
+			<aside class="note">
+				<section>
+					
+				</section>
+			</aside>
+		</div>
+
+		<div class="slide" id="html5-forms">
+			<style>
+				#html5-forms a { text-decoration: none; border-bottom: none; }
+				#html5-forms ul { 
+					padding-top: 0px; 
+					padding-bottom: 0px; 
+					margin-top: 0px; 
+					margin-bottom: 0px; 
+				}
+				#html5-forms img.tafee {
+					position: relative;
+					top: -500px;
+					width: 100%;
+				}
+			</style>
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-semantics.png" width="133" height="64" alt="HTML5 Powered with Semantics" title="HTML5 Powered with Semantics">
+				</a>
+				HTML5 Forms
+			</header>
+			<section>
+				<ul>
+					<li>
+						<h3>Elements</h3>
+						<span>meter, progress, output, keygen</span>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<h3>Types</h3>
+						<span>Email, Tel, Url, Search, Color, Number, Range, Date</span>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<h3>Attributes</h3>
+						<span>Placeholder, autofocus, maxlength, min/max/step, list, autocomplete, accept, multiple, required, pattern, novalidate, formnovalidate, formaction, formmethod, formtarget, formenctype, spellecheck</span>
+					</li>
+				</ul>
 			</section>
 			<aside class="note">
 				<section>
@@ -665,6 +794,25 @@
 			</aside>
 		</div>
 
+		<div class="slide" id="html5-forms-example">
+			<style>
+			</style>
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-semantics.png" width="133" height="64" alt="HTML5 Powered with Semantics" title="HTML5 Powered with Semantics">
+				</a>
+				HTML5 Forms Example
+			</header>
+			<section>
+				<object data="http://wufoo.com/html5/example/"></object>
+			</section>
+			<aside class="note">
+				<section>
+					<p>Chris Coyier did a great job of researching this topic and figuring out what works and what does not. You can view more information about each element, types, ...</p>
+				</section>
+			</aside>
+		</div>
+		
 		<div class="slide transitionSlide" id="offline-storage-title">
 			<section class="middle">
 				<h2>Offline &amp; Storage</h2>
@@ -822,6 +970,8 @@ localStorage.clear();
 			</section>
 			<aside class="note">
 				<section>
+					TODO: Mention AmpifyJS &amp; polyfills
+					TODO: Mention 5 MB limit
 				</section>
 			</aside>
 		</div>
@@ -982,6 +1132,10 @@ db.transaction( function ( tx ) {
 			</section>
 			<aside class="note">
 				<section>
+					<p>TODO: Mention 5 MB -> 10 MB Limit</p>
+					<p>TODO: Mention persistance</p>
+					<p>TODO: Mention that localstorage sql library</p>
+					</p>
 					<blockquote cite="http://www.html5rocks.com/en/tutorials/indexeddb/todo/">
 						<p>On November 18, 2010, the W3C announced that Web SQL database is a deprecated specification. This is a recommendation for web developers to no longer use the technology as effectively the spec will receive no new updates and browser vendors aren't encouraged to support this technology.</p>
 
@@ -1060,13 +1214,6 @@ if ( "webkitIndexedDB" in window ) {
 			<span class="counter"></span>
 		</div>
 
-<!-- 
-Geolocation API, Web Applications can present rich, device-aware features and experiences. Incredible device access innovations are being developed and implemented, from audio/video input access to microphones and cameras, to local data such as contacts & events, and even tilt orientation.
-DEVICE ACCESS
-	Geolocation API
-		Polyfill with IP lookup
--->
-
 		<div class="slide" id="geolocation">
 			<header>
 				<a href="http://www.w3.org/html/logo/">
@@ -1132,7 +1279,8 @@ else {
 			</script>
 			<aside class="note">
 				<section>
-					<p>TODO: Add note about watchPosition...</p>
+					<p>There are also <code>watchPosition</code>/<code>clearWatch</code> method calls that update the device as your position moves instead of having to call getCurrentPosition repeatedly.</p>
+					<p>For backwards compatibility there are numerous polyfills for this feature and Paul Irish has developed one of them <a href="https://gist.github.com/366184" target="_blank">https://gist.github.com/366184</a></p>
 				</section>
 			</aside>
 		</div>
@@ -1205,17 +1353,98 @@ $( window ).bind( "deviceorientation MozOrientation", function( event ) {
 			<span class="counter"></span>
 		</div>
 
-		<div class="slide" id="connectivity">
+		<div class="slide" id="web-sockets">
 			<header>
 				<a href="http://www.w3.org/html/logo/">
 					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-connectivity.png" width="133" height="64" alt="HTML5 Powered with Connectivity / Realtime" title="HTML5 Powered with Connectivity / Realtime">
 				</a>
-				Connectivity / Realtime
+				Web Sockets
 			</header>
 			<section>
+				<pre>
+var socket = new WebSocket( "ws://html5rocks.websocket.org/echo" );
+
+socket.onopen = function() {          // connection has been opened
+	console.log( "Connection opened" );
+    socket.send( "Hello World!" );    // send a message to the server
+};
+
+socket.onerror = function( error ) {  // an error has occured
+    console.log( error );
+};
+
+socket.onmessage = function( e ) {    // message was sent from the server
+    console.log( e.data );            // message from server
+};
+
+socket.onclose = function( e ) {      // connection has been closed
+	console.log( "Connection closed" );
+};
+
+console.log( socket.readyState );     // { 0:"Connecting", 1:"Open", 2:"Closed }
+</pre>
+				
+				<p>Many of us have been implemented interval driven polling with AJAX and some have moved towards using long polling techniques, but both of these have the overhead of the HTTP stack. The goal of Web Sockets is to keep a connection between the client and server and make communication between them be very lightweight and fast. </p>
 			</section>
 			<aside class="note">
 				<section>
+				</section>
+			</aside>
+		</div>
+
+		<div class="slide" id="server-sent-events">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-connectivity.png" width="133" height="64" alt="HTML5 Powered with Connectivity / Realtime" title="HTML5 Powered with Connectivity / Realtime">
+				</a>
+				Server-Sent Events
+			</header>
+			<section>
+				<pre>
+var source;
+if ( window.EventSource ) {
+    source = new EventSource( "eventSource.aspx" );
+} else {
+    // Fallback to some other technique
+}
+
+source.bind( "message", function( e ) {
+	e = e.originalEvent;
+	
+    console.log( e.data );
+});
+
+source.bind( "open", function( e ) {
+    // The connection was opened
+});
+
+source.bind( "error", function( e ) {
+    // An error has occurred
+});</pre>
+				<p><code>Content-Type: text/event-stream</code></p>
+		
+				<pre>
+retry: 10000\n  // Signal how long to wait for reconnection (default 3 sec)
+id: 1233\n      // Signal what point to sync if connection lost
+data: { "echo": "Hello World!" }\n\n</pre>
+			</section>
+			<aside class="note">
+				<section>
+					<pre>
+data: { "echo": "Hello World!" }\n\n
+event: stockUpdate\n
+data: { "Nasdaq", 2740 }\n\n
+event: crash\n
+data: { "dateTime": "1320285380356", "shouldIWorry": true }\n\n</pre>
+
+					<pre>
+source.bind( "stockUpdate", function( e ) {
+    // Stock price has updated
+});
+
+source.bind( "crash", function( e ) {
+    // Stock market has crashed
+});</pre>					
 				</section>
 			</aside>
 		</div>
@@ -1229,20 +1458,140 @@ $( window ).bind( "deviceorientation MozOrientation", function( event ) {
 			<span class="counter"></span>
 		</div>
 
-		<div class="slide" id="multimedia">
+		<div class="slide" id="multimedia-audio">
 			<header>
 				<a href="http://www.w3.org/html/logo/">
 					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-multimedia.png" width="133" height="64" alt="HTML5 Powered with Multimedia" title="HTML5 Powered with Multimedia">
 				</a>
-				Multimedia
+				Audio
 			</header>
 			<section>
+				<pre>
+&lt;audio 
+    preload="auto" &lt;!-- preload none, metadata, or auto (let browser decide) --&gt;
+    controls       &lt;!-- display controls to manipulate playback --&gt;
+    autoplay       &lt;!-- automatically start audio when page loaded --&gt;
+    loop           &lt;!-- loop the media playback --&gt;
+    autobuffer     &lt;!-- if not autoplay, then buffer so starts quickly --&gt;
+    muted          &lt;!-- initialized audio output to mute --&gt;
+    crossorigin&gt;   &lt;!-- setting if use CORS --&gt;
+
+    &lt;source src="intro.ogg" type="audio/ogg" />  &lt;!-- remember to add type --&gt;
+    &lt;source src="intro.mp3" type="audio/mpeg" /> &lt;!-- otherwise has to --&gt;
+    &lt;source src="intro.wav" type="audio/wav" />  &lt;!-- download pieced &amp; check --&gt;
+
+    &lt;!-- Add fallback flash object markup here... --&gt;
+
+    This content appears if the audio tag or the codec is not supported.
+&lt;/audio&gt;</pre>
 			</section>
 			<aside class="note">
 				<section>
+					<pre>
+var audio = {
+    init: function( selector ) {
+        this.element = $( selector )[ 0 ];
+    },
+    play: function() {
+        this.element.play();
+    },
+    pause: function() {
+        this.element.pause();
+    }
+};</pre>
+					<ul>
+						<li><a href="http://www.schillmania.com/projects/soundmanager2/" target="_blank">SoundManager 2</a></li> 
+						<li><a href="" target="_blank">jPlayer</a></li>
+					</ul>					
 				</section>
 			</aside>
 		</div>
+
+		<div class="slide" id="multimedia-audio-demo">
+			<style>
+				#multimedia-audio-demo.slide section iframe, 
+				#multimedia-audio-demo.slide section object[data^="http"] {
+					-webkit-transform: scale(0.7);  
+					-moz-transform: scale(0.7);  
+					-o-transform: scale(0.7);  
+					transform: scale(0.7);  
+				
+					-webkit-transform-origin: 5% 50%;
+					-moz-transform-origin: 5% 50%;
+					-o-transform-origin: 5% 50%;
+					transform-origin: 5% 50%;
+					height: 840px;
+					width: 1156px;
+					top: -93px;
+					position: relative;
+					-webkit-transform-origin-x: 5%;
+					-webkit-transform-origin-y: 50%;
+				}			
+			</style>
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-multimedia.png" width="133" height="64" alt="HTML5 Powered with Multimedia" title="HTML5 Powered with Multimedia">
+				</a>
+				Audio: Demo
+			</header>
+			<section>
+				<object data="http://www.beatkeep.net/Listen.htm?Id=1451">
+				</object>				
+			</section>
+		</div>
+
+		<div class="slide" id="multimedia-video">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-multimedia.png" width="133" height="64" alt="HTML5 Powered with Multimedia" title="HTML5 Powered with Multimedia">
+				</a>
+				Video
+			</header>
+			<section>
+				<pre>
+&lt;video 
+    width="320"         &lt;!-- pixel width. defaults to width of video --&gt;
+    height="240"        &lt;!-- pixel height. defaults to height of video --&gt;
+    poster="intro.jpg"  &lt;!-- image displayed before or while loading --&gt;
+    autoplay            &lt;!-- automatically start video when page loaded --&gt;
+    controls            &lt;!-- display controls to manipulate playback --&gt;
+    loop                &lt;!-- loop the media playback --&gt;
+    autobuffer>         &lt;!-- if not autoplay, then buffer so starts quickly --&gt;
+
+    &lt;source src="intro.mp4" type="video/mp4" />   &lt;!-- remember to add type --&gt;
+    &lt;source src="intro.webm" type="video/webm" /> &lt;!-- otherwise has to --&gt;
+    &lt;source src="intro.ogv" type="video/ogg" />   &lt;!-- download piece &amp check --&gt;
+
+    &lt;!-- Add fallback flash object markup here... --&gt;
+
+    This content appears if the video tag or the codec is not supported.
+&lt;/video></pre>
+			</section>
+			<aside class="note">
+				<section>
+					<pre>
+var video = {
+    init: function( selector ) {
+        this.element = $( selector )[ 0 ];
+    },
+    play: function() {
+        this.element.play();
+    },
+    pause: function() {
+        this.element.pause();
+    }
+};</pre>
+					<p>
+					<ul>
+						<li>popcorn.js by Rick Waldron</li>
+						<li>vid.ly to support multiple video formats</li>
+						<li>http://www.delphiki.com/html5/playr/</li>
+					</ul>
+				</section>
+			</aside>
+		</div>
+
+		<!-- TODO: Video Demo Here -->
 
 		<div class="slide transitionSlide" id="effects-title">
 			<section class="middle">
@@ -1253,16 +1602,116 @@ $( window ).bind( "deviceorientation MozOrientation", function( event ) {
 			<span class="counter"></span>
 		</div>
 
-		<div class="slide" id="effects">
+		<div class="slide" id="effects-svg">
 			<header>
 				<a href="http://www.w3.org/html/logo/">
 					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-graphics.png" width="133" height="64" alt="HTML5 Powered with Graphics, 3D &amp; Effects" title="HTML5 Powered with Graphics, 3D &amp; Effects">
 				</a>
-				3D, Graphics &amp; Effects
+				SVG
 			</header>
-			<section></section>
+			<section>
+				<ul>
+					<li>XML</li>
+					<li>Vector Based</li>
+					<li>Maintains a DOM</li>
+					<li>Can change it dynamically</li>
+				</ul>
+			</section>
 			<aside class="note"></aside>
 		</div>
+
+		<div class="slide" id="effects-svg-demo">
+			<!--
+			<style>
+				#effects-svg-demo.slide section iframe, 
+				#effects-svg-demo.slide section object[data^="http"] {
+					-webkit-transform: scale(0.7);  
+					-moz-transform: scale(0.7);  
+					-o-transform: scale(0.7);  
+					transform: scale(0.7);  
+				
+					-webkit-transform-origin: 5% 50%;
+					-moz-transform-origin: 5% 50%;
+					-o-transform-origin: 5% 50%;
+					transform-origin: 5% 50%;
+					height: 840px;
+					width: 1156px;
+					top: -93px;
+					position: relative;
+					-webkit-transform-origin-x: 5%;
+					-webkit-transform-origin-y: 50%;
+				}			
+			</style>
+			-->
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-multimedia.png" width="133" height="64" alt="HTML5 Powered with Multimedia" title="HTML5 Powered with Multimedia">
+				</a>
+				SVG: Demo
+			</header>
+			<section>
+				<object data="http://svg-edit.googlecode.com/svn-history/r1771/trunk/editor/svg-editor.html
+				">
+				</object>
+			</section>
+		</div>
+
+		<div class="slide" id="effects-canvas">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-graphics.png" width="133" height="64" alt="HTML5 Powered with Graphics, 3D &amp; Effects" title="HTML5 Powered with Graphics, 3D &amp; Effects">
+				</a>
+				Canvas
+			</header>
+			<section>
+				<p>Bitmap Output</p>
+				<pre>&lt;canvas id="fancyCanvas" width="200" height="200"&gt;&lt;/canvas&gt;</pre>
+				<pre>					
+var context, image;
+
+if ( Modernizr.canvas ) {
+    context = $( "fancyImage" )[ 0 ].getContext( "2d" );
+    image = new Image();
+    image.src = "./images/HTML5_3D_effects_128.png";
+    image.onload = function() {
+        context.drawImage( image, 0, 0 );
+    };
+} else {
+    // Do something else... flash, image only, etc
+}</pre>
+				<canvas id="fancyImage" width="200" height="200" />
+			</section>
+			<aside class="note">
+				<section>
+					<ul>
+						<li><a href="http://code.google.com/p/explorercanvas/" target="_blank">Explorer Canvas</a> by Erik Arvidsson</li>
+						<li><a href=" http://flashcanvas.net/" target="_blank">FlashCanvas</a> by Shinya Muramatsu ( reported to be 33x better performance compared to Explorer Canvas )</li>
+					</ul>
+				</section>
+			</aside>
+		</div>
+
+		<!-- TODO: Canvas Example - Maybe sticky thing -->
+
+		<div class="slide" id="effects-webgl">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-graphics.png" width="133" height="64" alt="HTML5 Powered with Graphics, 3D &amp; Effects" title="HTML5 Powered with Graphics, 3D &amp; Effects">
+				</a>
+				WebGL
+			</header>
+			<section>
+				<p>3d Canvas API</p>
+				<pre>&lt;canvas id="fancyCanvas" width="200" height="200"&gt;&lt;/canvas&gt;</pre>
+				<pre>
+var webGL = $( "#fancyCanvas" )[ 0 ].getContext( "experimental-webgl" );</pre>
+					</body>					
+				</pre>
+			</section>
+			<aside class="note"></aside>
+		</div>
+
+		<!-- TODO: WebGL Example: http://pepetz.com/ or  http://handhelds.freshmeat.net/projects/sanogles -->
 
 		<div class="slide transitionSlide" id="performance-integration-title">
 			<section class="middle">
@@ -1273,12 +1722,50 @@ $( window ).bind( "deviceorientation MozOrientation", function( event ) {
 			<span class="counter"></span>
 		</div>
 
-		<div class="slide" id="performance-integration">
+		<div class="slide" id="web-workers">
 			<header>
 				<a href="http://www.w3.org/html/logo/">
 					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-performance.png" width="133" height="64" alt="HTML5 Powered with Performance &amp; Integration" title="HTML5 Powered with Performance &amp; Integration">
 				</a>
-				Performance &amp; Integration
+				Web Workers
+			</header>
+			<section>
+				<ul>
+					<li>JavaScript is a single-threaded environment ( multiple scripts can't run at the same time )</li>
+					<li>Performance in the browser can be an issue if it slows down response / render time</li>
+					<li>Developers try to be clever and work around these issues byusing <code>setTimeout()</code>, etc... but these just make things asynchronous, not making them multi-threaded.</li>
+					<li>Web Workers allow you to run a background script without blocking the UI or other scripts</li>
+				</ul>
+			</section>
+			<aside class="note">
+				<section>
+					<pre>
+var worker = new Worker( "./js/workerScript.js" );
+
+$( worker ).bind( "message", function( e ) {
+    e = e.originalEvent;
+
+    console.log( e.data );
+});
+
+worker.postMessage( "Hello World" );  // Post message to worker<pre>
+					<pre>
+// workerScript.js
+
+self.addEventListener( "message", function( e ) {
+    self.postMessage( "Goodbye World!" );
+}, false );</pre>
+				</section>
+			</aside>
+		</div>
+
+		<!--
+		<div class="slide" id="xml-http-request-2">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-performance.png" width="133" height="64" alt="HTML5 Powered with Performance &amp; Integration" title="HTML5 Powered with Performance &amp; Integration">
+				</a>
+				XMLHttpRequest 2
 			</header>
 			<section>
 			</section>
@@ -1287,7 +1774,8 @@ $( window ).bind( "deviceorientation MozOrientation", function( event ) {
 				</section>
 			</aside>
 		</div>
-
+		-->
+		
 		<div class="slide transitionSlide" id="css3-title">
 			<section class="middle">
 				<h2>CSS3 / Styling</h2>
@@ -1297,14 +1785,23 @@ $( window ).bind( "deviceorientation MozOrientation", function( event ) {
 			<span class="counter"></span>
 		</div>
 
-		<div class="slide" id="css3">
+		<div class="slide" id="css3-prefixes">
 			<header>
 				<a href="http://www.w3.org/html/logo/">
 					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3.png" width="133" height="64" alt="HTML5 Powered with CSS3 / Styling" title="HTML5 Powered with CSS3 / Styling">
 				</a>
-				CSS3
+				Browser Prefixes
 			</header>
 			<section>
+				<ul>
+					<li>-webkit &amp; -moz &amp; -o &amp; -ms</li>
+					<li>It is consider best practice to list the vendor prefixes first and then the standard property. That way, when the standard if finalized the last one will override.
+				<pre>
+-webkit-transition: all 0.3s ease-out;  
+   -moz-transition: all 0.3s ease-out;  
+    -ms-transition: all 0.3s ease-out;  
+     -o-transition: all 0.3s ease-out;  
+        transition: all 0.3s ease-out;</pre>
 			</section>
 			<aside class="note">
 				<section>
@@ -1312,231 +1809,199 @@ $( window ).bind( "deviceorientation MozOrientation", function( event ) {
 			</aside>
 		</div>
 
+		<div class="slide" id="css3-selectors">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3.png" width="133" height="64" alt="HTML5 Powered with CSS3 / Styling" title="HTML5 Powered with CSS3 / Styling">
+				</a>
+				CSS3 Selectors
+			</header>
+			<section>
+				<pre>
+				</pre>
+			</section>
+			<aside class="note">
+				<section>
+					<p>selectivizr by Keith Clark http://selectivizr.com/</p>
+				</section>
+			</aside>
+		</div>
+
+		<div class="slide" id="css3-basic">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3.png" width="133" height="64" alt="HTML5 Powered with CSS3 / Styling" title="HTML5 Powered with CSS3 / Styling">
+				</a>
+				CSS3 Basic
+			</header>
+			<section>
+				<p>opacity, backgrounds, text effects, rounded corners</p>
+				<pre>
+				</pre>
+			</section>
+			<aside class="note">
+				<section>
+					<p>selectivizr by Keith Clark http://selectivizr.com/</p>
+				</section>
+			</aside>
+		</div>
+
+		<div class="slide" id="css3-transforms-2d">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3.png" width="133" height="64" alt="HTML5 Powered with CSS3 / Styling" title="HTML5 Powered with CSS3 / Styling">
+				</a>
+				CSS3 Transforms 2D
+			</header>
+			<section>
+				<p>rotate, translate, scale, skew, matrix</p>
+				<pre>
+				</pre>
+			</section>
+			<aside class="note">
+				<section>
+					<p>Transformie by Paul Bakaus http://transformie.com/index.html</p>
+				</section>
+			</aside>
+		</div>
+
+		<div class="slide" id="css3-transforms-3d">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3.png" width="133" height="64" alt="HTML5 Powered with CSS3 / Styling" title="HTML5 Powered with CSS3 / Styling">
+				</a>
+				CSS3 Transforms 3D
+			</header>
+			<section>
+				<p>scale3d, translate3d, perspective, backface</p>
+				<pre>
+				</pre>
+			</section>
+			<aside class="note">
+				<section>
+					<p></p>
+				</section>
+			</aside>
+		</div>
+
+		<div class="slide" id="css3-transitions">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3.png" width="133" height="64" alt="HTML5 Powered with CSS3 / Styling" title="HTML5 Powered with CSS3 / Styling">
+				</a>
+				CSS3 Transitions
+			</header>
+			<section>
+				<p>animations between two states</p>
+				<pre>
+				</pre>
+			</section>
+			<aside class="note">
+				<section>
+					<p></p>
+				</section>
+			</aside>
+		</div>
+
+		<div class="slide" id="css3-animations">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3.png" width="133" height="64" alt="HTML5 Powered with CSS3 / Styling" title="HTML5 Powered with CSS3 / Styling">
+				</a>
+				CSS3 Animations
+			</header>
+			<section>
+				<p>animations with keyframes</p>
+				<pre>
+				</pre>
+			</section>
+			<aside class="note">
+				<section>
+					<p></p>
+				</section>
+			</aside>
+		</div>
+
+		<div class="slide" id="css3-font-face">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3.png" width="133" height="64" alt="HTML5 Powered with CSS3 / Styling" title="HTML5 Powered with CSS3 / Styling">
+				</a>
+				CSS3 Font Face
+			</header>
+			<section>
+				<pre>
+				</pre>
+			</section>
+			<aside class="note">
+				<section>
+					http://code.google.com/webfonts
+					http://www.fontsquirrel.com
+					http://typekit.com/libraries
+				</section>
+			</aside>
+		</div>
+
+		<div class="slide" id="chrome-frame">
+			<style>
+				#chrome-frame { background-color: #fff; }
+				#chrome-frame img {
+					position: relative;
+					
+				}
+				#chrome-frame pre.meta {
+					position: relative;
+					left: 468px;
+					top: -556px;
+					width: 328px;
+					height: 78px;
+				}
+			</style>
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3.png" width="133" height="64" alt="HTML5 Powered with CSS3 / Styling" title="HTML5 Powered with CSS3 / Styling">
+				</a>
+				Chrome Frame
+			</header>
+			<section>
+				<img src="./images/chrome_frame.jpg" />
+				<pre>
+&lt;!-- Prompt IE 6 users to install Chrome Frame. 
+    <a href="http://chromium.org/developers/how-tos/chrome-frame-getting-started" target="_blank">http://chromium.org/developers/how-tos/chrome-frame-getting-started</a> --&gt;
+&lt;!--[if lt IE 7 ]&gt;
+    &lt;script src="//ajax.googleapis.com/.../CFInstall.min.js"&gt;&lt;/script&gt;
+    &lt;script>window.attachEvent( "onload", function() { 
+		CFInstall.check( { mode: "overlay" })})&lt;/script&gt;
+&lt;![endif]--&gt;</pre>
+				<pre class="meta">
+&lt;!-- Use Google ChromeFrame if
+    it is intalled --&gt;
+&lt;meta http-equiv="X-UA-Compatible" 
+    content="chrome=1"&gt;</pre>
+			</section>
+			<aside class="note">
+				<section>
+				</section>
+			</aside>
+		</div>			
+			
+			
 <!--
-
-<a href="http://www.w3.org/html/logo/">
-<img src="http://www.w3.org/html/logo/badge/html5-badge-h-solo.png" width="63" height="64" alt="HTML5 Powered" title="HTML5 Powered">
-</a>
-
 <section data-build> <-- does manual bullet slideshow
 
 <pre style="overflow-y: scroll; height: 525px;">
 
-
-Slide with lots of browser icons
-
-How do I start!?!
-
-
-	& now!?!...
-
-
 http://caniuse.com/
-http://mobilehtml5.org/
 http://html5boilerplate.com/
 http://www.initializr.com/
-
-Adoption Strategies
-	Graceful Degradation
-		Build for Latest Browsers and Degrade
-	Progressive Enhancements
-		Build for Oldest Browsers and Enhance
-	Regressive Enhancement a.k.a. Polyfill
-		Modernizr
-		https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
-	TAFEE (pronounced: taffy): tiered, adaptive front-end experiences. Customizing the experience to the unique capabilities of each browser, prioritizing a fast and good UX over consistency
-		http://paulirish.com/2011/tiered-adaptive-front-end-experiences/
-		http://www.slideshare.net/nzakas/progressive-enhancement-20-conference-agnostic
-
-SEMANTICS
-	HTML5 Forms
-		Elements
-			meter, progress, output, keygen
-		Types
-			Email, Tel, Url, Search, Color, Number, Range, Date
-		Attributes
-			Placeholder, autofocus, maxlength, min/max/step, list, autocomplete, accept, multiple, required, pattern, novalidate, formnovalidate, formaction, formmethod, formtarget, formenctype, spellecheck
-
-		http://wufoo.com/html5/
-		http://miketaylr.com/code/input-type-attr.html
-
-	Need Modernizr or HTML5 Shiv to trigger styling in old IE
-		http://modernizr.github.com/Modernizr/test/index.html
-	html5shim by remy sharp, jon neal & community. enables for print use, as well http://code.google.com/p/html5shim
-	innerShiv by joe bartlett - enables elements for innerhtml use http://jdbartlett.github.com/innershiv/
-
-OFFLINE & STORAGE
-	App Cache
-	Local Storage / Session Storage
-		5 MB limit
-		AmplifyJS Store
-	Web SQL Storage
-		5 MB -> 10 MB Limit
-		persistance
-		-- look up that localstorage sql library
-	Index DB
-		Replacement for Web SQL Storage
-	File API
-
-
-
-CONNECTIVITY
-	Web Sockets
-		socket.io by guillermo rauch abstracts API and adds features - http://socket.io/
-
-	Server-Sent Evetns
-
-MULTIMEDIA
-	Audio
-		SoundManager 2 - http://www.schillmania.com/projects/soundmanager2/
-		jPlayer
-
-	Video
-		<video width="320"
-		        src="intro.mp4"
-		        height="240"
-		        poster="intro.jpg"
-		        autoplay
-		        controls
-		        loop
-		        autobuffer
-		        >
-		        This content appears if the video tag or the codec is not supported.
-		</video>
-
-		<script type="text/javascript">
-		    var vid = function() {
-		        return {
-		        play: function() {
-		            var v = document.getElementById("myVideo");
-		            v.play();
-		        },
-		        pause: function() {
-		            var v = document.getElementById("myVideo");
-		            v.pause();
-		      }
-		    }
-		} ();
-		</script>
-		<body>
-		    <h1>Video and legacy browser fallback</h1>
-		    <video width="320"
-		            height="240"
-		            poster="intro.jpg"
-		            id="myVideo">
-		        This content appears if the video tag or the codec is not supported.
-		        <source src="intro.mp4" type="video/mp4" />
-		        <source src="intro.webm" type="video/webm" />
-		        <source src="intro.ogv" type="video/ogg" />
-		    </video>
-		    <br />
-		    <button onclick="vid.play();">Play</button>
-		    <button onclick="vid.pause();">Pause</button>
-		</body>
-
-		<video width="640" height="360" controls>
-			<source src="__VIDEO__.MP4"  type="video/mp4" />
-			<source src="__VIDEO__.OGV"  type="video/ogg" />
-			<object width="640" height="360" type="application/x-shockwave-flash" data="__FLASH__.SWF">
-				<param name="movie" value="__FLASH__.SWF" />
-				<param name="flashvars" value="controlbar=over&amp;image=__POSTER__.JPG&amp;file=__VIDEO__.MP4" />
-				<img src="__VIDEO__.JPG" width="640" height="360" alt="__TITLE__"
-				     title="No video playback capabilities, please download the video below" />
-			</object>
-		</video>
-
-		popcorn.js
-		vid.ly
-		http://www.delphiki.com/html5/playr/
-
-3D, GRAPHICS, & EFFECTS
-	SVG
-		XML, Interaction, Vector
-		has a dom: can change it dynamically
-	Canvas
-		JavaScript, Animation, Bitmap
-		Explorer Canvas by google, erik arvidsson http://code.google.com/p/explorercanvas/
-		FlashCanvas http://flashcanvas.net/ by Shinya Muramatsu (reported to be 33x better performance compared to Explorer Canvas)
-	WebGL
-		3d Canvas API
-	CSS3 3D
-
-PERFORMANCE & INTEGRATION
-	Web Workers
-	XMLHttpRequest 2
-
-CSS3
-
---. Browser Prefixes
-	-webkit
-	-moz
-	-o
-	-ms
-
---. CSS3 Selectors
-	selectivizr by Keith Clark http://selectivizr.com/
-
-01. CSS3 Basic (opacity, backgrounds, text effects, rounded corners)
-
-02. CSS3 Transforms 2D (rotate, translate, scale, skew, matrix)
-	Transformie by Paul Bakaus http://transformie.com/index.html
-
-03. CSS3 Transforms 3D (scale3d, translate3d, perspective, backface)
-
-04. CSS3 Transitions (animations between two states)
-
-05. CSS3 Animations (animations with keyframes)
-
-06. font-face
-	http://code.google.com/webfonts
-	http://www.fontsquirrel.com
-	http://typekit.com/libraries
 
 Color (HSL & RGB)
 media queries
 http://css3please.com/
 
-
-
-Chrome Frame
-	html5labs.interoperabilitybridges.com
-	ie.microsoft.com/testdrive
-
-Enhances to Visual Studio
-	IntelliSense & Schema Validation to VS 2008/2010 pre SP1
-
+html5labs.interoperabilitybridges.com
+ie.microsoft.com/testdrive
 -->
-
-        <div class="slide" id="whoAmI">
-          <header>Questions?</header>
-          <section>
-            <h3>Elijah Manor</h3>
-
-            <ul>
-              <li>ASP.NET MVP, ASPInsider</li>
-              <li>Senior Architect at appendTo</li>
-            </ul>
-
-            <h3>Referenced Sources</h3>
-
-            <ul>
-              <li>AmplifyJS - http://bit.ly/amplifyjs</li>
-            </ul>
-
-            <h3>Contact Information</h3>
-
-            <ul>
-              <li>elijah.manor@gmail.com</li>
-              <li>http://twitter.com/elijahmanor</li>
-              <li>http://gplus.to/elijahmanor</li>
-            </ul>
-
-          </section>
-          <aside class="note">
-            <section>
-            </section>
-          </aside>
-        </div>
 
       </div> <!-- slides -->
       <div id="speaker-note" class="invisible" style="display: none;">
