@@ -512,6 +512,7 @@
 		</div>
 
 		<div class="slide" id="simplified-markup">
+			<aside class="special">*</aside>			
 			<header>
 				<a href="http://www.w3.org/html/logo/">
 					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-semantics.png" width="133" height="64" alt="HTML5 Powered with Semantics" title="HTML5 Powered with Semantics">
@@ -546,6 +547,7 @@
 		</div>
 
 		<div class="slide" id="semantics-chart-class-markup">
+			<aside class="special">*</aside>
 			<style>
 				#semantics-chart-class-markup .chart { position: relative; top: -75px; }
 				/* #semantics-chart-class-markup small { position: relative; top: -114px; } */
@@ -823,6 +825,7 @@
 		</div>
 
 		<div class="slide" id="application-cache">
+			<aside class="special">*</aside>			
 			<header>
 				<a href="http://www.w3.org/html/logo/">
 					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-storage.png" width="133" height="64" alt="HTML5 Powered with Offline &amp; Storage" title="HTML5 Powered with Offline &amp; Storage">
@@ -970,13 +973,16 @@ localStorage.clear();
 			</section>
 			<aside class="note">
 				<section>
-					TODO: Mention AmpifyJS &amp; polyfills
-					TODO: Mention 5 MB limit
+					<ul>
+						<li>There are numerous polyfills &amp; also a shim in AmpifyJS called <code>amplify.store</code that figures out the appropriate support and picks the best persistence technology that is appropreiate.></li>
+						<li>There is currently a 5 MB limit</li>
+					</ul>
 				</section>
 			</aside>
 		</div>
 
 		<div class="slide" id="web-sql-database">
+			<aside class="special">*</aside>						
 			<style>
 			#web-sql-example button { width: 100px; }
 			#web-sql-example .tweetCount, #web-sql-example .filterCount { width: 50px; }
@@ -1132,21 +1138,21 @@ db.transaction( function ( tx ) {
 			</section>
 			<aside class="note">
 				<section>
-					<p>TODO: Mention 5 MB -> 10 MB Limit</p>
-					<p>TODO: Mention persistance</p>
-					<p>TODO: Mention that localstorage sql library</p>
-					</p>
+					<ul>
+						<li>There is a library called persistance.js that provides an ORM framework for Web SQL Database, etc...</li>
+					</ul>
 					<blockquote cite="http://www.html5rocks.com/en/tutorials/indexeddb/todo/">
 						<p>On November 18, 2010, the W3C announced that Web SQL database is a deprecated specification. This is a recommendation for web developers to no longer use the technology as effectively the spec will receive no new updates and browser vendors aren't encouraged to support this technology.</p>
 
 						<p>Many major browsers including Chrome, Safari, Opera and nearly all Webkit based mobile devices support WebSQL and will likely maintain support for the foreseeable future.</p>
 					</blockquote>
-					<small><a href="http://www.html5rocks.com/en/tutorials/indexeddb/todo/">http://www.html5rocks.com/en/tutorials/indexeddb/todo/</a></small>					
+					<small><a href="http://www.html5rocks.com/en/tutorials/indexeddb/todo/">http://www.html5rocks.com/en/tutorials/indexeddb/todo/</a></small>
 				</section>
 			</aside>
 		</div>
 
 		<div class="slide" id="indexed-db">
+			<aside class="special">*</aside>									
 			<header>
 				<a href="http://www.w3.org/html/logo/">
 					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-storage.png" width="133" height="64" alt="HTML5 Powered with Offline &amp; Storage" title="HTML5 Powered with Offline &amp; Storage">
@@ -1215,6 +1221,7 @@ if ( "webkitIndexedDB" in window ) {
 		</div>
 
 		<div class="slide" id="geolocation">
+			<aside class="special">*</aside>									
 			<header>
 				<a href="http://www.w3.org/html/logo/">
 					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-device.png" width="133" height="64" alt="HTML5 Powered with Device Access" title="HTML5 Powered with Device Access">
@@ -1393,6 +1400,7 @@ console.log( socket.readyState );     // { 0:"Connecting", 1:"Open", 2:"Closed }
 		</div>
 
 		<div class="slide" id="server-sent-events">
+			<aside class="special">*</aside>									
 			<header>
 				<a href="http://www.w3.org/html/logo/">
 					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-connectivity.png" width="133" height="64" alt="HTML5 Powered with Connectivity / Realtime" title="HTML5 Powered with Connectivity / Realtime">
@@ -1459,6 +1467,7 @@ source.bind( "crash", function( e ) {
 		</div>
 
 		<div class="slide" id="multimedia-audio">
+			<aside class="special">*</aside>									
 			<header>
 				<a href="http://www.w3.org/html/logo/">
 					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-multimedia.png" width="133" height="64" alt="HTML5 Powered with Multimedia" title="HTML5 Powered with Multimedia">
@@ -1541,6 +1550,7 @@ var audio = {
 		</div>
 
 		<div class="slide" id="multimedia-video">
+			<aside class="special">*</aside>									
 			<header>
 				<a href="http://www.w3.org/html/logo/">
 					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-multimedia.png" width="133" height="64" alt="HTML5 Powered with Multimedia" title="HTML5 Powered with Multimedia">
@@ -1591,7 +1601,38 @@ var video = {
 			</aside>
 		</div>
 
-		<!-- TODO: Video Demo Here -->
+		<div class="slide" id="multimedia-video-demo">
+			<style>
+				#multimedia-video-demo.slide section iframe, 
+				#multimedia-video-demo.slide section object[data^="http"] {
+					-webkit-transform: scale(0.7);  
+					-moz-transform: scale(0.7);  
+					-o-transform: scale(0.7);  
+					transform: scale(0.7);  
+				
+					-webkit-transform-origin: 5% 50%;
+					-moz-transform-origin: 5% 50%;
+					-o-transform-origin: 5% 50%;
+					transform-origin: 5% 50%;
+					height: 840px;
+					width: 1156px;
+					top: -93px;
+					position: relative;
+					-webkit-transform-origin-x: 5%;
+					-webkit-transform-origin-y: 50%;
+				}			
+			</style>			
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-multimedia.png" width="133" height="64" alt="HTML5 Powered with Multimedia" title="HTML5 Powered with Multimedia">
+				</a>
+				Video Demo
+			</header>
+			<section>
+				<object data="http://www.craftymind.com/2010/04/20/blowing-up-html5-video-and-mapping-it-into-3d-space/"></object>
+			</section>
+			<aside class="note"></aside>
+		</div>
 
 		<div class="slide transitionSlide" id="effects-title">
 			<section class="middle">
@@ -1657,6 +1698,7 @@ var video = {
 		</div>
 
 		<div class="slide" id="effects-canvas">
+			<aside class="special">*</aside>									
 			<header>
 				<a href="http://www.w3.org/html/logo/">
 					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-graphics.png" width="133" height="64" alt="HTML5 Powered with Graphics, 3D &amp; Effects" title="HTML5 Powered with Graphics, 3D &amp; Effects">
@@ -1691,7 +1733,18 @@ if ( Modernizr.canvas ) {
 			</aside>
 		</div>
 
-		<!-- TODO: Canvas Example - Maybe sticky thing -->
+		<div class="slide" id="effects-canvas-demo">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-graphics.png" width="133" height="64" alt="HTML5 Powered with Graphics, 3D &amp; Effects" title="HTML5 Powered with Graphics, 3D &amp; Effects">
+				</a>
+				Canvas Demo
+			</header>
+			<section>
+				<object data="http://www.spielzeugz.de/html5/sticky-thing/"></object>
+			</section>
+			<aside class="note"></aside>
+		</div>
 
 		<div class="slide" id="effects-webgl">
 			<header>
@@ -1711,7 +1764,18 @@ var webGL = $( "#fancyCanvas" )[ 0 ].getContext( "experimental-webgl" );</pre>
 			<aside class="note"></aside>
 		</div>
 
-		<!-- TODO: WebGL Example: http://pepetz.com/ or  http://handhelds.freshmeat.net/projects/sanogles -->
+		<div class="slide" id="effects-webgl-demo">
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-graphics.png" width="133" height="64" alt="HTML5 Powered with Graphics, 3D &amp; Effects" title="HTML5 Powered with Graphics, 3D &amp; Effects">
+				</a>
+				WebGL Demo
+			</header>
+			<section>
+				<object data="http://pepetz.com/"></object>
+			</section>
+			<aside class="note"></aside>
+		</div>
 
 		<div class="slide transitionSlide" id="performance-integration-title">
 			<section class="middle">
@@ -1723,6 +1787,7 @@ var webGL = $( "#fancyCanvas" )[ 0 ].getContext( "experimental-webgl" );</pre>
 		</div>
 
 		<div class="slide" id="web-workers">
+			<aside class="special">*</aside>								
 			<header>
 				<a href="http://www.w3.org/html/logo/">
 					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-performance.png" width="133" height="64" alt="HTML5 Powered with Performance &amp; Integration" title="HTML5 Powered with Performance &amp; Integration">
@@ -1748,7 +1813,7 @@ $( worker ).bind( "message", function( e ) {
     console.log( e.data );
 });
 
-worker.postMessage( "Hello World" );  // Post message to worker<pre>
+worker.postMessage( "Hello World" );  // Post message to worker</pre>
 					<pre>
 // workerScript.js
 
@@ -1794,7 +1859,12 @@ self.addEventListener( "message", function( e ) {
 			</header>
 			<section>
 				<ul>
-					<li>-webkit &amp; -moz &amp; -o &amp; -ms</li>
+					<li>
+						<span>Just like the HTML5 features we looked at before, the adoption of CSS3 features isn't the same across the browser landscape. In the meantime browsers are using vendor specific prefixes so their implementation won't collide with another browser.</span>
+						<ul>
+							<li>-webkit &amp; -moz &amp; -o &amp; -ms<li>
+						</ul>
+					</li>
 					<li>It is consider best practice to list the vendor prefixes first and then the standard property. That way, when the standard if finalized the last one will override.
 				<pre>
 -webkit-transition: all 0.3s ease-out;  
@@ -1808,7 +1878,118 @@ self.addEventListener( "message", function( e ) {
 				</section>
 			</aside>
 		</div>
+		
+		<div class="slide" id="css3-prefixes-demo">
+			<aside class="special">*</aside>									
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3.png" width="133" height="64" alt="HTML5 Powered with CSS3 / Styling" title="HTML5 Powered with CSS3 / Styling">
+				</a>
+				Browser Prefixes Demo
+			</header>
+			<section>
+				<object data="http://css3please.com/"></object>
+			</section>
+			<aside class="note">
+				<section>
+					<ul>
+						<li>PIE makes Internet Explorer 6-9 capable of rendering several of the most useful CSS3 decoration features <a href="http://css3pie.com/" target="_blank">http://css3pie.com</a></li>
+						<li></li>
+				</section>
+			</aside>
+		</div>
 
+		<div class="slide" id="css3-font-face">
+			<aside class="special">*</aside>									
+			<style>
+				@font-face {
+				    font-family: "ActionManRegular";
+				    src: url( "./css/Action-Man-fontfacekit/Action_Man-webfont.eot" );
+				    src: url( "./css/Action-Man-fontfacekit/Action_Man-webfont.eot?#iefix" ) format( "embedded-opentype" ),
+				         url( "./css/Action-Man-fontfacekit/Action_Man-webfont.woff" ) format( "woff" ),
+				         url( "./css/Action-Man-fontfacekit/Action_Man-webfont.ttf" ) format( "truetype" ),
+				         url( "./css/Action-Man-fontfacekit/Action_Man-webfont.svg#ActionManRegular" ) format( "svg" );
+				    font-weight: normal;
+				    font-style: normal;
+				}					
+
+				#css3-font-face h1 {
+				  position: relative;
+
+
+				  }
+				#css3-font-face h1 a:link,
+				#css3-font-face h1 a:visited,
+				#css3-font-face h1 a:hover,
+				#css3-font-face h1 a:active {
+				  /*position: absolute;
+				  top: 0; z-index: 2; */
+				  color: #d12;
+/*				  -webkit-mask-image: -webkit-gradient(linear, left top, »
+				    left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+*/
+					font-family: "ActionManRegular", Helvetica, Georgia, sans-serif; 
+				  font-size: 100px;
+				  line-height: 250px;
+				  text-shadow: -3px 0 4px #006;
+						text-align: center;
+position: relative;
+left: 125px;
+						height: 300px;
+border-bottom: none;
+				  -webkit-transform: rotate(-7.5deg);  
+				     -moz-transform: rotate(-7.5deg);  
+				      -ms-transform: rotate(-7.5deg);  
+				       -o-transform: rotate(-7.5deg);  
+				          transform: rotate(-7.5deg);  
+				             filter: progid:DXImageTransform.Microsoft.Matrix( 
+				                     M11=0.9914448613738104, M12=0.13052619222005157, M21=-0.13052619222005157, M22=0.9914448613738104, sizingMethod='auto expand');
+				               zoom: 1;
+
+
+				  }					
+
+				#css3-font-face h1 { 
+				} 
+			</style>
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3.png" width="133" height="64" alt="HTML5 Powered with CSS3 / Styling" title="HTML5 Powered with CSS3 / Styling">
+				</a>
+				CSS3 Font Face
+			</header>
+			<section data-build>
+				<pre>
+/* http://www.fontsquirrel.com/fontface/generator */
+
+@font-face {
+    font-family: "ActionManRegular";
+    src: url( "Action_Man-webfont.eot" );
+    src: url( "Action_Man-webfont.eot?#iefix" ) format( "embedded-opentype" ),
+         url( "Action_Man-webfont.woff" ) format( "woff" ),
+         url( "Action_Man-webfont.ttf" ) format( "truetype" ),
+         url( "Action_Man-webfont.svg#ActionManRegular" ) format( "svg" );
+    font-weight: normal;
+    font-style: normal;
+}					
+
+body {
+    font-family: "ActionManRegular", Helvetica, Georgia, sans-serif;
+}
+				</pre>
+				<h1><a href="http://twitter.com/spidermanor">Spider-Manor</a></h1>
+			</section>
+			<aside class="note">
+				<section>
+					<ul>
+						<li>http://code.google.com/webfonts</li>
+						<li>http://www.fontsquirrel.com</li>
+						<li>http://typekit.com/libraries</li>
+				</section>
+			</aside>
+		</div>
+
+		<!--
 		<div class="slide" id="css3-selectors">
 			<header>
 				<a href="http://www.w3.org/html/logo/">
@@ -1826,7 +2007,7 @@ self.addEventListener( "message", function( e ) {
 				</section>
 			</aside>
 		</div>
-
+		
 		<div class="slide" id="css3-basic">
 			<header>
 				<a href="http://www.w3.org/html/logo/">
@@ -1921,23 +2102,54 @@ self.addEventListener( "message", function( e ) {
 				</section>
 			</aside>
 		</div>
+		-->
 
-		<div class="slide" id="css3-font-face">
+		<div class="slide" id="css3-media-queries">
+			
 			<header>
 				<a href="http://www.w3.org/html/logo/">
 					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3.png" width="133" height="64" alt="HTML5 Powered with CSS3 / Styling" title="HTML5 Powered with CSS3 / Styling">
 				</a>
-				CSS3 Font Face
+				CSS3 Media Queries
 			</header>
 			<section>
 				<pre>
-				</pre>
+#main  { width: 600px; float: left; }
+#aside { width: 280px; float: right; }
+
+@media screen and (max-width: 1024px) { 
+    #main  { width: 65%; }
+    #aside { width: 25%; }
+}
+
+@media screen and (max-width: 720px) { /* change to one column */
+    #main  { width: 100%; float: none; }
+    #aside { width: 100%; float: none; }
+}</pre>
 			</section>
 			<aside class="note">
 				<section>
-					http://code.google.com/webfonts
-					http://www.fontsquirrel.com
-					http://typekit.com/libraries
+				</section>
+			</aside>
+		</div>
+
+		<div class="slide" id="css3-media-queries-demo">
+			<style>
+				#css3-media-queries-demo section .large { width: 848px; height: 508px; }
+				#css3-media-queries-demo.slide { background-color: white; }
+			</style>
+			<header>
+				<a href="http://www.w3.org/html/logo/">
+					<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3.png" width="133" height="64" alt="HTML5 Powered with CSS3 / Styling" title="HTML5 Powered with CSS3 / Styling">
+				</a>
+				CSS3 Media Queries: Demo
+			</header>
+			<section>
+				<a href="http://bostonglobe.com/" target="_blank"><img src="./images/bostonglobe.jpg" class="large" /></a>
+				<p><small>Image Taken From: <a href="http://filamentgroup.com/lab/introducing_the_new_responsive_designed_bostonglobecom/">http://mgd.go.ly</a></small></p>
+			</section>
+			<aside class="note">
+				<section>
 				</section>
 			</aside>
 		</div>

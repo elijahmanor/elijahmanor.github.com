@@ -1,3 +1,9 @@
+.special {
+	right: 15px;
+	position: absolute;
+	top: 15px;
+}
+
 #speaker-note {
   /*font-size: 20px;*/
   position:absolute;
