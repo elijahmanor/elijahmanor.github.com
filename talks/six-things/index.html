@@ -339,9 +339,9 @@ $( "#update3" ).click( $.proxy( twitter, "tweet" ) );</pre>
 				</ul>
 				<pre class="javascript large">
 $( "a" ).click( function() {
-	var $anchor = $( this );
+    var $anchor = $( this );
 
-	$anchor.fadeOut();
+    $anchor.fadeOut();
 })</pre>
 				<ul>
 					<li><em class="note">Note: This is highly debated, but if it helps you... go ahead &amp; use it ;)</em></li>
@@ -1128,16 +1128,16 @@ alert( $( "li.demo" ).data( "specialInfo" ).firstName );</pre>
 					</li>
 				</ul>
 				<pre class="javascript">
-$("li.demo").data({ firstName: "Elijah", lastName: "Manor" });
+$( "li.demo" ).data( { firstName: "Elijah", lastName: "Manor" } );
 
-console.dir($("li.demo").data());
+console.dir( $( "li.demo" ).data() );
 
-$("li.demo").data("someKey",
-    { firstName: "Andrea", lastName: "Manor" });
+$( "li.demo" ).data( "someKey",
+    { firstName: "Andrea", lastName: "Manor" } );
 
-console.dir($("li.demo").data());
+console.dir( $( "li.demo" ).data() );
 
-console.log($("li.demo").data().someKey.firstName);</pre>
+console.log( $( "li.demo" ).data().someKey.firstName );</pre>
 				<ul>
 					<li><em class="note">Note: Check out FireQuery Plug-in for Firebug</em></li>
 				</ul>			
@@ -1185,13 +1185,12 @@ alert( "After removeData(): " + $( "li.demo" ).data( "specialInfo" ) );</pre>
     data-last-value="43" 
     data-hidden="true" 
     data-options='{"name":"John"}'&gt;&lt;/div&gt;</pre>
-				<p>Support added in 1.4.3 and in 1.6 change was made to conform to W3C HTML5 specification (embedded dashes)</p>
+				<p>Support added in 1.4.3 and in 1.6 change was made to conform to W3C HTML5 specification ( embedded dashes )</p>
 				<pre>
 $( "div" ).data( "role" ) === "page";
 $( "div" ).data( "lastValue" ) === 43;
 $( "div" ).data( "hidden" ) === true;
-$( "div" ).data( "options" ).name === "John";
-				</pre>
+$( "div" ).data( "options" ).name === "John";</pre>
 				<p>jQuery attemps to convert the string to the desired value. If you want the string, then you can use the attr() method.</p>
 			</section>
 			<aside class="note">
