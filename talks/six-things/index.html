@@ -106,6 +106,7 @@
 					letter-spacing: -2px;
 					font-size: 96px;
 				}
+				
 				#title-slide h2 {
 					margin-top: -5px;
 					font-size: 40px;
@@ -120,10 +121,10 @@
 			<section class="middle">
 				<hgroup>
 					<h1>
-						6 Things Every jQuery Developer Should Know
+						6 Things Every<br/>jQuery Developer<br/> Should Know
 					</h1>
 					<h2>
-						by Elijah Manor
+						by Elijah Manor ( @elijahmanor )
 					</h2>
 				</hgroup>
 				<p></p>
@@ -154,6 +155,25 @@
 			</section>
 		  </aside>
 		</div>
+	
+		<div class="slide" id="table-of-contents">
+		  <header>Topics We Will Cover</header>
+		  <section>
+			<ul>
+			  <li>1. What is <code>this</code>?</li>
+			  <li>2. $ Object | DOM Element</li>
+			  <li>3. Knowing Selectors</li>
+			  <li>4. Dos &amp; Don'ts of Events</li>
+			  <li>5. Ways of Storing Data</li>
+			  <li>6. Ins &amp; Outs of AJAX</li>
+			</ul>
+
+		  </section>
+		  <aside class="note">
+			<section>
+			</section>
+		  </aside>
+		</div>	
 	
 		<div class="slide" id="slide-1">
 			<header>1. What is <code>this</code>?</header>
@@ -220,7 +240,7 @@ $( "a.demo" ).click( function( e ) {
     }
 })( jQuery );
 
-<div class="run">$( "a.demo" ).myPlugin();</div></pre>
+<div class="run"><b>$( "a.demo" ).myPlugin();</b></div></pre>
 				<ul>
 					<li>
 						<a id="googleLink" class="demo"
@@ -261,7 +281,7 @@ $( "a.demo" ).click( function( e ) {
 			<section>
 				<ul>
 					<li>
-						<span>Exception #2</span>: <code>$.proxy()</code><sup class="new">new</sup> in jQuery 1.4
+						<span>Exception #2</span>: <code>$.proxy()</code> in jQuery 1.4
 					</li>
 				</ul>
 				<pre class="javascript run">
@@ -557,9 +577,9 @@ $.expr[ ":" ].elementNameStartsWith =
         return element.nodeName.match( regEx ) !== null;
     };
 
-<div class="run">$( "*:elementNameStartsWith('d')" ).each( function() {
+<div class="run"><b>$( "*:elementNameStartsWith('d')" ).each( function() {
     alert( this.nodeName ); 
-});</div></pre>
+});</b></div></pre>
 				<ul style="padding-bottom: 0px;">
 					<li class="demo">
 						<div>
@@ -660,7 +680,7 @@ $( "#myButton" ).click( function() {  // Best?
 			<section>
 				<ul>
 					<li>
-						<span>Useful Selector Playgrounds and Tools</span>
+						<div style="margin-bottom: 15px;">Useful Selector Playgrounds and Tools</div>
 						<ul>
 							<li><a href="http://getfirebug.com" target="_blank">Firebug Add-on</a> &amp; <a href="http://firequery.binaryage.com/" target="_blank">FireQuery Plug-in</a></li>
 							<li>
@@ -758,12 +778,25 @@ $( "ul.demo" ).click( function() {
 
 $( "ul.demo li a" ).click( function( e ) {
     alert( "Click Handler for Anchor" );
+
     e.preventDefault();
 });</pre>
 				<ul class="demo">
 					<li><a href="http://twitter.com/elijahmanor">@elijahmanor</a></li>
 				</ul>
 			</section>
+			<script>
+				$( function() {
+					$( "#slide-4a ul.demo" ).click( function() {
+					    alert( "Click Handler for Unordered List" );
+					});
+
+					$( "#slide-4a ul.demo li a" ).click( function( e ) {
+					    alert( "Click Handler for Anchor" );
+					    e.preventDefault();
+					});					
+				});
+			</script>
 			<aside class="note">
 				<section>
 					<pre>
@@ -795,12 +828,26 @@ $( "ul.demo" ).click( function() {
 });
 
 $( "ul.demo li a" ).click( function( e ) {
-    alert( "Click Handler for Anchor" ); return false;
+    alert( "Click Handler for Anchor" ); 
+
+    return false;
 });</pre>
 				<ul class="demo">
 					<li><a href="http://twitter.com/elijahmanor">@elijahmanor</a></li>
 				</ul>
 			</section>
+			<script>
+				$( function() {
+					$( "#slide-4b ul.demo" ).click( function() {
+					    alert( "Click Handler for Unordered List" );
+					});
+
+					$( "#slide-4b ul.demo li a" ).click( function( e ) {
+					    alert( "Click Handler for Anchor" );
+					    return false;
+					});					
+				});
+			</script>			
 			<aside class="note">
 				<section>
 					<pre class="">
@@ -879,12 +926,13 @@ $( "p.clickMe" ).unbind( "click dblclick", clickMe );</pre>
 				<pre class="javascript run">
 var clickMe = function() {
     var element = $( this );
+
     element.text( element.text() + " :)" );
 };
 
 $( "ul.demo li" ).bind( "click", clickMe );
 
-<span class="run">$( "ul.demo" ).append( "&lt;li&gt;Dynamic Item&lt;/li&gt;" );</span>  // Doesn't work</pre>
+<span class="run"><b>$( "ul.demo" ).append( "&lt;li&gt;Dynamic Item&lt;/li&gt;" );</b></span>  // Doesn't work</pre>
 				<ul class="demo">
 					<li>Static Item</li>
 				</ul>
@@ -922,13 +970,15 @@ $( "ul.demo li" ).bind( "click", clickMe );
 				<pre class="javascript run">
 var clickMe = function() {
     var element = $( this );
-    element.text(element.text() + " :)" );
+
+    element.text( element.text() + " :)" );
 };
 
 $( "ul.demo li" ).live( "click", clickMe );
+
 /* die() || die( "click" ) || die( "click", clickMe ) */
 
-<span class="run">$( "ul.demo" ).append( "&lt;li>Dynamic Item&lt;/li>" );</span>  // Works!</pre>
+<span class="run"><b>$( "ul.demo" ).append( "&lt;li>Dynamic Item&lt;/li>" );</b></span>  // Works!</pre>
 				<ul class="demo">
 					<li>Static Item</li>
 				</ul>
@@ -973,7 +1023,7 @@ $( "ul.demo" ).delegate( "li", "click", clickMe );
 /* undelegate(), undelegate( "li", "click" ),
 	undelegate( "li", "click", clickMe ) */
 
-<span class="run">$( "ul.demo" ).append( "&lt;li&gt;Dynamic Item&lt;/li&gt;" );</span>  // Works</pre>
+<span class="run"><b>$( "ul.demo" ).append( "&lt;li&gt;Dynamic Item&lt;/li&gt;" );</b></span>  // Works</pre>
 				<ul class="demo">
 					<li>Static Item</li>
 				</ul>
@@ -1329,7 +1379,7 @@ jqXhr.always( function() { alert( "second complete" ); });</pre>
 		<div class="slide" id="slide-6e">
 			<header>6e. Ins &amp; Outs of AJAX</header>
 			<section>
-				<ul>
+				<ul> 
 					<li>When Method</li>
 				</ul>
 

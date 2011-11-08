@@ -1,6 +1,11 @@
 .run { 
-	text-shadow: 0px 3px 4px #888; /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */  
 	cursor: pointer;
+}
+.slide section > ul { 
+	padding-left: 0;
+	padding-top: 0; 
+	margin-top: 0;
+	font-size: 24px;
 }
 #speaker-note {
   /*font-size: 20px;*/
