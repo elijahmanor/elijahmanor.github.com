@@ -1,0 +1,60 @@
+#touchnav {
+	background: #fff;
+	height: 70px;
+	left: 50%;
+	margin-left: -105px;
+	right: 100px;
+	position: absolute;
+	bottom: 0;
+	width: 210px;
+	z-index: 3000;
+	-webkit-border-top-left-radius: 15px;
+	-webkit-border-top-right-radius: 15px;
+	-moz-border-radius: 15px 15px 0 0;
+	border-radius: 15px 15px 0 0;
+	white-space: nowrap;
+}
+
+#touchnav a {
+	display: inline-block;
+	width: 69px;
+	height: 70px;
+	position: relative;
+	border-left: solid 1px #ccc;
+}
+
+#touchnav a:first-child {
+	border-left: none;
+}
+
+#touchnav a span {
+	overflow: hidden;
+	position: absolute;
+	height: 0;
+	width: 0;
+	border: solid 20px transparent;
+	top: 50%;
+	left: 50%;
+	margin-left: -30px;
+	margin-top: -18px;
+	text-indent: -9999px;
+}
+
+#touchnav a.touchnav-prev span {
+	border-right-color: #000;
+}
+
+#touchnav a.touchnav-next span {
+	border-left-color: #000;
+	margin-left: -8px;
+}
+
+#touchnav a.touchnav-agenda span {
+	margin-left: -20px;
+	margin-top: -15px;
+	border: none;
+	border-top: double 20px #000;
+	border-bottom: solid 7px #000;
+	width: 40px;
+	height: 6px;
+}

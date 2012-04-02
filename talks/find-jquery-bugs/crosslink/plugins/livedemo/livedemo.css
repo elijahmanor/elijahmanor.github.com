@@ -1,0 +1,26 @@
+.demo-actions .reset,
+.demo-actions .hide,
+.demo-actions .run {
+	display: none;
+}
+
+.demo-actions.demo-shown .show  { display: none; }
+.demo-actions.demo-shown .hide,
+.demo-actions.demo-shown .run   { display: inline-block; }
+
+.demo-actions.demo-ran   .run   { display: none; }
+.demo-actions.demo-ran.demo-shown .reset { display: inline-block; }
+
+.demo-actions.demo-autorun .run,
+.demo-actions.demo-autorun .reset { display: none !important; }
+
+.demo-content iframe {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	overflow: auto;
+}
