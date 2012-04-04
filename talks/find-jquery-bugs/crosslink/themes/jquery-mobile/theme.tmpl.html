@@ -1,0 +1,72 @@
+<% if ( mode === "view" ) { %>
+
+<div id="crosslink" class="contrast-<%= agenda.contrast || "normal" %> <% if ( deck.sidebar ) { %>has-sidebar<% } %>">
+	<% if ( deck.sidebar ) { %>
+	<aside id="sidebar">
+		<h2><%= deck.title %></h2>
+		<ul data-role="section-links">
+			<% _.each( deck.links, function ( link, i ) { %>
+				<li <%= i === 0 ? "class='current'" : "" %>><a href="#"><%= link %></a></li>
+			<% }) %>
+		</ul>
+	</aside>
+	<% } %>
+
+	<section id="slides" data-role="slide-container">
+			
+	</section>
+	<footer>
+		<p><%= agenda.footer ? agenda.footer : deck.section %></p>
+	</footer>
+	<div data-role="agenda-switcher"></div>
+</div>
+<% } else { %>
+
+<% if ( layout === "title" ) { %>
+<div class="slide-title slide">
+	<%= slide.draft ? "<span class='draft'></span>" : " " %>
+	<header>
+		<%= slide.titles %>
+	</header>
+	<footer>
+		<p class="left-footer"><%= agenda.footer ? agenda.footer : deck.section  %></p>
+		<p class="right-footer">
+		<%= helpers.trainers( agenda.trainers ) %> </p>
+	</footer>
+</div>
+<% } %>
+
+<% if ( layout === "text" ) { %>
+<div class="slide-text slide">
+<%= slide.draft ? "<span class='draft'></span>" : " " %>
+	<header>
+		<%= slide.titles %>
+	</header>
+	<div class="slide-content">
+		<%= slide.html %>
+	</div>
+	<footer>
+		<p class="full-footer right-footer"><span class="page-no"><%= slide.index + 1 %> / <%= deck.slides.length %> </span></p>
+	</footer>
+</div>
+<% } %>
+
+<% if ( layout === "phone" ) { %>
+<div class="slide-phone slide">
+<%= slide.draft ? "<span class='draft'></span>" : " " %>
+	<div class="phone-wrapper">
+		
+	</div>
+	<header>
+		<%= slide.titles %>
+	</header>
+	<div class="slide-content">
+		<%= slide.html %>
+	</div>
+	<footer>
+		<p class="full-footer right-footer"><span class="page-no"><%= slide.index + 1 %> / <%= deck.slides.length %> </span></p>
+	</footer>
+</div>
+<% } %>
+
+<% } %>
