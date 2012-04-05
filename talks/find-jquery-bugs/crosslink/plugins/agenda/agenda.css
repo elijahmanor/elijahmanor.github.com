@@ -1,0 +1,132 @@
+.agenda-switcher {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: -200px;
+	z-index: 2000;
+	padding-top: 2em;
+	background: transparent;
+}
+
+.agenda-switcher.transitions {
+	-webkit-transition: bottom linear 300ms;
+	   -moz-transition: bottom linear 300ms;
+	     -o-transition: bottom linear 300ms;
+	    -ms-transition: bottom linear 300ms;
+	        transition: bottom linear 300ms;
+}
+
+@media print {
+	.agenda-switcher { display: none; }	
+}
+
+.agenda-switcher.up {
+	bottom: 0 !important;
+}
+
+.agenda-switcher ul {
+	background: #000;
+	padding: 1.5em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	height: 200px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
+
+.agenda-switcher li {
+	display: inline-block;
+	*display: inline;
+	margin-right: 1em;
+	vertical-align: top;
+}
+
+.agenda-switcher li a {
+	text-decoration: none;
+	display: inline-block;
+	*display: inline;
+
+}
+
+.agenda-switcher li a span.preview {
+	display: inline-block;
+	*display: inline;
+	width: 150px;
+	height: 100px;
+	background-color: #85a54c;
+	background-image: -webkit-gradient(radial, 0% 0%,100,150% 150%,100, from(#537728), to(#85a54c));
+	background-image: -webkit-radial-gradient(100% 100%, #85a54c, #537728);
+	background-image: -moz-radial-gradient(100% 100%, #85a54c, #537728);
+	background-image: -o-radial-gradient(100% 100%, #85a54c, #537728);
+	background-image: -ms-radial-gradient(100% 100%, #85a54c, #537728);
+	background-image: radial-gradient(100% 100%, #85a54c, #537728);
+	position: relative;
+}
+
+.agenda-switcher li.focus a span.preview {
+	border: solid 2px white;
+	margin: -2px;
+}
+
+.agenda-switcher li a em {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	left: 50%;
+	margin-left: -25px;
+	top: 50%;
+	margin-top: -25px;
+	text-align: center;
+	line-height: 50px;
+	background: #000;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-style: normal;
+	color: #fff;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.agenda-switcher li a span.preview-title {
+	display: block;
+	text-align: center;
+	font-family: Helvetica, Arial, sans-serif;
+	font-style: normal;	
+	font-size: 16px;
+	color: #fff;
+	margin: 10px 0 0 0;
+	background-color: #000;
+	max-width: 150px;
+	white-space:normal;
+}
+
+.agenda-switcher li {
+	opacity: 0.3;
+	-moz-opacity: 0.3;
+	filter:alpha(opacity=30);
+	cursor: pointer;
+	-webkit-transition: opacity linear 300ms;
+	   -moz-transition: opacity linear 300ms;
+	     -o-transition: opacity linear 300ms;
+	    -ms-transition: opacity linear 300ms;
+	        transition: opacity linear 300ms;
+
+}
+
+.agenda-switcher li.current ~ li {
+	opacity: 0.7;
+	-moz-opacity: 0.7;
+	filter:alpha(opacity=70);
+}
+
+.agenda-switcher li.current,
+.agenda-switcher li.focus,
+.agenda-switcher li:hover {
+	opacity: 1.0 !important;
+	-moz-opacity: 1.0 !important;
+	filter:alpha(opacity=100) !important;
+}

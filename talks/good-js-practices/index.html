@@ -1,0 +1,1494 @@
+
+<!DOCTYPE html> 
+<!--
+  Copyright 2010 Google Inc.
+ 
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+ 
+     http://www.apache.org/licenses/LICENSE-2.0
+ 
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+ 
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
+                 Alex Russell (slightlyoff@chromium.org)
+                 Brad Neuberg
+--> 
+<html manifest="cache.manifest"> 
+  <head> 
+    <meta charset="utf-8" /> 
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" /> 
+    <title>HTML5 Presentation</title> 
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono" rel="stylesheet" type="text/css" /> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <style> 
+      body {
+        font: 16px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0px; top: 0px;
+      }
+ 
+      .presentation {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0px;
+        top: 0px;
+        display: block;
+        overflow: hidden;
+        background: #778;
+      }
+ 
+      .slides {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        display: block;
+        -webkit-transition: -webkit-transform 1s ease-in-out;
+        -moz-transition: -moz-transform 1s ease-in-out;
+        -o-transition: -o-transform 1s ease-in-out;
+        transition: transform 1s ease-in-out;
+      }
+ 
+      .slide {
+        display: none;
+        position: absolute;
+        overflow: hidden;
+        width: 900px;
+        height: 700px;
+        left: 50%;
+        top: 50%;
+        margin-top: -350px;
+        background-color: #eee;
+        background: -webkit-gradient(linear, left bottom, left top, from(#bbd), to(#fff));
+        background: -moz-linear-gradient(bottom, #bbd, #fff);
+        background: linear-gradient(bottom, #bbd, #fff);
+        -webkit-transition: margin 0.25s ease-in-out;
+        -moz-transition: margin 0.25s ease-in-out;
+        -o-transition: margin 0.25s ease-in-out;
+        transition: margin 0.25s ease-in-out;
+      }
+ 
+      .slide:nth-child(even) {
+        -moz-border-radius: 20px 0;
+        -khtml-border-radius: 20px 0;
+        border-radius: 20px 0; /* includes Opera 10.5+ */
+        -webkit-border-top-left-radius: 20px;
+        -webkit-border-bottom-right-radius: 20px;
+      }
+ 
+      .slide:nth-child(odd) {
+        -moz-border-radius: 0 20px;
+        -khtml-border-radius: 0 20px;
+        border-radius: 0 20px;
+        -webkit-border-top-right-radius: 20px;
+        -webkit-border-bottom-left-radius: 20px;
+      }
+ 
+      .slide p, .slide textarea {
+        font-size: 20px;
+      }
+ 
+      .slide .counter {
+        color: #999999;
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
+        display: block;
+        font-size: 12px;
+      }
+ 
+      .slide.title > .counter,
+      .slide.segue > .counter,
+      .slide.mainTitle > .counter {
+        display: none;
+      }
+ 
+      .force-render {
+        display: block;
+        visibility: hidden;
+      }
+      
+      .slide.far-past {
+        display: block;
+        margin-left: -2400px;
+      }
+      
+      .slide.past {
+        visibility: visible;
+        display: block;
+        margin-left: -1400px;
+      }
+      
+      .slide.current {
+        visibility: visible;
+        display: block;
+        margin-left: -450px;
+      }
+      
+      .slide.future {
+        visibility: visible;
+        display: block;
+        margin-left: 500px;
+      }
+      
+      .slide.far-future {
+        display: block;
+        margin-left: 1500px;
+      }
+ 
+      body.three-d div.presentation {
+        /*background: -webkit-gradient(radial, 50% 50%, 10, 50% 50%, 1000, from(#333), to(#000));        */
+      }
+      
+      body.three-d div.slides {
+        -webkit-transform: translateX(50px) scale(0.8) rotateY(10deg);
+        -moz-transform: translateX(50px) scale(0.8) rotateY(10deg);
+        -o-transform: translateX(50px) scale(0.8) rotateY(10deg);
+        transform: translateX(50px) scale(0.8) rotateY(10deg);
+      }
+      
+      /* Content */
+      /*
+        Font sizes:
+        header h1 - 50px
+        h2, p - 20px
+        default, pre, input - 16px
+      */
+      
+      @font-face { font-family: 'Junction'; src: url(src/Junction02.otf); }
+      @font-face { font-family: 'LeagueGothic'; src: url(src/LeagueGothic.otf); }
+      
+      header {
+        font-family: 'Droid Sans';
+        font-weight: normal;
+        letter-spacing: -.05em;
+        color: black;
+        text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
+        position: absolute;
+        left: 30px;
+        top: 25px;
+        margin: 0;
+        padding: 0;
+        font-size: 50px;
+      }
+      
+      h1 {
+        font-size: 100%;
+        display: inline;
+      	font-weight: normal;
+      	padding: 0;
+      	margin: 0;
+      }
+      
+      h2 {
+        font-family: 'Droid Sans';
+        color: black;
+        font-size: 20px;
+        padding: 0;
+        margin: 15px 0 5px 0;
+      }
+            
+      h2:first-child {
+        margin-top: 0;
+      }
+ 
+		h3 {font-size: 25px;}
+
+      section, footer {
+        font-family: 'Droid Sans';
+        color: #3f3f3f;
+        text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
+        margin: 100px 30px 0;
+        display: block;
+        overflow: hidden;
+      }
+      
+      footer {
+        font-size: 12px;
+        margin: 20px 0 0 30px;
+      }
+ 
+      a {
+        color: inherit;
+        display: inline-block;
+        text-decoration: none;
+        line-height: 110%;
+        border-bottom: 2px solid #3f3f3f;
+      }
+ 
+      .gmap a {
+        line-height: 100%;
+        border-bottom: none;
+      }
+ 
+      li {
+        /*list-style: none;*/
+        padding: 10px 0;
+		font-size: 25px;
+      }
+ 
+      button {
+        font-size: 20px;
+      }
+      
+      pre button {
+        margin: 2px;
+      }
+      
+      .summary {
+        font-size: 30px;
+      }
+ 
+      .bullets {
+        font-size: 40px;
+      }
+      
+      section.left {
+        float: left;
+        width: 390px;
+      }
+      
+      section.small {
+        font-size: 24px;
+      }
+      
+      section.small ul {
+        margin: 0 0 0 15px;
+        padding: 0;
+      }
+      
+      section.small li {
+        padding-bottom: 0;
+      }
+            
+      section.middle {
+        line-height: 68px;
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+        height: 700px;
+        width: 900px;
+      }
+
+      
+      pre {
+        text-align: left;
+        font-family: 'Droid Sans Mono', Courier;        
+        padding: 10px 20px;
+        background: rgba(255, 0, 0, 0.05);
+        -webkit-border-radius: 8px;
+        -khtml-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 0, 0, 0.2);
+      }
+      
+      pre select {
+        font-family: Monaco, Courier;
+        border: 1px solid #c61800;
+      }
+        
+      input {
+        font-size: 16px;
+        margin-right: 10px;
+        font-family: Helvetica;
+        padding: 3px;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      
+      button {
+        margin: 20px 10px 0 0;
+        font-family: Verdana;
+      }
+      
+      button.large {
+        font-size: 32px;
+      }
+        
+      pre b {
+        font-weight: normal;
+        color: #c61800;
+        text-shadow: #c61800 0 0 1px;
+        /*letter-spacing: -1px;*/
+      }
+      pre em {
+        font-weight: normal;
+        font-style: normal;
+        color: #18a600;
+        text-shadow: #18a600 0 0 1px;
+      }
+      pre input[type="range"] {
+        height: 6px;
+        cursor: pointer;
+        width: auto;
+      }
+      
+      div.example {
+        display: block;
+        padding: 10px 20px;
+        color: black;
+        background: rgba(255, 255, 255, 0.4);
+        -webkit-border-radius: 8px;
+        -khtml-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+      }
+      
+      video {
+        -moz-border-radius: 8px;
+        -khtml-border-radius: 8px;
+        -webkit-border-radius: 8px;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+      }
+      
+      .css,
+      .js,
+      .html,
+      .key {
+        font-family: 'Droid Sans';
+        color: black;
+        display: inline-block;
+        padding: 6px 10px 3px 10px;
+        font-size: 25px;
+        line-height: 30px;
+        text-shadow: none;
+        letter-spacing: 0;
+        bottom: 10px;
+        position: relative;
+        -moz-border-radius: 10px;
+        -khtml-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        background: white;
+        box-shadow: rgba(0, 0, 0, 0.1) 0 2px 5px;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 5px;
+        -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 5px;
+        -o-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 5px;
+      }
+      
+      .key { font-family: Arial; }
+      
+      :not(header) > .css,
+      :not(header) > .js,
+      :not(header) > .html,
+      :not(header) > .key {
+        margin: 0 5px;
+        bottom: 4px;
+      }
+      
+      .css {
+        background: -webkit-gradient(linear, left top, left bottom, from(#ff4), to(#ffa));
+        background-color: #ff4;
+        background: -moz-linear-gradient(left top, #ff4, #ffa);
+      }
+      .js {
+        background: -webkit-gradient(linear, left top, left bottom, from(#4f4), to(#afa));
+        background-color: #4f4;
+        background: -moz-linear-gradient(left top, #4f4, #afa);
+      }
+      .html {
+        background: -webkit-gradient(linear, left top, left bottom, from(#e88), to(#fee));
+        background-color: #e88;
+        background: -moz-linear-gradient(left top, #e88, #fee);
+      }
+ 
+      .two-column {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+      }
+      
+      .summary li::before, .bullets li::before {
+        content: '· ';
+      }
+ 
+      .stroke {
+        -webkit-text-stroke-color: red;
+        -webkit-text-stroke-width: 1px;
+      } /* currently webkit-only */
+      
+      .center {
+        text-align: center;
+      }
+      
+      .formula {
+        font-size: 50px;
+      }
+      
+      #presentation-counter {
+        color: #ccc;
+        font-size: 100px;
+        letter-spacing: 1px;
+        position: absolute;
+        top: 40%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+      }
+      
+      .hsl-value {
+        display: inline-block;
+        width: 50px;
+      }
+
+	.slide,
+	.boxcenter {
+	  -webkit-box-pack: center;
+	  -moz-box-pack: center;
+	  box-pack: center;
+	}
+	
+
+	/*.slide section iframe,*/ .slide section object[data^="http"] {
+	  -webkit-transform: scale(0.8);  
+	  -moz-transform: scale(0.8);  
+	  -o-transform: scale(0.8);  
+	  transform: scale(0.8);  
+
+	  -webkit-transform-origin: 15% 30%;
+	  -moz-transform-origin: 15% 30%;
+	  -o-transform-origin: 15% 30%;
+	  transform-origin: 15% 30%;
+
+	  height:740px;
+	  width:980px;
+	}
+
+	.slide section iframe {
+		background-color: white;
+	}
+	.meframes { 
+	  margin-top: 100px;
+	}
+
+	html body .slide .meframes iframe { 
+
+	  -webkit-transform: scale(0.45);  
+	  -moz-transform: scale(0.45);  
+	  -o-transform: scale(0.45);  
+	  transform: scale(0.45);  
+
+	  -webkit-transform-origin: 0% 0%;
+	  -moz-transform-origin: 0% 0%;
+	  -o-transform-origin: 0% 0%;
+	  transform-origin: 0% 0%;
+	}
+	.meframes div {
+
+	  float: left;
+	  overflow:hidden;
+	  width: 420px;
+	  height: 300px;
+	}	
+	
+	.slide,
+	.boxcenter {
+	  -webkit-box-pack: center;
+	  -moz-box-pack: center;
+	  box-pack: center;
+	}
+	
+	.whoami td {
+		font-size: 24px; 
+		text-shadow: none; 
+	}
+	
+    .middle h2 {
+      color: black;
+      font-size: 72px;
+	  line-height: 100px;
+     }	
+
+     .mixLogo {
+     margin: auto;
+     padding-bottom: 30px;
+   }
+    </style> 
+    
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script> 
+  </head> 
+  <body> 
+    <div class="presentation"> 
+      <div id="presentation-counter"></div> 
+      <div class="slides"> 
+        <div class="slide"> 
+          <style> 
+            .landing p {
+              font-size: 35px;
+            }
+            #disclaimer-message {
+              font-size: 20px;
+            }
+          </style> 
+          <section class="middle landing"> 
+            <p>This presentation is an HTML5 website</p> 
+            <p>Press <span class="key">&rarr;</span> key to advance.</p> 
+            <p>Zoom in/out: <span class="key">Ctrl or Command</span> + <span class="key">+/-</span></p> 
+            <p id="disclaimer-message">Having issues seeing the presentation? Read the <a href="disclaimer.html">disclaimer</a></p> 
+          </section> 
+        </div> 
+                
+        <div class="slide"> 
+          <style> 
+            .intro hgroup h1, .intro hgroup h2 {
+              color: black;
+            }
+            .intro hgroup h1 {
+              letter-spacing: -2px;
+              font-size: 96px;
+			  line-height: 64px;
+            }
+            .intro hgroup h2 {
+              margin-top: 15px;
+              font-size: 40px;
+              letter-spacing: -1px;
+    	      line-height: 52px;
+            }
+          </style> 
+          <section class="middle intro"> 
+			<hgroup> 
+              <h1> 
+                Good<br/>JavaScript<br/>Habits
+              </h1> 
+            </hgroup> 
+			<p>by Elijah Manor ( <a href="http://twtiter.com/elijahmanor"
+				target="_blank">@elijahmanor</a> )</p>
+         </section> 
+        </div> 
+ 
+        <div class="slide"> 
+	      <style> 
+
+          </style> 
+          <header><h1>Who Am I?</h1></header> 
+          <section class="middle intro"> 
+            <h2><span>Elijah Manor</span></h2> 
+			<p class="whoami" style="margin-top: 45px; line-height: 22px;">
+				<center>
+					<table class="whoami" style="width: 75%; margin: clear;">
+						<tr>
+							<td style="text-align: left;">Microsoft MVP ASP.NET</td>
+							<td style="text-align: right;">elijah.manor@gmail.com</td>
+						</tr>
+						<tr>
+							<td style="text-align: left;">ASPInsiders</td>
+							<td style="text-align: right;">http://elijahmanor.com</td>
+						</tr>
+						<tr>
+							<td style="text-align: left;">.appendTo()</td>
+							<td style="text-align: right;">http://twitter.com/elijahmanor</td>
+						</tr>
+					</table>
+				</center>
+            </p>
+          </section> 
+        </div>
+
+		<div class="slide transitionSlide"> 
+		 <header>Enterprise jQuery</header> 
+		 <section class="flex hbox boxcenter"> 
+		     <!-- <object data="http://enterprisejquery.com/"></object> -->
+		     <iframe style="width: 100%; height: 500px" src="http://enterprisejquery.com/"></iframe>
+		 </section> 
+		</div>
+		
+		<!-- BEGIN ETM: Not Understanding Fasle-y Values -->
+        <div class="slide"> 
+          <section class="middle"> 
+            <h2>Not Understanding <br/>False-y Values</h2> 
+          </section> 
+        </div> 
+        <div class="slide"> 
+          <header><h1>1. Not Understanding False-y Values</h1></header> 
+          <section> 
+            <h2><span class="html">Bad Habit</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/789Rt/1/embedded/js,result/presentation/"></iframe>
+          </section> 
+        </div> 
+		<!-- END ETM: Not Understanding Fasle-y Values -->
+
+		<!-- BEGIN ETM: Not Testing & Setting Default Values Correctly -->
+        <div class="slide"> 
+          <section class="middle"> 
+            <h2>Not Testing &amp; Setting Default Values Correctly</h2> 
+          </section> 
+        </div> 
+        <div class="slide"> 
+          <header><h1>2a. Not Testing Values Correctly</h1></header> 
+          <section> 
+            <h2><span class="html">Bad Habit</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/amwWP/embedded/js,result/presentation/"></iframe>
+          </section> 
+        </div> 
+        <div class="slide"> 
+          <header><h1>2a. Not Testing Values Correctly</h1></header> 
+          <section> 
+            <h2><span class="js">Best Practice</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/W9cRJ/embedded/js,result/presentation/"></iframe>
+          </section> 
+        </div> 
+        <div class="slide"> 
+          <header><h1>2b. Not Setting Default Values Correctly</h1></header> 
+          <section> 
+            <h2><span class="html">Bad Habit</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/sAEmt/2/embedded/js,result/presentation/"></iframe>
+          </section> 
+        </div> 
+        <div class="slide"> 
+          <header><h1>2b. Not Setting Default Values Correctly</h1></header> 
+          <section> 
+            <h2><span class="js">Best Practice</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/z6Gwj/embedded/js,result/presentation/"></iframe>
+          </section> 
+        </div> 
+		<div class="slide"> 
+		  <header><h1>Testing &amp; Setting Default Values Correctly</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span> <span class="key">Summary</span></h2> 
+			<ul>
+				<li>Based on the false-y rules we learned earlier, if we want to check if a variable is undefined, not null, and has a value then all we need to do is check the object itself.</li>
+			</ul>
+		  </section> 
+		</div>				
+		<!-- END ETM: Not Testing & Setting Default Values Correctly -->
+
+		<!-- BEGIN ETM: Using the Wrong Comparison Operators -->
+		<div class="slide"> 
+		  <section class="middle"> 
+		    <h2>Using the Wrong Comparison Operators</h2> 
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>3. Using Wrong Comparison Operators</h1></header> 
+		  <section> 
+		    <h2><span class="html">Bad Habit</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/gFDPj/9/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>3. Using Wrong Comparison Operators</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/GGWeb/4/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide"> 
+		  <header><h1>Using the Right Comparison Operators</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span> <span class="key">Summary</span></h2> 
+			<ul>
+				<li>When you are comparing two values in JavaScript you should use the Identify Comparison Operators (=== &amp; !==).</li>
+			</ul>
+		  </section> 
+		</div>				
+		<!-- END ETM: Using the Wrong Comparison Operators -->
+		
+		<!-- BEGIN ETM: Not Declaring Arrays & Objects Correctly -->
+		<div class="slide"> 
+		  <section class="middle"> 
+		    <h2>Not Declaring Arrays &amp; Objects Correctly</h2> 
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>4. Not Declaring Arrays &amp; Objects Correctly</h1></header> 
+		  <section> 
+		    <h2><span class="html">Bad Habit</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/9A56T/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>4. Not Declaring Arrays &amp; Objects Correctly</h1></header> 
+		  <section> 
+		    <h2><span class="js">Good Practice</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/rR9sU/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide"> 
+		  <header><h1>4. Not Declaring Arrays &amp; Objects Correctly</h1></header> 
+		  <section> 
+		    <h2><span class="js">Better Practice</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/tBgne/5/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide"> 
+		  <header><h1>Declaring Arrays &amp; Objects Correctly</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span> <span class="key">Summary</span></h2> 
+			<ul>
+				<li>Declare all of your variables using their literal notation instead of using the new operation.</li>
+				<li>You shouldn’t use the new keyword for Boolean, Number, String, or Function. All they do is add additional bloat and slow things down.</li>
+				<li>Use the new keyword is if you are creating a new object and you want it to use a constructor that you defined.</li>
+			</ul>
+		  </section> 
+		</div>				
+		<!-- END ETM: Not Declaring Arrays & Objects Correctly -->
+
+		<!-- BEGIN ETM: Not Using The for...in Statement Correctly -->
+		<div class="slide"> 
+		  <section class="middle"> 
+		    <h2>Not Using The for…in Statement Correctly</h2> 
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>5a. Using the for…in Statement on Arrays</h1></header> 
+		  <section> 
+		    <h2><span class="html">Bad Habit</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/x23Jh/23/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>5a. Using the for…in Statement on Arrays</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span> <span class="key">Using for Statement on Arrays</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/J7SQC/4/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>		
+		<div class="slide"> 
+		  <header><h1>5a. Using the for…in Statement on Arrays</h1></header> 
+		  <section> 
+		    <h2><span class="html">Bad Habit</span> <span class="key">Prototypes Bleed Through</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/Vgx7E/8/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>		
+		<div class="slide"> 
+		  <header><h1>5b. Using for…in Incorrectly with Objects</h1></header> 
+		  <section> 
+		    <h2><span class="html">Bad Habit</span> <span class="key">Prototypes Still Bleed Through</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/P5Dce/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>		
+		<div class="slide"> 
+		  <header><h1>5b. Using for…in Incorrectly with Objects</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/s4Hdd/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide"> 
+		  <header><h1>5b. Using for…in Incorrectly with Objects</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/AVVaH/8/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>		
+		<div class="slide"> 
+		  <header><h1>Not Using The for…in Statement Correctly</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span> <span class="key">Summary</span></h2> 
+			<ul>
+				<li>Use the for statement for arrays</li>
+				<li>Use the for…in statement when iterating over objects and check the hasOwnProperty method</li>
+			</ul>
+		  </section> 
+		</div>
+		<!-- END ETM: Not Using The for...in Statement Correctly -->
+		
+		<!-- BEGIN ETM: Misunderstanding Scope in JavaScript -->
+		<div class="slide"> 
+		  <section class="middle"> 
+		    <h2>Misunderstanding <br/>Scope in JavaScript</h2> 
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>6. Misunderstanding Scope in JavaScript</h1></header> 
+		  <section> 
+		    <h2><span class="html">Bad Habit</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/E2Rmw/22/embedded/js,html,result/presentation/"></iframe>
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>6. Misunderstanding Scope in JavaScript</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/qANjt/6/embedded/js,html,result/presentation/"></iframe>
+		  </section> 
+		</div>		
+		<div class="slide"> 
+		  <header><h1>Understanding Scope in JavaScript</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span> <span class="key">Summary</span></h2> 
+			<ul>
+				<li>It is considered best practice to declare all of your variables at the top of your function. By declaring your variables at the top of your function, you are sending a message to yourself and anyone else that those variables are available to anything inside of the function.</li>
+				<li>It turns out there is an even more compelling reason to declare your variables at the top of your function.</li>
+			</ul>
+		  </section> 
+		</div>				
+		<!-- END ETM: Misunderstanding Scope in JavaScript -->
+
+		<!-- BEGIN ETM: Not Knowing Variable And Function Hoisting -->
+		<div class="slide"> 
+		  <section class="middle"> 
+		    <h2>Not Knowing Variable <br/>And <br/>Function Hoisting</h2> 
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>7a. Variable Hoisting</h1></header> 
+		  <section> 
+		    <h2><span class="html">Bad Habit</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/UZyue/5/embedded/js,html,result/presentation/"></iframe>
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>7a. Variable Hoisting</h1></header> 
+		  <section> 
+		    <h2><span class="html">How JavaScript Interprets It</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/Fg4QV/4/embedded/js,html,result/presentation/"></iframe>
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>7a. Variable Hoisting</h1></header> 
+		  <section> 
+		    <h2><span class="html">Where Things Can Get Confusing: Part 1</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/K3NXB/embedded/js,html,result/presentation/"></iframe>
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>7a. Variable Hoisting</h1></header> 
+		  <section> 
+		    <h2><span class="html">Where Things Can Get Confusing: Part 2</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/Ty8dN/20/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide"> 
+		  <header><h1>7a. Variable Hoisting</h1></header> 
+		  <section> 
+		    <h2><span class="html">Where Things Can Get Confusing: Part 2</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/UQ9TL/2/embedded/js,html,result/presentation/"></iframe>
+		  </section> 
+		</div>		
+		<div class="slide"> 
+		  <header><h1>7b. Function Hoisting</h1></header> 
+		  <section> 
+		    <h2><span class="js">How You Might Write It</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/9F9da/5/embedded/js,html,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide"> 
+		  <header><h1>7b. Function Hoisting</h1></header> 
+		  <section> 
+		    <h2><span class="js">How JavaScript Interprets It</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/BSuWQ/5/embedded/js,html,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide">
+		  <header><h1>Knowing Variable And Function Hoisting</h1></header>
+		  <section>
+		    <h2><span class="js">Best Practice</span> <span class="key">Summary</span></h2> 
+			<ul>
+			    <li>Declare all of your variables at the top of your function</li>
+			</ul>
+			</section> 
+		</div>		
+		<!-- END ETM: Not Knowing Variable And Function Hoisting -->
+
+		<!-- BEGIN ETM: Not Using Closures Correctly Or At All -->
+		<div class="slide"> 
+		  <section class="middle"> 
+		    <h2>Not Using Closures Correctly Or At All</h2> 
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>8. Not Using Closures Correctly Or At All</h1></header> 
+		  <section> 
+		    <h2><span class="html">Looping Without A Closure</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/cQ7Ug/5/embedded/js,html,css,result/presentation/"></iframe>
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>8. What is a Closure?</h1></header> 
+		  <section> 
+		    <h2><span class="js">A Simple Example with a Visual</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/CzDc2/3/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>		
+		<div class="slide"> 
+		  <header><h1>8. Not Using Closures Correctly Or At All</h1></header> 
+		  <section> 
+		    <h2><span class="js">Looping With A Closure: Part 1</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/XS7BE/8/embedded/js,html,css,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide"> 
+		  <header><h1>8. Not Using Closures Correctly Or At All</h1></header> 
+		  <section> 
+		    <h2><span class="js">Looping With A Closure: Part 2</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/A6tTF/5/embedded/js,html,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide"> 
+		  <header><h1>Using Closures When Necessary</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span> <span class="key">Summary</span></h2> 
+			<ul>
+				<li>A closure can be very helpful when trying to persist certain variable states.</li> 
+				<li>Using the concept of closures to simulate private methods and properties as you might expect from C#. We will cover this in a later point.</li>
+			</ul>
+			<span class="css">Note</span>
+			<p>For more examples of when to use closures appropriately in your code there is a great post by <a href="http://twitter.com/kangax" target="_blank">Juriy Zaytsev</a> on Script Junkie entitled <a href="http://msdn.microsoft.com/en-us/scriptjunkie/ff696765.aspx" target="_blank">Use Cases for JavaScript Closures</a></p>
+		  </section> 
+		</div>				
+		<!-- END ETM: Not Using Closures Correctly Or At All -->
+
+		<!-- BEGIN ETM: Having Variables & Functions in Global Scope -->
+		<div class="slide"> 
+		  <section class="middle"> 
+		    <h2>Having Variables <br/>&amp; Functions <br/>in Global Scope</h2> 
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>9. Having Vars &amp; Funcs in Global Scope</h1></header> 
+		  <section> 
+		    <h2><span class="html">Bad Habit</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/teW4J/4/embedded/js,html,result/presentation/"></iframe>
+		  </section> 
+		</div> 
+		<div class="slide"> 
+		  <header><h1>9. Having Vars &amp; Funcs in Global Scope</h1></header> 
+		  <section> 
+		    <h2><span class="js">Object Literal (All Public)</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/ahfgk/8/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide">
+		  <header><h1>Object Literal (All Public)</h1></header>
+		  <section>
+		    <h2><span class="js">Pros &amp; Cons</span></h2> 
+		 	<h3>Pros</h3>
+			<ul>
+			    <li>Cleans up the global namespace by adding a namespace to your properties and methods</li>
+			    <li>You can add functionality to the object literal at a later point</li>
+			    <li>All the properties and methods are public</li>
+			</ul>
+			<h3>Cons</h3>
+			<ul>
+			    <li>Uses the Object Literal syntax to define your properties and methods that some may find cumbersome</li>
+			    <li>There isn’t the ability to have private properties or methods</li>
+		  	</ul>
+			</section> 
+		</div>		
+		<div class="slide"> 
+		  <header><h1>9. Having Vars &amp; Funcs in Global Scope</h1></header> 
+		  <section> 
+		    <h2><span class="js">Self-Executing Anonymous Function: Part 1 (All Private)</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/zxR3P/8/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide">
+		  <header><h1>SEAF: Part 1 (All Private)</h1></header>
+		  <section> 
+		    <h2><span class="js">Pros &amp; Cons</span></h2> 
+		 	<h3>Pros</h3>
+			<ul>
+			    <li>Hides all your implementation from external code</li>
+			    <li>The function runs once and only once</li>
+			    <li>The code inside doesn’t use the Object Literal notation</li>
+			</ul>
+			<h3>Cons</h3>
+			<ul>
+			    <li>All information is hidden, which may not be what you want</li>
+			    <li>Slightly more complicated technique, but not really</li>
+			</ul>
+		  </section> 
+		</div>		
+
+		<div class="slide"> 
+		  <header><h1>9. Having Vars &amp; Funs in Global Scope</h1></header> 
+		  <section> 
+		    <h2><span class="js">Revealing Module Pattern (Public &amp; Private)</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/CDDer/15/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide"> 
+		  <header><h1>Revealing Module (Public &amp; Private)</h1></header>
+		  <section> 
+		    <h2><span class="js">Pros &amp; Cons</span></h2> 
+		 	<h3>Pros</h3>
+			<ul>
+			    <li>Allows for public and private properties and methods</li>
+			    <li>The Technique is Easy to understand</li>
+			    <li>The code inside doesn’t use the Object Literal notation</li>
+			</ul>
+			<h3>Cons</h3>
+			<ul>
+			    <li>Doesn’t allow for a way to add private properties to be used in new public methods</li>
+			</ul>
+		  </section> 
+		</div>
+
+		<div class="slide"> 
+		  <header><h1>9. Having Vars &amp; Funs in Global Scope</h1></header> 
+		  <section> 
+		    <h2><span class="js">Self-Executing Anonymous Function: Part 2 (Public &amp; Private)</span></h2> 
+			<iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/elijahmanor/MVNBz/22/embedded/js,result/presentation/"></iframe>
+		  </section> 
+		</div>
+		<div class="slide"> 
+		  <header><h1>SEAF: Part 2 (Public &amp; Private)</h1></header>
+		  <section> 
+		    <h2><span class="js">Pros &amp; Cons</span></h2> 
+		 	<h3>Pros</h3>
+			<ul>
+			    <li>Gives ability to have public &amp; private properties &amp; methods</li>
+			    <li>The code inside doesn’t use the Object Literal notation</li>
+			    <li>Keeps undefined’s value as undefined in case someone overrode</li>
+			    <li>You can use $ in your code without worrying about library clashing</li>
+			    <li>Allows your library to grow across files using the “window.namespace = window.namespace || {}” technique</li>
+			    <li>A common pattern that you will see in libraries, widgets, and plugins</li>
+			</ul>
+			<h3>Cons</h3>
+			<ul>
+			    <li>Slightly more complicated pattern, but not overly difficult</li>
+			</ul>
+		  </section> 
+		</div>
+		
+		<div class="slide"> 
+		  <header><h1>Minimizing Vars &amp; Funs in Global Scope</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span> <span class="key">Summary</span></h2> 
+			<ul>
+				<li>In JavaScript it is very important to declare all of your variables and it is considered a best practice to limit the number of objects in the global namespace.</li>
+				<li>Depending on the situation you are developing you may need one or more of the concepts listed above to organize your code and keep it from colliding with other libraries.</li> 
+				<li>There is no pattern that is a Silver Bullet, but rather you should assess where you are at and examine the pros and cons of each pattern to address your situation.</li>
+			</ul>
+		  </section> 
+		</div>						
+		<!-- END ETM: Having Variables & Functions in Global Scope -->
+	
+		<div class="slide">
+		  <header><h1>Tools to Help You</h1></header> 			
+		  <section class="flex hbox boxcenter"> 
+        <h2><a class="js" href="http://jsfiddle.net/elijahmanor/Z2ZGa/1/">Best Practice</a> <span class="key"><a href="http://jslint.com" style="text-decoration: none; border-bottom: 0;" target="_blank">JSLint</a></span> or <span class="key"><a href="http://jshint.com" style="text-decoration: none; border-bottom: 0;" target="_blank">JSHint</a></span></h2>
+             <iframe style="width: 100%; height: 500px" src="http://jslint.com/"></iframe> 
+		       <!-- <object data="http://jshint.com/"></object> -->
+		 	</section>
+		</div>
+
+		<div class="slide"> 
+		  <header><h1>Additional Resources</h1></header> 
+		  <section> 
+		    <h2><span class="js">Best Practice</span> <span class="key">Learn</span></h2>
+		 	<h3>Books</h3>
+			<ul>
+				<li><a href="http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742">JavaScript: The Good Parts</a> by Douglas Crockford</li>
+				<li><a href="http://www.amazon.com/JavaScript-Patterns-Stoyan-Stefanov/dp/0596806752">JavaScript Patterns</a> by Stoyan Stefanov</li>
+			</ul>
+			<h3>Articles</h3>
+			<ul>
+				<li><a href="http://msdn.microsoft.com/en-us/scriptjunkie/ff852808.aspx">Prototypes and Inheritance in JavaScript</a> by <a href="http://twitter.com/odetocode">Scott Allen</a></li>
+				<li><a href="http://msdn.microsoft.com/en-us/scriptjunkie/ff696765.aspx">Use Cases for JavaScript Closures</a> by <a href="http://twitter.com/kangax/">Juriy Zaytsev</a></li>
+				<li><a href="http://blog.boyet.com/blog/javascriptlessons/">JavaScript for C# Programmers</a> series by <a href="">Julian Bucknall</a></li>
+			</ul>		
+			<h3>Video</h3>
+			<ul>
+				<li><a href="http://yuiblog.com/crockford/">Crockford on JavaScript</a> video series on Yahoo!</li>
+			</ul>
+		  </section> 
+		</div>	
+	
+        <div class="slide"> 
+	      <style> 
+
+          </style> 
+          <header><h1>Questions?</h1></header> 
+          <section class="middle intro"> 
+ 
+            <h2><span>Elijah Manor</span></h2> 
+
+			<p class="whoami" style="margin-top: 45px; line-height: 22px;">
+				<center>
+					<table class="whoami" style="width: 75%; margin: clear;">
+						<tr>
+							<td style="text-align: left;">Microsoft MVP ASP.NET</td>
+							<td style="text-align: right;">elijah.manor@gmail.com</td>
+						</tr>
+						<tr>
+							<td style="text-align: left;">ASPInsiders</td>
+							<td style="text-align: right;">http://elijahmanor.com</td>
+						</tr>
+						<tr>
+							<td style="text-align: left;">.appendTo()</td>
+							<td style="text-align: right;">http://twitter.com/elijahmanor</td>
+						</tr>
+					</table>
+				</center>
+			</p>
+  
+          </section> 
+        </div>
+ 
+      </div> <!-- slides --> 
+ 
+    </div> <!-- presentation --> 
+ 
+    <script> 
+      (function() {
+        var doc = document;
+        var disableBuilds = true;
+ 
+        var ctr = 0;
+        var spaces = /\s+/, a1 = [''];
+ 
+        var toArray = function(list) {
+          return Array.prototype.slice.call(list || [], 0);
+        };
+ 
+        var byId = function(id) {
+          if (typeof id == 'string') { return doc.getElementById(id); }
+          return id;
+        };
+ 
+        var query = function(query, root) {
+          if (!query) { return []; }
+          if (typeof query != 'string') { return toArray(query); }
+          if (typeof root == 'string') {
+            root = byId(root);
+            if(!root){ return []; }
+          }
+ 
+          root = root || document;
+          var rootIsDoc = (root.nodeType == 9);
+          var doc = rootIsDoc ? root : (root.ownerDocument || document);
+ 
+          // rewrite the query to be ID rooted
+          if (!rootIsDoc || ('>~+'.indexOf(query.charAt(0)) >= 0)) {
+            root.id = root.id || ('qUnique' + (ctr++));
+            query = '#' + root.id + ' ' + query;
+          }
+          // don't choke on something like ".yada.yada >"
+          if ('>~+'.indexOf(query.slice(-1)) >= 0) { query += ' *'; }
+ 
+          return toArray(doc.querySelectorAll(query));
+        };
+ 
+        var strToArray = function(s) {
+          if (typeof s == 'string' || s instanceof String) {
+            if (s.indexOf(' ') < 0) {
+              a1[0] = s;
+              return a1;
+            } else {
+              return s.split(spaces);
+            }
+          }
+          return s;
+        };
+ 
+        var addClass = function(node, classStr) {
+          classStr = strToArray(classStr);
+          var cls = ' ' + node.className + ' ';
+          for (var i = 0, len = classStr.length, c; i < len; ++i) {
+            c = classStr[i];
+            if (c && cls.indexOf(' ' + c + ' ') < 0) {
+              cls += c + ' ';
+            }
+          }
+          node.className = cls.trim();
+        };
+ 
+        var removeClass = function(node, classStr) {
+          var cls;
+          if (classStr !== undefined) {
+            classStr = strToArray(classStr);
+            cls = ' ' + node.className + ' ';
+            for (var i = 0, len = classStr.length; i < len; ++i) {
+              cls = cls.replace(' ' + classStr[i] + ' ', ' ');
+            }
+            cls = cls.trim();
+          } else {
+            cls = '';
+          }
+          if (node.className != cls) {
+            node.className = cls;
+          }
+        };
+ 
+        var toggleClass = function(node, classStr) {
+          var cls = ' ' + node.className + ' ';
+          if (cls.indexOf(' ' + classStr.trim() + ' ') >= 0) {
+            removeClass(node, classStr);
+          } else {
+            addClass(node, classStr);
+          }
+        };
+ 
+        var ua = navigator.userAgent;
+        var isFF = parseFloat(ua.split('Firefox/')[1]) || undefined;
+        var isWK = parseFloat(ua.split('WebKit/')[1]) || undefined;
+        var isOpera = parseFloat(ua.split('Opera/')[1]) || undefined;
+ 
+        var canTransition = (function() {
+          var ver = parseFloat(ua.split('Version/')[1]) || undefined;
+          // test to determine if this browser can handle CSS transitions.
+          var cachedCanTransition = 
+            (isWK || (isFF && isFF > 3.6 ) || (isOpera && ver >= 10.5));
+          return function() { return cachedCanTransition; }
+        })();
+ 
+        //
+        // Slide class
+        //
+        var Slide = function(node, idx) {
+          this._node = node;
+          if (idx >= 0) {
+            this._count = idx + 1;
+          }
+          if (this._node) {
+            addClass(this._node, 'slide distant-slide');
+          }
+          this._makeCounter();
+          this._makeBuildList();
+        };
+ 
+        Slide.prototype = {
+          _node: null,
+          _count: 0,
+          _buildList: [],
+          _visited: false,
+          _currentState: '',
+          _states: [ 'distant-slide', 'far-past',
+                     'past', 'current', 'future',
+                     'far-future', 'distant-slide' ],
+          setState: function(state) {
+            if (typeof state != 'string') {
+              state = this._states[state];
+            }
+            if (state == 'current' && !this._visited) {
+              this._visited = true;
+              this._makeBuildList();
+            }
+            removeClass(this._node, this._states);
+            addClass(this._node, state);
+            this._currentState = state;
+ 
+            // delay first auto run. Really wish this were in CSS.
+            /*
+            this._runAutos();
+            */
+            var _t = this;
+            setTimeout(function(){ _t._runAutos(); } , 400);
+          },
+          _makeCounter: function() {
+            if(!this._count || !this._node) { return; }
+            var c = doc.createElement('span');
+            c.innerHTML = this._count;
+            c.className = 'counter';
+            this._node.appendChild(c);
+          },
+          _makeBuildList: function() {
+            this._buildList = [];
+            if (disableBuilds) { return; }
+            if (this._node) {
+              this._buildList = query('[data-build] > *', this._node);
+            }
+            this._buildList.forEach(function(el) {
+              addClass(el, 'to-build');
+            });
+          },
+          _runAutos: function() {
+            if (this._currentState != 'current') {
+              return;
+            }
+            // find the next auto, slice it out of the list, and run it 
+            var idx = -1;
+            this._buildList.some(function(n, i) {
+              if (n.hasAttribute('data-auto')) {
+                idx = i;
+                return true;
+              }
+              return false;
+            });
+            if (idx >= 0) {
+              var elem = this._buildList.splice(idx, 1)[0];
+              var transitionEnd = isWK ? 'webkitTransitionEnd' : (isFF ? 'mozTransitionEnd' : 'oTransitionEnd');
+              var _t = this;
+              if (canTransition()) {
+                var l = function(evt) {
+                  elem.parentNode.removeEventListener(transitionEnd, l, false);
+                  _t._runAutos();
+                };
+                elem.parentNode.addEventListener(transitionEnd, l, false);
+                removeClass(elem, 'to-build');
+              } else {
+                setTimeout(function() {
+                  removeClass(elem, 'to-build');
+                  _t._runAutos();
+                }, 400);
+              }
+            }
+          },
+          buildNext: function() {
+            if (!this._buildList.length) {
+              return false;
+            }
+            removeClass(this._buildList.shift(), 'to-build');
+            return true;
+          },
+        };
+ 
+        //
+        // SlideShow class
+        //
+        var SlideShow = function(slides) {
+          this._slides = (slides || []).map(function(el, idx) {
+            return new Slide(el, idx);
+          });
+          var h = window.location.hash;
+          try {
+            this.current = parseInt(h.split('#slide')[1], 10);
+          } catch (e) { /* squeltch */ }
+          this.current = isNaN(this.current) ? 1 : this.current;
+          var _t = this;
+          doc.addEventListener('keydown', 
+              function(e) { _t.handleKeys(e); }, false);
+          doc.addEventListener('mousewheel', 
+              function(e) { _t.handleWheel(e); }, false);
+          doc.addEventListener('DOMMouseScroll', 
+              function(e) { _t.handleWheel(e); }, false);
+          doc.addEventListener('touchstart', 
+              function(e) { _t.handleTouchStart(e); }, false);
+          doc.addEventListener('touchend', 
+              function(e) { _t.handleTouchEnd(e); }, false);
+          window.addEventListener('popstate', 
+              function(e) { if (e.state) { _t.go(e.state); } }, false);
+          this._update();          
+        };
+ 
+        SlideShow.prototype = {
+          _slides: [],
+          _update: function(dontPush) {
+            document.querySelector('#presentation-counter').innerText = this.current;
+            if (history.pushState) {
+              if (!dontPush) {
+                history.replaceState(this.current, 'Slide ' + this.current, '#slide' + this.current);
+              }
+            } else {
+              window.location.hash = 'slide' + this.current;
+            }
+            for (var x = this.current-1; x < this.current + 7; x++) {
+              if (this._slides[x-4]) {
+                this._slides[x-4].setState(Math.max(0, x-this.current));
+              }
+            }
+          },
+ 
+          current: 0,
+          next: function() {
+            if (!this._slides[this.current-1].buildNext()) {
+              this.current = Math.min(this.current + 1, this._slides.length);
+              this._update();
+            }
+          },
+          prev: function() {
+            this.current = Math.max(this.current-1, 1);
+            this._update();
+          },
+          go: function(num) {
+            this.current = num;
+            this._update(true);
+          },
+ 
+          _notesOn: false,
+          showNotes: function() {
+            var isOn = this._notesOn = !this._notesOn;
+            query('.notes').forEach(function(el) {
+              el.style.display = (notesOn) ? 'block' : 'none';
+            });
+          },
+          switch3D: function() {
+            toggleClass(document.body, 'three-d');
+          },
+          handleWheel: function(e) {
+            var delta = 0;
+            if (e.wheelDelta) {
+              delta = e.wheelDelta/120;
+              if (isOpera) {
+                delta = -delta;
+              }
+            } else if (e.detail) {
+              delta = -e.detail/3;
+            }
+ 
+            if (delta > 0 ) {
+              this.prev();
+              return;
+            }
+            if (delta < 0 ) {
+              this.next();
+              return;
+            }
+          },
+          handleKeys: function(e) {
+            
+            if (/^(input|textarea)$/i.test(e.target.nodeName)) return;
+            
+            switch (e.keyCode) {
+              case 37: // left arrow
+                this.prev(); break;
+              case 39: // right arrow
+              case 32: // space
+                this.next(); break;
+              case 50: // 2
+                this.showNotes(); break;
+              case 51: // 3
+                this.switch3D(); break;
+            }
+          },
+          _touchStartX: 0,
+          handleTouchStart: function(e) {
+            this._touchStartX = e.touches[0].pageX;
+          },
+          handleTouchEnd: function(e) {
+            var delta = this._touchStartX - e.changedTouches[0].pageX;
+            var SWIPE_SIZE = 150;
+            if (delta > SWIPE_SIZE) {
+              this.next();
+            } else if (delta< -SWIPE_SIZE) {
+              this.prev();
+            }
+          },
+        };
+ 
+        // Initialize
+        var slideshow = new SlideShow(query('.slide'));
+      })();
+    </script> 
+ 
+	<script>
+	function copy(inElement) {
+	  if (inElement.createTextRange) {
+	    var range = inElement.createTextRange();
+	    if (range && BodyLoaded==1)
+	      range.execCommand('Copy');
+	  } else {
+	    var flashcopier = 'flashcopier';
+	    if(!document.getElementById(flashcopier)) {
+	      var divholder = document.createElement('div');
+	      divholder.id = flashcopier;
+	      document.body.appendChild(divholder);
+	    }
+	    document.getElementById(flashcopier).innerHTML = '';
+	    var divinfo = '<embed src="_clipboard.swf" FlashVars="clipboard='+encodeURIComponent(inElement.value)+'" width="0" height="0" type="application/x-shockwave-flash"></embed>';
+	    document.getElementById(flashcopier).innerHTML = divinfo;
+	  }
+	}	
+	</script>
+  </body> 
+</html>

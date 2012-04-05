@@ -1,0 +1,27 @@
+<% if ( mode === "view" ) { %>
+<ol class="slides" data-role="slide-container">
+	<!-- slide content -->
+</ol>
+<div data-role="agenda-switcher"></div>
+<% } else { %>
+
+<% if ( layout === "title" ) { %>
+<div class="title slide">
+	<header>
+		<%= slide.titles %>
+	</header>
+</div>
+<% } %>
+
+<% if ( layout === "text" ) { %>
+<div class="text slide">
+	<header>
+		<%= slide.titles %>
+	</header>
+	<div class="content slide-content">
+		<%= slide.html %>
+	</div>
+</div>
+<% } %>
+
+<% } %>
