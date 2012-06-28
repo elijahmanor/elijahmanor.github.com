@@ -90,13 +90,20 @@ plugin = {
 
 		// Attach theme CSS
 		$( "<link>", {
+<<<<<<< HEAD
 			href: "/crosslink/themes/" + app.deck.get( "theme" ) + "/demo-theme.css",
+=======
+			href: "themes/" + app.deck.get( "theme" ) + "/demo-theme.css",
+>>>>>>> e99eb15929f4470c72fbd87a1f893cf4494588f7
 			rel: "stylesheet",
 			media: "all"
 		}).appendTo( $( demo_window.document ).find( "head" ) );
 
+<<<<<<< HEAD
 		app.publish( "demo.attached", demo_window );
 
+=======
+>>>>>>> e99eb15929f4470c72fbd87a1f893cf4494588f7
 		if ( $actions.is( ".demo-shown" ) && current.get( "demo-autorun" ) ) {
 			this.runDemo();
 		}

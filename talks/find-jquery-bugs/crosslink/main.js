@@ -5281,7 +5281,11 @@ _.extend( app, {
 	plugins: [],
 
 	publish: function () {
+<<<<<<< HEAD
 		return amplify.publish.apply( amplify, arguments );
+=======
+		return amplify.publish.apply( amplify, arguments );	
+>>>>>>> e99eb15929f4470c72fbd87a1f893cf4494588f7
 	},
 
 	once: function( topic, callback ) {
@@ -5296,7 +5300,11 @@ _.extend( app, {
 		if ( typeof topic === "object" ) {
 			for ( var name in topic ) {
 				if ( typeof topic[ name ] === "object" ) {
+<<<<<<< HEAD
 					amplify.subscribe.call( amplify, name, topic[ name ].context, topic[ name ].callback, topic[ name ].priority );
+=======
+					amplify.subscribe.call( amplify, name, topic[ name ].context, topic[ name ].callback, topic[ name ].priority );	
+>>>>>>> e99eb15929f4470c72fbd87a1f893cf4494588f7
 				} else {
 					amplify.subscribe.call( amplify, name, topic[ name ]);
 				}
@@ -5304,11 +5312,19 @@ _.extend( app, {
 			return;
 		}
 
+<<<<<<< HEAD
 		return amplify.subscribe.apply( amplify, arguments );
 	},
 
 	unsubscribe: function () {
 		return amplify.unsubscribe.apply( amplify, arguments );
+=======
+		return amplify.subscribe.apply( amplify, arguments );	
+	},
+
+	unsubscribe: function () {
+		return amplify.unsubscribe.apply( amplify, arguments );	
+>>>>>>> e99eb15929f4470c72fbd87a1f893cf4494588f7
 	},
 
 	initialize: function () {
@@ -5335,7 +5351,11 @@ _.extend( app, {
 
 		app.initialized = true;
 		app.publish( "app.initialized" );
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> e99eb15929f4470c72fbd87a1f893cf4494588f7
 		document.body.style.display = "block";
 	},
 
@@ -5360,7 +5380,11 @@ _.extend( app, {
 	loadConfig: function ( config, data ) {
 		var deck = this.deck = new SlideDeck( config ),
 			plugins = this.deck.plugins();
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> e99eb15929f4470c72fbd87a1f893cf4494588f7
 		$.when( plugins ? this.loadPlugins( plugins ) : true ).then( function () {
 			app.publish( "slidedeck.ready", deck );
 			app.publish( "slides.raw.loaded", data );
@@ -5371,7 +5395,11 @@ _.extend( app, {
 		var deck = this.deck;
 
 		this.deck.loadSlides( slides );
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> e99eb15929f4470c72fbd87a1f893cf4494588f7
 		this.deck.bind( "change:current", function ( deck, value ) {
 			app.navigate( app.current_talk, value );
 		});
@@ -5429,7 +5457,11 @@ _.extend( app, {
 		app.publish( "slides.html.loaded", data );
 	},
 
+<<<<<<< HEAD
 	navigate: function ( talk, slide ) {
+=======
+	navigate: function( talk, slide ) {
+>>>>>>> e99eb15929f4470c72fbd87a1f893cf4494588f7
 		var url = [ "session", talk ],
 			options = {};
 
@@ -5442,8 +5474,12 @@ _.extend( app, {
 			}
 		}
 
+<<<<<<< HEAD
 		app.publish( "app.changeslide" );
 		app.router.navigate( url.join( "/" ), options );
+=======
+		app.router.navigate( url.join( "/"), options );
+>>>>>>> e99eb15929f4470c72fbd87a1f893cf4494588f7
 	},
 
 	changeSlide: function ( slide_no ) {
@@ -5455,7 +5491,11 @@ _.extend( app, {
 				"left": "left",
 				"right": "right",
 				"pageup": "left",
+<<<<<<< HEAD
 				"pagedown": "right"
+=======
+				"pagedown": "right" 
+>>>>>>> e99eb15929f4470c72fbd87a1f893cf4494588f7
 			},
 			$document = $( document );
 
@@ -5468,7 +5508,11 @@ _.extend( app, {
 			});
 		});
 
+<<<<<<< HEAD
 		$document
+=======
+		$( document )
+>>>>>>> e99eb15929f4470c72fbd87a1f893cf4494588f7
 			.on( "click", "[data-role=\"section-links\"] a", function ( e ) {
 				var target = e.target.innerHTML;
 				e.preventDefault();
@@ -5492,7 +5536,11 @@ _.extend( app, {
 				}
 
 				_.extend( states[ key ], obj );
+<<<<<<< HEAD
 			});
+=======
+			});	
+>>>>>>> e99eb15929f4470c72fbd87a1f893cf4494588f7
 		}
 
 		app.plugins.push( options.name );
@@ -5506,7 +5554,10 @@ _.extend( app, {
 return app;
 
 });
+<<<<<<< HEAD
 
+=======
+>>>>>>> e99eb15929f4470c72fbd87a1f893cf4494588f7
 require.config({
 	paths: {
 		// Infrastructure
@@ -7028,13 +7079,20 @@ plugin = {
 
 		// Attach theme CSS
 		$( "<link>", {
+<<<<<<< HEAD
 			href: "/crosslink/themes/" + app.deck.get( "theme" ) + "/demo-theme.css",
+=======
+			href: "themes/" + app.deck.get( "theme" ) + "/demo-theme.css",
+>>>>>>> e99eb15929f4470c72fbd87a1f893cf4494588f7
 			rel: "stylesheet",
 			media: "all"
 		}).appendTo( $( demo_window.document ).find( "head" ) );
 
+<<<<<<< HEAD
 		app.publish( "demo.attached", demo_window );
 
+=======
+>>>>>>> e99eb15929f4470c72fbd87a1f893cf4494588f7
 		if ( $actions.is( ".demo-shown" ) && current.get( "demo-autorun" ) ) {
 			this.runDemo();
 		}
@@ -7047,8 +7105,11 @@ plugin = {
 		$actions.addClass( "demo-ran" );
 
 		demo_window.runCode( js );
+<<<<<<< HEAD
 
 		app.publish( "demo.ran", demo_window );
+=======
+>>>>>>> e99eb15929f4470c72fbd87a1f893cf4494588f7
 	},
 
 	resetDemo: function () {
@@ -7203,6 +7264,7 @@ var plugin = {
 
 return plugin;
 });
+<<<<<<< HEAD
 define('text!plugins/notify/notify.tmpl.html',[],function () { return '<div class="alert alert-info" hidden>\n\t<a class="close" data-dismiss="alert">&times;</a>\n\t<%= message %>\n</div>';});
 
 define('plugins/notify/notify',[ "js/app/app", "jquery", "underscore", "text!./notify.tmpl.html" ], function ( app, $, _, template ) {
@@ -7252,6 +7314,8 @@ define('plugins/notify/notify',[ "js/app/app", "jquery", "underscore", "text!./n
 
 	return notify;
 });
+=======
+>>>>>>> e99eb15929f4470c72fbd87a1f893cf4494588f7
 ( function ( app, $, amplify ) {
 
 
