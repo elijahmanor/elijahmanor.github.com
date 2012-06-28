@@ -15,11 +15,7 @@ define( [ "js/app/app", "jquery", "underscore", "text!./notify.tmpl.html" ], fun
 				demo_window = win;
 
 				$( "<link>", {
-<<<<<<< HEAD
 					href: "/crosslink/plugins/notify/css/notify.css",
-=======
-					href: "../notify/css/notify.css",
->>>>>>> e99eb15929f4470c72fbd87a1f893cf4494588f7
 					rel: "stylesheet",
 					media: "all"
 				}).appendTo( demo_window.document.head );
@@ -48,8 +44,4 @@ define( [ "js/app/app", "jquery", "underscore", "text!./notify.tmpl.html" ], fun
 	};
 
 	return notify;
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> e99eb15929f4470c72fbd87a1f893cf4494588f7
