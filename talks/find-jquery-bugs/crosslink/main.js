@@ -5429,7 +5429,7 @@ _.extend( app, {
 		app.publish( "slides.html.loaded", data );
 	},
 
-	navigate: function( talk, slide ) {
+	navigate: function ( talk, slide ) {
 		var url = [ "session", talk ],
 			options = {};
 
