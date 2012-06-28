@@ -1,0 +1,110 @@
+@import url('reset.css');
+
+
+
+
+html {
+	font-size: 28px;
+}
+
+html, body, #crosslink, .slide-container {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+body {
+	display: none;
+}
+
+@media print {
+	html {
+		font-size: 20px;
+	}
+
+	html, body {
+		width: 14in !important;
+		height: 8.495in !important;
+		position: relative;
+		overflow: hidden;
+	}
+
+	#crosslink, .slide-container {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+
+
+
+.slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+#sidebar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 10em;
+	bottom: 0;
+	z-index: 1000;
+}
+
+code {
+	text-transform: none;
+}
+
+@media only screen and ( max-width: 2240px ) { /* ( 2560 - 1920 / 2 ) + 1920 */
+	body {
+		font-size: 100%; /* 2240 / 560 * 25 */
+	}
+}
+
+@media only screen and ( max-width: 1760px ) { /* ( 1920 - 1600 / 2 ) + 1600 */
+	body {
+		font-size: 90%; /* 1760 / 560 * 25 */
+	}
+}
+
+@media only screen and ( max-width: 1440px ) { /* ( 1600 - 1280 / 2 ) + 1280 */
+	body {
+		font-size: 80%; /* 1440 / 560 * 25 */
+	}
+}
+
+@media only screen and ( max-width: 1152px ) { /* ( 1280 - 1024 / 2 ) + 1024 */
+	body {
+		font-size: 70%; /* 1152 / 560 * 25 */
+	}
+}
+
+@media only screen and ( max-width: 912px ) { /* ( 1024 - 800 / 2 ) + 800 */
+	body {
+		font-size: 60%; /* 912 / 560 * 25 */
+	}
+}
+
+@media only screen and ( max-width: 720px ) { /* ( 800 - 640 / 2 ) + 640 */
+	body {
+		font-size: 50%; /* 720 / 560 * 25 */
+	}
+}
+
+@media only screen and ( max-width: 560px ) { /* ( 640 - 480 / 2 ) + 480 */
+	body {
+		font-size: 40%;
+	}
+}
+
+.slidenotes {
+	display: none
+}

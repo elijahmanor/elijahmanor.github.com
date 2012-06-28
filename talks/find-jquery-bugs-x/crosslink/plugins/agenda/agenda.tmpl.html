@@ -1,0 +1,7 @@
+<ul>
+	<% _.each( agenda, function ( item, i ) { %>
+	<li data-key="<%= item.key %>" <%= item.current ? "class='current'" : "" %>>
+		<a><span class='preview'><em><%= i + 1 %></em></span><span class="preview-title"><%= item.title %></span></a>
+	</li>
+	<% }) %>
+</ul>
