@@ -90,7 +90,7 @@ plugin = {
 
 		// Attach theme CSS
 		$( "<link>", {
-			href: "/crosslink/themes/" + app.deck.get( "theme" ) + "/demo-theme.css",
+			href: "./crosslink/themes/" + app.deck.get( "theme" ) + "/demo-theme.css",
 			rel: "stylesheet",
 			media: "all"
 		}).appendTo( $( demo_window.document ).find( "head" ) );
