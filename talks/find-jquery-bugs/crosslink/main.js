@@ -7028,7 +7028,7 @@ plugin = {
 
 		// Attach theme CSS
 		$( "<link>", {
-			href: "/crosslink/themes/" + app.deck.get( "theme" ) + "/demo-theme.css",
+			href: "crosslink/themes/" + app.deck.get( "theme" ) + "/demo-theme.css",
 			rel: "stylesheet",
 			media: "all"
 		}).appendTo( $( demo_window.document ).find( "head" ) );
@@ -7092,7 +7092,7 @@ plugin = {
 	},
 
 	insertiFrame: function () {
-		$content.html( "<iframe src='./crosslink/plugins/livedemo/livedemo.html?1'></iframe>" );
+		$content.html( "<iframe src='crosslink/plugins/livedemo/livedemo.html?1'></iframe>" );
 	},
 
 	getCode: function ( slide, lang ) {
@@ -7222,7 +7222,7 @@ define('plugins/notify/notify',[ "js/app/app", "jquery", "underscore", "text!./n
 				demo_window = win;
 
 				$( "<link>", {
-					href: "/crosslink/plugins/notify/css/notify.css",
+					href: "crosslink/plugins/notify/css/notify.css",
 					rel: "stylesheet",
 					media: "all"
 				}).appendTo( demo_window.document.head );

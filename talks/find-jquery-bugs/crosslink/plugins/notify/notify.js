@@ -15,7 +15,7 @@ define( [ "js/app/app", "jquery", "underscore", "text!./notify.tmpl.html" ], fun
 				demo_window = win;
 
 				$( "<link>", {
-					href: "/crosslink/plugins/notify/css/notify.css",
+					href: "crosslink/plugins/notify/css/notify.css",
 					rel: "stylesheet",
 					media: "all"
 				}).appendTo( demo_window.document.head );
