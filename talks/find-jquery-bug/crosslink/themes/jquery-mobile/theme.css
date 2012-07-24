@@ -87,6 +87,10 @@ filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr=
 	text-shadow: #555 0 1px 0;
 }
 
+.slide-content code a:after {
+	content: "";
+}
+
 .slide .slide-content li strong:first-child,
 .slide-content a,
 .slide-content h3 {
@@ -162,9 +166,9 @@ body[data-key="jquery-mobile-purple"] .slide .slide-content h3 {
 	position: absolute;
 	bottom: 0;
 	right: 0;
-	margin-right: -116px;
-	margin-bottom: -35px;
-	width: 300px;
+	margin-right: -89px;
+	margin-bottom: -25px;
+	width: 250px;
 	  -webkit-transform: translate(-1.8em, -175px) rotate(-90deg);  /* Saf3.1+, Chrome */
          -moz-transform: translate(-1.8em, -175px) rotate(-90deg);  /* FF3.5+ */
           -ms-transform: translate(-1.8em, -175px) rotate(-90deg);  /* IE9 */
@@ -383,6 +387,11 @@ footer p.full-footer {
 .slide .slide-content li {
 	margin: 0 0 0.8em 0;
 	font-size: 1em;
+}
+
+.slide .slide-content ul ul {
+	margin-top: 10px;
+	margin-bottom: -6px;
 }
 
 .slide .slide-content .code-block {

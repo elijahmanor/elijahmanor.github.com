@@ -90,10 +90,12 @@ plugin = {
 
 		// Attach theme CSS
 		$( "<link>", {
-			href: "themes/" + app.deck.get( "theme" ) + "/demo-theme.css",
+			href: "crosslink/themes/" + app.deck.get( "theme" ) + "/demo-theme.css",
 			rel: "stylesheet",
 			media: "all"
 		}).appendTo( $( demo_window.document ).find( "head" ) );
+
+		app.publish( "demo.attached", demo_window );
 
 		if ( $actions.is( ".demo-shown" ) && current.get( "demo-autorun" ) ) {
 			this.runDemo();

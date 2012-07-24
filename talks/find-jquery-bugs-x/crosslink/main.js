@@ -5281,7 +5281,7 @@ _.extend( app, {
 	plugins: [],
 
 	publish: function () {
-		return amplify.publish.apply( amplify, arguments );	
+		return amplify.publish.apply( amplify, arguments );
 	},
 
 	once: function( topic, callback ) {
@@ -5296,7 +5296,7 @@ _.extend( app, {
 		if ( typeof topic === "object" ) {
 			for ( var name in topic ) {
 				if ( typeof topic[ name ] === "object" ) {
-					amplify.subscribe.call( amplify, name, topic[ name ].context, topic[ name ].callback, topic[ name ].priority );	
+					amplify.subscribe.call( amplify, name, topic[ name ].context, topic[ name ].callback, topic[ name ].priority );
 				} else {
 					amplify.subscribe.call( amplify, name, topic[ name ]);
 				}
@@ -5304,11 +5304,11 @@ _.extend( app, {
 			return;
 		}
 
-		return amplify.subscribe.apply( amplify, arguments );	
+		return amplify.subscribe.apply( amplify, arguments );
 	},
 
 	unsubscribe: function () {
-		return amplify.unsubscribe.apply( amplify, arguments );	
+		return amplify.unsubscribe.apply( amplify, arguments );
 	},
 
 	initialize: function () {
@@ -5335,7 +5335,7 @@ _.extend( app, {
 
 		app.initialized = true;
 		app.publish( "app.initialized" );
-		
+
 		document.body.style.display = "block";
 	},
 
@@ -5360,7 +5360,7 @@ _.extend( app, {
 	loadConfig: function ( config, data ) {
 		var deck = this.deck = new SlideDeck( config ),
 			plugins = this.deck.plugins();
-		
+
 		$.when( plugins ? this.loadPlugins( plugins ) : true ).then( function () {
 			app.publish( "slidedeck.ready", deck );
 			app.publish( "slides.raw.loaded", data );
@@ -5371,7 +5371,7 @@ _.extend( app, {
 		var deck = this.deck;
 
 		this.deck.loadSlides( slides );
-		
+
 		this.deck.bind( "change:current", function ( deck, value ) {
 			app.navigate( app.current_talk, value );
 		});
@@ -5429,7 +5429,7 @@ _.extend( app, {
 		app.publish( "slides.html.loaded", data );
 	},
 
-	navigate: function( talk, slide ) {
+	navigate: function ( talk, slide ) {
 		var url = [ "session", talk ],
 			options = {};
 
@@ -5442,7 +5442,8 @@ _.extend( app, {
 			}
 		}
 
-		app.router.navigate( url.join( "/"), options );
+		app.publish( "app.changeslide" );
+		app.router.navigate( url.join( "/" ), options );
 	},
 
 	changeSlide: function ( slide_no ) {
@@ -5454,7 +5455,7 @@ _.extend( app, {
 				"left": "left",
 				"right": "right",
 				"pageup": "left",
-				"pagedown": "right" 
+				"pagedown": "right"
 			},
 			$document = $( document );
 
@@ -5467,7 +5468,7 @@ _.extend( app, {
 			});
 		});
 
-		$( document )
+		$document
 			.on( "click", "[data-role=\"section-links\"] a", function ( e ) {
 				var target = e.target.innerHTML;
 				e.preventDefault();
@@ -5491,7 +5492,7 @@ _.extend( app, {
 				}
 
 				_.extend( states[ key ], obj );
-			});	
+			});
 		}
 
 		app.plugins.push( options.name );
@@ -5505,6 +5506,7 @@ _.extend( app, {
 return app;
 
 });
+
 require.config({
 	paths: {
 		// Infrastructure
@@ -7026,10 +7028,12 @@ plugin = {
 
 		// Attach theme CSS
 		$( "<link>", {
-			href: "themes/" + app.deck.get( "theme" ) + "/demo-theme.css",
+			href: "crosslink/themes/" + app.deck.get( "theme" ) + "/demo-theme.css",
 			rel: "stylesheet",
 			media: "all"
 		}).appendTo( $( demo_window.document ).find( "head" ) );
+
+		app.publish( "demo.attached", demo_window );
 
 		if ( $actions.is( ".demo-shown" ) && current.get( "demo-autorun" ) ) {
 			this.runDemo();
@@ -7043,6 +7047,8 @@ plugin = {
 		$actions.addClass( "demo-ran" );
 
 		demo_window.runCode( js );
+
+		app.publish( "demo.ran", demo_window );
 	},
 
 	resetDemo: function () {
@@ -7086,7 +7092,7 @@ plugin = {
 	},
 
 	insertiFrame: function () {
-		$content.html( "<iframe src='./crosslink/plugins/livedemo/livedemo.html?1'></iframe>" );
+		$content.html( "<iframe src='crosslink/plugins/livedemo/livedemo.html?1'></iframe>" );
 	},
 
 	getCode: function ( slide, lang ) {
@@ -7196,6 +7202,55 @@ var plugin = {
 };
 
 return plugin;
+});
+define('text!plugins/notify/notify.tmpl.html',[],function () { return '<div class="alert alert-info" hidden>\n\t<a class="close" data-dismiss="alert">&times;</a>\n\t<%= message %>\n</div>';});
+
+define('plugins/notify/notify',[ "js/app/app", "jquery", "underscore", "text!./notify.tmpl.html" ], function ( app, $, _, template ) {
+
+	var $agenda, $items, $current, agenda, demo_window;
+
+	template = _.template( template );
+
+	notify = {
+		name: "Notify",
+
+		initialize: function () {
+			var context = this;
+			_.bindAll( context, "render", "remove" );
+
+			app.subscribe( "demo.attached", function ( win ) {
+				demo_window = win;
+
+				$( "<link>", {
+					href: "crosslink/plugins/notify/css/notify.css",
+					rel: "stylesheet",
+					media: "all"
+				}).appendTo( demo_window.document.head );
+
+				demo_window.console.log = context.render;
+				app.subscribe( "app.changeslide", context.remove );
+			} );
+		},
+
+		render: function ( message ) {
+			$( demo_window.document.body )
+				.append( template( { message: message } ) )
+				.on( "click", ".alert .close", function () {
+					$( this ).closest( ".alert" ).remove();
+				} )
+				.find( ".alert" )
+					.fadeIn( "slow" );
+		},
+
+		remove: function () {
+			demo_window && demo_window.document && demo_window.document.body &&
+			$( demo_window.document.body )
+				.find( ".alert" )
+					.remove();
+		}
+	};
+
+	return notify;
 });
 ( function ( app, $, amplify ) {
 

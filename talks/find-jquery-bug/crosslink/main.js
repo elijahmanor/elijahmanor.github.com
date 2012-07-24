@@ -6785,7 +6785,8 @@ define('text!plugins/agenda/agenda.tmpl.html',[],function () { return '<ul>\n\t<
 
 define('plugins/agenda/agenda',[ "js/app/app", "jquery", "hotkeys", "dotimeout", "text!./agenda.tmpl.html" ], function ( app, $, hotkeys, dotimeout, template ) {
 
-	var $agenda, $items, $current, agenda;
+
+	var $agenda, $items, $current, $agendaList, agenda;
 
 	template = _.template( template );
 
@@ -6845,6 +6846,10 @@ define('plugins/agenda/agenda',[ "js/app/app", "jquery", "hotkeys", "dotimeout",
 				}
 			});
 
+			$agendaList = $agenda.find( "ul" );
+			$agendaList.scroll( function() {
+				console.log( this.scrollLeft );
+			});
 			$items = $agenda.find( "li" );
 
 			$items.filter( ".current" ).addClass( "focus" );
@@ -6864,6 +6869,18 @@ define('plugins/agenda/agenda',[ "js/app/app", "jquery", "hotkeys", "dotimeout",
 			}	
 		},
 
+		scroll: function( direction ) {
+			var scrollWidth = $agendaList[ 0 ].scrollWidth,
+				numberOfSlides = $items.length,
+				currentindex = $items.index( $current ) + 1,
+				agendaPadding = parseInt( $agendaList.css( "padding" ), 10 ),
+				widthOfSlide = $current.outerWidth( true ),
+				scrollPosition = scrollWidth * currentindex / numberOfSlides - widthOfSlide - ( 4 * currentindex );
+
+			$agendaList.scrollLeft( scrollPosition );
+			console.log( $agendaList[ 0 ].scrollLeft );
+		},
+
 		states: {
 			"initialize": {
 		
@@ -6873,6 +6890,7 @@ define('plugins/agenda/agenda',[ "js/app/app", "jquery", "hotkeys", "dotimeout",
 					$agenda.addClass( "up" );
 					$current = $items.filter( ".focus" );
 					app.state_machine.set( "agenda" );	
+					agenda.scroll();
 				},
 
 				"app.key.up": function () {
@@ -6886,7 +6904,7 @@ define('plugins/agenda/agenda',[ "js/app/app", "jquery", "hotkeys", "dotimeout",
 			"agenda": {
 				"agenda.close": function () {
 					$agenda.removeClass( "up" );
-					app.state_machine.set( "slides" );	
+					app.state_machine.set( "slides" );
 				},
 
 				"app.key.down": function () {
@@ -6900,6 +6918,7 @@ define('plugins/agenda/agenda',[ "js/app/app", "jquery", "hotkeys", "dotimeout",
 						$next.addClass( "focus" );
 
 						$current = $next;
+						agenda.scroll();
 					}
 				},
 
@@ -6911,6 +6930,7 @@ define('plugins/agenda/agenda',[ "js/app/app", "jquery", "hotkeys", "dotimeout",
 						$prev.addClass( "focus" );
 
 						$current = $prev;
+						agenda.scroll();
 					}
 				},
 
