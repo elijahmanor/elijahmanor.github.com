@@ -331,8 +331,7 @@ var fluffy = new Pet({
 					</section>
 					<section>
 						<h2>Access Control</h2>
-						<pre class="javascript zoomTarget"><code>
-var Pet = Backbone.Model.extend({});
+						<pre class="javascript zoomTarget"><code>var Pet = Backbone.Model.extend({});
 
 var fluffy = new Pet({ 
   name: "Fluffy", 
@@ -344,11 +343,64 @@ fluffy.set("age", 3);
 fluffy.set({ name: "Coarse", color: "brown" });
 						</code></pre>
 					</section>
-					<section>
+					<style>
+.foldtr {
+  position: relative;
+}
+ 
+.foldtr:before {
+  content: "Draft";
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  color: #ccc;
+  -webkit-transform:rotate(45deg);
+  right: -12px;
+  z-index: 100;
+  text-transform: uppercase;
+  top: -18px;
+  right: 50px;
+  color: black;
+  font-weight: bold;
+  font-size: .4em;
+  border-bottom: 70px solid #eee;
+  /*
+  border-right: 70px solid transparent;
+  -webkit-box-shadow: -7px 7px 7px rgba(0,0,0,0.3);
+  -moz-box-shadow: -7px 7px 7px rgba(0,0,0,0.3);
+  */
+  box-shadow: -7px 7px 7px rgba(0,0,0,0.3);
+}
+ 
+.foldtr:after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  width: 0px;
+  height: 0px;
+  border-top: 69px solid lemonchiffon; 
+  border-left: 69px solid transparent;
+}
+					</style>
+					<section class="draft foldtr">
 						<h2>Computed Properties</h2>
-						<pre class="javascript zoomTarget"><code>
+						<pre class="javascript zoomTarget"><code>var Pet = Backbone.Model.extend({
+  description: function() {
+  	return this.get("name") + " is a " + 
+  	  this.get("age") + " year old " + 
+  	  this.get("color") + " " + this.get("breed");
+  }
+});
 
-						</code></pre>
+var fluffy = new Pet({
+  breed: "Ragamuffin", 
+  name: "Fluffy", 
+  age: 2, 
+  color: "white" 
+});
+
+fluffy.description();</code></pre>
 					</section>
 					<section>
 						<h2>Default Properties</h2>
