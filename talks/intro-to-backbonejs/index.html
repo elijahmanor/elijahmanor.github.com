@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Intro to Backbone.js</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<!--<link rel="stylesheet" href="lib/css/zenburn.css">-->
+		<link rel="stylesheet" href="./css/tomorrow-night-bright.css">
+
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<style>
+			.reveal pre { font-size: 0.5em; }
+			.reveal iframe {
+				display: block;
+				position: relative;
+				width: 90%;
+				margin: 15px auto;
+
+				text-align: left;
+				font-size: 0.55em;
+				font-family: monospace;
+				line-height: 1.2em;
+
+				word-wrap: break-word;
+
+				box-shadow: 0px 0px 6px rgba(0,0,0,0.3);
+			}
+
+			.reveal iframe {
+				overflow: auto;
+				max-height: 400px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<section>
+						<h1>Intro to Backbone.js</h1>
+						<div>
+							<img style="width: 275px; height: 275px;" src="http://i.imgur.com/Ud6OR.png">
+							<br>
+						</div>
+						<p>Created by <a href="http://elijahmanor.com">Elijah Manor</a> / <a href="http://twitter.com/elijahmanor">@elijahmanor</a></p>
+					</section>
+					<section>
+						<h2>Who am i not?</h2>
+						<div>
+							<img src="http://i.imgur.com/LEGZh.jpg"><br>
+						</div>
+						<h3 class="fragment" style="top: -282px;display: block;position: relative;font-size: 4em;color: red;-webkit-transform: rotate(-17deg);text-shadow: 4px 4px #ccc;">Elijah Wood</h3>
+					</section>
+					<section>
+						<h2>Who I AM?</h2>
+						<pre class="zoomTarget"><code>{
+	"name": "Elijah Manor",
+	"priorities" : [ "Christian", "Family", "Work" ],
+	"employer" : "appendTo",
+	"title" : [ "Senior Architect", "Trainer" ],
+	"tech" : [ "JavaScript", "jQuery", "HTML5", "CSS3" ],
+	"awards" : [
+		"Microsoft Regional Director",
+		"Microsoft ASP.NET MVP",
+		"ASPInsider"
+	],
+	"blog": "http://elijahmanor.com",
+	"email": "elijah.manor@gmail.com",
+	"social": [ "@elijahmanor" ]
+}</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>What is backbone.js?</h2>
+						<blockquote>Backbone.js gives structure to web applications by providing <strong><u>models</u></strong> with key-value binding and custom events, <strong><u>collections</u></strong> with a rich API of enumerable functions, <strong><u>views</u></strong> with declarative event handling, and connects it all to your existing API over a RESTful JSON interface.</blockquote>
+					</section>
+					<section>
+						<h2>Created by jeremy Ashkenas</h2>
+						<div style="text-align: center;">
+							<img src="http://i.imgur.com/Xw622.jpg"><br>
+						</div>
+						<ul style="top: 20%; position: absolute; right: 4em;">
+							<li class="fragment">Backbone.js</li>
+							<li class="fragment">Underscore.js</li>
+							<li class="fragment">CoffeeScript</li>
+						</ul>
+					</section>
+					<section>
+						<h2>current state of backbone.js</h2>
+						<div>
+							<div style="">
+								<ul>
+									<li class="fragment">
+										<a href="https://github.com/documentcloud/backbone" target="_blank">Active GitHub Community</a>
+										<ul>
+											<li>11k+ Watchers</li>
+											<li>1700+ Forks</li>
+										</ul>
+									</li>
+									<li class="fragment"><a href="http://backbonejs.org/" target="_blank">Well Documented</a></li>
+									<li class="fragment"><a href="http://backbonejs.org/docs/backbone.html" target="_blank">Annotated Source Code</a></li>
+									<li class="fragment">Blog posts</li>
+									<li class="fragment">Screen-casts</li>
+									<li class="fragment">Etc...</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+					<section>
+						<h2>Who uses backbone.js</h2>
+						<ul>
+							<li class="fragment">LinkedIn</li>
+							<li class="fragment">Trello</li>
+							<li class="fragment">Basecamp</li>
+							<li class="fragment">SoundCloud</li>
+							<li class="fragment">Pandora</li>
+							<li class="fragment">Foursquare</li>
+							<li class="fragment">Groupon</li>
+							<li class="fragment">Khan Academy</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>without backbone.js</h2>
+						<div>
+							<ul>
+								<li class="fragment">Tightly Coupled Components</li>
+								<li class="fragment">Spaghetti&nbsp;Code</li>
+								<li class="fragment">Difficult to Manage</li>
+								<li class="fragment">Un-testable Logic</li>
+							</ul>
+							<div style="text-align: left;">
+								<br>
+							</div>
+						</div>
+						<div class="fragment" style="text-align: center;">End Result...</div>
+						<div class="fragment" style="text-align: center;">
+							<img src="./img/pretty-sure-this-lady-has-no-bones1.gif">
+							<br>
+						</div>
+					</section>
+					<section>
+						<h2>with backbone.js</h2>
+						<div>
+							<ul>
+								<li class="fragment">Loosely Coupled Components</li>
+								<li class="fragment">Separation of Concerns</li>
+								<li class="fragment">Easier to to Manage</li>
+								<li class="fragment">Testable Logic</li>
+							</ul>
+							<div style="text-align: left;">
+								<br>
+							</div>
+						</div>
+						<div class="fragment" style="text-align: center;">End Result...</div>
+						<div class="fragment" style="text-align: center;">
+							<img style="height: 225px;" src="./img/will-and-carlton-dancing-fresh-prince-of-bel-air.gif">
+							<br>
+						</div>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Weather Application v1</h2>
+						<iframe style="height: 400px;" src="./demo/weather-jquery.html"></iframe>
+					</section>
+					<section>
+						<h2>Markup</h2>
+						<pre class="zoomTarget"><code>&lt;div class="navbar navbar-inverse"&gt;
+  &lt;div class="navbar-inner"&gt;
+	&lt;div class="container"&gt;
+	  &lt;a class="brand" href="#"&gt;Weather&lt;/a&gt;
+	&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;form id="weather" class="form-search"&gt;
+  &lt;input type="text" id="zip" 
+	placeholder="Enter a zip code…" 
+	class="input-medium search-query"&gt;
+  &lt;button id="search" type="submit" class="btn"&gt;
+	Search&lt;/button&gt;
+  &lt;div class="alert alert-error"&gt;&lt;/div&gt;
+&lt;/form&gt;
+	
+&lt;table id="output" class="table table-striped"&gt;
+	&lt;caption&gt;Forecast Results&lt;/caption&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;&lt;/th&gt;
+			&lt;th&gt;City&lt;/th&gt;
+			&lt;th&gt;State&lt;/th&gt;
+			&lt;th&gt;Zip&lt;/th&gt;
+			&lt;th&gt;Temperature&lt;/th&gt;
+			&lt;th&gt;&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+					</section>
+					<section>
+						<h2>Reaction</h2>
+						<div style="text-align: center;">
+							<img style="height: 225px;" src="./img/cheers-slow-clap.gif">
+							<br>
+						</div>
+						<p class="fragment">But wait, show me the code...</p>
+					</section>
+					<section id="bad-javascript">
+						<h2>Code</h2>
+						<pre class="javascript zoomTarget"><code>$(document).ready(function($) {
+  $("#search").on("click", function(e) {
+	var $zip = $("#zip"), 
+	  value = $zip.val();
+
+	e.preventDefault();        
+	if (value) { 
+	  $.ajax({
+		url: "http://api.wunderground.com/api/7eaec3b21b154448/conditions/q/" + $zip.val() + ".json",
+		dataType: "jsonp",
+		success: function(data) {
+		  var mark = data.current_observation,
+			location = mark.display_location,
+			image = mark.image,
+			$row = $("&lt;tr&gt;&lt;/tr&gt;"),
+			$output = $("#output");
+					
+		  $(".alert").fadeOut("slow");
+		  $row.append($("&lt;td /&gt;", {
+			html: "&lt;img src='" + mark.icon_url + "' /&gt;&lt;/td&gt;"
+		  }));
+		  $row.append($("&lt;td /&gt;", {text: location.city}));
+		  $row.append($("&lt;td /&gt;", {text: location.state_name}));
+		  $row.append($("&lt;td /&gt;", {text: location.zip}));
+		  $row.append($("&lt;td /&gt;", {text: mark.temp_f + "°F"}));
+		  $row.append($("&lt;td /&gt;", {
+			html: '&lt;a href="#"&gt;&lt;i class="icon-trash"&gt;&lt;/i&gt;&lt;/a&gt;' 
+		  })).on("click", function(e) {
+			e.preventDefault();
+			$(this).closest("tr").remove(); 
+			if (!$output.find("tbody tr").length) {
+			  $output.fadeOut("slow");
+			}                                
+		  });
+			
+		  $output.find("tbody").append($row);
+		  $output.fadeIn("show");
+		  $("#zip").val("");
+		}
+	  });
+	} else {
+	  $(".alert").text("Please enter zip code").fadeIn("slow");
+	}
+  });
+});</code></pre>
+					</section>
+					<section>
+						<h2>Reaction</h2>
+						<div style="text-align: center;">
+							<img class="fragment" style="height: 225px;" src="./img/wat-mouse.gif">
+							<img class="fragment" style="height: 225px;" src="./img/angry-panda.gif">
+						</div>
+						<p class="fragment">What!?! Surely we can do better than that...</p>
+					</section>
+				</section>
+				<section>
+					<section id="various-parts">
+						<style>
+							#various-parts li { padding-bottom: .75em; }
+						</style>
+						<h2>Explain various parts of Backbone.js</h2>
+						<img src="./img/backbone-pn.png" style="float: left;">
+						<ul style="display: block; text-align: left; margin: .75em 0 0 7em; list-style-type:none;">
+							<li class="fragment">&larr; Model</li>
+							<li class="fragment">&larr; Collection</li>
+							<li class="fragment">&larr; View</li>
+							<li class="fragment">&larr; Router</li>
+							<li class="fragment">&larr; Event</li>
+							<li class="fragment">&larr; History</li>
+							<li class="fragment">&larr; Sync</li>
+						</ul>
+					</section>
+					<section>
+						<h2>MVC or MVP?</h2>
+						<img class="zoomTarget" src="./img/mvc_mvp.jpg" />
+						<small>Image from <a href="http://joel.inpointform.net/software-development/mvvm-vs-mvp-vs-mvc-the-differences-explained/" target="_blank">Joel in Point Form</a></small>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Model</h2>
+						<blockquote>Models are the heart of any JavaScript application, containing the interactive data as well as a large part of the logic surrounding it: <strong><u>conversions</u></strong>, <strong><u>validations</u></strong>, <strong><u>computed properties</u></strong>, and <strong><u>access control</u></strong>. You extend Backbone.Model with your domain-specific methods, and Model provides a basic set of functionality for managing changes.</blockquote>
+					</section>
+					<section>
+						<h2>Creating</h2>
+						<pre class="javascript zoomTarget"><code>var Pet = Backbone.Model.extend({});
+
+var fluffy = new Pet({ 
+  name: "Fluffy", 
+  age: 2, 
+  color: "white" 
+});</code></pre>
+					</section>
+					<section>
+						<h2>Access Control</h2>
+						<pre class="javascript zoomTarget"><code>
+var Pet = Backbone.Model.extend({});
+
+var fluffy = new Pet({ 
+  name: "Fluffy", 
+  age: 2, 
+  color: "white" 
+});
+
+fluffy.set("age", 3);
+fluffy.set({ name: "Coarse", color: "brown" });
+						</code></pre>
+					</section>
+					<section>
+						<h2>Computed Properties</h2>
+						<pre class="javascript zoomTarget"><code>
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>Default Properties</h2>
+						<pre class="javascript zoomTarget"><code>
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>Initialization</h2>
+						<pre class="javascript zoomTarget"><code>
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>Validations</h2>
+						<pre class="javascript zoomTarget"><code>
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>Conversions</h2>
+						<pre class="javascript zoomTarget"><code>
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>Weather Model</h2>
+						<pre class="javascript zoomTarget"><code>var Forecast = Backbone.Model.extend({
+	url: function() {
+		return "http://api.wunderground.com/api/7eaec3b21b154448/conditions/q/" + this.get("zip") + ".json";
+	},
+	parse : function( data, xhr ) {
+		var observation = data.current_observation;
+		return {
+			id: observation.display_location.zip,
+			url: observation.icon_url,
+			state: observation.display_location.state_name,
+			zip: observation.display_location.zip,
+			city: observation.display_location.city,
+			temperature: observation.temp_f    
+		};
+	},
+	sync: function(method, model, options){  
+		options.dataType = "jsonp";  
+		return Backbone.sync(method, model, options);  
+	},
+	validate: function (options) {
+		if (!options.zip) {
+		   return "Please enter a zip code";
+		}
+	}
+});</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Collection</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>View</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Event</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Sync</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Router</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>History</h2>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Weather Application v2</h2>
+						<iframe style="height: 400px;" src="./demo/weather-backbone.html"></iframe>
+					</section>
+					<section>
+						<h2>Markup</h2>
+						<pre class="zoomTarget"><code>&lt;div class="navbar navbar-inverse"&gt;
+  &lt;div class="navbar-inner"&gt;
+    &lt;div class="container"&gt;
+      &lt;a class="brand" href="#"&gt;Weather&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;form id="weather" class="form-search"&gt;
+    &lt;input type="text" id="zip" placeholder="Enter a zip code…" class="input-medium search-query"&gt;
+    &lt;button id="search" type="submit" class="btn"&gt;Search&lt;/button&gt;
+    &lt;div class="alert alert-error"&gt;&lt;/div&gt;
+&lt;/form&gt;
+    
+&lt;table id="output" class="table table-striped"&gt;
+    &lt;caption&gt;Forecast Results&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;&lt;/th&gt;
+            &lt;th&gt;City&lt;/th&gt;
+            &lt;th&gt;State&lt;/th&gt;
+            &lt;th&gt;Zip&lt;/th&gt;
+            &lt;th&gt;Temperature&lt;/th&gt;
+            &lt;th&gt;&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;script type="text/template" id="forcast-template"&gt;
+    &lt;td&gt;&lt;img src="&lt;%= url %&gt;" /&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;%= city %&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;%= state %&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;%= zip %&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;%= temperature %&gt;°F&lt;/td&gt;
+    &lt;td&gt;&lt;a href="#"&gt;&lt;i class="delete icon-trash"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/script&gt;</code></pre>
+					</section>
+					<section id="bad-javascript">
+						<h2>Code</h2>
+						<pre class="javascript zoomTarget"><code>window.Forecast = Backbone.Model.extend({
+    url: function() {
+        return "http://api.wunderground.com/api/7eaec3b21b154448/conditions/q/" + this.get("zip") + ".json";
+    },
+    parse : function( data, xhr ) {
+        var observation = data.current_observation;
+        return {
+            id: observation.display_location.zip,
+            url: observation.icon_url,
+            state: observation.display_location.state_name,
+            zip: observation.display_location.zip,
+            city: observation.display_location.city,
+            temperature: observation.temp_f    
+        };
+    },
+    sync: function(method, model, options){  
+        options.dataType = "jsonp";  
+        return Backbone.sync(method, model, options);  
+    },
+    validate: function (options) {
+        if (!options.zip) {
+           return "Please enter a zip code";
+        }
+    }
+});
+
+window.Forecasts = Backbone.Collection.extend({
+    model: Forecast
+});
+
+window.SearchView = Backbone.View.extend({
+    events: {
+        "click #search": "addZip"
+    },
+    initialize: function() {
+        _.bindAll(this, "toggleError");
+        this.collection.on("add", this.clear, this);
+        this.collection.on("add", this.update, this);
+    },
+    addZip: function(e) {
+        e.preventDefault();
+        
+        if ( this.collection.create({zip: this.$("#zip").val()}, {error: this.toggleError}) ) {
+            this.toggleError();            
+        }
+    },
+    update: function(model) {
+        model.fetch();
+    },
+    clear: function() {
+        this.$("#zip").val("");
+    },
+    toggleError: function(model, error) {
+        this.$(".alert").text(error).toggle(!!error);
+    }
+});
+
+var ForecastView = Backbone.View.extend({
+    events: {
+        "click .delete": "destroy"
+    },
+    initialize: function() {
+        this.collection.on("add", this.render, this);
+        this.collection.on("remove", this.remove, this);
+    },
+    render: function(model) {
+        var view = new ForecastItemView({id: model.get("zip"), model: model});
+        this.$("tbody").append(view.el).closest("table").fadeIn("slow");
+        return this;
+    },
+    remove: function(model) {
+        $( "#" + model.get("zip") ).remove();
+        if ( !this.collection.length ) {
+            this.$el.fadeOut("slow");            
+        }
+    },
+    destroy: function(e) {
+        var id = $(e.currentTarget).closest("tr").attr("id"),
+            model = this.collection.get(id);
+        
+        this.collection.remove(model);
+    }
+});
+
+var ForecastItemView = Backbone.View.extend({
+    tagName: "tr",
+    template: _.template($("#forcast-template").html()),
+
+    initialize: function() {
+        _.bindAll(this, "render");
+        this.model.fetch({success: this.render})        
+    },
+    render: function(model) {
+        var content = this.template(model.toJSON());
+        this.$el.html(content);
+        return this;      
+    }
+});
+
+$(document).ready(function() {
+    var forecasts = new Forecasts();
+    window.searchView = new SearchView({
+        el: $("#weather"),
+        collection: forecasts
+    });
+    window.forcastView = new ForecastView({
+        el: $("#output"),
+        collection: forecasts
+    });
+});​</code></pre>
+					</section>
+					<section>
+						<h2>Reaction</h2>
+						<div style="text-align: center;">
+							<img class="fragment" style="height: 225px;" src="./img/jonah-hill-excited.gif">
+							<img class="fragment" style="height: 225px;" src="./img/dumb-dumber.gif">
+							<img class="fragment" style="height: 225px;" src="./img/yoda.gif" />
+							<img class="fragment" style="height: 225px;" src="./img/office-dance.gif" />
+						</div>
+						<p class="fragment">Now, that is much better!</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Additional Resources</h2>
+					</section>
+					<section>
+						<h2>Extending Backbone.js</h2>
+						<div>
+							<ul>
+								<li>Model
+									<ul>
+										<li>Backbone.Validation</li>
+									</ul>
+								</li>
+								<li>Storage
+									<ul>
+										<li>Backbone.localStorage</li>
+										<li>Backbone.Offline</li>
+									</ul>
+								</li>
+								<li>View
+									<ul>
+										<li>LayoutManager</li>
+										<li>Backbone.Marionette</li>
+										<li>Backbone.Stickit</li>
+									</ul>
+								</li>
+								<li>Frameworks
+									<ul>
+										<li>Backbone Boilerplate</li>
+									</ul>
+								</li>
+								<li><a href="https://github.com/documentcloud/backbone/wiki/Extensions,-Plugins,-Resources" target="_blank">etc...</a></li>
+							</ul>
+						</div>
+					</section>
+				</section>
+				<section>
+					<h2>Screencasts</h2>
+					<div>
+						<ul>
+							<li>peepcode</li>
+							<li>http://pragprog.com/screencasts/v-dback/hands-on-backbone-js</li>
+							<li>http://backbonescreencasts.com/</li>
+							<li>http://www.pluralsight.com/training/Courses/TableOfContents/backbone-fundamentals</li>
+							<li>etc...</li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<h2>Questions?</h2>
+					<div style="">
+						<h3 style="font-weight: bold; font-family: courier; text-align: left; font-size: 1em;width: 75%;margin: 0px auto;">
+							<a href="http://elijahmanor.com" targer="_blank">http://elijahmanor.com</a><br/>
+	  						<a href="http://twitter.com/elijahmanor" targer="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@elijahmanor</a><br/>
+	             			<a href="mailto:elijahmanor@gmail.com" targer="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elijahmanor@gmail.com</a>
+						</h3>
+					</div>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script src="js/jquery.zoomooz.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
