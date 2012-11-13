@@ -12,12 +12,16 @@
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
+		<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
+
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/default.css" id="theme">
 
 		<!-- For syntax highlighting -->
 		<!--<link rel="stylesheet" href="lib/css/zenburn.css">-->
 		<link rel="stylesheet" href="./css/tomorrow-night-bright.css">
+
+		<!--<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css">-->
 
 		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 
@@ -321,17 +325,19 @@
 					</section>
 					<section>
 						<h2>Creating</h2>
-						<pre class="javascript zoomTarget"><code>var Pet = Backbone.Model.extend({});
+						<pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({});
 
 var fluffy = new Pet({ 
   name: "Fluffy", 
   age: 2, 
   color: "white" 
-});</code></pre>
+});
+
+console.log( fluffy.get( "name" ) );</code></pre>
 					</section>
 					<section>
 						<h2>Access Control</h2>
-						<pre class="javascript zoomTarget"><code>var Pet = Backbone.Model.extend({});
+						<pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({});
 
 var fluffy = new Pet({ 
   name: "Fluffy", 
@@ -341,7 +347,8 @@ var fluffy = new Pet({
 
 fluffy.set("age", 3);
 fluffy.set({ name: "Coarse", color: "brown" });
-						</code></pre>
+
+console.log( fluffy.get( "color" ) );</code></pre>
 					</section>
 					<style>
 .foldtr {
@@ -383,9 +390,9 @@ fluffy.set({ name: "Coarse", color: "brown" });
   border-left: 69px solid transparent;
 }
 					</style>
-					<section class="draft foldtr">
+					<section id="computedProperties" class="draft foldtr">
 						<h2>Computed Properties</h2>
-						<pre class="javascript zoomTarget"><code>var Pet = Backbone.Model.extend({
+						<pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({
   description: function() {
   	return this.get("name") + " is a " + 
   	  this.get("age") + " year old " + 
@@ -400,7 +407,41 @@ var fluffy = new Pet({
   color: "white" 
 });
 
-fluffy.description();</code></pre>
+console.log( fluffy.description() );</code></pre>
+<style>
+section .alert { text-align: left; padding-left: 15px; margin: auto; margin-bottom: 15px; width: 88%; font-size: .8em; }
+section .alert .close { top: 2px; right: 7px; }
+section .run { position: fixed; top: 7em; right: 4em; z-index: 100; }
+/* section .run { position: fixed; bottom: 1.8em; right: -3.6em; width: 27px; height: 24px; } */
+</style>
+<script>
+$(function() {
+	$().alert(); 
+	$(document).on("click", "section.present:last .alert button", function() { 
+		$(this).closest(".alert").alert("close"); 
+	});
+    $(".runnable").each(function() {
+    	var code = $(this).find("code").text();
+        var button = '<button class="run">Run</button>';
+        $(button).bind("click", function() {
+        	eval(code);
+        }).insertAfter(this);
+    });
+    $(document).on("keyup", function(e) {
+    	var character = String.fromCharCode(e.which);
+    	if ( character === "R" ) {
+    		$("section.present:last .run").trigger("click");
+    	} else if ( character == "C" ) {
+    		$("section.present:last .close").trigger("click");
+    	}
+    });
+});
+console.log_old = console.log;
+console.log = function(message) {
+	$('<div class="alert"><button type="button" class="close" data-dismiss="alert">×</button><strong>&gt;&nbsp;</strong><span>' + message + '</span></div>').insertAfter("section.present:last .runnable").alert();
+	console.log_old.apply(this, arguments);
+}
+</script>
 					</section>
 					<section>
 						<h2>Default Properties</h2>
@@ -722,6 +763,9 @@ $(document).ready(function() {
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
 		<script src="js/jquery.zoomooz.min.js"></script>
+		<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js"></script>
+		<script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+		<script src="http://documentcloud.github.com/backbone/backbone-min.js"></script>
 
 		<script>
 
