@@ -345,7 +345,7 @@ var fluffy = new Pet({
   color: "white" 
 });
 
-fluffy.set("age", 3);
+fluffy.set( "age", 3 );
 fluffy.set({ name: "Coarse", color: "brown" });
 
 console.log( fluffy.get( "color" ) );</code></pre>
@@ -371,11 +371,6 @@ console.log( fluffy.get( "color" ) );</code></pre>
   font-weight: bold;
   font-size: .4em;
   border-bottom: 70px solid #eee;
-  /*
-  border-right: 70px solid transparent;
-  -webkit-box-shadow: -7px 7px 7px rgba(0,0,0,0.3);
-  -moz-box-shadow: -7px 7px 7px rgba(0,0,0,0.3);
-  */
   box-shadow: -7px 7px 7px rgba(0,0,0,0.3);
 }
  
@@ -394,9 +389,9 @@ console.log( fluffy.get( "color" ) );</code></pre>
 						<h2>Computed Properties</h2>
 						<pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({
   description: function() {
-  	return this.get("name") + " is a " + 
-  	  this.get("age") + " year old " + 
-  	  this.get("color") + " " + this.get("breed");
+    return this.get( "name" ) + " is a " + 
+      this.get( "age" ) + " year old " + 
+      this.get( "color" ) + " " + this.get( "breed" );
   }
 });
 
@@ -412,28 +407,35 @@ console.log( fluffy.description() );</code></pre>
 section .alert { text-align: left; padding-left: 15px; margin: auto; margin-bottom: 15px; width: 88%; font-size: .8em; }
 section .alert .close { top: 2px; right: 7px; }
 section .run { position: fixed; top: 7em; right: 4em; z-index: 100; }
-/* section .run { position: fixed; bottom: 1.8em; right: -3.6em; width: 27px; height: 24px; } */
 </style>
 <script>
 $(function() {
 	$().alert(); 
-	$(document).on("click", "section.present:last .alert button", function() { 
-		$(this).closest(".alert").alert("close"); 
+	$( document ).on( "click", "section.present:last .alert button", function() { 
+		$( this ).closest( ".alert" ).alert( "close" ); 
 	});
-    $(".runnable").each(function() {
-    	var code = $(this).find("code").text();
-        var button = '<button class="run">Run</button>';
-        $(button).bind("click", function() {
-        	eval(code);
-        }).insertAfter(this);
+    $( ".runnable" ).each(function() {
+    	var code = $( this ).find( "code" ).text(),
+        	button = '<button class="run">Run</button>';
+        $( button ).bind( "click", function() {
+        	eval( code );
+        }).insertAfter( this );
     });
-    $(document).on("keyup", function(e) {
-    	var character = String.fromCharCode(e.which);
+    $( document ).on( "keyup", function( e ) {
+    	var character = String.fromCharCode( e.which );
     	if ( character === "R" ) {
-    		$("section.present:last .run").trigger("click");
+    		$( "section.present:last .run" ).trigger( "click" );
+    		$( "section.present:last .card" ).addClass( "flipped" );
     	} else if ( character == "C" ) {
-    		$("section.present:last .close").trigger("click");
+    		$( "section.present:last .close" ).trigger( "click" );
+    		$( "section.present:last .card" ).removeClass( "flipped" );
     	}
+    });
+    $( ".flip" ).click(function() {
+        $( this ).find( ".card" ).addClass( "flipped" ).mouseleave(function(){
+            $( this ).removeClass( "flipped" );
+        });
+        return false;
     });
 });
 console.log_old = console.log;
@@ -445,65 +447,226 @@ console.log = function(message) {
 					</section>
 					<section>
 						<h2>Default Properties</h2>
-						<pre class="javascript zoomTarget"><code>
+						<pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({
+  defaults: {
+    breed: "Munchkin",
+    color: "White"
+  }
+});
 
-						</code></pre>
+var tiny = new Pet({ 
+  name: "Tiny"
+});
+
+console.log( tiny.get( "breed" ) );</code></pre>
 					</section>
 					<section>
 						<h2>Initialization</h2>
-						<pre class="javascript zoomTarget"><code>
+						<pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({
+  defaults: {
+    breed: "Munchkin",
+    color: "White"
+  },
+  initialize: function() {
+    console.log( this.description() );
+  },
+  description: function() {
+    return this.get( "name" ) + " is a " +  
+      this.get( "color" ) + " " + this.get( "breed" );
+  }
+});
 
-						</code></pre>
+var tiny = new Pet({ 
+  name: "Tiny",
+  color: "Gray"
+});</code></pre>
 					</section>
 					<section>
 						<h2>Validations</h2>
-						<pre class="javascript zoomTarget"><code>
+						<pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({
+  validate: function( options ) {
+    if ( options.age && !_.isNumber( options.age ) ) {
+      return "Age should be a number";
+    }
+  }
+});
 
-						</code></pre>
-					</section>
-					<section>
-						<h2>Conversions</h2>
-						<pre class="javascript zoomTarget"><code>
+var tiny = new Pet({ 
+  color: "Gray"
+});
 
-						</code></pre>
+tiny.on( "error", function( model, error ) {
+  console.log( error );
+});
+
+tiny.set( "age", "newborn" );</code></pre>
 					</section>
 					<section>
 						<h2>Weather Model</h2>
 						<pre class="javascript zoomTarget"><code>var Forecast = Backbone.Model.extend({
-	url: function() {
-		return "http://api.wunderground.com/api/7eaec3b21b154448/conditions/q/" + this.get("zip") + ".json";
-	},
-	parse : function( data, xhr ) {
-		var observation = data.current_observation;
-		return {
-			id: observation.display_location.zip,
-			url: observation.icon_url,
-			state: observation.display_location.state_name,
-			zip: observation.display_location.zip,
-			city: observation.display_location.city,
-			temperature: observation.temp_f    
-		};
-	},
-	sync: function(method, model, options){  
-		options.dataType = "jsonp";  
-		return Backbone.sync(method, model, options);  
-	},
-	validate: function (options) {
-		if (!options.zip) {
-		   return "Please enter a zip code";
-		}
-	}
+  validate: function ( options ) {
+    if ( !options.zip ) {
+      return "Please enter zip code";
+    }
+  }
 });</code></pre>
+						<p>We will be adding more to this once we discuss the <code>Sync</code> section.</p>
 					</section>
 				</section>
 				<section>
 					<section>
 						<h2>Collection</h2>
+						<blockquote>Collections are ordered sets of models. You can bind <strong><u>"change"</u></strong> events to be notified when any model in the collection has been modified, listen for <strong><u>"add"</u></strong> and <strong><u>"remove"</u></strong> events, fetch the collection from the server, and use a full suite of Underscore.js methods.</blockquote>
+					</section>
+					<section>
+						<h2>Based on a Model</h2>
+						<pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({
+  defaults: { "color": "Brown" }
+}); 
+
+var Pets = Backbone.Collection.extend({
+  model: Pet 
+});
+
+var cats = new Pets({ "name": "Dusty", "type": "Cat" }),
+  dogs = new Pets();
+
+dogs.add({ "name": "Rex", "type": "Dog" });
+
+console.log( JSON.stringify( cats ) );
+console.log( JSON.stringify( dogs ) );</code></pre>
+					</section>
+					<section class="draft foldtr">
+						<h2>Events</h2>
+						<ul>
+							<li>add</li>
+							<li>remove</li>
+							<li>reset</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Events Example</h2>
+						<pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({
+  defaults: { breed: "Munchkin" }
+}); 
+
+var Cats = Backbone.Collection.extend({   
+  model: Pet 
+});
+
+var cats = new Cats([ 
+  { name: "Midnight", color: "Black" }, 
+  { name: "Frosty", color: "White" } 
+]);
+
+cats.on( "add", function( cat ) {
+  console.log( cat.get( "name" ) + " was added" );
+});
+
+cats.add({ name: "Dusty", color: "Brown" });</code></pre>
+					</section>
+					<section class="draft foldtr"><h2>Get Item By ID</h2></section>
+					<section class="draft foldtr"><h2>Get Item By Index</h2></section>
+					<section class="draft foldtr"><h2>Manipulate with Underscore</h2></section>
+					<section>
+						<h2>Weather Model</h2>
+						<pre class="javascript zoomTarget"><code>var Forecasts = Backbone.Collection.extend({
+  model: Forecast
+});</code></pre>
 					</section>
 				</section>
 				<section>
 					<section>
 						<h2>View</h2>
+						<blockquote>Backbone views are almost more convention than they are code — they don't determine anything about your HTML or CSS for you, and can be used with any <strong><u>JavaScript templating library</u></strong>. The general idea is to <strong></u>organize</u></strong> your interface into <strong><u>logical views</u></strong>, <strong><u>backed by models</u></strong>, each of which can be <strong><u>updated independently when the model changes</u></strong>, without having to redraw the page.</blockquote>
+					</section>
+					<section>
+						<h2>Using an Existing Element</h2>
+						<pre class="javascript zoomTarget"><code>var PetView = Backbone.View.extend({
+  el: "#main"
+});</code></pre>
+					</section>
+					<section>
+						<h2>Using a New Element</h2>
+						<pre class="javascript zoomTarget"><code>var PetView = Backbone.View.extend({
+  tagName: "section"
+});</code></pre>
+						<pre class="javascript zoomTarget"><code>var PetItemView = Backbone.View.extend({
+  className: "pet-item"
+});</code></pre>
+						<pre class="javascript zoomTarget"><code>var CartView = Backbone.View.extend({
+  id: "pet-cart"
+});</code></pre>
+					</section>
+					<section class="draft foldtr">
+						<h2>Special Properties</h2>
+						<ul>
+							<li>this.el</li>
+							<li>this.$el</li>
+							<li>this.$( "selector" )</li>
+						</ul>
+					</section>
+					<section class="draft foldtr">
+						<h2>Render</h2>
+						<pre class="javascript zoomTarget"><code>var PetView = Backbone.View.extend({
+  tagName: "h1",
+  render: function() {
+    this.$el.html( "Pet Store" ).appendTo( "body" );
+    return this;
+  }
+});
+
+var view = new PetView();
+
+view.render();</code></pre>
+						<pre class="html zoomTarget fragment"><code>&lt;-- Generated Output --&gt;
+&lt;h1&gt;Pet Store&lt;/h1&gt;</code></pre>	
+					</section>
+					<section class="draft foldtr">
+						<h2>Rendering a Template</h2>
+						<pre class="html zoomTarget"><code><script type="text/template" id="pet-item-template">
+  <h3><%= name %></h3>
+  <p><%= type %></p>
+</script></code></pre>
+						<pre class="javascript zoomTarget"><code>var PetItemView = Backbone.View.extend({
+  tagName: "li",
+  initialize: function() {
+    this.template = _.template( $( "#pet-item-template" ).html() );
+  },
+  render: function() {
+    var markup = this.template( this.model.toJSON() )
+    this.$el.html( markup );
+    return this;
+  }
+});
+
+var itemView = new PetItemView({ model: { name: "Fluffy", type: "Cat" } });
+
+itemview.render();</code></pre>
+						<pre class="html zoomTarget fragment"><code>&lt;-- Generated Output --&gt;
+&lt;div id="container"&gt;
+  &lt;h1&gt;Pet Store&lt;/h1&gt;
+  &lt;p&gt;Feel free to browse our wide assortement of creatures.&lt;/p&gt;
+&lt;/div&gt;</code></pre>	
+					</section>
+					<section class="draft foldtr">
+						<h2>Rendering Markup</h2>
+						<pre class="javascript zoomTarget"><code>var PetView = Backbone.View.extend({
+  el: "#container",
+  render: function() {
+    var markup = "&lt;h1&gt;Pet Store&lt;/h1&gt;&lt;p&gt;Feel free to browse our wide assortement of creatures.&lt;/p&gt;";
+    this.$el.html( markup );
+  }
+});
+
+var view = new PetView();
+
+view.render();</code></pre>
+						<pre class="html zoomTarget fragment"><code>&lt;-- Generated Output --&gt;
+&lt;div id="container"&gt;
+  &lt;h1&gt;Pet Store&lt;/h1&gt;
+  &lt;p&gt;Feel free to browse our wide assortement of creatures.&lt;/p&gt;
+&lt;/div&gt;</code></pre>	
 					</section>
 				</section>
 				<section>
@@ -596,7 +759,7 @@ console.log = function(message) {
     },
     validate: function (options) {
         if (!options.zip) {
-           return "Please enter a zip code";
+           return "Please enter zip code";
         }
     }
 });
