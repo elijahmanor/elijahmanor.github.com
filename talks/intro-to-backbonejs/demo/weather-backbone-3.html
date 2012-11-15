@@ -11,9 +11,11 @@ body { margin: 15px; }
 #output img { height: 20px; width: 20px; vertical-align: top; }
 #error { color: red; font-weight: bold; padding-left: 15px; }
 .alert { margin-top: 15px; display: none; }
+.form-horizontal .controls { position:relative; top:5px; }​
 </style>
 </head>
 <body>
+
 <div class="navbar navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
@@ -32,7 +34,7 @@ body { margin: 15px; }
     <caption>Forecast Results</caption>
     <thead>
         <tr>
-            <th></th>
+            <th></th><th></th>
             <th>City</th>
             <th>State</th>
             <th>Zip</th>
@@ -45,22 +47,46 @@ body { margin: 15px; }
 </table>
 
 <script type="text/template" id="forcast-template">
+    <td><a class="route" href="/detail/<%= zip %>"><i class="detail icon-search"></i></a></td>
     <td><img src="<%= url %>" /></td>
     <td><%= city %></td>
     <td><%= state %></td>
     <td><%= zip %></td>
-    <td><%= temperature %>°F</td>
-    <td><a href="#"><i class="delete icon-trash"></i></a></td>
+    <td><%= temperature %>°F</a></td>
+    <td><a href="#"><i class="delete icon-trash"></i></td>
 </script>
             
+<script type="text/template" id="forecast-detail-template">
+    <div class="modal hide fade">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3><%= city %>, <%= state %></h3>
+      </div>
+      <div class="modal-body">           
+        <div class="form-horizontal">
+          <div class="control-group">
+            <label class="control-label">Temperature</label>
+            <div class="controls"><%= temperature %>°F</div>
+          </div>
+          <div class="control-group">
+            <label class="control-label">Feels Like</label>
+            <div class="controls"><%= feelslike %>°F</div>
+          </div>
+          <div class="control-group">
+             <label class="control-label">Wind</label>
+             <div class="controls"><%= wind %> MPH</div>
+          </div>
+        </div>          
+      </div>
+    </div>
+</script>
 ​
-
 <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 <script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
 <script src="http://documentcloud.github.com/backbone/backbone-min.js"></script>
 <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js"></script>
 <script>
-// http://jsfiddle.net/vp2jv/
+// http://jsfiddle.net/9NaXb/
 
 window.Forecast = Backbone.Model.extend({
     url: function() {
@@ -74,7 +100,10 @@ window.Forecast = Backbone.Model.extend({
             state: observation.display_location.state_name,
             zip: observation.display_location.zip,
             city: observation.display_location.city,
-            temperature: observation.temp_f    
+            temperature: observation.temp_f,
+            wind: observation.wind_mph,
+            feelslike: observation.feelslike_f,
+            image: observation.image.url            
         };
     },
     sync: function(method, model, options){  
@@ -160,8 +189,59 @@ var ForecastItemView = Backbone.View.extend({
     }
 });
 
+var ForecastDetailView = Backbone.View.extend({
+    tagName: "div",
+    template: _.template($("#forecast-detail-template").html()),
+    events: {
+        "click button.close": "close"        
+    },
+    initialize: function() {
+        _.bindAll(this, "render");
+        vent.on("dialog.close", this.remove, this);
+    },
+    render: function() {
+        this.$dialog = $( this.template(this.model.toJSON()) );
+        this.$dialog.modal().appendTo( this.$el );
+        this.$el.appendTo( "body" );
+        return this;      
+    },
+    close: function() {
+        Backbone.history.navigate("/", true);
+    },
+    remove: function() {
+        this.$dialog.modal("hide").remove();
+        vent.off("dialog.close");
+    }
+});
+
+var vent = _.extend({}, Backbone.Events);
+
+var Router = Backbone.Router.extend({
+  routes: {
+    "": "home",
+    "detail/:id": "showDetail"
+  },
+  home: function() {
+    vent.trigger("dialog.close");      
+  },
+  showDetail: function(id) { 
+    var model = window.forecasts.get(id);
+    var detail = new ForecastDetailView({ model: model });
+    detail.render();
+  }
+});
+
+var router = new Router();
+
+$( document ).on( "click", "a.route", function( e ) {
+  e.preventDefault();
+  router.navigate( $(this).attr("href"), { trigger: true } );
+});
+
 $(document).ready(function() {
-    var forecasts = new Forecasts();
+    Backbone.history.start();
+    
+    window.forecasts = new Forecasts();
     window.searchView = new SearchView({
         el: $("#weather"),
         collection: forecasts
