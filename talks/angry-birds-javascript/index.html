@@ -1103,10 +1103,10 @@ define( [ "jquery", "backbone", "underscore", "channels", "text!movie-template.h
 					<section>
 						<h2>Which Standard Should I Follow?</h2>
 						<ul>
-							<li>Douglas Crockford's Code Conventions for the JavaScript Programming Language</li>
-							<li>Rich Waldron's (@rwaldron) Idiomatic.js - Principles of Writing Consistent, Idiomatic JavaScript ← Recommended</li>
-							<li>jQuery's JavaScript Style Guide ← Recommended</li>
-							<li>Google's JavaScript Style Guide</li>
+							<li class="fragment">Douglas Crockford's <a href="http://javascript.crockford.com/code.html" target="_blank">Code Conventions for the JavaScript Programming Language</a></li>
+							<li class="fragment"><strong>Rich Waldron's (<a href="http://twitter.com/rwaldron" target="_blank">@rwaldron</a>) <a href="https://github.com/rwldrn/idiomatic.js" target="_blank">Idiomatic.js - Principles of Writing Consistent, Idiomatic JavaScript</a> ← Recommended</strong></li>
+							<li class="fragment"><strong>jQuery's <a href="http://contribute.jquery.org/style-guide/js/?rdfrom=http%3A%2F%2Fdocs.jquery.com%2Fmw%2Findex.php%3Ftitle%3DJQuery_Core_Style_Guidelines%26redirect%3Dno" target="_blank">JavaScript Style Guide </a> ← Recommended</strong></li>
+							<li class="fragment">Google's <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml" target="_blank">JavaScript Style Guide</a></li>
 						</ul>
 					</section>
 
@@ -1584,16 +1584,16 @@ twitter.displayTweets = function( tweets ) {
 					</section>
 					<section>
 						<h2>What was Stolen by the Pigs?</h2>
-						<p>The birds knew how to program, but they never had a common nomenclature that they all understood. Big Brother Bird came along and documented a set of common Design Patterns in a book lovingly known as the Gang of Foul.</p>
+						<p>The birds knew how to program, but they never had a common nomenclature that they all understood. Big Brother Bird came along and documented a set of common Design Patterns in a book lovingly known as the Gang of ./img/.</p>
 					</section>
 
 					<section>
-						<h2>Gang of Foul: Singleton</h2>
+						<h2>Gang of Fowl: Singleton</h2>
 						<blockquote>There can be only one!</blockquote>
 					</section>
 
 					<section>
-						<h2>Gang of Foul: Singleton</h2>
+						<h2>Gang of Fowl: Singleton</h2>
 						<pre><code>
 var bird = {
     type: "Red",
@@ -1608,12 +1608,12 @@ var bird = {
 					</section>
 
 					<section>
-						<h2>Gang of Foul: Factory</h2>
+						<h2>Gang of Fowl: Factory</h2>
 						<blockquote>A factory is a way to create new objects without actually using the new keyword. The idea is that there is something abstracted away from you in the factory method. </blockquote>
 					</section>
 
 					<section>
-						<h2>Gang of Foul: Factory</h2>
+						<h2>Gang of Fowl: Factory</h2>
 						<pre><code>
 var Bird = function() {};
 Bird.factory = function( type ) {
@@ -1633,12 +1633,12 @@ var blueBird = Bird.factor( "Blue" );
 					</section>
 
 					<section>
-						<h2>Gang of Foul: Bridge</h2>
+						<h2>Gang of Fowl: Bridge</h2>
 						<blockquote>decouple an abstraction from its implementation so that the two can vary independently --http://en.wikipedia.org/wiki/Bridge_pattern</blockquote>
 					</section>
 
 					<section>
-						<h2>Gang of Foul: Bridge - Before</h2>
+						<h2>Gang of Fowl: Bridge - Before</h2>
 						<pre><code>
 // Not Bridged
 var getUrl = function() {
@@ -1656,7 +1656,7 @@ $( "a.ajax" ).on( "click", getUrl );
 					</section>
 
 					<section>
-						<h2>Gang of Foul: Bridge - After</h2>
+						<h2>Gang of Fowl: Bridge - After</h2>
 						<pre><code>
 // Bridged
 var getUrl = function( url, callback ) {
@@ -1681,12 +1681,12 @@ $( "a.ajax" ).on( "click", getUrlBridge );
 
 
 					<section>
-						<h2>Gang of Foul: Facade</h2>
+						<h2>Gang of Fowl: Facade</h2>
 						<blockquote>A facade is common place in front-end web development since there is so much cross-browser inconsistencies. A facade brings a common API to something that could vary under the covers.</blockquote>
 					</section>
 
 					<section>
-						<h2>Gang of Foul: Bridge</h2>
+						<h2>Gang of Fowl: Bridge</h2>
 						<pre><code>
 // Facade
 var addEvent = function( element, type, eventHandler ) {
@@ -1700,12 +1700,12 @@ var addEvent = function( element, type, eventHandler ) {
 					</section>
 
 					<section>
-						<h2>Gang of Foul: Adapter</h2>
+						<h2>Gang of Fowl: Adapter</h2>
 						<blockquote>An adapter is a nice way to massage one piece of code to work with another piece of code. This can be useful when you need to switch to another library, but can't afford to rewrite much of your code. </blockquote>
 					</section>
 
 					<section>
-						<h2>Gang of Foul: Adapter</h2>
+						<h2>Gang of Fowl: Adapter</h2>
 						<pre><code>
 /*!
  * jquery-win8-deferred - jQuery $.when that understands WinJS.promise
@@ -1745,12 +1745,12 @@ var addEvent = function( element, type, eventHandler ) {
 					</section>
 
 					<section>
-						<h2>Gang of Foul: Observer</h2>
+						<h2>Gang of Fowl: Observer</h2>
 						<blockquote>We've covered the Observer pattern already in the Blue Bird past a while back in this series, but it is a powerful pattern that can help decouple various components. My recommendation is to use the postal.js library.</blockquote>
 					</section>
 
 					<section>
-						<h2>Gang of Foul: Observer</h2>
+						<h2>Gang of Fowl: Observer</h2>
 						<pre><code>
 var channel = postal.channel( "game" );
  
