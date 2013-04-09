@@ -1,0 +1,1609 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/monokai.css"><!-- zenburn tomorrow-night-bright -->
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<style>
+html.intro body {
+	background:url("./img/angry-birds-2.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-color: #2b2b2b;
+}
+html.intro h1, p {	
+  text-shadow: 5px 5px 5px black;
+}
+html.intro p, a {
+	font-size: 150%;
+    text-shadow: 5px 5px 5px #28591B; /* #B03B51; */
+    color: white !important; 	/* #87CE00 */
+    font-weight: bolder;
+}
+		</style>
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+                <section>
+                    <section data-state="intro">
+                        <h1>of JavaScript</h1><br/>
+                        <p>by <a href="http://elijahmanor.com">Elijah Manor</a> / <a href="http://twitter.com/elijahmanor">@elijahmanor</a></p>
+                    </section>
+                    <section>
+                        <h2>Who am i not?</h2>
+                        <div>
+                            <img src="http://i.imgur.com/LEGZh.jpg"><br>
+                        </div>
+                        <h3 class="fragment" style="top: -400px;display: block;position: relative;font-size: 4em;color: red;-webkit-transform: rotate(-17deg);text-shadow: 4px 4px #ccc;">Elijah Wood</h3>
+                    </section>
+                    <section>
+                        <h2>Who I AM?</h2>
+                        <pre class="zoomTarget"><code>{
+    "name": "Elijah Manor",
+    "priorities" : [ "Christian", "Family", "Work" ],
+    "employer" : "Manorism, Inc.",
+    "title" : [ "Developer", "Trainer", "Pluralsight Author" ],
+    "tech" : [ "JavaScript", "jQuery", "HTML5", "CSS3" ],
+    "awards" : [
+        "Microsoft Regional Director",
+        "Microsoft ASP.NET MVP",
+        "ASPInsider",
+        "IE userAgent"
+    ],
+    "blog": "http://elijahmanor.com",
+    "email": "elijah.manor@gmail.com",
+    "social": [ "@elijahmanor" ]
+}</code></pre>
+                    </section>
+                    <section>
+                      <h2>History</h2>
+                      <p style="font-size: 72px;">→</p>
+                    </section>
+                </section>
+
+				<section>
+					<section>
+						<h2>History</h2>
+						<p>
+							<img src="./img/angry-birds-history.jpg" />
+						</p>
+					</section>
+					<section>
+						<h2>Sad Birds</h2>
+						<p>
+							<img src="./img/sad-birds.jpg" />
+						</p>
+					</section>
+					<section>
+						<h2>Happy Birds</h2>
+						<p>
+							<img src="./img/happy-birds-2.png" />
+						</p>
+					</section>
+					<section>
+						<h2>What Happened!?!</h2>
+						<p>
+							<img src="./img/bad-piggies.png" />
+							<div>Pesky pigs stole front-end web architecture from the birds!</div>
+						</p>
+					</section>
+					<section>
+						<h2>Super Hero Birds</h2>
+						<p>
+							<img src="./img/super-hero-birds-2.jpg" />
+							<div>An elite group of Angry Birds are going to get it back!</div>
+						</p>
+					</section>
+					<section>
+						<h2>Let's Meet Our Warrior Birds</h2>
+						<p style="font-size: 72px;">→</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Let's Meet Our Warrior Birds</h2>
+						<p>
+							<img src="./img/angry-birds-group.jpg" />
+						</p>
+					</section>
+					<section>
+						<h2>Red Bird</h2>
+						<p>
+							<img src="./img/red-bird.png" />
+						</p>
+						<p>Attacks with the force of its trusty IIFE, the basic block of all privacy</p>
+					</section>
+					<section>
+						<h2>Blue Bird</h2>
+						<p>
+							<img src="./img/blue-bird-1.png" />
+						</p>
+						<p>Triggers events and messages that scatter to infiltrate the pig's castle</p>
+					</section>
+					<section>
+						<h2>Yellow Bird</h2>
+						<p>
+							<img src="./img/yellow-bird.png" />
+						</p>
+						<p>Comes with a RequireJS speed booster and dynamically injects scripts against those pesky swine</p>
+					</section>
+					<section>
+						<h2>Black Bird</h2>
+						<p>
+							<img src="./img/black-bird.png" />
+						</p>
+						<p>Proves to be a much more organized approach to fighting these porkers and introduces the Backbone.js bomb to their dismay</p>
+					</section>
+					<section>
+						<h2>White Bird</h2>
+						<p>
+							<img src="./img/white-bird.png" />
+						</p>
+						<p>Appears to be seemingly harmless, but when it pulls out it's strict coding style and bursts of quality checks the hogs are sure to squeal</p>
+					</section>
+					<section>
+						<h2>Green Bird</h2>
+						<p>
+							<img src="./img/green-bird.png" />
+						</p>
+						<p>Can reach all of those hard to reach places and will mock and spy those stealing swine right where it hurts!</p>
+					</section>
+					<section>
+						<h2>Orange Bird</h2>
+						<p>
+							<img src="./img/orange-bird.png" />
+						</p>
+						<p>Starts out small with a simple template, but then expands itself into a DOM blast that will surely send the message that the birds mean business</p>
+					</section>
+					<section>
+						<h2>Big Brother Bird</h2>
+						<p>
+							<img src="./img/big-brother-bird.png" />
+						</p>
+						<p>Pulls out the big guns with his finite state machine and other proven design patterns of destruction</p>
+					</section>
+					<section>
+						<h2>Mighty Eagle</h2>
+						<p>
+							<img src="./img/mighty-eagle.png" />
+						</p>
+						<p>Uses the most superior weapon of them all, a suite of tools that can organize and deploy all the other birds into battle against their soon to be vanquished foe</p>
+					</section>
+                    <section>
+						<h2>ATTACK!</h2>
+						<p style="font-size: 72px;">→</p>
+                    </section>
+
+				</section>
+
+				<section>
+					<section>
+						<h2>Red Bird</h2>
+						<p>
+							<img src="./img/red-bird.png" />
+						</p>
+						<p>Attacks with the force of its trusty IIFE, the basic block of all privacy</p>
+					</section>
+					<section>
+						<h2>What was Stolen by the Pigs?</h2>
+						<p>For ages the birds used to litter the global namespace with their custom objects and functions. Over time the birds slowly learned techniques to protect their objects from the global namespace.</p>
+					</section>
+					<section>
+						<h2>How Objects Become Global?</h2>
+						<p>
+							1. Declaring an Object in the Window Scope 
+						</p>
+						<pre><code contenteditable>
+var type = "Red",
+    attack = function() {
+        console.log( type + " Bird Attacks!" );
+    };
+ 
+console.log( window.type );   // I'm a global variable
+console.log( window.attack ); // I'm a global function
+						</code></pre>
+					</section>
+					<section>
+						<h2>How Objects Become Global?</h2>
+						<p>
+							2. Not Declaring an Object in Any Scope
+						</p>
+						<pre><code contenteditable>
+var type = "Red",
+    attack = function() {
+        typeOfBird = type + " Bird";
+ 
+        console.log( birdType + " Bird Attacks!" );
+    };
+ 
+console.log( window.type );       // I'm a global variable
+console.log( window.attack );     // I'm a global function
+console.log( window.typeOfBird ); // I'm a global variable too :(
+						</code></pre>
+					</section>
+					<section>
+						<h2>How Objects Become Global?</h2>
+						<p>
+							3. Specifically Adding an Object to the Window
+						</p>
+						<pre><code contenteditable>
+var type = "Red",
+    attack = function() {
+        typeOfBird = type + " Bird";
+ 
+        window.message = typeOfBird + " Attacks!";
+ 
+        console.log( birdType + " Bird Attacks!" );
+    };
+ 
+console.log( window.type );       // I'm a global variable
+console.log( window.attack );     // I'm a global function
+console.log( window.typeOfBird ); // I'm a global variable too :(
+console.log( window.message );    // I'm a global variable too :|
+						</code></pre>
+					</section>
+					<section>
+						<h2>Why are Global Objects a Problem?</h2>
+						<ol>
+							<li class="fragment">Conflicts within Your Code</li>
+							<li class="fragment">Conflicts with Your Code and Third-Party Libraries</li>
+							<li class="fragment">Conflicts with Your Code and Browser Add-ons/Extensions/Plugins</li>
+						</ol>
+					</section>
+					<section>
+						<h2>Various Ways to Protect Yourself</h2>
+						<h3>Object Literal</h3>
+						<pre><code>
+// Gather type & attack and make properties off higher level object
+var bird = {
+    type: "Red",
+    attack: function() {
+        console.log( this.type + " Bird Attacks!" );
+    }
+};
+ 
+console.log( window.bird );          // Only 1 global object!
+console.log( window.bird.type );     // Red
+console.log( window.bird.attack() ); // Red Bird Attacks! 
+						</code></pre>
+					</section>
+					<section>
+						<h2>Various Ways to Protect Yourself</h2>
+						<h3>Immediately Invoked Function Expression (IIFE)</h3>
+						<pre><code>
+// JavaScript can parse this just fine now, yay!
+(function() {
+    // All memory is contained within this scope
+}()); // <-- Immediately Invoked
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Various Ways to Protect Yourself</h2>
+						<h3>Immediately Invoked Function Expression (IIFE)</h3>
+						<pre><code>
+// Revealing Module Pattern
+var bird = (function() {
+    var type = "Red",
+        power = "IIFE", // This is private
+        attack = function() {
+            console.log(type + " Bird Attacks with " + power +  "!");
+        };
+    
+    // Only the items returned are public
+    return { type: type, attack: attack };
+}());
+ 
+console.log( window.bird );          // Only 1 global object!
+console.log( window.bird.type );     // Public property
+console.log( window.bird.attack() ); // Public method access private
+console.log( window.bird.power );    // Private var, can't access 
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Various Ways to Protect Yourself</h2>
+						<h3>Immediately Invoked Function Expression (IIFE)</h3>
+						<pre><code>
+(function( bird ) {
+    var power = "IIFE"; // This is private
+    
+    bird.type = "Red";
+    bird.attack = function() {
+        console.log( bird.type + " Bird Attacks with " + power + "!" );
+    };
+}( window.bird = window.bird || {} ));
+ 
+console.log( window.bird );          // Only 1 global object!
+console.log( window.bird.type );     // Public property
+console.log( window.bird.attack() ); // Public method accessing private
+console.log( window.bird.power );    // Private variable, can't access 
+						</code></pre>
+					</section>
+
+					<section data-state="demo">
+						<canvas id="game-red" width=625 height=380>
+						    Text that you see if you don't support Canvas :(
+						</canvas>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Blue Bird</h2>
+						<p>
+							<img src="./img/blue-bird-1.png" />
+						</p>
+						<p>Triggers events and messages that scatter to infiltrate the pig's castle</p>
+					</section>
+					<section>
+						<h2>What was Stolen by the Pigs?</h2>
+						<p>The birds used to build their web applications with components having hard dependencies on each-other. They eventually started to learn to reduce tight coupling by introducing events and messages.</p>
+					</section>
+					<section>
+						<h2>Tightly Coupled Code</h2>
+						<pre><code>
+$( document ).on( "click", ".term", function( e ) {
+    $( "input" ).val( $( this ).text() );
+    $( "button" ).trigger( "click" );
+});
+ 
+$( "button" ).on( "click", function( e ) {
+    var searchTerm = $( "input" ).val(),
+        url = "http://odata.netflix.com/Catalog/Titles?$filter=substringof('" + 
+            escape( searchTerm ) + "',Name)&$callback=callback&$format=json";
+ 
+    $( ".help-block" ).html( function( index, html ) {
+        return e.originalEvent ? 
+            html + ", " + "&lt;a href='#' class='term'&gt;" + searchTerm + "&lt;/a&gt;" : html;
+    });
+ 
+    $.ajax({
+        dataType: "jsonp",
+        url: url,
+        jsonpCallback: "callback",
+        success: function( data ) {
+            var rows = [];
+            $.each( data.d.results, function( index, result ) {
+                var row = "";
+                if ( result.Rating && result.ReleaseYear ) {
+                    row += "<td>" + result.Name + "</td>";
+                    row += "<td>" + result.Rating + "</td>";
+                    row += "<td>" + result.ReleaseYear + "</td>";
+                    row = "<tr>" + row + "</tr>";
+                    rows.push( row );
+                }
+            });
+            $( "table" ).show().find( "tbody" ).html( rows.join( "" ) );
+        }
+    });
+});
+						</code></pre>
+					</section>
+
+
+					<section>
+						<h2>TYPES OF MESSAGES: Observer Events</h3>
+						<ul>
+							<li>You can think of this as adding event handlers to an element</li>
+							<li>The element has a direct reference to the callbacks that will be invoked when the event type occurs</li> 
+						</ul>
+					</section>
+
+					<section>
+						<h2>TYPES OF MESSAGES: Observer Events</h2>
+						<pre><code>
+document.getElementById( "bird" )
+    // Native addEventListener attaches observer to the DOM element
+    .addEventListener( "click", function() { console.log( "Catapult!" ); }, false );
+ 
+$( "#bird" )
+    // Old school event helpers attaches observer to the DOM element
+    .click( function() { console.log( "Flying through the air..." ); } )
+    // Old school bind method attaches observer to the DOM element
+    .bind( "click", function() { console.log( "COWABUNGA!" ); } )
+    // New school 2 parameter on method attaches observer to the DOM element
+    .on( "click", function() { console.log( "Destroy those pesky pigs!" ); } );
+ 
+// Event is triggered and the list of observers are notified
+$( "#bird" ).trigger( "click" );						
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>TYPES OF MESSAGES: Mediated Events</h3>
+						<ul>
+							 <li>There is another entity that keeps track of publishing and subscribing of messages</li>
+							 <li>Main difference between this and Observer events is that Mediated events aren't tied directly to the subject that invoked it</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>TYPES OF MESSAGES: Mediated Events</h3>
+						<pre><code>
+var channel = postal.channel(),
+    $lastUpdated = $( "#lastUpdated" );
+ 
+// Subscribe to all bird.launch messages
+channel.subscribe( "bird.launch", function( data ) {
+    console.log( "Launch the blue birds at a " + data.angle + " angle!" );
+});
+ 
+// Subscribe to all bird.reset messages
+channel.subscribe( "bird.reset", function( data ) {
+    console.log( "Resetting blue birds to the catapult." );
+});
+ 
+// Subscribe to all messages that match the bird.* wildcard!
+channel.subscribe( "bird.*", function( data ) {
+    $lastUpdated.text( moment().format( "MMMM Do YYYY, h:mm:ss a" ) ); 
+});
+ 
+// Publish some messages with optional data
+channel.publish( "bird.launch", { angle: 45 } );
+channel.publish( "bird.reset" );
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>TYPES OF MESSAGES: Hybrid Events</h3>
+						<ul>
+							<li>Looks like a mediated event, but if you look hard enough there you could actually trace the origin of the event back to the original subject</li>
+							<li>Example of this is jQuery's delegated event model. Delegated events are great, but it is based on the concept of events bubbling up the DOM and therefore we can trace where it came from</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>TYPES OF MESSAGES: Hybrid Events</h3>
+						<pre><code>
+// Observer is attached to the #pigs element where impact events are delegated
+$( "#pigs" ).on( "impact", ".pig", function( e ) {
+    console.log( "I know which pig was impacted: " + e.target.innerHTML );
+    console.log( "I know where the subscribers are listed: " + e.delegateTarget.id );
+    console.log( "I can invoke another subscriber if I want!" );
+    $._data( e.delegateTarget, "events" ).secret[ 0 ].handler( e );
+    $( this ).text( "Bacon" );
+});
+ 
+$( "#pigs" ).on( "secret", ".pig", function( e ) {
+    console.log( "Shh, I'm hiding. Don't tell anyone..." );
+});
+ 
+// Event is triggers on the .pig element and bubble up to the #pigs element
+$( ".pig:first" ).trigger( "impact" );
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Which One Should Be Used?</h2>
+						<blockquote>"...use observer 'locally', inside a component, mediator 'remotely' between components. No matter what, be ready to use both in tandem.' --Jim Cowart</blockquote>
+					</section>
+
+					<section>
+						<h2>LOOSELY COUPLED CODE</h2>
+						<pre><code>
+var channel = postal.channel();
+ 
+$( document ).on( "click", ".term", function( e ) {
+    var term = $( this ).text();
+    
+    e.preventDefault();
+    $( "input" ).val( term );
+    channel.publish( "searchTerm.changed", { term: term } );
+});
+ 
+$( "button" ).on( "click", function() {
+    channel.publish( "searchTerm.changed", { term: $( "input" ).val() } );
+});
+ 
+channel.subscribe( "searchTerm.changed", function( data ) {
+    netflix.getTitles( data.term, function( titles ) {
+        channel.publish( "netflix.titles.updated", titles );
+    });    
+});
+ 
+channel.subscribe( "searchTerm.changed", function( data ) {
+    $( ".help-block" ).html( function( index, html ) {
+        return ~html.indexOf( data.term ) ? html :
+            html + ", " + "<a href='#' class='term'>" + data.term + "</a>";
+    });
+});
+ 
+channel.subscribe( "netflix.titles.updated", function( titles ) {
+    var rows = [];
+    $.each( titles, function( index, result ) {
+        var row = "";
+        if ( result.Rating && result.ReleaseYear ) {
+            row += "<td>" + result.Name + "</td>";
+            row += "<td>" + result.Rating + "</td>";
+            row += "<td>" + result.ReleaseYear + "</td>";
+            row = "<tr>" + row + "</tr>";
+            rows.push( row );
+        }
+    });
+    $( "table" ).show().find( "tbody" ).html( rows.join( "" ) );
+});
+ 
+window.netflix = {
+    getTitles: function( term, callback ) {
+        var url = "http://odata.netflix.com/Catalog/Titles?$filter=substringof('" +
+                escape( term ) + "',Name)&$callback=callback&$format=json";
+      
+        $.ajax({
+            dataType: "jsonp",
+            url: url,
+            jsonpCallback: "callback",
+            success: function( data ) { callback( data.d.results ); }
+        });
+    }
+};
+						</code></pre>
+					</section>
+
+					<section data-state="demo">
+						<canvas id="game-blue" width=625 height=380>
+						    Text that you see if you don't support Canvas :(
+						</canvas>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Yellow Bird</h2>
+						<p>
+							<img src="./img/yellow-bird.png" />
+						</p>
+						<p>Comes with a RequireJS speed booster and dynamically injects scripts against those pesky swine</p>
+					</section>
+					<section>
+						<h2>What was Stolen by the Pigs?</h2>
+						<p>The birds used to manually add script tags to their HTML files. At first this wasn't an issue, but when their application started to grow larger and more complex it started to become difficult for them to organize their code, figure out dependencies, and determine a strategy for optimizing performance. Thankfully they were introduced to the RequireJS library which provided them a way to manage their code into modules, load their scripts asynchronously, manage their dependencies, and provide an easy way to optimize.</p>
+					</section>
+
+					<section>
+						<h2>Broken Application</h2>
+						<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head lang="en"&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title&gt;Angry Birds&lt;/title&gt;
+        &lt;link rel="stylesheet" href="./css/style.css"&gt;
+    &lt;/head&gt;
+    &lt;body>
+        &lt;script src="./libs/jquery.min.js"&gt;&lt;/script&gt;
+        &lt;script src="./libs/postal.min.js"&gt;&lt;/script&gt;
+        &lt;script src="./libs/underscore.min.js"&gt;&lt;/script&gt;
+        &lt;script&gt;
+            var channel = postal.channel();
+        
+            channel.subscribe( "pig.collide", function() {
+                console.log( "Pig Down!" );
+            });
+        
+            channel.publish( "pig.collide" );
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>WAT!?!</h2>
+						<p><img src="../img/yellow-postal-error.png" /></p>
+						<blockquote>WHAT!?! I don't see any each method anywhere. What's up with that? Ohh man, it looks like the exception occurred in postal.min.js somewhere. FOUND A BUG... see if I use that library again. But, wait!?! Ohh, maybe something else is going on here. --Ficticious Internal Dialog</blockquote>
+					</section>
+
+					<section>
+						<h2>RequireJS Basics</h2>
+						<p>
+							Asynchronous Module Loader and the API it provides allows us to define and require modules.
+						</p>
+					</section>
+
+					<section>
+						<h2>RequireJS: define</h2>
+						<pre><code>
+// File Name: my-first-module.js
+ 
+// The name of the module defaults to the name of the file by convention
+define( 
+    [ "underscore", "jquery" ], // Array of dependencies needed for this module
+    function( _, $ ) { // Callback with parameters matching dependencies requested
+        // Underscore and jQuery have both been loaded and are available for use with
+        // the `_` & `$` variables
+ 
+        return { // This will be available in callback of whoever requires this module
+            message: "Hello World!"
+        };
+    }
+);
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>RequireJS: require</h2>
+						<pre><code>
+require( 
+    [ "my-first-module" ],    // Array of dependencies that are needed
+    function( firstModule ) { // Callback with parameters matching dependencies
+        console.log( firstModule.message );
+    }
+);	
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Fixed Application: Markup</h2>
+						<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head lang="en"&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title>Angry Birds&lt;/title&gt;
+        &lt;link rel="stylesheet" href="./css/style.css"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        <!-- 
+            You'll notice that the markup is cleaned up dramatically
+            The data-main HTML5 attribute defines where to kick things off
+        -->
+        &lt;script src="./libs/require.min.js" data-main="./js/main"&gt;&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Fixed Application: main.js</h2>
+						<pre><code>
+/* main.js */
+ 
+// Let RequireJS know where all the scripts are
+require.config({
+    paths: {
+        "jquery": "../libs/jquery.min",
+        "underscore": "../libs/underscore.min",
+        "postal": "../libs/postal.min"
+    },
+    shim: {
+        // Underscore.js doesn't know about AMD, so you have to shim it
+        underscore: {
+            exports: "_"
+        }
+    }
+});
+ 
+// The postal.js library internally defined that it needs the underscore library
+// so RequireJS will load postal, which in turn will load its underscore
+require([ "postal" ], function( postal ) {
+    var channel = postal.channel();
+ 
+    channel.subscribe( "pig.collide", function() {
+        console.log( "Pig Down!" );
+    });
+ 
+    channel.publish( "pig.collide" );
+});
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Optimize Application</h2>
+						<ul>
+							<li class="fragment">RequireJS already keeps a defined list of dependencies</li>
+							<li class="fragment">r.js will take those dependencies and combined & minify our scripts</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Optimize Application: r.js</h2>
+						<pre><code>
+({
+	appDir: ".",               // The main root URL
+	dir: "../dist",            // Directory that we build to
+	mainConfigFile: "main.js", // Location of main.js
+	name: "main",              // Name of the module that we are loading
+	optimizeCss: "standard",   // Standard optimization for CSS
+	removeCombined: true,      // Temporary combined files will be removed
+	paths : {
+		"jquery": "libs/jquery.min",
+		"underscore": "libs/underscore.min",
+		"postal": "libs/postal.min"
+	}
+})
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Optimize Application: r.js</h2>
+						<pre><code>
+$ r.js -o build.js
+Optimizing (standard) CSS file: C:/Users/Elijah/Desktop/demo/dist/css/style.css
+ 
+Tracing dependencies for: main
+Uglifying file: C:/Users/Elijah/Desktop/demo/dist/build.js
+Uglifying file: C:/Users/Elijah/Desktop/demo/dist/libs/jquery.min.js
+Uglifying file: C:/Users/Elijah/Desktop/demo/dist/libs/postal.min.js
+Uglifying file: C:/Users/Elijah/Desktop/demo/dist/libs/require.min.js
+Uglifying file: C:/Users/Elijah/Desktop/demo/dist/libs/underscore.min.js
+Uglifying file: C:/Users/Elijah/Desktop/demo/dist/main.js
+Uglifying file: C:/Users/Elijah/Desktop/demo/dist/r.js
+ 
+css/style.css
+----------------
+css/style.css
+ 
+C:/Users/Elijah/Desktop/demo/src/main.js
+----------------
+C:/Users/Elijah/Desktop/demo/src/main.js
+						</code></pre>
+					</section>
+
+					<section data-state="demox">
+						<canvas id="game-yellow" width=625 height=380>
+						    Text that you see if you don't support Canvas :(
+						</canvas>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Black Bird</h2>
+						<p>
+							<img src="./img/black-bird.png" />
+						</p>
+						<p>Proves to be a much more organized approach to fighting these porkers and introduces the Backbone.js bomb to their dismay</p>
+					</section>
+					<section>
+						<h2>What was Stolen by the Pigs?</h2>
+						<p>The birds used to write their jQuery code like it was a tangled smorgasbord of worms. They would mix up their views, models, and presenter logic all together in a big interconnected pile of grubs. After a while one of their ancestors, a Black Bird, introduced the Backbone.js library and showed them a different way to think about developing front-end web applications. However, during a recent invasion the pigs stole Backbone.js from the birds and carried it back to their filthy sty.</p>
+					</section>
+
+					<section>
+						<h2>TANGLED SMORGASBORD OF WORMS</h2>
+						<pre></code>
+$( document ).on( "click", ".term", function( e ) {
+    e.preventDefault();
+    $( "input" ).val( $( this ).text() );
+    $( "button" ).trigger( "click" );
+});
+ 
+$( document ).ready( function() {  
+    $( "button" ).on( "click", function( e ) {
+        var searchTerm = $( "input" ).val();
+        var url = "http://odata.netflix.com/Catalog/Titles?$filter=substringof('" +
+                escape( searchTerm ) + "',Name)&$callback=callback&$format=json";
+        
+        $( ".help-block" ).html( function( index, html ) {
+            return e.originalEvent ? html + ", " + "&lt;a href='#' class='term'&gt;" +
+                searchTerm + "&lt;/a&gt;" : html;
+        });
+        
+        $.ajax({
+            dataType: "jsonp",
+            url: url,
+            jsonpCallback: "callback",
+            success: function( data ) {
+                var rows = [];
+                $.each( data.d.results, function( index, result ) {
+                    var row = "";
+                    if ( result.Rating && result.ReleaseYear ) {
+                        row += "<td>" + result.Name + "</td>";
+                        row += "<td>" + result.Rating + "</td>";
+                        row += "<td>" + result.ReleaseYear + "</td>";
+                        row = "<tr>" + row + "</tr>";
+                        rows.push( row );
+                    }
+                });
+                $( "table" ).show().find( "tbody" ).html( rows.join( "" ) );
+            }
+        });
+        e.preventDefault();
+    });
+});
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>BACKBONE.JS BASICS</h2>
+						<ul>
+							<li class="fragment">Model - Represents data and logic surrounding it</li>
+							<li class="fragment">Collection - Ordered sets of Models</li>
+							<li class="fragment">View - A module backed by a Model with a render method</li>
+							<li class="fragment">Router - Mechanism to provide linkable, sharable URLs</li>
+							<li class="fragment">Event - Observer Eventing module</li>
+							<li class="fragment">History - Provides the ability to maintain history (back button support)</li>
+							<li class="fragment">Sync - Extendable component providing RESTful communication to the server</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>REFACTORING THE TIGHTLY COUPLED CODE</h2>
+						<p>Let's take a stab at refactoring the above jQuery mess and use Backbone.js to split out some of the various concerns. </p>
+					</section>
+
+					<section>
+						<h2>Refactor: RequireJS</h2>
+						<pre><code>
+require.config({
+    paths: {
+        jquery: "https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min",
+        underscore: "http://underscorejs.org/underscore",
+        backbone: "http://backbonejs.org/backbone",
+        postal: "http://cdnjs.cloudflare.com/ajax/libs/postal.js/0.8.2/postal.min",
+        bootstrap: "http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.0/js/bootstrap.min"
+    },
+    shim: {
+        underscore: {
+            exports: "_"
+        },
+        backbone: {
+            deps: [ "jquery", "underscore" ],
+            exports: "Backbone"
+        },
+        bootstrap: {
+            "deps" : [ "jquery" ]
+        }
+    }
+});
+ 
+require( [ "jquery", "search-view", "search", "movie-view", "movies" ], 
+    function( $, SearchView, Search, MovieView, Movies ) {
+        $( document ).ready( function() {
+            var searchView = new SearchView({
+                el: $( "#search" ),
+                model: new Search()
+            });
+            
+            var movieView = new MovieView({
+                el: $( "#output" ),
+                collection: new Movies()
+            });
+        });
+    });
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Refactor: Search Model</h2>
+						<pre><code>
+define( [ "backbone", "channels" ], function( Backbone, channels ) {
+    var Model = Backbone.Model.extend({
+        initialize: function() {
+            this.on( "change:term", function( model, value ) {
+                channels.bus.publish( "search.term.changed", { term: value } );
+            });
+        }
+    });
+    
+    return Model;
+});
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Refactor: Movie Model</h2>
+						<pre><code>
+define( [ "backbone" ], function( Backbone ) {
+    var Model = Backbone.Model.extend({
+        defaults: { term: "" },
+        parse: function( data, xhr ) {
+            return {
+                releaseYear: data.ReleaseYear,
+                rating: data.Rating,
+                name: data.Name
+            };
+        }
+    });
+    
+    return Model;
+});
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Refactor: Movies Collection</h2>
+						<pre><code>
+define( [ "backbone", "movie" ], function( Backbone, Movie ) {
+    var Collection = Backbone.Collection.extend({
+        model: Movie,
+        url: function() {
+            return "http://odata.netflix.com/Catalog/Titles?$filter=substringof('" +
+                escape( this.term ) + "',Name)&$callback=callback&$format=json";
+        },
+        parse : function( data, xhr ) {
+            return data.d.results;
+        },
+        sync: function( method, model, options ) {  
+            options.dataType = "jsonp";  
+            options.jsonpCallback = "callback";
+            
+            return Backbone.sync( method, model, options );  
+        }
+    });
+ 
+    return Collection;
+});
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Refactor: SearchView View</h2>
+						<pre><code>
+define( [ "jquery", "backbone", "underscore", "channels" ], 
+    function( $, Backbone ) {
+ 
+        var View = Backbone.View.extend({
+            events: {
+                "click button": "searchByInput",
+                "click .term": "searchByHistory"
+            },
+            initialize: function() {
+                this.model.on( "change", this.updateHistory, this );
+                this.model.on( "change", this.updateInput, this );
+            },
+            searchByInput: function( e ) {
+                e.preventDefault();
+                
+                this.model.set( "term", this.$( "input" ).val() );
+            },
+            searchByHistory: function( e ) {
+                var text = $( e.target ).text();
+                
+                this.model.set( "term", text );
+            },
+            updateHistory: function() {
+                var that = this;
+                
+                this.$el.find( ".help-block" ).html( function(index, html) {
+                    var term = that.model.get( "term" );
+                    
+                    return ~html.indexOf( term ) ? html : 
+                        html + ", " + "<a href='#' class='term'>" + term + "</a>";
+                });
+            },
+            updateInput: function() {
+                this.$el.find( "input" ).val( this.model.get("term") );    
+            }
+        });
+ 
+        return View;
+    });
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Refactor: MovieView View</h2>
+						<pre><code>
+define( [ "jquery", "backbone", "underscore", "channels", "text!movie-template.html" ], 
+    function( $, Backbone, _, channels, template ) {
+        var View = Backbone.View.extend({
+            template: _.template( template ),
+            initialize: function() {
+                var that = this;
+                
+                _.bindAll( this, "render" );                
+                channels.bus.subscribe( "search.term.changed", function( data ) {
+                    that.collection.term = data.term;
+                    that.collection.fetch({
+                        success: that.render
+                    });
+                });
+            },
+            render: function() {
+                var html = this.template({ movies: this.collection.toJSON() });
+                this.$el.show().find( "tbody" ).html( html );
+            }
+        });
+    
+        return View;
+    });
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Refactor: Movie Template</h2>
+						<pre><code>
+&lt;% _.each( movies, function( movie ) { %&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;%= movie.name %&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;%= movie.rating %&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;%= movie.releaseYear %&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;% }); %&gt;
+						</code></pre>
+					</section>
+
+					<section data-state="demox">
+						<canvas id="game-black" width=625 height=380>
+						    Text that you see if you don't support Canvas :(
+						</canvas>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>White Bird</h2>
+						<p>
+							<img src="./img/white-bird.png" />
+						</p>
+						<p>Appears to be seemingly harmless, but when it pulls out it's strict coding style and bursts of quality checks the hogs are sure to squeal</p>
+					</section>
+					<section>
+						<h2>What was Stolen by the Pigs?</h2>
+						<p>The birds all learned how to program in a slightly different way. Some birds were self-taught and some birds went to college for computer science. Even among those groups there were a wide range of experiences and talent. When the birds got together to build their first large application it was a huge disaster. Each bird thought their coding standard was the "right way" and it started to become an issue. One day a wise White Bird came along and suggested that they come up with a common set of coding practices to follow. In addition, the White Bird introduced a few tools to help them conform to a standard and to help find issues and concerns early before they became a huge issue later.</p>
+					</section>
+
+					<section>
+						<h2>JAVASCRIPT CODING STANDARDS</h2>
+						<ul>
+							<li>A developer will be able to make sense of other code more quickly</li>
+							<li>Merges in your code repository won't be as awful</li>
+							<li>Having a standard will actually reduce defects</li>
+							<li>The codebase will feel more unified</li>
+							<li>Disagreements about who is "right" will lessen</li>
+							<li>... insert your benefit here ...</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Which Standard Should I Follow?</h2>
+						<ul>
+							<li>Douglas Crockford's Code Conventions for the JavaScript Programming Language</li>
+							<li>Rich Waldron's (@rwaldron) Idiomatic.js - Principles of Writing Consistent, Idiomatic JavaScript ← Recommended</li>
+							<li>jQuery's JavaScript Style Guide ← Recommended</li>
+							<li>Google's JavaScript Style Guide</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>JAVASCRIPT LINTING: JSHint</h2>
+						<ul>
+							<li>The use of === instead of ==</li>
+							<li>Using variables that aren't defined</li>
+							<li>Declaring variables that are never used</li>
+							<li>Declaring functions inside of loops</li>
+							<li>And lots more...</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>JAVASCRIPT LINTING: Recent Additions</h2>
+						<ul>
+							<li>maxcomplexity - Maximum cyclomatic complexity</li>
+							<li>maxstatements - Maximum number of statements allowed in a function</li>
+							<li>maxparams - Maximum number of parameter allowed in a function</li>
+							<li>maxdepth - Maximum depth allowed in a function</li>
+							<li>maxlen - Maximum length of line in code</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>JSHint Example</h2>
+						<pre><code>
+/*jshint maxparams:3, maxdepth:2, maxstatements:5, maxcomplexity:3, maxlen:80 */
+/*global console:false */
+ 
+(function( undefined ) {
+    "use strict";
+ 
+    function test1( arg1, arg2, arg3, arg4 ) {
+        console.log( "too many parameters!" );
+        if ( arg1 === 1 ) {
+            console.log( arg1 );
+            if ( arg2 === 2 ) {
+                console.log( arg2 );
+                if( arg3 === 3 ) {
+                    console.log( "too much nesting!" ); console.log( arg3 ); console.log( arg4 );
+                }
+            }
+        }
+        console.log( "too many statements!" );
+    }
+ 
+    test1( 1, 2, 3, 4 );
+}());
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>JSHint Example</h2>
+						<p><img src="../img/jshint-errors.png" /></p>
+					</section>
+
+					<section>
+						<h2>JAVASCRIPT ANALYSIS</h2>
+						<p>Plato that will analyse your code and provide a visual report where you can view the complexity of your application.</p>
+					</section>
+
+					<section>
+						<h2>JAVASCRIPT ANALYSIS: jQuery</h2>
+						<p><img src="../img/jquery-top-level.png" /></p>
+					</section>
+
+					<section>
+						<h2>JAVASCRIPT ANALYSIS: jQuery</h2>
+						<p><img src="../img/jquery-drill-complexity.png" /></p>
+					</section>
+
+					<section data-state="demox">
+						<canvas id="game-white" width=625 height=380>
+						    Text that you see if you don't support Canvas :(
+						</canvas>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Green Bird</h2>
+						<p>
+							<img src="./img/green-bird.png" />
+						</p>
+						<p>Can reach all of those hard to reach places and will mock and spy those stealing swine right where it hurts!</p>
+					</section>
+					<section>
+						<h2>What was Stolen by the Pigs?</h2>
+						<p>For the most part the birds are all front-end web developers only and don't focus on the back-end much at all. As a result the birds have a symbiotic relationship with the Water Buffalo. The Buffalo write the back-end of the application and the birds develop the front-end. The problem with this arrangement is that while the back-end is being developed the birds are left twiddling their feathers until the Buffalo are finished. However, once the back-end is done the pressure is on the birds to deliver while the Buffalo sit idle by the watering hole in the shade. Thankfully, a while back, a Green Bird proposed the idea of mocking the back-end services so they could make progress on the front-end while they waited for the Buffalo to finish their work! The Green Bird introduced a couple of handy libraries to make mocking a much easier process. </p>
+					</section>
+
+					<section>
+						<h2>The Twitter Application</h2>
+						<p><img src="../img/twitter-blue-bird.jpg" /></p>
+					</section>
+
+					<section>
+						<h2>The Twitter Application</h2>
+						<pre><code>
+(function( twitter, $, undefined ) {
+ 
+    var channel = twitter.channel = postal.channel(),
+        URL_TEMPLATE = "https://api.twitter.com/1/statuses/user_timeline/" + 
+            "%(userName)s.json?count=%(count)s&include_rts=1",
+        $selection = null;
+        
+    twitter.selector = null;
+ 
+    twitter.init = function( selector ) {
+        twitter.selector = selector;
+        
+        channel.subscribe( "tweets.available", twitter.displayTweets );    
+    };
+    
+    twitter.displayTweets = function( tweets ) {
+        var $list = $( "&lt;ul/ &gt;" ),
+            $location = $selection || $( twitter.selector );
+        
+        // This would be better suited for a templating engine,
+        // but that's for another Angry Bird ;)
+        $.each( tweets || {}, function( index, tweet ) {
+            var html = "<i>" + moment( tweet.created_at ).fromNow() + "</i>: ";
+            html += "<b>" + tweet.user.name + "</b> - ";
+            html += tweet.text;
+            html += tweet.retweeted ? " &lt;i class='icon-repeat'&gt;&lt;/i&gt;" : "";
+            html += tweet.favorited ? " &lt;i class='icon-star'&gt;&lt;/i&gt;" : "";
+            
+            $( "<li />", { html: html }).appendTo( $list );         
+        });
+            
+       $location.append( $list.children() );         
+    };
+    
+    twitter.getTweets = function( userName, count ) {
+        var url = _.string.sprintf( URL_TEMPLATE, { 
+                userName: userName, 
+                count: count || 5 
+            });
+ 
+        $.ajax({
+            url: url,
+            dataType: "jsonp",
+            success: function( tweets ) {
+                channel.publish( "tweets.available", tweets );
+            }
+        });                
+    };
+    
+}( window.twitter = window.twitter || {}, jQuery ));
+ 
+twitter.init( ".tweets" );
+ 
+$( document ).on( "click", "button", function( e ) {
+    var $input = $( this ).closest( "form" ).find( "input" );
+    
+    e.preventDefault();                                                 
+    twitter.getTweets( $input.val() || "elijahmanor" );    
+});
+						</code></pre>
+					</section>
+
+					<section>
+						<h2></h2>
+						<p><img src="../img/twitter-raw.png" /></p>
+					</section>
+
+					<section>
+						<h2>Mocking Static Data</h2>
+						<pre><code>
+$.mockjax({
+    url: "https://api.twitter.com/1/statuses/user_timeline/*",
+    responseTime: 750,
+    responseText: [
+        { id: 0, created_at: "Mon Apr 11 8:00:00 +0000 2012",  text: "Test Tweet 1",
+            favorited: false, retweeted: false, user: { name: "User 1" } },
+        { id: 1, created_at: "Mon Apr 11 9:00:00 +0000 2012",  text: "Test Tweet 2",
+            favorited: true,  retweeted: true,  user: { name: "User 2" } },
+        { id: 2, created_at: "Mon Apr 11 10:00:00 +0000 2012", text: "Test Tweet 3",
+            favorited: false, retweeted: true,  user: { name: "User 3" } },
+        { id: 3, created_at: "Mon Apr 11 11:00:00 +0000 2012", text: "Test Tweet 4",
+            favorited: true,  retweeted: false, user: { name: "User 4" } },
+        { id: 4, created_at: "Mon Apr 11 12:00:00 +0000 2012", text: "Test Tweet 5",
+            favorited: true,  retweeted: true,  user: { name: "User 5" } }
+    ]
+});
+						</code></pre>
+					</section>
+
+					<section>
+						<h2></h2>
+						<p><img src="../img/twitter-mock-static.png" /></p>
+					</section>
+
+					<section>
+						<h2>MOCKING DYNAMIC SEMI-RANDOM DATA</h2>
+						<pre><code>
+$.mockjax({
+    url: "https://api.twitter.com/1/statuses/user_timeline/*",
+    responseTime: 750,
+    response: function() {
+        var data = $.mockJSON.generateFromTemplate({
+            "tweets|5-10": [{
+                "id|+1": 0, 
+                "created_at": "Mon Apr 11 @TIME_HH:@TIME_MM:@TIME_SS +0000 2012",
+                "text": "@LOREM_IPSUM",
+                "favorited|0-1": false,
+                "retweeted|0-1": false,
+                "user": { "name": "@MALE_FIRST_NAME @LAST_NAME" }
+            }]
+        });
+        
+        this.responseText = data.tweets;
+    }
+});
+						</code></pre>
+					</section>
+
+					<section>
+						<h2></h2>
+						<p><img src="../img/twitter-mock-dynamic.png" /></p>
+					</section>
+
+					<section data-state="demox">
+						<canvas id="game-green" width=625 height=380>
+						    Text that you see if you don't support Canvas :(
+						</canvas>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Orange Bird</h2>
+						<p>
+							<img src="./img/orange-bird.png" />
+						</p>
+						<p>Starts out small with a simple template, but then expands itself into a DOM blast that will surely send the message that the birds mean business</p>
+					</section>
+					<section>
+						<h2>What was Stolen by the Pigs?</h2>
+						<p>For the last several years we have seen a trend that more and more work is being done on the front-end of web development. We communicate to the back-end via Ajax or Web Sockets and then display the data somehow in the UI. The birds found themselves mostly using string concatenation to build up the rich user interfaces, which resulted in a lot of code that was boring and also prone for errors. Thankfully an Orange Bird came along and said, "Hey, isn't there something better than this? Can't we separate our view from our data somehow?", and that is how templates became to be in the bird world. The Orange Bird borrowed templating libraries from the humans such as Underscore.js and Handlebar.js to help fit this need among the foul. </p>
+					</section>
+
+WHY USE A TEMPLATING ENGINE?
+
+(function( twitter, $, undefined ) { 
+    var _selection;
+        
+    twitter.init = function( $selection ) {
+        _selection = $selection;
+    };
+    
+    twitter.displayTweets = function( tweets ) {
+        var $list = $( "<ul/ >" );
+        
+        $.each( tweets || {}, function( index, tweet ) {
+            var html = "<i>" + moment( tweet.created_at ).fromNow() + "</i>: ";
+            html += "<b>" + tweet.user.name + "</b> - ";
+            html += "<span>" + tweet.text + "</span>";
+            html += tweet.retweeted ? " <i class='icon-repeat'></i>" : "";
+            html += tweet.favorited ? " <i class='icon-star'></i>" : "";
+            
+            $( "<li />", { html: html }).appendTo( $list );         
+        });
+            
+       _selection.empty().append( $list.children() );         
+    };
+}( window.twitter = window.twitter || {}, jQuery ));
+
+UNDERSCORE.JS
+
+take 1
+
+twitter.displayTweets = function( tweets ) {
+    var templateString = $( "#tweets-underscore" ).html(),
+        template = _.template( templateString );
+    
+   _selection.empty().append( template( { tweets: tweets } ) );                   
+};
+
+<script id="tweets-underscore" type="text/template">
+    <ul>
+        <% _.each( tweets, function( tweet ) { %>
+        <li>
+            <i><%= moment( tweet.created_at ).fromNow() %></i>:
+            <b><%= tweet.user.name %></b> - 
+            <span><%= tweet.text %></span> 
+            <% if ( tweet.retweeted ) { %><i class="icon-repeat"></i><% } %> 
+            <% if ( tweet.favorited ) { %><i class="icon-star"></i><% } %>
+        </li>
+        <% }); %>
+    </ul>
+</script>
+
+insert spider-man photo here
+
+take 2 
+
+twitter.displayTweets = function( tweets ) {
+    var templateString = $( "#tweets-underscore" ).html(),
+        template = _.template( templateString );
+ 
+    tweets = _.map( tweets, function( tweet ) {
+        tweet.created_at = moment( tweet.created_at ).fromNow();
+        return tweet;
+    });
+ 
+    _selection.empty().append( template( { tweets: tweets } ) );                   
+};
+
+<script id="tweets-underscore" type="text/template">
+    <ul>
+        <% _.each( tweets, function( tweet ) { %>
+        <li>
+            <i><%= tweet.created_at %></i>: 
+            <b><%= tweet.user.name %></b> - 
+            <span><%= tweet.text %></span> 
+            <% if ( tweet.retweeted ) { %><i class="icon-repeat"></i><% } %> 
+            <% if ( tweet.favorited ) { %><i class="icon-star"></i><% } %>
+        </li>
+        <% }); %>
+    </ul>
+</script>
+
+Why use Underscore.js?
+
+Pros
+
+You can stick arbitrary JavaScript in the template
+It is very small
+If you are already using Backbone.js then you have it
+If you are already using Underscore.js then you have it
+You can Compile the Templates
+Can Run on the Client and the Server
+Can you think of others?
+Cons
+
+You can stick arbitrary JavaScript in the template
+Doesn't have the concept of this in templates
+Can you think of others?
+
+HANDLEBARS.JS
+
+twitter.init = function( $selection ) {
+    _selection = $selection;
+    
+    Handlebars.registerHelper( "fromNow", function( time ) {
+        return moment( time ).fromNow();
+    });
+};
+ 
+twitter.displayTweets = function( tweets ) {
+    var templateString = $( "#tweets-handlebars" ).html(),
+        template = Handlebars.compile( templateString );
+                        
+    _selection.empty().append( template( tweets ) );         
+};
+
+<script id="tweets-handlebars" type="text/x-handlebars-template">
+    <ul>
+        {{#each this}}
+        <li>
+            <i>{{fromNow this.created_at}}</i>: 
+            <b>{{this.user.name}}</b> - 
+            <span>{{this.text}}</span> 
+            {{#if this.retweeted}}<i class="icon-repeat"></i>{{/if}} 
+            {{#if this.favorited}}<i class="icon-star"></i>{{/if}}
+        </li>
+        {{/each}}
+    </ul>
+</script>
+
+Precompiling Your Templates
+
+Handlebars you can go one step further and compile the template on the server and include that on the front-end. This means that you can reduce that amount of work needed on the front-end AND there is a trimmed down version of the handlebars runtime that you can use that has only the parts necessary needed to execute a template (not compile it)!
+
+How cool is that? If your answer was "It's just about as cool as Batman riding on a Rainbow Unicorn alongside dolphins!", then you were right! Congratulations ;)
+
+insert picture of batmap here
+
+Why use Handlebars.js?
+
+Pros
+
+Its a Logic-less Template Engine
+You can Precompile Templates on the Server
+Supports Helper methods
+Can Run on the Client and the Server
+Supports the concept of this in templates
+It iss a superset of Mustache.js
+Can you think of others?
+Cons
+
+Can you think of any?
+
+
+WHAT ABOUT OTHER TEMPLATING ENGINES?
+
+insert picture of template chooser
+
+
+					<section data-state="demox">
+						<canvas id="game-orange" width=625 height=380>
+						    Text that you see if you don't support Canvas :(
+						</canvas>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Big Brother Bird</h2>
+						<p>
+							<img src="./img/big-brother-bird.png" />
+						</p>
+						<p>Pulls out the big guns with his finite state machine and other proven design patterns of destruction</p>
+					</section>
+					<section>
+						<h2>What was Stolen by the Pigs?</h2>
+						<p></p>
+					</section>
+
+					<section data-state="demox">
+						<canvas id="game-big-brother" width=625 height=380>
+						    Text that you see if you don't support Canvas :(
+						</canvas>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Mighty Eagle</h2>
+						<p>
+							<img src="./img/mighty-eagle.png" />
+						</p>
+						<p>Uses the most superior weapon of them all, a suite of tools that can organize and deploy all the other birds into battle against their soon to be vanquished foe</p>
+					</section>
+					<section>
+						<h2>What was Stolen by the Pigs?</h2>
+						<p></p>
+					</section>
+
+					<section data-state="demox">
+						<canvas id="game-mighty-eagle" width=625 height=380>
+						    Text that you see if you don't support Canvas :(
+						</canvas>
+					</section>
+				</section>
+
+			</div>
+
+		</div>
+		<script src="js/jquery-1.9.1.js"></script>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script src="js/Box2dWeb-2.1.a.3.min.js"></script>
+		<script src="js/boxbox.min.js"></script>
+		<script src="js/keyDecode.js"></script>
+		<script src="js/game-red.js"></script>
+		<script src="js/game-blue.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// width: 1600,
+				// height: 900,
+
+				// width: 1024,
+				// height: 768,
+
+				width: 1280,
+				height: 800,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+			Reveal.addEventListener( 'ready', function( event ) {
+			    if ( $( Reveal.getCurrentSlide() ).data( "state" ) === "demo" ) {
+				    Reveal.removeEventListeners();
+			    } else {
+				    Reveal.addEventListener();
+			    }
+			} );
+
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+				var $currentSlide = $( Reveal.getCurrentSlide() );
+
+			    if ( $currentSlide.data( "state" ) === "demo" && $currentSlide.find( "canvas" ).length ) {
+				    Reveal.removeEventListeners();
+			    } else {
+				    Reveal.addEventListeners();
+			    }
+			} );
+
+			Reveal.addEventListener( 'demo', function() {
+			    Reveal.removeEventListeners();
+			}, false );
+		</script>
+
+	</body>
+</html>
