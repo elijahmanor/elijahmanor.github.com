@@ -379,6 +379,12 @@ console.log( window.bird.power );    // Private variable, can't access
 						<h2>What was Stolen by the Pigs?</h2>
 						<p>The birds used to build their web applications with components having hard dependencies on each-other. They eventually started to learn to reduce tight coupling by introducing events and messages.</p>
 					</section>
+
+					<section>
+						<h2>Sample Application</h2>
+						<iframe width="100%" height="600" src="http://jsfiddle.net/xHAp4/embedded/result,js,resources,html,css/presentation/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+					</section>
+
 					<section>
 						<h2>Tightly Coupled Code</h2>
 						<pre><code>
@@ -424,8 +430,8 @@ $( "button" ).on( "click", function( e ) {
 					<section>
 						<h2>TYPES OF MESSAGES: Observer Events</h3>
 						<ul>
-							<li>You can think of this as adding event handlers to an element</li>
-							<li>The element has a direct reference to the callbacks that will be invoked when the event type occurs</li> 
+							<li class="fragment">You can think of this as adding event handlers to an element</li>
+							<li class="fragment">The element has a direct reference to the callbacks that will be invoked when the event type occurs</li> 
 						</ul>
 					</section>
 
@@ -452,8 +458,8 @@ $( "#bird" ).trigger( "click" );
 					<section>
 						<h2>TYPES OF MESSAGES: Mediated Events</h3>
 						<ul>
-							 <li>There is another entity that keeps track of publishing and subscribing of messages</li>
-							 <li>Main difference between this and Observer events is that Mediated events aren't tied directly to the subject that invoked it</li>
+							 <li class="fragment">There is another entity that keeps track of publishing and subscribing of messages</li>
+							 <li class="fragment">Main difference between this and Observer events is that Mediated events aren't tied directly to the subject that invoked it</li>
 						</ul>
 					</section>
 
@@ -487,8 +493,8 @@ channel.publish( "bird.reset" );
 					<section>
 						<h2>TYPES OF MESSAGES: Hybrid Events</h3>
 						<ul>
-							<li>Looks like a mediated event, but if you look hard enough there you could actually trace the origin of the event back to the original subject</li>
-							<li>Example of this is jQuery's delegated event model. Delegated events are great, but it is based on the concept of events bubbling up the DOM and therefore we can trace where it came from</li>
+							<li class="fragment">Looks like a mediated event, but if you look hard enough there you could actually trace the origin of the event back to the original subject</li>
+							<li class="fragment">Example of this is jQuery's delegated event model. Delegated events are great, but it is based on the concept of events bubbling up the DOM and therefore we can trace where it came from</li>
 						</ul>
 					</section>
 
@@ -1963,9 +1969,51 @@ attackFsm.handle( "pig.destroyed" );
 						<h2>Grunt Basics</h2>
 						<p>Once you've installed grunt you'll need 2 main things for each of your projects</p>
 						<ol>
-							<li class="fragment">Gruntfile.js - JavaScript build file describing tasks</li>
 							<li class="fragment">package.json - Describes your project's name, version, and any dependencies it might have such as grunt and any grunt plugins</li>
+							<li class="fragment">Gruntfile.js - JavaScript build file describing tasks</li>
 						</ol>
+					</section>
+
+					<section>
+						<h2>Grunt package.json</h2>
+						<pre><code class="javascript">
+{
+  "name": "my-project-name",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-nodeunit": "~0.1.2"
+  }
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Grunt Gruntfile.js</h2>
+						<pre><code>
+module.exports = function(grunt) {
+    // Project configuration.
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+        uglify: {
+            options: {
+                banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+            },
+            build: {
+                src: 'src/<%= pkg.name %>.js',
+                dest: 'build/<%= pkg.name %>.min.js'
+            }
+        }
+    });
+
+    // Load the plugin that provides the "uglify" task.
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+
+    // Default task(s).
+    grunt.registerTask('default', ['uglify']);
+};
+						</code></pre>
 					</section>
 
 					<section>
