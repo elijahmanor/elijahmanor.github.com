@@ -18,7 +18,7 @@
 		<link rel="stylesheet" href="css/theme/default.css" id="theme">
 
 		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/monokai.css"><!-- zenburn tomorrow-night-bright -->
+		<link rel="stylesheet" href="lib/css/monokai.css"><!-- googlecode monokai zenburn tomorrow-night-bright -->
 
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 		<script>
@@ -40,14 +40,18 @@ html.intro body {
 	background-size: contain;
 	background-color: #2b2b2b;
 }
-html.intro h1, p {	
+#introduction h1, #introduction p {	
   text-shadow: 5px 5px 5px black;
 }
-html.intro p, a {
+#introduction p, #introduction a {
 	font-size: 150%;
-    text-shadow: 5px 5px 5px #28591B; /* #B03B51; */
+    /*text-shadow: 5px 5px 5px #28591B; //#B03B51; */
     color: white !important; 	/* #87CE00 */
     font-weight: bolder;
+
+ text-shadow: 3px 0px 0px black, 3px 3px 0px black, 0px 3px 0px black, 
+    -3px 3px 0px black, -3px 0px 0px black, -3px -3px 0px black, 
+    0px -3px 0px black, 3px -3px 0px black, 3px 4px 5px black;
 }
 		</style>
 		<div class="reveal">
@@ -55,7 +59,7 @@ html.intro p, a {
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
                 <section>
-                    <section data-state="intro">
+                    <section id="introduction" data-state="intro">
                         <h1>of JavaScript</h1><br/>
                         <p>by <a href="http://elijahmanor.com">Elijah Manor</a> / <a href="http://twitter.com/elijahmanor">@elijahmanor</a></p>
                     </section>
@@ -512,7 +516,7 @@ $( ".pig:first" ).trigger( "impact" );
 
 					<section>
 						<h2>LOOSELY COUPLED CODE</h2>
-						<pre><code>
+						<pre><code class="javascript">
 var channel = postal.channel();
  
 $( document ).on( "click", ".term", function( e ) {
@@ -536,7 +540,7 @@ channel.subscribe( "searchTerm.changed", function( data ) {
 channel.subscribe( "searchTerm.changed", function( data ) {
     $( ".help-block" ).html( function( index, html ) {
         return ~html.indexOf( data.term ) ? html :
-            html + ", " + "<a href='#' class='term'>" + data.term + "</a>";
+            html + ", " + "&lt;a href='#' class='term'&gt;" + data.term + "&lt;/a&gt;";
     });
 });
  
@@ -545,10 +549,10 @@ channel.subscribe( "netflix.titles.updated", function( titles ) {
     $.each( titles, function( index, result ) {
         var row = "";
         if ( result.Rating && result.ReleaseYear ) {
-            row += "<td>" + result.Name + "</td>";
-            row += "<td>" + result.Rating + "</td>";
-            row += "<td>" + result.ReleaseYear + "</td>";
-            row = "<tr>" + row + "</tr>";
+            row += "&lt;td&gt;" + result.Name + "&lt;/td&gt;";
+            row += "&lt;td&gt;" + result.Rating + "&lt;/td&gt;";
+            row += "&lt;td&gt;" + result.ReleaseYear + "&lt;/td&gt;";
+            row = "&lt;tr&gt;" + row + "&lt;/tr&gt;";
             rows.push( row );
         }
     });
@@ -572,6 +576,8 @@ window.netflix = {
 					</section>
 
 					<section data-state="demox">
+						<h2>Yellow Bird!</h2>
+						<p style="font-size: 72px;">→</p>
 					<!--
 						<canvas id="game-blue" width=625 height=380>
 						    Text that you see if you don't support Canvas :(
@@ -590,7 +596,13 @@ window.netflix = {
 					</section>
 					<section>
 						<h2>What was Stolen by the Pigs?</h2>
-						<p>The birds used to manually add script tags to their HTML files. At first this wasn't an issue, but when their application started to grow larger and more complex it started to become difficult for them to organize their code, figure out dependencies, and determine a strategy for optimizing performance. Thankfully they were introduced to the RequireJS library which provided them a way to manage their code into modules, load their scripts asynchronously, manage their dependencies, and provide an easy way to optimize.</p>
+						<p>The birds used to manually add script tags to their HTML files. They were introduced to RequireJS which provided them a way to...</p>
+						<ul> 
+							<li class="fragment">Manage their code into modules</li>
+							<li class="fragment">Load their scripts asynchronously</li>
+							<li class="fragment">Manage their dependencies</li>
+							<li class="fragment">Provide an easy way to optimize</li>
+						</ul>
 					</section>
 
 					<section>
@@ -656,7 +668,7 @@ define(
 
 					<section>
 						<h2>RequireJS: require</h2>
-						<pre><code>
+						<pre><code class="javascript">
 require( 
     [ "my-first-module" ],    // Array of dependencies that are needed
     function( firstModule ) { // Callback with parameters matching dependencies
@@ -774,6 +786,8 @@ C:/Users/Elijah/Desktop/demo/src/main.js
 					</section>
 
 					<section data-state="demox">
+						<h2>Black Bird!</h2>
+						<p style="font-size: 72px;">→</p>
 						<canvas id="game-yellow" width=625 height=380>
 						    Text that you see if you don't support Canvas :(
 						</canvas>
@@ -790,12 +804,12 @@ C:/Users/Elijah/Desktop/demo/src/main.js
 					</section>
 					<section>
 						<h2>What was Stolen by the Pigs?</h2>
-						<p>The birds used to write their jQuery code like it was a tangled smorgasbord of worms. They would mix up their views, models, and presenter logic all together in a big interconnected pile of grubs. After a while one of their ancestors, a Black Bird, introduced the Backbone.js library and showed them a different way to think about developing front-end web applications. However, during a recent invasion the pigs stole Backbone.js from the birds and carried it back to their filthy sty.</p>
+						<p>The birds used to write their jQuery code like it was a tangled smorgasbord of worms. A Black Bird introduced the Backbone.js library and showed them a different way to think about developing front-end web applications</p>
 					</section>
 
 					<section>
 						<h2>TANGLED SMORGASBORD OF WORMS</h2>
-						<pre></code>
+						<pre><code class="javascript">
 $( document ).on( "click", ".term", function( e ) {
     e.preventDefault();
     $( "input" ).val( $( this ).text() );
@@ -822,10 +836,10 @@ $( document ).ready( function() {
                 $.each( data.d.results, function( index, result ) {
                     var row = "";
                     if ( result.Rating && result.ReleaseYear ) {
-                        row += "<td>" + result.Name + "</td>";
-                        row += "<td>" + result.Rating + "</td>";
-                        row += "<td>" + result.ReleaseYear + "</td>";
-                        row = "<tr>" + row + "</tr>";
+                        row += "&lt;td&gt;" + result.Name + "&lt;/td&gt;";
+                        row += "&lt;td&gt;" + result.Rating + "&lt;/td&gt;";
+                        row += "&lt;td&gt;" + result.ReleaseYear + "&lt;/td&gt;";
+                        row = "&lt;tr&gt;" + row + "&lt;/tr&gt;";
                         rows.push( row );
                     }
                 });
@@ -1037,7 +1051,7 @@ define( [ "jquery", "backbone", "underscore", "channels", "text!movie-template.h
 
 					<section>
 						<h2>Refactor: Movie Template</h2>
-						<pre><code>
+						<pre><code class="xml">
 &lt;% _.each( movies, function( movie ) { %&gt;
     &lt;tr&gt;
         &lt;td&gt;&lt;%= movie.name %&gt;&lt;/td&gt;
@@ -1049,6 +1063,8 @@ define( [ "jquery", "backbone", "underscore", "channels", "text!movie-template.h
 					</section>
 
 					<section data-state="demox">
+						<h2>White Bird!</h2>
+						<p style="font-size: 72px;">→</p>
 						<canvas id="game-black" width=625 height=380>
 						    Text that you see if you don't support Canvas :(
 						</canvas>
@@ -1065,18 +1081,18 @@ define( [ "jquery", "backbone", "underscore", "channels", "text!movie-template.h
 					</section>
 					<section>
 						<h2>What was Stolen by the Pigs?</h2>
-						<p>The birds all learned how to program in a slightly different way. Some birds were self-taught and some birds went to college for computer science. Even among those groups there were a wide range of experiences and talent. When the birds got together to build their first large application it was a huge disaster. Each bird thought their coding standard was the "right way" and it started to become an issue. One day a wise White Bird came along and suggested that they come up with a common set of coding practices to follow. In addition, the White Bird introduced a few tools to help them conform to a standard and to help find issues and concerns early before they became a huge issue later.</p>
+						<p>Each bird thought their coding standard was the "right way" and it started to become an issue. One day a wise White Bird came along and suggested that they come up with a common set of coding practices & tools to use.</p>
 					</section>
 
 					<section>
 						<h2>JAVASCRIPT CODING STANDARDS</h2>
 						<ul>
-							<li>A developer will be able to make sense of other code more quickly</li>
-							<li>Merges in your code repository won't be as awful</li>
-							<li>Having a standard will actually reduce defects</li>
-							<li>The codebase will feel more unified</li>
-							<li>Disagreements about who is "right" will lessen</li>
-							<li>... insert your benefit here ...</li>
+							<li class="fragment">A developer will be able to make sense of other code more quickly</li>
+							<li class="fragment">Merges in your code repository won't be as awful</li>
+							<li class="fragment">Having a standard will actually reduce defects</li>
+							<li class="fragment">The codebase will feel more unified</li>
+							<li class="fragment">Disagreements about who is "right" will lessen</li>
+							<li class="fragment">... insert your benefit here ...</li>
 						</ul>
 					</section>
 
@@ -1093,22 +1109,22 @@ define( [ "jquery", "backbone", "underscore", "channels", "text!movie-template.h
 					<section>
 						<h2>JAVASCRIPT LINTING: JSHint</h2>
 						<ul>
-							<li>The use of === instead of ==</li>
-							<li>Using variables that aren't defined</li>
-							<li>Declaring variables that are never used</li>
-							<li>Declaring functions inside of loops</li>
-							<li>And lots more...</li>
+							<li class="fragment">The use of === instead of ==</li>
+							<li class="fragment">Using variables that aren't defined</li>
+							<li class="fragment">Declaring variables that are never used</li>
+							<li class="fragment">Declaring functions inside of loops</li>
+							<li class="fragment">And lots more...</li>
 						</ul>
 					</section>
 
 					<section>
 						<h2>JAVASCRIPT LINTING: Recent Additions</h2>
 						<ul>
-							<li>maxcomplexity - Maximum cyclomatic complexity</li>
-							<li>maxstatements - Maximum number of statements allowed in a function</li>
-							<li>maxparams - Maximum number of parameter allowed in a function</li>
-							<li>maxdepth - Maximum depth allowed in a function</li>
-							<li>maxlen - Maximum length of line in code</li>
+							<li class="fragment">maxcomplexity - Maximum cyclomatic complexity</li>
+							<li class="fragment">maxstatements - Maximum number of statements allowed in a function</li>
+							<li class="fragment">maxparams - Maximum number of parameter allowed in a function</li>
+							<li class="fragment">maxdepth - Maximum depth allowed in a function</li>
+							<li class="fragment">maxlen - Maximum length of line in code</li>
 						</ul>
 					</section>
 
@@ -1161,6 +1177,8 @@ define( [ "jquery", "backbone", "underscore", "channels", "text!movie-template.h
 					</section>
 
 					<section data-state="demox">
+						<h2>Green Bird!</h2>
+						<p style="font-size: 72px;">→</p>
 						<canvas id="game-white" width=625 height=380>
 						    Text that you see if you don't support Canvas :(
 						</canvas>
@@ -1177,7 +1195,8 @@ define( [ "jquery", "backbone", "underscore", "channels", "text!movie-template.h
 					</section>
 					<section>
 						<h2>What was Stolen by the Pigs?</h2>
-						<p>For the most part the birds are all front-end web developers only and don't focus on the back-end much at all. As a result the birds have a symbiotic relationship with the Water Buffalo. The Buffalo write the back-end of the application and the birds develop the front-end. The problem with this arrangement is that while the back-end is being developed the birds are left twiddling their feathers until the Buffalo are finished. However, once the back-end is done the pressure is on the birds to deliver while the Buffalo sit idle by the watering hole in the shade. Thankfully, a while back, a Green Bird proposed the idea of mocking the back-end services so they could make progress on the front-end while they waited for the Buffalo to finish their work! The Green Bird introduced a couple of handy libraries to make mocking a much easier process. </p>
+						<p>The birds have a symbiotic relationship with Water Buffalo (birds write front-end & buffalo writes back-end). A Green Bird proposed the idea of mocking.</p>
+						<p><img src="../img/buffalo-2.jpg" /></p>
 					</section>
 
 					<section>
@@ -1187,7 +1206,7 @@ define( [ "jquery", "backbone", "underscore", "channels", "text!movie-template.h
 
 					<section>
 						<h2>The Twitter Application</h2>
-						<pre><code>
+						<pre><code class="javascript">
 (function( twitter, $, undefined ) {
  
     var channel = twitter.channel = postal.channel(),
@@ -1251,8 +1270,13 @@ $( document ).on( "click", "button", function( e ) {
 					</section>
 
 					<section>
-						<h2></h2>
+						<h2>Real Data from Twitter</h2>
 						<p><img src="../img/twitter-raw.png" /></p>
+					</section>
+
+					<section>
+						<h2>Introducing Mockjax</h2>
+						<p>A library to mock jQuery Ajax requests</p>
 					</section>
 
 					<section>
@@ -1278,13 +1302,18 @@ $.mockjax({
 					</section>
 
 					<section>
-						<h2></h2>
+						<h2>Ultra-Boring Super-Static Mocked Data :(</h2>
 						<p><img src="../img/twitter-mock-static.png" /></p>
 					</section>
 
 					<section>
+						<h2>Introducing mockJSON</h2>
+						<p>A library to generated random data based on a template</p>
+					</section>
+
+					<section>
 						<h2>MOCKING DYNAMIC SEMI-RANDOM DATA</h2>
-						<pre><code>
+						<pre><code class="javascript">
 $.mockjax({
     url: "https://api.twitter.com/1/statuses/user_timeline/*",
     responseTime: 750,
@@ -1307,11 +1336,13 @@ $.mockjax({
 					</section>
 
 					<section>
-						<h2></h2>
+						<h2>Semi-Exciting Somewhat-Random Mocked Data! :)</h2>
 						<p><img src="../img/twitter-mock-dynamic.png" /></p>
 					</section>
 
 					<section data-state="demox">
+						<h2>Orange Bird!</h2>
+						<p style="font-size: 72px;">→</p>
 						<canvas id="game-green" width=625 height=380>
 						    Text that you see if you don't support Canvas :(
 						</canvas>
@@ -1328,12 +1359,12 @@ $.mockjax({
 					</section>
 					<section>
 						<h2>What was Stolen by the Pigs?</h2>
-						<p>For the last several years we have seen a trend that more and more work is being done on the front-end of web development. We communicate to the back-end via Ajax or Web Sockets and then display the data somehow in the UI. The birds found themselves mostly using string concatenation to build up the rich user interfaces, which resulted in a lot of code that was boring and also prone for errors. Thankfully an Orange Bird came along and said, "Hey, isn't there something better than this? Can't we separate our view from our data somehow?", and that is how templates became to be in the bird world. The Orange Bird borrowed templating libraries from the humans such as Underscore.js and Handlebar.js to help fit this need among the foul. </p>
+						<p>The birds found themselves using string concatenation to build up rich user interfaces, which resulted in a lot of code that was boring and also prone for errors. Thankfully an Orange Bird came along and introduced templating libraries such as Underscore.js and Handlebar.js.</p>
 					</section>
 
 					<section>
 						<h2>WHY USE A TEMPLATING ENGINE?</h2>
-						<pre><code>
+						<pre><code class="javascript">
 (function( twitter, $, undefined ) { 
     var _selection;
         
@@ -1374,7 +1405,10 @@ twitter.displayTweets = function( tweets ) {
 
 					<section>
 						<h2>UNDERSCORE.JS: Take 1</h2>
-						<pre><code>
+						<style>
+						.codex { background-color: #272822; }
+						</style>
+						<pre class="codex"><codex class="django xml javascript">
 &lt;script id="tweets-underscore" type="text/template"&gt;
     &lt;ul&gt;
         &lt;% _.each( tweets, function( tweet ) { %>
@@ -1388,7 +1422,7 @@ twitter.displayTweets = function( tweets ) {
         &lt;% }); %&gt;
     &lt;/ul&gt;
 &lt;/script&gt;
-						</code></pre>
+						</codex></pre>
 					</section>
 
 					<section>
@@ -1415,7 +1449,7 @@ twitter.displayTweets = function( tweets ) {
 
 					<section>
 						<h2>UNDERSCORE.JS: Take 2</h2>
-						<pre><code>
+						<pre class="codex"><codex>
 &lt;script id="tweets-underscore" type="text/template"&gt;
     &lt;ul&gt;
         &lt;% _.each( tweets, function( tweet ) { %&gt;
@@ -1429,26 +1463,26 @@ twitter.displayTweets = function( tweets ) {
         &lt;% }); %&gt;
     &lt;/ul&gt;
 &lt;/script&gt;
-						</code></pre>
+						</codex></pre>
 					</section>
 
 					<section>
 						<h2>Why use Underscore.js? Pros</h2>
 						<ul>
-							<li>You can stick arbitrary JavaScript in the template</li>
-							<li>It is very small</li>
-							<li>If you are already using Backbone.js then you have it</li>
-							<li>If you are already using Underscore.js then you have it</li>
-							<li>You can Compile the Templates</li>
-							<li>Can Run on the Client and the Server</li>
+							<li class="fragment">You can stick arbitrary JavaScript in the template</li>
+							<li class="fragment">It is very small</li>
+							<li class="fragment">If you are already using Backbone.js then you have it</li>
+							<li class="fragment">If you are already using Underscore.js then you have it</li>
+							<li class="fragment">You can Compile the Templates</li>
+							<li class="fragment">Can Run on the Client and the Server</li>
 						</ul>
 					</section>
 
 					<section>
 						<h2>Why use Underscore.js? Cons</h2>
 						<ul>
-							<li>You can stick arbitrary JavaScript in the template</li>
-							<li>Doesn't have the concept of this in templates</li>
+							<li class="fragment">You can stick arbitrary JavaScript in the template</li>
+							<li class="fragment">Doesn't have the concept of this in templates</li>
 						</ul>
 					</section>
 
@@ -1474,7 +1508,7 @@ twitter.displayTweets = function( tweets ) {
 
 					<section>
 						<h2>HANDLEBARS.JS</h2>
-						<pre><code>
+						<pre class="codex"><codex>
 &lt;script id="tweets-handlebars" type="text/x-handlebars-template"&gt;
     &lt;ul&gt;
         {{#each this}}
@@ -1488,37 +1522,37 @@ twitter.displayTweets = function( tweets ) {
         {{/each}}
     &lt;/ul&gt;
 &lt;/script&gt;
-						</code></pre>
+						</codex></pre>
 					</section>
 
 					<section>
 						<h2>Precompiling Your Templates</h2>
 						<ul>
-							<li>compile the template on the server and include that on the front-end</li>
-							<li>reduce that amount of work needed on the front-end</li>
-							<li>there is a trimmed down version of the handlebars runtime that you can use that has only the parts necessary needed to execute a template</li>
+							<li class="fragment">Compile the template on the server and include that on the front-end</li>
+							<li class="fragment">Reduce that amount of work needed on the front-end</li>
+							<li class="fragment">There is a trimmed down version of the handlebars runtime that you can use that has only the parts necessary needed to execute a template</li>
 						</ul>
-						<p><img src="../img/batman-unicorn-dolphins.jpg" /></p>
-						<div class="fragment">"It's just about as cool as Batman riding on a Rainbow Unicorn alongside dolphins!"</div>
+						<p class="fragment"><img src="../img/batman-unicorn-dolphins.jpg" /></p>
+						<div class="fragment" style="position: relative; line-height: 1em; font-size: 52px; top: -600px; width: 350px; color: red; font-bold: bolder;">"It's just about as cool as Batman riding on a Rainbow Unicorn alongside dolphins!"</div>
 					</section>
 
 					<section>
 						<h2>Why use Handlebars.js? Pros</h2>
 						<ul>
-							<li>Its a Logic-less Template Engine</li>
-							<li>You can Precompile Templates on the Server</li>
-							<li>Supports Helper methods</li>
-							<li>Can Run on the Client and the Server</li>
-							<li>Supports the concept of this in templates</li>
-							<li>It is a superset of Mustache.js</li>
+							<li class="fragment">Its a Logic-less Template Engine</li>
+							<li class="fragment">You can Precompile Templates on the Server</li>
+							<li class="fragment">Supports Helper methods</li>
+							<li class="fragment">Can Run on the Client and the Server</li>
+							<li class="fragment">Supports the concept of this in templates</li>
+							<li class="fragment">It is a superset of Mustache.js</li>
 						</ul>
 					</section>
 
 					<section>
 						<h2>Why use Handlebars.js? Cons</h2>
 						<ul>
-							<li>Possibly slowing???</li>
-							<li>Can you think of any?</li>
+							<li class="fragment">It might be slow???</li>
+							<li class="fragment">Can you think of any?</li>
 						</ul>
 					</section>
 
@@ -1528,6 +1562,8 @@ twitter.displayTweets = function( tweets ) {
 					</section>
 
 					<section data-state="demox">
+						<h2>Big Brother Bird!</h2>
+						<p style="font-size: 72px;">→</p>
 						<canvas id="game-orange" width=625 height=380>
 						    Text that you see if you don't support Canvas :(
 						</canvas>
@@ -1544,14 +1580,17 @@ twitter.displayTweets = function( tweets ) {
 					</section>
 					<section>
 						<h2>What was Stolen by the Pigs?</h2>
-						<p>The birds knew how to program for the most part, but they never had a common terminology that they all understood to represent common scenarios they kept encountering. Then one day a Big Brother Bird came along and documented a set of common Design Patterns and them names and descriptions so they could all be on the same page when talking about architecture. Big Brother Bird ended up writing these patterns in a popular piece that became known as the Gang of Foul book.</p>
+						<p>The birds knew how to program, but they never had a common nomenclature that they all understood. Big Brother Bird came along and documented a set of common Design Patterns in a book lovingly known as the Gang of Foul.</p>
 					</section>
 
+					<section>
+						<h2>Gang of Foul: Singleton</h2>
+						<blockquote>There can be only one!</blockquote>
+					</section>
 
-Singleton
-
-The most basic form of singleton is the object literal as shown below. We are basically just creating an object and there is one of them. Technically someone could Object.create on us, but for the most part this fulfills the singleton definition. You can find a more robust solution in one of the resources recommended near the end of this post.
-
+					<section>
+						<h2>Gang of Foul: Singleton</h2>
+						<pre><code>
 var bird = {
     type: "Red",
     fly: function() {
@@ -1561,25 +1600,17 @@ var bird = {
         console.log( "Hasta la vista, baby!" );
     }
 };
+						</code></pre>
+					</section>
 
-Factory
+					<section>
+						<h2>Gang of Foul: Factory</h2>
+						<blockquote>A factory is a way to create new objects without actually using the new keyword. The idea is that there is something abstracted away from you in the factory method. </blockquote>
+					</section>
 
-A factory is a way to create new objects without actually using the new keyword. The idea is that there is something abstracted away from you in the factory method. In the following example we are aren't necessarily doing anything fancy, but you could imagine that we could add some custom code down the road and the external API wouldn't change, which is the point of this pattern.
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
+					<section>
+						<h2>Gang of Foul: Factory</h2>
+						<pre><code>
 var Bird = function() {};
 Bird.factory = function( type ) {
     var bird;
@@ -1594,41 +1625,17 @@ Bird.Blue = function() {};
  
 var redBird = Bird.factory( "Red" );
 var blueBird = Bird.factor( "Blue" );
+						</code></pre>
+					</section>
 
-Bridge
+					<section>
+						<h2>Gang of Foul: Bridge</h2>
+						<blockquote>decouple an abstraction from its implementation so that the two can vary independently --http://en.wikipedia.org/wiki/Bridge_pattern</blockquote>
+					</section>
 
-In the following snippet of code we are creating a small bridge between an event handler and the code that will be executed. By creating a little bridge it will enabled the executed code to be tested easier since it won't have a dependency on the element context that was passed by jQuery.
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
+					<section>
+						<h2>Gang of Foul: Bridge - Before</h2>
+						<pre><code>
 // Not Bridged
 var getUrl = function() {
     var url = $( this ).attr( "href" );
@@ -1641,7 +1648,12 @@ var getUrl = function() {
     });
 };
 $( "a.ajax" ).on( "click", getUrl );
- 
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Gang of Foul: Bridge - After</h2>
+						<pre><code>
 // Bridged
 var getUrl = function( url, callback ) {
     $.ajax({
@@ -1659,19 +1671,19 @@ var getUrlBridge = function() {
     });
 }
 $( "a.ajax" ).on( "click", getUrlBridge );
+						</code></pre>
+					</section>
 
-Facade
 
-A facade is common place in front-end web development since there is so much cross-browser inconsistencies. A facade brings a common API to something that could vary under the covers. In the following snippet we abstract the addEventListener logic for various browser implementations.
 
-1
-2
-3
-4
-5
-6
-7
-8
+					<section>
+						<h2>Gang of Foul: Facade</h2>
+						<blockquote>A facade is common place in front-end web development since there is so much cross-browser inconsistencies. A facade brings a common API to something that could vary under the covers.</blockquote>
+					</section>
+
+					<section>
+						<h2>Gang of Foul: Bridge</h2>
+						<pre><code>
 // Facade
 var addEvent = function( element, type, eventHandler ) {
 	if ( element.addEventListener ) {
@@ -1680,47 +1692,17 @@ var addEvent = function( element, type, eventHandler ) {
 		element.attachEvent( "on" + type, eventHandler );    
 	}
 };
+						</code></pre>
+					</section>
 
-Adapter
+					<section>
+						<h2>Gang of Foul: Adapter</h2>
+						<blockquote>An adapter is a nice way to massage one piece of code to work with another piece of code. This can be useful when you need to switch to another library, but can't afford to rewrite much of your code. </blockquote>
+					</section>
 
-An adapter is a nice way to massage one piece of code to work with another piece of code. This can be useful when you need to switch to another library, but can't afford to rewrite much of your code. In the following example we are modifying jQuery's $.when method to work with the WinJS.Promise. This is some code I wrote back when I worked for appendTo when we were making jQuery working with Windows 8 apps. You can find this repository at jquery-win8.
-
-Much of the jquery-win8 repository is not needed anymore since Jonathan Sampson has worked with the jQuery team to make sure the changes he made to the shim was added to the 2.0 version of jQuery as noted in the following blog post
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
+					<section>
+						<h2>Gang of Foul: Adapter</h2>
+						<pre><code>
 /*!
  * jquery-win8-deferred - jQuery $.when that understands WinJS.promise
  * version: 0.1
@@ -1755,24 +1737,17 @@ Much of the jquery-win8 repository is not needed anymore since Jonathan Sampson 
         return $when.apply(this, args);
     };
 }());
+						</code></pre>
+					</section>
 
-Observer
+					<section>
+						<h2>Gang of Foul: Observer</h2>
+						<blockquote>We've covered the Observer pattern already in the Blue Bird past a while back in this series, but it is a powerful pattern that can help decouple various components. My recommendation is to use the postal.js library.</blockquote>
+					</section>
 
-We've covered the Observer pattern already in the Blue Bird past a while back in this series, but it is a powerful pattern that can help decouple various components. My recommendation is to use the postal.js library.
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
+					<section>
+						<h2>Gang of Foul: Observer</h2>
+						<pre><code>
 var channel = postal.channel( "game" );
  
 channel.subscribe( "bird.attack", function( data ) {
@@ -1786,30 +1761,17 @@ channel.subscribe( "pig.collide", function( impact ) {
 });
  
 channel.publish( "bird.attack", { angle: 45 } );
+						</code></pre>
+					</section>
 
-MANY MORE PATTERNS
+					<section>
+						<h2>MANY MORE PATTERNS: Inheritance</h2>
+						<p>There are several ways to implement inheritance in JavaScript. It is good to know some of these patterns as you create new objects in your application.</p>
+					</section>
 
-Inheritance
-
-There are several ways to implement inheritance in JavaScript. It is good to know some of these patterns as you create new objects in your application.
-
-Prototypal Inheritance
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
+					<section>
+						<h2>PATTERNS: Prototypal Inheritance</h2>
+						<pre><code>
 var bird = {
     name: "Red Bird",
     power: "",
@@ -1824,32 +1786,13 @@ var bird = {
 var yellowBird = Object.create( bird );
 yellowBird.name = "Yellow Bird";
 yellowBird.power = "Speed";
-console.log( yellowBird.catapult() );
-view rawprototypal-inheritance.jsThis Gist brought to you by GitHub.
+console.log( yellowBird.catapult() ); //Yellow Bird is catapulting with Speed
+						</code></pre>
+					</section>
 
-Pseudoclassical Ineritance
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
+					<section>
+						<h2>PATTERNS: Pseudoclassical Ineritance</h2>
+						<pre><code>
 var Bird = function( name, power ) {
     this.name = name + " Bird";
     this.power = power || "";
@@ -1870,24 +1813,13 @@ var yellowBird = new YellowBird( "Yellow", "Speed" );
 yellowBird.getName = function() {
   return "Super Awesome " + this.name;
 };
-console.log( yellowBird.catapult() );
+console.log( yellowBird.catapult() ); //Super Awesome Yellow Bird is catapulting with Speed
+						</code></pre>
+					</section>
 
-Chaining
-
-In the front-end world chaining became popular by the jQuery library. It is actually a really easy pattern to implement. You essentially just have to return this from every function so that other functions can be immediately called. See the following for an example.
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
+					<section>
+						<h2>PATTERNS: Chaining</h2>
+						<pre><code>
 var bird = {
     catapult: function() {
         console.log( "Yippeeeeee!" );
@@ -1900,24 +1832,12 @@ var bird = {
 };
  
 bird.catapult().destroy();
-view rawchaining.jsThis Gist brought to you by GitHub.
+						</code></pre>
+					</section>
 
-Encapsulating
-
-We've already covered encapsulating in the Red Bird past where we talked about the IIFE pattern. This allows you to have public and private properties and methods to help encapsulate your code. The follow is a very brief example of that. Check out the Red Bird post for more details.
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
+					<section>
+						<h2>PATTERNS: Encapsulating</h2>
+						<pre><code>
 // IIFE
 var yellowBird = (function() {
     var superSecret  = {
@@ -1930,60 +1850,12 @@ var yellowBird = (function() {
         goal: "Vengence"
     }
 }());
-view rawencapsulating.jsThis Gist brought to you by GitHub.
+						</code></pre>
+					</section>
 
-Finite State Machine
-
-One of my favorite pattern is the Finite State Machine. My friend Jim Cowart (@ifandelse) created the Machina.js Library to implement this pattern in JavaScript. The following is an example of using states to describe the game of Angry Birds. For more information check out his blog post and GitHub repository.
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
+					<section>
+						<h2>PATTERNS: Finite State Machine</h2>
+						<pre><code>
 var attackFsm = new machina.Fsm({
     initialState: "idle",
     states : {
@@ -2033,24 +1905,32 @@ var attackFsm = new machina.Fsm({
 attackFsm.handle( "bird.launch", { angle: 45 } );
 attackFsm.handle( "pig.destroyed" );
 
-RECOMMENDATIONS
+// Weeeeee at 45 degrees!
+// Yay, hear me tweet!
+// Yay, we are victorious!
+						</code></pre>
+					</section>
 
+					<section>
+						<h2>Recommendation</h2>
+						<p>In addition to learning these patterns I would recommend that you pick one of your favorite libraries and start to source dive into their repository. </p>
+					</section>
 
-In addition to learning these patterns I would recommend that you pick one of your favorite libraries and start to source dive into their repository. There is a wealth of information you can learn there. At first it could be semi-overwhelming, but over time you can glean a lot from developers who really know some of these patterns. You might try just looking at one particular method and start picking it apart. If you aren't sure exactly where to look for a particular method why don't you pick jQuery and use James Padolsey's (@padosley) jQuery Source Viewer to help find it for you?
-
-ADDITIONAL RESOURCES
-
-
-There are far too many patterns for me to list here. Many have blogged about these before me and will continue to. If I have missed any good ones please let me know.
-
-JavaScript Design Patterns by Joe Zim (@JoeZimJS)
-Understanding Design Patterns in JavaScript by Tilo Mitra (@tilomitra)
-Learning JavaScript Design Patterns by Addy Osmani (@addyosmani)
-JS Patterns by Shi Chuan (@shichuan)
-JavaScript Patterns by Stoyan Stefanov (@xyz)
-JavaScript: The Good Parts by Douglas Crockford
+					<section>
+						<h2>ADDITIONAL RESOURCES</h2>
+						<ul>
+							<li><a href="http://www.joezimjs.com/javascript/javascript-design-patterns-singleton/" target="_blank">JavaScript Design Patterns</a> by Joe Zim (<a href="http://twitter.com/JoeZimJS" target="_blank">@JoeZimJS</a>)</li>
+							<li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/digging-into-design-patterns-in-javascript/" target="_blank">Understanding Design Patterns in JavaScript</a> by Tilo Mitra (<a href="http://twitter.com/tilomitra" target="_blank">@tilomitra</a>)</li>
+							<li><a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/" target="_blank">Learning JavaScript Design Patterns</a> by Addy Osmani (<a href="http://twitter.com/addyosmani" target="_blank">@addyosmani</a>)</li>
+							<li><a href="http://shichuan.github.io/javascript-patterns/" target="_blank">JS Patterns</a> by Shi Chuan (<a href="http://twitter.com/shichuan" target="_blank">@shichuan</a>)</li>
+							<li><a href="http://shop.oreilly.com/product/9780596806767.do" target="_blank">JavaScript Patterns</a> by Stoyan Stefanov (<a href="http://twitter.com/xyz" target="_blank">@xyz</a>)</li>
+							<li><a href="http://shop.oreilly.com/product/9780596517748.do" target="_blank">JavaScript: The Good Parts</a> by Douglas Crockford</li>
+						</ul>
+					</section> 
 
 					<section data-state="demox">
+						<h2>Mighty Eagle!</h2>
+						<p style="font-size: 72px;">→</p>
 						<canvas id="game-big-brother" width=625 height=380>
 						    Text that you see if you don't support Canvas :(
 						</canvas>
@@ -2067,48 +1947,110 @@ JavaScript: The Good Parts by Douglas Crockford
 					</section>
 					<section>
 						<h2>What was Stolen by the Pigs?</h2>
-						<p>Over time the birds picked up RequireJS (Yellow Bird), JSHint (White Bird), Plato, Mustache (Orange Bird), and a bunch of other great tools, but all of them required a command line task to complete. It was getting quite annoying having to remember what was required to run each of these tools. In addition, it was easy to forget to run the tools to update their web application when necessary. Thankfully one day the Mighty Eagle introduced some tools to make things a little bit easier. The Eagle brought Grunt and Bowser to automate common tasks and to help easily bring in commonly used libraries that were necessary to e their applications. </p>
+						<p>Over time the birds picked up RequireJS (Yellow Bird), JSHint (White Bird), Plato, Mustache (Orange Bird), and a bunch of other great tools, but all of them required a command line task to complete. The Mighty Eagle introduced some tools to make things a little bit easier. </p>
 					</section>
-Introduce Grunt
 
-grunt-contrib-coffee - Compile CoffeeScript files into JavaScript
-grunt-contrib-compass - Compile Compass into CSS
-grunt-contrib-concat - Concatenates files
-grunt-contrib-connect - Starts a connect web server
-grunt-contrib-csslint - Lints your CSS files
-grunt-contrib-handlebars - Precompiles your Handlebar tempaltes
-grunt-contrib-htmlmin - Minify your HTML markup
-grunt-contrib-imagemin - Minify PNG and JPEG images
-grunt-contrib-jshint - Validate files with JSHint
-grunt-contrib-less - Compile LESS to CSS
-grunt-contrib-nodeunit - Run Nodeunit unit test
-grunt-contrib-watch - Run predefined tasks when files change
-grunt-contrib-requirejs - Optimize RequireJS projects using r.js
-grunt-contrib-uglify - Minify files with UglifyJS
-grunt-contrib-yuidoc - Compile YUIDocs Documentation
-... more ...
+					<section>
+						<!-- <h2>Grunt</h2> -->
+						<p><img src="../img/grunt.png" /></p>
+					</section>
 
-jQuery Gruntfile 
-insert picture
+					<section>
+						<h2>Grunt Basics</h2>
+						<p>Once you've installed grunt you'll need 2 main things for each of your projects</p>
+						<ol>
+							<li class="fragment">Gruntfile.js - JavaScript build file describing tasks</li>
+							<li class="fragment">package.json - Describes your project's name, version, and any dependencies it might have such as grunt and any grunt plugins</li>
+						</ol>
+					</section>
 
-Modernizr Gruntfile
-insert picture
+					<section>
+						<h2>Grunt Plugins</h2>
+						<ul>
+							<li class="fragment">contrib-coffee - Compile CoffeeScript files into JavaScript</li>
+							<li class="fragment">contrib-compass - Compile Compass into CSS</li>
+							<li class="fragment">contrib-concat - Concatenates files</li>
+							<li class="fragment">contrib-connect - Starts a connect web server</li>
+							<li class="fragment">contrib-csslint - Lints your CSS files</li>
+							<li class="fragment">contrib-handlebars - Precompiles your Handlebar tempaltes</li>
+							<li class="fragment">contrib-htmlmin - Minify your HTML markup</li>
+							<li class="fragment">contrib-imagemin - Minify PNG and JPEG images</li>
+							<li class="fragment">contrib-jshint - Validate files with JSHint</li>
+							<li class="fragment">contrib-less - Compile LESS to CSS</li>
+							<li class="fragment">contrib-nodeunit - Run Nodeunit unit test</li>
+							<li class="fragment">contrib-watch - Run predefined tasks when files change</li>
+							<li class="fragment">contrib-requirejs - Optimize RequireJS projects using r.js</li>
+							<li class="fragment">contrib-uglify - Minify files with UglifyJS</li>
+							<li class="fragment">contrib-yuidoc - Compile YUIDocs Documentation</li>
+							<li class="fragment">... more ...</li>
+						</ul>
+					</section>
 
-Twitter Bowser
-show installing jquery
+					<section>
+						<h2>jQuery Gruntfile</h2>
+						<p><img src="../img/grunt-jquery.png" /></p>
+					</section>
 
-yeoman
-show creating webapp
+					<section>
+						<h2>Modernizr Gruntfile</h2>
+						<p><img src="../img/grunt-modernizr.png" /></p>
+					</section>
 
-show creating backbone:app & model
+					<section>
+						<!-- <h2>Twitter Bower</h2> -->
+						<p><img src="../img/bower.png" /></p>
+					</section>
+
+					<section>
+						<h2>Twitter Bower: Install jQuery</h2>
+						<p><img src="../img/bower-install-jquery.png" /></p>
+					</section>
+
+					<section>
+						<!-- <h2>Yeoman</h2> -->
+						<p><img src="../img/yeoman.png" /></p>
+					</section>
+
+					<section>
+						<h2>Yeoman: Install webapp</h2>
+						<p><img src="../img/yo-webapp.png" /></p>
+					</section>
+
+					<section>
+						<h2>Yeoman: Install backbone:app</h2>
+						<p><img src="../img/yo-backbone-app.png" /></p>
+					</section>
+
+					<section>
+						<h2>Yeoman: Install backbone:model</h2>
+						<p><img src="../img/yo-backbone-model.png" /></p>
+					</section>
 
 					<section data-state="demox">
+						<h2>Victory!</h2>
+						<p style="font-size: 72px;">→</p>
 						<canvas id="game-mighty-eagle" width=625 height=380>
 						    Text that you see if you don't support Canvas :(
 						</canvas>
 					</section>
 				</section>
 
+				<section>
+					<section>
+						<h2>VICTORY</h2>
+						<p><img src="../img/angry-birds-victory.jpg" /></p>
+					</section>
+					
+	                <section> 
+	                	<h2>Questions?</h2> <div style="">
+	                    <h3 style="font-weight: bold; font-family: courier; text-align: left; font-size: 1em;width: 50%;margin: 0px auto;">
+	                    	<a href="http://elijahmanor.com" targer="_blank">http://elijahmanor.com</a><br/>
+	                        <a href="http://twitter.com/elijahmanor" targer="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@elijahmanor</a><br/>
+	                        <a href="mailto:elijahmanor@gmail.com" targer="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elijahmanor@gmail.com</a>
+	                    </h3>
+	                    <img class="fragment" src="../img/injured-angry-birds.jpg" style="height: 400px;" />
+	                    <p class="fragment" style="">DISCLAIMER: No birds were hurt during this presentation...</p>
+	                </section>
 			</div>
 
 		</div>
@@ -2159,6 +2101,7 @@ show creating backbone:app & model
 
 			Reveal.addEventListener( 'ready', function( event ) {
 			    if ( $( Reveal.getCurrentSlide() ).data( "state" ) === "demo" ) {
+			    	if ( !game.isRunning ) game.run();
 				    Reveal.removeEventListeners();
 			    } else {
 				    Reveal.addEventListener();
@@ -2169,6 +2112,7 @@ show creating backbone:app & model
 				var $currentSlide = $( Reveal.getCurrentSlide() );
 
 			    if ( $currentSlide.data( "state" ) === "demo" && $currentSlide.find( "canvas" ).length ) {
+			    	if ( !game.isRunning ) game.run();
 				    Reveal.removeEventListeners();
 			    } else {
 				    Reveal.addEventListeners();
@@ -2176,6 +2120,7 @@ show creating backbone:app & model
 			} );
 
 			Reveal.addEventListener( 'demo', function() {
+		    	if ( !game.isRunning ) game.run();
 			    Reveal.removeEventListeners();
 			}, false );
 		</script>
