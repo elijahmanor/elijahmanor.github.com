@@ -571,10 +571,12 @@ window.netflix = {
 						</code></pre>
 					</section>
 
-					<section data-state="demo">
+					<section data-state="demox">
+					<!--
 						<canvas id="game-blue" width=625 height=380>
 						    Text that you see if you don't support Canvas :(
 						</canvas>
+					-->
 					</section>
 				</section>
 
@@ -1208,13 +1210,13 @@ define( [ "jquery", "backbone", "underscore", "channels", "text!movie-template.h
         // This would be better suited for a templating engine,
         // but that's for another Angry Bird ;)
         $.each( tweets || {}, function( index, tweet ) {
-            var html = "<i>" + moment( tweet.created_at ).fromNow() + "</i>: ";
-            html += "<b>" + tweet.user.name + "</b> - ";
+            var html = "&lt;i&gt;" + moment( tweet.created_at ).fromNow() + "&lt;/i&gt;: ";
+            html += "&lt;b&gt;" + tweet.user.name + "&lt;/b&gt; - ";
             html += tweet.text;
             html += tweet.retweeted ? " &lt;i class='icon-repeat'&gt;&lt;/i&gt;" : "";
             html += tweet.favorited ? " &lt;i class='icon-star'&gt;&lt;/i&gt;" : "";
             
-            $( "<li />", { html: html }).appendTo( $list );         
+            $( "&lt;li />", { html: html }).appendTo( $list );         
         });
             
        $location.append( $list.children() );         
@@ -1329,8 +1331,9 @@ $.mockjax({
 						<p>For the last several years we have seen a trend that more and more work is being done on the front-end of web development. We communicate to the back-end via Ajax or Web Sockets and then display the data somehow in the UI. The birds found themselves mostly using string concatenation to build up the rich user interfaces, which resulted in a lot of code that was boring and also prone for errors. Thankfully an Orange Bird came along and said, "Hey, isn't there something better than this? Can't we separate our view from our data somehow?", and that is how templates became to be in the bird world. The Orange Bird borrowed templating libraries from the humans such as Underscore.js and Handlebar.js to help fit this need among the foul. </p>
 					</section>
 
-WHY USE A TEMPLATING ENGINE?
-
+					<section>
+						<h2>WHY USE A TEMPLATING ENGINE?</h2>
+						<pre><code>
 (function( twitter, $, undefined ) { 
     var _selection;
         
@@ -1339,51 +1342,63 @@ WHY USE A TEMPLATING ENGINE?
     };
     
     twitter.displayTweets = function( tweets ) {
-        var $list = $( "<ul/ >" );
+        var $list = $( "&lt;ul/ &gt;" );
         
         $.each( tweets || {}, function( index, tweet ) {
-            var html = "<i>" + moment( tweet.created_at ).fromNow() + "</i>: ";
-            html += "<b>" + tweet.user.name + "</b> - ";
-            html += "<span>" + tweet.text + "</span>";
-            html += tweet.retweeted ? " <i class='icon-repeat'></i>" : "";
-            html += tweet.favorited ? " <i class='icon-star'></i>" : "";
+            var html = "&lt;i&gt;" + moment( tweet.created_at ).fromNow() + "&lt;/i&gt;: ";
+            html += "&lt;b&gt;" + tweet.user.name + "&lt;/b&gt; - ";
+            html += "&lt;span&gt;" + tweet.text + "&lt;/span&gt;";
+            html += tweet.retweeted ? " &lt;i class='icon-repeat'>&lt;/i&gt;" : "";
+            html += tweet.favorited ? " &lt;i class='icon-star'>&lt;/i&gt;" : "";
             
-            $( "<li />", { html: html }).appendTo( $list );         
+            $( "&lt;li /&gt;", { html: html }).appendTo( $list );         
         });
             
        _selection.empty().append( $list.children() );         
     };
 }( window.twitter = window.twitter || {}, jQuery ));
+						</code></pre>
+					</section>
 
-UNDERSCORE.JS
-
-take 1
-
+					<section>
+						<h2>UNDERSCORE.JS: Take 1</h2>
+						<pre><code>
 twitter.displayTweets = function( tweets ) {
     var templateString = $( "#tweets-underscore" ).html(),
         template = _.template( templateString );
     
    _selection.empty().append( template( { tweets: tweets } ) );                   
 };
+						</code></pre>
+					</section>
 
-<script id="tweets-underscore" type="text/template">
-    <ul>
-        <% _.each( tweets, function( tweet ) { %>
-        <li>
-            <i><%= moment( tweet.created_at ).fromNow() %></i>:
-            <b><%= tweet.user.name %></b> - 
-            <span><%= tweet.text %></span> 
-            <% if ( tweet.retweeted ) { %><i class="icon-repeat"></i><% } %> 
-            <% if ( tweet.favorited ) { %><i class="icon-star"></i><% } %>
-        </li>
-        <% }); %>
-    </ul>
-</script>
+					<section>
+						<h2>UNDERSCORE.JS: Take 1</h2>
+						<pre><code>
+&lt;script id="tweets-underscore" type="text/template"&gt;
+    &lt;ul&gt;
+        &lt;% _.each( tweets, function( tweet ) { %>
+        &lt;li&gt;
+            &lt;i&gt;&lt;%= moment( tweet.created_at ).fromNow() %&gt;&lt;/i&gt;:
+            &lt;b&gt;&lt;%= tweet.user.name %&gt;&lt;/b&gt; - 
+            &lt;span&gt;&lt;%= tweet.text %&gt;&lt;/span&gt;
+            &lt;% if ( tweet.retweeted ) { %&gt;&lt;i class="icon-repeat"&gt;&lt;/i&gt;&lt;% } %&gt; 
+            &lt;% if ( tweet.favorited ) { %&gt;&lt;i class="icon-star"&gt;&lt;/i&gt;&lt;% } %&gt;
+        &lt;/li&gt;
+        &lt;% }); %&gt;
+    &lt;/ul&gt;
+&lt;/script&gt;
+						</code></pre>
+					</section>
 
-insert spider-man photo here
+					<section>
+						<h2>UNDERSCORE.JS: Take 1</h2>
+						<p><img src="../img/spiderman.jpg" /></p>
+					</section>
 
-take 2 
-
+					<section>
+						<h2>UNDERSCORE.JS: Take 2</h2>
+						<pre><code>
 twitter.displayTweets = function( tweets ) {
     var templateString = $( "#tweets-underscore" ).html(),
         template = _.template( templateString );
@@ -1394,41 +1409,52 @@ twitter.displayTweets = function( tweets ) {
     });
  
     _selection.empty().append( template( { tweets: tweets } ) );                   
-};
+};							
+						</code></pre>
+					</section>
 
-<script id="tweets-underscore" type="text/template">
-    <ul>
-        <% _.each( tweets, function( tweet ) { %>
-        <li>
-            <i><%= tweet.created_at %></i>: 
-            <b><%= tweet.user.name %></b> - 
-            <span><%= tweet.text %></span> 
-            <% if ( tweet.retweeted ) { %><i class="icon-repeat"></i><% } %> 
-            <% if ( tweet.favorited ) { %><i class="icon-star"></i><% } %>
-        </li>
-        <% }); %>
-    </ul>
-</script>
+					<section>
+						<h2>UNDERSCORE.JS: Take 2</h2>
+						<pre><code>
+&lt;script id="tweets-underscore" type="text/template"&gt;
+    &lt;ul&gt;
+        &lt;% _.each( tweets, function( tweet ) { %&gt;
+        &lt;li&gt;
+            &lt;i&gt;&lt;%= tweet.created_at %&gt;&lt;/i&gt;: 
+            &lt;b&gt;&lt;%= tweet.user.name %&gt;&lt;/b&gt; - 
+            &lt;span&gt;&lt;%= tweet.text %&gt;&lt;/span&gt; 
+            &lt;% if ( tweet.retweeted ) { %&gt;&lt;i class="icon-repeat"&gt;&lt;/i&gt;&lt;% } %&gt; 
+            &lt;% if ( tweet.favorited ) { %&gt;&lt;i class="icon-star"&gt;&lt;/i&gt;&lt;% } %&gt;
+        &lt;/li&gt;
+        &lt;% }); %&gt;
+    &lt;/ul&gt;
+&lt;/script&gt;
+						</code></pre>
+					</section>
 
-Why use Underscore.js?
+					<section>
+						<h2>Why use Underscore.js? Pros</h2>
+						<ul>
+							<li>You can stick arbitrary JavaScript in the template</li>
+							<li>It is very small</li>
+							<li>If you are already using Backbone.js then you have it</li>
+							<li>If you are already using Underscore.js then you have it</li>
+							<li>You can Compile the Templates</li>
+							<li>Can Run on the Client and the Server</li>
+						</ul>
+					</section>
 
-Pros
+					<section>
+						<h2>Why use Underscore.js? Cons</h2>
+						<ul>
+							<li>You can stick arbitrary JavaScript in the template</li>
+							<li>Doesn't have the concept of this in templates</li>
+						</ul>
+					</section>
 
-You can stick arbitrary JavaScript in the template
-It is very small
-If you are already using Backbone.js then you have it
-If you are already using Underscore.js then you have it
-You can Compile the Templates
-Can Run on the Client and the Server
-Can you think of others?
-Cons
-
-You can stick arbitrary JavaScript in the template
-Doesn't have the concept of this in templates
-Can you think of others?
-
-HANDLEBARS.JS
-
+					<section>
+						<h2>HANDLEBARS.JS</h2>
+						<pre><code>
 twitter.init = function( $selection ) {
     _selection = $selection;
     
@@ -1443,49 +1469,63 @@ twitter.displayTweets = function( tweets ) {
                         
     _selection.empty().append( template( tweets ) );         
 };
+						</code></pre>
+					</section>
 
-<script id="tweets-handlebars" type="text/x-handlebars-template">
-    <ul>
+					<section>
+						<h2>HANDLEBARS.JS</h2>
+						<pre><code>
+&lt;script id="tweets-handlebars" type="text/x-handlebars-template"&gt;
+    &lt;ul&gt;
         {{#each this}}
-        <li>
-            <i>{{fromNow this.created_at}}</i>: 
-            <b>{{this.user.name}}</b> - 
-            <span>{{this.text}}</span> 
-            {{#if this.retweeted}}<i class="icon-repeat"></i>{{/if}} 
-            {{#if this.favorited}}<i class="icon-star"></i>{{/if}}
-        </li>
+        &lt;li&gt;
+            &lt;i&gt;{{fromNow this.created_at}}&lt;/i&gt;: 
+            &lt;b&gt;{{this.user.name}}&lt;/b&gt; - 
+            &lt;span&gt;{{this.text}}&lt;/span&gt; 
+            {{#if this.retweeted}}&lt;i class="icon-repeat"&gt;&lt;/i&gt;{{/if}} 
+            {{#if this.favorited}}&lt;i class="icon-star"&gt;&lt;/i&gt;{{/if}}
+        &lt;/li&gt;
         {{/each}}
-    </ul>
-</script>
+    &lt;/ul&gt;
+&lt;/script&gt;
+						</code></pre>
+					</section>
 
-Precompiling Your Templates
+					<section>
+						<h2>Precompiling Your Templates</h2>
+						<ul>
+							<li>compile the template on the server and include that on the front-end</li>
+							<li>reduce that amount of work needed on the front-end</li>
+							<li>there is a trimmed down version of the handlebars runtime that you can use that has only the parts necessary needed to execute a template</li>
+						</ul>
+						<p><img src="../img/batman-unicorn-dolphins.jpg" /></p>
+						<div class="fragment">"It's just about as cool as Batman riding on a Rainbow Unicorn alongside dolphins!"</div>
+					</section>
 
-Handlebars you can go one step further and compile the template on the server and include that on the front-end. This means that you can reduce that amount of work needed on the front-end AND there is a trimmed down version of the handlebars runtime that you can use that has only the parts necessary needed to execute a template (not compile it)!
+					<section>
+						<h2>Why use Handlebars.js? Pros</h2>
+						<ul>
+							<li>Its a Logic-less Template Engine</li>
+							<li>You can Precompile Templates on the Server</li>
+							<li>Supports Helper methods</li>
+							<li>Can Run on the Client and the Server</li>
+							<li>Supports the concept of this in templates</li>
+							<li>It is a superset of Mustache.js</li>
+						</ul>
+					</section>
 
-How cool is that? If your answer was "It's just about as cool as Batman riding on a Rainbow Unicorn alongside dolphins!", then you were right! Congratulations ;)
+					<section>
+						<h2>Why use Handlebars.js? Cons</h2>
+						<ul>
+							<li>Possibly slowing???</li>
+							<li>Can you think of any?</li>
+						</ul>
+					</section>
 
-insert picture of batmap here
-
-Why use Handlebars.js?
-
-Pros
-
-Its a Logic-less Template Engine
-You can Precompile Templates on the Server
-Supports Helper methods
-Can Run on the Client and the Server
-Supports the concept of this in templates
-It iss a superset of Mustache.js
-Can you think of others?
-Cons
-
-Can you think of any?
-
-
-WHAT ABOUT OTHER TEMPLATING ENGINES?
-
-insert picture of template chooser
-
+					<section>
+						<h2>WHAT ABOUT OTHER TEMPLATING ENGINES?</h2>
+						<p><img src="../img/template-chooser.png" /></p>
+					</section>
 
 					<section data-state="demox">
 						<canvas id="game-orange" width=625 height=380>
@@ -1504,8 +1544,511 @@ insert picture of template chooser
 					</section>
 					<section>
 						<h2>What was Stolen by the Pigs?</h2>
-						<p></p>
+						<p>The birds knew how to program for the most part, but they never had a common terminology that they all understood to represent common scenarios they kept encountering. Then one day a Big Brother Bird came along and documented a set of common Design Patterns and them names and descriptions so they could all be on the same page when talking about architecture. Big Brother Bird ended up writing these patterns in a popular piece that became known as the Gang of Foul book.</p>
 					</section>
+
+
+Singleton
+
+The most basic form of singleton is the object literal as shown below. We are basically just creating an object and there is one of them. Technically someone could Object.create on us, but for the most part this fulfills the singleton definition. You can find a more robust solution in one of the resources recommended near the end of this post.
+
+var bird = {
+    type: "Red",
+    fly: function() {
+        console.log( "Weeeee!" );
+    },
+    destroy: function() {
+        console.log( "Hasta la vista, baby!" );
+    }
+};
+
+Factory
+
+A factory is a way to create new objects without actually using the new keyword. The idea is that there is something abstracted away from you in the factory method. In the following example we are aren't necessarily doing anything fancy, but you could imagine that we could add some custom code down the road and the external API wouldn't change, which is the point of this pattern.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+var Bird = function() {};
+Bird.factory = function( type ) {
+    var bird;
+    if ( typeof Bird[ type ] === "function" ) {
+        bird = new Bird[ type ]();
+    }
+    return bird;
+};
+ 
+Bird.Red = function() {};
+Bird.Blue = function() {};
+ 
+var redBird = Bird.factory( "Red" );
+var blueBird = Bird.factor( "Blue" );
+
+Bridge
+
+In the following snippet of code we are creating a small bridge between an event handler and the code that will be executed. By creating a little bridge it will enabled the executed code to be tested easier since it won't have a dependency on the element context that was passed by jQuery.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+// Not Bridged
+var getUrl = function() {
+    var url = $( this ).attr( "href" );
+    
+    $.ajax({
+        url: url,
+        success: function( data ) {
+            console.log( data );
+        }
+    });
+};
+$( "a.ajax" ).on( "click", getUrl );
+ 
+// Bridged
+var getUrl = function( url, callback ) {
+    $.ajax({
+        url: url,
+        success: function( data ) {
+            if ( callback ) { callback( data ); }
+        }
+    });
+};
+var getUrlBridge = function() {
+    var url = $( this ).attr( "href" );
+    
+    getUrl( url, function( data ) {
+        console.log( data );
+    });
+}
+$( "a.ajax" ).on( "click", getUrlBridge );
+
+Facade
+
+A facade is common place in front-end web development since there is so much cross-browser inconsistencies. A facade brings a common API to something that could vary under the covers. In the following snippet we abstract the addEventListener logic for various browser implementations.
+
+1
+2
+3
+4
+5
+6
+7
+8
+// Facade
+var addEvent = function( element, type, eventHandler ) {
+	if ( element.addEventListener ) {
+		element.addEventListener( type, eventHandler, false );
+	} else if ( elemement.attachEvent ) {
+		element.attachEvent( "on" + type, eventHandler );    
+	}
+};
+
+Adapter
+
+An adapter is a nice way to massage one piece of code to work with another piece of code. This can be useful when you need to switch to another library, but can't afford to rewrite much of your code. In the following example we are modifying jQuery's $.when method to work with the WinJS.Promise. This is some code I wrote back when I worked for appendTo when we were making jQuery working with Windows 8 apps. You can find this repository at jquery-win8.
+
+Much of the jquery-win8 repository is not needed anymore since Jonathan Sampson has worked with the jQuery team to make sure the changes he made to the shim was added to the 2.0 version of jQuery as noted in the following blog post
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+/*!
+ * jquery-win8-deferred - jQuery $.when that understands WinJS.promise
+ * version: 0.1
+ * author: appendTo, LLC
+ * copyright: 2012
+ * license: MIT (http://www.opensource.org/licenses/mit-license)
+ * date: Thu, 01 Nov 2012 07:38:13 GMT
+ */
+ (function () {
+    var $when = $.when;
+    $.when = function () {
+        var args = Array.prototype.slice.call(arguments);
+ 
+        args = $.map(args, function (arg) {
+            if (arg instanceof WinJS.Promise) {
+                arg = $.Deferred(function (dfd) {
+                    arg.then(
+                        function complete() {
+                            dfd.resolveWith(this, arguments);
+                        }, function error() {
+                            dfd.rejectWith(this, arguments);
+                        }, function progress() {
+                            dfd.notifyWith(this, arguments);
+                        }
+                    );
+                }).promise();
+            }
+ 
+            return arg;
+        });
+ 
+        return $when.apply(this, args);
+    };
+}());
+
+Observer
+
+We've covered the Observer pattern already in the Blue Bird past a while back in this series, but it is a powerful pattern that can help decouple various components. My recommendation is to use the postal.js library.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+var channel = postal.channel( "game" );
+ 
+channel.subscribe( "bird.attack", function( data ) {
+    console.log( "Geronimo!" );
+});
+ 
+channel.subscribe( "pig.collide", function( impact ) {
+    if ( impact > 100 ) {
+        console.log( "AHHHHHHH!" );
+    }
+});
+ 
+channel.publish( "bird.attack", { angle: 45 } );
+
+MANY MORE PATTERNS
+
+Inheritance
+
+There are several ways to implement inheritance in JavaScript. It is good to know some of these patterns as you create new objects in your application.
+
+Prototypal Inheritance
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+var bird = {
+    name: "Red Bird",
+    power: "",
+    getName: function() {
+        return this.name;
+    },
+    catapult: function() {
+        return this.name + " is catapulting with " + this.power;
+    }
+};
+ 
+var yellowBird = Object.create( bird );
+yellowBird.name = "Yellow Bird";
+yellowBird.power = "Speed";
+console.log( yellowBird.catapult() );
+view rawprototypal-inheritance.jsThis Gist brought to you by GitHub.
+
+Pseudoclassical Ineritance
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+var Bird = function( name, power ) {
+    this.name = name + " Bird";
+    this.power = power || "";
+};
+Bird.prototype.getName = function() {
+    return this.name;
+};
+Bird.prototype.catapult = function() {
+    return this.getName() + " is catapulting with " + this.power;
+};
+ 
+var YellowBird = function() {
+    this.constructor.apply( this, arguments );
+};
+YellowBird.prototype = new Bird();
+ 
+var yellowBird = new YellowBird( "Yellow", "Speed" );
+yellowBird.getName = function() {
+  return "Super Awesome " + this.name;
+};
+console.log( yellowBird.catapult() );
+
+Chaining
+
+In the front-end world chaining became popular by the jQuery library. It is actually a really easy pattern to implement. You essentially just have to return this from every function so that other functions can be immediately called. See the following for an example.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+var bird = {
+    catapult: function() {
+        console.log( "Yippeeeeee!" );
+        return this;
+    },
+    destroy: function() {
+        console.log( "That'll teach you... you dirty pig!" );
+        return this;
+    }
+};
+ 
+bird.catapult().destroy();
+view rawchaining.jsThis Gist brought to you by GitHub.
+
+Encapsulating
+
+We've already covered encapsulating in the Red Bird past where we talked about the IIFE pattern. This allows you to have public and private properties and methods to help encapsulate your code. The follow is a very brief example of that. Check out the Red Bird post for more details.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+// IIFE
+var yellowBird = (function() {
+    var superSecret  = {
+        power: "Speed" 
+    };
+    
+    return {
+        type: "Red",
+        mood: "Angry",
+        goal: "Vengence"
+    }
+}());
+view rawencapsulating.jsThis Gist brought to you by GitHub.
+
+Finite State Machine
+
+One of my favorite pattern is the Finite State Machine. My friend Jim Cowart (@ifandelse) created the Machina.js Library to implement this pattern in JavaScript. The following is an example of using states to describe the game of Angry Birds. For more information check out his blog post and GitHub repository.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+var attackFsm = new machina.Fsm({
+    initialState: "idle",
+    states : {
+        "idle" : {
+            _onEnter: function() {
+                this.handle( "Zzzzzz" );
+            },
+            "bird.launch" : function( data ) {
+                console.log( "Weeeeee at " + data.angle + " degrees!" );
+                this.transition( "attacking" );
+            }
+        },
+        "attacking" : {
+            _onEnter: function() {
+                console.log( "Yay, hear me tweet!" );
+            },
+            "pig.destroyed" : function() {
+                this.transition( "victorious" );
+            },
+            "pig.alive" : function() {
+                this.transition( "defeated" );
+            }
+        },
+        "victorious": {
+            _onEnter: function() {
+                console.log( "Yay, we are victorious!" );
+            },
+            "game.restart": function() {
+                this.transition( "idle" );
+            },
+            "game.next": function() {
+                // Goto next level
+                this.transition( "idle" );
+            }
+        },
+        "defeated": {
+            _onEnter: function() {
+                console.log( "You may have won this time, but I'll be back!" );
+            },
+            "gmae.restart": function() {
+                this.transition( "idle" );
+            }
+        }
+    }
+});
+ 
+attackFsm.handle( "bird.launch", { angle: 45 } );
+attackFsm.handle( "pig.destroyed" );
+
+RECOMMENDATIONS
+
+
+In addition to learning these patterns I would recommend that you pick one of your favorite libraries and start to source dive into their repository. There is a wealth of information you can learn there. At first it could be semi-overwhelming, but over time you can glean a lot from developers who really know some of these patterns. You might try just looking at one particular method and start picking it apart. If you aren't sure exactly where to look for a particular method why don't you pick jQuery and use James Padolsey's (@padosley) jQuery Source Viewer to help find it for you?
+
+ADDITIONAL RESOURCES
+
+
+There are far too many patterns for me to list here. Many have blogged about these before me and will continue to. If I have missed any good ones please let me know.
+
+JavaScript Design Patterns by Joe Zim (@JoeZimJS)
+Understanding Design Patterns in JavaScript by Tilo Mitra (@tilomitra)
+Learning JavaScript Design Patterns by Addy Osmani (@addyosmani)
+JS Patterns by Shi Chuan (@shichuan)
+JavaScript Patterns by Stoyan Stefanov (@xyz)
+JavaScript: The Good Parts by Douglas Crockford
 
 					<section data-state="demox">
 						<canvas id="game-big-brother" width=625 height=380>
@@ -1524,8 +2067,40 @@ insert picture of template chooser
 					</section>
 					<section>
 						<h2>What was Stolen by the Pigs?</h2>
-						<p></p>
+						<p>Over time the birds picked up RequireJS (Yellow Bird), JSHint (White Bird), Plato, Mustache (Orange Bird), and a bunch of other great tools, but all of them required a command line task to complete. It was getting quite annoying having to remember what was required to run each of these tools. In addition, it was easy to forget to run the tools to update their web application when necessary. Thankfully one day the Mighty Eagle introduced some tools to make things a little bit easier. The Eagle brought Grunt and Bowser to automate common tasks and to help easily bring in commonly used libraries that were necessary to e their applications. </p>
 					</section>
+Introduce Grunt
+
+grunt-contrib-coffee - Compile CoffeeScript files into JavaScript
+grunt-contrib-compass - Compile Compass into CSS
+grunt-contrib-concat - Concatenates files
+grunt-contrib-connect - Starts a connect web server
+grunt-contrib-csslint - Lints your CSS files
+grunt-contrib-handlebars - Precompiles your Handlebar tempaltes
+grunt-contrib-htmlmin - Minify your HTML markup
+grunt-contrib-imagemin - Minify PNG and JPEG images
+grunt-contrib-jshint - Validate files with JSHint
+grunt-contrib-less - Compile LESS to CSS
+grunt-contrib-nodeunit - Run Nodeunit unit test
+grunt-contrib-watch - Run predefined tasks when files change
+grunt-contrib-requirejs - Optimize RequireJS projects using r.js
+grunt-contrib-uglify - Minify files with UglifyJS
+grunt-contrib-yuidoc - Compile YUIDocs Documentation
+... more ...
+
+jQuery Gruntfile 
+insert picture
+
+Modernizr Gruntfile
+insert picture
+
+Twitter Bowser
+show installing jquery
+
+yeoman
+show creating webapp
+
+show creating backbone:app & model
 
 					<section data-state="demox">
 						<canvas id="game-mighty-eagle" width=625 height=380>
@@ -1546,7 +2121,7 @@ insert picture of template chooser
 		<script src="js/boxbox.min.js"></script>
 		<script src="js/keyDecode.js"></script>
 		<script src="js/game-red.js"></script>
-		<script src="js/game-blue.js"></script>
+		<!-- // <script src="js/game-blue.js"></script> -->
 
 		<script>
 
