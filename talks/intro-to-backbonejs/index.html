@@ -12,7 +12,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-        <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
+        <link rel="stylesheet" href="http://twitter.github.io/bootstrap/assets/css/bootstrap.css">
 
         <link rel="stylesheet" href="css/reveal.css">
         <link rel="stylesheet" href="css/theme/default.css" id="theme">
@@ -35,7 +35,7 @@
         <script src="lib/js/html5shiv.js"></script>
         <![endif]-->
         <style>
-            .reveal pre { font-size: 0.5em; }
+            .reveal pre { font-size: 0.65em; }
             .reveal iframe {
                 display: block;
                 position: relative;
@@ -54,9 +54,10 @@
 
             .reveal iframe {
                 overflow: auto;
-                max-height: 400px;
+                max-height: 450px;
             }
-            .reveal code { max-height: 525px; }
+            .reveal code { max-height: 500px; }
+            .reveal .code-tall { max-height: 650px; }
         </style>
     </head>
 
@@ -78,22 +79,24 @@
                     <section>
                         <h2>Who am i not?</h2>
                         <div>
-                            <img src="http://i.imgur.com/LEGZh.jpg"><br>
+                            <img src="./img/5xuxbsjs3zy2xfxh5ryt.png" /><br>
+                            <!-- <img src="http://i.imgur.com/LEGZh.jpg"><br> -->
                         </div>
-                        <h3 class="fragment" style="top: -200px;display: block;position: relative;font-size: 4em;color: red;-webkit-transform: rotate(-17deg);text-shadow: 4px 4px #ccc;">Elijah Wood</h3>
+                        <!-- <h3 class="fragment" style="top: -200px;display: block;position: relative;font-size: 4em;color: red;-webkit-transform: rotate(-17deg);text-shadow: 4px 4px #ccc;">Elijah Wood</h3> -->
                     </section>
                     <section>
                         <h2>Who I AM?</h2>
-                        <pre class="zoomTarget"><code>{
+                        <pre class="zoomTargetxx"><code class="javascript">{
     "name": "Elijah Manor",
     "priorities" : [ "Christian", "Family", "Work" ],
-    "employer" : "appendTo",
-    "title" : [ "Senior Architect", "Trainer" ],
+    "employer" : "Manorism, Inc",
+    "title" : [ "Web Developer", "Trainer", "Pluralsight Author" ],
     "tech" : [ "JavaScript", "jQuery", "HTML5", "CSS3" ],
     "awards" : [
         "Microsoft Regional Director",
         "Microsoft ASP.NET MVP",
-        "ASPInsider"
+        "ASPInsider",
+        "IE userAgent"
     ],
     "blog": "http://elijahmanor.com",
     "email": "elijah.manor@gmail.com",
@@ -119,7 +122,7 @@
                         <div style="text-align: center;">
                             <img src="http://i.imgur.com/Xw622.jpg"><br>
                         </div>
-                        <ul style="top: 20%; position: absolute; right: 4em;">
+                        <ul style="top: 20%; position: absolute; right: 6em;">
                             <li class="fragment">Backbone.js</li>
                             <li class="fragment">Underscore.js</li>
                             <li class="fragment">CoffeeScript</li>
@@ -180,7 +183,7 @@
                         </div>
                         <div class="fragment" style="text-align: center;">End Result...</div>
                         <div class="fragment" style="text-align: center;">
-                            <img src="./img/pretty-sure-this-lady-has-no-bones1.gif">
+                            <img class="zoomTarget" src="./img/pretty-sure-this-lady-has-no-bones1.gif">
                             <br>
                         </div>
                     </section>
@@ -199,7 +202,7 @@
                         </div>
                         <div class="fragment" style="text-align: center;">End Result...</div>
                         <div class="fragment" style="text-align: center;">
-                            <img style="height: 225px;" src="./img/will-and-carlton-dancing-fresh-prince-of-bel-air.gif">
+                            <img class="zoomTarget" style="height: 225px;" src="./img/will-and-carlton-dancing-fresh-prince-of-bel-air.gif">
                             <br>
                         </div>
                     </section>
@@ -215,7 +218,7 @@
                     </section>
                     <section>
                         <h2>Markup</h2>
-                        <pre class="zoomTarget"><code>&lt;div class="navbar navbar-inverse"&gt;
+                        <pre class="zoomTargetxx"><code class="code-tall">&lt;div class="navbar navbar-inverse"&gt;
   &lt;div class="navbar-inner"&gt;
     &lt;div class="container"&gt;&lt;div class="brand"&gt;Weather&lt;/div&gt;&lt;/div&gt;
   &lt;/div&gt;
@@ -244,14 +247,14 @@
                     <section>
                         <h2>Reaction</h2>
                         <div style="text-align: center;">
-                            <img style="height: 225px;" src="./img/cheers-slow-clap.gif">
+                            <img class="zoomTarget" style="height: 225px;" src="./img/cheers-slow-clap.gif">
                             <br>
                         </div>
                         <p class="fragment">But wait, show me the code...</p>
                     </section>
                     <section id="bad-javascript">
                         <h2>Code</h2>
-                        <pre class="javascript zoomTarget"><code>$(document).ready(function($) {
+                        <pre class="javascript zoomTargetxx"><code class="code-tall">$(document).ready(function($) {
   $("#search").on("click", function(e) {
     var $zip = $("#zip"), 
       value = $zip.val();
@@ -300,8 +303,12 @@
                     <section>
                         <h2>Reaction</h2>
                         <div style="text-align: center;">
-                            <img class="fragment" style="height: 225px;" src="./img/wat-mouse.gif">
-                            <img class="fragment" style="height: 225px;" src="./img/angry-panda.gif">
+                            <div class="fragment">
+                            <img class="zoomTarget" class="fragment" style="height: 225px;" src="./img/wat-mouse.gif">
+                        </div>
+                        <div class="fragment">
+                            <img class="zoomTarget" class="fragment" style="height: 225px;" src="./img/angry-panda.gif">
+                        </div>
                         </div>
                         <p class="fragment">What!?! Surely we can do better than that...</p>
                     </section>
@@ -317,7 +324,7 @@
                         </style>
                         <h2>various parts of Backbone.js</h2>
                         <img src="./img/backbone-pn.png" style="float: left;">
-                        <ul style="display: block; text-align: left; margin: 0 0 0 7em; list-style-type:none;">
+                        <ul style="display: block; text-align: left; margin: 2.5em 0 0 7em; list-style-type:none;">
                             <li class="fragment">&larr; Model</li>
                             <li class="fragment">&larr; Collection</li>
                             <li class="fragment">&larr; View</li>
@@ -329,7 +336,7 @@
                     </section>
                     <section>
                         <h2>MVC or MVP?</h2>
-                        <img class="zoomTarget" src="./img/mvc_mvp.jpg" />
+                        <img class="zoomTarget" src="./img/mvc_mvp.jpg" /><br/>
                         <small>Image from <a href="http://joel.inpointform.net/software-development/mvvm-vs-mvp-vs-mvc-the-differences-explained/" target="_blank">Joel in Point Form</a></small>
                     </section>
                     <section>
@@ -344,7 +351,7 @@
                     </section>
                     <section>
                         <h2>Creating</h2>
-                        <pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({});
+                        <pre class="javascript zoomTargetxx runnable"><code>var Pet = Backbone.Model.extend({});
 
 var fluffy = new Pet({ 
   name: "Fluffy", 
@@ -355,14 +362,14 @@ var fluffy = new Pet({
 console.log( fluffy.get( "name" ) );</code></pre>
                       <div class="fragment">
                         <!--<img src="img/1025-united-bamboo-cat-calendar-2011-stf.jpeg" class="" style="height: 140px; padding-bottom: 0;" />-->
-                        <img src="img/451624-bigthumbnail.jpg" class="" style="height: 200px; padding-bottom: 0;" />
-                        <img src="img/0512-united-bamboo-cat-calendar-casting-2013-fa.jpg" class="" style="height: 200px;" />
+                        <img class="zoomTarget" src="img/451624-bigthumbnail.jpg" class="" style="height: 200px; padding-bottom: 0;" />
+                        <img class="zoomTarget" src="img/0512-united-bamboo-cat-calendar-casting-2013-fa.jpg" class="" style="height: 200px;" />
                         <!--<img src="img/0817-cat-fashion-show-new-york-chiquita_fd.jpg" class="" style="height: 140px;" />-->
                       </div>
                     </section>
                     <section>
                         <h2>Access Control</h2>
-                        <pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({});
+                        <pre class="javascript zoomTargetxx runnable"><code>var Pet = Backbone.Model.extend({});
 
 var fluffy = new Pet({ 
   name: "Fluffy", 
@@ -412,7 +419,7 @@ console.log( fluffy.get( "color" ) );</code></pre>
                     </style>
                     <section id="computedProperties">
                         <h2>Computed Properties</h2>
-                        <pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({
+                        <pre class="javascript zoomTargetxx runnable"><code>var Pet = Backbone.Model.extend({
   description: function() {
     return this.get( "name" ) + " is a " + 
       this.get( "age" ) + " year old " + 
@@ -431,7 +438,7 @@ console.log( fluffy.description() );</code></pre>
 <style>
 section .alert { text-align: left; padding-left: 15px; margin: auto; margin-bottom: 15px; width: 88%; font-size: .8em; }
 section .alert .close { top: 2px; right: 7px; }
-section .run { position: fixed; top: 7em; right: 4em; z-index: 100; }
+section .run { position: fixed; top: 7em; right: 5.5em; z-index: 100; }
 </style>
 <script>
 $(function() {
@@ -444,7 +451,7 @@ $(function() {
             button = '<button class="run">Run</button>';
         $( button ).bind( "click", function() {
             eval( code );
-        }).insertAfter( this );
+        }).hide().insertAfter( this );
     });
     $( document ).on( "keyup", function( e ) {
         var character = String.fromCharCode( e.which );
@@ -472,7 +479,7 @@ console.log = function(message) {
                     </section>
                     <section>
                         <h2>Default Properties</h2>
-                        <pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({
+                        <pre class="javascript zoomTargetxx runnable"><code>var Pet = Backbone.Model.extend({
   defaults: {
     breed: "Munchkin",
     color: "White"
@@ -487,7 +494,7 @@ console.log( tiny.get( "breed" ) );</code></pre>
                     </section>
                     <section>
                         <h2>Initialization</h2>
-                        <pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({
+                        <pre class="javascript zoomTargetxx runnable"><code class="code-tall">var Pet = Backbone.Model.extend({
   defaults: {
     breed: "Munchkin",
     color: "White"
@@ -521,7 +528,7 @@ var tiny = new Pet({
                     </section>
                     <section>
                         <h2>Event Example</h2>
-                        <pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({});
+                        <pre class="javascript zoomTargetxx runnable"><code>var Pet = Backbone.Model.extend({});
 
 var ralph = new Pet({
   name: "Ralph",
@@ -536,7 +543,7 @@ ralph.set({ "name": "Doug" });</code></pre>
                     </section>
                     <section>
                         <h2>Validations</h2>
-                        <pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({
+                        <pre class="javascript zoomTargetxx runnable"><code>var Pet = Backbone.Model.extend({
   validate: function( options ) {
     if ( options.age && !_.isNumber( options.age ) ) {
       return "Age should be a number";
@@ -548,15 +555,15 @@ var tiny = new Pet({
   color: "Gray"
 });
 
-tiny.on( "error", function( model, error ) {
+tiny.on( "invalid", function( model, error ) {
   console.log( error );
 });
 
-tiny.set( "age", "newborn" );</code></pre>
+tiny.set( { age: "newborn"}, { validate: true } );</code></pre>
                     </section>
                     <section>
                         <h2>Weather Model</h2>
-                        <pre class="javascript zoomTarget"><code>var Forecast = Backbone.Model.extend({
+                        <pre class="javascript zoomTargetxx"><code>var Forecast = Backbone.Model.extend({
   validate: function ( options ) {
     if ( !options.zip ) {
       return "Please enter zip code";
@@ -574,10 +581,13 @@ tiny.set( "age", "newborn" );</code></pre>
                     <section>
                         <h2>Collection</h2>
                         <blockquote>Collections are ordered sets of models. You can bind <strong><u>"change"</u></strong> events to be notified when any model in the collection has been modified, listen for <strong><u>"add"</u></strong> and <strong><u>"remove"</u></strong> events, fetch the collection from the server, and use a full suite of Underscore.js methods.</blockquote>
+                        <div class="fragment">
+                        <img class="zoomTarget" class="fragment" src="./img/687474703a2f2f617765736f6d65676966732e636f6d2f77702d636f6e74656e742f75706c6f6164732f636174732d696e2d612d726f6f6d2d6f6e2d636f6d7075746572732e676966.gif" />
+                    </div>
                     </section>
                     <section>
                         <h2>Based on a Model</h2>
-                        <pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({
+                        <pre class="javascript zoomTargetxx runnable"><code class="code-tall">var Pet = Backbone.Model.extend({
   defaults: { "color": "Brown" }
 }); 
 
@@ -607,7 +617,7 @@ console.log( JSON.stringify( dogs ) );</code></pre>
                     </section>
                     <section>
                         <h2>Events Example</h2>
-                        <pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({
+                        <pre class="javascript zoomTargetxx runnable"><code class="code-tall">var Pet = Backbone.Model.extend({
   defaults: { breed: "Munchkin" }
 });
 
@@ -628,7 +638,7 @@ cats.add({ name: "Dusty", color: "Brown" });</code></pre>
                     </section>
                     <section class="">
                       <h2>Get Item By ID</h2>
-                      <pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({});
+                      <pre class="javascript zoomTargetxx runnable"><code>var Pet = Backbone.Model.extend({});
 
 var Cats = Backbone.Collection.extend({ model: Pet });
 
@@ -643,7 +653,7 @@ console.log( JSON.stringify( frosty ) );</code></pre>
                     </section>
                     <section class="">
                       <h2>Get Item By Index</h2>
-                      <pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({});
+                      <pre class="javascript zoomTargetxx runnable"><code>var Pet = Backbone.Model.extend({});
 
 var Cats = Backbone.Collection.extend({ model: Pet });
 
@@ -658,7 +668,7 @@ console.log( JSON.stringify( frosty ) );</code></pre>
                     </section>
                     <section class="">
                       <h2>Manipulate with Underscore</h2>
-                      <pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({});
+                      <pre class="javascript zoomTargetxx runnable"><code>var Pet = Backbone.Model.extend({});
 
 var Cats = Backbone.Collection.extend({ model: Pet });
 
@@ -679,7 +689,7 @@ console.log( JSON.stringify( filteredCats ) );
                     </section>
                     <section>
                         <h2>Weather Model</h2>
-                        <pre class="javascript zoomTarget"><code>var Forecasts = Backbone.Collection.extend({
+                        <pre class="javascript zoomTargetxx"><code>var Forecasts = Backbone.Collection.extend({
   model: Forecast
 });</code></pre>
                     </section>
@@ -692,22 +702,25 @@ console.log( JSON.stringify( filteredCats ) );
                     <section>
                         <h2>View</h2>
                         <blockquote>Backbone views are almost more convention than they are code — they don't determine anything about your HTML or CSS for you, and can be used with any <strong><u>JavaScript templating library</u></strong>. The general idea is to <strong></u>organize</u></strong> your interface into <strong><u>logical views</u></strong>, <strong><u>backed by models</u></strong>, each of which can be <strong><u>updated independently when the model changes</u></strong>, without having to redraw the page.</blockquote>
+                        <div class="fragment">
+                        <img class="zoomTarget" src="./img/Animated-pussy-cat-in-boots.gif" />
+                        </div>
                     </section>
                     <section>
                         <h2>Using an Existing Element</h2>
-                        <pre class="javascript zoomTarget"><code>var PetView = Backbone.View.extend({
+                        <pre class="javascript zoomTargetxx"><code>var PetView = Backbone.View.extend({
   el: "#main"
 });</code></pre>
                     </section>
                     <section>
                         <h2>Using a New Element</h2>
-                        <pre class="javascript zoomTarget"><code>var PetView = Backbone.View.extend({
+                        <pre class="javascript zoomTargetxx"><code>var PetView = Backbone.View.extend({
   tagName: "section"
 });</code></pre>
-                        <pre class="javascript zoomTarget"><code>var PetItemView = Backbone.View.extend({
+                        <pre class="javascript zoomTargetxx"><code>var PetItemView = Backbone.View.extend({
   className: "pet-item"
 });</code></pre>
-                        <pre class="javascript zoomTarget"><code>var CartView = Backbone.View.extend({
+                        <pre class="javascript zoomTargetxx"><code>var CartView = Backbone.View.extend({
   id: "pet-cart"
 });</code></pre>
                     </section>
@@ -722,7 +735,7 @@ console.log( JSON.stringify( filteredCats ) );
                     </section>
                     <section class="">
                         <h2>Render</h2>
-                        <pre class="javascript zoomTarget"><code>var PetView = Backbone.View.extend({
+                        <pre class="javascript zoomTargetxx"><code>var PetView = Backbone.View.extend({
   tagName: "h1",
   render: function() {
     this.$el.html( "Pet Store" ).appendTo( "body" );
@@ -733,13 +746,13 @@ console.log( JSON.stringify( filteredCats ) );
 var view = new PetView();
 
 view.render();</code></pre>
-                        <pre class="html zoomTarget fragment"><code>&lt;-- Generated Output --&gt;
+                        <pre class="html zoomTargetxx fragment"><code>&lt;-- Generated Output --&gt;
 &lt;h1&gt;Pet Store&lt;/h1&gt;</code></pre> 
                     </section>
                     <section class="">
                         <h2>Rendering Markup</h2>
-                        <pre class="html zoomTarget"><code>&lt;div id="container"&gt;&lt;/div&gt;</code></pre>
-                        <pre class="javascript zoomTarget"><code>var PetView = Backbone.View.extend({
+                        <pre class="html zoomTargetxx"><code>&lt;div id="container"&gt;&lt;/div&gt;</code></pre>
+                        <pre class="javascript zoomTargetxx"><code>var PetView = Backbone.View.extend({
   el: "#container",
   render: function() {
     var markup = "&lt;h1&gt;Pet Store&lt;/h1&gt;&lt;p&gt;Feel free to browse our wide assortement of creatures.&lt;/p&gt;";
@@ -750,7 +763,7 @@ view.render();</code></pre>
 var view = new PetView();
 
 view.render();</code></pre>
-                        <pre class="html zoomTarget fragment"><code>&lt;-- Generated Output --&gt;
+                        <pre class="html zoomTargetxx fragment"><code>&lt;-- Generated Output --&gt;
 &lt;div id="container"&gt;
   &lt;h1&gt;Pet Store&lt;/h1&gt;
   &lt;p&gt;Feel free to browse our wide assortement of creatures.&lt;/p&gt;
@@ -758,10 +771,10 @@ view.render();</code></pre>
                     </section>
                     <section class="">
                         <h2>Rendering a Template</h2>
-                        <pre class="html zoomTarget"><code>&lt;script type="text/template" id="pet-item-tmpl"&gt;
+                        <pre class="html zoomTargetxx"><code class="html">&lt;script type="text/template" id="pet-item-tmpl"&gt;
   &lt;h3&gt;&lt;%= name %&gt;&lt;/h3&gt;&lt;p&gt;&lt;%= type %&gt;&lt;/p&gt;
 &lt;/script&gt;</code></pre>
-                        <pre class="javascript zoomTarget"><code>var Pet = Backbone.Model.extend({});
+                        <pre class="javascript zoomTargetxx"><code>var Pet = Backbone.Model.extend({});
 
 var PetItemView = Backbone.View.extend({
   tagName: "div",
@@ -770,8 +783,7 @@ var PetItemView = Backbone.View.extend({
   },
   render: function() {
     var markup = this.template( this.model.toJSON() );
-    this.$el.html( markup ).appendTo( "body" );
-    return this;
+    this.$el.html( markup ).appendTo( "body" ); return this;
   }
 });
 
@@ -779,12 +791,11 @@ var cat = new Pet({ name: "Fluffy", type: "Cat" });
 var itemView = new PetItemView({ model: cat });
 
 itemView.render();​</code></pre>
-                        <pre class="html zoomTarget fragment"><code>&lt;-- Generated Output --&gt;
-&lt;div&gt;&lt;h3&gt;Fluffy&lt;/h3&gt;&lt;p&gt;Cat&lt;/p&gt;&lt;/div&gt;</code></pre>
+                        <pre class="html zoomTargetxx fragment"><code>&lt;!-- Generated Output --&gt;&lt;div&gt;&lt;h3&gt;Fluffy&lt;/h3&gt;&lt;p&gt;Cat&lt;/p&gt;&lt;/div&gt;</code></pre>
                     </section>
                     <section>
                         <h2>Weather Application</h2>
-                        <pre class="javascript zoomTarget"><code>$( document ).ready(function() {
+                        <pre class="javascript zoomTargetxx"><code>$( document ).ready(function() {
   var forecasts = new Forecasts();
 
   window.searchView = new SearchView({
@@ -800,24 +811,24 @@ itemView.render();​</code></pre>
                     </section>
                     <section>
                         <h2>Weather Search View</h2>
-                        <pre class="javascript zoomTarget"><code>window.SearchView = Backbone.View.extend({
+                        <pre class="javascript zoomTargetxx"><code class="code-tall">window.SearchView = Backbone.View.extend({
   events: { "click #search": "addZip" },
   initialize: function() {
     this.collection.on( "add", this.clear, this );
   },
   addZip: function( e ) {
-    e.preventDefault();
+    var valid, zip = $("#zip").val();
 
+    e.preventDefault();
     this.model = new Forecast();
-    this.model.on( "error", this.toggleError, this );
-    if ( this.model.set({ zip: this.$("#zip").val() }) ) {
-      this.collection.add( this.model );
-      this.toggleError();
+    this.model.on( "invalid", this.toggleError, this );
+    valid = this.model.set({ zip: zip }, { validate: true });
+
+    if ( valid ) {
+      this.collection.add( this.model ); this.toggleError();
     }
   },
-  clear: function() {
-    this.$( "#zip" ).val( "" );
-  },
+  clear: function() { this.$( "#zip" ).val( "" ); },
   toggleError: function( model, error ) {
     this.$( ".alert" ).text( error ).toggle( !!error );
   }
@@ -825,7 +836,7 @@ itemView.render();​</code></pre>
                     </section>
                     <section>
                         <h2>Weather Forecast View</h2>
-                        <pre class="javascript zoomTarget"><code>var ForecastView = Backbone.View.extend({
+                        <pre class="javascript zoomTargetxx"><code class="code-tall">var ForecastView = Backbone.View.extend({
   events: { "click .delete": "destroy" },
   initialize: function() {
     this.collection.on( "add", this.render, this );
@@ -841,7 +852,7 @@ itemView.render();​</code></pre>
   },
   remove: function( model ) {
     $( "#" + model.get("zip") ).remove();
-    if ( !this.collection.length ) { this.$el.fadeOut( "slow" ); }
+    if ( !this.collection.length ) { this.$el.fadeOut("slow") }
   },
   destroy: function( e ) {
     var id = $( e.currentTarget ).closest( "tr" ).attr( "id" ),
@@ -852,7 +863,7 @@ itemView.render();​</code></pre>
                     </section>
                     <section>
                         <h2>Weather Forecast Item View</h2>
-                        <pre class="html zoomTarget"><code>&lt;script type="text/template" id="forcast-template"&gt;
+                        <pre class="html zoomTargetxx"><code>&lt;script type="text/template" id="forcast-template"&gt;
     &lt;td&gt;&lt;img src="&lt;%= url %&gt;" /&gt;&lt;/td&gt;
     &lt;td&gt;&lt;%= city %&gt;&lt;/td&gt;
     &lt;td&gt;&lt;%= state %&gt;&lt;/td&gt;
@@ -860,7 +871,7 @@ itemView.render();​</code></pre>
     &lt;td&gt;&lt;%= temperature %&gt;°F&lt;/td&gt;
     &lt;td&gt;&lt;a href="#"&gt;&lt;i class="delete icon-trash"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
 &lt;/script&gt;</code></pre>
-                        <pre class="javascript zoomTarget"><code>var ForecastItemView = Backbone.View.extend({
+                        <pre class="javascript zoomTargetxx"><code>var ForecastItemView = Backbone.View.extend({
   tagName: "tr",
   template: _.template( $("#forcast-template").html() ),
 
@@ -884,6 +895,9 @@ itemView.render();​</code></pre>
                     <section>
                         <h2>Sync</h2>
                         <blockquote>Backbone.sync is the function that Backbone calls every time it attempts to read or save a model to the server. By default, it uses (jQuery/Zepto).ajax to make a <strong><ul>RESTful JSON request</ul></strong> and returns a jqXHR. You can override it in order to use a different persistence strategy, such as WebSockets, XML transport, or Local Storage.</blockquote>
+                        <div class="fragment">
+                        <img class="zoomTarget" src="./img/what-do-you-mean-im-fat.jpg" class="fragment" />
+                    </div>
                     </section>
                     <section>
                         <h2>CRUD to REST</h2>
@@ -942,7 +956,7 @@ itemView.render();​</code></pre>
                     </script>
                     <section>
                         <h2>Get Detail</h2>
-                        <pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({
+                        <pre class="javascript zoomTargetxx runnable"><code>var Pet = Backbone.Model.extend({
  urlRoot: "/pets"
 });
 
@@ -956,7 +970,7 @@ pet.fetch({
                     </section>
                     <section>
                         <h2>Create</h2>
-                        <pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({
+                        <pre class="javascript zoomTargetxx runnable"><code>var Pet = Backbone.Model.extend({
  urlRoot: "/pets"
 });
 
@@ -970,7 +984,7 @@ pet.save({}, {
                     </section>
                     <section>
                         <h2>Update</h2>
-                        <pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({
+                        <pre class="javascript zoomTargetxx runnable"><code>var Pet = Backbone.Model.extend({
  urlRoot: "/pets"
 });
 
@@ -984,7 +998,7 @@ pet.save({ name: "Fatty" }, {
                     </section>
                     <section>
                         <h2>Delete</h2>
-                        <pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({
+                        <pre class="javascript zoomTargetxx runnable"><code>var Pet = Backbone.Model.extend({
  urlRoot: "/pets"
 });
 
@@ -998,7 +1012,7 @@ pet.destroy({
                     </section>
                     <section>
                         <h2>Get List</h2>
-                        <pre class="javascript zoomTarget runnable"><code>var Pet = Backbone.Model.extend({ urlRoot: "/pets" });
+                        <pre class="javascript zoomTargetxx runnable"><code>var Pet = Backbone.Model.extend({ urlRoot: "/pets" });
 
 var Pets = Backbone.Collection.extend({
   model: Pet,
@@ -1013,7 +1027,7 @@ pets.fetch({
                     </section>
                     <section>
                         <h2>Weather Model Revisted</h2>
-                        <pre class="javascript zoomTarget revisited"><code><span class="old-code">var Forecast = Backbone.Model.extend({</span>
+                        <pre class="javascript zoomTargetxx revisited"><code class="code-tall">var Forecast = Backbone.Model.extend({
   url: function() {
     return "http://api.wunderground.com/api/7eaec3b21b154448/conditions/q/" + this.get( "zip" ) + ".json";
   },
@@ -1032,10 +1046,10 @@ pets.fetch({
     options.dataType = "jsonp";
     return Backbone.sync( method, model, options );
   },
-  <span class="old-code">validate: function ( options ) {</span>
-    <span class="old-code">if ( !options.zip ) { return "Please enter a zip code"; }</span>
-  <span class="old-code">}</span>
-<span class="old-code">});</span></code></pre>
+  validate: function ( options ) {
+    if ( !options.zip ) { return "Please enter a zip code"; }
+  }
+});</span></code></pre>
                     </section>
                     <section>
                         <h2>Weather Forest Item View Revisted</h2>
@@ -1043,7 +1057,7 @@ pets.fetch({
                             pre.revisited .old-code { opacity: 0.5; }
                             pre.revisited .new-code { opacity: 1.0; font-weight: bold; }
                         </style>
-                        <pre class="javascript zoomTarget revisited"><code><span class="old-code">var ForecastItemView = Backbone.View.extend({</span>
+                        <pre class="javascript zoomTargetxx revisited"><code><span class="old-code">var ForecastItemView = Backbone.View.extend({</span>
   <span class="old-code">tagName: "tr",</span>
   <span class="old-code">template: _.template( $("#forcast-template").html() ),</span>
   <span class="old-code">initialize: function() {</span>
@@ -1070,7 +1084,7 @@ pets.fetch({
                     </section>
                     <section>
                         <h2>Markup</h2>
-                        <pre class="html zoomTarget"><code>&lt;div class="navbar navbar-inverse"&gt;
+                        <pre class="html zoomTargetxx"><code class="code-tall">&lt;div class="navbar navbar-inverse"&gt;
   &lt;div class="navbar-inner"&gt;
     &lt;div class="container"&gt;
       &lt;div class="brand"&gt;Weather&lt;/div&gt;
@@ -1111,7 +1125,7 @@ pets.fetch({
                     </section>
                     <section id="bad-javascript">
                         <h2>Code</h2>
-                        <pre class="javascript zoomTarget"><code>window.Forecast = Backbone.Model.extend({
+                        <pre class="javascript zoomTargetxx"><code class="code-tall">window.Forecast = Backbone.Model.extend({
   url: function() {
       return "http://api.wunderground.com/api/7eaec3b21b154448/conditions/q/" + this.get("zip") + ".json";
   },
@@ -1152,9 +1166,9 @@ window.SearchView = Backbone.View.extend({
     e.preventDefault();
     
     this.model = new Forecast();
-    this.model.on("error", this.toggleError, this);
+    this.model.on("invalid", this.toggleError, this);
 
-    if ( this.model.set({zip: this.$("#zip").val()}) ) {
+    if ( this.model.set({zip: this.$("#zip").val()}, {validate:true}) ) {
       this.collection.add( this.model );
       this.toggleError();
     }
@@ -1224,9 +1238,13 @@ $(document).ready(function() {
                     <section>
                         <h2>Reaction</h2>
                         <div style="text-align: center;">
-                            <img class="fragment" style="height: 225px;" src="./img/jonah-hill-excited.gif">
+                            <div class="fragment">
+                            <img class="zoomTarget" style="height: 225px;" src="./img/jonah-hill-excited.gif">
+                            </div>
                             <!-- <img class="fragment" style="height: 225px;" src="./img/dumb-dumber.gif"> -->
-                            <img class="fragment" style="height: 225px;" src="./img/yoda.gif" />
+                            <div class="fragment">
+                            <img class="zoomTarget" style="height: 225px;" src="./img/yoda.gif" />
+                            </div>
                             <!-- <img class="fragment" style="height: 225px;" src="./img/office-dance.gif" />-->
                         </div>
                         <p class="fragment">Now, that is much better...</p>
@@ -1241,10 +1259,13 @@ $(document).ready(function() {
                     <section>
                       <h2>Router</h2>
                       <blockquote>Web applications often provide <strong><u>linkable</u></strong>, <strong><u>bookmarkable</u></strong>, <strong><u>shareable URLs</u></strong> for important locations in the app. Backbone.Router provides methods for routing client-side pages, and connecting them to actions and events.</blockquote>
+                      <div class="fragment">
+                      <img src="./img/687474703a2f2f617765736f6d65676966732e636f6d2f77702d636f6e74656e742f75706c6f6164732f646f672d6865792d6765742d6f66662d7468652d636f6d70757465722d616e642d70617.gif" class="zoomTarget" />
+                    </div>
                     </section>
                     <section>
                       <h2>Basic Router</h2>
-                      <pre class="javascript zoomTarget"><code>var Router = Backbone.Router.extend({
+                      <pre class="javascript zoomTargetxx"><code>var Router = Backbone.Router.extend({
   routes: {
     "": "showPets",
     "detail/:id": "showDetail"
@@ -1268,10 +1289,11 @@ var router = new Router();</code></pre>
                     <section>
                         <h2>History</h2>
                         <blockquote>History serves as a global router (per frame) to <strong><u>handle hashchange events or pushState</u></strong>, <strong><u>match the appropriate route</u></strong>, and <strong><u>trigger callbacks</u></strong>.</blockquote>
+                        <img src="./img/ceiling-cat.jpg" class="fragment" />
                     </section>
                     <section>
                       <h2>Starting History</h2>
-                      <pre class="javascript zoomTarget revisited"><code><span class="old-code">var Router = Backbone.Router.extend({</span>
+                      <pre class="javascript zoomTargetxx revisited"><code><span class="old-code">var Router = Backbone.Router.extend({</span>
   <span class="old-code">routes: {</span>
     <span class="old-code">"": "showPets",</span>
     <span class="old-code">"detail/:id": "showDetail"</span>
@@ -1293,7 +1315,7 @@ $( document ).ready(function() {
                     </section>
                     <section>
                       <h2>Manual Routing</h2>
-                      <pre class="javascript zoomTarget"><code>var Router = Backbone.Router.extend({
+                      <pre class="javascript zoomTargetxx"><code>var Router = Backbone.Router.extend({
   routes: {
     "": "showPets",
     "detail/:id": "showDetail"
@@ -1323,11 +1345,12 @@ router.navigate( "detail/123", { trigger: true } );</code></pre>
                       <li>History</li>
                       <li>Forecast Detail Template</li>
                       <li>Forecast Detail View</li>
-                    </ul>
+                    </ul><br/>
+                    <img src="./img/omg-cat.jpg" class="fragment" />
                   </section>
                   <section>
                     <h2>Weather Detail Router</h2>
-                    <pre class="javascript zoomTarget"><code>var vent = _.extend({}, Backbone.Events);
+                    <pre class="javascript zoomTargetxx"><code class="code-tall">var vent = _.extend({}, Backbone.Events);
 
 var Router = Backbone.Router.extend({
   routes: {
@@ -1344,7 +1367,6 @@ var Router = Backbone.Router.extend({
     detail.render();
   }
 });
-
 var router = new Router();
 
 $( document ).on( "click", "a.route", function( e ) {
@@ -1354,7 +1376,7 @@ $( document ).on( "click", "a.route", function( e ) {
                   </section>
                   <section>
                     <h2>Weather History</h2>
-                    <pre class="javascript zoomTarget"><code>$( document ).ready(function() {
+                    <pre class="javascript zoomTargetxx"><code>$( document ).ready(function() {
     Backbone.history.start();
 
     window.forecasts = new Forecasts();
@@ -1370,12 +1392,9 @@ $( document ).on( "click", "a.route", function( e ) {
                   </section>
                   <section>
                     <h2>Weather Forecast Detail Template</h2>
-                    <pre class="html zoomTarget"><code>&lt;script type="text/template" id="forecast-detail-template"&gt;
+                    <pre class="html zoomTargetxx"><code class="code-tall">&lt;script type="text/template" id="forecast-detail-template"&gt;
     &lt;div class="modal hide fade"&gt;
-      &lt;div class="modal-header"&gt;
-        &lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true"&gt;&times;&lt;/button&gt;
-        &lt;h3&gt;&lt;%= city %&gt;, &lt;%= state %&gt;&lt;/h3&gt;
-      &lt;/div&gt;
+      &lt;div class="modal-header"&gt;&lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true"&gt;&times;&lt;/button&gt;&lt;h3&gt;&lt;%= city %&gt;, &lt;%= state %&gt;&lt;/h3&gt;&lt;/div&gt;
       &lt;div class="modal-body"&gt;           
         &lt;div class="form-horizontal"&gt;
           &lt;div class="control-group"&gt;
@@ -1397,11 +1416,11 @@ $( document ).on( "click", "a.route", function( e ) {
                   </section>
                   <section>
                     <h2>Weather Forecast Detail View</h2>
-                    <pre class="javascript zoomTarget"><code>var ForecastDetailView = Backbone.View.extend({
+                    <pre class="javascript zoomTargetxx"><code class="code-tall">var ForecastDetailView = Backbone.View.extend({
     tagName: "div",
     template: _.template($("#forecast-detail-template").html()),
     events: {
-        "click button.close": "close"
+        "click button.close": "remove"
     },
     initialize: function() {
         _.bindAll( this, "render" );
@@ -1410,11 +1429,8 @@ $( document ).on( "click", "a.route", function( e ) {
     render: function() {
         this.$dialog = $( this.template(this.model.toJSON()) );
         this.$dialog.modal().appendTo( this.$el );
-        this.$el.appendTo( "body" );
+        this.$el.appendTo( "body" ); 
         return this;
-    },
-    close: function() {
-        Backbone.history.navigate( "/", true );
     },
     remove: function() {
         this.$dialog.modal( "hide" ).remove();
@@ -1426,6 +1442,11 @@ $( document ).on( "click", "a.route", function( e ) {
                     <h2>Weather Applicaiton v3</h2>
                     <iframe style="height: 400px;" src="./demo/weather-backbone-3.html"></iframe>
                   </section>
+                  <section>
+                    <h2>Yay!</h2>
+                    <p>That is almost as cool as an...</p>
+                    <img src="./img/invisible-bike.jpg" />
+                </section>
                     <section>
                       <h2>Additonal Resources</h2>
                       <img src="img/arrow.png" class="right-arrow" />
@@ -1498,14 +1519,16 @@ $( document ).on( "click", "a.route", function( e ) {
                     <section>
                       <h2>Questions?</h2>
                       <div style="">
-                          <h3 style="font-weight: bold; font-family: courier; text-align: left; font-size: 1em;width: 75%;margin: 0px auto;">
+                          <h3 style="font-weight: bold; font-family: courier; text-align: left; font-size: 1em;width: 50%;margin: 0px auto;">
                               <a href="http://elijahmanor.com" targer="_blank">http://elijahmanor.com</a><br/>
                               <a href="http://twitter.com/elijahmanor" targer="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@elijahmanor</a><br/>
                               <a href="mailto:elijahmanor@gmail.com" targer="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elijahmanor@gmail.com</a>
                           </h3>
                       </div>
-                      <img class="fragment" src="img/kamikaze-cat6.gif" style="height: 215px;" />
-                      <p class="" style="position: fixed; bottom: 0em;">DISCLAIMER: No animals were hurt during the creation of this presentation... but be warned and keep your eyes open for crazed kamikaze cats!</p>
+                      <div class="fragment">
+                      <img class="zoomTarget" src="img/kamikaze-cat6.gif" style="height: 215px;" />
+                        </div>
+                      <p class="fragment" >DISCLAIMER: No animals were hurt during the creation of this presentation... but be warned and keep your eyes open for crazed kamikaze cats!</p>
                     </section>
 
                     <section>
@@ -1520,9 +1543,9 @@ $( document ).on( "click", "a.route", function( e ) {
         <script src="lib/js/head.min.js"></script>
         <script src="js/reveal.min.js"></script>
         <script src="js/jquery.zoomooz.min.js"></script>
-        <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js"></script>
-        <script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
-        <script src="http://documentcloud.github.com/backbone/backbone-min.js"></script>
+        <script src="http://twitter.github.io/bootstrap/assets/js/bootstrap.js"></script>
+        <script src="http://documentcloud.github.io/underscore/underscore-min.js"></script>
+        <script src="http://documentcloud.github.io/backbone/backbone-min.js"></script>
 
         <script>
 
@@ -1532,6 +1555,14 @@ $( document ).on( "click", "a.route", function( e ) {
                 controls: true,
                 progress: true,
                 history: true,
+
+                mouseWheel: false,
+
+                // Apply a 3D roll to links on hover
+                rollingLinks: false,
+
+                width: 1280,
+                height: 800,
 
                 theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
                 transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none

@@ -262,7 +262,7 @@ body {
 	margin: 15px auto;
 
 	text-align: left;
-	font-size: 0.55em;
+	font-size: 1em; /* 0.75em; */
 	font-family: monospace;
 	line-height: 1.2em;
 
@@ -277,7 +277,7 @@ body {
 .reveal code {
 	font-family: monospace;
 	overflow: auto;
-	max-height: 400px;
+	max-height: 550px;
 }
 
 .reveal table th,
@@ -497,12 +497,12 @@ body {
 
 .reveal .slides {
 	position: absolute;
-	max-width: 900px;
+	/*max-width: 900px;*/
 	width: 80%;
 	height: 60%;
 	left: 50%;
 	top: 50%;
-	margin-top: -320px;
+	margin-top: -400px;
 	padding: 20px 0px;
 	overflow: visible;
 	z-index: 1;
