@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-
+<!-- http://localhost:1337/talks/angry-birds-javascript/index.html#/introduction -->
 	<head>
 		<meta charset="utf-8">
 
@@ -386,7 +386,7 @@ console.log( window.bird.power );    // Private variable, can't access
 
 					<section>
 						<h2>Sample Application</h2>
-						<iframe width="100%" height="600" src="http://jsfiddle.net/xHAp4/embedded/result,js,resources,html,css/presentation/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+						<iframe width="100%" height="600" src="http://jsfiddle.net/xHAp4/1/embedded/result,js,resources,html,css/presentation/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 					</section>
 
 					<section>
@@ -469,6 +469,7 @@ $( "#bird" ).trigger( "click" );
 
 					<section>
 						<h2>TYPES OF MESSAGES: Mediated Events</h3>
+						<h3><a href="http://manor.im/etm-postaljs" class="lowercase">http://manor.im/etm-postaljs</a> by Jim Cowart (<a href="http://twitter.com/ifandelse">@ifandelse</a>)</h3>
 						<pre><code>
 var channel = postal.channel(),
     $lastUpdated = $( "#lastUpdated" );
@@ -533,14 +534,6 @@ $( ".pig:first" ).trigger( "impact" );
 						<pre><code class="javascript">
 var channel = postal.channel();
  
-$( document ).on( "click", ".term", function( e ) {
-    var term = $( this ).text();
-    
-    e.preventDefault();
-    $( "input" ).val( term );
-    channel.publish( "searchTerm.changed", { term: term } );
-});
- 
 $( "button" ).on( "click", function() {
     channel.publish( "searchTerm.changed", { term: $( "input" ).val() } );
 });
@@ -572,7 +565,15 @@ channel.subscribe( "netflix.titles.updated", function( titles ) {
     });
     $( "table" ).show().find( "tbody" ).html( rows.join( "" ) );
 });
- 
+
+$( document ).on( "click", ".term", function( e ) {
+    var term = $( this ).text();
+    
+    e.preventDefault();
+    $( "input" ).val( term );
+    channel.publish( "searchTerm.changed", { term: term } );
+});
+
 window.netflix = {
     getTitles: function( term, callback ) {
         var url = "http://odata.netflix.com/Catalog/Titles?$filter=substringof('" +
@@ -649,7 +650,7 @@ window.netflix = {
 
 					<section>
 						<h2>WAT!?!</h2>
-						<p><img src="./img/yellow-postal-error.png" /></p>
+						<p><img src="./img/yellow-postal-error.png" style="height: 300px"  /></p>
 						<blockquote>WHAT!?! I don't see any each method anywhere. What's up with that? Ohh man, it looks like the exception occurred in postal.min.js somewhere. FOUND A BUG... see if I use that library again. But, wait!?! Ohh, maybe something else is going on here. --Ficticious Internal Dialog</blockquote>
 					</section>
 
@@ -757,7 +758,7 @@ require([ "postal" ], function( postal ) {
 
 					<section>
 						<h2>Optimize Application: r.js</h2>
-						<pre><code>
+						<pre><code class="javascript">
 ({
 	appDir: ".",               // The main root URL
 	dir: "../dist",            // Directory that we build to
@@ -1172,7 +1173,7 @@ define( [ "jquery", "backbone", "underscore", "channels", "text!movie-template.h
 
 					<section>
 						<h2>JSHint Example</h2>
-						<p><img src="./img/jshint-errors.png" /></p>
+						<p><img src="./img/jshint-errors.png"  style="height: 500px;" /></p>
 					</section>
 
 					<section>
@@ -1216,6 +1217,11 @@ define( [ "jquery", "backbone", "underscore", "channels", "text!movie-template.h
 					<section>
 						<h2>The Twitter Application</h2>
 						<p><img src="./img/twitter-blue-bird.jpg" /></p>
+					</section>
+
+					<section>
+						<h2>The Twitter Application</h2>
+<iframe width="100%" height="550" src="http://jsfiddle.net/KXr8U/2/embedded/result,html,css,js,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 					</section>
 
 					<section>
@@ -1572,6 +1578,7 @@ twitter.displayTweets = function( tweets ) {
 
 					<section>
 						<h2>WHAT ABOUT OTHER TEMPLATING ENGINES?</h2>
+						<h3><a href="http://manor.im/etm-template-chooser" class="lowercase">http://manor.im/etm-template-chooser</a> by Garann Means (<a href="https://twitter.com/garannm">@garannm</a>)</h3>
 						<p><img src="./img/template-chooser.png" /></p>
 					</section>
 
@@ -1696,7 +1703,7 @@ $( "a.ajax" ).on( "click", getUrlBridge );
 					</section>
 
 					<section>
-						<h2>Gang of Fowl: Bridge</h2>
+						<h2>Gang of Fowl: Facade</h2>
 						<pre><code>
 // Facade
 var addEvent = function( element, type, eventHandler ) {
@@ -1869,6 +1876,7 @@ var yellowBird = (function() {
 
 					<section>
 						<h2>PATTERNS: Finite State Machine</h2>
+						<h3><a href="http://manor.im/etm-machinajs" class="lowercase">http://manor.im/etm-machinajs</a> by Jim Cowart (<a href="http://twitter.com/ifandelse">@ifandelse</a>)</h3>
 						<pre><code>
 var attackFsm = new machina.Fsm({
     initialState: "idle",
@@ -2044,12 +2052,12 @@ module.exports = function(grunt) {
 
 					<section>
 						<h2>jQuery Gruntfile</h2>
-						<p><img src="./img/grunt-jquery.png" /></p>
+						<p><img src="./img/grunt-jquery.png" style="height: 650px" /></p>
 					</section>
 
 					<section>
 						<h2>Modernizr Gruntfile</h2>
-						<p><img src="./img/grunt-modernizr.png" /></p>
+						<p><img src="./img/grunt-modernizr.png" style="height: 300px" /></p>
 					</section>
 
 					<section>
@@ -2059,7 +2067,7 @@ module.exports = function(grunt) {
 
 					<section>
 						<h2>Twitter Bower: Install jQuery</h2>
-						<p><img src="./img/bower-install-jquery.png" /></p>
+						<p><img src="./img/bower-install-jquery.png" style="height: 600px" /></p>
 					</section>
 
 					<section>
@@ -2069,17 +2077,17 @@ module.exports = function(grunt) {
 
 					<section>
 						<h2>Yeoman: Install webapp</h2>
-						<p><img src="./img/yo-webapp.png" /></p>
+						<p><img src="./img/yo-webapp.png" style="height: 700px" /></p>
 					</section>
 
 					<section>
 						<h2>Yeoman: Install backbone:app</h2>
-						<p><img src="./img/yo-backbone-app.png" /></p>
+						<p><img src="./img/yo-backbone-app.png" style="height: 700px" /></p>
 					</section>
 
 					<section>
 						<h2>Yeoman: Install backbone:model</h2>
-						<p><img src="./img/yo-backbone-model.png" /></p>
+						<p><img src="./img/yo-backbone-model.png" style="height: 200px" /></p>
 					</section>
 
 					<section data-state="demox">
@@ -2104,6 +2112,7 @@ module.exports = function(grunt) {
 	                        <a href="http://twitter.com/elijahmanor" targer="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@elijahmanor</a><br/>
 	                        <a href="mailto:elijahmanor@gmail.com" targer="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elijahmanor@gmail.com</a>
 	                    </h3>
+	                    <h4 style="padding-top: 15px;"><a href="http://manor.im/etm-angrybirdsjs" class="lowercase">http://manor.im/etm-angrybirdsjs</a></h4>
 	                    <img class="fragment" src="./img/injured-angry-birds.jpg" style="height: 400px;" />
 	                    <p class="fragment" style="">DISCLAIMER: No birds were hurt during this presentation...</p>
 	                </section>

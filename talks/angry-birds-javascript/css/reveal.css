@@ -1259,3 +1259,10 @@ body {
 }
 
 
+.reveal .roll {
+	vertical-align: middle;
+}
+
+.lowercase {
+	text-transform: lowercase;
+}
