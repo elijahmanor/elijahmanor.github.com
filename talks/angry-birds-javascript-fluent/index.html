@@ -145,6 +145,7 @@ html.intro .reveal .roll {
 							<img src="./img/angry-birds-group.jpg" />
 						</p>
 					</section>
+					<!--
 					<section>
 						<h2>Red Bird</h2>
 						<p>
@@ -212,7 +213,7 @@ html.intro .reveal .roll {
 						<h2>ATTACK!</h2>
 						<p style="font-size: 72px;">→</p>
                     </section>
-
+-->
 				</section>
 
 				<section>
@@ -232,23 +233,20 @@ html.intro .reveal .roll {
 						<p>
 							1. Declaring an Object in the Window Scope 
 						</p>
-						<pre><code contenteditable>
-var type = "Red",
+						<pre><code contenteditable>var type = "Red",
     attack = function() {
         console.log( type + " Bird Attacks!" );
     };
  
 console.log( window.type );   // I'm a global variable
-console.log( window.attack ); // I'm a global function
-						</code></pre>
+console.log( window.attack ); // I'm a global function</code></pre>
 					</section>
 					<section>
 						<h2>How Objects Become Global?</h2>
 						<p>
 							2. Not Declaring an Object in Any Scope
 						</p>
-						<pre><code contenteditable>
-var type = "Red",
+						<pre><code contenteditable>var type = "Red",
     attack = function() {
         typeOfBird = type + " Bird";
  
@@ -257,16 +255,14 @@ var type = "Red",
  
 console.log( window.type );       // I'm a global variable
 console.log( window.attack );     // I'm a global function
-console.log( window.typeOfBird ); // I'm a global variable too :(
-						</code></pre>
+console.log( window.typeOfBird ); // I'm a global variable too :(</code></pre>
 					</section>
 					<section>
 						<h2>How Objects Become Global?</h2>
 						<p>
 							3. Specifically Adding an Object to the Window
 						</p>
-						<pre><code contenteditable>
-var type = "Red",
+						<pre><code contenteditable>var type = "Red",
     attack = function() {
         typeOfBird = type + " Bird";
  
@@ -278,8 +274,7 @@ var type = "Red",
 console.log( window.type );       // I'm a global variable
 console.log( window.attack );     // I'm a global function
 console.log( window.typeOfBird ); // I'm a global variable too :(
-console.log( window.message );    // I'm a global variable too :|
-						</code></pre>
+console.log( window.message );    // I'm a global variable too :|</code></pre>
 					</section>
 					<section>
 						<h2>Why are Global Objects a Problem?</h2>
@@ -292,8 +287,7 @@ console.log( window.message );    // I'm a global variable too :|
 					<section>
 						<h2>Various Ways to Protect Yourself</h2>
 						<h3>Object Literal</h3>
-						<pre><code>
-// Gather type & attack and make properties off higher level object
+						<pre><code>// Gather type & attack and make properties off higher level object
 var bird = {
     type: "Red",
     attack: function() {
@@ -303,25 +297,23 @@ var bird = {
  
 console.log( window.bird );          // Only 1 global object!
 console.log( window.bird.type );     // Red
-console.log( window.bird.attack() ); // Red Bird Attacks! 
-						</code></pre>
+console.log( window.bird.attack() ); // Red Bird Attacks!</code></pre>
 					</section>
 					<section>
 						<h2>Various Ways to Protect Yourself</h2>
 						<h3>Immediately Invoked Function Expression (IIFE)</h3>
-						<pre><code>
-// JavaScript can parse this just fine now, yay!
+						<pre><code>// JavaScript can parse this just fine now, yay!
 (function() {
+
     // All memory is contained within this scope
-}()); // <-- Immediately Invoked
-						</code></pre>
+
+}()); // <-- Immediately Invoked</code></pre>
 					</section>
 
 					<section>
 						<h2>Various Ways to Protect Yourself</h2>
 						<h3>Immediately Invoked Function Expression (IIFE)</h3>
-						<pre><code>
-// Revealing Module Pattern
+						<pre><code>// Revealing Module Pattern
 var bird = (function() {
     var type = "Red",
         power = "IIFE", // This is private
@@ -336,28 +328,25 @@ var bird = (function() {
 console.log( window.bird );          // Only 1 global object!
 console.log( window.bird.type );     // Public property
 console.log( window.bird.attack() ); // Public method access private
-console.log( window.bird.power );    // Private var, can't access 
-						</code></pre>
+console.log( window.bird.power );    // Private var, can't access</code></pre>
 					</section>
 
 					<section>
 						<h2>Various Ways to Protect Yourself</h2>
 						<h3>Immediately Invoked Function Expression (IIFE)</h3>
-						<pre><code>
-(function( bird ) {
+						<pre><code>(function( bird ) {
     var power = "IIFE"; // This is private
     
     bird.type = "Red";
     bird.attack = function() {
-        console.log( bird.type + " Bird Attacks with " + power + "!" );
+        console.log(bird.type + " Bird Attacks with " + power + "!");
     };
 }( window.bird = window.bird || {} ));
  
 console.log( window.bird );          // Only 1 global object!
 console.log( window.bird.type );     // Public property
-console.log( window.bird.attack() ); // Public method accessing private
-console.log( window.bird.power );    // Private variable, can't access 
-						</code></pre>
+console.log( window.bird.attack() ); // Public method access private
+console.log( window.bird.power );    // Private variable can't access</code></pre>
 					</section>
 
 					<section data-state="demo">
@@ -391,20 +380,21 @@ console.log( window.bird.power );    // Private variable, can't access
 
 					<section>
 						<h2>Tightly Coupled Code</h2>
-						<pre><code>
-$( document ).on( "click", ".term", function( e ) {
+						<pre><code>$( document ).on( "click", ".term", function( e ) {
     $( "input" ).val( $( this ).text() );
     $( "button" ).trigger( "click" );
 });
  
 $( "button" ).on( "click", function( e ) {
     var searchTerm = $( "input" ).val(),
-        url = "http://odata.netflix.com/Catalog/Titles?$filter=substringof('" + 
-            escape( searchTerm ) + "',Name)&$callback=callback&$format=json";
+        url = "http://odata.netflix.com/...?$filter=substringof('" +
+            escape( searchTerm ) +
+            "',Name)&$callback=callback&$format=json";
  
     $( ".help-block" ).html( function( index, html ) {
         return e.originalEvent ? 
-            html + ", " + "&lt;a href='#' class='term'&gt;" + searchTerm + "&lt;/a&gt;" : html;
+            html + ", " + "&lt;a href='#' class='term'&gt;" +
+            searchTerm + "&lt;/a&gt;" : html;
     });
  
     $.ajax({
@@ -423,11 +413,10 @@ $( "button" ).on( "click", function( e ) {
                     rows.push( row );
                 }
             });
-            $( "table" ).show().find( "tbody" ).html( rows.join( "" ) );
+            $("table").show().find("tbody").html(rows.join(""));
         }
     });
-});
-						</code></pre>
+});</code></pre>
 					</section>
 
 
@@ -441,22 +430,24 @@ $( "button" ).on( "click", function( e ) {
 
 					<section>
 						<h2>TYPES OF MESSAGES: Observer Events</h2>
-						<pre><code>
-document.getElementById( "bird" )
+						<pre><code>document.getElementById("bird")
     // Native addEventListener attaches observer to the DOM element
-    .addEventListener( "click", function() { console.log( "Catapult!" ); }, false );
+    .addEventListener(
+    	"click", 
+    	function() { console.log("Catapult!"); }, 
+    	false
+    );
  
 $( "#bird" )
     // Old school event helpers attaches observer to the DOM element
-    .click( function() { console.log( "Flying through the air..." ); } )
+    .click(function() { console.log("Flying through the air..."); })
     // Old school bind method attaches observer to the DOM element
-    .bind( "click", function() { console.log( "COWABUNGA!" ); } )
-    // New school 2 parameter on method attaches observer to the DOM element
-    .on( "click", function() { console.log( "Destroy those pesky pigs!" ); } );
+    .bind("click", function() { console.log("COWABUNGA!"); })
+    // New school 2 param on method attaches observer to DOM element
+    .on("click", function() { console.log("Destroy those pigs!"); });
  
 // Event is triggered and the list of observers are notified
-$( "#bird" ).trigger( "click" );						
-						</code></pre>
+$("#bird").trigger("click");</code></pre>
 					</section>
 
 					<section>
@@ -470,28 +461,27 @@ $( "#bird" ).trigger( "click" );
 					<section>
 						<h2>TYPES OF MESSAGES: Mediated Events</h3>
 						<h3><a href="http://manor.im/etm-postaljs" class="lowercase">http://manor.im/etm-postaljs</a> by Jim Cowart (<a href="http://twitter.com/ifandelse">@ifandelse</a>)</h3>
-						<pre><code>
-var channel = postal.channel(),
+						<pre><code>var channel = postal.channel(),
     $lastUpdated = $( "#lastUpdated" );
  
 // Subscribe to all bird.launch messages
-channel.subscribe( "bird.launch", function( data ) {
-    console.log( "Launch the blue birds at a " + data.angle + " angle!" );
+channel.subscribe("bird.launch", function(data) {
+    console.log("Launch blue birds at " + data.angle + " angle!");
 });
  
 // Subscribe to all bird.reset messages
-channel.subscribe( "bird.reset", function( data ) {
-    console.log( "Resetting blue birds to the catapult." );
+channel.subscribe("bird.reset", function(data) {
+    console.log("Resetting blue birds to the catapult.");
 });
  
 // Subscribe to all messages that match the bird.* wildcard!
-channel.subscribe( "bird.*", function( data ) {
-    $lastUpdated.text( moment().format( "MMMM Do YYYY, h:mm:ss a" ) ); 
+channel.subscribe("bird.*", function(data) {
+    $lastUpdated.text(moment().format("MMMM Do YYYY, h:mm:ss a")); 
 });
  
 // Publish some messages with optional data
-channel.publish( "bird.launch", { angle: 45 } );
-channel.publish( "bird.reset" );
+channel.publish("bird.launch", { angle: 45 });
+channel.publish("bird.reset");
 						</code></pre>
 					</section>
 
@@ -505,23 +495,21 @@ channel.publish( "bird.reset" );
 
 					<section>
 						<h2>TYPES OF MESSAGES: Hybrid Events</h3>
-						<pre><code>
-// Observer is attached to the #pigs element where impact events are delegated
-$( "#pigs" ).on( "impact", ".pig", function( e ) {
-    console.log( "I know which pig was impacted: " + e.target.innerHTML );
-    console.log( "I know where the subscribers are listed: " + e.delegateTarget.id );
-    console.log( "I can invoke another subscriber if I want!" );
-    $._data( e.delegateTarget, "events" ).secret[ 0 ].handler( e );
-    $( this ).text( "Bacon" );
+						<pre><code>// Observer attached to #pigs element where impact events delegated
+$("#pigs").on("impact", ".pig", function(e) {
+    console.log("Which pig impacted: " + e.target.innerHTML);
+    console.log("Where subscribers listed: " + e.delegateTarget.id);
+    console.log("I can invoke another subscriber if I want!");
+    $._data(e.delegateTarget, "events").secret[0].handler(e);
+    $(this).text("Bacon");
 });
  
-$( "#pigs" ).on( "secret", ".pig", function( e ) {
+$("#pigs").on("secret", ".pig", function(e) {
     console.log( "Shh, I'm hiding. Don't tell anyone..." );
 });
  
-// Event is triggers on the .pig element and bubble up to the #pigs element
-$( ".pig:first" ).trigger( "impact" );
-						</code></pre>
+// Event triggers on .pig element & bubble up to the #pigs element
+$(".pig:first").trigger("impact");</code></pre>
 					</section>
 
 					<section>
@@ -531,11 +519,12 @@ $( ".pig:first" ).trigger( "impact" );
 
 					<section>
 						<h2>LOOSELY COUPLED CODE</h2>
-						<pre><code class="javascript">
-var channel = postal.channel();
+						<pre><code class="javascript">var channel = postal.channel();
  
 $( "button" ).on( "click", function() {
-    channel.publish( "searchTerm.changed", { term: $( "input" ).val() } );
+    channel.publish("searchTerm.changed", { 
+    	term: $("input").val() 
+    });
 });
  
 channel.subscribe( "searchTerm.changed", function( data ) {
@@ -547,7 +536,8 @@ channel.subscribe( "searchTerm.changed", function( data ) {
 channel.subscribe( "searchTerm.changed", function( data ) {
     $( ".help-block" ).html( function( index, html ) {
         return ~html.indexOf( data.term ) ? html :
-            html + ", " + "&lt;a href='#' class='term'&gt;" + data.term + "&lt;/a&gt;";
+            html + ", " + "&lt;a href='#' class='term'&gt;" + 
+            data.term + "&lt;/a&gt;";
     });
 });
  
@@ -576,18 +566,18 @@ $( document ).on( "click", ".term", function( e ) {
 
 window.netflix = {
     getTitles: function( term, callback ) {
-        var url = "http://odata.netflix.com/Catalog/Titles?$filter=substringof('" +
-                escape( term ) + "',Name)&$callback=callback&$format=json";
+        var url = "http://odata.netflix.com/...=substringof('" +
+                escape( term ) +
+                "',Name)&$callback=callback&$format=json";
       
         $.ajax({
             dataType: "jsonp",
             url: url,
             jsonpCallback: "callback",
-            success: function( data ) { callback( data.d.results ); }
+            success: function(data) { callback( data.d.results ); }
         });
     }
-};
-						</code></pre>
+};</code></pre>
 					</section>
 
 					<section data-state="demox">
@@ -622,12 +612,9 @@ window.netflix = {
 
 					<section>
 						<h2>Broken Application</h2>
-						<pre><code>
-&lt;!DOCTYPE html&gt;
+						<pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head lang="en"&gt;
-        &lt;meta charset="utf-8"&gt;
-        &lt;title&gt;Angry Birds&lt;/title&gt;
         &lt;link rel="stylesheet" href="./css/style.css"&gt;
     &lt;/head&gt;
     &lt;body>
@@ -636,16 +623,13 @@ window.netflix = {
         &lt;script src="./libs/underscore.min.js"&gt;&lt;/script&gt;
         &lt;script&gt;
             var channel = postal.channel();
-        
             channel.subscribe( "pig.collide", function() {
                 console.log( "Pig Down!" );
             });
-        
             channel.publish( "pig.collide" );
         &lt;/script&gt;
     &lt;/body&gt;
-&lt;/html&gt;
-						</code></pre>
+&lt;/html&gt;</code></pre>
 					</section>
 
 					<section>
@@ -663,61 +647,54 @@ window.netflix = {
 
 					<section>
 						<h2>RequireJS: define</h2>
-						<pre><code>
-// File Name: my-first-module.js
+						<pre><code>// File Name: my-first-module.js
  
-// The name of the module defaults to the name of the file by convention
+// The name of module defaults to the name of the file by convention
 define( 
-    [ "underscore", "jquery" ], // Array of dependencies needed for this module
-    function( _, $ ) { // Callback with parameters matching dependencies requested
-        // Underscore and jQuery have both been loaded and are available for use with
+    [ "underscore", "jquery" ], // Array of dependencies needed
+    function( _, $ ) { // Callback with params matching dependencies
+        // Underscore and jQuery have both been loaded and available
         // the `_` & `$` variables
  
-        return { // This will be available in callback of whoever requires this module
+        return { // Will be available in callback of required module
             message: "Hello World!"
         };
     }
-);
-						</code></pre>
+);</code></pre>
 					</section>
 
 					<section>
 						<h2>RequireJS: require</h2>
-						<pre><code class="javascript">
-require( 
-    [ "my-first-module" ],    // Array of dependencies that are needed
-    function( firstModule ) { // Callback with parameters matching dependencies
+						<pre><code class="javascript">require( 
+    [ "my-first-module" ],    // Array of dependencies needed
+    function( firstModule ) { // Callback w/ params matching deps
         console.log( firstModule.message );
     }
-);	
-						</code></pre>
+);</code></pre>
 					</section>
 
 					<section>
 						<h2>Fixed Application: Markup</h2>
-						<pre><code>
-&lt;!DOCTYPE html&gt;
+						<pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head lang="en"&gt;
-        &lt;meta charset="utf-8"&gt;
-        &lt;title>Angry Birds&lt;/title&gt;
         &lt;link rel="stylesheet" href="./css/style.css"&gt;
     &lt;/head&gt;
     &lt;body&gt;
-        <!-- 
+        &lt;!-- 
             You'll notice that the markup is cleaned up dramatically
-            The data-main HTML5 attribute defines where to kick things off
-        -->
-        &lt;script src="./libs/require.min.js" data-main="./js/main"&gt;&lt;/script&gt;
+            The data-main HTML5 attribute defines where to kick 
+            things off
+        --&gt;
+        &lt;script src="./libs/require.min.js"
+        	data-main="./js/main"&gt;&lt;/script&gt;
     &lt;/body&gt;
-&lt;/html&gt;
-						</code></pre>
+&lt;/html&gt;</code></pre>
 					</section>
 
 					<section>
 						<h2>Fixed Application: main.js</h2>
-						<pre><code>
-/* main.js */
+						<pre><code>/* main.js */
  
 // Let RequireJS know where all the scripts are
 require.config({
@@ -727,25 +704,21 @@ require.config({
         "postal": "../libs/postal.min"
     },
     shim: {
-        // Underscore.js doesn't know about AMD, so you have to shim it
-        underscore: {
-            exports: "_"
-        }
+        // Underscore.js doesn't know about AMD, so have to shim it
+        underscore: { exports: "_" }
     }
 });
  
-// The postal.js library internally defined that it needs the underscore library
-// so RequireJS will load postal, which in turn will load its underscore
+// The postal.js library internally defined that it needs the
+// underscore library so RequireJS will load postal, which in
+// turn will load its underscore
 require([ "postal" ], function( postal ) {
     var channel = postal.channel();
- 
     channel.subscribe( "pig.collide", function() {
         console.log( "Pig Down!" );
     });
- 
     channel.publish( "pig.collide" );
-});
-						</code></pre>
+});</code></pre>
 					</section>
 
 					<section>
@@ -758,37 +731,34 @@ require([ "postal" ], function( postal ) {
 
 					<section>
 						<h2>Optimize Application: r.js</h2>
-						<pre><code class="javascript">
-({
-	appDir: ".",               // The main root URL
-	dir: "../dist",            // Directory that we build to
-	mainConfigFile: "main.js", // Location of main.js
-	name: "main",              // Name of the module that we are loading
-	optimizeCss: "standard",   // Standard optimization for CSS
-	removeCombined: true,      // Temporary combined files will be removed
-	paths : {
-		"jquery": "libs/jquery.min",
-		"underscore": "libs/underscore.min",
-		"postal": "libs/postal.min"
-	}
-})
-						</code></pre>
+						<pre><code class="javascript">({
+    appDir: ".",               // The main root URL
+    dir: "../dist",            // Directory that we build to
+    mainConfigFile: "main.js", // Location of main.js
+    name: "main",              // Name of module that we are loading
+    optimizeCss: "standard",   // Standard optimization for CSS
+    removeCombined: true,      // Temp combined files will be removed
+    paths : {
+        "jquery": "libs/jquery.min",
+        "underscore": "libs/underscore.min",
+        "postal": "libs/postal.min"
+    }
+})</code></pre>
 					</section>
 
 					<section>
 						<h2>Optimize Application: r.js</h2>
-						<pre><code>
-$ r.js -o build.js
-Optimizing (standard) CSS file: C:/Users/Elijah/Desktop/demo/dist/css/style.css
+						<pre><code>$ r.js -o build.js
+Optimizing (standard) CSS file: C:/Users/Elijah/Desktop/dist/css/style.css
  
 Tracing dependencies for: main
-Uglifying file: C:/Users/Elijah/Desktop/demo/dist/build.js
-Uglifying file: C:/Users/Elijah/Desktop/demo/dist/libs/jquery.min.js
-Uglifying file: C:/Users/Elijah/Desktop/demo/dist/libs/postal.min.js
-Uglifying file: C:/Users/Elijah/Desktop/demo/dist/libs/require.min.js
-Uglifying file: C:/Users/Elijah/Desktop/demo/dist/libs/underscore.min.js
-Uglifying file: C:/Users/Elijah/Desktop/demo/dist/main.js
-Uglifying file: C:/Users/Elijah/Desktop/demo/dist/r.js
+Uglifying file: C:/Users/Elijah/Desktop/dist/build.js
+Uglifying file: C:/Users/Elijah/Desktop/dist/libs/jquery.min.js
+Uglifying file: C:/Users/Elijah/Desktop/dist/libs/postal.min.js
+Uglifying file: C:/Users/Elijah/Desktop/dist/libs/require.min.js
+Uglifying file: C:/Users/Elijah/Desktop/dist/libs/underscore.min.js
+Uglifying file: C:/Users/Elijah/Desktop/dist/main.js
+Uglifying file: C:/Users/Elijah/Desktop/dist/r.js
  
 css/style.css
 ----------------
@@ -796,12 +766,11 @@ css/style.css
  
 C:/Users/Elijah/Desktop/demo/src/main.js
 ----------------
-C:/Users/Elijah/Desktop/demo/src/main.js
-						</code></pre>
+C:/Users/Elijah/Desktop/demo/src/main.js</code></pre>
 					</section>
 
 					<section data-state="demox">
-						<h2>Black Bird!</h2>
+						<h2>White Bird!</h2>
 						<p style="font-size: 72px;">→</p>
 						<canvas id="game-yellow" width=625 height=380>
 						    Text that you see if you don't support Canvas :(
@@ -809,6 +778,7 @@ C:/Users/Elijah/Desktop/demo/src/main.js
 					</section>
 				</section>
 
+<!--
 				<section>
 					<section>
 						<h2>Black Bird</h2>
@@ -1085,7 +1055,7 @@ define( [ "jquery", "backbone", "underscore", "channels", "text!movie-template.h
 						</canvas>
 					</section>
 				</section>
-
+-->
 				<section>
 					<section>
 						<h2>White Bird</h2>
@@ -1145,8 +1115,7 @@ define( [ "jquery", "backbone", "underscore", "channels", "text!movie-template.h
 
 					<section>
 						<h2>JSHint Example</h2>
-						<pre><code>
-/*jshint maxparams:3, maxdepth:2, maxstatements:5, maxcomplexity:3, maxlen:80 */
+						<pre><code>/*jshint maxparams:3, maxdepth:2, maxstatements:5, maxcomplexity:3, maxlen:80 */
 /*global console:false */
  
 (function( undefined ) {
@@ -1167,13 +1136,12 @@ define( [ "jquery", "backbone", "underscore", "channels", "text!movie-template.h
     }
  
     test1( 1, 2, 3, 4 );
-}());
-						</code></pre>
+}());</code></pre>
 					</section>
 
 					<section>
 						<h2>JSHint Example</h2>
-						<p><img src="./img/jshint-errors.png"  style="height: 500px;" /></p>
+						<p><img src="./img/jshint-errors.png"  style="height: 550px;" /></p>
 					</section>
 
 					<section>
@@ -1219,18 +1187,19 @@ define( [ "jquery", "backbone", "underscore", "channels", "text!movie-template.h
 						<p><img src="./img/twitter-blue-bird.jpg" /></p>
 					</section>
 
+<!--
 					<section>
 						<h2>The Twitter Application</h2>
 <iframe width="100%" height="550" src="http://jsfiddle.net/KXr8U/2/embedded/result,html,css,js,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 					</section>
+-->
 
 					<section>
 						<h2>The Twitter Application</h2>
-						<pre><code class="javascript">
-(function( twitter, $, undefined ) {
+						<pre><code class="javascript">(function( twitter, $, undefined ) {
  
     var channel = twitter.channel = postal.channel(),
-        URL_TEMPLATE = "https://api.twitter.com/1/statuses/user_timeline/" + 
+        URL_TEMPLATE = "https://api.twitter.com/...timeline/" + 
             "%(userName)s.json?count=%(count)s&include_rts=1",
         $selection = null;
         
@@ -1239,7 +1208,8 @@ define( [ "jquery", "backbone", "underscore", "channels", "text!movie-template.h
     twitter.init = function( selector ) {
         twitter.selector = selector;
         
-        channel.subscribe( "tweets.available", twitter.displayTweets );    
+        channel.subscribe("tweets.available",
+        	twitter.displayTweets);    
     };
     
     twitter.displayTweets = function( tweets ) {
@@ -1249,11 +1219,15 @@ define( [ "jquery", "backbone", "underscore", "channels", "text!movie-template.h
         // This would be better suited for a templating engine,
         // but that's for another Angry Bird ;)
         $.each( tweets || {}, function( index, tweet ) {
-            var html = "&lt;i&gt;" + moment( tweet.created_at ).fromNow() + "&lt;/i&gt;: ";
+            var time = moment(tweet.created_at).fromNow(),
+                html = "&lt;i&gt;" + time + "&lt;/i&gt;: ";
+
             html += "&lt;b&gt;" + tweet.user.name + "&lt;/b&gt; - ";
             html += tweet.text;
-            html += tweet.retweeted ? " &lt;i class='icon-repeat'&gt;&lt;/i&gt;" : "";
-            html += tweet.favorited ? " &lt;i class='icon-star'&gt;&lt;/i&gt;" : "";
+            html += tweet.retweeted ?
+            	" &lt;i class='icon-repeat'&gt;&lt;/i&gt;" : "";
+            html += tweet.favorited ?
+            	" &lt;i class='icon-star'&gt;&lt;/i&gt;" : "";
             
             $( "&lt;li />", { html: html }).appendTo( $list );         
         });
@@ -1285,13 +1259,12 @@ $( document ).on( "click", "button", function( e ) {
     
     e.preventDefault();                                                 
     twitter.getTweets( $input.val() || "elijahmanor" );    
-});
-						</code></pre>
+});</code></pre>
 					</section>
 
 					<section>
 						<h2>Real Data from Twitter</h2>
-						<p><img src="./img/twitter-raw.png" /></p>
+						<p><img src="./img/twitter-raw.png" style="height: 700px" /></p>
 					</section>
 
 					<section>
@@ -1301,29 +1274,32 @@ $( document ).on( "click", "button", function( e ) {
 
 					<section>
 						<h2>Mocking Static Data</h2>
-						<pre><code>
-$.mockjax({
+						<pre><code>$.mockjax({
     url: "https://api.twitter.com/1/statuses/user_timeline/*",
     responseTime: 750,
     responseText: [
-        { id: 0, created_at: "Mon Apr 11 8:00:00 +0000 2012",  text: "Test Tweet 1",
-            favorited: false, retweeted: false, user: { name: "User 1" } },
-        { id: 1, created_at: "Mon Apr 11 9:00:00 +0000 2012",  text: "Test Tweet 2",
-            favorited: true,  retweeted: true,  user: { name: "User 2" } },
-        { id: 2, created_at: "Mon Apr 11 10:00:00 +0000 2012", text: "Test Tweet 3",
-            favorited: false, retweeted: true,  user: { name: "User 3" } },
-        { id: 3, created_at: "Mon Apr 11 11:00:00 +0000 2012", text: "Test Tweet 4",
-            favorited: true,  retweeted: false, user: { name: "User 4" } },
-        { id: 4, created_at: "Mon Apr 11 12:00:00 +0000 2012", text: "Test Tweet 5",
-            favorited: true,  retweeted: true,  user: { name: "User 5" } }
+        { id: 0, created_at: "Mon Apr 11 8:00:00 2012",
+            text: "Test Tweet 1", favorited: false,
+            retweeted: false, user: { name: "User 1" } },
+        { id: 1, created_at: "Mon Apr 11 9:00:00 2012",
+            text: "Test Tweet 2", favorited: true,
+            retweeted: true,  user: { name: "User 2" } },
+        { id: 2, created_at: "Mon Apr 11 10:00:00 2012",
+            text: "Test Tweet 3", favorited: false,
+            retweeted: true,  user: { name: "User 3" } },
+        { id: 3, created_at: "Mon Apr 11 11:00:00 2012",
+            text: "Test Tweet 4", favorited: true,
+            retweeted: false, user: { name: "User 4" } },
+        { id: 4, created_at: "Mon Apr 11 12:00:00 2012",
+            text: "Test Tweet 5", favorited: true,
+            retweeted: true,  user: { name: "User 5" } }
     ]
-});
-						</code></pre>
+});</code></pre>
 					</section>
 
 					<section>
 						<h2>Ultra-Boring Super-Static Mocked Data :(</h2>
-						<p><img src="./img/twitter-mock-static.png" /></p>
+						<p><img src="./img/twitter-mock-static.png" style="height: 500px" /></p>
 					</section>
 
 					<section>
@@ -1333,15 +1309,14 @@ $.mockjax({
 
 					<section>
 						<h2>MOCKING DYNAMIC SEMI-RANDOM DATA</h2>
-						<pre><code class="javascript">
-$.mockjax({
+						<pre><code class="javascript">$.mockjax({
     url: "https://api.twitter.com/1/statuses/user_timeline/*",
     responseTime: 750,
     response: function() {
         var data = $.mockJSON.generateFromTemplate({
             "tweets|5-10": [{
                 "id|+1": 0, 
-                "created_at": "Mon Apr 11 @TIME_HH:@TIME_MM:@TIME_SS +0000 2012",
+                "created_at": "Apr 11 @TIME_HH:@TIME_MM:@TIME_SS",
                 "text": "@LOREM_IPSUM",
                 "favorited|0-1": false,
                 "retweeted|0-1": false,
@@ -1351,13 +1326,12 @@ $.mockjax({
         
         this.responseText = data.tweets;
     }
-});
-						</code></pre>
+});</code></pre>
 					</section>
 
 					<section>
 						<h2>Semi-Exciting Somewhat-Random Mocked Data! :)</h2>
-						<p><img src="./img/twitter-mock-dynamic.png" /></p>
+						<p><img src="./img/twitter-mock-dynamic.png" style="height: 500px" /></p>
 					</section>
 
 					<section data-state="demox">
@@ -1384,8 +1358,7 @@ $.mockjax({
 
 					<section>
 						<h2>WHY USE A TEMPLATING ENGINE?</h2>
-						<pre><code class="javascript">
-(function( twitter, $, undefined ) { 
+						<pre><code class="javascript">(function( twitter, $, undefined ) { 
     var _selection;
         
     twitter.init = function( $selection ) {
@@ -1396,31 +1369,32 @@ $.mockjax({
         var $list = $( "&lt;ul/ &gt;" );
         
         $.each( tweets || {}, function( index, tweet ) {
-            var html = "&lt;i&gt;" + moment( tweet.created_at ).fromNow() + "&lt;/i&gt;: ";
+            var time = moment( tweet.created_at ).fromNow(),
+            	html = "&lt;i&gt;" + time + "&lt;/i&gt;: ";
+            	
             html += "&lt;b&gt;" + tweet.user.name + "&lt;/b&gt; - ";
             html += "&lt;span&gt;" + tweet.text + "&lt;/span&gt;";
-            html += tweet.retweeted ? " &lt;i class='icon-repeat'>&lt;/i&gt;" : "";
-            html += tweet.favorited ? " &lt;i class='icon-star'>&lt;/i&gt;" : "";
+            html += tweet.retweeted ?
+            	" &lt;i class='icon-repeat'>&lt;/i&gt;" : "";
+            html += tweet.favorited ?
+            	" &lt;i class='icon-star'>&lt;/i&gt;" : "";
             
             $( "&lt;li /&gt;", { html: html }).appendTo( $list );         
         });
             
        _selection.empty().append( $list.children() );         
     };
-}( window.twitter = window.twitter || {}, jQuery ));
-						</code></pre>
+}( window.twitter = window.twitter || {}, jQuery ));</code></pre>
 					</section>
 
 					<section>
 						<h2>UNDERSCORE.JS: Take 1</h2>
-						<pre><code>
-twitter.displayTweets = function( tweets ) {
+						<pre><code>twitter.displayTweets = function( tweets ) {
     var templateString = $( "#tweets-underscore" ).html(),
         template = _.template( templateString );
-    
-   _selection.empty().append( template( { tweets: tweets } ) );                   
-};
-						</code></pre>
+
+   _selection.empty().append( template( { tweets: tweets } ) );
+};</code></pre>
 					</section>
 
 					<section>
@@ -1428,21 +1402,19 @@ twitter.displayTweets = function( tweets ) {
 						<style>
 						.codex { background-color: #272822; }
 						</style>
-						<pre class="codex"><codex class="django xml javascript">
-&lt;script id="tweets-underscore" type="text/template"&gt;
+						<pre class="codex"><codex class="django xml javascript">&lt;script id="tweets-underscore" type="text/template"&gt;
     &lt;ul&gt;
         &lt;% _.each( tweets, function( tweet ) { %>
         &lt;li&gt;
             &lt;i&gt;&lt;%= moment( tweet.created_at ).fromNow() %&gt;&lt;/i&gt;:
             &lt;b&gt;&lt;%= tweet.user.name %&gt;&lt;/b&gt; - 
             &lt;span&gt;&lt;%= tweet.text %&gt;&lt;/span&gt;
-            &lt;% if ( tweet.retweeted ) { %&gt;&lt;i class="icon-repeat"&gt;&lt;/i&gt;&lt;% } %&gt; 
-            &lt;% if ( tweet.favorited ) { %&gt;&lt;i class="icon-star"&gt;&lt;/i&gt;&lt;% } %&gt;
+            &lt;%if(tweet.retweeted){%&gt;&lt;i class="icon-repeat"&gt;&lt;/i&gt;&lt;%}%&gt; 
+            &lt;%if(tweet.favorited){%&gt;&lt;i class="icon-star"&gt;&lt;/i&gt;&lt;%}%&gt;
         &lt;/li&gt;
         &lt;% }); %&gt;
     &lt;/ul&gt;
-&lt;/script&gt;
-						</codex></pre>
+&lt;/script&gt;</codex></pre>
 					</section>
 
 					<section>
@@ -1452,8 +1424,7 @@ twitter.displayTweets = function( tweets ) {
 
 					<section>
 						<h2>UNDERSCORE.JS: Take 2</h2>
-						<pre><code>
-twitter.displayTweets = function( tweets ) {
+						<pre><code>twitter.displayTweets = function( tweets ) {
     var templateString = $( "#tweets-underscore" ).html(),
         template = _.template( templateString );
  
@@ -1462,28 +1433,25 @@ twitter.displayTweets = function( tweets ) {
         return tweet;
     });
  
-    _selection.empty().append( template( { tweets: tweets } ) );                   
-};							
-						</code></pre>
+    _selection.empty().append( template( { tweets: tweets } ) );
+};</code></pre>
 					</section>
 
 					<section>
 						<h2>UNDERSCORE.JS: Take 2</h2>
-						<pre class="codex"><codex>
-&lt;script id="tweets-underscore" type="text/template"&gt;
+						<pre class="codex"><codex>&lt;script id="tweets-underscore" type="text/template"&gt;
     &lt;ul&gt;
         &lt;% _.each( tweets, function( tweet ) { %&gt;
         &lt;li&gt;
             &lt;i&gt;&lt;%= tweet.created_at %&gt;&lt;/i&gt;: 
             &lt;b&gt;&lt;%= tweet.user.name %&gt;&lt;/b&gt; - 
             &lt;span&gt;&lt;%= tweet.text %&gt;&lt;/span&gt; 
-            &lt;% if ( tweet.retweeted ) { %&gt;&lt;i class="icon-repeat"&gt;&lt;/i&gt;&lt;% } %&gt; 
-            &lt;% if ( tweet.favorited ) { %&gt;&lt;i class="icon-star"&gt;&lt;/i&gt;&lt;% } %&gt;
+            &lt;%if(tweet.retweeted){%&gt;&lt;i class="icon-repeat"&gt;&lt;/i&gt;&lt;%}%&gt; 
+            &lt;%if(tweet.favorited){%&gt;&lt;i class="icon-star"&gt;&lt;/i&gt;&lt;%}%&gt;
         &lt;/li&gt;
         &lt;% }); %&gt;
     &lt;/ul&gt;
-&lt;/script&gt;
-						</codex></pre>
+&lt;/script&gt;</codex></pre>
 					</section>
 
 					<section>
@@ -1508,8 +1476,7 @@ twitter.displayTweets = function( tweets ) {
 
 					<section>
 						<h2>HANDLEBARS.JS</h2>
-						<pre><code>
-twitter.init = function( $selection ) {
+						<pre><code>twitter.init = function( $selection ) {
     _selection = $selection;
     
     Handlebars.registerHelper( "fromNow", function( time ) {
@@ -1522,14 +1489,12 @@ twitter.displayTweets = function( tweets ) {
         template = Handlebars.compile( templateString );
                         
     _selection.empty().append( template( tweets ) );         
-};
-						</code></pre>
+};</code></pre>
 					</section>
 
 					<section>
 						<h2>HANDLEBARS.JS</h2>
-						<pre class="codex"><codex>
-&lt;script id="tweets-handlebars" type="text/x-handlebars-template"&gt;
+						<pre class="codex"><codex>&lt;script id="tweets-handlebars" type="text/x-handlebars-template"&gt;
     &lt;ul&gt;
         {{#each this}}
         &lt;li&gt;
@@ -1541,8 +1506,7 @@ twitter.displayTweets = function( tweets ) {
         &lt;/li&gt;
         {{/each}}
     &lt;/ul&gt;
-&lt;/script&gt;
-						</codex></pre>
+&lt;/script&gt;</codex></pre>
 					</section>
 
 					<section>
@@ -1603,7 +1567,7 @@ twitter.displayTweets = function( tweets ) {
 						<h2>What was Stolen by the Pigs?</h2>
 						<p>The birds knew how to program, but they never had a common nomenclature that they all understood. Big Brother Bird came along and documented a set of common Design Patterns in a book lovingly known as the Gang of ./img/.</p>
 					</section>
-
+<!--
 					<section>
 						<h2>Gang of Fowl: Singleton</h2>
 						<blockquote>There can be only one!</blockquote>
@@ -1623,7 +1587,7 @@ var bird = {
 };
 						</code></pre>
 					</section>
-
+-->
 					<section>
 						<h2>Gang of Fowl: Factory</h2>
 						<blockquote>A factory is a way to create new objects without actually using the new keyword. The idea is that there is something abstracted away from you in the factory method. </blockquote>
@@ -1631,8 +1595,7 @@ var bird = {
 
 					<section>
 						<h2>Gang of Fowl: Factory</h2>
-						<pre><code>
-var Bird = function() {};
+						<pre><code>var Bird = function() {};
 Bird.factory = function( type ) {
     var bird;
     if ( typeof Bird[ type ] === "function" ) {
@@ -1645,10 +1608,9 @@ Bird.Red = function() {};
 Bird.Blue = function() {};
  
 var redBird = Bird.factory( "Red" );
-var blueBird = Bird.factor( "Blue" );
-						</code></pre>
+var blueBird = Bird.factor( "Blue" );</code></pre>
 					</section>
-
+<!--
 					<section>
 						<h2>Gang of Fowl: Bridge</h2>
 						<blockquote>decouple an abstraction from its implementation so that the two can vary independently --http://en.wikipedia.org/wiki/Bridge_pattern</blockquote>
@@ -1695,7 +1657,7 @@ $( "a.ajax" ).on( "click", getUrlBridge );
 						</code></pre>
 					</section>
 
-
+-->
 
 					<section>
 						<h2>Gang of Fowl: Facade</h2>
@@ -1704,16 +1666,13 @@ $( "a.ajax" ).on( "click", getUrlBridge );
 
 					<section>
 						<h2>Gang of Fowl: Facade</h2>
-						<pre><code>
-// Facade
-var addEvent = function( element, type, eventHandler ) {
-	if ( element.addEventListener ) {
-		element.addEventListener( type, eventHandler, false );
-	} else if ( elemement.attachEvent ) {
-		element.attachEvent( "on" + type, eventHandler );    
-	}
-};
-						</code></pre>
+						<pre><code>var addEvent = function( element, type, eventHandler ) {
+    if ( element.addEventListener ) {
+        element.addEventListener( type, eventHandler, false );
+    } else if ( elemement.attachEvent ) {
+        element.attachEvent( "on" + type, eventHandler );    
+    }
+};</code></pre>
 					</section>
 
 					<section>
@@ -1723,9 +1682,8 @@ var addEvent = function( element, type, eventHandler ) {
 
 					<section>
 						<h2>Gang of Fowl: Adapter</h2>
-						<pre><code>
-/*!
- * jquery-win8-deferred - jQuery $.when that understands WinJS.promise
+						<pre><code>/*!
+ * jquery-win8-deferred - jQuery $.when works w/ WinJS.promise
  * version: 0.1
  * author: appendTo, LLC
  * copyright: 2012
@@ -1757,10 +1715,9 @@ var addEvent = function( element, type, eventHandler ) {
  
         return $when.apply(this, args);
     };
-}());
-						</code></pre>
+}());</code></pre>
 					</section>
-
+<!--
 					<section>
 						<h2>Gang of Fowl: Observer</h2>
 						<blockquote>We've covered the Observer pattern already in the Blue Bird past a while back in this series, but it is a powerful pattern that can help decouple various components. My recommendation is to use the postal.js library.</blockquote>
@@ -1837,11 +1794,10 @@ yellowBird.getName = function() {
 console.log( yellowBird.catapult() ); //Super Awesome Yellow Bird is catapulting with Speed
 						</code></pre>
 					</section>
-
+-->
 					<section>
 						<h2>PATTERNS: Chaining</h2>
-						<pre><code>
-var bird = {
+						<pre><code>var bird = {
     catapult: function() {
         console.log( "Yippeeeeee!" );
         return this;
@@ -1852,10 +1808,9 @@ var bird = {
     }
 };
  
-bird.catapult().destroy();
-						</code></pre>
+bird.catapult().destroy();</code></pre>
 					</section>
-
+<!--
 					<section>
 						<h2>PATTERNS: Encapsulating</h2>
 						<pre><code>
@@ -1932,7 +1887,7 @@ attackFsm.handle( "pig.destroyed" );
 // Yay, we are victorious!
 						</code></pre>
 					</section>
-
+-->
 					<section>
 						<h2>Recommendation</h2>
 						<p>In addition to learning these patterns I would recommend that you pick one of your favorite libraries and start to source dive into their repository. </p>
@@ -1988,8 +1943,7 @@ attackFsm.handle( "pig.destroyed" );
 
 					<section>
 						<h2>Grunt package.json</h2>
-						<pre><code class="javascript">
-{
+						<pre><code class="javascript">{
   "name": "my-project-name",
   "version": "0.1.0",
   "devDependencies": {
@@ -1997,14 +1951,12 @@ attackFsm.handle( "pig.destroyed" );
     "grunt-contrib-jshint": "~0.1.1",
     "grunt-contrib-nodeunit": "~0.1.2"
   }
-}
-						</code></pre>
+}</code></pre>
 					</section>
 
 					<section>
 						<h2>Grunt Gruntfile.js</h2>
-						<pre><code>
-module.exports = function(grunt) {
+						<pre><code class="javascript">module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -2024,8 +1976,7 @@ module.exports = function(grunt) {
 
     // Default task(s).
     grunt.registerTask('default', ['uglify']);
-};
-						</code></pre>
+};</code></pre>
 					</section>
 
 					<section>
@@ -2107,13 +2058,13 @@ module.exports = function(grunt) {
 					
 	                <section> 
 	                	<h2>Questions?</h2> <div style="">
-	                    <h3 style="font-weight: bold; font-family: courier; text-align: left; font-size: 1em;width: 50%;margin: 0px auto;">
+	                    <h3 style="font-weight: bold; font-family: courier; text-align: left; font-size: 1.5em;width: 65%;margin: 0px auto;">
 	                    	<a href="http://elijahmanor.com" targer="_blank">http://elijahmanor.com</a><br/>
 	                        <a href="http://twitter.com/elijahmanor" targer="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@elijahmanor</a><br/>
 	                        <a href="mailto:elijahmanor@gmail.com" targer="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elijahmanor@gmail.com</a>
 	                    </h3>
 	                    <h4 style="padding-top: 15px;"><a href="http://manor.im/etm-angrybirdsjs" class="lowercase">http://manor.im/etm-angrybirdsjs</a></h4>
-	                    <img class="fragment" src="./img/injured-angry-birds.jpg" style="height: 400px;" />
+	                    <img class="fragment" src="./img/injured-angry-birds.jpg" style="height: 300px;" />
 	                    <p class="fragment" style="">DISCLAIMER: No birds were hurt during this presentation...</p>
 	                </section>
 			</div>

@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 /*!
  * reveal.js
  * http://lab.hakim.se/reveal-js
@@ -277,11 +278,11 @@ body {
 .reveal pre {
 	display: block;
 	position: relative;
-	width: 90%;
+	width: 100%;
 	margin: 15px auto;
 
 	text-align: left;
-	font-size: 0.60em;
+	font-size: 0.85em;
 	font-family: monospace;
 	line-height: 1.2em;
 
