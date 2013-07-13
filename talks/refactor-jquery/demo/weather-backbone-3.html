@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Weather</title>
+<link rel="stylesheet" href="http://twitter.github.io/bootstrap/assets/css/bootstrap.css">
+<link rel="stylesheet" href="http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css">
+<style type='text/css'>
+body { margin: 15px; }
+#output { margin-left: 0; display: none; }
+#output img { height: 20px; width: 20px; vertical-align: top; }
+#error { color: red; font-weight: bold; padding-left: 15px; }
+.alert { margin-top: 15px; display: none; }
+.form-horizontal .controls { position:relative; top:5px; }​
+</style>
+</head>
+<body>
+
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="brand">Weather</div>
+    </div>
+  </div>
+</div>
+
+<form id="weather" class="form-search">
+    <input type="text" id="zip" placeholder="Enter a zip code…" class="input-medium search-query">
+    <button id="search" type="submit" class="btn">Search</button>
+    <div class="alert alert-error"></div>
+</form>
+    
+<table id="output" class="table table-striped">
+    <caption>Forecast Results</caption>
+    <thead>
+        <tr>
+            <th></th><th></th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Temperature</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<script type="text/template" id="forcast-template">
+    <td><a class="route" href="/detail/<%= zip %>"><i class="detail icon-search"></i></a></td>
+    <td><img src="<%= url %>" /></td>
+    <td><%= city %></td>
+    <td><%= state %></td>
+    <td><%= zip %></td>
+    <td><%= temperature %>°F</a></td>
+    <td><a href="#"><i class="delete icon-trash"></i></td>
+</script>
+            
+<script type="text/template" id="forecast-detail-template">
+    <div class="modal hide fade">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3><%= city %>, <%= state %></h3>
+      </div>
+      <div class="modal-body">           
+        <div class="form-horizontal">
+          <div class="control-group">
+            <label class="control-label">Temperature</label>
+            <div class="controls"><%= temperature %>°F</div>
+          </div>
+          <div class="control-group">
+            <label class="control-label">Feels Like</label>
+            <div class="controls"><%= feelslike %>°F</div>
+          </div>
+          <div class="control-group">
+             <label class="control-label">Wind</label>
+             <div class="controls"><%= wind %> MPH</div>
+          </div>
+        </div>          
+      </div>
+    </div>
+</script>
+​
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+<script src="http://documentcloud.github.com/backbone/backbone-min.js"></script>
+<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js"></script>
+<script>
+// http://jsfiddle.net/9NaXb/
+
+window.Forecast = Backbone.Model.extend({
+    url: function() {
+        return "http://api.wunderground.com/api/7eaec3b21b154448/conditions/q/" + this.get("zip") + ".json";
+    },
+    parse : function( data, xhr ) {
+        var observation = data.current_observation;
+        return {
+            id: observation.display_location.zip,
+            url: observation.icon_url,
+            state: observation.display_location.state_name,
+            zip: observation.display_location.zip,
+            city: observation.display_location.city,
+            temperature: observation.temp_f,
+            wind: observation.wind_mph,
+            feelslike: observation.feelslike_f,
+            image: observation.image.url            
+        };
+    },
+    sync: function(method, model, options){  
+        options.dataType = "jsonp";  
+        return Backbone.sync(method, model, options);  
+    },
+    validate: function (options) {
+        if (!options.zip) {
+           return "Please enter a zip code";
+        }
+    }
+});
+
+window.Forecasts = Backbone.Collection.extend({
+    model: Forecast
+});
+
+window.SearchView = Backbone.View.extend({
+    events: {
+        "click #search": "addZip"
+    },
+    initialize: function() {
+        this.collection.on("add", this.clear, this);
+    },
+    addZip: function(e) {
+        e.preventDefault();
+        
+        this.model = new Forecast();
+        this.model.on("invalid", this.toggleError, this);
+
+        if ( this.model.set({zip: this.$("#zip").val()}, {validate:true}) ) {
+            this.collection.add( this.model );
+            this.toggleError();
+        }
+    },
+    clear: function() {
+        this.$("#zip").val("");
+    },
+    toggleError: function(model, error) {
+        this.$(".alert").text(error).toggle(!!error);
+    }
+});
+
+var ForecastView = Backbone.View.extend({
+    events: {
+        "click .delete": "destroy"
+    },
+    initialize: function() {
+        this.collection.on("add", this.render, this);
+        this.collection.on("remove", this.remove, this);
+    },
+    render: function(model) {
+        var view = new ForecastItemView({id: model.get("zip"), model: model});
+        this.$("tbody").append(view.el).closest("table").fadeIn("slow");
+        return this;
+    },
+    remove: function(model) {
+        $( "#" + model.get("zip") ).remove();
+        if ( !this.collection.length ) {
+            this.$el.fadeOut("slow");            
+        }
+    },
+    destroy: function(e) {
+        var id = $(e.currentTarget).closest("tr").attr("id"),
+            model = this.collection.get(id);
+        
+        this.collection.remove(model);
+    }
+});
+
+var ForecastItemView = Backbone.View.extend({
+    tagName: "tr",
+    template: _.template($("#forcast-template").html()),
+
+    initialize: function() {
+        _.bindAll(this, "render");
+        this.model.fetch({success: this.render})        
+    },
+    render: function(model) {
+        var content = this.template(model.toJSON());
+        this.$el.html(content);
+        return this;      
+    }
+});
+
+var ForecastDetailView = Backbone.View.extend({
+    tagName: "div",
+    template: _.template($("#forecast-detail-template").html()),
+    events: {
+        "click button.close": "remove"         
+    },
+    initialize: function() {
+        _.bindAll(this, "render");
+        vent.on("dialog.close", this.remove, this);
+    },
+    render: function() {
+        this.$dialog = $( this.template(this.model.toJSON()) );
+        this.$dialog.modal().appendTo( this.$el );
+        this.$el.appendTo( "body" );
+        return this;      
+    },
+    remove: function() {
+        this.$dialog.modal("hide").remove();
+        vent.off("dialog.close");
+    }
+});
+
+var vent = _.extend({}, Backbone.Events);
+
+var Router = Backbone.Router.extend({
+  routes: {
+    "": "home",
+    "detail/:id": "showDetail"
+  },
+  home: function() {
+    vent.trigger("dialog.close");      
+  },
+  showDetail: function(id) { 
+    var model = window.forecasts.get(id);
+    var detail = new ForecastDetailView({ model: model });
+    detail.render();
+  }
+});
+
+var router = new Router();
+
+$( document ).on( "click", "a.route", function( e ) {
+  e.preventDefault();
+  router.navigate( $(this).attr("href"), { trigger: true } );
+});
+
+$(document).ready(function() {
+    Backbone.history.start();
+    
+    window.forecasts = new Forecasts();
+    window.searchView = new SearchView({
+        el: $("#weather"),
+        collection: forecasts
+    });
+    window.forcastView = new ForecastView({
+        el: $("#output"),
+        collection: forecasts
+    });
+});
+</script>
+</body>
+</html>
+
+
