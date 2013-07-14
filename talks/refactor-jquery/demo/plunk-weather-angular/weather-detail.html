@@ -1,0 +1,43 @@
+<div class="page-header">
+  <h1>{{ forecast.city }} <small>{{ forecast.state }}</small></h1>
+</div>
+<form class="form-horizontal">
+  <div class="control-group">
+    <label class="control-label"></label>
+    <div class="controls">
+      <img ng-src="{{ forecast.url }}" />
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label">Zip</label>
+    <div class="controls">
+      <span>{{ forecast.zip }}</span>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label">Temperature</label>
+    <div class="controls">
+      <span>{{ forecast.temperature }}</span>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label">Feels Like</label>
+    <div class="controls">
+      <span>{{ forecast.feelslike }} °F</span>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label">Wind</label>
+    <div class="controls">
+      <span>{{ forecast.wind }} MPH</span>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <a href="#/" class="btn">Back</a>
+    </div>
+  </div>
+</form>
+
+
+

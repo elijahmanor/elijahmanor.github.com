@@ -1336,23 +1336,24 @@ router.navigate( "detail/123", { trigger: true } );</code></pre>
                   </section>
                   <section>
                     <h2>Weather Detail Router</h2>
-                    <pre class="javascript zoomTargetxx"><code class="code-tall">var vent = _.extend({}, Backbone.Events);
-
-var Router = Backbone.Router.extend({
+                    <pre class="javascript zoomTargetxx"><code class="code-tall">var Router = Backbone.Router.extend({
   routes: {
     "": "home",
     "detail/:id": "showDetail"
   },
   home: function() {
-    vent.trigger( "dialog.close" );
+    $("#detailView").hide();
+    $("#homeView").fadeIn();
   },
-  showDetail: function( id ) {
-    var model = window.forecasts.get( id ),
-      detail = new ForecastDetailView({ model: model });
+  showDetail: function(id) {
+    var model = window.forecasts.get(id),
+        view = new ForecastDetailView({model: model});
 
-    detail.render();
+    $("#homeView").hide();
+    $("#detailView").html(view.render().el).fadeIn();
   }
 });
+
 var router = new Router();
 
 $( document ).on( "click", "a.route", function( e ) {
@@ -1379,25 +1380,46 @@ $( document ).on( "click", "a.route", function( e ) {
                   <section>
                     <h2>Weather Forecast Detail Template</h2>
                     <pre class="html zoomTargetxx"><code class="code-tall">&lt;script type="text/template" id="forecast-detail-template"&gt;
-    &lt;div class="modal hide fade"&gt;
-      &lt;div class="modal-header"&gt;&lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true"&gt;&times;&lt;/button&gt;&lt;h3&gt;&lt;%= city %&gt;, &lt;%= state %&gt;&lt;/h3&gt;&lt;/div&gt;
-      &lt;div class="modal-body"&gt;
-        &lt;div class="form-horizontal"&gt;
-          &lt;div class="control-group"&gt;
-            &lt;label class="control-label"&gt;Temperature&lt;/label&gt;
-            &lt;div class="controls"&gt;&lt;%= temperature %&gt;°F&lt;/div&gt;
-          &lt;/div&gt;
-          &lt;div class="control-group"&gt;
-            &lt;label class="control-label"&gt;Feels Like&lt;/label&gt;
-            &lt;div class="controls"&gt;&lt;%= feelslike %&gt;°F&lt;/div&gt;
-          &lt;/div&gt;
-          &lt;div class="control-group"&gt;
-             &lt;label class="control-label"&gt;Wind&lt;/label&gt;
-             &lt;div class="controls"&gt;&lt;%= wind %&gt; MPH&lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
+  &lt;div class="page-header"&gt;
+    &lt;h1&gt;&lt;%= city %&gt; &lt;small&gt;&lt;%= state %&gt;&lt;/small&gt;&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;form class="form-horizontal"&gt;
+    &lt;div class="control-group"&gt;
+      &lt;label class="control-label"&gt;&lt;/label&gt;
+      &lt;div class="controls"&gt;
+        &lt;img src="&lt;%= url %&gt;" /&gt;
       &lt;/div&gt;
     &lt;/div&gt;
+    &lt;div class="control-group"&gt;
+      &lt;label class="control-label"&gt;Zip&lt;/label&gt;
+      &lt;div class="controls"&gt;
+        &lt;span&gt;&lt;%= zip %&gt;&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="control-group"&gt;
+      &lt;label class="control-label"&gt;Temperature&lt;/label&gt;
+      &lt;div class="controls"&gt;
+        &lt;span&gt;&lt;%= temperature %&gt; °F&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="control-group"&gt;
+      &lt;label class="control-label"&gt;Feels Like&lt;/label&gt;
+      &lt;div class="controls"&gt;
+        &lt;span&gt;&lt;%= feelslike %&gt; °F&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="control-group"&gt;
+      &lt;label class="control-label"&gt;Wind&lt;/label&gt;
+      &lt;div class="controls"&gt;
+        &lt;span&gt;&lt;%= wind %&gt; MPH&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="control-group"&gt;
+      &lt;div class="controls"&gt;
+        &lt;a href="#/" class="btn"&gt;Back&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
 &lt;/script&gt;</code></pre>
                   </section>
                   <section>
@@ -1405,22 +1427,12 @@ $( document ).on( "click", "a.route", function( e ) {
                     <pre class="javascript zoomTargetxx"><code class="code-tall">var ForecastDetailView = Backbone.View.extend({
     tagName: "div",
     template: _.template($("#forecast-detail-template").html()),
-    events: {
-        "click button.close": "remove"
-    },
     initialize: function() {
-        _.bindAll( this, "render" );
-        vent.on( "dialog.close", this.remove, this );
+        _.bindAll(this, "render");
     },
     render: function() {
-        this.$dialog = $( this.template(this.model.toJSON()) );
-        this.$dialog.modal().appendTo( this.$el );
-        this.$el.appendTo( "body" );
+        this.$el.html( this.template(this.model.toJSON()) );
         return this;
-    },
-    remove: function() {
-        this.$dialog.modal( "hide" ).remove();
-        vent.off( "dialog.close" );
     }
 });</code></pre>
                   </section>
@@ -1523,6 +1535,422 @@ $( document ).on( "click", "a.route", function( e ) {
                       <img src="img/arrow.png" class="right-arrow" />
                     </section>
                 </section>
+
+                <section>
+                    <section>
+                        <h2>AngularJS Directives and Filters</h2>
+                        <blockquote class="fragment">Directives are a way to <strong><u>teach HTML new tricks</u></strong>. During DOM compilation directives are matched against the HTML and executed. This allows directives to register behavior, or transform the DOM...</blockquote>
+                        <blockquote class="fragment">Filters perform <strong><u>data transformation</u></strong>. Typically they are used in conjunction with the locale to format the data in locale specific output.</blockquote>
+                    </section>
+                    <section>
+                        <h2>Directives: Hello World!</h2>
+                        <pre class="html zoomTargetxx"><code>&lt;!DOCTYPE html&gt;
+&lt;html <strong>ng-app</strong>&gt;
+&lt;head&gt;
+&lt;meta charset=utf-8 /&gt;
+&lt;title&gt;JS Bin&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;input type="text" <strong>ng-model="greeting"</strong> /&gt;
+    <strong>{{ greeting }}</strong>
+  &lt;/div&gt;
+  &lt;script src="angular.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                      <a href="http://jsbin.com/amicus/1/edit" target="_blank">run</a>
+                    </section>
+                    <section>
+                        <h2>Directives: ngRepeat</h2>
+                        <pre class="html zoomTargetxx"><code>&lt;!DOCTYPE html&gt;
+&lt;html ng-app&gt;
+&lt;head&gt;
+&lt;meta charset=utf-8 /&gt;
+&lt;title&gt;JS Bin&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- NOT RECOMMENDED TO USE NG-INIT --&gt;
+  &lt;div ng-init="frameworks = ['KnockoutJS', 'Backbone.js', 'EmberJS', 'AngularJS']"&gt;
+    &lt;ul&gt;
+      &lt;li ng-repeat="framework in frameworks"&gt;
+        {{ framework }}
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;script src="angular.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                      <a href="http://jsbin.com/izolot/2/edit" target="_blank">run</a>
+                    </section>
+
+                    <section class="">
+                        <h2>Some Built-In Directives</h2>
+                        <ul>
+                          <li>ngApp</li>
+                          <li>ngChange</li>
+                          <li>ngChecked</li>
+                          <li>ngClass</li>
+                          <li>ngClick</li>
+                          <li>ngController</li>
+                          <li>ngPluralize</li>
+                          <li>ngRepeat</li>
+                          <li>ngShow</li>
+                          <li>ngSrc</li>
+                          <li>ngSubmit</li>
+                          <li>ngView</li>
+                          <li>... <a href="http://docs.angularjs.org/api/" target="_blank">more</a> ...</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Filters</h2>
+                        <pre class="html zoomTargetxx"><code>&lt;!DOCTYPE html&gt;
+&lt;html ng-app&gt;
+&lt;head&gt;
+&lt;meta charset=utf-8 /&gt;
+&lt;title&gt;JS Bin&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- NOT RECOMMENDED TO USE NG-INIT --&gt;
+  &lt;div ng-init="frameworks = ['KnockoutJS', 'Backbone.js', 'EmberJS', 'AngularJS']"&gt;
+    &lt;input type="text" ng-model="search" /&gt;
+    &lt;ul&gt;
+      &lt;li ng-repeat="framework in frameworks | filter:search | orderBy:'toString()'"&gt;
+        {{ framework }}
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;script src="angular.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                      <a href="http://jsbin.com/uvagaf/1/edit" target="_blank">run</a>
+                    </section>
+
+                    <section>
+                      <h2>AngularJS Views and Controllers</h2>
+                      <img src="img/arrow.png" class="right-arrow" />
+                    </section>
+
+                  </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>AngularJS Views and Controllers</h2>
+                        <blockquote class="fragment">The view is what the user sees. The view begins its life as a template, is merged with the model and finally rendered into the browser DOM.</blockquote><br/>
+                        <blockquote class="fragment">A controller is the code behind the view. Its job is to construct the model and publish it to the view along with callback methods. The view is a projection of the scope onto the template (the HTML).</blockquote><br/>
+                    </section>
+                    <section>
+                        <h2>Scope</h2>
+                        <blockquote>The scope is the glue which marshals the model to the view and forwards the events to the controller.</blockquote>
+                        <img class="fragment" style="height: 300px" src="./img/scope-mouthwash.png" />
+                        <img class="fragment" style="height: 300px" src="./img/glue.jpg" />
+                    </section>
+                    <section>
+                        <h2>Controller</h2>
+                        <pre class="html zoomTargetxx"><code class="code-tall">&lt;div ng-controller="FrameworkController"&gt;
+  &lt;input type="text" ng-model="search" /&gt;
+  &lt;ul&gt;
+    &lt;li ng-repeat="framework in frameworks | filter:search | orderBy:'name'"&gt;
+      {{ framework.name }}: {{ framework.watchers }} watchers
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+                  <pre class="javascript"><code>function FrameworkController($scope) {
+    $scope.frameworks = [
+      { name: 'KnockoutJS', watchers: 3931 },
+      { name: 'Backbone.js', watchers: 14898 },
+      { name: 'EmberJS', watchers: 7979 },
+      { name: 'AngularJS', watchers: 11680 }
+    ];
+  }
+</code></pre>
+                      <a href="http://jsbin.com/ofivur/2/edit" target="_blank">run</a>
+                    </section>
+
+                    <section>
+                      <h2>Angular Modules, Routes, and Services</h2>
+                      <img src="img/arrow.png" class="right-arrow" />
+                    </section>
+
+                  </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Angular Modules, Routes, and Services</h2>
+                        <blockquote class="fragment">A module is a way to configure the injector's instance factory, known as a provider.</blockquote><br/>
+                        <blockquote class="fragment">Is used for deep-linking URLs to controllers and views (HTML partials)...</blockquote><br/>
+                        <blockquote class="fragment">Angular services are singletons that carry out specific tasks common to web apps, such as the $http service...</blockquote>
+                    </section>
+                    <section>
+                        <h2>Modules</h2>
+                        <pre class="javascript zoomTargetxx"><code>var app = angular.module("app", []);</code></pre>
+                        <pre class="html fragment zoomTargetxx"><code>&lt;!DOCTYPE html&gt;
+&lt;html <strong>ng-app="app"</strong>&gt;
+&lt;head&gt;
+&lt;meta charset=utf-8 /&gt;
+&lt;title&gt;JS Bin&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Adding Controller to Module</h2>
+                        <pre class="html smaller zoomTargetxx"><code>&lt;!DOCTYPE html&gt;
+&lt;html ng-app="app"&gt;
+&lt;head&gt;
+&lt;meta charset=utf-8 /&gt;
+&lt;title&gt;JS Bin&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div ng-controller="FrameworkController"&gt;
+    &lt;input type="text" ng-model="search" /&gt;
+    &lt;ul&gt;
+      &lt;li ng-repeat="framework in frameworks | filter:search | orderBy:'name'"&gt;
+        {{ framework.name }}: {{ framework.watchers }} watchers
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;script src="angular.min.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+  var app = angular.module("app", []);
+
+  app.controller("FrameworkController", function($scope) {
+    $scope.frameworks = [
+      { name: 'KnockoutJS', watchers: 3931 },
+      { name: 'Backbone.js', watchers: 14898 },
+      { name: 'EmberJS', watchers: 7979 },
+      { name: 'AngularJS', watchers: 11680 }
+    ];
+  });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                      <a href="http://jsbin.com/uxuzoj/1/edit" target="_blank">run</a>
+                    </section>
+
+                    <section>
+                        <h2>Routes</h2>
+                        <pre class="javascript zoomTargetxx"><code>var app = angular.module("app", []);
+
+app.config(function($routeProvider) {
+    $routeProvider
+        .when("/", {
+            controller: "FrameworkController",
+            templateUrl: "framework.html"
+        })
+        .when("/greeting", {
+            templateUrl: "greeting.html"
+        })
+        .otherwise({ redirectTo: "/" });
+});</code></pre>
+                      <pre class="html zoomTargetxx"><code>&lt;div ng-view&gt;&lt;!-- Template Content Goes Here --&gt;&lt;/div&gt;</code></pre>
+                      <a href="http://plnkr.co/edit/RxOicvRLh9Gmcg9YGDoe?p=preview" target="_blank">run</a>
+                    </section>
+
+                    <section>
+                        <h2>Factories &amp; Services</h2>
+                        <pre class="javascript zoomTargetxx"><code>var app = angular.module("app", []);</code></pre>
+                        <pre class="fragment javascript zoomTargetxx"><code>app.factory("testFactory", function() {
+  var factory = {};
+  factory.getFrameworks = function() {};
+  return factory;
+});</code></pre>
+                        <pre class="fragment javascript zoomTargetxx"><code>app.service("testService", function() {
+  this.getFrameworks = function() {};
+});</code></pre>
+
+                        <pre class="fragment javascript zoomTargetxx"><code>app.controller("testController",
+  function($scope, testService) {
+    $scope.frameworks = testService.getFrameworks();
+  });</code></pre>
+                        <pre class="fragment javascript zoomTargetxx"><code>  PhoneListCtrl.$inject = ['$scope', '$http'];
+</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Minification Concerns</h2>
+                        <pre class="fragment javascript zoomTargetxx"><code>function TestController($scope, testService) {
+  // ... more ...
+}
+
+TestController.$inject = ["$scope", "testService"];</code></pre><br/>
+                        <pre class="fragment javascript zoomTargetxx"><code>app.controller("TestController", [
+  "$scope",
+  "testService",
+  function($scope, testService) {
+    $scope.frameworks = testService.getFrameworks();
+  }
+]);</code></pre>
+
+                    </section>
+                    <section>
+                      <h2>Weather Application v3: AngularJS</h2>
+                      <img src="img/arrow.png" class="right-arrow" />
+                    </section>
+                  </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Weather Application v3: AngularJS</h2>
+                        <iframe style="height: 400px;" src="http://localhost:1337"></iframe>
+                    </section>
+                    <section>
+                        <h2>Markup</h2>
+                        <pre class="html smaller zoomTargetxx"><code class="code-tall">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=utf-8 /&gt;
+    &lt;link rel="stylesheet" href="bootstrap-combined.min.css" /&gt;
+    &lt;link rel="stylesheet" href="weather.css" /&gt;
+  &lt;/head&gt;
+  &lt;body ng-app="app"&gt;
+    &lt;div class="navbar navbar-inverse"&gt;
+      &lt;div class="navbar-inner"&gt;
+        &lt;div class="container"&gt;
+          &lt;div class="brand"&gt;Weather&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div ng-view&gt;&lt;/div&gt;
+    &lt;script src="angular.min.js"&gt;&lt;/script&gt;
+    &lt;script src="underscore.js"&gt;&lt;/script&gt;
+    &lt;script src="weather.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </section>
+                    <section id="bad-javascript">
+                        <h2>Module</h2>
+                        <pre class="smaller javascript zoomTargetxx"><code class="code-tall">var app = angular.module("app", []);
+
+app.config(function ($routeProvider) {
+  $routeProvider
+    .when("/", { controller:
+      "WeatherController",
+      templateUrl: "/weather-list.html"
+    })
+    .when("/details/:zip", {
+      controller: "WeatherDetailController",
+      templateUrl: "/weather-detail.html"
+    })
+    .otherwise({ redirectTo: "/" });
+});</code></pre>
+                    </section>
+                    <section id="bad-javascript">
+                        <h2>Controllers</h2>
+                        <pre class="smaller javascript zoomTargetxx"><code class="code-tall">app.controller("WeatherController",
+  function ($scope, weatherService) {
+    var forecasts = $scope.forecasts = weatherService.getList();
+
+    $scope.search = function() {
+      weatherService.search($scope.zip);
+      $scope.zip = "";
+    };
+
+    $scope.remove = function(forecast) {
+      weatherService.remove(forecast);
+    };
+  });
+
+app.controller("WeatherDetailController",
+  function ($scope, $routeParams, weatherService) {
+    var forecast = weatherService.get($routeParams.zip);
+
+    $scope.forecast = forecast;
+  });</code></pre>
+                    </section>
+                    <section id="bad-javascript">
+                        <h2>Service</h2>
+                        <pre class="smaller javascript zoomTargetxx"><code class="code-tall">app.service("weatherService", function($http) {
+  this.forecasts = [];
+
+  this.search = function(zip) {
+    var url = "http://api.wunderground.com/api/7eaec3b21b154448/conditions/q/" + zip + ".json?callback=JSON_CALLBACK";
+    var that = this;
+
+    $http.jsonp(url).success(function(data) {
+      var observation = data.current_observation;
+      that.forecasts.push({
+          id: observation.display_location.zip,
+          url: observation.icon_url,
+          state: observation.display_location.state_name,
+          zip: observation.display_location.zip,
+          city: observation.display_location.city,
+          temperature: observation.temp_f,
+          wind: observation.wind_mph,
+          feelslike: observation.feelslike_f,
+          image: observation.image.url
+      });
+    });
+  };
+
+  this.getList = function() {
+    return this.forecasts;
+  };
+
+  this.get = function(zip) {
+    return _.find(this.forecasts, function(item) {
+      return item.zip === zip;
+    });
+  };
+
+  this.remove = function(forecast) {
+    this.forecasts.splice(this.forecasts.indexOf(forecast), 1);
+  };
+});</code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Reaction</h2>
+                        <div style="text-align: center;">
+                            <img class="fragment" src="./img/mind-blown.gif" />
+                            <img class="fragment" style="height: 225px;" src="./img/dumb-dumber.gif">
+                            <img class="fragment" style="height: 225px;" src="./img/excited-angular.gif" />
+                        </div>
+                    </section>
+                  <section>
+                      <h2>Tutorials &amp; Screencasts</h2>
+                      <div>
+                          <ul>
+                              <li><a href="http://pluralsight.com/training/Courses/TableOfContents/angularjs-fundamentals" target="_blank">Pluralsight: AngularJS Fundamentals</a> by Joe Eames &amp; Jim Cooper</li>
+                              <li><a href="http://www.egghead.io/">Egghead.io</a> by John Lindquist</li>
+<li><a href="http://weblogs.asp.net/dwahlin/archive/2013/04/12/video-tutorial-angularjs-fundamentals-in-60-ish-minutes.aspx">Video Tutorial: AngularJS Fundamentals in 60-ish Minutes</a> by Dan Wahlin</a></li>
+                              <li><a href="http://www.youtube.com/user/angularjs">AngularJS YouTube Page</a></li>
+                              <li><a href="http://bit.ly/angularjs-resources">http://bit.ly/angularjs-resources</a></li>
+                          </ul>
+                      </div>
+                  </section>
+
+                  <section>
+                      <h2>DevTools</h2>
+                      <div>
+                          <ul>
+                              <li><a href="https://github.com/spect88/backbone-devtools" target="_blank">Backbone.js DevTools</li>
+                              <li><a href="https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk">AngularJS Batarang</a></li>
+                          </ul>
+                      </div>
+                  </section>
+
+                    <section>
+                      <h2>Questions?</h2>
+                      <img src="img/arrow.png" class="right-arrow" />
+                    </section>
+
+                </section>
+ 
+
+
+
+
+
+
+
+
+
+
                 <section>
                     <section>
                       <h2>Questions?</h2>

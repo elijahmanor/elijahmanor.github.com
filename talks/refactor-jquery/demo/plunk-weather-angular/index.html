@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset=utf-8 />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+    <link rel="stylesheet" href="weather.css" />
+  </head>
+
+  <body ng-app="app">
+    <div class="navbar navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <div class="brand">Weather</div>
+        </div>
+      </div>
+    </div>
+
+    <div ng-view></div>
+
+    <script src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore.js"></script>
+    <script src="weather.js"></script>
+  </body>
+</html>
