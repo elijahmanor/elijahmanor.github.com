@@ -255,14 +255,16 @@ console.log( window.attack ); // I'm a global function</code></pre>
 						</p>
 						<pre><code contenteditable>var type = "Red",
     attack = function() {
+        var secret = oops = "shh";
+
         typeOfBird = type + " Bird";
- 
-        console.log( birdType + " Bird Attacks!" );
+        console.log( typeOfBird + " Bird Attacks!" );
     };
- 
+
 console.log( window.type );       // I'm a global variable
-console.log( window.attack );     // I'm a global function
-console.log( window.typeOfBird ); // I'm a global variable too :(</code></pre>
+window.attack();                  // I'm a global function
+console.log( window.typeOfBird ); // I'm a global variable too :(
+console.log( window.oops );       // I'm a global variable too :(</code></pre>
 					</section>
 					<section>
 						<h2>How Objects Become Global?</h2>
@@ -271,16 +273,17 @@ console.log( window.typeOfBird ); // I'm a global variable too :(</code></pre>
 						</p>
 						<pre><code contenteditable>var type = "Red",
     attack = function() {
+        var private = oops = "secret";
+
         typeOfBird = type + " Bird";
- 
         window.message = typeOfBird + " Attacks!";
- 
         console.log( birdType + " Bird Attacks!" );
     };
- 
+
 console.log( window.type );       // I'm a global variable
-console.log( window.attack );     // I'm a global function
+window.attack();                  // I'm a global function
 console.log( window.typeOfBird ); // I'm a global variable too :(
+console.log( window.oops );       // I'm a global variable too :(
 console.log( window.message );    // I'm a global variable too :|</code></pre>
 					</section>
 					<section>
@@ -301,10 +304,10 @@ var bird = {
         console.log( this.type + " Bird Attacks!" );
     }
 };
- 
+
 console.log( window.bird );          // Only 1 global object!
 console.log( window.bird.type );     // Red
-console.log( window.bird.attack() ); // Red Bird Attacks!</code></pre>
+window.bird.attack();                // Red Bird Attacks!</code></pre>
 					</section>
 					<section>
 						<h2>Various Ways to Protect Yourself</h2>
@@ -334,25 +337,25 @@ var bird = (function() {
  
 console.log( window.bird );          // Only 1 global object!
 console.log( window.bird.type );     // Public property
-console.log( window.bird.attack() ); // Public method access private
+window.bird.attack();                // Public method access private
 console.log( window.bird.power );    // Private var, can't access</code></pre>
 					</section>
 
 					<section>
 						<h2>Various Ways to Protect Yourself</h2>
 						<h3>Immediately Invoked Function Expression (IIFE)</h3>
-						<pre><code>(function( bird ) {
+						<pre><code contenteditable>(function( bird ) {
     var power = "IIFE"; // This is private
-    
+
     bird.type = "Red";
     bird.attack = function() {
         console.log(bird.type + " Bird Attacks with " + power + "!");
     };
 }( window.bird = window.bird || {} ));
- 
+
 console.log( window.bird );          // Only 1 global object!
 console.log( window.bird.type );     // Public property
-console.log( window.bird.attack() ); // Public method access private
+window.bird.attack();                // Public method access private
 console.log( window.bird.power );    // Private variable can't access</code></pre>
 					</section>
 
@@ -413,10 +416,10 @@ $( "button" ).on( "click", function( e ) {
             $.each( data.d.results, function( index, result ) {
                 var row = "";
                 if ( result.Rating && result.ReleaseYear ) {
-                    row += "<td>" + result.Name + "</td>";
-                    row += "<td>" + result.Rating + "</td>";
-                    row += "<td>" + result.ReleaseYear + "</td>";
-                    row = "<tr>" + row + "</tr>";
+                    row += "&lt;td&gt;" + result.Name + "&lt;/td&gt;";
+                    row += "&lt;td&gt;" + result.Rating + "&lt;/td&gt;";
+                    row += "&lt;td&gt;" + result.ReleaseYear + "&lt;/td&gt;";
+                    row = "&lt;tr&gt;" + row + "&lt;/tr&gt;";
                     rows.push( row );
                 }
             });
@@ -492,6 +495,7 @@ channel.publish("bird.reset");
 						</code></pre>
 					</section>
 
+<!--
 					<section>
 						<h2>TYPES OF MESSAGES: Hybrid Events</h3>
 						<ul>
@@ -518,7 +522,7 @@ $("#pigs").on("secret", ".pig", function(e) {
 // Event triggers on .pig element & bubble up to the #pigs element
 $(".pig:first").trigger("impact");</code></pre>
 					</section>
-
+-->
 					<section>
 						<h2>Which One Should Be Used?</h2>
 						<blockquote>"...use observer 'locally', inside a component, mediator 'remotely' between components. No matter what, be ready to use both in tandem.' --Jim Cowart</blockquote>
