@@ -12,7 +12,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-        <link rel="stylesheet" href="http://twitter.github.io/bootstrap/assets/css/bootstrap.css">
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 
         <link rel="stylesheet" href="css/reveal.css">
         <link rel="stylesheet" href="css/theme/default.css" id="theme">
@@ -107,7 +107,14 @@
                     </section>
                     <section>
                         <h2>Pluralsight Videos</h2>
-                        <img src="./img/pluralsight.png" />
+                        <!-- <img src="./img/pluralsight.png" /> -->
+                        <ul>
+                          <li style="margin-bottom: 15px;"><span class="label label-success" style="display: inline-block; padding: 3px; width: 190px; margin-right: 5px;">Published</span> Fixing Common JavaScript Bugs</li>
+                          <li style="margin-bottom: 15px;"><span class="label label-success" style="display: inline-block; padding: 3px; width: 190px; margin-right: 5px;">Published</span> Fixing Common jQuery Bugs</li>
+                          <li style="margin-bottom: 15px;"><span class="label label-success" style="display: inline-block; padding: 3px; width: 190px; margin-right: 5px;">Published</span> jQuery Tips and Tricks</li>
+                          <li style="margin-bottom: 15px;"><span class="label label-success" style="display: inline-block; padding: 3px; width: 190px; margin-right: 5px;">Published</span> Testing & Prototyping JavaScript Apps</li>
+                          <li style="margin-bottom: 15px;"><span class="label label-warning" style="display: inline-block; padding: 3px; width: 190px; margin-right: 5px;">In Progress</span> To jQuery or Not to jQuery</li>
+                        </ul>
                     </section>
                     <style>
                       .right-arrow { width: 178px, height: 238px; position: relative; top: 7em; -webkit-transform: rotate(-90deg); }
@@ -190,15 +197,19 @@
                     </section>
                     <section>
                         <h2>Markup</h2>
-                        <pre class="zoomTargetxx smaller"><code class="code-tall">&lt;div class="navbar navbar-inverse"&gt;
+                        <pre class="zoomTargetxx smallerx"><code class="code-tall">&lt;div class="navbar navbar-inverse"&gt;
   &lt;div class="navbar-inner"&gt;
-    &lt;div class="container"&gt;&lt;div class="brand"&gt;Weather&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="brand"&gt;Weather&lt;/div&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;form id="weather" class="form-search"&gt;
-  &lt;input type="text" id="zip" placeholder="Enter a zip code…"
+  &lt;input type="text" id="zip"
+    placeholder="Enter a zip code…"
     class="input-medium search-query"&gt;
-  &lt;button id="search" type="submit" class="btn"&gt;Search&lt;/button&gt;
+  &lt;button id="search" type="submit"
+    class="btn"&gt;Search&lt;/button&gt;
   &lt;div class="alert alert-error"&gt;&lt;/div&gt;
 &lt;/form&gt;
 &lt;table id="output" class="table table-striped"&gt;
@@ -226,7 +237,7 @@
                     </section>
                     <section id="bad-javascript">
                         <h2>Code</h2>
-                        <pre class="javascript zoomTargetxx smaller"><code class="code-tall">$(document).ready(function($) {
+                        <pre class="javascript zoomTargetxx smallerx"><code class="code-tall">$(document).ready(function($) {
   $("#search").on("click", function(e) {
     var $zip = $("#zip"),
       value = $zip.val();
@@ -238,7 +249,7 @@
         dataType: "jsonp",
         success: function(data) {
           var mark = data.current_observation,
-            location = mark.display_location,
+            loc = mark.display_location,
             image = mark.image,
             $row = $("&lt;tr&gt;&lt;/tr&gt;"),
             $output = $("#output");
@@ -247,12 +258,12 @@
           $row.append($("&lt;td /&gt;", {
             html: "&lt;img src='" + mark.icon_url + "' /&gt;&lt;/td&gt;"
           }));
-          $row.append($("&lt;td /&gt;", {text: location.city}));
-          $row.append($("&lt;td /&gt;", {text: location.state_name}));
-          $row.append($("&lt;td /&gt;", {text: location.zip}));
-          $row.append($("&lt;td /&gt;", {text: mark.temp_f + "°F"}));
-          $row.append($("&lt;td /&gt;", {
-            html: '&lt;a href="#"&gt;&lt;i class="icon-trash"&gt;&lt;/i&gt;&lt;/a&gt;'
+          $row.append($("&lt;td&gt;", {text: loc.city}));
+          $row.append($("&lt;td&gt;", {text: loc.state_name}));
+          $row.append($("&lt;td&gt;", {text: loc.zip}));
+          $row.append($("&lt;td&gt;", {text: mark.temp_f+"°F"}));
+          $row.append($("&lt;td&gt;", {
+            html: '&lt;a href="#"&gt;&lt;i class="icon-trash"/&gt;&lt;/a&gt;'
           })).on("click", function(e) {
             e.preventDefault();
             $(this).closest("tr").remove();
@@ -267,7 +278,8 @@
         }
       });
     } else {
-      $(".alert").text("Please enter zip code").fadeIn("slow");
+      $(".alert").text("Please enter zip code")
+        .fadeIn("slow");
     }
   });
 });</code></pre>
@@ -336,7 +348,9 @@ console.log( fluffy.get( "name" ) );</code></pre>
                     </section>
                     <section>
                         <h2>Access Control</h2>
-                        <pre class="javascript zoomTargetxx runnable"><code>var Pet = Backbone.Model.extend({});
+                        <pre class="javascript zoomTargetxx runnable"><code>var Pet = Backbone.Model.extend({
+  defaults: { breed: "Munchkin" }
+});
 
 var fluffy = new Pet({
   name: "Fluffy",
@@ -346,8 +360,8 @@ var fluffy = new Pet({
 
 fluffy.set( "age", 3 );
 fluffy.set({ name: "Coarse", color: "brown" });
-
-console.log( fluffy.get( "color" ) );</code></pre>
+console.log( fluffy.get( "color" ) );
+console.log( fluffy.get( "breed" ) );</code></pre>
                     </section>
                     <style>
 .foldtr {
@@ -407,13 +421,12 @@ console.log( fluffy.description() );</code></pre>
                 -->
 
 <style>
-section .alert { text-align: left; padding-left: 15px; margin: auto; margin-bottom: 15px; width: 88%; font-size: .8em; }
-section .alert .close { top: 2px; right: 7px; }
+section .alert { display: block; text-align: left; padding-left: 15px; margin-bottom: 15px; font-size: .8em; }
+section .alert .close { top: 2px; right: 7px; position: relative; }
 section .run { position: fixed; top: 7em; right: 5.5em; z-index: 100; }
 </style>
 <script>
 $(function() {
-    $().alert();
     $( document ).on( "click", "section.present:last .alert button", function() {
         $( this ).closest( ".alert" ).alert( "close" );
     });
@@ -443,11 +456,11 @@ $(function() {
 });
 console.log_old = console.log;
 console.log = function(message) {
-    $('<div class="alert"><button type="button" class="close" data-dismiss="alert">×</button><strong>&gt;&nbsp;</strong><span>' + message + '</span></div>').insertAfter("section.present:last .runnable").alert();
+    $('<div class="alert label label-default"><button type="button" class="close" data-dismiss="alert">×</button><strong>&gt;&nbsp;</strong><span>' + message + '</span></div>').insertAfter("section.present:last .runnable");
     console.log_old.apply(this, arguments);
 }
 </script>
-
+<!--
                     <section>
                         <h2>Default Properties</h2>
                         <pre class="javascript zoomTargetxx runnable"><code>var Pet = Backbone.Model.extend({
@@ -463,13 +476,11 @@ var tiny = new Pet({
 
 console.log( tiny.get( "breed" ) );</code></pre>
                     </section>
+                  -->
                     <section>
                         <h2>Initialization</h2>
                         <pre class="javascript zoomTargetxx runnable"><code class="code-tall">var Pet = Backbone.Model.extend({
-  defaults: {
-    breed: "Munchkin",
-    color: "White"
-  },
+  defaults: { breed: "Munchkin", color: "White" },
   initialize: function() {
     console.log( this.description() );
   },
@@ -479,10 +490,7 @@ console.log( tiny.get( "breed" ) );</code></pre>
   }
 });
 
-var tiny = new Pet({
-  name: "Tiny",
-  color: "Gray"
-});</code></pre>
+var tiny = new Pet({ name: "Tiny", color: "Gray" });</code></pre>
                     </section>
                     <section class="">
                         <h2>Events</h2>
@@ -501,13 +509,11 @@ var tiny = new Pet({
                         <h2>Event Example</h2>
                         <pre class="javascript zoomTargetxx runnable"><code>var Pet = Backbone.Model.extend({});
 
-var ralph = new Pet({
-  name: "Ralph",
-  type: "Dog"
-});
+var ralph = new Pet({ name: "Ralph", type: "Dog" });
 
 ralph.on( "change:name", function() {
-  console.log( "Name has been changed to " + this.get( "name" ) );
+  console.log( "Name has been changed to " +
+    this.get("name") );
 });
 
 ralph.set({ "name": "Doug" });</code></pre>
@@ -522,15 +528,13 @@ ralph.set({ "name": "Doug" });</code></pre>
   }
 });
 
-var tiny = new Pet({
-  color: "Gray"
-});
+var tiny = new Pet({ color: "Gray" });
 
 tiny.on( "invalid", function( model, error ) {
   console.log( error );
 });
 
-tiny.set( { age: "newborn"}, { validate: true } );</code></pre>
+tiny.set({ age: "newborn"}, { validate: true });</code></pre>
                     </section>
                     <section>
                         <h2>Weather Model</h2>
@@ -562,9 +566,7 @@ tiny.set( { age: "newborn"}, { validate: true } );</code></pre>
   defaults: { "color": "Brown" }
 });
 
-var Pets = Backbone.Collection.extend({
-  model: Pet
-});
+var Pets = Backbone.Collection.extend({ model: Pet });
 
 var cats = new Pets({ "name": "Dusty", "type": "Cat" }),
   dogs = new Pets();
@@ -592,9 +594,7 @@ console.log( JSON.stringify( dogs ) );</code></pre>
   defaults: { breed: "Munchkin" }
 });
 
-var Cats = Backbone.Collection.extend({
-  model: Pet
-});
+var Cats = Backbone.Collection.extend({ model: Pet });
 
 var cats = new Cats([
   { name: "Midnight", color: "Black" },
@@ -639,6 +639,7 @@ var frosty = cats.at( 1 );
 console.log( JSON.stringify( frosty ) );</code></pre>
                     </section>
                 -->
+                <!--
                     <section class="">
                       <h2>Manipulate with Underscore</h2>
                       <pre class="javascript zoomTargetxx runnable"><code>var Pet = Backbone.Model.extend({});
@@ -660,6 +661,7 @@ var filteredCats = cats.filter(function( cat ) {
 console.log( JSON.stringify( filteredCats ) );
 </code></pre>
                     </section>
+                  -->
                     <section>
                         <h2>Weather Model</h2>
                         <pre class="javascript zoomTargetxx"><code>var Forecasts = Backbone.Collection.extend({
@@ -751,8 +753,7 @@ view.render();</code></pre>
 var PetItemView = Backbone.View.extend({
   tagName: "div",
   initialize: function() {
-    this.template =
-      _.template($("#pet-item-tmpl").html());
+    this.template = _.template($("#pet-item-tmpl").html());
   },
   render: function() {
     var markup = this.template(this.model.toJSON());
@@ -1000,7 +1001,7 @@ var Pets = Backbone.Collection.extend({
 var pets = new Pets();
 
 pets.fetch({
-  success: function() { console.log( JSON.stringify( pets ) ); }
+  success: function() { console.log(JSON.stringify(pets)); }
 });</code></pre>
                     </section>
                     <section>
@@ -1306,8 +1307,8 @@ $( document ).ready(function() {
     "": "showPets",
     "detail/:id": "showDetail"
   },
-  showPets: function() { console.log( "show the pets..." ); },
-  showDetail: function() { console.log( "show pet detail..." ); }
+  showPets: function() { console.log("show the pets"); },
+  showDetail: function() { console.log("show pet detail"); }
 });
 
 var router = new Router();
@@ -1426,7 +1427,8 @@ $( document ).on( "click", "a.route", function( e ) {
                     <h2>Weather Forecast Detail View</h2>
                     <pre class="javascript zoomTargetxx"><code class="code-tall">var ForecastDetailView = Backbone.View.extend({
     tagName: "div",
-    template: _.template($("#forecast-detail-template").html()),
+    template:
+      _.template($("#forecast-detail-template").html()),
     initialize: function() {
         _.bindAll(this, "render");
     },
@@ -1652,18 +1654,18 @@ $( document ).on( "click", "a.route", function( e ) {
   &lt;input type="text" ng-model="search" /&gt;
   &lt;ul&gt;
     &lt;li ng-repeat="framework in frameworks | filter:search | orderBy:'name'"&gt;
-      {{ framework.name }}: {{ framework.watchers }} watchers
+      {{ framework.name }}: {{ framework.stared }} stared
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;</code></pre>
                   <pre class="javascript"><code>function FrameworkController($scope) {
-    $scope.frameworks = [
-      { name: 'KnockoutJS', watchers: 3931 },
-      { name: 'Backbone.js', watchers: 14898 },
-      { name: 'EmberJS', watchers: 7979 },
-      { name: 'AngularJS', watchers: 11680 }
-    ];
-  }
+  $scope.frameworks = [
+    { name: 'KnockoutJS',  stared: 4103,  watchers: 352  },
+    { name: 'Ember.js',    stared: 7827,  watchers: 682  },
+    { name: 'AngularJS',   stared: 13402, watchers: 1468 },
+    { name: 'Backbone.js', stared: 15456, watchers: 1252 }
+  ];
+}
 </code></pre>
                       <a href="http://jsbin.com/ofivur/2/edit" target="_blank">run</a>
                     </section>
@@ -1700,10 +1702,7 @@ $( document ).on( "click", "a.route", function( e ) {
                         <h2>Adding Controller to Module</h2>
                         <pre class="html smaller zoomTargetxx"><code>&lt;!DOCTYPE html&gt;
 &lt;html ng-app="app"&gt;
-&lt;head&gt;
-&lt;meta charset=utf-8 /&gt;
-&lt;title&gt;JS Bin&lt;/title&gt;
-&lt;/head&gt;
+&lt;head&gt;&lt;title&gt;JS Bin&lt;/title&gt;&lt;/head&gt;
 &lt;body&gt;
   &lt;div ng-controller="FrameworkController"&gt;
     &lt;input type="text" ng-model="search" /&gt;
@@ -1719,10 +1718,10 @@ $( document ).on( "click", "a.route", function( e ) {
 
   app.controller("FrameworkController", function($scope) {
     $scope.frameworks = [
-      { name: 'KnockoutJS', watchers: 3931 },
-      { name: 'Backbone.js', watchers: 14898 },
-      { name: 'EmberJS', watchers: 7979 },
-      { name: 'AngularJS', watchers: 11680 }
+      { name: 'KnockoutJS',  stared: 4103,  watchers: 352  },
+      { name: 'Ember.js',    stared: 7827,  watchers: 682  },
+      { name: 'AngularJS',   stared: 13402, watchers: 1468 },
+      { name: 'Backbone.js', stared: 15456, watchers: 1252 }
     ];
   });
   &lt;/script&gt;
@@ -1766,8 +1765,6 @@ app.config(function($routeProvider) {
   function($scope, testService) {
     $scope.frameworks = testService.getFrameworks();
   });</code></pre>
-                        <pre class="fragment javascript zoomTargetxx"><code>  PhoneListCtrl.$inject = ['$scope', '$http'];
-</code></pre>
                     </section>
 
                     <section>
@@ -1824,7 +1821,7 @@ TestController.$inject = ["$scope", "testService"];</code></pre><br/>
                     </section>
                     <section id="bad-javascript">
                         <h2>Module</h2>
-                        <pre class="smaller javascript zoomTargetxx"><code class="code-tall">var app = angular.module("app", []);
+                        <pre class="smallerx javascript zoomTargetxx"><code class="code-tall">var app = angular.module("app", []);
 
 app.config(function ($routeProvider) {
   $routeProvider
@@ -1839,40 +1836,55 @@ app.config(function ($routeProvider) {
     .otherwise({ redirectTo: "/" });
 });</code></pre>
                     </section>
+
+
+
+                    <section id="bad-javascript">
+                        <h2>Weather-List.html</h2>
+                        <pre class="smaller javascript zoomTargetxx"><code class="code-tall"></code></pre>
+                    </section>
+
+                    <section id="bad-javascript">
+                        <h2>Weather-Detail.html</h2>
+                        <pre class="smaller javascript zoomTargetxx"><code class="code-tall"></code></pre>
+                    </section>
+
+
+
                     <section id="bad-javascript">
                         <h2>Controllers</h2>
-                        <pre class="smaller javascript zoomTargetxx"><code class="code-tall">app.controller("WeatherController",
-  function ($scope, weatherService) {
-    var forecasts = $scope.forecasts = weatherService.getList();
+                        <pre class="smallerx javascript zoomTargetxx"><code class="code-tall">app.controller( "WeatherController",
+  function ( $scope, weatherService ) {
+    $scope.forecasts = weatherService.getList();
 
     $scope.search = function() {
-      weatherService.search($scope.zip);
+      weatherService.search( $scope.zip );
       $scope.zip = "";
     };
 
-    $scope.remove = function(forecast) {
-      weatherService.remove(forecast);
+    $scope.remove = function( forecast ) {
+      weatherService.remove( forecast );
     };
   });
 
-app.controller("WeatherDetailController",
-  function ($scope, $routeParams, weatherService) {
-    var forecast = weatherService.get($routeParams.zip);
-
+app.controller( "WeatherDetailController",
+  function ( $scope, $routeParams, weatherService ) {
+    var forecast = weatherService.get( $routeParams.zip );
     $scope.forecast = forecast;
   });</code></pre>
                     </section>
                     <section id="bad-javascript">
                         <h2>Service</h2>
-                        <pre class="smaller javascript zoomTargetxx"><code class="code-tall">app.service("weatherService", function($http) {
+                        <pre class="smallerx javascript zoomTargetxx"><code class="code-tall">app.service( "weatherService", function( $http ) {
   this.forecasts = [];
 
-  this.search = function(zip) {
+  this.search = function( zip ) {
     var url = "http://api.wunderground.com/api/7eaec3b21b154448/conditions/q/" + zip + ".json?callback=JSON_CALLBACK";
     var that = this;
 
-    $http.jsonp(url).success(function(data) {
+    $http.jsonp(url).success(function( data ) {
       var observation = data.current_observation;
+
       that.forecasts.push({
           id: observation.display_location.zip,
           url: observation.icon_url,
@@ -1891,14 +1903,16 @@ app.controller("WeatherDetailController",
     return this.forecasts;
   };
 
-  this.get = function(zip) {
-    return _.find(this.forecasts, function(item) {
+  this.get = function( zip ) {
+    return _.find( this.forecasts, function( item ) {
       return item.zip === zip;
     });
   };
 
-  this.remove = function(forecast) {
-    this.forecasts.splice(this.forecasts.indexOf(forecast), 1);
+  this.remove = function( forecast ) {
+    this.forecasts.splice(
+      this.forecasts.indexOf( forecast ), 1
+    );
   };
 });</code></pre>
                     </section>
@@ -1940,16 +1954,6 @@ app.controller("WeatherDetailController",
                     </section>
 
                 </section>
- 
-
-
-
-
-
-
-
-
-
 
                 <section>
                     <section>
@@ -1997,8 +2001,8 @@ app.controller("WeatherDetailController",
                 // Apply a 3D roll to links on hover
                 rollingLinks: false,
 
-                width: 1280,
-                height: 800,
+                // width: 1280,
+                // height: 800,
                 // width: 1024,
                 // height: 768,
 

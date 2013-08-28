@@ -2,9 +2,8 @@
 <html>
 <head>
 <meta charset=utf-8 />
-<title>Weather</title> 
-<link rel="stylesheet" href="http://twitter.github.io/bootstrap/assets/css/bootstrap.css">
-<link rel="stylesheet" href="http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css">
+<title>Weather</title>
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 <style type='text/css'>
     body { margin: 15px; }
     #output { margin-left: 0; display: none; }
@@ -14,21 +13,26 @@
 </style>
 </head>
 <body>
-
-    <div class="navbar navbar-inverse">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="brand" href="#">Weather</a>
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Weather</a>
         </div>
-      </div>
-    </div>
+    </nav>
 
     <form id="weather" class="form-search">
-      <input type="text" id="zip" placeholder="Enter a zip code…" class="input-medium search-query">
-      <button id="search" type="submit" class="btn">Search</button>
-      <div class="alert alert-error"></div>
+        <div class="row">
+          <div class="col-xs-6 col-sm-4 col-md-4">
+            <div class="input-group">
+              <input type="text" id="zip" placeholder="Enter a zip code…" class="form-control">
+              <span class="input-group-btn">
+                <button id="search" class="btn btn-default" type="submit">Search</button>
+              </span>
+              <div class="alert alert-error"></div>
+            </div>
+          </div>
+        </div>
     </form>
-        
+
     <table id="output" class="table table-striped">
         <caption>Forecast Results</caption>
         <thead>
@@ -45,18 +49,18 @@
         </tbody>
     </table>
 
-<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-<script src="http://twitter.github.io/bootstrap/assets/js/bootstrap.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script>
 // http://jsfiddle.net/2qCLU/
 
-$(document).ready(function($) {
+//$(document).ready(function($) {
     $("#search").on("click", function(e) {
         var $zip = $("#zip"),
             value = $zip.val();
 
-        e.preventDefault();        
-        if ( value ) { 
+        e.preventDefault();
+        if ( value ) {
             $.ajax({
                 url: "http://api.wunderground.com/api/7eaec3b21b154448/conditions/q/" + $zip.val() + ".json",
                 dataType: "jsonp",
@@ -66,7 +70,7 @@ $(document).ready(function($) {
                         image = observation.image,
                         $row = $("<tr></tr>"),
                         $output = $("#output");
-                    
+
                     $(".alert").fadeOut("slow");
                     $row.append("<td><img src='" + observation.icon_url + "' /></td>");
                     $row.append($("<td></td>", { text: location.city  }));
@@ -75,24 +79,22 @@ $(document).ready(function($) {
                     $row.append($("<td></td>", { text: observation.temp_f + "°F" }));
                     $row.append($('<td><a href="#"><i class="icon-trash"></i></a></td>').on("click", function(e) {
                         e.preventDefault();
-                        $(this).closest("tr").remove(); 
+                        $(this).closest("tr").remove();
                         if (!$output.find("tbody tr").length) {
                             $output.fadeOut("slow");
-                        }                                
+                        }
                     }));
-                    
+
                     $output.find("tbody").append($row);
                     $output.fadeIn("show");
                     $("#zip").val("");
                 }
             });
         } else {
-            $( ".alert" ).text("Please enter a zip code").fadeIn("slow");           
+            $( ".alert" ).text("Please enter a zip code").fadeIn("slow");
         }
     });
-});
-</script>  
+//});
+</script>
 </body>
 </html>
-
-
