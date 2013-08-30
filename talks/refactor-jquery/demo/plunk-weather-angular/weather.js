@@ -4,13 +4,13 @@ app.config(function ($routeProvider) {
   $routeProvider
     .when("/", { controller:
       "WeatherController",
-      templateUrl: "/weather-list.html"
+      templateUrl: "./weather-list.html"
     })
     .when("/details/:zip", {
       controller: "WeatherDetailController",
-      templateUrl: "/weather-detail.html"
+      templateUrl: "./weather-detail.html"
     })
-    .otherwise({ redirectTo: "/" });
+    .otherwise({ redirectTo: "./" });
 });
 
 app.controller("WeatherController", function ($scope, weatherService) {
