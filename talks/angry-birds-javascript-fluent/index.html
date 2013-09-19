@@ -33,6 +33,16 @@
 	<body>
 
 		<style>
+.reveal pre { font-size: 0.91em !important; width: 100%; max-height: 750px !important; }
+.reveal code.long { max-height: 750px; }
+.reveal code.medium { max-height: 650px; }
+section.present p,
+section.present li,
+section.present div { font-size: 135% !important; }
+section.present h2 { font-size: 300% !important; }
+section.present h3 { font-size: 200% !important; }
+section.present li { margin: 25px 0 25px 0 !important; line-height: 65px; }
+section.present blockquote { font-size: 200% !important; line-height: 70px; padding: 25px; }
 html.intro body {
 	background:url("./img/angry-birds-2.png");
 	background-position: center;
@@ -68,16 +78,21 @@ html.intro .reveal .roll {
                         <h1>of JavaScript</h1><br/>
                         <p>by <a href="http://elijahmanor.com">Elijah Manor</a> / <a href="http://twitter.com/elijahmanor">@elijahmanor</a></p>
                     </section>
+                    <section id="introduction2">
+                        <h1>Sponsor</h1><br/>
+                        <img src="./img/telerik.jpg" style="height: 300px;">
+                    </section>
+
                     <section>
                         <h2>Who am i not?</h2>
                         <div>
                             <img src="http://i.imgur.com/LEGZh.jpg"><br>
                         </div>
-                        <h3 class="fragment" style="top: -400px;display: block;position: relative;font-size: 4em;color: red;-webkit-transform: rotate(-17deg);text-shadow: 4px 4px #ccc;">Elijah Wood</h3>
+                        <h3 class="fragment" style="top: -400px;display: block;position: relative;font-size: 4em !important;color: red;-webkit-transform: rotate(-17deg);text-shadow: 4px 4px #ccc;">Elijah Wood</h3>
                     </section>
                     <section>
                         <h2>Who I AM?</h2>
-                        <pre class="zoomTargetxx"><code class="javascript">{
+                        <pre class="zoomTargetxx"><code class="javascript long">{
     "name": "Elijah Manor",
     "priorities": [ "Christian", "Family", "Work" ],
     "employer": "Manorism, Inc",
@@ -98,7 +113,14 @@ html.intro .reveal .roll {
                     </section>
                     <section>
                         <h2>Pluralsight Videos</h2>
-                        <img src="./img/pluralsight.png" />
+                        <!-- <img src="./img/pluralsight.png" /> -->
+                        <ul>
+                          <li style="margin-bottom: 15px;">Fixing Common JavaScript Bugs</li>
+                          <li style="margin-bottom: 15px;">Fixing Common jQuery Bugs</li>
+                          <li style="margin-bottom: 15px;">jQuery Tips and Tricks</li>
+                          <li style="margin-bottom: 15px;">Testing & Prototyping JavaScript Apps</li>
+                          <li style="margin-bottom: 15px;">To jQuery or Not to jQuery</li>
+                        </ul>                        
                     </section>
                     <section>
                       <h2>History</h2>
@@ -385,12 +407,12 @@ console.log( window.bird.power );    // Private variable can't access</code></pr
 
 					<section>
 						<h2>Sample Application</h2>
-						<iframe width="100%" height="600" src="http://jsfiddle.net/xHAp4/1/embedded/result,js,resources,html,css/presentation/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+						<iframe width="100%" height="600" src="http://jsfiddle.net/xHAp4/3/embedded/result,js,resources,html,css/presentation/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 					</section>
 
 					<section>
 						<h2>Tightly Coupled Code</h2>
-						<pre><code>$( document ).on( "click", ".term", function( e ) {
+						<pre><code class="javascript long">$( document ).on( "click", ".term", function( e ) {
     $( "input" ).val( $( this ).text() );
     $( "button" ).trigger( "click" );
 });
@@ -440,7 +462,7 @@ $( "button" ).on( "click", function( e ) {
 
 					<section>
 						<h2>TYPES OF MESSAGES: Observer Events</h2>
-						<pre><code>document.getElementById("bird")
+						<pre><code class="long">document.getElementById("bird")
     // Native addEventListener attaches observer to the DOM element
     .addEventListener(
     	"click", 
@@ -470,8 +492,8 @@ $("#bird").trigger("click");</code></pre>
 
 					<section>
 						<h2>TYPES OF MESSAGES: Mediated Events</h3>
-						<h3><a href="http://manor.im/etm-postaljs" class="lowercase">http://manor.im/etm-postaljs</a> by Jim Cowart (<a href="http://twitter.com/ifandelse">@ifandelse</a>)</h3>
-						<pre><code>var channel = postal.channel(),
+						<h3><a href="http://manor.im/etm-postaljs" class="lowercase">http://manor.im/etm-postaljs</a> by Jim Cowart</h3>
+						<pre><code class="medium">var channel = postal.channel(),
     $lastUpdated = $( "#lastUpdated" );
  
 // Subscribe to all bird.launch messages
@@ -525,12 +547,12 @@ $(".pig:first").trigger("impact");</code></pre>
 -->
 					<section>
 						<h2>Which One Should Be Used?</h2>
-						<blockquote>"...use observer 'locally', inside a component, mediator 'remotely' between components. No matter what, be ready to use both in tandem.' --Jim Cowart</blockquote>
+						<blockquote>...use observer 'locally', inside a component, mediator 'remotely' between components. No matter what, be ready to use both in tandem.' --Jim Cowart</blockquote>
 					</section>
 
 					<section>
 						<h2>LOOSELY COUPLED CODE</h2>
-						<pre><code class="javascript">var channel = postal.channel();
+						<pre><code class="javascript long">var channel = postal.channel();
  
 $( "button" ).on( "click", function() {
     channel.publish("searchTerm.changed", { 
@@ -623,7 +645,7 @@ window.netflix = {
 
 					<section>
 						<h2>Broken Application</h2>
-						<pre><code>&lt;!DOCTYPE html&gt;
+						<pre><code class="long">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head lang="en"&gt;
         &lt;link rel="stylesheet" href="./css/style.css"&gt;
@@ -646,7 +668,7 @@ window.netflix = {
 					<section>
 						<h2>WAT!?!</h2>
 						<p><img src="./img/yellow-postal-error.png" style="height: 300px"  /></p>
-						<blockquote>WHAT!?! I don't see any each method anywhere. What's up with that? Ohh man, it looks like the exception occurred in postal.min.js somewhere. FOUND A BUG... see if I use that library again. But, wait!?! Ohh, maybe something else is going on here. --Ficticious Internal Dialog</blockquote>
+						<blockquote>WHAT!?! Where is the each method!?! Must be a bug in postal.min.js... But, wait!?! Ohh, maybe something else is going on. --Ficticious Internal Dialog</blockquote>
 					</section>
 
 					<section>
@@ -686,7 +708,7 @@ define(
 
 					<section>
 						<h2>Fixed Application: Markup</h2>
-						<pre><code>&lt;!DOCTYPE html&gt;
+						<pre><code class="long">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head lang="en"&gt;
         &lt;link rel="stylesheet" href="./css/style.css"&gt;
@@ -705,7 +727,7 @@ define(
 
 					<section>
 						<h2>Fixed Application: main.js</h2>
-						<pre><code>/* main.js */
+						<pre><code class="long">/* main.js */
  
 // Let RequireJS know where all the scripts are
 require.config({
@@ -742,7 +764,7 @@ require([ "postal" ], function( postal ) {
 
 					<section>
 						<h2>Optimize Application: r.js</h2>
-						<pre><code class="javascript">({
+						<pre><code class="javascript long">({
     appDir: ".",               // The main root URL
     dir: "../dist",            // Directory that we build to
     mainConfigFile: "main.js", // Location of main.js
@@ -759,7 +781,7 @@ require([ "postal" ], function( postal ) {
 
 					<section>
 						<h2>Optimize Application: r.js</h2>
-						<pre><code>$ r.js -o build.js
+						<pre><code class="long">$ r.js -o build.js
 Optimizing (standard) CSS file: C:/Users/Elijah/Desktop/dist/css/style.css
  
 Tracing dependencies for: main
@@ -1096,7 +1118,7 @@ define( [ "jquery", "backbone", "underscore", "channels", "text!movie-template.h
 						<h2>Which Standard Should I Follow?</h2>
 						<ul>
 							<li class="fragment">Douglas Crockford's <a href="http://javascript.crockford.com/code.html" target="_blank">Code Conventions for the JavaScript Programming Language</a></li>
-							<li class="fragment"><strong>Rich Waldron's (<a href="http://twitter.com/rwaldron" target="_blank">@rwaldron</a>) <a href="https://github.com/rwldrn/idiomatic.js" target="_blank">Idiomatic.js - Principles of Writing Consistent, Idiomatic JavaScript</a> ← Recommended</strong></li>
+							<li class="fragment"><strong>Rich Waldron's <a href="https://github.com/rwldrn/idiomatic.js" target="_blank">Idiomatic.js - Writing Consistent Idiomatic JavaScript</a> ← Recommended</strong></li>
 							<li class="fragment"><strong>jQuery's <a href="http://contribute.jquery.org/style-guide/js/?rdfrom=http%3A%2F%2Fdocs.jquery.com%2Fmw%2Findex.php%3Ftitle%3DJQuery_Core_Style_Guidelines%26redirect%3Dno" target="_blank">JavaScript Style Guide </a> ← Recommended</strong></li>
 							<li class="fragment">Google's <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml" target="_blank">JavaScript Style Guide</a></li>
 						</ul>
@@ -1126,7 +1148,7 @@ define( [ "jquery", "backbone", "underscore", "channels", "text!movie-template.h
 
 					<section>
 						<h2>JSHint Example</h2>
-						<pre><code>/*jshint maxparams:3, maxdepth:2, maxstatements:5, maxcomplexity:3, maxlen:80 */
+						<pre><code class="long">/*jshint maxparams:3, maxdepth:2, maxstatements:5, maxcomplexity:3, maxlen:80 */
 /*global console:false */
  
 (function( undefined ) {
@@ -1207,7 +1229,7 @@ define( [ "jquery", "backbone", "underscore", "channels", "text!movie-template.h
 
 					<section>
 						<h2>The Twitter Application</h2>
-						<pre><code class="javascript">(function( twitter, $, undefined ) {
+						<pre><code class="javascript long">(function( twitter, $, undefined ) {
  
     var channel = twitter.channel = postal.channel(),
         URL_TEMPLATE = "https://api.twitter.com/...timeline/" + 
@@ -1285,7 +1307,7 @@ $( document ).on( "click", "button", function( e ) {
 
 					<section>
 						<h2>Mocking Static Data</h2>
-						<pre><code>$.mockjax({
+						<pre><code class="long">$.mockjax({
     url: "https://api.twitter.com/1/statuses/user_timeline/*",
     responseTime: 750,
     responseText: [
@@ -1320,7 +1342,7 @@ $( document ).on( "click", "button", function( e ) {
 
 					<section>
 						<h2>MOCKING DYNAMIC SEMI-RANDOM DATA</h2>
-						<pre><code class="javascript">$.mockjax({
+						<pre><code class="javascript long">$.mockjax({
     url: "https://api.twitter.com/1/statuses/user_timeline/*",
     responseTime: 750,
     response: function() {
@@ -1369,7 +1391,7 @@ $( document ).on( "click", "button", function( e ) {
 
 					<section>
 						<h2>WHY USE A TEMPLATING ENGINE?</h2>
-						<pre><code class="javascript">(function( twitter, $, undefined ) { 
+						<pre><code class="javascript long">(function( twitter, $, undefined ) { 
     var _selection;
         
     twitter.init = function( $selection ) {
@@ -1527,8 +1549,8 @@ twitter.displayTweets = function( tweets ) {
 							<li class="fragment">Reduce that amount of work needed on the front-end</li>
 							<li class="fragment">There is a trimmed down version of the handlebars runtime that you can use that has only the parts necessary needed to execute a template</li>
 						</ul>
-						<p class="fragment"><img src="./img/batman-unicorn-dolphins.jpg" /></p>
-						<div class="fragment" style="position: relative; line-height: 1em; font-size: 52px; top: -600px; width: 350px; color: red; font-bold: bolder;">"It's just about as cool as Batman riding on a Rainbow Unicorn alongside dolphins!"</div>
+						<p class="fragment"><img style="position: relative; top: -600px;" src="./img/batman-unicorn-dolphins.jpg" /></p>
+						<div class="fragment" style="line-height: 1.5em; position: relative; top: -600px; font-size: 62px; color: red; font-bold: bolder;">"It's just about as cool as Batman riding on a Rainbow Unicorn alongside dolphins!"</div>
 					</section>
 
 					<section>
@@ -1553,7 +1575,7 @@ twitter.displayTweets = function( tweets ) {
 
 					<section>
 						<h2>WHAT ABOUT OTHER TEMPLATING ENGINES?</h2>
-						<h3><a href="http://manor.im/etm-template-chooser" class="lowercase">http://manor.im/etm-template-chooser</a> by Garann Means (<a href="https://twitter.com/garannm">@garannm</a>)</h3>
+						<h3><a href="http://manor.im/etm-template-chooser" class="lowercase">http://manor.im/etm-template-chooser</a> by Garann Means</h3>
 						<p><img src="./img/template-chooser.png" /></p>
 					</section>
 
@@ -1606,7 +1628,7 @@ var bird = {
 
 					<section>
 						<h2>Gang of Fowl: Factory</h2>
-						<pre><code>var Bird = function() {};
+						<pre><code class="long">var Bird = function() {};
 Bird.factory = function( type ) {
     var bird;
     if ( typeof Bird[ type ] === "function" ) {
@@ -1693,7 +1715,7 @@ $( "a.ajax" ).on( "click", getUrlBridge );
 
 					<section>
 						<h2>Gang of Fowl: Adapter</h2>
-						<pre><code>/*!
+						<pre><code class="long">/*!
  * jquery-win8-deferred - jQuery $.when works w/ WinJS.promise
  * version: 0.1
  * author: appendTo, LLC
@@ -1967,7 +1989,7 @@ attackFsm.handle( "pig.destroyed" );
 
 					<section>
 						<h2>Grunt Gruntfile.js</h2>
-						<pre><code class="javascript">module.exports = function(grunt) {
+						<pre><code class="javascript long">module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -1994,20 +2016,28 @@ attackFsm.handle( "pig.destroyed" );
 						<h2>Grunt Plugins</h2>
 						<ul>
 							<li class="fragment">contrib-coffee - Compile CoffeeScript files into JavaScript</li>
-							<li class="fragment">contrib-compass - Compile Compass into CSS</li>
-							<li class="fragment">contrib-concat - Concatenates files</li>
-							<li class="fragment">contrib-connect - Starts a connect web server</li>
+							<!--
+							<li class="fragment">contrib-compass - Compile Compass into CSS</li>-->
+							<!--
+							<li class="fragment">contrib-concat - Concatenates files</li>-->
+							<!--
+							<li class="fragment">contrib-connect - Starts a connect web server</li>-->
 							<li class="fragment">contrib-csslint - Lints your CSS files</li>
 							<li class="fragment">contrib-handlebars - Precompiles your Handlebar tempaltes</li>
-							<li class="fragment">contrib-htmlmin - Minify your HTML markup</li>
+							<!--
+							<li class="fragment">contrib-htmlmin - Minify your HTML markup</li>-->
 							<li class="fragment">contrib-imagemin - Minify PNG and JPEG images</li>
 							<li class="fragment">contrib-jshint - Validate files with JSHint</li>
-							<li class="fragment">contrib-less - Compile LESS to CSS</li>
-							<li class="fragment">contrib-nodeunit - Run Nodeunit unit test</li>
+							<!--
+							<li class="fragment">contrib-less - Compile LESS to CSS</li>-->
+							<!--
+							<li class="fragment">contrib-nodeunit - Run Nodeunit unit test</li>-->
 							<li class="fragment">contrib-watch - Run predefined tasks when files change</li>
 							<li class="fragment">contrib-requirejs - Optimize RequireJS projects using r.js</li>
-							<li class="fragment">contrib-uglify - Minify files with UglifyJS</li>
-							<li class="fragment">contrib-yuidoc - Compile YUIDocs Documentation</li>
+							<!--
+							<li class="fragment">contrib-uglify - Minify files with UglifyJS</li>-->
+							<!--
+							<li class="fragment">contrib-yuidoc - Compile YUIDocs Documentation</li>-->
 							<li class="fragment">... more ...</li>
 						</ul>
 					</section>
@@ -2069,14 +2099,14 @@ attackFsm.handle( "pig.destroyed" );
 					
 	                <section> 
 	                	<h2>Questions?</h2> <div style="">
-	                    <h3 style="font-weight: bold; font-family: courier; text-align: left; font-size: 1.5em;width: 65%;margin: 0px auto;">
+	                    <h3 style="position: relative; left: -200px; font-weight: bold; font-family: courier; text-align: left; font-size: 1.5em !important; width: 65%; margin: 0px auto;">
 	                    	<a href="http://elijahmanor.com" targer="_blank">http://elijahmanor.com</a><br/>
 	                        <a href="http://twitter.com/elijahmanor" targer="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@elijahmanor</a><br/>
 	                        <a href="mailto:elijahmanor@gmail.com" targer="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elijahmanor@gmail.com</a>
 	                    </h3>
-	                    <h4 style="padding-top: 15px;"><a href="http://manor.im/etm-angrybirdsjs" class="lowercase">http://manor.im/etm-angrybirdsjs</a></h4>
+	                    <h4 style="padding-top: 15px;"><a style="font-size: 62px;" href="http://manor.im/etm-angrybirdsjs" class="lowercase">http://manor.im/etm-angrybirdsjs</a></h4>
 	                    <img class="fragment" src="./img/injured-angry-birds.jpg" style="height: 300px;" />
-	                    <p class="fragment" style="">DISCLAIMER: No birds were hurt during this presentation...</p>
+	                    <p class="fragment" style="font-size: 32px !important;">DISCLAIMER: No birds were hurt during this presentation...</p>
 	                </section>
 			</div>
 

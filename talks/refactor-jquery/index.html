@@ -256,7 +256,7 @@
 
           $(".alert").fadeOut("slow");
           $row.append($("&lt;td /&gt;", {
-            html: "&lt;img src='" + mark.icon_url + "' /&gt;&lt;/td&gt;"
+            html: "&lt;img src='" + mark.icon_url + "'&gt;&lt;/td&gt;"
           }));
           $row.append($("&lt;td&gt;", {text: loc.city}));
           $row.append($("&lt;td&gt;", {text: loc.state_name}));
@@ -1106,7 +1106,7 @@ pets.fetch({
                     </section>
                     <section id="bad-javascript">
                         <h2>Code</h2>
-                        <pre class="smaller javascript zoomTargetxx"><code class="code-tall">window.Forecast = Backbone.Model.extend({
+                        <pre class="smallerx javascript zoomTargetxx"><code class="code-tall">window.Forecast = Backbone.Model.extend({
   url: function() {
       return "http://api.wunderground.com/api/7eaec3b21b154448/conditions/q/" + this.get("zip") + ".json";
   },
@@ -1793,15 +1793,15 @@ TestController.$inject = ["$scope", "testService"];</code></pre><br/>
                 <section>
                     <section>
                         <h2>Weather Application v3: AngularJS</h2>
-                        <iframe style="height: 400px;" src="http://localhost:1337"></iframe>
+                        <iframe style="height: 400px;" src="http://localhost:8000/talks/refactor-jquery/demo/plunk-weather-angular/index.html#/"></iframe>
                     </section>
                     <section>
                         <h2>Markup</h2>
-                        <pre class="html smaller zoomTargetxx"><code class="code-tall">&lt;!DOCTYPE html&gt;
+                        <pre class="html smallerx zoomTargetxx"><code class="code-tall">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;meta charset=utf-8 /&gt;
-    &lt;link rel="stylesheet" href="bootstrap-combined.min.css" /&gt;
+    &lt;link rel="stylesheet" href="bootstrap-combined.css" /&gt;
     &lt;link rel="stylesheet" href="weather.css" /&gt;
   &lt;/head&gt;
   &lt;body ng-app="app"&gt;
@@ -1841,12 +1841,79 @@ app.config(function ($routeProvider) {
 
                     <section id="bad-javascript">
                         <h2>Weather-List.html</h2>
-                        <pre class="smaller javascript zoomTargetxx"><code class="code-tall"></code></pre>
+                        <pre class="smaller html zoomTargetxx"><code class="code-tall">&lt;form name="searchForm" ng-submit="search()" class="form-search" novalidate&gt;
+  &lt;input name="zip" ng-model="zip" type="text" placeholder="Enter a zip code…" class="input-medium search-query" required /&gt;
+  &lt;button id="search" type="submit" class="btn" ng-disabled="searchForm.zip.$invalid"&gt;Search&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;table ng-show="forecasts.length" class="table table-striped"&gt;
+  &lt;caption&gt;Forecast Results&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;/th&gt;&lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;City&lt;/th&gt;
+      &lt;th&gt;State&lt;/th&gt;
+      &lt;th&gt;Zip&lt;/th&gt;
+      &lt;th&gt;Temperature&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr ng-repeat="forecast in forecasts"&gt;
+      &lt;td&gt;&lt;a class="route" href="#/details/{{ forecast.zip }}"&gt;&lt;i class="detail icon-search"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img ng-src="{{ forecast.url }}" /&gt;&lt;/td&gt;
+      &lt;td&gt;{{ forecast.city }}&lt;/td&gt;
+      &lt;td&gt;{{ forecast.state }}&lt;/td&gt;
+      &lt;td&gt;{{ forecast.zip }}&lt;/td&gt;
+      &lt;td&gt;{{ forecast.temperature }}°F&lt;/td&gt;
+      &lt;td&gt;&lt;a ng-click="remove(forecast)" href="#"&gt;&lt;i class="delete icon-trash"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
                     </section>
 
                     <section id="bad-javascript">
                         <h2>Weather-Detail.html</h2>
-                        <pre class="smaller javascript zoomTargetxx"><code class="code-tall"></code></pre>
+                        <pre class="smaller html zoomTargetxx"><code class="code-tall">&lt;div class="page-header"&gt;
+  &lt;h1&gt;{{ forecast.city }} &lt;small&gt;{{ forecast.state }}&lt;/small&gt;&lt;/h1&gt;
+&lt;/div&gt;
+&lt;form class="form-horizontal"&gt;
+  &lt;div class="control-group"&gt;
+    &lt;label class="control-label"&gt;&lt;/label&gt;
+    &lt;div class="controls"&gt;
+      &lt;img ng-src="{{ forecast.url }}" /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="control-group"&gt;
+    &lt;label class="control-label"&gt;Zip&lt;/label&gt;
+    &lt;div class="controls"&gt;
+      &lt;span&gt;{{ forecast.zip }}&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="control-group"&gt;
+    &lt;label class="control-label"&gt;Temperature&lt;/label&gt;
+    &lt;div class="controls"&gt;
+      &lt;span&gt;{{ forecast.temperature }}&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="control-group"&gt;
+    &lt;label class="control-label"&gt;Feels Like&lt;/label&gt;
+    &lt;div class="controls"&gt;
+      &lt;span&gt;{{ forecast.feelslike }} °F&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="control-group"&gt;
+    &lt;label class="control-label"&gt;Wind&lt;/label&gt;
+    &lt;div class="controls"&gt;
+      &lt;span&gt;{{ forecast.wind }} MPH&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="control-group"&gt;
+    &lt;div class="controls"&gt;
+      &lt;a href="#/" class="btn"&gt;Back&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
                     </section>
 
 

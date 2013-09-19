@@ -3,8 +3,7 @@
 <head>
 <meta charset=utf-8 />
 <title>Weather</title>
-<link rel="stylesheet" href="http://twitter.github.io/bootstrap/assets/css/bootstrap.css">
-<link rel="stylesheet" href="http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 <style type='text/css'>
 body { margin: 15px; }
 #output { margin-left: 0; display: none; }
@@ -21,21 +20,32 @@ table img { height: 20px; width: 20px; vertical-align: top; }
 </head>
 <body>
 
-    <div class="navbar navbar-inverse">
-      <div class="navbar-inner">
-        <div class="container">
-          <div class="brand">Weather</div>
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Weather</a>
         </div>
-      </div>
-    </div>
+    </nav>
 
     <div id="homeView">
+        <!--
         <form id="weather" class="form-search">
             <input type="text" id="zip" placeholder="Enter a zip code…" class="input-medium search-query">
             <button id="search" type="submit" class="btn">Search</button>
             <div class="alert alert-error"></div>
         </form>
-
+-->
+        <form id="weather" class="form-search">
+            <div class="row">
+              <div class="col-xs-6 col-sm-4 col-md-4">
+                <div class="input-group">
+                    <input type="text" id="zip" placeholder="Enter a zip code…" class="form-control">
+                  <span class="input-group-btn">
+                    <button id="search" type="submit" class="btn btn-default">Search</button>
+                </span>
+            <div class="alert alert-error"></div>
+            </div></div></div>
+        </form>
+<br/>
         <table id="output" class="table table-striped">
             <caption>Forecast Results</caption>
             <thead>
@@ -55,13 +65,13 @@ table img { height: 20px; width: 20px; vertical-align: top; }
     <div id="detailView" hidden></div>
 
     <script type="text/template" id="forcast-template">
-        <td><a class="route" href="/detail/<%= zip %>"><i class="detail icon-search"></i></a></td>
+        <td><a class="route" href="/detail/<%= zip %>"><span class="detail glyphicon glyphicon-search"></span></a></td>
         <td><img src="<%= url %>" /></td>
         <td><%= city %></td>
         <td><%= state %></td>
         <td><%= zip %></td>
         <td><%= temperature %>°F</a></td>
-        <td><a href="#"><i class="delete icon-trash"></i></td>
+        <td><a href="#"><span class="delete glyphicon glyphicon-trash"></span></td>
     </script>
 
     <script type="text/template" id="forecast-detail-template">
