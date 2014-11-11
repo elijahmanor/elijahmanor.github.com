@@ -50,25 +50,39 @@ I also want to discuss the risks if a library doesn't meet one or more of these 
 
 ------
 
-## Solved Minor Front-End Concerns
+## A Blast From the Past
+
+* <!-- .element: class="fragment" --> Created in <strong>10 days</strong> in May 1995 by <strong>Brendan Eich</strong> to meet Netscape Navigator 2.0 beta
+* <!-- .element: class="fragment" --> Developed under the name <strong>Mocha</strong> and then changed to... <span><strong>LiveScript</strong> (to denote its dynamic nature)</span> <!-- .element: class="fragment" -->
+* <!-- .element: class="fragment" --> Before the end of beta, Sun trademarked the name <strong>JavaScript</strong> as a marketing move
+
+<br/><blockquote class="fragment">"And we were pushing it as a little brother to Java, as a complementary language like Visual Basic was to C++ in Microsoft's language families at the time." --Brenden Eich</blockquote>
+
+------
+
+## The Web is Now Dynamic
+### Validation, Toggle Visibility, etc...
 
 ![](./img/clap-slow.gif) <!-- .element: class="gif" -->
 
 ------
 
 ## Unexpected Rise in Popularity
+### Front-End Web Developers
 
 ![](./img/dancing-slide-in.gif) <!-- .element: class="gif" -->
 
 ------
 
 ## In the Spotlight
+### Single Page Apps (SPAs)
 
 ![](./img/dancing-spotlight.gif) <!-- .element: class="gif" -->
 
 ------
 
 ## JavaScript Everywhere!
+### MEAN - MongoDB, Express, Angularjs, Node.js 
 
 ![](./img/love.gif) <!-- .element: class="gif" -->
 
@@ -80,24 +94,28 @@ I also want to discuss the risks if a library doesn't meet one or more of these 
 ------
 
 ## How You See Yourself Using a Library
+### Everything is Awesome!
 
 ![](./img/guitar-flames.gif) <!-- .element: class="gif" -->
 
 ------
 
 ## What You Look Like As You Learn
+### Fake It Until You Make It
 
 ![](./img/guitar-air.gif) <!-- .element: class="gif" -->
 
 ------
 
 ## What Often Happens
+### Terrible, Horrible, No Good, Very Bad JavaScript
 
 ![](./img/guitar-slam.gif) <!-- .element: class="gif" -->
 
 ------
 
 ## Put Up Your Defences
+### May the Force Be With You
 
 ![](./img/light-saber.gif) <!-- .element: class="gif" -->
 
