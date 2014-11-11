@@ -13,6 +13,7 @@ I also want to discuss the risks if a library doesn't meet one or more of these 
 ![](./img/fail.gif) <!-- .element: class="gif" -->
 ![](./img/power-ranger.gif) <!-- .element: class="gif" -->
 ![](./img/dancing-shuffle.gif) <!-- .element: class="gif" -->
+![](./img/sumo.gif) <!-- .element: class="gif fragment" -->
 
 ---
 
@@ -112,7 +113,7 @@ I also want to discuss the risks if a library doesn't meet one or more of these 
 
 ------
 
-## GooglePlex Plus One
+## Googolplex + 1
 
 <pre class="fragment" data-trim><code>$ bower search 'angular' | grep -c 'angular'
 2652
@@ -201,8 +202,8 @@ Active, Documentation, Community, Credible, Extensible, Integration, Modular, Qu
 ## Combat Stale Docs
 ### Autogenerate
 
-* [JSDoc](http://usejsdoc.org/)
-* [SassDoc](http://sassdoc.com/)
+*  <!-- .element: class="fragment" --> [JSDoc](http://usejsdoc.org/)
+*  <!-- .element: class="fragment" --> [SassDoc](http://sassdoc.com/)
 
 ---
 
@@ -286,15 +287,16 @@ Active, Documentation, Community, Credible, Extensible, Integration, Modular, Qu
 
 ------
 
-## Everything is Fine, Until I need to do `XYZ`
+## Everything is Fine...
+## Until I need to do `XYZ`
 
-![](./img/fish-in-face.gif) <!-- .element: class="gif" -->
+![](./img/fish-in-face.gif) <!-- .element: class="gif fragment" -->
 
 ------
 
 ## Let Me Try This Hack, or This One, or...
 
-![](./img/soccar.gif) <!-- .element: class="gif" -->
+![](./img/soccar.gif) <!-- .element: class="gif fragment" -->
 
 ---
 
@@ -302,15 +304,36 @@ Active, Documentation, Community, Credible, Extensible, Integration, Modular, Qu
 
 ------
 
-## I'll Just Integrate this JavaScript with my Application
+## I'll Just Integrate this JavaScript
+## into my Application
 
-![](./img/spit.gif) <!-- .element: class="gif" -->
+![](./img/spit.gif) <!-- .element: class="gif fragment" -->
 
 ------
 
 ## Punched in the Face by Incompatibility
 
-![](./img/punch-in-face.gif) <!-- .element: class="gif" -->
+![](./img/punch-in-face.gif) <!-- .element: class="gif fragment" -->
+
+---
+
+# Modular
+
+------
+
+## All Or Nothing
+
+![](./img/table-flip.gif) <!-- .element: class="gif fragment" -->
+
+------
+
+## Examples of Modularity
+
+* <!-- .element: class="fragment" --> [Angular](https://angularjs.org/)
+* <!-- .element: class="fragment" --> [jQuery](http://jquery.com) v1.8+
+* <!-- .element: class="fragment" --> [jQuery UI](http://jqueryui.com)
+* <!-- .element: class="fragment" --> [Modernizr](http://modernizr.com/)
+* <!-- .element: class="fragment" --> [Lo-Dash](https://lodash.com/)
 
 ---
 
@@ -320,13 +343,13 @@ Active, Documentation, Community, Credible, Extensible, Integration, Modular, Qu
 
 ## You Open the Source Code
 
-![](./img/macbook-shut.gif) <!-- .element: class="gif" -->
+![](./img/macbook-shut.gif) <!-- .element: class="gif fragment" -->
 
 ------
 
 ## Shed a Single JavaScript Tear
 
-![](./img/tear-drop.gif) <!-- .element: class="gif" -->
+![](./img/tear-drop.gif) <!-- .element: class="gif fragment" -->
 
 ------
 
@@ -335,21 +358,17 @@ Active, Documentation, Community, Credible, Extensible, Integration, Modular, Qu
 
 ------
 
-## HTML
-
-* <!-- .element: class="fragment" --> [HTMLHint](http://htmlhint.com/)
-
-------
-
 ## JavaScript
 
 * <!-- .element: class="fragment" --> [JSLint/JSHint/ESLint](http://jshint.com)
 * <!-- .element: class="fragment" --> [FixMyJS](https://github.com/jshint/fixmyjs) - Automatically fix silly lint errors (example: [http://fixmyjs.com](http://fixmyjs.com)) by [@ goatslacker](http://twitter.com/goatslacker) 
 * <!-- .element: class="fragment" --> [Plato](https://github.com/es-analysis/plato) - Visualize JavaScript Complexity by [@jsoverson](http://twitter.com/jsoverson) (example: [jQuery](http://jsoverson.github.io/plato/examples/jquery/))
-* <!-- .element: class="fragment" --> [JavaScript Compatibility Checker](http://jscc.info/) (jscc) by [@tbusser](http://twitter.com/tbusser)
+(jscc) by [@tbusser](http://twitter.com/tbusser)
 * <!-- .element: class="fragment" --> [JSCritic](http://jscritic.com/) by [@kangax](http://twitter.com/kangax)
 * <!-- .element: class="fragment" --> [JavaScript Code Style Checker](https://github.com/jscs-dev/node-jscs) (jscs) by [@jscs_dev](http://twitter.com/jscs_dev)
 * <!-- .element: class="fragment" --> [JS Inspect](https://github.com/danielstjules/jsinspect) - Detect copy-pasted and structurally similar code by [@danielstjules](http://twitter.com/danielstjules)
+
+Notes: [JavaScript Compatibility Checker](http://jscc.info/) 
 
 ------
 
@@ -357,6 +376,14 @@ Active, Documentation, Community, Credible, Extensible, Integration, Modular, Qu
 
 * <!-- .element: class="fragment" --> [CSSLint](http://csslint.net/) by [@slicknet](http://twitter.com/slicknet) & [@stubbornella](http://twitter.com/stubbornella)
 * <!-- .element: class="fragment" --> [SCSS-Lint](https://github.com/causes/scss-lint)
+* <!-- .element: class="fragment" --> [CSS Colorguard](https://github.com/SlexAxton/css-colorguard) - Keep a watchful eye on your css colors by [@SlexAxton](http://twitter.com/SlexAxton)
+
+------
+
+## HTML
+
+* <!-- .element: class="fragment" --> [HTMLHint](http://htmlhint.com/)
+* <!-- .element: class="fragment" --> [w3cjs](https://github.com/thomasdavis/w3cjs)
 
 ---
 
@@ -379,6 +406,23 @@ Active, Documentation, Community, Credible, Extensible, Integration, Modular, Qu
 ## In the End
 
 ![](./img/finger-down.gif) <!-- .element: class="gif" --> 
+
+------
+
+## There Has to Be a Better Way
+### Testing Tools
+
+------
+
+## Testing Tools
+
+* <!-- .element: class="fragment" --> [QUnit](http://qunitjs.com/)
+* <!-- .element: class="fragment" --> [Jasmine](http://jasmine.github.io/2.0/introduction.html)
+* <!-- .element: class="fragment" --> [Mocha](http://mochajs.org/)
+* <!-- .element: class="fragment" --> [Karma](https://github.com/karma-runner/karma)
+* <!-- .element: class="fragment" --> [Jest](http://facebook.github.io/jest/)
+* <!-- .element: class="fragment" --> [PhantomJS](http://phantomjs.org/)
+* <!-- .element: class="fragment" --> [Sinon](http://sinonjs.org/)
 
 ---
 
