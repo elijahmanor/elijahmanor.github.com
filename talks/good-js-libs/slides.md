@@ -141,23 +141,21 @@ I also want to discuss the risks if a library doesn't meet one or more of these 
 
 ## Googolplex + 1
 
-```
-$ bower search 'angular' | grep -c 'angular'
+<pre class="fragment"><code>$ bower search 'angular' | grep -c 'angular'
 2652
-```
+</code></pre>
 
-```
-$ npm search 'angular' | grep -c 'angular'
+<pre class="fragment"><code>$ npm search 'angular' | grep -c 'angular'
 1212
-```
+</code></pre>
 
 ---
 
-# JavaScript Assessment Criteria (JAC)
+# JavaScript Impact Quotient (JS-IQ)
 
 ------
 
-## JavaScript Assessment Criteria (JAC)
+## JavaScript Impact Quotient (JS-IQ)
 
 1. Active
 2. Documentation <!-- .element: class="fragment" -->
@@ -172,7 +170,7 @@ $ npm search 'angular' | grep -c 'angular'
 ------
 
 ## The 9 Lives of JavaScript
-### JavaScript Assessment Criteria
+### JavaScript Impact Quotient (JS-IQ)
 
 Active, Documentation, Community, Credible, Extensible, Integration, Modular, Quality, Tests
 
@@ -435,6 +433,22 @@ Notes: [JavaScript Compatibility Checker](http://jscc.info/)
 * <!-- .element: class="fragment" --> [Sinon](http://sinonjs.org/)
 * <!-- .element: class="fragment" --> [Blanket.js](http://blanketjs.org/)
 * <!-- .element: class="fragment" --> [Istanbul](http://gotwarlost.github.io/istanbul/)
+
+---
+
+# What's [Reveal's](https://github.com/hakimel/reveal.js) JS-IQ?
+
+<div class="js-iq">
+	<div><input type="checkbox" /> <lable>Active</label></div>
+	<div><input type="checkbox" /> <lable>Documentation</label></div>
+	<div><input type="checkbox" /> <lable>Community</label></div>
+	<div><input type="checkbox" /> <lable>Credible</label></div>
+	<div><input type="checkbox" /> <lable>Extensible</label></div>
+	<div><input type="checkbox" /> <lable>Integration</label></div>
+	<div><input type="checkbox" /> <lable>Modular</label></div>
+	<div><input type="checkbox" /> <lable>Quality</label></div>
+	<div><input type="checkbox" /> <lable>Tests</label></div>
+</div>
 
 ---
 
