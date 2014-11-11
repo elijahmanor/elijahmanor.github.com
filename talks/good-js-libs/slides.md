@@ -123,7 +123,11 @@ I also want to discuss the risks if a library doesn't meet one or more of these 
 
 # JavaScript Criteria Assessment (JCA)
 
-1. Active <!-- .element: class="fragment" -->
+------
+
+# JavaScript Criteria Assessment (JCA)
+
+1. Active
 2. Documentation <!-- .element: class="fragment" -->
 3. Community <!-- .element: class="fragment" -->
 4. Credible <!-- .element: class="fragment" -->
@@ -378,9 +382,9 @@ Active, Documentation, Community, Credible, Extensible, Integration, Modular, Qu
 # Questions?
 
 <pre style="font-size: 1.25em; box-shadow: none;">
-<a href="http://elijahmanor.com]" class="fragment" style="margin-left: 3em;">http://elijahmanor.com</a>
-<a href="http://twitter.com/elijahmanor" class="fragment" style="margin-left: 6.5em;">@elijahmanor</a>
-<a href="http://bit.ly/good-js-libs" class="fragment" style="position: absolute; left: 3em;">http://bit.ly/good-js-libs</a>
+<a href="http://elijahmanor.com]" class="" style="margin-left: 3em;">http://elijahmanor.com</a>
+<a href="http://twitter.com/elijahmanor" class="" style="margin-left: 6.5em;">@elijahmanor</a>
+<a href="http://bit.ly/good-js-libs" class="" style="position: absolute; left: 3em;">http://bit.ly/good-js-libs</a>
 </pre>
 
 ![](./img/trance.gif) <!-- .element: class="gif" -->
