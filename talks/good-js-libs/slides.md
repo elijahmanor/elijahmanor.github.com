@@ -91,7 +91,7 @@ I also want to discuss the risks if a library doesn't meet one or more of these 
 
 ------
 
-## What Sometimes Happens in the End
+## What Often Happens
 
 ![](./img/guitar-slam.gif) <!-- .element: class="gif" -->
 
@@ -115,21 +115,23 @@ I also want to discuss the risks if a library doesn't meet one or more of these 
 
 ## Googolplex + 1
 
-<pre class="fragment" data-trim><code>$ bower search 'angular' | grep -c 'angular'
+```
+$ bower search 'angular' | grep -c 'angular'
 2652
-</code></pre>
+```
 
-<pre class="fragment" data-trim><code>$ npm search 'angular' | grep -c 'angular'
+```
+$ npm search 'angular' | grep -c 'angular'
 1212
-</code></pre>
+```
 
 ---
 
-# JavaScript Criteria Assessment (JCA)
+# JavaScript Assessment Criteria (JAC)
 
 ------
 
-# JavaScript Criteria Assessment (JCA)
+## JavaScript Assessment Criteria (JAC)
 
 1. Active
 2. Documentation <!-- .element: class="fragment" -->
@@ -144,7 +146,7 @@ I also want to discuss the risks if a library doesn't meet one or more of these 
 ------
 
 ## The 9 Lives of JavaScript
-### JavaScript Criteria Assessment
+### JavaScript Assessment Criteria
 
 Active, Documentation, Community, Credible, Extensible, Integration, Modular, Quality, Tests
 
@@ -213,7 +215,7 @@ Active, Documentation, Community, Credible, Extensible, Integration, Modular, Qu
 
 ## Are Developers Excited!?!
 
-![](./img/excited.gif) <!-- .element: class="gif" -->
+![](./img/excited.gif) <!-- .element: class="gif fragment" -->
 
 ------
 
@@ -238,17 +240,11 @@ Active, Documentation, Community, Credible, Extensible, Integration, Modular, Qu
 
 ------
 
-## Soial Media
+## Social Media
 ### Signs of Health
 
 * Is there an Active Buzz on Twitter, Google Plus, etc...? <!-- .element: class="fragment" -->
 * Are Developers Blogging about the Library? <!-- .element: class="fragment" -->
-
-------
-
-## Viva JavaScript
-
-![](./img/never-ending-story.gif) <!-- .element: class="gif" -->
 
 ---
 
@@ -277,9 +273,11 @@ Active, Documentation, Community, Credible, Extensible, Integration, Modular, Qu
 
 ------
 
-## Good Example
+## Good Examples
 
-* Angular: A Team of Developers Backed by Google
+* <!-- .element: class="fragment" --> jQuery: A Team of Passionate JavaScript Developers (example: from John Resig to Dave Methvin)
+* <!-- .element: class="fragment" --> Angular: A Team of Developers Backed by Google
+* <!-- .element: class="fragment" --> React: A Team of Developers Backed by Facebook/Instagram
 
 ---
 
@@ -423,6 +421,8 @@ Notes: [JavaScript Compatibility Checker](http://jscc.info/)
 * <!-- .element: class="fragment" --> [Jest](http://facebook.github.io/jest/)
 * <!-- .element: class="fragment" --> [PhantomJS](http://phantomjs.org/)
 * <!-- .element: class="fragment" --> [Sinon](http://sinonjs.org/)
+* <!-- .element: class="fragment" --> [Blanket.js](http://blanketjs.org/)
+* <!-- .element: class="fragment" --> [Istanbul](http://gotwarlost.github.io/istanbul/)
 
 ---
 
