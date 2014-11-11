@@ -219,11 +219,12 @@ Active, Documentation, Community, Credible, Extensible, Integration, Modular, Qu
 
 ------
 
-## Combat Stale Docs
-### Autogenerate
+## Combat Stale Documentation
+### Autogenerate API Docs
 
 *  <!-- .element: class="fragment" --> [JSDoc](http://usejsdoc.org/)
-*  <!-- .element: class="fragment" --> [SassDoc](http://sassdoc.com/)
+*  <!-- .element: class="fragment" --> [YUIDoc](http://yui.github.io/yuidoc/)
+*  <!-- .element: class="fragment" --> [Docco](http://jashkenas.github.io/docco/)
 
 ---
 
@@ -386,21 +387,6 @@ Active, Documentation, Community, Credible, Extensible, Integration, Modular, Qu
 
 Notes: [JavaScript Compatibility Checker](http://jscc.info/) 
 
-------
-
-## CSS
-
-* <!-- .element: class="fragment" --> [CSSLint](http://csslint.net/) by [@slicknet](http://twitter.com/slicknet) & [@stubbornella](http://twitter.com/stubbornella)
-* <!-- .element: class="fragment" --> [SCSS-Lint](https://github.com/causes/scss-lint)
-* <!-- .element: class="fragment" --> [CSS Colorguard](https://github.com/SlexAxton/css-colorguard) - Keep a watchful eye on your css colors by [@SlexAxton](http://twitter.com/SlexAxton)
-
-------
-
-## HTML
-
-* <!-- .element: class="fragment" --> [HTMLHint](http://htmlhint.com/)
-* <!-- .element: class="fragment" --> [w3cjs](https://github.com/thomasdavis/w3cjs)
-
 ---
 
 # Tests
@@ -447,9 +433,84 @@ Notes: [JavaScript Compatibility Checker](http://jscc.info/)
 # Questions?
 
 <pre style="font-size: 1.25em; box-shadow: none;">
-<a href="http://elijahmanor.com]" class="" style="margin-left: 3em;">http://elijahmanor.com</a>
-<a href="http://twitter.com/elijahmanor" class="" style="margin-left: 6.5em;">@elijahmanor</a>
-<a href="http://bit.ly/good-js-libs" class="" style="position: absolute; left: 3em;">http://bit.ly/good-js-libs</a>
+<a href="http://elijahmanor.com]" class="fragment" style="margin-left: 3em;">http://elijahmanor.com</a>
+<a href="http://twitter.com/elijahmanor" class="fragment" style="margin-left: 6.5em;">@elijahmanor</a>
+<a href="http://bit.ly/good-js-libs" class="fragment" style="position: absolute; left: 3em;">http://bit.ly/good-js-libs</a>
 </pre>
 
-![](./img/trance.gif) <!-- .element: class="gif" -->
+![](./img/trance.gif) <!-- .element: class="gif fragment" -->
+
+---
+
+# Random Thoughts
+
+------
+
+## Window/RequireJS/CommonJS Support
+
+```
+(function (name, definition, context, dependencies) {
+  if (typeof context['module'] !== 'undefined' && context['module']['exports']) { if (dependencies && context['require']) { for (var i = 0; i < dependencies.length; i++) context[dependencies[i]] = context['require'](dependencies[i]); } context['module']['exports'] = definition.apply(context); }
+  else if (typeof context['define'] !== 'undefined' && context['define'] === 'function' && context['define']['amd']) { define(name, (dependencies || []), definition); }
+  else { context[name] = definition(); }
+})('namespace', function () {
+  // Insert code here
+  return {
+    hello: function(name) {
+      console.log('Hello ' + name + '!');
+    }
+  };
+}, (this || {}));
+```
+
+<small><a href="http://stackoverflow.com/questions/13673346/supporting-both-commonjs-and-amd">Supporting both CommonJS and AMD</small>
+
+------
+
+## Window/RequireJS/CommonJS Usage
+
+#### Window (HTML) <!-- .element: class="fragment" data-fragment-index="1" --> 
+
+<pre class="fragment" data-fragment-index="1"><code>&lt;script src="namespace.js"&gt;&lt;/script&gt;
+&lt;script&gt;namespace.hello('World');&lt;/script&gt;
+</code></pre>
+
+#### AMD (RequireJS) <!-- .element: class="fragment" data-fragment-index="2" --> 
+
+<pre class="fragment" data-fragment-index="2"><code>requirejs(['namespace'], function(namespace) {
+    namespace.sayHi('World');
+});
+</code></pre>
+
+#### CommonJS (NodeJS) <!-- .element: class="fragment" data-fragment-index="3" --> 
+
+<pre class="fragment" data-fragment-index="3"><code>var module = require('./namespace');
+namespace.hello('World');
+</code></pre>
+
+------
+
+## HTML Tools
+
+* <!-- .element: class="fragment" --> [HTMLHint](http://htmlhint.com/)
+* <!-- .element: class="fragment" --> [w3cjs](https://github.com/thomasdavis/w3cjs)
+
+------
+
+## CSS Tools
+
+* <!-- .element: class="fragment" --> [CSSLint](http://csslint.net/) by [@slicknet](http://twitter.com/slicknet) & [@stubbornella](http://twitter.com/stubbornella)
+* <!-- .element: class="fragment" --> [SCSS-Lint](https://github.com/causes/scss-lint)
+* <!-- .element: class="fragment" --> [CSS Colorguard](https://github.com/SlexAxton/css-colorguard) - Keep a watchful eye on your css colors by [@SlexAxton](http://twitter.com/SlexAxton)
+* <!-- .element: class="fragment" --> [SassDoc](http://sassdoc.com/)
+
+------
+
+## Compression Tools
+
+* <!-- .element: class="fragment" --> [UglifyJS](https://github.com/gruntjs/grunt-contrib-uglify)
+* <!-- .element: class="fragment" --> [CSSMin](https://github.com/gruntjs/grunt-contrib-cssmin)
+* <!-- .element: class="fragment" --> [HTMLMin](https://github.com/gruntjs/grunt-contrib-htmlmin)
+* <!-- .element: class="fragment" --> [ImageMin](https://github.com/gruntjs/grunt-contrib-imagemin)
+* <!-- .element: class="fragment" --> [SVGMin](https://github.com/sindresorhus/grunt-svgmin)
+
