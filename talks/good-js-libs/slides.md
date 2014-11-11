@@ -455,12 +455,17 @@ Notes: [JavaScript Compatibility Checker](http://jscc.info/)
 # Questions?
 
 <pre style="font-size: 1.25em; box-shadow: none;">
-<a href="http://elijahmanor.com]" class="fragment" style="margin-left: 3em;">http://elijahmanor.com</a>
-<a href="http://twitter.com/elijahmanor" class="fragment" style="margin-left: 6.5em;">@elijahmanor</a>
+<a href="http://elijahmanor.com]" class="fragment" style="margin-left: 2em;">http://elijahmanor.com</a>
+<a href="http://twitter.com/elijahmanor" class="fragment" style="margin-left: 5.5em;">@elijahmanor</a>
+<a href="mailto:elijahmanor@gmail.com" class="fragment" style="position: absolute; left: 6.1em;">elijahmanor@gmail.com</a>
+</pre>
+
+![](./img/trance.gif) <!-- .element: class="fragment" style="height: 5em;" -->
+
+<pre style="font-size: 1.25em; box-shadow: none;">
 <a href="http://bit.ly/good-js-libs" class="fragment" style="position: absolute; left: 3em;">http://bit.ly/good-js-libs</a>
 </pre>
 
-![](./img/trance.gif) <!-- .element: class="gif fragment" -->
 
 ---
 
