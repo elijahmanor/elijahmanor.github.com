@@ -1,5 +1,5 @@
 # How to Pick Good JavaScript Libraries
-### by [@elijahmanor](http://twitter.com/elijahmanor)
+## <!-- .element: style="text-transform: lowercase;" --> by [@elijahmanor](http://twitter.com/elijahmanor) 
 
 Notes: The ideas covered address either a specific focused library (micro-library) or a large framework with lots of bells and whistles. My intent isn't to say "You should use XYZ library", however, it is to describe the things I look for when picking a library (whether large or small) for a project.
 
