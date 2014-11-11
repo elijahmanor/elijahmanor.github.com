@@ -300,7 +300,7 @@ Active, Documentation, Community, Credible, Extensible, Integration, Modular, Qu
 
 ## Good Examples
 
-* <!-- .element: class="fragment" --> jQuery: A Team of Passionate JavaScript Developers (example: from John Resig to Dave Methvin)
+* <!-- .element: class="fragment" --> jQuery: A Team of Passionate JavaScript Developers <span class="fragment">(example: from John Resig to Dave Methvin)</span>
 * <!-- .element: class="fragment" --> Angular: A Team of Developers Backed by Google
 * <!-- .element: class="fragment" --> React: A Team of Developers Backed by Facebook/Instagram
 
@@ -401,19 +401,19 @@ Notes: [JavaScript Compatibility Checker](http://jscc.info/)
 
 ## Looks Like It'll Work, but Nope
 
-![](./img/wheel-barrow.gif) <!-- .element: class="gif" --> 
+![](./img/wheel-barrow.gif) <!-- .element: class="gif fragment" --> 
 
 ------
 
 ## The Library Is Barely Stable
 
-![](./img/dancing-about-to-fall.gif) <!-- .element: class="gif" --> 
+![](./img/dancing-about-to-fall.gif) <!-- .element: class="gif fragment" --> 
 
 ------
 
 ## In the End
 
-![](./img/finger-down.gif) <!-- .element: class="gif" --> 
+![](./img/finger-down.gif) <!-- .element: class="gif fragment" --> 
 
 ------
 
@@ -535,4 +535,12 @@ namespace.hello('World');
 * <!-- .element: class="fragment" --> [HTMLMin](https://github.com/gruntjs/grunt-contrib-htmlmin)
 * <!-- .element: class="fragment" --> [ImageMin](https://github.com/gruntjs/grunt-contrib-imagemin)
 * <!-- .element: class="fragment" --> [SVGMin](https://github.com/sindresorhus/grunt-svgmin)
+
+------
+
+## Dive Into Tools
+
+* <!-- .element: class="fragment" --> [Plato](https://github.com/es-analysis/plato) - Visualize JavaScript Complexity by [@jsoverson](http://twitter.com/jsoverson) (example: [jQuery](http://jsoverson.github.io/plato/examples/jquery/))
+(jscc) by [@tbusser](http://twitter.com/tbusser)
+* <!-- .element: class="fragment" --> [JS Inspect](https://github.com/danielstjules/jsinspect) - Detect copy-pasted and structurally similar code by [@danielstjules](http://twitter.com/danielstjules)
 
