@@ -103,6 +103,9 @@ I also want to discuss the risks if a library doesn't meet one or more of these 
 ---
 
 # JavaScript Overload
+
+------
+
 ## Too Many Choices!
 
 ![](./img/overload.gif) <!-- .element: class="gif" -->
