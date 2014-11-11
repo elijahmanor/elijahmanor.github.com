@@ -136,7 +136,7 @@ I also want to discuss the risks if a library doesn't meet one or more of these 
 ------
 
 ## The 9 Lives of JavaScript
-### JavaScript Crieteria Assessment
+### JavaScript Criteria Assessment
 
 Active, Documentation, Community, Credible, Extensible, Integration, Modular, Quality, Tests
 
@@ -191,11 +191,11 @@ Active, Documentation, Community, Credible, Extensible, Integration, Modular, Qu
 
 ------
 
-## Combat Staleness //TODO - Spelling
+## Combat Stale Docs
+### Autogenerate
 
-//TODO - Flush this out...
-
-Auto-generate (JSDoc, SassDoc, etc...)
+* [JSDoc](http://usejsdoc.org/)
+* [SassDoc](http://sassdoc.com/)
 
 ---
 
@@ -224,17 +224,17 @@ Auto-generate (JSDoc, SassDoc, etc...)
 ## Stack Overflow
 ### In the trenches
 
-* Are Quesitons Being Asked?
-* Are the Questions Being Answered?
-* Are the Questions/Answers Being Voted Up?
+* Are Quesitons Being Asked? <!-- .element: class="fragment" -->
+* Are the Questions Being Answered? <!-- .element: class="fragment" -->
+* Are the Questions/Answers Being Voted Up? <!-- .element: class="fragment" -->
 
 ------
 
 ## Soial Media
 ### Signs of Health
 
-* Is there an Active Buzz on Twitter, Google Plus, etc...?
-* Are Developers Blogging about the Library?
+* Is there an Active Buzz on Twitter, Google Plus, etc...? <!-- .element: class="fragment" -->
+* Are Developers Blogging about the Library? <!-- .element: class="fragment" -->
 
 ------
 
@@ -250,8 +250,8 @@ Auto-generate (JSDoc, SassDoc, etc...)
 
 ## Trusted Author(s)
 
-* Who authored the library?
-* What else have they created?
+* Who authored the library? <!-- .element: class="fragment" -->
+* What else have they created? <!-- .element: class="fragment" -->
 
 ------
 
@@ -265,7 +265,7 @@ Auto-generate (JSDoc, SassDoc, etc...)
 
 > What happens when the original author is out of the picture?
 
-![](./img/weather-stop-sign.gif) <!-- .element: class="gif" -->
+![](./img/weather-stop-sign.gif) <!-- .element: class="gif fragment" -->
 
 ------
 
@@ -330,26 +330,26 @@ Auto-generate (JSDoc, SassDoc, etc...)
 
 ## HTML
 
-* [HTMLHint](http://htmlhint.com/) <!-- .element: class="fragment" -->
+* <!-- .element: class="fragment" --> [HTMLHint](http://htmlhint.com/)
 
 ------
 
 ## JavaScript
 
-* [JSLint/JSHint/ESLint](http://jshint.com) <!-- .element: class="fragment" -->
-* [FixMyJS](https://github.com/jshint/fixmyjs) - Automatically fix silly lint errors (example: [http://fixmyjs.com](http://fixmyjs.com)) by [@ goatslacker](http://twitter.com/goatslacker)
-* [Plato](https://github.com/es-analysis/plato) - Visualize JavaScript Complexity by [@jsoverson](http://twitter.com/jsoverson) (example: [jQuery](http://jsoverson.github.io/plato/examples/jquery/)) <!-- .element: class="fragment" -->
-* [JavaScript Compatibility Checker](http://jscc.info/) (jscc) by [@tbusser](http://twitter.com/tbusser) <!-- .element: class="fragment" -->
-* [JSCritic](http://jscritic.com/) by [@kangax](http://twitter.com/kangax) <!-- .element: class="fragment" -->
-* [JavaScript Code Style Checker](https://github.com/jscs-dev/node-jscs) (jscs) by [@jscs_dev](http://twitter.com/jscs_dev) <!-- .element: class="fragment" -->
-* [JS Inspect](https://github.com/danielstjules/jsinspect) - Detect copy-pasted and structurally similar code by [@danielstjules](http://twitter.com/danielstjules)
+* <!-- .element: class="fragment" --> [JSLint/JSHint/ESLint](http://jshint.com)
+* <!-- .element: class="fragment" --> [FixMyJS](https://github.com/jshint/fixmyjs) - Automatically fix silly lint errors (example: [http://fixmyjs.com](http://fixmyjs.com)) by [@ goatslacker](http://twitter.com/goatslacker) 
+* <!-- .element: class="fragment" --> [Plato](https://github.com/es-analysis/plato) - Visualize JavaScript Complexity by [@jsoverson](http://twitter.com/jsoverson) (example: [jQuery](http://jsoverson.github.io/plato/examples/jquery/))
+* <!-- .element: class="fragment" --> [JavaScript Compatibility Checker](http://jscc.info/) (jscc) by [@tbusser](http://twitter.com/tbusser)
+* <!-- .element: class="fragment" --> [JSCritic](http://jscritic.com/) by [@kangax](http://twitter.com/kangax)
+* <!-- .element: class="fragment" --> [JavaScript Code Style Checker](https://github.com/jscs-dev/node-jscs) (jscs) by [@jscs_dev](http://twitter.com/jscs_dev)
+* <!-- .element: class="fragment" --> [JS Inspect](https://github.com/danielstjules/jsinspect) - Detect copy-pasted and structurally similar code by [@danielstjules](http://twitter.com/danielstjules)
 
 ------
 
 ## CSS
 
-* [CSSLint](http://csslint.net/) by [@slicknet](http://twitter.com/slicknet) & [@stubbornella](http://twitter.com/stubbornella) <!-- .element: class="fragment" -->
-* [SCSS-Lint](https://github.com/causes/scss-lint) <!-- .element: class="fragment" -->
+* <!-- .element: class="fragment" --> [CSSLint](http://csslint.net/) by [@slicknet](http://twitter.com/slicknet) & [@stubbornella](http://twitter.com/stubbornella)
+* <!-- .element: class="fragment" --> [SCSS-Lint](https://github.com/causes/scss-lint)
 
 ---
 
@@ -359,28 +359,28 @@ Auto-generate (JSDoc, SassDoc, etc...)
 
 ## Looks Like It'll Work, but Nope
 
-![](./img/wheel-barrow.gif)  <!-- .element: class="gif" --> 
+![](./img/wheel-barrow.gif) <!-- .element: class="gif" --> 
 
 ------
 
 ## The Library Is Barely Stable
 
-![](./img/dancing-about-to-fall.gif)  <!-- .element: class="gif" --> 
+![](./img/dancing-about-to-fall.gif) <!-- .element: class="gif" --> 
 
 ------
 
 ## In the End
 
-![](./img/finger-down.gif)
+![](./img/finger-down.gif) <!-- .element: class="gif" --> 
 
 ---
 
 # Questions?
 
 <pre style="font-size: 1.25em; box-shadow: none;">
-<a href="http://elijahmanor.com]" style="margin-left: 3em;">http://elijahmanor.com</a>
-<a href="http://twitter.com/elijahmanor" style="margin-left: 6.5em;">@elijahmanor</a>
-<a href="http://bit.ly/good-js-libs" style="position: absolute; left: 3em;">http://bit.ly/good-js-libs</a>
+<a href="http://elijahmanor.com]" class="fragment" style="margin-left: 3em;">http://elijahmanor.com</a>
+<a href="http://twitter.com/elijahmanor" class="fragment" style="margin-left: 6.5em;">@elijahmanor</a>
+<a href="http://bit.ly/good-js-libs" class="fragment" style="position: absolute; left: 3em;">http://bit.ly/good-js-libs</a>
 </pre>
 
 ![](./img/trance.gif) <!-- .element: class="gif" -->
