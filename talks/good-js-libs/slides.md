@@ -435,8 +435,3 @@ Notes: [JavaScript Compatibility Checker](http://jscc.info/)
 </pre>
 
 ![](./img/trance.gif) <!-- .element: class="gif" -->
-
-Notes: 
-
-* http://www.johnpapa.net/javascript-soup/
-* http://www.sencha.com/blog/4-questions-to-ask-before-choosing-a-javascript-framework/#date:14:56
