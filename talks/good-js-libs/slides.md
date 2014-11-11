@@ -60,6 +60,14 @@ I also want to discuss the risks if a library doesn't meet one or more of these 
 
 ------
 
+## Java is to JavaScript as...
+
+![](./img/gandalf.jpg) <!-- .element: class="fragment" style="height: 12em;" data-fragment-index="1" -->
+
+### Alf is to Gandalf <!-- .element: class="fragment" data-fragment-index="1" --> 
+
+------
+
 ## The Web is Now Dynamic
 ### Validation, Toggle Visibility, etc...
 
