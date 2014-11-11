@@ -218,7 +218,7 @@ Active, Documentation, Community, Credible, Extensible, Integration, Modular, Qu
 * High Level Abstract <!-- .element: class="fragment" -->
 * Code Splunk <!-- .element: class="fragment" -->
 * API Dive <!-- .element: class="fragment" -->
-* Code Exmpales <!-- .element: class="fragment" -->
+* Code Examples <!-- .element: class="fragment" -->
 * Demo Apps <!-- .element: class="fragment" -->
 * Unit Tests <!-- .element: class="fragment" -->
 * Videos <!-- .element: class="fragment" -->
@@ -246,11 +246,15 @@ Active, Documentation, Community, Credible, Extensible, Integration, Modular, Qu
 
 ## GitHub
 
-<span>Contributors</span> <!-- .element: class="fragment" -->
-<span>, Commits</span> <!-- .element: class="fragment" -->
-<span>, Favorites</span> <!-- .element: class="fragment" -->
-<span>, Forks</span> <!-- .element: class="fragment" -->
-<span>, Pull Requests (Open & Closed)</span> <!-- .element: class="fragment" -->
+<div>
+	<span>Contributors</span> <!-- .element: class="fragment" -->
+	<span>, Commits</span> <!-- .element: class="fragment" -->
+	<span>, Favorites, </span> <!-- .element: class="fragment" -->
+</div>
+<div>
+	<span>Forks</span> <!-- .element: class="fragment" -->
+	<span>, Pull Requests (Open & Closed)</span> <!-- .element: class="fragment" -->
+</div>
 
 ![](./img/mind-blown.gif) <!-- .element: class="gif fragment" -->
 
@@ -300,9 +304,20 @@ Active, Documentation, Community, Credible, Extensible, Integration, Modular, Qu
 
 ## Good Examples
 
-* <!-- .element: class="fragment" --> jQuery: A Team of Passionate JavaScript Developers <span class="fragment">(example: from John Resig to Dave Methvin)</span>
-* <!-- .element: class="fragment" --> Angular: A Team of Developers Backed by Google
-* <!-- .element: class="fragment" --> React: A Team of Developers Backed by Facebook/Instagram
+<ul style="position: relative; width: 100%;">
+	<li class="fragment" style="height: 2.5em;">
+		<strong>jQuery</strong>:
+		<span style="position: absolute; left: 4em;">A Team of Passionate JavaScript Developers <span class="fragment">(example: from John Resig to Dave Methvin)</span>
+	</li>
+	<li class="fragment">
+		<strong>Angular</strong>:
+		<span style="position: absolute; left: 4em;">A Team of Developers Backed by Google</span>
+	</li>
+	<li class="fragment">
+		<strong>React</strong>:
+		<span style="position: absolute; left: 4em;">A Team of Developers Backed by Facebook/Instagram</span>
+	</li>
+</ul>
 
 ---
 
@@ -336,7 +351,7 @@ Active, Documentation, Community, Credible, Extensible, Integration, Modular, Qu
 
 ## Punched in the Face by Incompatibility
 
-![](./img/punch-in-face.gif) <!-- .element: class="gif fragment" -->
+![](./img/punch-in-face.gif)
 
 ---
 
@@ -346,7 +361,7 @@ Active, Documentation, Community, Credible, Extensible, Integration, Modular, Qu
 
 ## All Or Nothing
 
-![](./img/table-flip.gif) <!-- .element: class="gif fragment" -->
+![](./img/table-flip.gif)
 
 ------
 
@@ -372,7 +387,7 @@ Active, Documentation, Community, Credible, Extensible, Integration, Modular, Qu
 
 ## Shed a Single JavaScript Tear
 
-![](./img/tear-drop.gif) <!-- .element: class="gif fragment" -->
+![](./img/tear-drop.gif)
 
 ------
 
@@ -465,7 +480,6 @@ Notes: [JavaScript Compatibility Checker](http://jscc.info/)
 <pre style="font-size: 1.25em; box-shadow: none;">
 <a href="http://bit.ly/good-js-libs" class="fragment" style="position: absolute; left: 3em;">http://bit.ly/good-js-libs</a>
 </pre>
-
 
 ---
 
