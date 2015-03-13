@@ -1,0 +1,3 @@
+# Ghastly Globals
+
+------
