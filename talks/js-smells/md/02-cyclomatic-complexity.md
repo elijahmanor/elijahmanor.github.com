@@ -198,13 +198,7 @@ JavaScript visualization, static analysis, and complexity tool
 plato -r -d report -t "English to Pig Latin"
 ```
 
-![](./img/plato.png) <!-- .element style="height: 450px;" -->
-
-------
-
-# [`plato`](https://github.com/es-analysis/plato) Details
-
-![](./img/plato-detail.png) <!-- .element style="height: 550px;" -->
+<a href="./js/report/index.html"><img src="./img/plato.png" style="height: 450px;" /></a>
 
 ------
 
@@ -214,3 +208,4 @@ plato -r -d report -t "English to Pig Latin"
 * `jscomplexity` - http://jscomplexity.org/
 * `escomplex` - https://github.com/philbooth/escomplex
 * `plato` - https://github.com/es-analysis/plato
+* `plato` report - http://elijahmanor.github.io/talks/js-smells/js/report/index.html

@@ -14,13 +14,23 @@
 
 ------
 
+## Resources
+
+* http://jsbin.com/vahegiqadi/1/edit?js,output
+* http://jscomplexity.org/#results
+* http://jshint.com/
+* http://codepen.io/elijahmanor/pen/33c3b09ed780b463b5ede21c31afb8a7?editors=001
+
+Notes:
+
+Ideas
+
+* Castaway Code (a.k.a UnusedCode, YouDontNeedItAnymore) - JSHint does this out of the box... however, it may not be default. Need to check
+* Promise Proliferation - http://taoofcode.net/promise-anti-patterns/ &
+https://github.com/petkaantonov/bluebird/wiki/Promise-anti-patterns#the-deferred-anti-pattern
 * Problem: $paghetti Code, Solution:
-
 * Passing data all way down (), Solution:
-
 * Problem: add/remove code
-
-------
 
 ```
 if (flag) {  
@@ -38,13 +48,9 @@ node.toggleClass('someClass', flag);
 test && doThis();
 ```
 
-------
-
 # Tips, Tricks, & Techniques
 
 # ESLint Custom Rules
-
-Notes:
 
 # SrcByLine
 

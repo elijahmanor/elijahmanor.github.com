@@ -87,7 +87,7 @@ _Note: `maxlen` has been deprecated & you should use `jscs` instead_
 
 ------
 
-# Stats
+# Current Stats
 
 * <!-- .element class="fragment" --> `maxparams`: 2
 * <!-- .element class="fragment" --> `maxdepth`: 3
