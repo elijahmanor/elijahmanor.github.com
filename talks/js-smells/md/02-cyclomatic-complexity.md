@@ -188,5 +188,29 @@ function EnglishToPigLatin(english) {
 
 ## Cyclomatic Complexity: 4
 
-http://jscomplexity.org/
-https://github.com/philbooth/escomplex
+------
+
+# [`plato`](https://github.com/es-analysis/plato)
+
+JavaScript visualization, static analysis, and complexity tool
+
+```
+plato -r -d report -t "English to Pig Latin"
+```
+
+![](./img/plato.png) <!-- .element style="height: 450px;" -->
+
+------
+
+# [`plato`](https://github.com/es-analysis/plato) Details
+
+![](./img/plato-detail.png) <!-- .element style="height: 550px;" -->
+
+------
+
+# Resources
+
+* `jshint` - http://jshint.com/
+* `jscomplexity` - http://jscomplexity.org/
+* `escomplex` - https://github.com/philbooth/escomplex
+* `plato` - https://github.com/es-analysis/plato

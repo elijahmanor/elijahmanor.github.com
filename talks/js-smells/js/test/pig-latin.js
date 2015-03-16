@@ -1,5 +1,5 @@
 const CONSONANTS = ['th', 'qu', 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k',
-  'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
+'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
 const VOWELS = ['a', 'e', 'i', 'o', 'u'];
 const ENDING = 'ay';
 
@@ -16,13 +16,13 @@ var getConsonants = word => CONSONANTS.reduce((memo, char) => {
 }, '');
 
 function EnglishToPigLatin(english='') {
-  if (isValid(english)) {
-    if (startsWithVowel(english)) {
-      english += ENDING;
-    } else {
-      let letters = getConsonants(english);
-      english = `${english.substr(letters.length)}${letters}${ENDING}`;
-    }
-  }
-  return english;
+   if (isValid(english)) {
+      if (startsWithVowel(english)) {
+        english += ENDING;
+      } else {
+        let letters = getConsonants(english);
+        english = `${english.substr(letters.length)}${letters}${ENDING}`;
+      }
+   }
+   return english;
 }

@@ -1,6 +1,11 @@
-# Smelly Code
+# So, we wanted this...
+
+![](./img/copy-paste-code-box-crop.png) <!-- .element style="height: 550px;" -->
+
+------
 
 ## `Box.js`
+
 ```
 // ... more code ...
 
@@ -14,6 +19,12 @@ var boxes = document.querySelectorAll('.Box');
 
 // ... more code ...
 ```
+
+------
+
+# Then this...
+
+![](./img/copy-paste-code-circle-crop.png) <!-- .element style="height: 550px;" -->
 
 ------
 
@@ -34,25 +45,53 @@ var circles = document.querySelectorAll(".Circle");
 
 ------
 
+# Smelly Code
+
 # Copy Pasted Code!
 
+------
+
+# Tooling
+
+------
+
+# [`jsinspect`](https://github.com/danielstjules/jsinspect)
+
+Detect copy-pasted and structurally similar code
+
+<pre><code data-trim data-lang="shell">
+jsinspect
+</code></pre>
+
+![](./img/jsinspect.png)
+
+------
+
+# [`jscpd`](https://github.com/kucherenko/jscpd)
+
+Copy/paste detector for programming source code (JavaScript, TypeScript, C#, Ruby, CSS, SCSS, HTML, etc...)
+
+<pre><code data-trim data-lang="shell">
+jscpd -f **/*.js -l 1 -t 30 --languages javascript
+</code></pre>
+
+![](./img/jscpd.png) <!-- .element style="height: 350px;" -->
+
+------
+
+# So What!?!
+
+## Refactor <!-- .element class="fragment" -->
+
+------
+
+# Refactor
 
 
 ------
 
+# Resources
 
-------
-
-* Solution: Copy/paste detector for programming source code.
-https://github.com/kucherenko/jscpd (JavaScript Java CoffeeScript	C++ PHP	C# * Go	Python Ruby	C Less	CSS SCSS	Mixed HTML TypeScript)
-* Solution: Detect copy-pasted and structurally similar code https://github.com/danielstjules/jsinspect
-
-------
-
-```js
-jscpd --path src/ --files **/*.js --exclude models/**/*.js --languages javascript
-```
-
-```javascript
-jsinspect -t 30 -i src/ --ignore "src/models/transforms/.*js"
-```
+* CodePen - http://codepen.io/elijahmanor/pen/myQebo
+* `jsinspect` - https://github.com/danielstjules
+* `jscpd` - https://github.com/kucherenko/jscpd

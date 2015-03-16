@@ -146,3 +146,9 @@ function EnglishToPigLatin(english='') {
 * <!-- .element class="fragment highlight-green" --> `maxstatements`: 6
 * <!-- .element class="fragment highlight-green" --> `maxcomplexity`: 3
 * <!-- .element class="fragment highlight-red" --> `maxlen`: 73
+
+------
+
+# Resources
+
+* `jshint` - http://jshint.com/
