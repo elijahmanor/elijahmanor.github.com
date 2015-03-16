@@ -1,3 +1,7 @@
+# Incessant Interaction Smell
+
+------
+
 # Smelly Code
 
 ```
@@ -13,9 +17,7 @@ search.addEventListener('input', function(e) {
 
 ------
 
-# JavaScript Smell
-
-## Incessant Interactions
+# Why Does This Smell?
 
 ------
 

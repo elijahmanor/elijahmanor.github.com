@@ -1,3 +1,7 @@
+# Cope Paste Code Smell
+
+------
+
 # So, we had this...
 
 ![](./img/copy-paste-code-box-crop.png) <!-- .element style="height: 550px;" -->
@@ -48,9 +52,7 @@ var circles = document.querySelectorAll(".Circle");
 
 ------
 
-# Smelly Code
-
-# Copy Pasted Code!
+# Why Does This Smell?
 
 ------
 

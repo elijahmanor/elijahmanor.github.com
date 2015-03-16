@@ -1,3 +1,7 @@
+# Massive Method Smell
+
+------
+
 # Smelly Code
 
 ```
@@ -38,7 +42,7 @@ function getPreVowelConsonants(word) {
   return preVowelConsonants;
 }
 
-function EnglishToPigLatin(english) {
+function englishToPigLatin(english) {
    /* const */ var SYLLABLE = 'ay';
 
    var pigLatin = '';
@@ -60,7 +64,11 @@ function EnglishToPigLatin(english) {
 
 ------
 
-# Massive Methods!
+# Why Does This Smell?
+
+------
+
+# Massive Method!
 
 * Too Many Statements <!-- .element class="fragment" -->
 * Too Many Parameters <!-- .element class="fragment" -->
@@ -115,7 +123,6 @@ const ENDING = 'ay';
 var isValid = word => startsWithVowel(word) || startsWithConsonant(word);
 var startsWithVowel = word => !!~VOWELS.indexOf(word[0]);
 var startsWithConsonant = word => !!~CONSONANTS.indexOf(word[0]);
-
 var getConsonants = word => CONSONANTS.reduce((memo, char) => {
   if (word.startsWith(char)) {
     memo += char;
@@ -124,7 +131,7 @@ var getConsonants = word => CONSONANTS.reduce((memo, char) => {
   return memo;
 }, '');
 
-function EnglishToPigLatin(english='') {
+function englishToPigLatin(english='') {
    if (isValid(english)) {
       if (startsWithVowel(english)) {
         english += ENDING;

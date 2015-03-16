@@ -1,6 +1,10 @@
-# Too Much jQuery
+# jQuery Inquiry
+
+# Smell
 
 Notes:
+
+Become tired of...
 
 ```
 $('input').keyup(function() {

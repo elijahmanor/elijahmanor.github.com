@@ -1,10 +1,14 @@
+# Crazy Complexity Smell
+
+------
+
 # Smelly Code
 
 ```
 /* const */ var CONSONANTS = 'bcdfghjklmnpqrstvwxyz';
 /* const */ var VOWELS = 'aeiou';
 
-function EnglishToPigLatin(english) {
+function englishToPigLatin(english) {
   /* const */ var SYLLABLE = 'ay';
 
   var pigLatin = '';
@@ -39,6 +43,10 @@ function EnglishToPigLatin(english) {
 
 ------
 
+# Why Does This Smell?
+
+------
+
 # Cyclomatic Complexity
 
 > "... is a software metric (measurement), used to indicate the complexity of a program. It is a quantitative measure of the number of linearly independent paths through a program's source code. It was developed by Thomas J. McCabe, Sr. in 1976." --[wikipedia](http://en.wikipedia.org/wiki/Cyclomatic_complexity)
@@ -50,7 +58,6 @@ function EnglishToPigLatin(english) {
 ## Cyclomatic Complexity: 7
 
 http://jscomplexity.org/
-https://github.com/philbooth/escomplex
 
 ------
 
@@ -82,39 +89,39 @@ JSHint and ESLint support the `maxcomplexity` option!
 describe('Pig Latin', function() {
   describe('Invalid', function() {
     it('should return blank if passed null', function() {
-      expect(EnglishToPigLatin(null)).toBe('');
+      expect(englishToPigLatin(null)).toBe('');
     });
 
     it('should return blank if passed blank', function() {
-      expect(EnglishToPigLatin('')).toBe('');
+      expect(englishToPigLatin('')).toBe('');
     });
 
     it('should return blank if passed number', function() {
-      expect(EnglishToPigLatin('1234567890')).toBe('');
+      expect(englishToPigLatin('1234567890')).toBe('');
     });
 
     it('should return blank if passed symbol', function() {
-      expect(EnglishToPigLatin('~!@#$%^&*()_+')).toBe('');
+      expect(englishToPigLatin('~!@#$%^&*()_+')).toBe('');
     });
   });
 
   describe('Consonants', function() {
     it('should return eastbay from beast', function() {
-      expect(EnglishToPigLatin('beast')).toBe('eastbay');
+      expect(englishToPigLatin('beast')).toBe('eastbay');
     });
 
     it('should return estionquay from question', function() {
-      expect(EnglishToPigLatin('question')).toBe('estionquay');
+      expect(englishToPigLatin('question')).toBe('estionquay');
     });
 
     it('should return eethray from three', function() {
-      expect(EnglishToPigLatin('three')).toBe('eethray');
+      expect(englishToPigLatin('three')).toBe('eethray');
     });
   });
 
   describe('Vowels', function() {
     it('should return appleay from apple', function() {
-      expect(EnglishToPigLatin('apple')).toBe('appleay');
+      expect(englishToPigLatin('apple')).toBe('appleay');
     });
   });
 });
@@ -162,7 +169,7 @@ function getPreVowelConsonants(word) {
   return preVowelConsonants;
 }
 
-function EnglishToPigLatin(english) {
+function englishToPigLatin(english) {
    /* const */ var SYLLABLE = 'ay';
 
    var pigLatin = '';
@@ -198,7 +205,7 @@ JavaScript visualization, static analysis, and complexity tool
 plato -r -d report -t "English to Pig Latin"
 ```
 
-<a href="./js/report/index.html"><img src="./img/plato.png" style="height: 450px;" /></a>
+<a href="./js/report/index.html" target="_blank"><img src="./img/plato.png" style="height: 450px;" /></a>
 
 ------
 

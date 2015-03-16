@@ -1,4 +1,4 @@
-# String Concatenation
+# Crisp Concatenation Smell
 
 Notes:
 
