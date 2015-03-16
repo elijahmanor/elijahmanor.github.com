@@ -7,7 +7,7 @@
 </pre>
 
 <pre style="font-size: 1.25em; box-shadow: none;">
-<a href="http://bit.ly/good-js-libs" class="fragment" style="margin-left: 2em;">http://bit.ly/good-js-libs</a>
+<a href="http://bit.ly/js-smells" class="fragment" style="margin-left: 2em;">http://bit.ly/js-smells</a>
 </pre>
 
 ### @nomadjs / #nomadjs
@@ -22,6 +22,11 @@
 * http://codepen.io/elijahmanor/pen/33c3b09ed780b463b5ede21c31afb8a7?editors=001
 
 Notes:
+
+More Resources
+http://shichuan.github.io/javascript-patterns/
+https://github.com/jshint/fixmyjs
+http://jslinterrors.com/
 
 Ideas
 
@@ -47,6 +52,8 @@ node.toggleClass('someClass', flag);
 ```
 test && doThis();
 ```
+
+http://pouchdb.com/2015/03/05/taming-the-async-beast-with-es7.html
 
 # Tips, Tricks, & Techniques
 

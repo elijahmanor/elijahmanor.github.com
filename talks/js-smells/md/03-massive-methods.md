@@ -70,14 +70,14 @@ function EnglishToPigLatin(english) {
 
 # Tooling
 
-<!-- .element class="fragment" -->
 JSHint and ESLint support the `maxparams`, `maxdepth`, `maxstatements`, & `maxlen` options!
 
-<!-- .element class="fragment" -->
-`// jshint maxparams:3, maxdepth:2, maxstatements:5, maxlen:80 */`
+<pre><code data-trim data-lang="javascript">
+// jshint maxparams:3, maxdepth:2, maxstatements:5, maxlen:80 */
+</code></pre><!-- .element class="fragment" -->
 
 <!-- .element class="fragment" -->
-_Note: `maxlen` has been deprecated & you should use `jscs` instead_
+_Note: `maxlen` is deprecated & you should use `jscs` instead_
 
 ------
 

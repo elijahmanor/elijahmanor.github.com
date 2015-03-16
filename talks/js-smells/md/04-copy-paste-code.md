@@ -116,7 +116,7 @@ var circles = document.querySelectorAll(".Circle");
 
 # Refactor More
 
-Let's pull out the random color portion...
+Let's pull out the weird `[].forEach.call` portion...
 
 ```
 function $$(selector) {
