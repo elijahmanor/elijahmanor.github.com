@@ -1,3 +1,0 @@
-# Two-Way Data Binding
-
-------
