@@ -1,6 +1,6 @@
 # String Concatenation
 
-------
+Notes:
 
 ## Think of a better name...
 

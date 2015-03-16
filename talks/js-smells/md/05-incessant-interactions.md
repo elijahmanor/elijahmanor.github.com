@@ -60,7 +60,7 @@ search.addEventListener('input', _.debounce(function(e) {
 }, 500));
 ```
 
----
+------
 
 # Resources
 

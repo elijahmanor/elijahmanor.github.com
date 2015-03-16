@@ -1,6 +1,6 @@
 # Too Much jQuery
 
-------
+Notes:
 
 ```
 $('input').keyup(function() {
