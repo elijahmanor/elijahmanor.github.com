@@ -2,7 +2,32 @@
 
 ------
 
+# Pig Latin
+
+1. <!-- .element start="1" value="1" --> If starts with consonant (or consonant cluster), then move the end and append "ay" <!-- .element class="fragment" -->
+
+```
+"pig"    -> "igpay"
+"banana" -> "ananabay"
+"trash"  -> "ashtray"
+"happy"  -> "appyhay"
+"glove"  -> "oveglay"
+```
+<!-- .element class="fragment" -->
+
+2. <!-- .element start="2" value="2" --> If starts with vowel or silent letter, then keep word along and append "way" <!-- .element class="fragment" -->
+
+```
+"egg"    -> "eggway"
+"inbox"  -> "inboxway"
+"eight"  -> "eightway"
+```
+<!-- .element class="fragment" -->
+
+------
+
 # Smelly Code
+<!-- .slide: data-background="#222" -->
 
 ```
 /* const */ var CONSONANTS = 'bcdfghjklmnpqrstvwxyz';
@@ -44,16 +69,19 @@ function englishToPigLatin(english) {
 ------
 
 # Why Does This Smell?
+<!-- .slide: data-background="#222" -->
 
 ------
 
 # Cyclomatic Complexity
+<!-- .slide: data-background="#222" -->
 
 > "... is a software metric (measurement), used to indicate the complexity of a program. It is a quantitative measure of the number of linearly independent paths through a program's source code. It was developed by Thomas J. McCabe, Sr. in 1976." --[wikipedia](http://en.wikipedia.org/wiki/Cyclomatic_complexity)
 
 ------
 
 # EnglishToPigLatin
+<!-- .slide: data-background="#222" -->
 
 ## Cyclomatic Complexity: 7
 
@@ -62,6 +90,7 @@ http://jscomplexity.org/
 ------
 
 # Tooling
+<!-- .slide: data-background="#222" -->
 
 <!-- .element class="fragment" -->
 JSHint and ESLint support the `maxcomplexity` option!
@@ -72,18 +101,21 @@ JSHint and ESLint support the `maxcomplexity` option!
 ------
 
 # JSHint / ESLint
+<!-- .slide: data-background="#222" -->
 
 ![](./img/jshint-complexity.png)
 
 ------
 
 # So What!?!
+<!-- .slide: data-background="#222" -->
 
 ## Refactor <!-- .element class="fragment" -->
 
 ------
 
 # Unit Test First
+<!-- .slide: data-background="#222" -->
 
 <pre class="fragment"><code data-trim data-lang="javascript">
 describe('Pig Latin', function() {
@@ -130,6 +162,7 @@ describe('Pig Latin', function() {
 ------
 
 # Refactor
+<!-- .slide: data-background="#222" -->
 
 <pre class="fragment"><code data-trim data-lang="javascript">
 /* const */ var CONSONANTS = 'bcdfghjklmnpqrstvwxyz';
@@ -192,12 +225,14 @@ function englishToPigLatin(english) {
 ------
 
 # A Little Better
+<!-- .slide: data-background="#222" -->
 
 ## Cyclomatic Complexity: 4
 
 ------
 
 # [`plato`](https://github.com/es-analysis/plato)
+<!-- .slide: data-background="#222" -->
 
 JavaScript visualization, static analysis, and complexity tool
 
@@ -210,6 +245,7 @@ plato -r -d report -t "English to Pig Latin"
 ------
 
 # Resources
+<!-- .slide: data-background="#222" -->
 
 * `jshint` - http://jshint.com/
 * `jscomplexity` - http://jscomplexity.org/

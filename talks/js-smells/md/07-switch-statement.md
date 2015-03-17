@@ -5,7 +5,7 @@
 ## Smelly Code
 
 ```
-function getArea1(shape, options) {
+function getArea(shape, options) {
   var area = 0;
 
   switch (shape) {
@@ -18,16 +18,39 @@ function getArea1(shape, options) {
     case 'Rectangle':
       area = options.width * options.height;
       break;
+    default:
+      throw new Error('Invalid shape: ' + shape);
   }
 
   return area;
 }
 
-console.log('getArea1(Triangle): ' + getArea1('Triangle', { width: 100, height: 100 }));
-console.log('getArea1(Square): ' +   getArea1('Square', { width: 100 }));
-console.log('getArea1(Rectange): ' + getArea1('Rectangle', { width: 100, height: 100 }));
+console.log(getArea('Triangle',  { width: 100, height: 100 }));
+console.log(getArea('Square',    { width: 100 }));
+console.log(getArea('Rectangle', { width: 100, height: 100 }));
+console.log(getArea('Bogus'));
+```
 
-function getArea2(shape, options) {
+------
+
+## Why Does This Smell?
+
+## Violates the "Open/Closed Principle" <!-- .element class="fragment" -->
+
+------
+
+## Open/Closed Principle (OCP)
+
+> "...software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification; that is, such an entity can allow its behaviour to be extended without modifying its source code."  --[wikipedia](http://en.wikipedia.org/wiki/Open/closed_principle)
+
+<aside>One of [Uncle Bob's](http://en.wikipedia.org/wiki/Robert_Cecil_Martin) [SOLID Principles](http://en.wikipedia.org/wiki/SOLID_(object-oriented_design)</aside>
+
+------
+
+## Adding a New Shape
+
+```
+function getArea(shape, options) {
   var area = 0;
 
   switch (shape) {
@@ -43,16 +66,31 @@ function getArea2(shape, options) {
     case 'Circle':
       area = Math.PI * Math.pow(options.radius, 2);
       break;
+    default:
+      throw new Error('Invalid shape: ' + shape);
   }
 
   return area;
 }
 
-console.log('getArea2(Triangle): ' + getArea2('Triangle', { width: 100, height: 100 }));
-console.log('getArea2(Square): ' +   getArea2('Square', { width: 100 }));
-console.log('getArea2(Rectange): ' + getArea2('Rectangle', { width: 100, height: 100 }));
-console.log('getArea2(Circle): ' +   getArea2('Circle', { radius: 100 }));
+console.log(getArea('Triangle',  { width: 100, height: 100 }));
+console.log(getArea('Square',    { width: 100 }));
+console.log(getArea('Rectangle', { width: 100, height: 100 }));
+console.log(getArea('Circle',    { radius: 100 }));
+console.log(getArea('Bogus'));
+```
 
+------
+
+## So What!?!
+
+## Strategy Design Pattern <!-- .element class="fragment" -->
+
+------
+
+## Strategy Design Pattern
+
+```
 (function(shapes) {
   var Triangle = shapes.Triangle = function(options) {
     this.width = options.width;
@@ -98,7 +136,7 @@ console.log('getArea2(Circle): ' +   getArea2('Circle', { radius: 100 }));
 	};
 }(window.shapes = window.shapes || {}));
 
-function getArea3(shape, options) {
+function getArea(shape, options) {
   var area = 0;
   var Shape = window.shapes[shape];
 
@@ -111,21 +149,16 @@ function getArea3(shape, options) {
 	return area;
 }
 
-console.log('getArea3(Triangle): ' + getArea3('Triangle', { width: 100, height: 100 }));
-console.log('getArea3(Square): ' +   getArea3('Square', { width: 100 }));
-console.log('getArea3(Rectange): ' + getArea3('Rectangle', { width: 100, height: 100 }));
-console.log('getArea3(Circle): ' +   getArea3('Circle', { radius: 100 }));
-console.log('getArea3(Bogus): ' +   getArea3('Bogus'));
-
-
+console.log(getArea('Triangle',  { width: 100, height: 100 }));
+console.log(getArea('Square',    { width: 100 }));
+console.log(getArea('Rectangle', { width: 100, height: 100 }));
+console.log(getArea('Circle',    { radius: 100 }));
+console.log(getArea('Bogus'));
 ```
-
-------
-
-## Why Does This Smell?
 
 ------
 
 # Resource
 
-* CodePen - http://codepen.io/elijahmanor/pen/OPazmm?editors=001
+* CodePen - http://codepen.io/elijahmanor/pen/OPazmm
+* Addy Osmani's Learning JavaScript Design Patterns eBook - http://addyosmani.com/resources/essentialjsdesignpatterns/book/

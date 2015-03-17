@@ -21,12 +21,16 @@ search.addEventListener('input', function(e) {
 
 ------
 
-# TODO: Show why it's bad here...
+## Way Too Chatty
 
+<iframe height='286' scrolling='no' src='//codepen.io/elijahmanor/embed/LEXBdX/?height=286' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/LEXBdX/'>LEXBdX</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
 
 ------
 
-# TODO: So, what to do?
+## So What!?!
+
+## Throttle <!-- .element class="fragment" -->
 
 ------
 
@@ -42,11 +46,14 @@ search.addEventListener('input', _.throttle(function(e) {
 }, 500));
 ```
 
+<iframe height='285' scrolling='no' src='//codepen.io/elijahmanor/embed/azQjGj/?height=285' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/azQjGj/'>azQjGj</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+
 ------
 
-## Not Optimal
+## So What!?!
 
-### What else?
+## Debounce <!-- .element class="fragment" -->
 
 ------
 
@@ -62,8 +69,11 @@ search.addEventListener('input', _.debounce(function(e) {
 }, 500));
 ```
 
+<iframe height='284' scrolling='no' src='//codepen.io/elijahmanor/embed/bNQjje/?height=284' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/bNQjje/'>bNQjje</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+
 ------
 
 ## Resources
 
-* CodePen - http://codepen.io/elijahmanor/pen/ByGmaX?editors=101
+* CodePen - http://codepen.io/elijahmanor/pen/ByGmaX

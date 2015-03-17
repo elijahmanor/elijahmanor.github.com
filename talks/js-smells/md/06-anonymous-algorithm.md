@@ -18,13 +18,15 @@ search.addEventListener('input', _.debounce(function(e) {
 
 ## Why Does This Smell?
 
+## Anonymous Functions <!-- .element class="fragment" -->
+
 ------
 
-## Reasons to Name Your Functions
+## Reasons to Name Functions
 
-1. Stack Trace
-2. Dereferencing
-3. Code Reuse
+1. <!-- .element class="fragment" --> Stack Trace
+2. <!-- .element class="fragment" --> Dereferencing
+3. <!-- .element class="fragment" --> Code Reuse
 
 ------
 
@@ -105,3 +107,39 @@ search.addEventListener('input', _.debounce(function matches(e) {
 ```
 
 ![](./img/06-1-e.png)
+
+------
+
+## 2. Dereferencing
+
+```
+// One-time Event Handler
+document.querySelector('button')
+  .addEventListener('click', function handler() {
+  	alert('Ka-boom!');
+    this.removeEventListener('click', handler);
+  });
+```
+
+<iframe height='168' scrolling='no' src='//codepen.io/elijahmanor/embed/PwxBxP/?height=168' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/PwxBxP/'>PwxBxP</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+
+------
+
+## 3. Code Reuse
+
+```
+var kaboom = function() { alert('Ka-boom'); };
+
+document.querySelector('button').addEventListener('click', kaboom);
+
+document.querySelector('#egg').addEventListener('mouseenter', kaboom);
+```
+
+------
+
+## Resource
+
+* `lodash` - https://lodash.com/
+* `throttle` - https://lodash.com/docs#throttle
+* `debounce` - https://lodash.com/docs#debounce
