@@ -4,6 +4,8 @@
 
 ### @nomadjs / #nomadjs
 
+<div style="font-size: .4em; opacity: 0.5; font-style: italic;">Picture: [Stray Cat](https://flic.kr/p/dQZvyD) / [Jim Bauer](https://www.flickr.com/photos/lens-cap/) / Creative Commons</div>
+
 Notes:
 
 # Eliminate JavaScript Code Smells
