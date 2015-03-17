@@ -2,7 +2,7 @@
 
 ------
 
-# Smelly Code
+## Smelly Code
 
 ```
 var search = document.querySelector('.Autocomplete');
@@ -17,7 +17,7 @@ search.addEventListener('input', function(e) {
 
 ------
 
-# Why Does This Smell?
+## Why Does This Smell?
 
 ------
 
@@ -30,7 +30,7 @@ search.addEventListener('input', function(e) {
 
 ------
 
-# Throttle
+## Throttle
 
 ```
 var search = document.querySelector('.Autocomplete');
@@ -44,13 +44,13 @@ search.addEventListener('input', _.throttle(function(e) {
 
 ------
 
-# Not Optimal
+## Not Optimal
 
-## What else?
+### What else?
 
 ------
 
-# Debounce
+## Debounce
 
 ```
 var search = document.querySelector('.Autocomplete');
@@ -64,6 +64,6 @@ search.addEventListener('input', _.debounce(function(e) {
 
 ------
 
-# Resources
+## Resources
 
-* JSBin - http://jsbin.com/cocowodito/1/edit?html,js,console,output
+* CodePen - http://codepen.io/elijahmanor/pen/ByGmaX?editors=101
