@@ -7,7 +7,9 @@
 ```
 $(document).ready(function() {
   // wire up event handlers
-  // declare all functions/methods
+
+  // declare all the things
+
   // etc...
 });
 ```
@@ -16,9 +18,11 @@ $(document).ready(function() {
 
 ## Why Does This Smell?
 
+## Makes it Hard to Unit Test
+
 ------
 
-## Makes it Hard to Unit Test
+## Singleton Module
 
 ```
 (function(myApp) {
@@ -37,8 +41,21 @@ $(document).ready(function() {
 
 ------
 
-Notes:
+## Constructor Function
 
-(automatically initializing code)
+```
+var Application = (function() {
+  function Application() {
+    // kick off your code
+  }
 
-* Solution: Dependency Injection
+  Application.prototype.handleClick = function() {};
+
+  return Application;
+}());
+
+// Only include at end of main application...
+$(document).ready(function() {
+  new Application();
+});
+```

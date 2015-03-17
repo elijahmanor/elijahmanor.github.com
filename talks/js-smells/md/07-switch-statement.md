@@ -72,13 +72,15 @@ function getArea(shape, options) {
 
   return area;
 }
+```
 
+<!--
 console.log(getArea('Triangle',  { width: 100, height: 100 }));
 console.log(getArea('Square',    { width: 100 }));
 console.log(getArea('Rectangle', { width: 100, height: 100 }));
 console.log(getArea('Circle',    { radius: 100 }));
 console.log(getArea('Bogus'));
-```
+-->
 
 ------
 
@@ -96,12 +98,58 @@ console.log(getArea('Bogus'));
     this.width = options.width;
     this.height = options.height;
   };
-
   Triangle.prototype.getArea = function() {
     return 0.5 * this.width * this.height;
   };  
 }(window.shapes = window.shapes || {}));
 
+/* ... more code ... */
+
+function getArea(shape, options) {
+  var Shape = window.shapes[shape], area = 0;
+
+  if (Shape && typeof Shape === 'function') {
+    area = new Shape(options).getArea();
+  } else {
+    throw new Error('Invalid shape: ' + shape);
+  }
+
+  return area;
+}
+```
+
+<!--
+```
+console.log(getArea('Triangle',  { width: 100, height: 100 }));
+console.log(getArea('Square',    { width: 100 }));
+console.log(getArea('Rectangle', { width: 100, height: 100 }));
+console.log(getArea('Circle',    { radius: 100 }));
+console.log(getArea('Bogus'));
+```
+-->
+
+
+------
+
+## Adding a New Shape
+
+```
+(function(shapes) {
+  var Circle = shapes.Circle = function(options) {
+    this.radius = options.radius;
+  };
+
+  Circle.prototype.getArea = function() {
+    return Math.PI * Math.pow(this.radius, 2);
+  };
+  
+  Circle.prototype.getCircumference = function() {
+    return 2 * Math.PI * this.radius;
+  };
+}(window.shapes = window.shapes || {}));
+```
+
+<!--
 (function(shapes) {
 	var Square = shapes.Square = function(options) {
     this.width = options.width;
@@ -122,39 +170,7 @@ console.log(getArea('Bogus'));
   	return this.width * this.height;
 	};
 }(window.shapes = window.shapes || {}));
-
-(function(shapes) {
-	var Circle = shapes.Circle = function(options) {
-    this.radius = options.radius;
-  };
-
-	Circle.prototype.getArea = function() {
-  	return Math.PI * Math.pow(this.radius, 2);
-	};
-  Circle.prototype.getCircumference = function() {
-  	return 2 * Math.PI * this.radius;
-	};
-}(window.shapes = window.shapes || {}));
-
-function getArea(shape, options) {
-  var area = 0;
-  var Shape = window.shapes[shape];
-
-  if (Shape && typeof Shape === 'function') {
-    area = new Shape(options).getArea();
-	} else {
-  	throw new Error('Invalid shape: ' + shape);
-  }
-
-	return area;
-}
-
-console.log(getArea('Triangle',  { width: 100, height: 100 }));
-console.log(getArea('Square',    { width: 100 }));
-console.log(getArea('Rectangle', { width: 100, height: 100 }));
-console.log(getArea('Circle',    { radius: 100 }));
-console.log(getArea('Bogus'));
-```
+-->
 
 ------
 

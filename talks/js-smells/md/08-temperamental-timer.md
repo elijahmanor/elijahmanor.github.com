@@ -19,11 +19,32 @@ function someLongProcess(duration) {
 }
 
 function getRandomInt(min, max) {
-	return Math.floor(Math.random() * (max - min + 1)) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 ```
 
+------
 
+## Why Does This Smell?
+
+## Out of Sync Timer <!-- .element class="fragment" -->
+
+------
+
+## Demo: `setInternval`
+
+<iframe height='410' scrolling='no' src='//codepen.io/elijahmanor/embed/bNQmzP/?height=410' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/bNQmzP/'>bNQmzP</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+
+------
+
+## So What!?!
+
+## `setTimeout` <!-- .element class="fragment" -->
+
+------
+
+## `setTimeout`
 
 ```
 setTimeout(function timer() {
@@ -34,24 +55,21 @@ setTimeout(function timer() {
 }, 3000);
 
 function someLongProcess(duration, callback) {
-  setTimeout(
-    function() {
-      console.log('long process: ' + duration);
-      callback();
-    },
-    duration
-  );  
+  setTimeout(function() {
+    console.log('long process: ' + duration);
+    callback();
+  }, duration);  
 }
 
-function getRandomInt(min, max) {
-	return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
+/* getRandomInt(min, max) {} */
 ```
 
 ------
 
-## Why Does This Smell?
+## Demo: `setTimeout`
+
+<iframe height='410' scrolling='no' src='//codepen.io/elijahmanor/embed/raQQay/?height=410' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/raQQay/'>raQQay</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
 
 ------
 
