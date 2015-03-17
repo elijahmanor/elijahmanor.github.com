@@ -1,3 +1,0 @@
-# Ghastly Global
-
-# Smell

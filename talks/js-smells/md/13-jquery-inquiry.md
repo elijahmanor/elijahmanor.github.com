@@ -1,5 +1,18 @@
 # jQuery Inquiry
 
+------
+
+## Smelly Code
+
+```
+```
+
+------
+
+## Why Does This Smell?
+
+------
+
 # Smell
 
 Notes:

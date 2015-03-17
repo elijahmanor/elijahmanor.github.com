@@ -1,5 +1,18 @@
 # Crisp Concatenation Smell
 
+------
+
+## Smelly Code
+
+```
+```
+
+------
+
+## Why Does This Smell?
+
+------
+
 Notes:
 
 ## Think of a better name...

@@ -1,4 +1,4 @@
-# Cope Paste Code Smell
+# Copy Paste Code Smell
 
 ------
 

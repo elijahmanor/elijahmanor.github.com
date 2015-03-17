@@ -36,6 +36,7 @@ https://github.com/petkaantonov/bluebird/wiki/Promise-anti-patterns#the-deferred
 * Problem: $paghetti Code, Solution:
 * Passing data all way down (), Solution:
 * Problem: add/remove code
+# Ghastly Global Smell
 
 ```
 if (flag) {  
