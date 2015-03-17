@@ -5,6 +5,24 @@
 ## Smelly Code
 
 ```
+$('a').addClass('reg-link')
+    .find('span')
+        .addClass('inner')
+    .end().end()
+    .find('div')
+        .mouseenter(mouseEnterHandler)
+        .mouseleave(mouseLeaveHandler)
+    .end()
+    .explode();
+
+$(elem).props('checked')
+
+$(elem).val()
+.value
+.href intead of attr('href')
+
+
+    $("#foo").parent().parent()...
 ```
 
 ------
