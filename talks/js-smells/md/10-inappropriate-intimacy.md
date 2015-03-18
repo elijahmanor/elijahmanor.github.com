@@ -31,7 +31,7 @@ console.log(shoppingCart.items)
 
 ## Why Does This Smell?
 
-## Tightly Coupled Dependencies
+## Tightly Coupled Dependencies <!-- .element class="fragment" -->
 
 ------
 

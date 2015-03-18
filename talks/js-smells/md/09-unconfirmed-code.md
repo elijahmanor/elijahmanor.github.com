@@ -18,7 +18,7 @@ $(document).ready(function() {
 
 ## Why Does This Smell?
 
-## Makes it Hard to Unit Test
+## Makes it Hard to Unit Test <!-- .element class="fragment" -->
 
 ------
 
