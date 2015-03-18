@@ -77,3 +77,6 @@ search.addEventListener('input', _.debounce(function(e) {
 ## Resources
 
 * CodePen - http://codepen.io/elijahmanor/pen/ByGmaX
+* `lodash` - https://lodash.com/
+* `throttle` - https://lodash.com/docs#throttle
+* `debounce` - https://lodash.com/docs#debounce

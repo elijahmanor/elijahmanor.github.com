@@ -140,6 +140,4 @@ document.querySelector('#egg').addEventListener('mouseenter', kaboom);
 
 ## Resource
 
-* `lodash` - https://lodash.com/
-* `throttle` - https://lodash.com/docs#throttle
-* `debounce` - https://lodash.com/docs#debounce
+* Chrome DevTools - https://developer.chrome.com/devtools
