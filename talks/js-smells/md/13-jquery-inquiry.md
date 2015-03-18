@@ -5,46 +5,49 @@
 ## Smelly Code
 
 ```
-$('a').addClass('reg-link')
-    .find('span')
-        .addClass('inner')
-    .end().end()
-    .find('div')
-        .mouseenter(mouseEnterHandler)
-        .mouseleave(mouseLeaveHandler)
-    .end()
-    .explode();
-
-$(elem).props('checked')
-
-$(elem).val()
-.value
-.href intead of attr('href')
-
-
-    $("#foo").parent().parent()...
+$('.Component')
+  .find('button')
+    .addClass('Component-button--action')
+    .click(function() { alert('HEY!'); })
+  .end()
+  .mouseenter(function() { $(this).addClass('Component--over'); })
+  .mouseleave(function() { $(this).removeClass('Component--over'); })
+  .addClass('initialized');
 ```
 
 ------
 
 ## Why Does This Smell?
 
+## Extreme Chaining <!-- .element class="fragment" -->
+
 ------
 
-# Smell
+## So What!?!
 
-Notes:
+## Let's Refactor <!-- .element class="fragement" -->
 
-Become tired of...
+------
+
+## Refactor
 
 ```
-$('input').keyup(function() {
-    if($(this).val() === 'blah') { ... }
+// Event Delegation before DOM Ready
+$(document).on('mouseenter mouseleave', '.Component', function(e) {
+  $(this).toggleClass('Component--over', e.type === 'mouseenter');  
+});
+
+$(document).on('click', '.Component', function(e) {
+  alert('HEY!');
+});
+
+$(document).ready(function() {
+  $('.Component button').addClass('Component-button-action');
 });
 ```
 
-```
-$('input').keyup(function() {
-  if(this.value === 'blah') { ... }
-});
-```
+------
+
+## Resources
+
+* CodePen - http://codepen.io/elijahmanor/pen/raQQvp

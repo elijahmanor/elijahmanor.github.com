@@ -4,10 +4,13 @@
 
 ## Smelly Code
 
-```
-```
+> "...you can set the directionality of it to be 2-Way Data Binding. That actually seems to be a good idea until you have a large scale application and then it turns out you have no idea whats going on... and turns out to be an anti-pattern for large apps." --Misko Hevery https://www.youtube.com/watch?v=uD6Okha_Yj0#t=1785
 
-> "...you can set the directionality of it to be 2 way data binding. That actually seems to be a good idea until you have a large scale application and then it turns out you have no idea whats going on... and turns out to be an anti-pattern for large apps." --Miško Hevery https://www.youtube.com/watch?v=uD6Okha_Yj0#t=1785
+------
+
+## Why Does This Smell?
+
+## Hard to Track Execution & Data Flow <!-- .element class="fragment" -->
 
 ------
 
@@ -17,12 +20,8 @@
 
 ------
 
-## Why Does This Smell?
+## Resources
 
-------
-
-so two-way data binding
-that's kind of a love hate relationship
-so there is this thing in angular 1 if you have two components and they are bound to eachother you can set the directionality to be 2 way data binding
-that seems good until you  have a large scale application and then
-it turns out to be an anti-pattern for large apps
+* React - http://facebook.github.io/react/
+* React Flux - https://facebook.github.io/flux/
+* An Angular2 Todo App: First look at App Development in Angular2 - https://www.youtube.com/watch?v=uD6Okha_Yj0#t=1785

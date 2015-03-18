@@ -14,7 +14,6 @@ var build = function(id, href) {
 
 ## Why Does This Smell?
 
-
 ------
 
 <!-- .slide: data-background="./img/con-cat.jpg" -->
@@ -80,6 +79,8 @@ var build = (id, href) => `<div id="tab">
 * React
 * Ember
 * etc...
+
+------
 
 ## Resources
 
