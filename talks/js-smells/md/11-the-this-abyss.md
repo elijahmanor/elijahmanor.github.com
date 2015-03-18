@@ -32,7 +32,7 @@ console.log(person.teeth);
 
 ## Why Does This Smell?
 
-## `that` or `self` or `selfie` <!-- .element class="fragment" -->
+## <!-- .element class="fragment" --> `that` or `self` or `selfie` 
 
 ------
 
