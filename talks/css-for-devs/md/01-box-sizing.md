@@ -18,8 +18,6 @@
 }
 
 .stick-100 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
   width: 200px;
   height: 5px;
   background-color: blue;
@@ -41,18 +39,15 @@
   200 x 200
 &lt;/div&gt;
 &lt;div class="stick--200"&gt;&lt;/div&gt;</code></pre>
-    <pre class="language-css" data-line="6-7"><code>.crazybox {
+    <pre class="language-css" data-line="5-6"><code>.crazybox {
   width: 200px;
   height: 200px;
   background-color: red;
-
   padding: 1rem;
   border: 1rem solid blue;
 }
 
 .stick-100 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
   width: 200px;
   height: 5px;
   background-color: blue;

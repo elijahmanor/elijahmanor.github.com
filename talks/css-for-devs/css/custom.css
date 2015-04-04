@@ -1,4 +1,4 @@
-pre[class*='language'] { font-size: 1rem; }
+pre[class*='language'] { font-size: 1.25rem; }
 pre[data-line] { padding: 1em; }
 .line-highlight:before, .line-highlight[data-end]:after { content: ''; }
 .line-highlight { background: -webkit-linear-gradient(left, rgba(153, 122, 102, 0.25) 70%, rgba(153, 122, 103, 0.15)); }
