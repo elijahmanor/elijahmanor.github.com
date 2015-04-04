@@ -20,32 +20,11 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		<link rel="stylesheet" href="plugin/prism/prism.css" />
+		<link rel="stylesheet" href="css/custom.css" />
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
-		<style>
-		.PersonaList { position: fixed; left: 1rem; bottom: 1rem; }
-		.PersonaList .Persona { width: 6rem; float: left; text-align: center; margin: 0.5rem; display: none; }
-		.Persona .Persona-image { border-radius: 50%; border: 3px solid white; }
-		.Persona .Persona-name { font-size: 0.75rem; }
-		.backEndBrian .Persona--backEndBrian { display: block; }
-		.juniorJacob .Persona--juniorJacob { display: block; }
-		.midLevelMelissa .Persona--midLevelMelissa { display: block; }
-		.Split {
-			display: flex;
-			flex-direction: row;
-			flex-wrap: nowrap;
-			justify-content: center;
-			align-content: center;
-			align-items: flex-start;
-		}
-		.Split .Split-column {
-			order: 0;
-			flex: 0 1 50%;
-			align-self: auto;
-			margin: 1rem;
-		}
-		</style>
 	</head>
 	<body>
 		<div class="reveal">
@@ -118,7 +97,8 @@
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					//{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/prism/prism.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { Prism.highlightAll(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true }
 				]

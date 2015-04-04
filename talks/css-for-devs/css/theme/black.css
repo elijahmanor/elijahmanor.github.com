@@ -122,18 +122,17 @@ body {
 .reveal q {
   font-style: italic; }
 
+/*
 .reveal pre {
   display: block;
   position: relative;
-  width: 99%; /* 90%; */
-  /* margin: 20px auto; */
+  width: 99%;
   text-align: left;
   font-size: 0.55em;
   font-family: monospace;
   line-height: 1.2em;
   word-wrap: break-word;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); }
-
 .reveal code {
   font-family: monospace; }
 
@@ -141,10 +140,11 @@ body {
   display: block;
   padding: 5px;
   overflow: auto;
-  max-height: 550px; /* 400px; */
+  max-height: 550px;
   word-wrap: normal;
   background: #3F3F3F;
   color: #DCDCDC; }
+*/
 
 .reveal table {
   margin: auto;

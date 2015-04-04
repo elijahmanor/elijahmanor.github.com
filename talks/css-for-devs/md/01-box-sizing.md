@@ -7,12 +7,11 @@
 
 <div class="Split">
   <div class="Split-column">
-    <pre><code>&lt;div class="crazybox"&gt;
+    <pre class="language-markup"><code>&lt;div class="crazybox"&gt;
   200 x 200
 &lt;/div&gt;
 &lt;div class="stick--200"&gt;&lt;/div&gt;</code></pre>
-    <br />
-    <pre><code>.crazybox {
+    <pre class="language-css"><code>.crazybox {
   width: 200px;
   height: 200px;
   background-color: red;
@@ -27,23 +26,6 @@
 }</code></pre>
   </div>
   <div class="Split-column">
-    <style>
-    .crazybox--2 {
-      width: 200px;
-      height: 200px;
-      background-color: #F00;
-      box-sizing: content-box;
-      font-size: 2rem !important;
-      line-height: 200px !important;
-    }
-    .stick--200--2 {
-      margin-top: 1rem !important;
-      margin-bottom: 1rem !important;
-      width: 200px;
-      height: 5px;
-      background-color: blue;
-    }
-    </style>
     <div class="crazybox--2">200 x 200</div>
     <div class="stick--200--2"></div>
   </div>
@@ -55,12 +37,11 @@
 
 <div class="Split">
   <div class="Split-column">
-    <pre><code>&lt;div class="crazybox"&gt;
+    <pre class="language-markup" ><code>&lt;div class="crazybox"&gt;
   200 x 200
 &lt;/div&gt;
 &lt;div class="stick--200"&gt;&lt;/div&gt;</code></pre>
-    <br />
-    <pre><code>.crazybox {
+    <pre class="language-css" data-line="6-7"><code>.crazybox {
   width: 200px;
   height: 200px;
   background-color: red;
@@ -78,50 +59,15 @@
 }</code></pre>
   </div>
   <div class="Split-column">
-    <style>
-    .crazybox--3 {
-      width: 200px;
-      height: 200px;
-      background-color: #F00;
-      box-sizing: content-box;
-      font-size: 2rem !important;
-      line-height: 200px !important;
-      padding: 1rem !important;
-      border: 1rem solid blue !important;
-      position: relative !important;
-    }
-    .crazybox--3:after,
-    .crazybox--3::after,
-    .crazybox--3:before,
-    .crazybox--3::before {
-      background-color: grey !important;
-      content: ' ' !important;
-      display: block !important;
-      position: absolute !important;
-      top: 1rem !important;
-      left: 1rem !important;
-      right: 1rem !important;
-      bottom: 1rem !important;
-    }
-    .stick--200--3 {
-      margin-top: 1rem !important;
-      margin-bottom: 1rem !important;
-      width: 200px;
-      height: 5px;
-      background-color: blue;
-    }
-    </style>
     <div class="crazybox--3">200 x 200</div>
     <div class="stick--200--3"></div>
+    <h4 class="fragment">default box model</h4>
+    <p class="fragment">width + padding + border = rendered width of box</p>
   </div>
 </div>
 
 ------
 
-The "box model" in CSS works like this:
-
-width + padding + border = actual visible/rendered width of box
-height + padding + border = actual visible/rendered height of box
 
 ------
 
