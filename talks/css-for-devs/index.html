@@ -23,6 +23,15 @@
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
+		<style>
+		.PersonaList { position: fixed; left: 1rem; bottom: 1rem; }
+		.PersonaList .Persona { width: 6rem; float: left; text-align: center; margin: 0.5rem; display: none; }
+		.Persona .Persona-image { border-radius: 50%; border: 3px solid white; }
+		.Persona .Persona-name { font-size: 0.75rem; }
+		.backEndBrian .Persona--backEndBrian { display: block; }
+		.juniorJacob .Persona--juniorJacob { display: block; }
+		.midLevelMelissa .Persona--midLevelMelissa { display: block; }
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
@@ -34,26 +43,47 @@
 						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
 					</p>
 				</section>
-			  <section data-markdown="./md/00-intro.md"></section>
-			  <section data-markdown="./md/01-box-sizing.md"></section>
-			  <section data-markdown="./md/02-specificity.md"></section>
-			  <section data-markdown="./md/03-position.md"></section>
-			  <section data-markdown="./md/04-cascading.md"></section>
-			  <section data-markdown="./md/05-sizing.md"></section>
-			  <section data-markdown="./md/06-alignment.md"></section>
-			  <section data-markdown="./md/07-z-index.md"></section>
-			  <section data-markdown="./md/08-sass.md"></section>
-			  <section data-markdown="./md/09-mixins.md"></section>
-			  <section data-markdown="./md/10-extend.md"></section>
-			  <section data-markdown="./md/11-sass.md"></section>
-			  <section data-markdown="./md/12-scss-lint.md"></section>
-			  <section data-markdown="./md/13-sass-docs.md"></section>
-			  <section data-markdown="./md/14-svg.md"></section>
+				<section data-markdown="./md/00-intro.md"></section>
+
+				<section data-markdown="./md/01-box-sizing.md"></section><!-- backEndBrian juniorJacob -->
+				<section data-markdown="./md/02-specificity.md"></section><!-- backEndBrian juniorJacob -->
+				<section data-markdown="./md/03-position.md"></section><!-- backEndBrian juniorJacob -->
+				<section data-markdown="./md/04-zindex.md"></section><!-- backEndBrian juniorJacob -->
+				<section data-markdown="./md/05-cascading.md"></section><!-- backEndBrian juniorJacob -->
+
+				<section data-markdown="./md/06-sizing.md"></section><!-- backEndBrian juniorJacob midLevelMelissa -->
+				<section data-markdown="./md/07-alignment.md"></section><!-- backEndBrian juniorJacob midLevelMelissa -->
+				<section data-markdown="./md/08-sass.md"></section><!-- backEndBrian juniorJacob midLevelMelissa -->
+
+				<section data-markdown="./md/09-mixins.md"></section><!-- backEndBrian juniorJacob midLevelMelissa -->
+				<section data-markdown="./md/10-extend.md"></section><!-- backEndBrian juniorJacob midLevelMelissa -->
+				<section data-markdown="./md/11-atomic-design.md"></section><!-- backEndBrian juniorJacob midLevelMelissa -->
+				<section data-markdown="./md/12-bem.md"></section><!-- backEndBrian juniorJacob midLevelMelissa -->
+
+				<section data-markdown="./md/13-scss-lint.md"></section><!-- backEndBrian juniorJacob midLevelMelissa -->
+				<section data-markdown="./md/14-css-comb.md"></section><!-- backEndBrian juniorJacob midLevelMelissa -->
+				<section data-markdown="./md/15-sass-docs.md"></section><!-- backEndBrian juniorJacob midLevelMelissa -->
+				<section data-markdown="./md/16-svg.md"></section><!-- backEndBrian juniorJacob midLevelMelissa -->
+
 				<section data-markdown="./md/99-conclusion.md"></section>
 				<pre style="visibility: hidden;"><code data-trim contenteditable>
 					console.log('code');
 				</code></pre>
 			</div>
+			<aside class="PersonaList">
+				<div class="Persona Persona--backEndBrian">
+					<img class="Persona-image" src="http://api.randomuser.me/portraits/thumb/men/8.jpg" />
+					<div class="Persona-name">Back-End Brian</div>
+				</div>
+				<div class="Persona Persona--juniorJacob">
+					<img class="Persona-image" src="http://api.randomuser.me/portraits/thumb/men/73.jpg" />
+					<div class="Persona-name">Junior Jacob</div>
+				</div>
+				<div class="Persona Persona--midLevelMelissa">
+					<img class="Persona-image" src="http://api.randomuser.me/portraits/thumb/women/10.jpg" />
+					<div class="Persona-name">Mid-Level Melissa</div>
+				</div>
+			</aside>
 		</div>
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>

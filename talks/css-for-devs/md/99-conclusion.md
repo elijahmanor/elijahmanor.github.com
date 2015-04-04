@@ -7,7 +7,7 @@
 <a href="http://bit.ly/css-for-devs" style="margin-left: 2em;">http://bit.ly/css-for-devs</a>
 </pre>
 
-### @nomadjs / #nomadjs
+### @abracketsconf / #anglebrackets
 
 ------
 
@@ -20,4 +20,3 @@ Notes:
 <pre><code data-trim data-lang="javascript" data-srcbyline="js/intro.js?1-4;10;19-20;31-33"></code></pre>
 
 <pre><code data-trim contenteditable>console.log('code');</code></pre>
-
