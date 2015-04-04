@@ -1,4 +1,1 @@
-# SCSS Lint
-
-SCSS Lint
-CSS Comb
+# CSS Comb
