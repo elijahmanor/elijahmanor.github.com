@@ -20,54 +20,23 @@ Notes:
 
 ## `me.json`
 
-```
-{
+<pre class="language-javascript"><code>{
   "priorities" : [ "Christian", "Family", "Work" ],
   "work"       : [ "@DaveRamsey", "@PluralSight" ],
   "tech"       : [ "HTML", "CSS", "JavaScript", "React", "jQuery" ],
   "titles"     : [ "MS MVP", "IE userAgent" ]
-}
-```
+}</code></pre>
 
 ------
 
 # CSS Personas
 
-```
+<pre class="language-javascript"><code>
 window.fetch('http://api.randomuser.me/').then(function(response) {
   return response.json();
 }).then(function(data) {
   copy(JSON.stringify(data, null, 2));
-});
-```
-
-------
-
-# CSS Personas
-
-```
-{
-  "results": [
-    {
-      "user": {
-        "gender": "female",
-        "name": {
-          "title": "ms",
-          "first": "mia",
-          "last": "williams"
-        },
-        "email": "mia.williams59@example.com",
-        "picture": {
-          "large": "http://api.randomuser.me/portraits/women/19.jpg",
-          "medium": "http://api.randomuser.me/portraits/med/women/19.jpg",
-          "thumbnail": "http://api.randomuser.me/portraits/thumb/women/19.jpg"
-        },
-        // ... more ...
-      }
-    }
-  ]
-}
-```
+});</code></pre>
 
 ------
 
