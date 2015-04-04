@@ -4,7 +4,7 @@ pre[data-line] { padding: 1em; }
 .line-highlight { background: -webkit-linear-gradient(left, rgba(153, 122, 102, 0.25) 70%, rgba(153, 122, 103, 0.15)); }
 .line-highlight { transform: translateY(0.8em); }
 
-.PersonaList { position: fixed; left: 1rem; bottom: 1rem; }
+.PersonaList { position: fixed; left: 1rem; bottom: 1rem; z-index: 1; }
 .PersonaList .Persona { width: 6rem; float: left; text-align: center; margin: 0.5rem; display: none; }
 .Persona .Persona-image { border-radius: 50%; border: 3px solid white; }
 .Persona .Persona-name { font-size: 0.75rem; }
