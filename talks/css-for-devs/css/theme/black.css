@@ -125,8 +125,8 @@ body {
 .reveal pre {
   display: block;
   position: relative;
-  width: 90%;
-  margin: 20px auto;
+  width: 99%; /* 90%; */
+  /* margin: 20px auto; */
   text-align: left;
   font-size: 0.55em;
   font-family: monospace;
@@ -141,7 +141,7 @@ body {
   display: block;
   padding: 5px;
   overflow: auto;
-  max-height: 400px;
+  max-height: 550px; /* 400px; */
   word-wrap: normal;
   background: #3F3F3F;
   color: #DCDCDC; }

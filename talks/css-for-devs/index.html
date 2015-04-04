@@ -31,18 +31,25 @@
 		.backEndBrian .Persona--backEndBrian { display: block; }
 		.juniorJacob .Persona--juniorJacob { display: block; }
 		.midLevelMelissa .Persona--midLevelMelissa { display: block; }
+		.Split {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: center;
+			align-content: center;
+			align-items: flex-start;
+		}
+		.Split .Split-column {
+			order: 0;
+			flex: 0 1 50%;
+			align-self: auto;
+			margin: 1rem;
+		}
 		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
-				</section>
 				<section data-markdown="./md/00-intro.md"></section>
 
 				<section data-markdown="./md/01-box-sizing.md"></section><!-- backEndBrian juniorJacob -->
@@ -66,6 +73,7 @@
 				<section data-markdown="./md/16-svg.md"></section><!-- backEndBrian juniorJacob midLevelMelissa -->
 
 				<section data-markdown="./md/99-conclusion.md"></section>
+
 				<pre style="visibility: hidden;"><code data-trim contenteditable>
 					console.log('code');
 				</code></pre>

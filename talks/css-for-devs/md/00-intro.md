@@ -43,6 +43,34 @@ window.fetch('http://api.randomuser.me/').then(function(response) {
 
 ------
 
+# CSS Personas
+
+```
+{
+  "results": [
+    {
+      "user": {
+        "gender": "female",
+        "name": {
+          "title": "ms",
+          "first": "mia",
+          "last": "williams"
+        },
+        "email": "mia.williams59@example.com",
+        "picture": {
+          "large": "http://api.randomuser.me/portraits/women/19.jpg",
+          "medium": "http://api.randomuser.me/portraits/med/women/19.jpg",
+          "thumbnail": "http://api.randomuser.me/portraits/thumb/women/19.jpg"
+        },
+        // ... more ...
+      }
+    }
+  ]
+}
+```
+
+------
+
 ## Back-End Brian
 
 <img src="http://api.randomuser.me/portraits/men/8.jpg" style="border-radius: 50%; width: 25%;" />
