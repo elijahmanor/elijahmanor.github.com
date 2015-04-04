@@ -20,7 +20,7 @@
   background-color: red;
 }
 
-.stick-100 {
+.stick-200 {
   width: 200px;
   height: 5px;
   background-color: blue;
@@ -51,7 +51,7 @@
   border: 1rem solid blue;
 }
 
-.stick-100 {
+.stick-200 {
   width: 200px;
   height: 5px;
   background-color: blue;
@@ -67,59 +67,89 @@
 
 ------
 
-
-------
-
-# Box Sizing
+## Smart Box
 <!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-## content-box
+<div class="Split">
+  <div class="Split-column">
+    <pre class="language-markup" ><code>&lt;div class="smartbox"&gt;
+  200 x 200
+&lt;/div&gt;
+&lt;div class="stick--200"&gt;&lt;/div&gt;</code></pre>
+    <pre class="language-css" data-line="7"><code>.smartbox {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  padding: 1rem;
+  border: 1rem solid blue;
+  box-sizing: border-box;
+}
 
-This is the default style as specified by the CSS standard. The width and height properties are measured including only the content, but not the padding, border or margin. Note: Padding, border & margin will be outside of the box e.g. IF .box {width: 350px}; THEN you apply {border: 10px solid black;} RESULT {rendered in the browser} .box {width: 370px;}
+.stick-200 {
+  width: 200px;
+  height: 5px;
+  background-color: blue;
+}</code></pre>
+  </div>
+  <div class="Split-column">
+    <div class="smartbox--4">200 x 200</div>
+    <div class="stick--200--4"></div>
+    <h4 class="fragment"><code>box-sizing: <br />border-box</code></h4>
+    <p class="fragment">width =<br />rendered width of box</p>
+    <p class="fragment">width includes padding & border, but not margin</p>
+  </div>
+</div>
 
 ------
 
-# Box Sizing
-<!-- .slide: data-state="backEndBrian" -->
-
-## border-box
-
-The width and height properties include the padding and border, but not the margin. This is the box model used by Internet Explorer when the document is in Quirks mode. Note: Padding & border will be inside of the box e.g. IF .box {width: 350px}; THEN you apply {border: 10px solid black;} RESULT {rendered in the browser} .box {width: 350px;}
-
-http://blog.teamtreehouse.com/box-sizing-secret-simple-css-layouts
+# THERE WAS MUCH REJOINCING!
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
 ------
 
-# Box Sizing
-<!-- .slide: data-state="backEndBrian midLevelMelissa" -->
+# Border Box FTW!
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-```
-.simple {
-  width: 500px;
-  margin: 20px auto;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+So, we could...
+
+<pre class="language-css"><code>* { box-sizing: border-box; }</code></pre>
+
+or better yet...
+
+<pre class="language-css"><code>*, *:before, *:after { box-sizing: border-box; }</code></pre>
+
+> Note: don't worry about [vendor prefixes](http://caniuse.com/#feat=css3-boxsizing)
+
+------
+
+## Slightly Better Best Practice
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+
+<pre class="language-css"><code>html {
+  box-sizing: border-box;
 }
 
-.fancy {
-  width: 500px;
-  margin: 20px auto;
-  padding: 50px;
-  border: solid blue 10px;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
-```
+*, *:before, *:after {
+  box-sizing: inherit;
+}</code></pre>
+
+> This will give you the same result, and make it easier to change the box-sizing in plugins or other components that leverage other behavior. --Jon Neal
+
+<small>Source: [Inheriting box-sizing Probably Slightly Better Best Practice](https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/) by [Chris Coyier](http://twitter.com/chriscoyier)</small>
+
+------
+
+#### February 1st
+#### International Box-Sizing Awareness Day
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+
+<img src="imgs/mega-protest-city-yah1.svg" style="height: 550px;" />
 
 ------
 
 # Resources
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-* http://learnlayout.com/box-sizing.html
-* https://css-tricks.com/box-sizing/
-* http://www.paulirish.com/2012/box-sizing-border-box-ftw/
-* https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
-
-* https://developer.mozilla.org/en-US/docs/Web/CSS/box_model
+* [MDN CSS Box Model](https://developer.mozilla.org/en-US/docs/Web/CSS/box_model)
+* [* { Box-sizing: Border-box } FTW]() by [Paul Irish](http://www.paulirish.com/2012/box-sizing-border-box-ftw/)
+* [Inheriting box-sizing Probably Slightly Better Best Practice](https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/) by [Chris Coyier](http://twitter.com/chriscoyier)

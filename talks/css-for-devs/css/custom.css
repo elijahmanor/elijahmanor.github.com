@@ -75,3 +75,34 @@ pre[data-line] { padding: 1em; }
   height: 5px;
   background-color: blue;
 }
+
+.smartbox--4 {
+  width: 200px;
+  height: 200px;
+  background-color: #F00;
+  box-sizing: border-box;
+  font-size: 2rem !important;
+  padding: 1rem !important;
+  border: 1rem solid blue !important;
+  position: relative !important;
+  display: table-cell !important;
+  vertical-align: middle !important;
+}
+.smartbox--4:after,
+.smartbox--4::after {
+  content: ' ' !important;
+  display: block !important;
+  position: absolute !important;
+  top: 1rem !important;
+  left: 1rem !important;
+  right: 1rem !important;
+  bottom: 1rem !important;
+  outline: 1px dashed white;
+}
+.stick--200--4 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  width: 200px;
+  height: 5px;
+  background-color: blue;
+}
