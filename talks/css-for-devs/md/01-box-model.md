@@ -150,6 +150,6 @@ or better yet...
 # Resources
 <!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-* [MDN CSS Box Model](https://developer.mozilla.org/en-US/docs/Web/CSS/box_model)
+* [CSS Box Model](https://developer.mozilla.org/en-US/docs/Web/CSS/box_model) by MDN
 * [* { Box-sizing: Border-box } FTW]() by [Paul Irish](http://www.paulirish.com/2012/box-sizing-border-box-ftw/)
 * [Inheriting box-sizing Probably Slightly Better Best Practice](https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/) by [Chris Coyier](http://twitter.com/chriscoyier)

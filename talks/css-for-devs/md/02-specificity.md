@@ -6,6 +6,7 @@
 ------
 
 ## Specificity Hierarchy
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
   <div class="Split-column">
@@ -37,6 +38,7 @@
 ------
 
 ## How to Measure Specificity
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
 1. Start at 0
 2. Add 1000 for each inline style
@@ -47,6 +49,7 @@
 ------
 
 ## Examples of Specificity
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
   <div class="Split-column">
@@ -102,7 +105,7 @@
 ------
 
 ## Specificity Games
-<!-- .slide: data-state="specificity" data-background="imgs/the-hunger-games.jpeg" -->
+<!-- .slide: data-state="specificity backEndBrian juniorJacob midLevelMelissa" data-background="imgs/the-hunger-games.jpeg" -->
 
 <div class="SpecificityGame">
   <div class="Specificity">
@@ -131,9 +134,10 @@
 ------
 
 ## Resources
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-* https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
-* https://css-tricks.com/specifics-on-css-specificity/
-* http://www.standardista.com/css3/css-specificity/
-* http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html
-* http://specificity.keegan.st/
+* [Specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) by MDN
+* [Specifics on CSS Specificity](https://css-tricks.com/specifics-on-css-specificity/) by [Chris Coyier](http://twitter.com/chriscoyier)
+* [CSS SpeciFISHity](http://www.standardista.com/css3/css-specificity/) by [Estelle Weyl](http://twitter.com/estellevw)
+* [CSS Specificity Star Wars](http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html)
+* [`npm install specificity`](https://github.com/keeganstreet/specificity)
