@@ -26,7 +26,7 @@ pre[data-line] { padding: 1em; }
   align-self: auto;
   margin: 1rem;
 }
-.Split-column > p, .Split-column > h4 {
+.Split-column > p, .Split-column h4 {
   text-align: left;
 }
 
@@ -106,3 +106,110 @@ pre[data-line] { padding: 1em; }
   height: 5px;
   background-color: blue;
 }
+
+.Specificity--fire {  }
+.specificity .slide-background.present { opacity: 0.5; }
+.specificity h2 { font-family: 'Orbitron', sans-serif; }
+.Specificity { font-family: 'Orbitron', sans-serif; margin-bottom: 2rem !important; }
+.Specificity-input { font-family: 'Orbitron', sans-serif; width: 70%; font-size: 2rem; height: 2rem; padding: .5rem; }
+.Specificity--fire .Specificity-input,
+.Specificity--fire .Specificity-value {
+  text-shadow:
+    0 3px 20px red,
+    0 0 20px red,
+    0 0 10px orange,
+    4px -5px 6px yellow,
+    -4px -10px 10px yellow,
+    0 -10px 30px yellow;
+  animation: 1s Blazing infinite alternate ease-in;
+}
+.Specificity-score { display: flex; justify-content: center; }
+.Specificity .Specificity-value { margin: 0 .5rem; border-radius: 50%; padding: 0.5rem; color: black; background-color: white; font-family: 'Orbitron', sans-serif; height: 3rem; width:  3rem; justify-content: center; flex-direction: column; text-align: center; display: flex; align-items: center; position: relative; }
+.Specificity .Specificity-value:after {
+  display: inline-block;
+  font-size: 0.7rem;
+  color: #FFF;
+  position: absolute;
+  top: 5rem;
+  left: 0rem;
+  text-align: center;
+  width: 100%;
+}
+.Specificity-value.Specificity-value--inline { border: solid 5px #F8D400; }
+.Specificity-value.Specificity-value--inline:after {
+  content: 'Inline Styles';
+}
+.Specificity-value.Specificity-value--ids { border: solid 5px  #E1091C; }
+.Specificity-value.Specificity-value--ids:after {
+  content: 'IDs';
+}
+.Specificity-value.Specificity-value--classes { border: solid 5px #5DB1DC; }
+.Specificity-value.Specificity-value--classes:after {
+  content: 'Classes, attrs, & pseudo-classes';
+}
+.Specificity-value.Specificity-value--elements { border: solid 5px #006633; }
+.Specificity-value.Specificity-value--elements:after {
+  content: 'Elements & psuedo-elements';
+}
+.SpecificityGame button { font-family: 'Orbitron', sans-serif; font-size: 1rem; padding: 1rem; }
+
+/* http://codepen.io/makan/pen/yyjRZx */
+@keyframes Blazing {
+0%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+  0 0 10px orange,
+  0 0 0 yellow,
+  0 0 5px yellow,
+  -2px -5px 5px yellow,
+  4px -10px 10px yellow; }
+25%   { text-shadow: 0 3px 20px red, 0 0 30px red,
+  0 0 20px orange,
+  0 0 5px yellow,
+  -2px -5px 5px yellow,
+  3px -10px 10px yellow,
+  -4px -15px 20px yellow; }
+50%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+  0 -5px 10px orange,
+  -2px -5px 5px yellow,
+  3px -10px 10px yellow,
+  -4px -15px 20px yellow,
+  2px -20px 30px rgba(255,255,0,0.5); }
+75%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+  0 -5px 10px orange,
+  3px -5px 5px yellow,
+  -4px -10px 10px yellow,
+  2px -20px 30px rgba(255,255,0,0.5),
+  0px -25px 40px rgba(255,255,0,0)}
+100%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+  0 0 10px orange,
+  0 0 0 yellow,
+  0 0 5px yellow,
+  -2px -5px 5px yellow,
+  4px -10px 10px yellow; }
+}
+
+
+/*
+<div class="SpecificityGame">
+  <div class="Specificity">
+    <textarea class="Specificity-input">#nav .selected > a:hover</textarea>
+    <div class="Specificity-score">
+      <div class="Specificity-value Specificity-value--inline"></div>
+      <div class="Specificity-value Specificity-value--ids"></div>
+      <div class="Specificity-value Specificity-value--classes"></div>
+      <div class="Specificity-value Specificity-value--elements"></div>
+    </div>
+  </div>
+
+  <div class="Specificity">
+    <textarea class="Specificity-input">h1 > .myclass[hidden]</textarea>
+    <div class="Specificity-score">
+      <div class="Specificity-value Specificity-value--inline"></div>
+      <div class="Specificity-value Specificity-value--ids"></div>
+      <div class="Specificity-value Specificity-value--classes"></div>
+      <div class="Specificity-value Specificity-value--elements"></div>
+    </div>
+  </div>
+
+  <button>And the winner is...</button>
+</div>
+*/
