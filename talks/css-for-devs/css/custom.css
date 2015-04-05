@@ -107,13 +107,16 @@ pre[data-line] { padding: 1em; }
   background-color: blue;
 }
 
-.Specificity--fire {  }
-.specificity .slide-background.present { opacity: 0.5; }
-.specificity h2 { font-family: 'Orbitron', sans-serif; }
-.Specificity { font-family: 'Orbitron', sans-serif; margin-bottom: 2rem !important; }
-.Specificity-input { font-family: 'Orbitron', sans-serif; width: 70%; font-size: 2rem; height: 2rem; padding: .5rem; }
-.Specificity--fire .Specificity-input,
-.Specificity--fire .Specificity-value {
+.Specificity { margin-bottom: 7rem !important; }
+.Specificity-input {
+  width: 70%;
+  font-size: 2rem;
+  height: 2rem;
+  padding: 0.75rem 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+.Specificity--fire .Specificity-input, .Specificity--fire .Specificity-value {
   text-shadow:
     0 3px 20px red,
     0 0 20px red,
@@ -124,7 +127,11 @@ pre[data-line] { padding: 1em; }
   animation: 1s Blazing infinite alternate ease-in;
 }
 .Specificity-score { display: flex; justify-content: center; }
-.Specificity .Specificity-value { margin: 0 .5rem; border-radius: 50%; padding: 0.5rem; color: black; background-color: white; font-family: 'Orbitron', sans-serif; height: 3rem; width:  3rem; justify-content: center; flex-direction: column; text-align: center; display: flex; align-items: center; position: relative; }
+.Specificity .Specificity-value {
+  margin: 0 .5rem; border-radius: 50%; padding: 0.5rem; color: black;
+  background-color: white; height: 3rem; width:  3rem; justify-content: center;
+  flex-direction: row; text-align: center; display: flex; align-items: center; position: relative;
+}
 .Specificity .Specificity-value:after {
   display: inline-block;
   font-size: 0.7rem;
@@ -151,7 +158,24 @@ pre[data-line] { padding: 1em; }
 .Specificity-value.Specificity-value--elements:after {
   content: 'Elements & psuedo-elements';
 }
-.SpecificityGame button { font-family: 'Orbitron', sans-serif; font-size: 1rem; padding: 1rem; }
+
+.specificity .slide-background.present { opacity: 0.5; }
+.specificity h2 { font-family: 'Orbitron', sans-serif; }
+.specificity .Specificity { font-family: 'Orbitron', sans-serif; margin-bottom: 4rem !important; }
+.specificity .Specificity-input { font-family: 'Orbitron', sans-serif; }
+.specificity .Specificity .Specificity-value { font-family: 'Orbitron', sans-serif; flex-direction: column; }
+.specificity .SpecificityGame button { font-family: 'Orbitron', sans-serif; font-size: 1rem; padding: 1rem; }
+.specificity .Specificity .Specificity-value:before {
+  content: '';
+  background-image: url('../imgs/hungergames-token-classic.png');
+  background-size: cover;
+  opacity: 0.25;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
 
 /* http://codepen.io/makan/pen/yyjRZx */
 @keyframes Blazing {

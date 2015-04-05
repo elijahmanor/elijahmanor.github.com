@@ -38,7 +38,66 @@
 
 ## How to Measure Specificity
 
-“Start at 0, add 1000 for style attribute, add 100 for each ID, add 10 for each attribute, class or pseudo-class, add 1 for each element name or pseudo-element.
+1. Start at 0
+2. Add 1000 for each inline style
+3. Add 100 for each ID
+4. Add 10 for each class, attribute & pseudo-class
+5. Add 1 for each element and pseudo-element
+
+------
+
+## Examples of Specificity
+
+<div class="Split">
+  <div class="Split-column">
+    <div class="fragment">
+      <pre class="language-css"><code>#submitButton {}</code></pre>
+      <div class="Specificity">
+        <div class="Specificity-score">
+          <div class="Specificity-value Specificity-value--inline">0</div>
+          <div class="Specificity-value Specificity-value--ids">1</div>
+          <div class="Specificity-value Specificity-value--classes">0</div>
+          <div class="Specificity-value Specificity-value--elements">0</div>
+        </div>
+      </div>
+    </div>
+    <div class="fragment">
+      <pre class="language-css"><code>.Widget {}</code></pre>
+      <div class="Specificity">
+        <div class="Specificity-score">
+          <div class="Specificity-value Specificity-value--inline">0</div>
+          <div class="Specificity-value Specificity-value--ids">0</div>
+          <div class="Specificity-value Specificity-value--classes">1</div>
+          <div class="Specificity-value Specificity-value--elements">0</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="Split-column">
+    <div class="fragment">
+      <pre class="language-css"><code>.Widget.selected > ul {}</code></pre>
+      <div class="Specificity">
+        <div class="Specificity-score">
+          <div class="Specificity-value Specificity-value--inline">0</div>
+          <div class="Specificity-value Specificity-value--ids">0</div>
+          <div class="Specificity-value Specificity-value--classes">2</div>
+          <div class="Specificity-value Specificity-value--elements">1</div>
+        </div>
+      </div>
+    </div>
+    <div class="fragment">
+      <pre class="language-css"><code>#statusBar[data-type='error'] {}</code></pre>
+      <div class="Specificity">
+        <div class="Specificity-score">
+          <div class="Specificity-value Specificity-value--inline">0</div>
+          <div class="Specificity-value Specificity-value--ids">1</div>
+          <div class="Specificity-value Specificity-value--classes">1</div>
+          <div class="Specificity-value Specificity-value--elements">0</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 ------
 
@@ -47,7 +106,7 @@
 
 <div class="SpecificityGame">
   <div class="Specificity">
-    <textarea class="Specificity-input">#nav .selected > a:hover</textarea>
+    <input class="Specificity-input" value="ul > li.selected input[type='checkbox']" />
     <div class="Specificity-score">
       <div class="Specificity-value Specificity-value--inline">0</div>
       <div class="Specificity-value Specificity-value--ids">0</div>
@@ -57,7 +116,7 @@
   </div>
 
   <div class="Specificity">
-    <textarea class="Specificity-input">h1 > .myclass[hidden]</textarea>
+    <input class="Specificity-input" value="aside#sidebar a[href^='https']" />
     <div class="Specificity-score">
       <div class="Specificity-value Specificity-value--inline">0</div>
       <div class="Specificity-value Specificity-value--ids">0</div>
