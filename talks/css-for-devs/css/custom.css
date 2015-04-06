@@ -5,12 +5,26 @@ pre[data-line] { padding: 1em; }
 .line-highlight { transform: translateY(0.8em); }
 
 .PersonaList { position: fixed; left: 1rem; bottom: 1rem; z-index: 1; }
-.PersonaList .Persona { width: 6rem; float: left; text-align: center; margin: 0.5rem; display: none; }
+.PersonaList .Persona {
+  width: 6rem;
+  float: left;
+  text-align: center;
+  margin: 0.5rem;
+  transition: all 1s ease-in;
+  position: relative;
+  top: 10rem;
+}
 .Persona .Persona-image { border-radius: 50%; border: 3px solid white; }
 .Persona .Persona-name { font-size: 0.75rem; }
-.backEndBrian .Persona--backEndBrian { display: block; }
-.juniorJacob .Persona--juniorJacob { display: block; }
-.midLevelMelissa .Persona--midLevelMelissa { display: block; }
+.backEndBrian .Persona--backEndBrian {
+  top: 0;
+}
+.juniorJacob .Persona--juniorJacob {
+  top: 0;
+}
+.midLevelMelissa .Persona--midLevelMelissa {
+  top: 0;
+}
 
 .Split {
   display: flex;
@@ -211,29 +225,14 @@ pre[data-line] { padding: 1em; }
   4px -10px 10px yellow; }
 }
 
-
-/*
-<div class="SpecificityGame">
-  <div class="Specificity">
-    <textarea class="Specificity-input">#nav .selected > a:hover</textarea>
-    <div class="Specificity-score">
-      <div class="Specificity-value Specificity-value--inline"></div>
-      <div class="Specificity-value Specificity-value--ids"></div>
-      <div class="Specificity-value Specificity-value--classes"></div>
-      <div class="Specificity-value Specificity-value--elements"></div>
-    </div>
-  </div>
-
-  <div class="Specificity">
-    <textarea class="Specificity-input">h1 > .myclass[hidden]</textarea>
-    <div class="Specificity-score">
-      <div class="Specificity-value Specificity-value--inline"></div>
-      <div class="Specificity-value Specificity-value--ids"></div>
-      <div class="Specificity-value Specificity-value--classes"></div>
-      <div class="Specificity-value Specificity-value--elements"></div>
-    </div>
-  </div>
-
-  <button>And the winner is...</button>
-</div>
-*/
+.caniuse {
+  margin: auto !important;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  color: #333;
+  padding: 1rem !important;
+  font-size: 1rem !important;
+  width: 40rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.caniuse .agents, .caniuse .legend { width: 100% !important; }

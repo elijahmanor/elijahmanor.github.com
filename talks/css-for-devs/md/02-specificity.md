@@ -5,6 +5,13 @@
 
 ------
 
+## Scenario
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
+
+> TODO: Put some scenario where dev looks to see why style isn't applied...
+
+------
+
 ## Specificity Hierarchy
 <!-- .slide: data-state="backEndBrian juniorJacob" -->
 

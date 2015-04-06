@@ -55,7 +55,7 @@ window.fetch('http://api.randomuser.me/').then(function(response) {
 
 ## Junior Jacob
 
-<img src="http://api.randomuser.me/portraits/men/73.jpg" style="border-radius: 50%; width: 25%;" />
+<img src="http://api.randomuser.me/portraits/men/32.jpg" style="border-radius: 50%; width: 25%;" /><!-- 73 -->
 
 ### Junior Front-End Developer
 
