@@ -84,5 +84,5 @@ var build = (id, href) => `<div id="tab">
 
 ## Resources
 
-* [Tweet Sized JavaScript Templating Engine])(http://mir.aculo.us/2011/03/09/little-helpers-a-tweet-sized-javascript-templating-engine/) by @thomasfuchs
+* [Tweet Sized JavaScript Templating Engine](http://mir.aculo.us/2011/03/09/little-helpers-a-tweet-sized-javascript-templating-engine/) by @thomasfuchs
 * Learn ECMAScript 2015 (ES6) - http://babeljs.io/docs/learn-es6/

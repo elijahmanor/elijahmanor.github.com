@@ -7,20 +7,15 @@
 <a href="http://bit.ly/js-smells" style="margin-left: 2em;">http://bit.ly/js-smells</a>
 </pre>
 
-### @nomadjs / #nomadjs
+### @nash_js / [nashjs.org](http://nashjs.org)
 
-------
-
-## Resources
+Notes:
 
 * http://jsbin.com/vahegiqadi/1/edit?js,output
 * http://jscomplexity.org/#results
 * http://jshint.com/
 * http://codepen.io/elijahmanor/pen/33c3b09ed780b463b5ede21c31afb8a7?editors=001
 
-Notes:
-
-More Resources
 http://shichuan.github.io/javascript-patterns/
 https://github.com/jshint/fixmyjs
 http://jslinterrors.com/

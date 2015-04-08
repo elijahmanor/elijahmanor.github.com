@@ -159,3 +159,4 @@ function englishToPigLatin(english='') {
 # Resources
 
 * `jshint` - http://jshint.com/
+* `eslint` - http://eslint.org/

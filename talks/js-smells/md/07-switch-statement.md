@@ -116,6 +116,11 @@ function getArea(shape, options) {
 
   return area;
 }
+
+console.log(getArea('Triangle',  { width: 100, height: 100 }));
+console.log(getArea('Square',    { width: 100 }));
+console.log(getArea('Rectangle', { width: 100, height: 100 }));
+console.log(getArea('Bogus'));
 ```
 
 <!--
@@ -142,7 +147,7 @@ console.log(getArea('Bogus'));
   Circle.prototype.getArea = function() {
     return Math.PI * Math.pow(this.radius, 2);
   };
-  
+
   Circle.prototype.getCircumference = function() {
     return 2 * Math.PI * this.radius;
   };
