@@ -1,3 +1,10 @@
+#dialog { z-index: 999; }
+#dialog .modules { list-style-type: none; font-size: 1.5rem; }
+#dialog h3 { color: black; }
+
+[data-store] {
+  outline: 1px dashed rgba(0, 0, 0, 0.25);
+}
 pre[class*='language'] { font-size: 1.25rem; }
 pre[data-line] { padding: 1em; }
 .line-highlight:before, .line-highlight[data-end]:after { content: ''; }

@@ -6,7 +6,7 @@
 
 ## <!-- .element: style="text-transform: lowercase;" --> by [@elijahmanor](http://twitter.com/elijahmanor)
 
-### @abracketsconf / #anglebrackets
+<h3 data-store="introduction-social" contenteditable></h3>
 
 <!-- <div style="font-size: .4em; opacity: 0.5; font-style: italic;">Picture: [Stray Cat](https://flic.kr/p/dQZvyD) / [Jim Bauer](https://www.flickr.com/photos/lens-cap/) / Creative Commons</div> -->
 
@@ -42,7 +42,7 @@ window.fetch('http://api.randomuser.me/').then(function(response) {
 
 ## Back-End Brian
 
-<img src="http://api.randomuser.me/portraits/men/8.jpg" style="border-radius: 50%; width: 25%;" />
+<img src="http://api.randomuser.me/portraits/men/31.jpg" style="border-radius: 50%; width: 25%;" /><!-- 8, 15, 31,  -->
 
 ### Computer science major
 
@@ -55,7 +55,7 @@ window.fetch('http://api.randomuser.me/').then(function(response) {
 
 ## Junior Jacob
 
-<img src="http://api.randomuser.me/portraits/men/32.jpg" style="border-radius: 50%; width: 25%;" /><!-- 73 -->
+<img src="http://api.randomuser.me/portraits/men/73.jpg" style="border-radius: 50%; width: 25%;" /><!-- 32, 73 -->
 
 ### Junior Front-End Developer
 

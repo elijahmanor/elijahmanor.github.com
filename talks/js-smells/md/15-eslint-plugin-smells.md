@@ -10,16 +10,17 @@
 
 ## Rules
 
-```
-{
-  "rules": {
-    "smells/no-switch": 1,
-    "smells/no-complex-switch-case": 1,
-    "smells/no-setinterval": 1,
-    "smells/no-this-assign": 1
-  }
-}
-```
+**Developed**
+
+* `no-switch`<!-- .element: class="fragment" -->
+* `no-complex-switch-case`<!-- .element: class="fragment" -->
+* `no-setinterval`<!-- .element: class="fragment" -->
+* `no-this-assign`<!-- .element: class="fragment" -->
+* `no-complex-string-concat`<!-- .element: class="fragment" -->
+
+**In Progress**
+
+* `no-complex-chaining`<!-- .element: class="fragment" -->
 
 ------
 

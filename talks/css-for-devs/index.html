@@ -31,29 +31,23 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section data-markdown="./md/00-intro.md"></section>
+				<section id="introduction" data-markdown="./md/00-introduction.md"></section>
 
-				<section data-markdown="./md/01-box-model.md"></section><!-- backEndBrian juniorJacob -->
-				<section data-markdown="./md/02-specificity.md"></section><!-- backEndBrian juniorJacob -->
-				<section data-markdown="./md/03-position.md"></section><!-- backEndBrian juniorJacob -->
-				<section data-markdown="./md/04-zindex.md"></section><!-- backEndBrian juniorJacob -->
-				<section data-markdown="./md/05-cascading.md"></section><!-- backEndBrian juniorJacob -->
+				<section id="box-model" data-markdown="./md/01-box-model.md"></section>
+				<section id="specificity" data-markdown="./md/02-specificity.md"></section>
+				<section id="position" data-markdown="./md/03-position.md"></section>
+				<section id="cascading" data-markdown="./md/04-cascading.md"></section>
+				<section id="sizing" data-markdown="./md/05-sizing.md"></section>
+				<section id="alignment" data-markdown="./md/06-alignment.md"></section>
 
-				<section data-markdown="./md/06-sizing.md"></section><!-- backEndBrian juniorJacob midLevelMelissa -->
-				<section data-markdown="./md/07-alignment.md"></section><!-- backEndBrian juniorJacob midLevelMelissa -->
-				<section data-markdown="./md/08-sass.md"></section><!-- backEndBrian juniorJacob midLevelMelissa -->
+				<section id="sass" data-markdown="./md/07-sass.md"></section>
+				<section id="atomic-design" data-markdown="./md/08-atomic-design.md"></section>
+				<section id="bem" data-markdown="./md/09-bem.md"></section>
+				<section id="linting" data-markdown="./md/10-linting.md"></section>
+				<section id="sass-docs" data-markdown="./md/11-sass-docs.md"></section>
+				<section id="svg" data-markdown="./md/12-svg.md"></section>
 
-				<section data-markdown="./md/09-mixins.md"></section><!-- backEndBrian juniorJacob midLevelMelissa -->
-				<section data-markdown="./md/10-extend.md"></section><!-- backEndBrian juniorJacob midLevelMelissa -->
-				<section data-markdown="./md/11-atomic-design.md"></section><!-- backEndBrian juniorJacob midLevelMelissa -->
-				<section data-markdown="./md/12-bem.md"></section><!-- backEndBrian juniorJacob midLevelMelissa -->
-
-				<section data-markdown="./md/13-linting.md"></section><!-- backEndBrian juniorJacob midLevelMelissa -->
-				<section data-markdown="./md/14-css-comb.md"></section><!-- backEndBrian juniorJacob midLevelMelissa -->
-				<section data-markdown="./md/15-sass-docs.md"></section><!-- backEndBrian juniorJacob midLevelMelissa -->
-				<section data-markdown="./md/16-svg.md"></section><!-- backEndBrian juniorJacob midLevelMelissa -->
-
-				<section data-markdown="./md/99-conclusion.md"></section>
+				<section id="conclusion" data-markdown="./md/99-conclusion.md"></section>
 
 				<pre style="visibility: hidden;"><code data-trim contenteditable>
 					console.log('code');
@@ -61,11 +55,11 @@
 			</div>
 			<aside class="PersonaList">
 				<div class="Persona Persona--backEndBrian">
-					<img class="Persona-image" src="http://api.randomuser.me/portraits/thumb/men/8.jpg" />
+					<img class="Persona-image" src="http://api.randomuser.me/portraits/thumb/men/31.jpg" />
 					<div class="Persona-name">Back-End Brian</div>
 				</div>
 				<div class="Persona Persona--juniorJacob">
-					<img class="Persona-image" src="http://api.randomuser.me/portraits/thumb/men/32.jpg" /><!--73-->
+					<img class="Persona-image" src="http://api.randomuser.me/portraits/thumb/men/73.jpg" /><!--73-->
 					<div class="Persona-name">Junior Jacob</div>
 				</div>
 				<div class="Persona Persona--midLevelMelissa">
@@ -73,9 +67,18 @@
 					<div class="Persona-name">Mid-Level Melissa</div>
 				</div>
 			</aside>
+			<dialog id="dialog">
+				<h3>Modules</h3>
+				<ul class="modules"></ul>
+				<div>
+					<button id="update">Update</button>
+					<button id="cancel">Cancel</button>
+				</div>
+			</dialog>
 		</div>
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
+		<script src="plugin/data-store/data-store.js"></script>
 		<script>
 			(function initializeMarkdownSections() {
 				var markdown = document.querySelectorAll('[data-markdown]');
@@ -98,12 +101,31 @@
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); }, callback: function() { dataStore.init(); } },
 					//{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/prism/prism.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { Prism.highlightAll(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true }
-				]
+				],
+				keyboard: {
+					13: 'next', // go to the next slide when the ENTER key is presse
+					77: function() { // key pressed `m` to choose modules
+						var items = [];
+						var modules = window.localStorage.modules;
+
+						modules = modules ? JSON.parse(modules) : getModules();
+						for (var key in modules) {
+							var module = modules[key];
+							items.push('<li><input name="' + key + '" type="checkbox" ' + (module ? 'checked="checked" ' : '') + '" /> ' + key + '</li>');
+						};
+						window.localStorage.modules = JSON.stringify(modules);
+
+						var dialog = document.getElementById('dialog');
+						dialog.querySelector('.modules').innerHTML = items.join('');
+						dialog.showModal(); //.show()
+					},
+					32: null // don't do anything when SPACE is pressed (i.e. disable a reveal.js default binding)
+				}
 			});
 		</script>
 		<script src="js/specificity.js"></script>

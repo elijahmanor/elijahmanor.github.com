@@ -1,4 +1,4 @@
-# z-Index
+# Linting
 <!-- .slide: data-state="backEndBrian juniorJacob" -->
 
 > TODO: Quote here...
@@ -18,6 +18,9 @@
 
 Notes:
 
-http://www.smashingmagazine.com/2009/09/15/the-z-index-css-property-a-comprehensive-look/
-
-z-index will only work on an element whose position property has been explicitly set to absolute, fixed, or relative.
+css-comb
+http://csslint.net/
+SCSS Lint
+CSS Dig
+http://cssstats.com/stats?url=http%3A%2F%2Fdaveramsey.com
+https://github.com/cssstats/css-statistics

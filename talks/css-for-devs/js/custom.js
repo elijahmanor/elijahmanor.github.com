@@ -1,8 +1,48 @@
+var dialog = document.getElementById('dialog');
+
+var modules = window.localStorage.modules;
+modules = modules ? JSON.parse(modules) : getModules();
+for (var key in modules) {
+	if (!modules[key]) {
+		var element = document.querySelector('#' + key);
+		element.parentNode.removeChild(element);
+	}
+}
+
+function getModules() {
+	var modules = {};
+	[].forEach.call(document.querySelectorAll('.slides .stack'), function(module) {
+		modules[module.id] = true;
+	});
+	return modules;
+}
+dialog.querySelector('#update').addEventListener('click', function() {
+	var modules = JSON.parse(window.localStorage.modules);
+	[].forEach.call(dialog.querySelectorAll('#dialog input'), function(input) {
+		if (!input.checked) {
+			var element = document.querySelector('#' + input.name);
+			if (element) {
+				element.parentNode.removeChild(element);
+			}
+			modules[input.name] = false;
+		} else {
+			modules[input.name] = true;
+		}
+	});
+	window.localStorage.modules = JSON.stringify(modules);
+	Reveal.configure({ controls: true });
+	dialog.close();
+});
+
+dialog.querySelector('#cancel').addEventListener('click', function() {
+	dialog.close();
+});
+
 document.addEventListener('click', function(e) {
 	var button = e.target;
 	var game, result, specificity, highest;
 
-	if (button.tagName === 'BUTTON') {
+	if (button.tagName === 'BUTTON' && button.closest('#specificity')) {
 		game = button.closest('.SpecificityGame');
 
 		[].forEach.call(game.querySelectorAll('.Specificity'), function(element) {

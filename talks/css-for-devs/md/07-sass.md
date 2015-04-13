@@ -1,4 +1,4 @@
-# Linting
+# Sass
 <!-- .slide: data-state="backEndBrian juniorJacob" -->
 
 > TODO: Quote here...
@@ -18,8 +18,6 @@
 
 Notes:
 
-http://csslint.net/
-SCSS Lint
-CSS Dig
-http://cssstats.com/stats?url=http%3A%2F%2Fdaveramsey.com
-https://github.com/cssstats/css-statistics
+https://sass-compatibility.github.io/
+mixins
+extend
