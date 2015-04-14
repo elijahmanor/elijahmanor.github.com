@@ -57,6 +57,16 @@ $(document).ready(function() {
 
 ------
 
+# Tooling
+
+------
+
+## `eslint-plugin-smells`
+
+* `no-complex-chaining`<!-- .element: class="fragment" -->
+
+------
+
 ## Resources
 
 * CodePen - http://codepen.io/elijahmanor/pen/pvQQZw/

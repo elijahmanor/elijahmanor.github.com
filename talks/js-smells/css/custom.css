@@ -1,0 +1,107 @@
+#dialog { z-index: 999; }
+#dialog .modules { list-style-type: none; font-size: 1.5rem; }
+#dialog h3 { color: black; }
+
+[data-store] {
+  outline: 1px dashed rgba(0, 0, 0, 0.25);
+}
+
+/*
+pre[class*='language'] { font-size: 1.25rem; }
+pre[data-line] { padding: 1em; }
+.line-highlight:before, .line-highlight[data-end]:after { content: ''; }
+.line-highlight { background: -webkit-linear-gradient(left, rgba(153, 122, 102, 0.25) 70%, rgba(153, 122, 103, 0.15)); }
+.line-highlight { transform: translateY(0.8em); }
+*/
+
+.Split {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: flex-start;
+}
+.Split .Split-column {
+  order: 0;
+  flex: 0 1 50%;
+  align-self: auto;
+  margin: 1rem;
+}
+.Split-column > p, .Split-column h4 {
+  text-align: left;
+}
+
+/* Social sharing */
+.share-reveal a {
+  display: inline-block;
+  height: 34px;
+  line-height: 34px;
+  padding: 0 10px;
+  color: #fff;
+  font-family: Helvetica;
+  text-decoration: none;
+  font-size: 12px;
+  vertical-align: top;
+  text-transform: uppercase;
+  box-sizing: border-box;
+}
+
+.share-reveal svg {
+  vertical-align: middle;
+}
+
+.share-reveal a + a {
+  margin-left: 10px;
+}
+
+.share-reveal-editor {
+  border: 2px solid #fff;
+}
+
+.share-reveal-twitter,
+.share-reveal-follow {
+  background-color: #00aced;
+}
+
+.share-reveal-facebook {
+  background-color: #4B71B8;
+}
+
+/* Advertising */
+#carbonads {
+  width: 370px;
+  min-height: 100px;
+  font-size: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  margin: 40px auto 0 auto;
+  font-size: 16px;
+  z-index: 10;
+  text-align: left;
+}
+
+#carbonads .carbon-img img {
+  float: left;
+  margin: 0 10px 0 0;
+  border: 0;
+  box-shadow: none;
+}
+
+#carbonads .carbon-poweredby {
+  display: block;
+  margin-top: 10px;
+  color: #aaa;
+}
+
+.caniuse {
+  margin: auto !important;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  color: #333;
+  padding: 1rem !important;
+  font-size: 1rem !important;
+  width: 40rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.caniuse .agents, .caniuse .legend { width: 100% !important; }

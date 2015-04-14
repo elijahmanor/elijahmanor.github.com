@@ -32,7 +32,7 @@ console.log(person.teeth);
 
 ## Why Does This Smell?
 
-## <!-- .element class="fragment" --> `that` or `self` or `selfie` 
+## <!-- .element class="fragment" --> `that` or `self` or `selfie`
 
 ------
 
@@ -98,6 +98,16 @@ Person.prototype.brush = function() {
   console.log('brushed');
 };
 ```
+
+------
+
+# Tooling
+
+------
+
+## `eslint-plugin-smells`
+
+* `no-this-assign`<!-- .element: class="fragment" -->
 
 ------
 

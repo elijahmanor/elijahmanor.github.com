@@ -179,7 +179,31 @@ console.log(getArea('Bogus'));
 
 ------
 
-# Resource
+# Tooling!?!
 
+## Nope :(
+
+------
+
+## `eslint-plugin-smells` to the rescue!
+
+> "ESLint rules for JavaScript Smells " --Me https://github.com/elijahmanor/eslint-plugin-smells
+
+------
+
+## Rules
+
+* `no-switch`<!-- .element: class="fragment" -->
+* `no-complex-switch-case`<!-- .element: class="fragment" -->
+
+------
+
+## Resources
+
+* [ESLint](http://eslint.org/)
+* [ESLint: Rules](http://eslint.org/docs/rules/)
+* [ESLint: Working with Rules](http://eslint.org/docs/developer-guide/working-with-rules)
+* [SpiderMonkey Parser API](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Parser_API)
+* [`eslint-plugin-smells`](https://github.com/elijahmanor/eslint-plugin-smells)
 * CodePen - http://codepen.io/elijahmanor/pen/OPazmm
 * Addy Osmani's Learning JavaScript Design Patterns eBook - http://addyosmani.com/resources/essentialjsdesignpatterns/book/

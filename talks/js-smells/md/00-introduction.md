@@ -2,7 +2,7 @@
 
 ## <!-- .element: style="text-transform: lowercase;" --> by [@elijahmanor](http://twitter.com/elijahmanor)
 
-### @nash_js / [nashjs.org](http://nashjs.org)
+<h3 data-store="introduction-social" contenteditable></h3>
 
 <div style="font-size: .4em; opacity: 0.5; font-style: italic;">Picture: [Stray Cat](https://flic.kr/p/dQZvyD) / [Jim Bauer](https://www.flickr.com/photos/lens-cap/) / Creative Commons</div>
 

@@ -82,6 +82,16 @@ var build = (id, href) => `<div id="tab">
 
 ------
 
+# Tooling
+
+------
+
+## `eslint-plugin-smells`
+
+* `no-complex-string-concat`<!-- .element: class="fragment" -->
+
+------
+
 ## Resources
 
 * [Tweet Sized JavaScript Templating Engine](http://mir.aculo.us/2011/03/09/little-helpers-a-tweet-sized-javascript-templating-engine/) by @thomasfuchs

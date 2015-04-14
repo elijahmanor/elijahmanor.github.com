@@ -13,6 +13,7 @@
 		<!-- Code syntax highlighting -->
 		<!-- <link rel="stylesheet" href="lib/css/zenburn.css"> -->
 		<link rel="stylesheet" href="lib/css/monokai_sublime.css">
+		<link rel="stylesheet" href="css/custom.css" />
 		<style>
 		.reveal .slide-background.intro { opacity: 0.1; }
 		</style>
@@ -31,47 +32,22 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<!--
-				data-background="#dddddd"
-				data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png"
-				data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px"
-				data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000"
-				data-background="http://i.giphy.com/90F8aUepslB84.gif"
-				data-transition="slide" data-background="#4d7e65" data-background-transition="zoom"
-				data-transition="slide" data-background="#b5533c" data-background-transition="zoom"
-				-->
-
-				<section data-markdown="./md/00-intro.md" class="intro" data-background="./img/starwars-skunk.jpg"></section>
-
-				<section data-markdown="./md/02-crazy-complexity.md" data-background="./img/pig-mud-20.png"></section>
-
-				<section data-markdown="./md/03-massive-method.md"></section>
-
-				<section data-markdown="./md/04-copy-paste-code.md"></section>
-
-				<section data-markdown="./md/05-incessant-interaction.md"></section>
-
-				<section data-markdown="./md/06-anonymous-algorithm.md"></section>
-
-				<section data-markdown="./md/07-switch-statement.md"></section>
-
-				<section data-markdown="./md/08-temperamental-timer.md"></section>
-
-				<section data-markdown="./md/09-unconfirmed-code.md"></section>
-
-				<section data-markdown="./md/10-inappropriate-intimacy.md"></section>
-
-				<section data-markdown="./md/11-the-this-abyss.md"></section>
-
-				<section data-markdown="./md/12-crisp-concatenation.md"></section>
-
-				<section data-markdown="./md/13-jquery-inquiry.md"></section>
-
-				<section data-markdown="./md/14-two-way-data-binding.md"></section>
-				
-				<section data-markdown="./md/15-eslint-plugin-smells.md"></section>
-
-				<section data-markdown="./md/99-conclusion.md"></section>
+				<section id="introduction" data-markdown="./md/00-introduction.md" class="intro" data-background="./img/starwars-skunk.jpg"></section>
+				<section id="crazy-complexity" data-markdown="./md/02-crazy-complexity.md" data-background="./img/pig-mud-20.png"></section>
+				<section id="massive-method" data-markdown="./md/03-massive-method.md"></section>
+				<section id="copy-paste-code" data-markdown="./md/04-copy-paste-code.md"></section>
+				<section id="incessant-interaction" data-markdown="./md/05-incessant-interaction.md"></section>
+				<section id="anonymous-algorithm" data-markdown="./md/06-anonymous-algorithm.md"></section>
+				<section id="switch-statement" data-markdown="./md/07-switch-statement.md"></section>
+				<section id="tempermental-timer" data-markdown="./md/08-temperamental-timer.md"></section>
+				<section id="unconfirmed-code" data-markdown="./md/09-unconfirmed-code.md"></section>
+				<section id="inappropriate-intimacy" data-markdown="./md/10-inappropriate-intimacy.md"></section>
+				<section id="the-this-abyss" data-markdown="./md/11-the-this-abyss.md"></section>
+				<section id="crisp-concatenation" data-markdown="./md/12-crisp-concatenation.md"></section>
+				<section id="jquery-inquery" data-markdown="./md/13-jquery-inquiry.md"></section>
+				<section id="two-way-data-binding" data-markdown="./md/14-two-way-data-binding.md"></section>
+				<section id="eslint-plugin-smells" data-markdown="./md/15-eslint-plugin-smells.md"></section>
+				<section id="conclusion" data-markdown="./md/99-conclusion.md"></section>
 
 				<pre style="visibility: hidden;"><code data-trim contenteditable>
 					console.log('code');
@@ -80,6 +56,7 @@
 		</div>
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
+		<script src="plugin/data-store/data-store.js"></script>
 		<script>
 			(function initializeMarkdownSections() {
 				var markdown = document.querySelectorAll('[data-markdown]');
@@ -92,36 +69,21 @@
 				});
 			}());
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				controls: true,
 				progress: true,
 				history: true,
 				center: true,
-
-				// Parallax background image
-		    // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundImage: 'img/coffee-beans.jpg',
-				// parallaxBackgroundImage: 'img/coffee-black-white.jpeg',
-				// parallaxBackgroundImage: 'img/coffee-computer.jpg',
-				// parallaxBackgroundImage: 'img/coffee-cup-red.jpeg',
-				// parallaxBackgroundImage: './img/pig-mud-20.png',
-
-		    // Parallax background size
-		    // parallaxBackgroundSize: '2000px 1000px', //currently only pixels are supported (don't use % or auto)
-
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
-
-				// Optional reveal.js plugins
+				transition: 'slide',
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); }, callback: function() { dataStore.init(); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'node_modules/source-by-line/srcByLine.js', async: true, callback: function() { window.srcbyline.init(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/modules/modules.js', async: true, callback: function() { window.modules.init(); } }
 				]
 			});
 		</script>
@@ -130,68 +92,6 @@
 			<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://elijahmanor.github.io/talks/js-smells" data-text="Eliminate JavaScript Code Smells" data-via="elijahmanor" data-size="large">Tweet</a>
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 		</div>
-		<style>
-		/* Social sharing */
-		.share-reveal a {
-			display: inline-block;
-			height: 34px;
-			line-height: 34px;
-			padding: 0 10px;
-			color: #fff;
-			font-family: Helvetica;
-			text-decoration: none;
-			font-size: 12px;
-			vertical-align: top;
-			text-transform: uppercase;
-			box-sizing: border-box;
-		}
-
-		.share-reveal svg {
-			vertical-align: middle;
-		}
-
-		.share-reveal a + a {
-			margin-left: 10px;
-		}
-
-		.share-reveal-editor {
-			border: 2px solid #fff;
-		}
-
-		.share-reveal-twitter,
-		.share-reveal-follow {
-			background-color: #00aced;
-		}
-
-		.share-reveal-facebook {
-			background-color: #4B71B8;
-		}
-
-		/* Advertising */
-		#carbonads {
-			width: 370px;
-			min-height: 100px;
-			font-size: 18px;
-			border: 1px solid rgba(255, 255, 255, 0.2);
-			padding: 10px;
-			margin: 40px auto 0 auto;
-			font-size: 16px;
-			z-index: 10;
-			text-align: left;
-		}
-
-		#carbonads .carbon-img img {
-			float: left;
-			margin: 0 10px 0 0;
-			border: 0;
-			box-shadow: none;
-		}
-
-		#carbonads .carbon-poweredby {
-			display: block;
-			margin-top: 10px;
-			color: #aaa;
-		}
-		</style>
+		<script src="js/custom.js"></script>
 	</body>
 </html>
