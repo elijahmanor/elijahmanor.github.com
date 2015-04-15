@@ -1,4 +1,5 @@
 # Inappropriate Intimacy Smell
+<!-- .slide: data-state="statusLint--hard statusRules--fuzzy" -->
 
 ------
 

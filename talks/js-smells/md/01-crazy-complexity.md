@@ -1,4 +1,7 @@
 # Crazy Complexity Smell
+<!-- .slide: data-state="statusLint--easy statusRules--fresh" -->
+
+<!-- .slidex: data-state="statusLint statusLint--hard" -->
 
 ------
 

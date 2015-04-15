@@ -1,4 +1,5 @@
 # Unconfirmed Code Smell
+<!-- .slide: data-state="statusLint--hard statusRules--none" -->
 
 ------
 

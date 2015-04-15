@@ -1,4 +1,5 @@
 # Temperamental Timer Smell
+<!-- .slide: data-state="statusLint--easy statusRules--none" -->
 
 ------
 

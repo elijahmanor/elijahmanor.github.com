@@ -17,3 +17,5 @@
 * [x](#)
 
 Notes:
+
+* http://bitsofco.de/2015/css-font-sizing/

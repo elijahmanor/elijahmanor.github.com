@@ -1,4 +1,5 @@
 # Two-Way Data Binding Smell
+<!-- .slide: data-state="statusLint--easy statusRules--none" -->
 
 ------
 

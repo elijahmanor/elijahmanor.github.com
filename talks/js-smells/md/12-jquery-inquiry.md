@@ -1,4 +1,5 @@
 # jQuery Inquiry
+<!-- .slide: data-state="statusLint--easy statusRules--none" -->
 
 ------
 

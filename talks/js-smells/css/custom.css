@@ -14,6 +14,95 @@ pre[data-line] { padding: 1em; }
 .line-highlight { transform: translateY(0.8em); }
 */
 
+/*
+<aside class="StatusList">
+  <div class="Status Status--lint">
+    <img class="Status-image" src="" />
+    <div class="Status-label">Lint</div>
+  </div>
+  <div class="Status Status--rules">
+    <img class="Status-image" src="" />
+    <div class="Status-label">Lesser Known / None / Subjective</div>
+  </div>
+</aside>
+*/
+
+.StatusList { position: fixed; left: 1rem; bottom: 1rem; z-index: 1; }
+.StatusList .Status {
+  /* width: 6rem; */
+  float: left;
+  text-align: center;
+  margin: 0.5rem;
+  transition: all 1s ease-in;
+  position: relative;
+  /* top: 10rem; */
+}
+.Status .Status-image { border-radius: 50%; border: 3px solid white; }
+.Status .Status-label { font-size: 1.25rem; }
+.statusLint .Status--lint {
+  top: 0;
+}
+.statusLint--easy .Status--lint .Status-image,
+.statusLint--hard .Status--lint .Status-image {
+  background-color: #5CB85C;
+  width: 80px;
+  height: 80px;
+}
+.statusLint--hard .Status--lint .Status-image {
+  background-color: #D9534F;
+}
+.statusLint--easy .Status--lint .Status-label:after,
+.statusLint--hard .Status--lint .Status-label:after {
+  content: 'Easy to Lint';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.statusLint--hard .Status--lint .Status-label:after {
+  content: 'Hard to Lint';
+}
+.statusRules .Status--rules {
+  top: 0;
+}
+.statusRules--fresh .Status--rules .Status-image,
+.statusRules--none .Status--rules .Status-image,
+.statusRules--fuzzy .Status--rules .Status-image {
+  background-color: #5CB85C;
+  width: 80px;
+  height: 80px;
+}
+.statusRules--none .Status--rules .Status-image {
+  background-color: #D9534F;
+}
+.statusRules--fuzzy .Status--rules .Status-image {
+  background-color: #F0AD4E;
+}
+.statusRules--fresh .Status--rules .Status-label:after,
+.statusRules--none .Status--rules .Status-label:after,
+.statusRules--fuzzy .Status--rules .Status-label:after {
+  content: 'Fresh Rules';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.statusRules--none .Status--rules .Status-label:after {
+  content: 'No Rules';
+}
+.statusRules--fuzzy .Status--rules .Status-label:after {
+  content: 'Fuzzy Rules';
+}
+
+
 .Split {
   display: flex;
   flex-direction: row;

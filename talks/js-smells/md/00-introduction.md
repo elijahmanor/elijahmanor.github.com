@@ -6,6 +6,54 @@
 
 <div style="font-size: .4em; opacity: 0.5; font-style: italic;">Picture: [Stray Cat](https://flic.kr/p/dQZvyD) / [Jim Bauer](https://www.flickr.com/photos/lens-cap/) / Creative Commons</div>
 
+------
+
+## `me.json`
+
+```
+{
+  "priorities" : [ "Christian", "Family", "Work" ],
+  "work"       : [ "@DaveRamsey", "@PluralSight" ],
+  "tech"       : [ "HTML", "CSS", "JavaScript", "React", "jQuery" ],
+  "titles"     : [ "MS MVP", "IE userAgent" ]
+}
+```
+
+------
+
+## Got Lint?
+<!-- .slide: data-background="./img/Douglas_Crockford,_February_2013.jpg" -->
+
+------
+
+<!-- .slide: data-background="./img/Shakespeare.jpg" data-background-color="#222" data-background-size="1000px" data-background-repeat="none" -->
+
+> "To lint, or not to lint, that is the question--
+> Whether 'tis Nobler in the mind to suffer
+> The Slings and Arrows of outrageous bugs,
+> Or to take Arms against JavaScript's bad parts,
+> And by opposing, end them?"
+> --William Shakespeare's play Hamlet.
+
+------
+
+<!-- .slide: data-background="./img/descartes.jpg" data-background-color="#222" data-background-size="1000px" data-background-repeat="none" -->
+
+> "I lint, therefore I am" --Descartes
+
+------
+
+## Agenda
+
+* Easy to lint, common rules <!-- .element class="fragment" -->
+* Easy to lint, lesser known rules <!-- .element class="fragment" -->
+* Easy to lint, but no rules <!-- .element class="fragment" -->
+* Hard to lint, because subjective <!-- .element class="fragment" -->
+
+fresh
+no-rules
+subjective
+
 Notes:
 
 # Eliminate JavaScript Code Smells
@@ -33,16 +81,3 @@ Notes:
 ## Bio
 
 > Elijah Manor is a Christian and a family man. He works at The Lampo Group (Dave Ramsey) as a front-end web developer. He is a Microsoft Regional Director, Microsoft ASP.NET MVP, ASPInsider, IE userAgent, and a Pluralsight author. He enjoys blogging at http://elijahmanor.com and tweeting (@elijahmanor) about the things he learns.
-
-------
-
-## `me.json`
-
-```
-{
-  "priorities" : [ "Christian", "Family", "Work" ],
-  "work"       : [ "@DaveRamsey", "@PluralSight" ],
-  "tech"       : [ "HTML", "CSS", "JavaScript", "React", "jQuery" ],
-  "titles"     : [ "MS MVP", "IE userAgent" ]
-}
-```
