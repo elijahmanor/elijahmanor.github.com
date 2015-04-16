@@ -44,3 +44,4 @@ http://nicolasgallagher.com/micro-clearfix-hack/
 https://css-tricks.com/all-about-floats/
 http://davidwalsh.name/demo/css-fixed-position.php
 https://www.youtube.com/watch?v=dK-NwjlhmqU
+http://www.sitepoint.com/3-things-almost-one-knows-css/

@@ -71,7 +71,7 @@
 
   modules.buildDialog = function() {
     var dialog = document.createElement('dialog');
-    var template = '<h3>Modules</h3><ul class="modules"></ul><div><button id="update">Update</button><button id="cancel">Cancel</button></div>';
+    var template = '<h2>Modules</h2><ul class="modules"></ul><div><button id="update">Update</button><button id="cancel">Cancel</button></div>';
 
     dialog.id = 'dialog';
     dialog.innerHTML = template;
