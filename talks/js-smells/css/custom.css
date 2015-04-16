@@ -17,27 +17,28 @@ pre[data-line] { padding: 1em; }
 .Title {
   position: absolute;
   color: #999;
-  z-index: 9;
-  text-align: center;
+  z-index: 1;
   background-color: rgba(0, 0, 0, 0.1);
   text-transform: uppercase;
   letter-spacing: 1rem;
   max-height: 0;
-  overflow: hidden;
-  transition: all 1s ease-out;
-  transform: rotate(270deg);
-  transform-origin: 100% 100%;
-  width: 100%;
+  transition: max-height 1s ease-out;
+  transform: rotate(-90deg);
+  transform-origin: 0% 0%;
   right: 0;
-  bottom: 100vh;
   text-align: end;
+  left: 0;
+  top: 100vh;
+  width: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 .Title.Title--show {
   padding: 0.5rem;
   max-height: 3rem;
 }
 
-.StatusList { position: fixed; left: 1rem; bottom: 1rem; z-index: 1; }
+.StatusList { position: fixed; left: 1rem; bottom: 1rem; z-index: 3; }
 .StatusList .Status {
   float: left;
   text-align: center;
