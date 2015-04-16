@@ -1,0 +1,83 @@
+# Eliminate JavaScript Code Smells
+
+## <!-- .element: style="text-transform: lowercase;" --> by [@elijahmanor](http://twitter.com/elijahmanor)
+
+<h3 data-store="introduction-social" contenteditable></h3>
+
+<div style="font-size: .4em; opacity: 0.5; font-style: italic;">Picture: [Stray Cat](https://flic.kr/p/dQZvyD) / [Jim Bauer](https://www.flickr.com/photos/lens-cap/) / Creative Commons</div>
+
+------
+
+## `me.json`
+
+```
+{
+  "priorities" : [ "Christian", "Family", "Work" ],
+  "work"       : [ "@DaveRamsey", "@PluralSight" ],
+  "tech"       : [ "HTML", "CSS", "JavaScript", "React", "jQuery" ],
+  "titles"     : [ "MS MVP", "IE userAgent" ]
+}
+```
+
+------
+
+## Got Lint?
+<!-- .slide: data-background="./img/Douglas_Crockford,_February_2013.jpg" -->
+
+------
+
+<!-- .slide: data-background="./img/Shakespeare.jpg" data-background-color="#222" data-background-size="1000px" data-background-repeat="none" -->
+
+> "To lint, or not to lint, that is the question--
+> Whether 'tis Nobler in the mind to suffer
+> The Slings and Arrows of outrageous bugs,
+> Or to take Arms against JavaScript's bad parts,
+> And by opposing, end them?"
+> --William Shakespeare's play Hamlet.
+
+------
+
+<!-- .slide: data-background="./img/descartes.jpg" data-background-color="#222" data-background-size="1000px" data-background-repeat="none" -->
+
+> "I lint, therefore I am" --Descartes
+
+------
+
+## Agenda
+
+* Easy to lint, common rules <!-- .element class="fragment" -->
+* Easy to lint, lesser known rules <!-- .element class="fragment" -->
+* Easy to lint, but no rules <!-- .element class="fragment" -->
+* Hard to lint, because subjective <!-- .element class="fragment" -->
+
+fresh
+no-rules
+subjective
+
+Notes:
+
+# Eliminate JavaScript Code Smells
+
+## Title
+
+> Eliminate JavaScript Code Smells
+
+## Description (unpublished notes)
+
+> This talk is intended to go beyond basic linting (JSLint/ESLint/JSHint) techniques and dig further into JavaScript anti-pattern code smells. The gist of the session is to identify common code smells and to introduce patterns to assist when refactoring.
+
+## Abstract
+
+> Have you ever written JavaScript that reeked, but you couldn't quite figure out why? Or have you written code and immediately knew that it wasn't good, but didn't know a better way?
+
+> Your JavaScript may pass JSHint, but that doesn't mean it's legit.
+
+> "A code smell is a surface indication that usually corresponds to a deeper problem in the system" --Martin Fowler
+
+> Most developers can smell brittle and fragile code a mile away, but it takes time and training to combat against these smells. Code smells scream to be refactored.
+
+> In this session we will discuss various common smelly code snippets and discuss techniques on how we can eliminate and protect against their pungent odors creeping into your codebase.
+
+## Bio
+
+> Elijah Manor is a Christian and a family man. He works at The Lampo Group (Dave Ramsey) as a front-end web developer. He is a Microsoft Regional Director, Microsoft ASP.NET MVP, ASPInsider, IE userAgent, and a Pluralsight author. He enjoys blogging at http://elijahmanor.com and tweeting (@elijahmanor) about the things he learns.
