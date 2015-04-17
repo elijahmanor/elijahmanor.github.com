@@ -29,7 +29,7 @@
 ------
 
 # Smelly Code
-<!-- .slide: data-title="Convoluted Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
 ```
 /* const */ var CONSONANTS = 'bcdfghjklmnpqrstvwxyz';
@@ -71,19 +71,19 @@ function englishToPigLatin(english) {
 ------
 
 # Why Does This Smell?
-<!-- .slide: data-title="Convoluted Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
 ------
 
 # Cyclomatic Complexity
-<!-- .slide: data-title="Convoluted Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
 > "... is a software metric (measurement), used to indicate the complexity of a program. It is a quantitative measure of the number of linearly independent paths through a program's source code. It was developed by Thomas J. McCabe, Sr. in 1976." --[wikipedia](http://en.wikipedia.org/wiki/Cyclomatic_complexity)
 
 ------
 
 # EnglishToPigLatin
-<!-- .slide: data-title="Convoluted Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
 ## Cyclomatic Complexity: 7
 
@@ -92,7 +92,7 @@ http://jscomplexity.org/
 ------
 
 # Tooling
-<!-- .slide: data-title="Convoluted Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
 <!-- .element class="fragment" -->
 JSHint and ESLint support the `maxcomplexity` option!
@@ -103,21 +103,21 @@ JSHint and ESLint support the `maxcomplexity` option!
 ------
 
 # JSHint / ESLint
-<!-- .slide: data-title="Convoluted Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
 ![](./img/jshint-complexity.png)
 
 ------
 
 # So What!?!
-<!-- .slide: data-title="Convoluted Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
 ## Refactor <!-- .element class="fragment" -->
 
 ------
 
 # Unit Test First
-<!-- .slide: data-title="Convoluted Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
 <pre class="fragment"><code data-trim data-lang="javascript">
 describe('Pig Latin', function() {
@@ -164,7 +164,7 @@ describe('Pig Latin', function() {
 ------
 
 # Refactor
-<!-- .slide: data-title="Convoluted Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
 <pre class="fragment"><code data-trim data-lang="javascript">
 /* const */ var CONSONANTS = 'bcdfghjklmnpqrstvwxyz';
@@ -227,14 +227,14 @@ function englishToPigLatin(english) {
 ------
 
 # A Little Better
-<!-- .slide: data-title="Convoluted Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
 ## Cyclomatic Complexity: 4
 
 ------
 
 # [`plato`](https://github.com/es-analysis/plato)
-<!-- .slide: data-title="Convoluted Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
 JavaScript visualization, static analysis, and complexity tool
 
@@ -247,12 +247,12 @@ plato -r -d report -t "English to Pig Latin"
 ------
 
 # Massive Method Smell
-<!-- .slide: data-title="Convoluted Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
 ------
 
 # Smelly Code
-<!-- .slide: data-title="Convoluted Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
 ```
 /* const */ var CONSONANTS = 'bcdfghjklmnpqrstvwxyz';
@@ -315,12 +315,12 @@ function englishToPigLatin(english) {
 ------
 
 # Why Does This Smell?
-<!-- .slide: data-title="Convoluted Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
 ------
 
 # Massive Method!
-<!-- .slide: data-title="Convoluted Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
 * Too Many Statements <!-- .element class="fragment" -->
 * Too Many Parameters <!-- .element class="fragment" -->
@@ -329,7 +329,7 @@ function englishToPigLatin(english) {
 ------
 
 # Tooling
-<!-- .slide: data-title="Convoluted Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
 JSHint and ESLint support the `maxparams`, `maxdepth`, `maxstatements`, & `maxlen` options!
 
@@ -343,14 +343,14 @@ _Note: `maxlen` is deprecated & you should use `jscs` instead_
 ------
 
 # JSHint / ESLint
-<!-- .slide: data-title="Convoluted Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
 ![](./img/jshint-max.png)
 
 ------
 
 # Current Stats
-<!-- .slide: data-title="Convoluted Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
 * <!-- .element class="fragment" --> `maxparams`: 2
 * <!-- .element class="fragment" --> `maxdepth`: 3
@@ -361,14 +361,14 @@ _Note: `maxlen` is deprecated & you should use `jscs` instead_
 ------
 
 # So What!?!
-<!-- .slide: data-title="Convoluted Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
 ## Refactor <!-- .element class="fragment" -->
 
 ------
 
 # Refactor
-<!-- .slide: data-title="Convoluted Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
 <!-- /* jshint maxparams:3, maxdepth:2, maxstatements:5, maxcomplexity:6, maxlen:80, esnext:true */ -->
 <pre><code data-trim data-lang="javascript">
@@ -404,7 +404,7 @@ function englishToPigLatin(english='') {
 ------
 
 # Updated Stats
-<!-- .slide: data-title="Convoluted Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
 * <!-- .element class="fragment highlight-blue" --> `maxparams`: 2
 * <!-- .element class="fragment highlight-green" --> `maxdepth`: 2
@@ -415,7 +415,7 @@ function englishToPigLatin(english='') {
 ------
 
 # Resources
-<!-- .slide: data-title="Convoluted Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
 * `jshint` - http://jshint.com/
 * `eslint` - http://eslint.org/
