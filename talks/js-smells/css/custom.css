@@ -21,13 +21,12 @@ pre[data-line] { padding: 1em; }
   background-color: rgba(0, 0, 0, 0.1);
   text-transform: uppercase;
   letter-spacing: 1rem;
-  max-height: 0;
-  transition: max-height 1s ease-out;
+  transition: left 1s ease-out;
   transform: rotate(-90deg);
   transform-origin: 0% 0%;
   right: 0;
   text-align: end;
-  left: 0;
+  left: -3rem;
   top: 100vh;
   width: 100vh;
   box-sizing: border-box;
@@ -35,15 +34,21 @@ pre[data-line] { padding: 1em; }
 }
 .Title.Title--show {
   padding: 0.5rem;
-  max-height: 3rem;
+  left: 0;
 }
 
-.StatusList { position: fixed; left: 1rem; bottom: 1rem; z-index: 3; }
+.StatusList {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 3;
+  //transition: all 1s ease-in;
+}
 .StatusList .Status {
   float: left;
   text-align: center;
   margin: 0.5rem;
-  transition: all 1s ease-in;
+  //transition: all 1s ease-in;
   position: relative;
   top: 10rem;
 }
@@ -53,9 +58,12 @@ pre[data-line] { padding: 1em; }
   width: 80px;
   height: 80px;
   background-color: rgba(0, 0, 0, 0.5);
-  transition: all 1s ease-out;
+  //transition: all 1s ease-out;
  }
-.Status .Status-label { font-size: 1.25rem; }
+.Status .Status-label {
+  font-size: 1.25rem;
+  //transition: all 1s ease-in;
+}
 
 .statusLint .Status--lint { top: 0; }
 .statusLint--easy .Status--lint .Status-image { background-color: #5CB85C; }
@@ -77,7 +85,7 @@ pre[data-line] { padding: 1em; }
 .statusRule .Status--rule { top: 0; }
 .statusRule--fresh .Status--rule .Status-image { background-color: #5CB85C; }
 .statusRule--none .Status--rule .Status-image { background-color: #D9534F; }
-.statusRule--fuzzy .Status--rule .Status-image { background-color: #F0AD4E; }
+.statusRule--fuzzy .Status--rule .Status-image { background-color: #D9534F; }
 .statusRule--fresh .Status--rule .Status-label:after,
 .statusRule--none .Status--rule .Status-label:after,
 .statusRule--fuzzy .Status--rule .Status-label:after {
@@ -95,13 +103,13 @@ pre[data-line] { padding: 1em; }
 .statusRule--fuzzy .Status--rule .Status-label:after { content: 'Fuzzy Rule'; }
 
 .statusSkill .Status--skill { top: 0; }
-.statusSkill--junior .Status--skill .Status-image { background-color: #D9534F; }
-.statusSkill--mid .Status--skill .Status-image { background-color: #F0AD4E; }
-.statusSkill--senior .Status--skill .Status-image { background-color: #5CB85C; }
-.statusSkill--junior .Status--skill .Status-label:after,
-.statusSkill--mid .Status--skill .Status-label:after,
-.statusSkill--senior .Status--skill .Status-label:after {
-  content: 'Junior Dev';
+.statusSkill--junior .Status--skill .Status-image { background-color: #F0AD4E; }
+.statusSkill--mid .Status--skill .Status-image { background-color: #49AFCD; }
+.statusSkill--senior .Status--skill .Status-image { background-color: #363636; }
+.statusSkill--junior .Status--skill .Status-label:after,  /* blue    #D9EDF7 #49AFCD */
+.statusSkill--mid .Status--skill .Status-label:after,     /* green   #DFF0D8 #5CB85C */
+.statusSkill--senior .Status--skill .Status-label:after { /* red     #F2DEDE #D9534F */
+  content: 'Junior Dev';                                  /* yellow  #FCF8E3 #F0AD4E */
   position: absolute;
   top: 0;
   right: 0;
@@ -113,6 +121,39 @@ pre[data-line] { padding: 1em; }
 }
 .statusSkill--mid .Status--skill .Status-label:after { content: 'Mid-Level Dev'; }
 .statusSkill--senior .Status--skill .Status-label:after { content: 'Senior Dev'; }
+
+.title .StatusList {
+  left: -3.5rem;
+  transform: rotate(90deg);
+  bottom: 4rem;
+}
+.title .StatusList .Status { margin: 3rem 1.5rem 0 0.5rem; }
+.title .StatusList .Status-image { width: 40px; height: 40px; border-radius: 5px; border: none; }
+.title .StatusList .Status-label { font-size: 1rem; }
+.title .Status-label:after { transform: rotate(270deg); }
+.title .Status--lint .Status-label:before,
+.title .Status--rule .Status-label:before,
+.title .Status--skill .Status-label:before {
+  position: absolute;
+  transform: rotate(-90deg);
+  top: 0px;
+  left: -20px;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+.title .Status--lint .Status-label:before { content: 'LINT'; }
+.title.statusLint--easy .Status--lint .Status-label:after     { content: '✔'; left: -.25rem; }
+.title.statusLint--hard .Status--lint .Status-label:after     { content: '✘'; left: -.25rem; }
+.title .Status--rule .Status-label:before { content: 'RULE'; }
+.title.statusRule--fresh .Status--rule .Status-label:after    { content: '✔'; left: -.25rem; }
+.title.statusRule--none .Status--rule .Status-label:after     { content: '✘'; left: -.25rem; }
+.title.statusRule--fuzzy .Status--rule .Status-label:after    { content: '~'; left: -.25rem; }
+.title .Status--skill .Status-label:before { content: 'SKILL'; }
+.title.statusSkill--junior .Status--skill .Status-label:after { content: 'J'; left: -.25rem; }
+.title.statusSkill--mid .Status--skill .Status-label:after    { content: 'M'; left: -.25rem; }
+.title.statusSkill--senior .Status--skill .Status-label:after { content: 'S'; left: -.25rem; }
 
 .Split {
   display: flex;

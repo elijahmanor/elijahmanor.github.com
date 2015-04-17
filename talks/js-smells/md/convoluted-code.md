@@ -4,7 +4,7 @@
 ------
 
 # Pig Latin
-<!-- .slide: data-title="Convoluted Code" -->
+<!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
 
 1. <!-- .element start="1" value="1" --> If starts with consonant (or consonant cluster), then move the end and append "ay" <!-- .element class="fragment" -->
 
