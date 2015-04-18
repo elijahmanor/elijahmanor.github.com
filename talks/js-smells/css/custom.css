@@ -16,11 +16,11 @@ pre[data-line] { padding: 1em; }
 
 .Title {
   position: absolute;
-  color: #999;
+  color: white; /* #999; */
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
-  letter-spacing: 1rem;
+  letter-spacing: 0.5rem;
   transition: left 1s ease-out;
   transform: rotate(-90deg);
   transform-origin: 0% 0%;
@@ -42,7 +42,7 @@ pre[data-line] { padding: 1em; }
   left: 1rem;
   bottom: 1rem;
   z-index: 3;
-  //transition: all 1s ease-in;
+  transition: all 1s ease-in; /* turn off if wonky */
 }
 .StatusList .Status {
   float: left;
@@ -54,23 +54,22 @@ pre[data-line] { padding: 1em; }
 }
 .Status .Status-image {
   border-radius: 50%;
-  border: 3px solid white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   width: 80px;
   height: 80px;
-  background-color: rgba(0, 0, 0, 0.75);
-  //transition: all 1s ease-out;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: all 1s ease-out; /* turn off if wonky */
  }
 .Status .Status-label {
   font-size: 1.25rem;
-  //transition: all 1s ease-in;
+  transition: all 1s ease-in; /* turn off if wonky */
 }
 
 .statusLint .Status--lint { top: 0; }
-.statusLint--easy .Status--lint .Status-image { background-color: #5CB85C; }
-.statusLint--hard .Status--lint .Status-image { background-color: #D9534F; }
+//.statusLint--easy .Status--lint .Status-image { background-color: #5CB85C; }
+//.statusLint--hard .Status--lint .Status-image { background-color: #D9534F; }
 .statusLint--easy .Status--lint .Status-label:after,
 .statusLint--hard .Status--lint .Status-label:after {
-  content: 'Easy to Lint';
   position: absolute;
   top: 0;
   right: 0;
@@ -81,16 +80,22 @@ pre[data-line] { padding: 1em; }
   justify-content: center;
   color: black;
 }
-.statusLint--hard .Status--lint .Status-label:after { content: 'Hard to Lint'; }
+.statusLint--easy .Status--lint .Status-label:after {
+  content: 'Easy to Lint';
+  color: #5CB85C;
+}
+.statusLint--hard .Status--lint .Status-label:after {
+  content: 'Hard to Lint';
+  color: #D9534F;
+}
 
 .statusRule .Status--rule { top: 0; }
-.statusRule--fresh .Status--rule .Status-image { background-color: #5CB85C; }
-.statusRule--none .Status--rule .Status-image { background-color: #D9534F; }
-.statusRule--fuzzy .Status--rule .Status-image { background-color: #D9534F; }
+//.statusRule--fresh .Status--rule .Status-image { background-color: #5CB85C; }
+//.statusRule--none .Status--rule .Status-image { background-color: #D9534F; }
+//.statusRule--fuzzy .Status--rule .Status-image { background-color: #D9534F; }
 .statusRule--fresh .Status--rule .Status-label:after,
 .statusRule--none .Status--rule .Status-label:after,
 .statusRule--fuzzy .Status--rule .Status-label:after {
-  content: 'Fresh Rule';
   position: absolute;
   top: 0;
   right: 0;
@@ -101,17 +106,32 @@ pre[data-line] { padding: 1em; }
   justify-content: center;
   color: black;
 }
-.statusRule--none .Status--rule .Status-label:after { content: 'No Rule'; }
-.statusRule--fuzzy .Status--rule .Status-label:after { content: 'Fuzzy Rule'; }
+.statusRule--fresh .Status--rule .Status-label:after {
+  content: 'Fresh Rule';
+  color: #5CB85C;
+}
+.statusRule--none .Status--rule .Status-label:after {
+  content: 'No Rule';
+  color: #D9534F;
+}
+.statusRule--fuzzy .Status--rule .Status-label:after {
+  content: 'Fuzzy Rule';
+  color: #D9534F;
+}
+
+/* blue    #D9EDF7 #49AFCD */
+/* green   #DFF0D8 #5CB85C */
+/* red     #F2DEDE #D9534F */
+/* yellow  #FCF8E3 #F0AD4E */
 
 .statusSkill .Status--skill { top: 0; }
-.statusSkill--junior .Status--skill .Status-image { background-color: #F0AD4E; }
-.statusSkill--mid .Status--skill .Status-image { background-color: #49AFCD; }
-.statusSkill--senior .Status--skill .Status-image { background-color: #363636; }
-.statusSkill--junior .Status--skill .Status-label:after,  /* blue    #D9EDF7 #49AFCD */
-.statusSkill--mid .Status--skill .Status-label:after,     /* green   #DFF0D8 #5CB85C */
-.statusSkill--senior .Status--skill .Status-label:after { /* red     #F2DEDE #D9534F */
-  content: 'Junior Dev';                                  /* yellow  #FCF8E3 #F0AD4E */
+//.statusSkill--junior .Status--skill .Status-image { background-color: #F0AD4E; }
+//.statusSkill--mid .Status--skill .Status-image { background-color: #49AFCD; }
+//.statusSkill--senior .Status--skill .Status-image { background-color: #363636; }
+.statusSkill--junior .Status--skill .Status-label:after,
+.statusSkill--mid .Status--skill .Status-label:after,
+.statusSkill--senior .Status--skill .Status-label:after {
+  content: 'Junior Dev';
   position: absolute;
   top: 0;
   right: 0;
@@ -122,16 +142,32 @@ pre[data-line] { padding: 1em; }
   justify-content: center;
   color: black;
 }
-.statusSkill--mid .Status--skill .Status-label:after { content: 'Mid-Level Dev'; }
-.statusSkill--senior .Status--skill .Status-label:after { content: 'Senior Dev'; }
+.statusSkill--junior .Status--skill .Status-label:after {
+  content: 'Junior Dev';
+  color: #F0AD4E;
+}
+.statusSkill--mid .Status--skill .Status-label:after {
+  content: 'Middle Dev';
+  color: #49AFCD;
+}
+.statusSkill--senior .Status--skill .Status-label:after {
+  content: 'Senior Dev';
+  color: #363636;
+}
 
 .title .StatusList {
-  left: -3.7rem;
+  left: -3.8rem;
   transform: rotate(90deg);
   bottom: 4rem;
 }
 .title .StatusList .Status { margin: 3rem 1.5rem 0 0.5rem; }
-.title .StatusList .Status-image { width: 40px; height: 40px; border-radius: 5px; border: 1px solid black; background-color: rgba(0, 0, 0, 0.5); }
+.title .StatusList .Status-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: rgba(255, 255, 255, 0.1);
+}
 .title .StatusList .Status-label { font-size: 1rem; }
 .title .Status-label:after { transform: rotate(270deg); }
 .title .Status--lint .Status-label:before,
@@ -155,9 +191,9 @@ pre[data-line] { padding: 1em; }
 .title.statusRule--none .Status--rule .Status-label:after     { content: '✘'; color: #D9534F; left: -.25rem; }
 .title.statusRule--fuzzy .Status--rule .Status-label:after    { content: '~'; color: #FCF8E3; left: -.25rem; }
 .title .Status--skill .Status-label:before { content: 'SKILL'; }
-.title.statusSkill--junior .Status--skill .Status-label:after { content: 'J'; color: #FCF8E3; left: -.25rem; }
-.title.statusSkill--mid .Status--skill .Status-label:after    { content: 'M'; color: #DFF0D8; left: -.25rem; }
-.title.statusSkill--senior .Status--skill .Status-label:after { content: 'S'; color: black; left: -.25rem; }
+.title.statusSkill--junior .Status--skill .Status-label:after { content: 'Jr'; color: #FCF8E3; left: -.25rem; }
+.title.statusSkill--mid .Status--skill .Status-label:after    { content: 'Md'; color: #DFF0D8; left: -.25rem; }
+.title.statusSkill--senior .Status--skill .Status-label:after { content: 'Sr'; color: black; left: -.25rem; }
 
 .Split {
   display: flex;
