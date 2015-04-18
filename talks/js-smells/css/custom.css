@@ -54,7 +54,7 @@ pre[data-line] { padding: 1em; }
 }
 .Status .Status-image {
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.3);
   width: 80px;
   height: 80px;
   background-color: rgba(0, 0, 0, 0.3);
@@ -156,7 +156,7 @@ pre[data-line] { padding: 1em; }
 }
 
 .title .StatusList {
-  left: -3.8rem;
+  left: -4rem;
   transform: rotate(90deg);
   bottom: 4rem;
 }
@@ -165,7 +165,7 @@ pre[data-line] { padding: 1em; }
   width: 40px;
   height: 40px;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 2px solid rgba(0, 0, 0, 0.1);
   background-color: rgba(255, 255, 255, 0.1);
 }
 .title .StatusList .Status-label { font-size: 1rem; }
@@ -184,16 +184,16 @@ pre[data-line] { padding: 1em; }
   color: white;
 }
 .title .Status--lint .Status-label:before { content: 'LINT'; }
-.title.statusLint--easy .Status--lint .Status-label:after     { content: '✔'; color: #5CB85C; left: -.25rem; }
-.title.statusLint--hard .Status--lint .Status-label:after     { content: '✘'; color: #D9534F; left: -.25rem; }
+.title.statusLint--easy .Status--lint .Status-label:after     { content: '✔'; color: #5CB85C; left: -.25rem; font-size: 1.5rem; } /* ☑✔✅ */
+.title.statusLint--hard .Status--lint .Status-label:after     { content: '✘'; color: #D9534F; left: -.25rem; font-size: 1.5rem; } /* ☒✘❎❌ */
 .title .Status--rule .Status-label:before { content: 'RULE'; }
-.title.statusRule--fresh .Status--rule .Status-label:after    { content: '✔'; color: #5CB85C; left: -.25rem; }
-.title.statusRule--none .Status--rule .Status-label:after     { content: '✘'; color: #D9534F; left: -.25rem; }
-.title.statusRule--fuzzy .Status--rule .Status-label:after    { content: '~'; color: #FCF8E3; left: -.25rem; }
+.title.statusRule--fresh .Status--rule .Status-label:after    { content: '✔'; color: #5CB85C; left: -.25rem; font-size: 1.5rem; }
+.title.statusRule--none .Status--rule .Status-label:after     { content: '✘'; color: #D9534F; left: -.25rem; font-size: 1.5rem; }
+.title.statusRule--fuzzy .Status--rule .Status-label:after    { content: '~'; color: #FCF8E3; left: -.25rem; font-size: 1.5rem; }
 .title .Status--skill .Status-label:before { content: 'SKILL'; }
-.title.statusSkill--junior .Status--skill .Status-label:after { content: 'Jr'; color: #FCF8E3; left: -.25rem; }
-.title.statusSkill--mid .Status--skill .Status-label:after    { content: 'Md'; color: #DFF0D8; left: -.25rem; }
-.title.statusSkill--senior .Status--skill .Status-label:after { content: 'Sr'; color: black; left: -.25rem; }
+.title.statusSkill--junior .Status--skill .Status-label:after { content: 'Jr'; color: #FCF8E3; left: -.25rem; font-size: 1.5rem; font-variant: small-caps; }
+.title.statusSkill--mid .Status--skill .Status-label:after    { content: 'Md'; color: #DFF0D8; left: -.25rem; font-size: 1.5rem; font-variant: small-caps; }
+.title.statusSkill--senior .Status--skill .Status-label:after { content: 'Sr'; color: black; left: -.25rem; font-size: 1.5rem; font-variant: small-caps; }
 
 .Split {
   display: flex;

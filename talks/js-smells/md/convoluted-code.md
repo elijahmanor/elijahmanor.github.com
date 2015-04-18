@@ -75,6 +75,16 @@ function englishToPigLatin(english) {
 
 ------
 
+# LOTS OF REASONS!
+<!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+
+* Too Many Statements <!-- .element class="fragment" -->
+* Too Many Parameters <!-- .element class="fragment" -->
+* Too Much Depth <!-- .element class="fragment" -->
+* Too Much Complexity <!-- .element class="fragment" -->
+
+------
+
 # Cyclomatic Complexity
 <!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
@@ -88,6 +98,10 @@ function englishToPigLatin(english) {
 ## Cyclomatic Complexity: 7
 
 http://jscomplexity.org/
+
+// jshint maxcomplexity:5, maxparams:3, maxdepth:2, maxstatements:15`
+
+<!-- pick apart all the complexities -->
 
 ------
 

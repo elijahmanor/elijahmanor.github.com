@@ -8,20 +8,20 @@
 
 ------
 
-## `me.json`
+# `me.json`
 
 ```
 {
   "priorities" : [ "Christian", "Family", "Work" ],
   "work"       : [ "@DaveRamsey", "@PluralSight" ],
   "tech"       : [ "HTML", "CSS", "JavaScript", "React", "jQuery" ],
-  "titles"     : [ "MS MVP", "IE userAgent" ]
+  "titles"     : [ "Microsoft MVP", "IE userAgent" ]
 }
 ```
 
 ------
 
-## Got Lint?
+# Got Lint?
 <!-- .slide: data-background="./img/Douglas_Crockford,_February_2013.jpg" -->
 
 ------
@@ -33,7 +33,8 @@
 > The Slings and Arrows of outrageous bugs,
 > Or to take Arms against JavaScript's bad parts,
 > And by opposing, end them?"
-> --William Shakespeare's play Hamlet.
+
+> --William Shakespeare's play Hamlet
 
 ------
 
@@ -45,14 +46,10 @@
 
 ## Agenda
 
-* Easy to lint, common rules <!-- .element class="fragment" -->
-* Easy to lint, lesser known rules <!-- .element class="fragment" -->
-* Easy to lint, but no rules <!-- .element class="fragment" -->
-* Hard to lint, because subjective <!-- .element class="fragment" -->
-
-fresh
-no-rules
-subjective
+* Easy to lint, Common rules <!-- .element class="fragment highlight-red" -->
+* Easy to lint, Fresh rules <!-- .element class="fragment highlight-green" -->
+* Easy to lint, No rules <!-- .element class="fragment highlight-green" -->
+* Hard to lint, Subjective rules <!-- .element class="fragment highlight-green" -->
 
 Notes:
 
