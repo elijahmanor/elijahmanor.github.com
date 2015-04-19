@@ -5,3 +5,9 @@ Reveal.addEventListener('slidechanged', function(event) {
   header.classList.toggle('Title--show', !!title);
   header.innerHTML = title;
 });
+
+document.addEventListener('webkitAnimationEnd', function(e) {
+  if (e.target.closest('.Status')) {
+    //document.body.parentNode.classList.remove('statusSkill--change');
+  }
+});

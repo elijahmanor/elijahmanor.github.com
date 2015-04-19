@@ -3,15 +3,18 @@
 
 ------
 
-# So, we had this...
-<!-- .slide: data-title="Copy Paste Code" -->
+## So, we had this...
+<!-- .slide: data-title="Copy Paste Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
 
 ![](./img/copy-paste-code-box-crop.png) <!-- .element style="height: 550px;" -->
 
 ------
 
-## `Box.js`
-<!-- .slide: data-title="Copy Paste Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
+## So, we had this...
+<!-- .slide: data-title="Copy Paste Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
+
+### `Box.js`
+<!-- .slide: data-title="Copy Paste Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
 
 ```
 // ... more code ...
@@ -28,18 +31,18 @@ var boxes = document.querySelectorAll('.Box');
 ```
 
 ------
-<!-- .slide: data-title="Copy Paste Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
 
-# and we wanted this
+## and we wanted this
+<!-- .slide: data-title="Copy Paste Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
 
 ![](./img/copy-paste-code-circle-crop.png) <!-- .element style="height: 550px;" -->
 
 ------
 
-# So, this happened...
-<!-- .slide: data-title="Copy Paste Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
+## So, this happened...
+<!-- .slide: data-title="Copy Paste Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
 
-## `Circle.js`
+### `Circle.js`
 
 ```
 // ... more code ...
@@ -58,17 +61,19 @@ var circles = document.querySelectorAll(".Circle");
 ------
 
 # Why Does This Smell?
-<!-- .slide: data-title="Copy Paste Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
+<!-- .slide: data-title="Copy Paste Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
+
+## Because We Copied And Pasted! <!-- .element class="fragment" -->
 
 ------
 
 # Tooling
-<!-- .slide: data-title="Copy Paste Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
+<!-- .slide: data-title="Copy Paste Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
 
 ------
 
 # [`jsinspect`](https://github.com/danielstjules/jsinspect)
-<!-- .slide: data-title="Copy Paste Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
+<!-- .slide: data-title="Copy Paste Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
 
 Detect copy-pasted and structurally similar code
 
@@ -81,7 +86,7 @@ jsinspect
 ------
 
 # [`jscpd`](https://github.com/kucherenko/jscpd)
-<!-- .slide: data-title="Copy Paste Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
+<!-- .slide: data-title="Copy Paste Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
 
 Copy/paste detector for programming source code (JavaScript, TypeScript, C#, Ruby, CSS, SCSS, HTML, etc...)
 
@@ -94,14 +99,14 @@ jscpd -f **/*.js -l 1 -t 30 --languages javascript
 ------
 
 # So What!?!
-<!-- .slide: data-title="Copy Paste Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
+<!-- .slide: data-title="Copy Paste Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
 
 ## Refactor <!-- .element class="fragment" -->
 
 ------
 
 # Refactor
-<!-- .slide: data-title="Copy Paste Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
+<!-- .slide: data-title="Copy Paste Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--mid statusSkill--change" -->
 
 Let's pull out the random color portion...
 
@@ -128,7 +133,7 @@ var circles = document.querySelectorAll(".Circle");
 ------
 
 # Refactor More
-<!-- .slide: data-title="Copy Paste Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
+<!-- .slide: data-title="Copy Paste Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--mid" -->
 
 Let's pull out the weird `[].forEach.call` portion...
 
@@ -155,7 +160,7 @@ $$(".Circle").forEach(function(element, index) {
 ------
 
 # Refactor More?
-<!-- .slide: data-title="Copy Paste Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
+<!-- .slide: data-title="Copy Paste Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--mid" -->
 
 Let's try to go further...
 
@@ -183,7 +188,7 @@ updateElement('.Circle', 'Circle', 'color');
 ------
 
 # Resources
-<!-- .slide: data-title="Copy Paste Code" data-state="statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
+<!-- .slide: data-title="Copy Paste Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--mid" -->
 
 * CodePen - http://codepen.io/elijahmanor/pen/myQebo
 * `jsinspect` - https://github.com/danielstjules

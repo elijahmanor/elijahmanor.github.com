@@ -1,55 +1,40 @@
-/* const */ var CONSONANTS = 'bcdfghjklmnpqrstvwxyz';
-/* const */ var VOWELS = 'aeiou';
+/* globals englishToPigLatin:true */
+/*eslint complexity:[2, 3],
+         max-depth:[2, 2],
+         max-statements:[2, 6],
+         max-len:[2, 73],
+         max-nested-callbacks:[2, 1],
+         max-params:[2, 2],
+         quotes:[2, "single"],
+         eqeqeq:[0],
+         space-infix-ops:[0],
+         no-unused-vars:[0],
+         strict:[0] */
 
-function isValid(word) {
-  var character = word ? word[0] : '';
+const CONSONANTS = ['th', 'qu', 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k',
+'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
+const VOWELS = ['a', 'e', 'i', 'o', 'u'];
+const ENDING = 'ay';
 
-  return word && isVowel(character) || isConsonant(character);
-}
-
-function isVowel(character) {
-  return character ? !!~VOWELS.indexOf(character) : false;
-}
-
-function isConsonant(character) {
-  return character ? !!~CONSONANTS.indexOf(character) : false;
-}
-
-function getPreVowelConsonants(word) {
-  var preVowelConsonants = '';
-
-  for (var i = 0; i < word.length; ++i) {
-    if (isConsonant(word[i])) {
-      preVowelConsonants += word[i];
-      if (preVowelConsonants == 'q' &&
-        i+1 < word.length && word[i+1] == 'u') {
-        preVowelConsonants += 'u';
-        i += 2;
-        break;
-      }
-    } else {
-      break;
-    }
+var isValid = word => startsWithVowel(word) || startsWithConsonant(word);
+var startsWithVowel = word => !!~VOWELS.indexOf(word[0]);
+var startsWithConsonant = word => !!~CONSONANTS.indexOf(word[0]);
+var getConsonants = word => CONSONANTS.reduce((memo, char) => {
+  if (word.startsWith(char)) {
+    memo += char;
+    word = word.substr(char.length);
   }
+  return memo;
+}, '');
 
-  return preVowelConsonants;
-}
-
-function EnglishToPigLatin(english) {
-   /* const */ var SYLLABLE = 'ay';
-
-   var pigLatin = '';
-   var firstCharacter = english ? english[0] : '';
-
+function englishToPigLatin(english='') {
    if (isValid(english)) {
-      if (isVowel(firstCharacter)) {
-         pigLatin = english + SYLLABLE;
+      if (startsWithVowel(english)) {
+        english += ENDING;
       } else {
-        var preVowelConsonants = getPreVowelConsonants(english);
-        pigLatin = english.substring(preVowelConsonants.length) +
-          preVowelConsonants + SYLLABLE;
+        let letters = getConsonants(english);
+        english = `${english.substr(letters.length)}${letters}${ENDING}`;
       }
    }
-
-   return pigLatin;
+   return english;
 }

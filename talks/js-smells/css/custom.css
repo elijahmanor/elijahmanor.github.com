@@ -6,6 +6,9 @@
   outline: 1px dashed rgba(0, 0, 0, 0.25);
 }
 
+.reveal blockquote { width: 80%; padding: 2rem; text-align: left; line-height: 0; }
+.reveal blockquote p:first-child { display: block; }
+
 /*
 pre[class*='language'] { font-size: 1.25rem; }
 pre[data-line] { padding: 1em; }
@@ -184,16 +187,91 @@ pre[data-line] { padding: 1em; }
   color: white;
 }
 .title .Status--lint .Status-label:before { content: 'LINT'; }
-.title.statusLint--easy .Status--lint .Status-label:after     { content: '✔'; color: #5CB85C; left: -.25rem; font-size: 1.5rem; } /* ☑✔✅ */
-.title.statusLint--hard .Status--lint .Status-label:after     { content: '✘'; color: #D9534F; left: -.25rem; font-size: 1.5rem; } /* ☒✘❎❌ */
+.title.statusLint--easy .Status--lint .Status-label:after     { content: '✔'; color: #5CB85C; left: -.25rem; font-size: 2rem; } /* ☑✔✅ */
+.title.statusLint--hard .Status--lint .Status-label:after     { content: '✘'; color: #D9534F; left: -.25rem; font-size: 2rem; } /* ☒✘❎❌ */
 .title .Status--rule .Status-label:before { content: 'RULE'; }
-.title.statusRule--fresh .Status--rule .Status-label:after    { content: '✔'; color: #5CB85C; left: -.25rem; font-size: 1.5rem; }
-.title.statusRule--none .Status--rule .Status-label:after     { content: '✘'; color: #D9534F; left: -.25rem; font-size: 1.5rem; }
-.title.statusRule--fuzzy .Status--rule .Status-label:after    { content: '~'; color: #FCF8E3; left: -.25rem; font-size: 1.5rem; }
+.title.statusRule--fresh .Status--rule .Status-label:after    { content: '✔'; color: #5CB85C; left: -.25rem; font-size: 2rem; }
+.title.statusRule--none .Status--rule .Status-label:after     { content: '✘'; color: #D9534F; left: -.25rem; font-size: 2rem; }
+.title.statusRule--fuzzy .Status--rule .Status-label:after    { content: '~'; color: #FCF8E3; left: -.25rem; font-size: 2rem; }
 .title .Status--skill .Status-label:before { content: 'SKILL'; }
-.title.statusSkill--junior .Status--skill .Status-label:after { content: 'Jr'; color: #FCF8E3; left: -.25rem; font-size: 1.5rem; font-variant: small-caps; }
-.title.statusSkill--mid .Status--skill .Status-label:after    { content: 'Md'; color: #DFF0D8; left: -.25rem; font-size: 1.5rem; font-variant: small-caps; }
-.title.statusSkill--senior .Status--skill .Status-label:after { content: 'Sr'; color: black; left: -.25rem; font-size: 1.5rem; font-variant: small-caps; }
+.title.statusSkill--junior .Status--skill .Status-label:after { content: 'Jr'; color: #F0AD4E; left: -.25rem; font-size: 2rem; font-variant: small-caps; }
+.title.statusSkill--mid .Status--skill .Status-label:after    { content: 'Md'; color: #49AFCD; left: -.25rem; font-size: 2rem; font-variant: small-caps; }
+.title.statusSkill--senior .Status--skill .Status-label:after {
+  content: 'Sr';
+  color: white;
+  left: -.25rem;
+  font-size: 2rem;
+  font-variant: small-caps;
+  text-shadow:
+    0 3px 20px red,
+    0 0 20px red,
+    0 0 10px orange,
+    4px -5px 6px yellow,
+    -4px -10px 10px yellow,
+    0 -10px 30px yellow;
+  animation: 1s Blazing infinite alternate ease-in;
+}
+.title.statusSkill .Status {
+  //transition: transform 1s ease-out;
+}
+.title.statusSkill--junior.statusSkill--change .Status--skill,
+.title.statusSkill--mid.statusSkill--change .Status--skill,
+.title.statusSkill--senior.statusSkill--change .Status--skill {
+  animation: Flip 1s 1 ease-out forwards; 
+  //transform: rotateX(-360deg);
+  //transform-style: preserve-3d;
+}
+
+pre.fragment { transition: transform 5s ease-out; }
+pre.fragment code { transition: all .25s ease-out; }
+pre.fragment.fragment--code.visible { transform: translateY(-9rem); }
+pre.fragment.fragment--code.visible code { max-height: 760px; }
+
+.reveal .slides section .fragment.highlight-red,
+.reveal .slides section .fragment.highlight-green,
+.reveal .slides section .fragment.highlight-blue { opacity: 0; visibility: hidden; }
+.reveal .slides section .fragment.highlight-red.visible,
+.reveal .slides section .fragment.highlight-green.visible,
+.reveal .slides section .fragment.highlight-blue.visible { opacity: 1; visibility: visible; }
+
+@keyframes Flip {
+  from {  transform: rotateX(0deg); transform-style: preserve-3d; }
+  to { transform: rotateX(-360deg); transform-style: preserve-3d; }
+}
+
+/* http://codepen.io/makan/pen/yyjRZx */
+@keyframes Blazing {
+0%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+  0 0 10px orange,
+  0 0 0 yellow,
+  0 0 5px yellow,
+  -2px -5px 5px yellow,
+  4px -10px 10px yellow; }
+25%   { text-shadow: 0 3px 20px red, 0 0 30px red,
+  0 0 20px orange,
+  0 0 5px yellow,
+  -2px -5px 5px yellow,
+  3px -10px 10px yellow,
+  -4px -15px 20px yellow; }
+50%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+  0 -5px 10px orange,
+  -2px -5px 5px yellow,
+  3px -10px 10px yellow,
+  -4px -15px 20px yellow,
+  2px -20px 30px rgba(255,255,0,0.5); }
+75%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+  0 -5px 10px orange,
+  3px -5px 5px yellow,
+  -4px -10px 10px yellow,
+  2px -20px 30px rgba(255,255,0,0.5),
+  0px -25px 40px rgba(255,255,0,0)}
+100%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+  0 0 10px orange,
+  0 0 0 yellow,
+  0 0 5px yellow,
+  -2px -5px 5px yellow,
+  4px -10px 10px yellow; }
+}
 
 .Split {
   display: flex;

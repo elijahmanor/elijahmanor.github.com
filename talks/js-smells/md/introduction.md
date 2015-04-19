@@ -29,9 +29,13 @@
 <!-- .slide: data-background="./img/Shakespeare.jpg" data-background-color="#222" data-background-size="1000px" data-background-repeat="none" -->
 
 > "To lint, or not to lint, that is the question--
+
 > Whether 'tis Nobler in the mind to suffer
+
 > The Slings and Arrows of outrageous bugs,
+
 > Or to take Arms against JavaScript's bad parts,
+
 > And by opposing, end them?"
 
 > --William Shakespeare's play Hamlet
