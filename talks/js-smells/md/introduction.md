@@ -8,16 +8,33 @@
 
 ------
 
-# `me.json`
+## `me.json`
 
-```
-{
-  "priorities" : [ "Christian", "Family", "Work" ],
-  "work"       : [ "@DaveRamsey", "@PluralSight" ],
-  "tech"       : [ "HTML", "CSS", "JavaScript", "React", "jQuery" ],
-  "titles"     : [ "Microsoft MVP", "IE userAgent" ]
-}
-```
+<div class="Split">
+  <div class="Split-column">
+    <pre><code class="json">{
+  "name": "Elijah Manor",
+  "priorities" : [
+    "Christian", "Family", "Work"
+  ],
+  "work" : [
+    "@DaveRamsey", "@PluralSight"
+  ],
+  "tech" : [
+    "HTML", "CSS", "JavaScript",
+    "React", "jQuery"
+  ],
+  "titles" : [
+    "Microsoft MVP",
+    "IE userAgent"
+  ]
+}</code></pre>
+  </div>
+  <div class="Split-column">
+    <img src="/img/ramsey-solutions.svg" />
+    <img src="/img/everydollar.svg" />
+  </div>
+</div>  
 
 ------
 
@@ -28,17 +45,14 @@
 
 <!-- .slide: data-background="./img/Shakespeare.jpg" data-background-color="#222" data-background-size="1000px" data-background-repeat="none" -->
 
-> "To lint, or not to lint, that is the question--
-
-> Whether 'tis Nobler in the mind to suffer
-
-> The Slings and Arrows of outrageous bugs,
-
-> Or to take Arms against JavaScript's bad parts,
-
-> And by opposing, end them?"
-
-> --William Shakespeare's play Hamlet
+<blockquote class="blockquote--wide">
+  <p>"To lint, or not to lint, that is the question--</p>
+  <p>Whether 'tis Nobler in the mind to suffer</p>
+  <p>The Slings and Arrows of outrageous bugs,</p>
+  <p>Or to take Arms against JavaScript's bad parts,</p>
+  <p>And by opposing, end them?"</p>
+  <p>--William Shakespeare's play Hamlet</p>
+</blockquote>
 
 ------
 

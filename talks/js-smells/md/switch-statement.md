@@ -4,7 +4,7 @@
 ------
 
 ## Smelly Code
-<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
 
 ```
 function getArea(shape, options) {
@@ -40,14 +40,14 @@ getArea('Bogus');
 ------
 
 # Why Does This Smell?
-<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
 
 ## Violates the "Open/Closed Principle" <!-- .element class="fragment" -->
 
 ------
 
 ## Open/Closed Principle (OCP)
-<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
 
 > "...software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification; that is, such an entity can allow its behaviour to be extended without modifying its source code."  --[wikipedia](http://en.wikipedia.org/wiki/Open/closed_principle)
 
@@ -56,7 +56,7 @@ getArea('Bogus');
 ------
 
 ## Adding a New Shape
-<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
 
 ```
 function getArea(shape, options) {
@@ -75,9 +75,11 @@ function getArea(shape, options) {
       area = options.width * options.height;
       break;
 
+    // BEGIN: New Shape
     case 'Circle':
       area = Math.PI * Math.pow(options.radius, 2);
       break;
+    // END: New Shape
 
     default:
       throw new Error('Invalid shape: ' + shape);
@@ -91,14 +93,14 @@ function getArea(shape, options) {
 ------
 
 # So What!?!
-<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
 
 ## Strategy Design Pattern <!-- .element class="fragment" -->
 
 ------
 
 ## Strategy Design Pattern
-<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--mid statusSkill--change" data-background="#222" -->
+<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid statusSkill--change" data-background="#222" -->
 
 ```
 // triangle.js
@@ -136,7 +138,7 @@ getArea('Bogus');
 ------
 
 ## Adding a New Shape
-<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--mid" data-background="#222" -->
+<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid" data-background="#222" -->
 
 ```
 // circle.js
@@ -158,7 +160,7 @@ getArea('Bogus');
 ------
 
 # Any Other Smells?
-<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--mid" data-background="#222" -->
+<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid" data-background="#222" -->
 
 
 ## Magic Strings <!-- .element class="fragment" -->
@@ -166,7 +168,7 @@ getArea('Bogus');
 ------
 
 ## Magic Strings
-<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--mid" data-background="#222" -->
+<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid" data-background="#222" -->
 
 ```
 function getArea(shape, options) {
@@ -176,7 +178,7 @@ function getArea(shape, options) {
     case 'Triangle': // YUCK
       area = .5 * options.width * options.height;
       break;
-    /* ... more code ... */
+    // ... more code ...
   }
 
   return area;
@@ -189,14 +191,14 @@ getArea('Triangle', { width: 100, height: 100 });
 ------
 
 ## Magic Strings Refactor
-<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--mid" data-background="#222" -->
+<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid" data-background="#222" -->
 
 ### Object Types
 
 ```
 var shapeType = {
   triangle: 'Triangle',
-  /* ... more code ... */
+  // ... more code ...
 };
 
 function getArea(shape, options) {
@@ -206,7 +208,7 @@ function getArea(shape, options) {
     case shapeType.triangle:
       area = .5 * options.width * options.height;
       break;
-    /* ... more code ... */
+    // ... more code ...
   }
 
   return area;
@@ -218,14 +220,14 @@ getArea(shapeType.triangle, { width: 100, height: 100 });
 ------
 
 ## Magic Strings Refactor
-<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--senior statusSkill--change" data-background="#222" -->
+<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--senior statusSkill--change" data-background="#222" -->
 
 ### `const` & `symbols`
 
 ```
 const shapeType = {
   triangle: new Symbol(),
-  /* ... more code ... */
+  // ... more code ...
 };
 
 function getArea(shape, options) {
@@ -235,7 +237,7 @@ function getArea(shape, options) {
     case shapeType.triangle:
       area = .5 * options.width * options.height;
       break;
-    /* ... more code ... */
+    // ... more code ...
   }
 
   return area;
@@ -247,7 +249,7 @@ getArea(shapeType.triangle, { width: 100, height: 100 });
 ------
 
 ## Magic Strings Refactor
-<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--senior" data-background="#222" -->
+<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--senior" data-background="#222" -->
 
 ### Applied to Strategy Pattern
 
@@ -274,27 +276,21 @@ TODO: Facebook Flow or TypeScript
 ------
 
 # Tooling!?!
-<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--senior" data-background="#222" -->
+<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--senior" data-background="#222" -->
 
 ## Nope :( <!-- .element class="fragment" -->
 
 ------
 
 ## `eslint-plugin-smells`
-<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--senior" data-background="#222" -->
+<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--custom statusRule--change statusSkill statusSkill--senior" data-background="#222" -->
 
-> ESLint rules for JavaScript Smells
-
-> https://github.com/elijahmanor/eslint-plugin-smells
-
-Notes:
-
-TODO: Make the link into a short URL
+> ESLint rules for JavaScript Smells http://bit.ly/eslint-plugin-smells
 
 ------
 
 ## Rules
-<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--senior" data-background="#222" -->
+<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--custom statusSkill statusSkill--senior" data-background="#222" -->
 
 * <!-- .element class="fragment" --> `no-switch` - disallow the use of the `switch` statement
 * <!-- .element class="fragment" --> `no-complex-switch-case` - disallow use of complex `switch` statements
@@ -302,37 +298,46 @@ TODO: Make the link into a short URL
 ------
 
 ## What about edge cases?
-<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--senior" data-background="#222" -->
+<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--custom statusSkill statusSkill--senior" data-background="#222" -->
 
 ```
-/*eslint eqeqeq:0, curly: 2*/
+/*eslint no-switch:[0] */
 
+switch (test) { case 'value': break; }
+```
+<!-- .element class="fragment" -->
+
+```
 /*eslint-disable */
+switch (test) { case 'value': break; }
 /*eslint-enable */
-
-/*eslint-disable no-alert */
-
-/*eslint-enable no-alert */
-
-alert('foo'); // eslint-disable-line
-
-alert('foo'); // eslint-disable-line no-alert
-
-.eslintrc
 ```
+<!-- .element class="fragment" -->
+
+```
+/*eslint-disable no-switch */
+switch (test) { case 'value': break; }
+/*eslint-enable no-switch */
+```
+<!-- .element class="fragment" -->
+
+<pre><code class="javascript" data-trim>
+switch (test) { case 'value': break; } // eslint-disable-line
+</code></pre><!-- .element class="fragment" -->
+
+<pre><code class="javascript" data-trim>
+switch (test) { case 'value': break; } // eslint-disable-line no-switch
+</code></pre><!-- .element class="fragment" -->
 
 ------
 
 ## Resources
-<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--senior" data-background="#222" -->
+<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--custom statusSkill statusSkill--senior" data-background="#222" -->
 
-* [ESLint](http://eslint.org/)
-* [ESLint: Rules](http://eslint.org/docs/rules/)
-* [ESLint: Working with Rules](http://eslint.org/docs/developer-guide/working-with-rules)
-* [SpiderMonkey Parser API](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Parser_API)
-* [`eslint-plugin-smells`](https://github.com/elijahmanor/eslint-plugin-smells)
 * CodePen - http://codepen.io/elijahmanor/pen/OPazmm
+* Addy Osmani's Learning JavaScript Design Patterns eBook - http://addyosmani.com/resources/essentialjsdesignpatterns/book/
+* [ESLint](http://eslint.org/)
+* [`eslint-plugin-smells`](https://github.com/elijahmanor/eslint-plugin-smells)
 * http://www.2ality.com/2015/02/es6-scoping.html
 * http://www.2ality.com/2014/12/es6-symbols.html
 * http://babeljs.io/docs/learn-es6
-* Addy Osmani's Learning JavaScript Design Patterns eBook - http://addyosmani.com/resources/essentialjsdesignpatterns/book/

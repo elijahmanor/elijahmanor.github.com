@@ -2,12 +2,12 @@
 #dialog .modules { list-style-type: none; font-size: 1.5rem; }
 #dialog h2 { color: black; margin: 0; }
 
-[data-store] {
-  outline: 1px dashed rgba(0, 0, 0, 0.25);
-}
+[data-store] { outline: 1px dashed rgba(0, 0, 0, 0.25); }
 
-.reveal blockquote { width: 80%; padding: 2rem; text-align: left; line-height: 0; }
-.reveal blockquote p:first-child { display: block; }
+#Introduction img { background: none; border: none; box-shadow: none: }
+
+.reveal blockquote.blockquote--wide { width: 80%; padding: 2rem; text-align: left; line-height: 0; }
+.reveal blockquote.blockquote--wide p:first-child { display: block; }
 
 /*
 pre[class*='language'] { font-size: 1.25rem; }
@@ -98,7 +98,8 @@ pre[data-line] { padding: 1em; }
 //.statusRule--fuzzy .Status--rule .Status-image { background-color: #D9534F; }
 .statusRule--fresh .Status--rule .Status-label:after,
 .statusRule--none .Status--rule .Status-label:after,
-.statusRule--fuzzy .Status--rule .Status-label:after {
+.statusRule--fuzzy .Status--rule .Status-label:after,
+.statusRule--custom .Status--rule .Status-label:after {
   position: absolute;
   top: 0;
   right: 0;
@@ -193,6 +194,13 @@ pre[data-line] { padding: 1em; }
 .title.statusRule--fresh .Status--rule .Status-label:after    { content: '✔'; color: #5CB85C; left: -.25rem; font-size: 2rem; }
 .title.statusRule--none .Status--rule .Status-label:after     { content: '✘'; color: #D9534F; left: -.25rem; font-size: 2rem; }
 .title.statusRule--fuzzy .Status--rule .Status-label:after    { content: '~'; color: #FCF8E3; left: -.25rem; font-size: 2rem; }
+.title.statusRule--custom .Status--rule .Status-label:after    {
+  content: '☆';
+  color: #FCF8E3;
+  left: -.25rem;
+  font-size: 2rem;
+} /* 🌟 ★ ☆ ✪*/
+
 .title .Status--skill .Status-label:before { content: 'SKILL'; }
 .title.statusSkill--junior .Status--skill .Status-label:after { content: 'Jr'; color: #F0AD4E; left: -.25rem; font-size: 2rem; font-variant: small-caps; }
 .title.statusSkill--mid .Status--skill .Status-label:after    { content: 'Md'; color: #49AFCD; left: -.25rem; font-size: 2rem; font-variant: small-caps; }
@@ -209,7 +217,7 @@ pre[data-line] { padding: 1em; }
     4px -5px 6px yellow,
     -4px -10px 10px yellow,
     0 -10px 30px yellow;
-  animation: 1s Blazing infinite alternate ease-in;
+  animation: 1s Blazing 5 alternate ease-in;
 }
 .title.statusSkill .Status {
   //transition: transform 1s ease-out;
@@ -217,9 +225,11 @@ pre[data-line] { padding: 1em; }
 .title.statusSkill--junior.statusSkill--change .Status--skill,
 .title.statusSkill--mid.statusSkill--change .Status--skill,
 .title.statusSkill--senior.statusSkill--change .Status--skill {
-  animation: Flip 1s 1 ease-out forwards; 
-  //transform: rotateX(-360deg);
-  //transform-style: preserve-3d;
+  animation: Flip 1s 1 ease-out forwards;
+}
+.title.statusRule--custom.statusRule--change .Status--rule {
+  animation: Flip 1s 1 ease-out,
+             Pulse 0.25s 4 1s ease-out;
 }
 
 pre.fragment { transition: transform 5s ease-out; }
@@ -237,6 +247,14 @@ pre.fragment.fragment--code.visible code { max-height: 760px; }
 @keyframes Flip {
   from {  transform: rotateX(0deg); transform-style: preserve-3d; }
   to { transform: rotateX(-360deg); transform-style: preserve-3d; }
+}
+
+@keyframes Pulse {
+  from {}
+  to {
+    //text-shadow: 0 0 10px yellow;
+    text-shadow: 1px 0px 20px yellow;
+  }
 }
 
 /* http://codepen.io/makan/pen/yyjRZx */
