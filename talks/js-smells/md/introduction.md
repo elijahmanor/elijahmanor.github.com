@@ -31,8 +31,8 @@
 }</code></pre>
   </div>
   <div class="Split-column">
-    <img src="/img/ramsey-solutions.svg" />
-    <img src="/img/everydollar.svg" />
+    <img src="./img/ramsey-solutions.svg" />
+    <img src="./img/everydollar.svg" />
   </div>
 </div>  
 
