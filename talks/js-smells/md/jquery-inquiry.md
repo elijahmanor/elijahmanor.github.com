@@ -4,6 +4,7 @@
 ------
 
 ## Smelly Code
+<!-- .slide: data-title="jQuery Inquiry" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
 
 ```
 $(document).ready(function() {
@@ -20,19 +21,22 @@ $(document).ready(function() {
 
 ------
 
-## Why Does This Smell?
+# Why Does This Smell?
+<!-- .slide: data-title="jQuery Inquiry" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
 
 ## Extreme Chaining <!-- .element class="fragment" -->
 
 ------
 
-## So What!?!
+# So What!?!
+<!-- .slide: data-title="jQuery Inquiry" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
 
-## Let's Refactor <!-- .element class="fragement" -->
+## Let's Refactor <!-- .element class="fragment" -->
 
 ------
 
 ## Refactor
+<!-- .slide: data-title="jQuery Inquiry" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--senior statusSkill--change" data-background="#222" -->
 
 ```
 // Event Delegation before DOM Ready
@@ -52,6 +56,7 @@ $(document).ready(function() {
 ------
 
 ## Demo
+<!-- .slide: data-title="jQuery Inquiry" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--senior" data-background="#222" -->
 
 <iframe height='266' scrolling='no' src='//codepen.io/elijahmanor/embed/pvQQZw/?height=266' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/pvQQZw/'>pvQQZw</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
@@ -59,15 +64,18 @@ $(document).ready(function() {
 ------
 
 # Tooling
+<!-- .slide: data-title="jQuery Inquiry" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--senior" data-background="#222" -->
 
 ------
 
 ## `eslint-plugin-smells`
+<!-- .slide: data-title="jQuery Inquiry" data-state="title statusLint statusLint--easy statusRule statusRule--custom statusRule--change statusSkill statusSkill--senior" data-background="#222" -->
 
-* `no-complex-chaining`<!-- .element: class="fragment" -->
+* <!-- .element: class="fragment" --> `no-complex-chaining`
 
 ------
 
 ## Resources
+<!-- .slide: data-title="jQuery Inquiry" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--senior" data-background="#222" -->
 
 * CodePen - http://codepen.io/elijahmanor/pen/pvQQZw/

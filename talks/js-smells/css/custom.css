@@ -23,7 +23,7 @@ pre[data-line] { padding: 1em; }
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.25rem;
   transition: left 1s ease-out;
   transform: rotate(-90deg);
   transform-origin: 0% 0%;
@@ -188,26 +188,24 @@ pre[data-line] { padding: 1em; }
   color: white;
 }
 .title .Status--lint .Status-label:before { content: 'LINT'; }
-.title.statusLint--easy .Status--lint .Status-label:after     { content: '✔'; color: #5CB85C; left: -.25rem; font-size: 2rem; } /* ☑✔✅ */
-.title.statusLint--hard .Status--lint .Status-label:after     { content: '✘'; color: #D9534F; left: -.25rem; font-size: 2rem; } /* ☒✘❎❌ */
+.title.statusLint--easy .Status--lint .Status-label:after     { content: '✔'; color: #5CB85C; font-size: 2rem; } /* ☑✔✅ */
+.title.statusLint--hard .Status--lint .Status-label:after     { content: '✘'; color: #D9534F; font-size: 2rem; } /* ☒✘❎❌ */
 .title .Status--rule .Status-label:before { content: 'RULE'; }
-.title.statusRule--fresh .Status--rule .Status-label:after    { content: '✔'; color: #5CB85C; left: -.25rem; font-size: 2rem; }
-.title.statusRule--none .Status--rule .Status-label:after     { content: '✘'; color: #D9534F; left: -.25rem; font-size: 2rem; }
-.title.statusRule--fuzzy .Status--rule .Status-label:after    { content: '~'; color: #FCF8E3; left: -.25rem; font-size: 2rem; }
+.title.statusRule--fresh .Status--rule .Status-label:after    { content: '✔'; color: #5CB85C; font-size: 2rem; }
+.title.statusRule--none .Status--rule .Status-label:after     { content: '✘'; color: #D9534F; font-size: 2rem; }
+.title.statusRule--fuzzy .Status--rule .Status-label:after    { content: '☁'; color: #FCF8E3; font-size: 2rem; }
 .title.statusRule--custom .Status--rule .Status-label:after    {
   content: '☆';
   color: #FCF8E3;
-  left: -.25rem;
   font-size: 2rem;
 } /* 🌟 ★ ☆ ✪*/
 
 .title .Status--skill .Status-label:before { content: 'SKILL'; }
-.title.statusSkill--junior .Status--skill .Status-label:after { content: 'Jr'; color: #F0AD4E; left: -.25rem; font-size: 2rem; font-variant: small-caps; }
-.title.statusSkill--mid .Status--skill .Status-label:after    { content: 'Md'; color: #49AFCD; left: -.25rem; font-size: 2rem; font-variant: small-caps; }
+.title.statusSkill--junior .Status--skill .Status-label:after { content: 'Jr'; color: #F0AD4E; font-size: 2rem; font-variant: small-caps; }
+.title.statusSkill--mid .Status--skill .Status-label:after    { content: 'Md'; color: #49AFCD; font-size: 2rem; font-variant: small-caps; }
 .title.statusSkill--senior .Status--skill .Status-label:after {
   content: 'Sr';
   color: white;
-  left: -.25rem;
   font-size: 2rem;
   font-variant: small-caps;
   text-shadow:

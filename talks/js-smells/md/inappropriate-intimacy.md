@@ -1,9 +1,10 @@
 # Inappropriate Intimacy Smell
-<!-- .slide: data-state="statusLint statusLint--hard statusRule statusRule--fuzzy statusSkill statusSkill--junior" -->
+<!-- .slide: data-state="statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" -->
 
 ------
 
 ## Smelly Code
+<!-- .slide: data-title="Inappropriate Intimacy" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
 
 ```
 var ShoppingCart = (function() {
@@ -30,13 +31,15 @@ console.log(shoppingCart.items)
 
 ------
 
-## Why Does This Smell?
+# Why Does This Smell?
+<!-- .slide: data-title="Inappropriate Intimacy" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
 
 ## Tightly Coupled Dependencies <!-- .element class="fragment" -->
 
 ------
 
 ## So What!?!
+<!-- .slide: data-title="Inappropriate Intimacy" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
 
 1. Dependency Injection <!-- .element class="fragment" -->
 2. Message Broker <!-- .element class="fragment" -->
@@ -44,6 +47,7 @@ console.log(shoppingCart.items)
 ------
 
 ## 1. Dependency Injection
+<!-- .slide: data-title="Inappropriate Intimacy" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
 
 ```
 var ShoppingCart = (function() {
@@ -74,6 +78,7 @@ console.log(shoppingCart.items);
 ------
 
 ## 2. Message Broker
+<!-- .slide: data-title="Inappropriate Intimacy" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
 
 ```
 var channel = postal.channel();
@@ -106,5 +111,6 @@ console.log(shoppingCart.items);
 ------
 
 ## Resources
+<!-- .slide: data-title="Inappropriate Intimacy" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
 
 * `postal` - https://github.com/postaljs/postal.js by @ifandelse
