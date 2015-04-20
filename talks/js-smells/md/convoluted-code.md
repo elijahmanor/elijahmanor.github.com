@@ -122,15 +122,15 @@ Notes:
 
 ------
 
-## But Wait, There's More!
+## But Wait, There's More! (Current Stats)
 <!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
-* <!-- .element class="fragment" --> `max-statements:[2, 16]`
-* <!-- .element class="fragment" -->`max-depth:[2, 5]`
-* <!-- .element class="fragment" -->`complexity:[2, 7]`
-* <!-- .element class="fragment" -->`max-len:[2, 65]`
-* <!-- .element class="fragment" -->`max-params:[2, 0]`
-* <!-- .element class="fragment" --> <code>max-nested-callbacks:[2, 0]</code> <div style="display: inline-block; font-size: .6em; opacity: 1.0; font-style: italic;">(ESLint Only)</div>
+* `max-statements:[2, 16]`
+* `max-depth:[2, 5]`
+* `complexity:[2, 7]`
+* <!-- .element class="fragment highlight-blue" -->`max-len:[2, 65]`
+* <!-- .element class="fragment highlight-blue" -->`max-params:[2, 0]`
+* <!-- .element class="fragment highlight-blue" --> <code>max-nested-callbacks:[2, 0]</code> <div style="display: inline-block; font-size: .6em; opacity: 1.0; font-style: italic;">(ESLint Only)</div>
 
 ------
 
@@ -230,12 +230,12 @@ function englishToPigLatin(english='') {
 ## Updated Stats
 <!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--senior" data-background="#222" -->
 
-* max-statements:[2, 6] <!-- .element class="fragment highlight-green" -->
-* max-depth:[2, 2] <!-- .element class="fragment highlight-green" -->
-* complexity:[2, 3] <!-- .element class="fragment highlight-green" -->
-* max-len:[2, 73] <!-- .element class="fragment highlight-red" -->
-* max-nested-callbacks:[2, 1] <!-- .element class="fragment highlight-red" -->
-* max-params:[2, 2] <!-- .element class="fragment highlight-red" -->
+* max-statements: 16 &rarr; 6 <!-- .element class="fragment highlight-green" -->
+* max-depth: 5 &rarr; 2 <!-- .element class="fragment highlight-green" -->
+* complexity: 7 &rarr; 3 <!-- .element class="fragment highlight-green" -->
+* max-len: 65 &rarr; 73 <!-- .element class="fragment highlight-red" -->
+* max-params: 0 &rarr; 2 <!-- .element class="fragment highlight-red" -->
+* max-nested-callbacks: 0 &rarr; 1 <!-- .element class="fragment highlight-red" -->
 
 ------
 
