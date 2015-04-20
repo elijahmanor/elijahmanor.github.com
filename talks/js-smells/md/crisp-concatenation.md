@@ -96,7 +96,7 @@ var build = (id, href) => `<div id="tab">
 ## `eslint-plugin-smells`
 <!-- .slide: data-title="Crisp Concatenation" data-state="title statusLint statusLint--easy statusRule statusRule--custom statusRule--change statusSkill statusSkill--senior" data-background="#222" -->
 
-* <!-- .element: class="fragment" --> `no-complex-string-concat`
+* <!-- .element: class="fragment" --> [`no-complex-string-concat`](http://bit.ly/eslint-plugin-smells)
 
 ------
 

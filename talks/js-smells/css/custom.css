@@ -6,6 +6,7 @@
 
 #Introduction img { background: none; border: none; box-shadow: none: }
 
+.reveal .small { display: inline-block; font-size: .6em; opacity: 1.0; font-style: italic; }
 .reveal blockquote.blockquote--wide { width: 80%; padding: 2rem; text-align: left; line-height: 0; }
 .reveal blockquote.blockquote--wide p:first-child { display: block; }
 

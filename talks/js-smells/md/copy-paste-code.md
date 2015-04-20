@@ -190,6 +190,6 @@ updateElement('.Circle', 'Circle', 'color');
 # Resources
 <!-- .slide: data-title="Copy Paste Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--mid" -->
 
-* CodePen - http://codepen.io/elijahmanor/pen/myQebo
 * `jsinspect` - https://github.com/danielstjules
 * `jscpd` - https://github.com/kucherenko/jscpd
+* [CodePen](http://codepen.io/elijahmanor/pen/myQebo)

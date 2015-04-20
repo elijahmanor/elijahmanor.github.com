@@ -71,11 +71,11 @@ $(document).ready(function() {
 ## `eslint-plugin-smells`
 <!-- .slide: data-title="jQuery Inquiry" data-state="title statusLint statusLint--easy statusRule statusRule--custom statusRule--change statusSkill statusSkill--senior" data-background="#222" -->
 
-* <!-- .element: class="fragment" --> `no-complex-chaining`
+* <!-- .element: class="fragment" --> [`no-complex-chaining`](http://bit.ly/eslint-plugin-smells)
 
 ------
 
 ## Resources
 <!-- .slide: data-title="jQuery Inquiry" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--senior" data-background="#222" -->
 
-* CodePen - http://codepen.io/elijahmanor/pen/pvQQZw/
+* [CodePen](http://codepen.io/elijahmanor/pen/pvQQZw/)

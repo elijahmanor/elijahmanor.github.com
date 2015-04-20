@@ -4,7 +4,7 @@
 ------
 
 ## Smelly Code
-<!-- .slide: data-title="Incessant Interaction" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Incessant Interaction" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
 ```
 var search = document.querySelector('.Autocomplete');
@@ -20,12 +20,12 @@ search.addEventListener('input', function(e) {
 ------
 
 # Why Does This Smell?
-<!-- .slide: data-title="Incessant Interaction" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Incessant Interaction" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
 ------
 
 ## Way Too Chatty
-<!-- .slide: data-title="Incessant Interaction" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Incessant Interaction" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
 <iframe height='286' scrolling='no' src='//codepen.io/elijahmanor/embed/LEXBdX/?height=286' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/LEXBdX/'>LEXBdX</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
@@ -33,14 +33,14 @@ search.addEventListener('input', function(e) {
 ------
 
 # So What!?!
-<!-- .slide: data-title="Incessant Interaction" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Incessant Interaction" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
 ## Throttle <!-- .element class="fragment" -->
 
 ------
 
 ## Throttle
-<!-- .slide: data-title="Incessant Interaction" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid" statusSkill--change data-background="#222" -->
+<!-- .slide: data-title="Incessant Interaction" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--mid" statusSkill--change data-background="#222" -->
 
 ```
 var search = document.querySelector('.Autocomplete');
@@ -58,7 +58,7 @@ search.addEventListener('input', _.throttle(function(e) {
 ------
 
 # So What!?!
-<!-- .slide: data-title="Incessant Interaction" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid" data-background="#222" -->
+<!-- .slide: data-title="Incessant Interaction" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--mid" data-background="#222" -->
 
 ## Debounce <!-- .element class="fragment" -->
 
@@ -82,7 +82,7 @@ search.addEventListener('input', _.debounce(function(e) {
 ------
 
 ## Resources
-<!-- .slide: data-title="Incessant Interaction" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid" data-background="#222" -->
+<!-- .slide: data-title="Incessant Interaction" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--mid" data-background="#222" -->
 
 * CodePen - http://codepen.io/elijahmanor/pen/ByGmaX
 * `lodash` - https://lodash.com/

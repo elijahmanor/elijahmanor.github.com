@@ -4,7 +4,7 @@
 ------
 
 ## Smelly Code
-<!-- .slide: data-title="Unconfirmed Code" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Unconfirmed Code" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
 ```
 $(document).ready(function() {
@@ -19,14 +19,14 @@ $(document).ready(function() {
 ------
 
 # Why Does This Smell?
-<!-- .slide: data-title="Unconfirmed Code" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Unconfirmed Code" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
 ## Makes it Hard to Unit Test <!-- .element class="fragment" -->
 
 ------
 
 ## Singleton Module
-<!-- .slide: data-title="Unconfirmed Code" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid statusSkill--change" data-background="#222" -->
+<!-- .slide: data-title="Unconfirmed Code" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--mid statusSkill--change" data-background="#222" -->
 
 ```
 (function(myApp) {
@@ -46,7 +46,7 @@ $(document).ready(function() {
 ------
 
 ## Constructor Function
-<!-- .slide: data-title="Unconfirmed Code" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid" data-background="#222" -->
+<!-- .slide: data-title="Unconfirmed Code" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--mid" data-background="#222" -->
 
 ```
 var Application = (function() {

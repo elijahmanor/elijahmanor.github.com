@@ -1,10 +1,10 @@
 # Anonymous Algorithm Smell
-<!-- .slide: data-state="statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" -->
+<!-- .slide: data-state="statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" -->
 
 ------
 
 ## Smelly Code
-<!-- .slide: data-title="Anonymous Algorithm" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Anonymous Algorithm" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
 ```
 var search = document.querySelector('.Autocomplete');
@@ -19,14 +19,14 @@ search.addEventListener('input', _.debounce(function(e) {
 ------
 
 # Why Does This Smell?
-<!-- .slide: data-title="Anonymous Algorithm" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Anonymous Algorithm" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
 ## Anonymous Functions <!-- .element class="fragment" -->
 
 ------
 
 ## Reasons to Name Functions
-<!-- .slide: data-title="Anonymous Algorithm" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Anonymous Algorithm" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
 1. <!-- .element class="fragment" --> Stack Trace
 2. <!-- .element class="fragment" --> Dereferencing
@@ -35,7 +35,7 @@ search.addEventListener('input', _.debounce(function(e) {
 ------
 
 ## 1. Stack Trace
-<!-- .slide: data-title="Anonymous Algorithm" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Anonymous Algorithm" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
 ### Where is it?
 
@@ -52,7 +52,7 @@ search.addEventListener('input', function(e) {
 ------
 
 ## 1. Stack Trace
-<!-- .slide: data-title="Anonymous Algorithm" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Anonymous Algorithm" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
 ### There it is!
 
@@ -69,7 +69,7 @@ search.addEventListener('input', function(e) {
 ------
 
 ## 1. Stack Trace
-<!-- .slide: data-title="Anonymous Algorithm" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Anonymous Algorithm" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
 ### After
 
@@ -86,7 +86,7 @@ search.addEventListener('input', function matches(e) {
 ------
 
 ## 1. Stack Trace
-<!-- .slide: data-title="Anonymous Algorithm" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Anonymous Algorithm" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
 ### `debounce`
 
@@ -103,7 +103,7 @@ search.addEventListener('input', _.debounce(function matches(e) {
 ------
 
 ## 1. Stack Trace
-<!-- .slide: data-title="Anonymous Algorithm" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Anonymous Algorithm" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
 ### `debounce` (Heavy Bottom Up)
 
@@ -120,10 +120,11 @@ search.addEventListener('input', _.debounce(function matches(e) {
 ------
 
 ## 2. Dereferencing
-<!-- .slide: data-title="Anonymous Algorithm" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Anonymous Algorithm" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
+
+One-time Event Handler
 
 ```
-// One-time Event Handler
 document.querySelector('button')
   .addEventListener('click', function handler() {
   	alert('Ka-boom!');
@@ -137,7 +138,7 @@ document.querySelector('button')
 ------
 
 ## 3. Code Reuse
-<!-- .slide: data-title="Anonymous Algorithm" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Anonymous Algorithm" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
 ```
 var kaboom = function() { alert('Ka-boom'); };
@@ -150,6 +151,6 @@ document.querySelector('#egg').addEventListener('mouseenter', kaboom);
 ------
 
 ## Resource
-<!-- .slide: data-title="Anonymous Algorithm" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
+<!-- .slide: data-title="Anonymous Algorithm" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
-* Chrome DevTools - https://developer.chrome.com/devtools
+* [Chrome DevTools](https://developer.chrome.com/devtools)

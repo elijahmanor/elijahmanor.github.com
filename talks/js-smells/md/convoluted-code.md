@@ -130,7 +130,7 @@ Notes:
 * `complexity:[2, 7]`
 * <!-- .element class="fragment highlight-blue" -->`max-len:[2, 65]`
 * <!-- .element class="fragment highlight-blue" -->`max-params:[2, 0]`
-* <!-- .element class="fragment highlight-blue" --> <code>max-nested-callbacks:[2, 0]</code> <div style="display: inline-block; font-size: .6em; opacity: 1.0; font-style: italic;">(ESLint Only)</div>
+* <!-- .element class="fragment highlight-blue" --> <code>max-nested-callbacks:[2, 0]</code> <div class="small">(ESLint Only)</div>
 
 ------
 

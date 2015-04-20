@@ -334,10 +334,10 @@ switch (test) { case 'value': break; } // eslint-disable-line no-switch
 ## Resources
 <!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--custom statusSkill statusSkill--senior" data-background="#222" -->
 
-* CodePen - http://codepen.io/elijahmanor/pen/OPazmm
-* Addy Osmani's Learning JavaScript Design Patterns eBook - http://addyosmani.com/resources/essentialjsdesignpatterns/book/
+* [CodePen](http://codepen.io/elijahmanor/pen/OPazmm)
+* [Addy Osmani's Learning JavaScript Design Patterns eBook](http://addyosmani.com/resources/essentialjsdesignpatterns/book/)
 * [ESLint](http://eslint.org/)
 * [`eslint-plugin-smells`](https://github.com/elijahmanor/eslint-plugin-smells)
-* http://www.2ality.com/2015/02/es6-scoping.html
-* http://www.2ality.com/2014/12/es6-symbols.html
-* http://babeljs.io/docs/learn-es6
+* [ES6 Scoping](http://www.2ality.com/2015/02/es6-scoping.html)
+* [ES6 Symbols](http://www.2ality.com/2014/12/es6-symbols.html)
+* [Learn ES6](http://babeljs.io/docs/learn-es6)

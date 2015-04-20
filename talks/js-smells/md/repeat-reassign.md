@@ -26,10 +26,16 @@ data = this.pruneObject(data);
 ## Alternatives
 <!-- .slide: data-title="The This Abyss" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid statusSkill--change" data-background="#222" -->
 
-1) `nested function calls`
+1) Nested Function Calls
 
 ```
-data = this.pruneObject(this.appendAdditionalInputs(this.appendSubmissionDataOption(this.appendExactTargetData(data))));
+data = this.pruneObject(
+  this.appendAdditionalInputs(
+    this.appendSubmissionDataOption(
+      this.appendExactTargetData(data)
+    )
+  )
+);
 ```
 
 ------
@@ -40,7 +46,13 @@ data = this.pruneObject(this.appendAdditionalInputs(this.appendSubmissionDataOpt
 1) `forEach`
 
 ```
-var funcs = [this.appendExactTargetData, this.appendSubmissionDataOption, this.appendAdditionalInputs, this.pruneObject];
+var funcs = [
+  this.appendExactTargetData,
+  this.appendSubmissionDataOption,
+  this.appendAdditionalInputs,
+  this.pruneObject
+];
+
 funcs.forEach(function(func) {
   data = func(data);
 });
@@ -51,10 +63,16 @@ funcs.forEach(function(func) {
 ## Alternatives
 <!-- .slide: data-title="The This Abyss" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid statusSkill--change" data-background="#222" -->
 
-1) `reduce`
+2) `reduce`
 
 ```
-var funcs = [this.appendExactTargetData, this.appendSubmissionDataOption, this.appendAdditionalInputs, this.pruneObject];
+var funcs = [
+  this.appendExactTargetData,
+  this.appendSubmissionDataOption,
+  this.appendAdditionalInputs,
+  this.pruneObject
+];
+
 data = funcs.reduce(function(memo, func) {
   return func(memo);
 }, data);
@@ -65,7 +83,7 @@ data = funcs.reduce(function(memo, func) {
 ## Alternatives
 <!-- .slide: data-title="The This Abyss" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid statusSkill--change" data-background="#222" -->
 
-1) (`flow`)[https://lodash.com/docs#flow]
+3) [`flow`](https://lodash.com/docs#flow)
 
 ```
 data = _.flow(
@@ -86,9 +104,13 @@ data = _.flow(
 ## `eslint-plugin-smells`
 <!-- .slide: data-title="Crisp Concatenation" data-state="title statusLint statusLint--easy statusRule statusRule--custom statusRule--change statusSkill statusSkill--senior" data-background="#222" -->
 
-* <!-- .element: class="fragment" --> `no-reassign`
+* <!-- .element: class="fragment" --> [`no-reassign`](http://bit.ly/eslint-plugin-smells)
 
 ------
 
 ## Resources
 <!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--custom statusSkill statusSkill--senior" data-background="#222" -->
+
+* [forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+* [reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
+* [_.flow](https://lodash.com/docs#flow)

@@ -86,7 +86,6 @@ Person.prototype.brush = function() {
 Person.prototype.brush = function() {
   this.teeth.forEach(tooth => {
     this.clean(tooth);
-    // other stuff here...
   });
 
   console.log('brushed');
@@ -116,12 +115,12 @@ Person.prototype.brush = function() {
 ## ESLint
 <!-- .slide: data-title="The This Abyss" data-state="title statusLint statusLint--easy statusRule statusRule--custom statusRule--change statusSkill statusSkill--senior" data-background="#222" -->
 
-* http://eslint.org/docs/rules/consistent-this
-* `eslint-plugin-smells` - `no-this-assign`
+* [`consistent-this`](http://eslint.org/docs/rules/consistent-this)
+* [`no-this-assign`](https://github.com/elijahmanor/eslint-plugin-smells) <div class="small">(eslint-plugin-smells)</div>
 
 ------
 
 ## Resources
 <!-- .slide: data-title="The This Abyss" data-state="title statusLint statusLint--easy statusRule statusRule--custom statusSkill statusSkill--senior" data-background="#222" -->
 
-* CodePen - http://codepen.io/elijahmanor/pen/raQpKg?editors=001
+* [CodePen](http://codepen.io/elijahmanor/pen/raQpKg?editors=001)
