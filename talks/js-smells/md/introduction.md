@@ -31,7 +31,7 @@
 }</code></pre>
   </div>
   <div class="Split-column">
-    <img src="./img/family.jpg" />
+    <img src="./img/myfamily.jpg" />
     <img src="./img/ramsey-solutions.svg" />
     <img src="./img/everydollar.svg" />
   </div>
