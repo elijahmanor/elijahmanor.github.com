@@ -159,7 +159,7 @@ getArea('Bogus');
 ## Magic Strings
 <!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid" data-background="#222" -->
 
-<pre class="language-javascript" data-line="6,15"><code data-trim>function getArea(shape, options) {
+<pre class="language-javascript highlight" data-line="6,14"><code data-trim>function getArea(shape, options) {
   var area = 0;
 
   switch (shape) {

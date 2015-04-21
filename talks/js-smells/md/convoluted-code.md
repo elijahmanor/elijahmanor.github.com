@@ -99,9 +99,9 @@ Notes:
 
 ### Rules <!-- .element class="fragment" data-fragment-index="1" -->
 
-<pre class="fragment language-javascript" data-fragment-index="1"><code>/*jshint maxstatements:15, maxdepth:2, maxcomplexity:5 */</code></pre>
+<pre class="fragment languagejavascript" data-fragment-index="1"><code>/*jshint maxstatements:15, maxdepth:2, maxcomplexity:5 */</code></pre>
 
-<pre class="fragment language-javascript" data-fragment-index="2"><code>/*eslint max-statements:[2, 15], max-depth:[1, 2], complexity:[2, 5] */</code></pre>
+<pre class="fragment languagejavascript" data-fragment-index="2"><code>/*eslint max-statements:[2, 15], max-depth:[1, 2], complexity:[2, 5] */</code></pre>
 
 ### Result <!-- .element class="fragment" data-fragment-index="3" -->
 

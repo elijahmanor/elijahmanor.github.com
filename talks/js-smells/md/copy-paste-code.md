@@ -107,7 +107,7 @@ Copy/paste detector for programming source code (JavaScript, TypeScript, C#, Rub
 
 Let's pull out the random color portion...
 
-<pre class="language-javascript highlight" data-line="1,6,12"><code data-trim>
+<pre class="language-javascript highlight hide-language" data-line="1,6,12"><code data-trim>
 let randomColor = () => `#${(Math.random() * 0xFFFFFF << 0).toString(16)};
 
 let boxes = document.querySelectorAll(".Box");
@@ -130,7 +130,7 @@ let circles = document.querySelectorAll(".Circle");
 
 Let's pull out the weird `[].forEach.call` portion...
 
-<pre class="language-javascript highlight" data-line="3,5,10"><code data-trim>
+<pre class="language-javascript highlight hide-language" data-line="3,5,10"><code data-trim>
 let randomColor = () => `#${(Math.random() * 0xFFFFFF << 0).toString(16)};
 
 let $$ = selector => [].slice.call(document.querySelectorAll(selector || '*'));
@@ -153,7 +153,7 @@ $$(".Circle").forEach((element, index) => {
 
 Let's try to go further...
 
-<pre class="language-javascript highlight" data-line="5-10,12,14"><code data-trim>
+<pre class="language-javascript highlight hide-language" data-line="5-10,12,14"><code data-trim>
 let randomColor = () => `#${(Math.random() * 0xFFFFFF << 0).toString(16)};
 
 let $$ = selector => [].slice.call(document.querySelectorAll(selector || '*'));
