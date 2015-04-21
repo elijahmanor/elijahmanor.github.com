@@ -1,5 +1,7 @@
 #dialog { z-index: 999; padding: 2rem; }
-#dialog .modules { list-style-type: none; font-size: 1.5rem; }
+#dialog .modules, #dialog .options { list-style-type: none; font-size: 1.5rem; }
+#dialog .actions { text-align: center; }
+#dialog .actions button { font-size: 1rem; }
 #dialog h2 { color: black; margin: 0; }
 
 .reveal pre[class*="language-"].clean { padding: 0; }

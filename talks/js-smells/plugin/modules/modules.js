@@ -3,6 +3,7 @@
     console.log('init modules');
 
     this.removeModules();
+    this.updateDemos();
 
     this.dialog = this.buildDialog();
     this.dialog.querySelector('#update').addEventListener('click', this.update.bind(this));
@@ -11,6 +12,20 @@
     Reveal.configure({
       keyboard: { 77: this.keypress.bind(this) }
     });
+  };
+
+  modules.updateDemos = function() {
+    var areDemosOffline = window.localStorage.areDemosOffline === 'true';
+
+    if (areDemosOffline) {
+      [].forEach.call(document.querySelectorAll('iframe[data-offline]'), function(iframe) {
+        iframe.src = iframe.dataset.offline;
+      });
+    } else {
+      [].forEach.call(document.querySelectorAll('iframe[data-offline]'), function(iframe) {
+        iframe.src = iframe.dataset.online;
+      });
+    }
   };
 
   modules.removeModules = function() {
@@ -40,7 +55,7 @@
     var modules = JSON.parse(window.localStorage.modules);
     var enabledModule = false;
 
-    [].forEach.call(this.dialog.querySelectorAll('#dialog input'), function(input) {
+    [].forEach.call(this.dialog.querySelectorAll('#dialog .modules input'), function(input) {
       if (!input.checked) {
         var element = document.querySelector('#' + input.name);
         if (element) {
@@ -62,6 +77,10 @@
       }, 1000);
     }
 
+    var areDemosOffline = this.dialog.querySelector('.options input').checked;
+    window.localStorage.areDemosOffline = areDemosOffline;
+    this.updateDemos(areDemosOffline);
+
     this.dialog.close();
   };
 
@@ -71,7 +90,8 @@
 
   modules.buildDialog = function() {
     var dialog = document.createElement('dialog');
-    var template = '<h2>Modules</h2><ul class="modules"></ul><div><button id="update">Update</button><button id="cancel">Cancel</button></div>';
+    var areDemosOffline = window.localStorage.areDemosOffline === 'true' ? 'checked="checked"' : '';
+    var template = '<h2>Modules</h2><ul class="modules"></ul><h2>Options</h2><ul class="options"><li><input name="offline-demos" ' + areDemosOffline + ' type="checkbox" /> Offline Demos</li></ul><div class="actions"><button id="update">Update</button> <button id="cancel">Cancel</button></div>';
 
     dialog.id = 'dialog';
     dialog.innerHTML = template;

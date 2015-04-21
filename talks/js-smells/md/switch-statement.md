@@ -159,7 +159,7 @@ getArea('Bogus');
 ## Magic Strings
 <!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid" data-background="#222" -->
 
-<pre class="language-javascript highlight" data-line="6,14"><code data-trim>function getArea(shape, options) {
+<pre class="language-javascript highlight" data-line="5,14"><code data-trim>function getArea(shape, options) {
   var area = 0;
 
   switch (shape) {
@@ -217,28 +217,6 @@ function getArea(shape, options) {
       area = .5 * options.width * options.height;
       break;
   }
-  return area;
-}
-
-getArea(shapeType.triangle, { width: 100, height: 100 });
-</code></pre>
-
-------
-
-## Magic Strings Refactor
-<!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--senior" data-background="#222" -->
-
-### Applied to Strategy Pattern
-
-<pre class="language-javascript highlight" data-line="13"><code data-trim>function getArea(shape, options) {
-  var Shape = window.shapes[shape], area = 0;
-
-  if (Shape && typeof Shape === 'function') {
-    area = new Shape(options).getArea();
-  } else {
-    throw new Error('Invalid shape: ' + shape);
-  }
-
   return area;
 }
 
@@ -303,7 +281,7 @@ switch (test) { case 'val': break; }
 <!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--custom statusSkill statusSkill--senior" data-background="#222" -->
 
 * [CodePen](http://codepen.io/elijahmanor/pen/OPazmm)
-* [Addy Osmani's Learning JavaScript Design Patterns eBook](http://addyosmani.com/resources/essentialjsdesignpatterns/book/)
+* [Addy Osmani's JavaScript Design Patterns eBook](http://addyosmani.com/resources/essentialjsdesignpatterns/book/)
 * [ESLint](http://eslint.org/)
 * [`eslint-plugin-smells`](https://github.com/elijahmanor/eslint-plugin-smells)
 * [ES6 Scoping](http://www.2ality.com/2015/02/es6-scoping.html)

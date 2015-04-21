@@ -125,9 +125,10 @@ One-time Event Handler
   });
 </code></pre>
 
-<!-- <iframe height='168' scrolling='no' src='//codepen.io/elijahmanor/embed/PwxBxP/?height=168' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/PwxBxP/'>PwxBxP</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
-</iframe> -->
-<iframe height='168' scrolling='no' src='./codepen/codepen_anonymous_algorithm/index.html?height=168' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/PwxBxP/'>PwxBxP</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
+<iframe height='168' scrolling='no' src='//codepen.io/elijahmanor/embed/PwxBxP/?height=168'
+data-online="//codepen.io/elijahmanor/embed/PwxBxP/?height=168"
+data-offline="./codepen/codepen_anonymous_algorithm/index.html?height=168"
+frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/PwxBxP/'>PwxBxP</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 
 ------

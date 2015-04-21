@@ -146,8 +146,9 @@ console.log(person.teeth);
 ## ESLint
 <!-- .slide: data-title="The This Abyss" data-state="title statusLint statusLint--easy statusRule statusRule--custom statusRule--change statusSkill statusSkill--senior" data-background="#222" -->
 
-* [`consistent-this`](http://eslint.org/docs/rules/consistent-this)
 * [`no-this-assign`](https://github.com/elijahmanor/eslint-plugin-smells) <div class="small">(eslint-plugin-smells)</div>
+* [`consistent-this`](http://eslint.org/docs/rules/consistent-this)
+* [`no-extra-bind`](http://eslint.org/docs/rules/no-extra-bind)
 
 ------
 
