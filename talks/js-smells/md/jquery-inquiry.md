@@ -56,7 +56,9 @@ $(document).ready(function() {
 ## Demo
 <!-- .slide: data-title="jQuery Inquiry" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--senior" data-background="#222" -->
 
-<iframe height='266' scrolling='no' src='//codepen.io/elijahmanor/embed/pvQQZw/?height=266' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/pvQQZw/'>pvQQZw</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
+<!-- <iframe height='266' scrolling='no' src='//codepen.io/elijahmanor/embed/pvQQZw/?height=266' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/pvQQZw/'>pvQQZw</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe> -->
+<iframe height='266' scrolling='no' src='./codepen/codepen_jquery_inquiry/index.html?height=266' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/pvQQZw/'>pvQQZw</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 
 ------

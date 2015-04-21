@@ -35,7 +35,9 @@ function getRandomInt(min, max) {
 ## Demo: `setInternval`
 <!-- .slide: data-title="Temperamental Timer" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
 
-<iframe height='410' scrolling='no' src='//codepen.io/elijahmanor/embed/bNQmzP/?height=410' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/bNQmzP/'>bNQmzP</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
+<!-- <iframe height='410' scrolling='no' src='//codepen.io/elijahmanor/embed/bNQmzP/?height=410' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/bNQmzP/'>bNQmzP</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe> -->
+<iframe height='410' scrolling='no' src='./codepen/codepen_temperamental_timer_setinterval/index.html?height=410' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/bNQmzP/'>bNQmzP</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 
 ------
@@ -72,7 +74,9 @@ function someLongProcess(duration, callback) {
 ## Demo: `setTimeout`
 <!-- .slide: data-title="Temperamental Timer" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid" data-background="#222" -->
 
-<iframe height='410' scrolling='no' src='//codepen.io/elijahmanor/embed/raQQay/?height=410' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/raQQay/'>raQQay</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
+<!-- <iframe height='410' scrolling='no' src='//codepen.io/elijahmanor/embed/raQQay/?height=410' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/raQQay/'>raQQay</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe> -->
+<iframe height='410' scrolling='no' src='./codepen/codepen_temperamental_timer_settimeout/index.html?height=410' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/raQQay/'>raQQay</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 
 ------
