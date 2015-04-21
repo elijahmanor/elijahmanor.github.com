@@ -6,11 +6,10 @@
 ## Smelly Code
 <!-- .slide: data-title="Crisp Concatenation" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
 
-```
-var build = function(id, href) {
-  return $( "<div id='tab'><a href='" + href + "' id='"+ id + "'></div>" );
+<pre class="language-javascript"><code>var build = function(id, href) {
+  return $( "&lt;div id='tab'&gt;&lt;a href='" + href + "' id='"+ id + "'&gt;&lt;/div&gt;" );
 }
-```
+</code></pre>
 
 ------
 
@@ -31,8 +30,7 @@ var build = function(id, href) {
 
 1) [Tweet Sized JavaScript Templating Engine](http://mir.aculo.us/2011/03/09/little-helpers-a-tweet-sized-javascript-templating-engine/) by @thomasfuchs
 
-```
-function t(s,d) {
+<pre class="language-javascript"><code>function t(s,d) {
   for (var p in d)
     s = s.replace(new RegExp('{'+p+'}','g'), d[p]);
   return s;
@@ -46,7 +44,7 @@ var build = function(id, href) {
 
   return t('<div id="tab"><a href="{href}" id="{id}"></div>', options);
 }
-```
+</code></pre>
 
 ------
 
@@ -55,10 +53,9 @@ var build = function(id, href) {
 
 2) ECMAScript 2015 (ES6) Template Strings
 
-```
-var build = (id, href) =>
-  `<div id="tab"><a href="${href}" id="${id}"></div>`;
-```
+<pre class="language-javascript"><code>var build = (id, href) =>
+  `&lt;div id="tab"&gt;&lt;a href="${href}" id="${id}"&gt;&lt;/div&gt;`;
+</code></pre>
 
 ------
 
@@ -67,11 +64,10 @@ var build = (id, href) =>
 
 3) ECMAScript 2015 (ES6) Template Strings (Multiline)
 
-```
-var build = (id, href) => `<div id="tab">
-  <a href="${href}" id="${id}">
-</div>`;
-```
+<pre class="language-javascript"><code>var build = (id, href) => `&lt;div id="tab"&gt;
+  &lt;a href="${href}" id="${id}"&gt;
+&lt;/div&gt;`;
+</code></pre>
 
 ------
 

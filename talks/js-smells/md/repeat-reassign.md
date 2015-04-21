@@ -6,13 +6,11 @@
 ## Smelly Code
 <!-- .slide: data-title="Repeat Reassign" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
 
-```
-data = this.appendExactTargetData(data);
+<pre class="language-javascript"><code>data = this.appendExactTargetData(data);
 data = this.appendSubmissionDataOption(data);
 data = this.appendNonLeadServiceInputs(data);
 data = this.pruneObject(data);
-```
-<!-- .element class="fragment fragment--code" -->
+</code></pre>
 
 ------
 
@@ -28,25 +26,23 @@ data = this.pruneObject(data);
 
 1) Nested Function Calls
 
-```
-data = this.pruneObject(
+<pre class="language-javascript"><code>data = this.pruneObject(
   this.appendAdditionalInputs(
     this.appendSubmissionDataOption(
       this.appendExactTargetData(data)
     )
   )
 );
-```
+</code></pre>
 
 ------
 
 ## Alternatives
 <!-- .slide: data-title="The This Abyss" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid statusSkill--change" data-background="#222" -->
 
-1) `forEach`
+2) `forEach`
 
-```
-var funcs = [
+<pre class="language-javascript"><code>var funcs = [
   this.appendExactTargetData,
   this.appendSubmissionDataOption,
   this.appendAdditionalInputs,
@@ -56,17 +52,16 @@ var funcs = [
 funcs.forEach(function(func) {
   data = func(data);
 });
-```
+</code></pre>
 
 ------
 
 ## Alternatives
 <!-- .slide: data-title="The This Abyss" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid statusSkill--change" data-background="#222" -->
 
-2) `reduce`
+3) `reduce`
 
-```
-var funcs = [
+<pre class="language-javascript"><code>var funcs = [
   this.appendExactTargetData,
   this.appendSubmissionDataOption,
   this.appendAdditionalInputs,
@@ -76,23 +71,22 @@ var funcs = [
 data = funcs.reduce(function(memo, func) {
   return func(memo);
 }, data);
-```
+</code></pre>
 
 ------
 
 ## Alternatives
 <!-- .slide: data-title="The This Abyss" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid statusSkill--change" data-background="#222" -->
 
-3) [`flow`](https://lodash.com/docs#flow)
+4) [`flow`](https://lodash.com/docs#flow)
 
-```
-data = _.flow(
+<pre class="language-javascript"><code>data = _.flow(
   this.appendExactTargetData,
   this.appendSubmissionDataOption,
   this.appendAdditionalInputs,
   this.pruneObject
 )(data);
-```
+</code></pre>
 
 ------
 

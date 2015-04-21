@@ -16,7 +16,7 @@
 ### `Box.js`
 <!-- .slide: data-title="Copy Paste Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
 
-```
+<pre class="language-javascript"><code data-trim>
 // ... more code ...
 
 var boxes = document.querySelectorAll('.Box');
@@ -28,7 +28,7 @@ var boxes = document.querySelectorAll('.Box');
 });
 
 // ... more code ...
-```
+</code></pre>
 
 ------
 
@@ -44,7 +44,7 @@ var boxes = document.querySelectorAll('.Box');
 
 ### `Circle.js`
 
-```
+<pre class="language-javascript"><code data-trim>
 // ... more code ...
 
 var circles = document.querySelectorAll(".Circle");
@@ -56,7 +56,7 @@ var circles = document.querySelectorAll(".Circle");
 });
 
 // ... more code ...
-```
+</code></pre>
 
 ------
 
@@ -77,9 +77,7 @@ var circles = document.querySelectorAll(".Circle");
 
 Detect copy-pasted and structurally similar code
 
-<pre><code data-trim data-lang="shell">
-jsinspect
-</code></pre>
+<pre class="language-bash"><code data-trim>jsinspect</code></pre>
 
 ![](./img/jsinspect.png)
 
@@ -90,8 +88,7 @@ jsinspect
 
 Copy/paste detector for programming source code (JavaScript, TypeScript, C#, Ruby, CSS, SCSS, HTML, etc...)
 
-<pre><code data-trim data-lang="shell">
-jscpd -f **/*.js -l 1 -t 30 --languages javascript
+<pre class="language-bash"><code data-trim>jscpd -f **/*.js -l 1 -t 30 --languages javascript
 </code></pre>
 
 ![](./img/jscpd.png) <!-- .element style="height: 350px;" -->
@@ -110,25 +107,21 @@ jscpd -f **/*.js -l 1 -t 30 --languages javascript
 
 Let's pull out the random color portion...
 
-```
-function randomColor() {
-  return '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
-}
+<pre class="language-javascript highlight" data-line="1,6,12"><code data-trim>
+let randomColor = () => `#${(Math.random() * 0xFFFFFF << 0).toString(16)};
 
-var boxes = document.querySelectorAll(".Box");
-
-[].forEach.call(boxes, function(element, index) {
+let boxes = document.querySelectorAll(".Box");
+[].forEach.call(boxes, (element, index) => {
   element.innerText = "Box: " + index;
   element.style.backgroundColor = randomColor();
 });
 
-var circles = document.querySelectorAll(".Circle");
-
-[].forEach.call(circles, function(element, index) {
+let circles = document.querySelectorAll(".Circle");
+[].forEach.call(circles, (element, index) => {
   element.innerText = "Circle: " + index;
   element.style.color = randomColor();
 });
-```
+</code></pre>
 
 ------
 
@@ -137,25 +130,21 @@ var circles = document.querySelectorAll(".Circle");
 
 Let's pull out the weird `[].forEach.call` portion...
 
-```
-function $$(selector) {
-  return [].slice.call(document.querySelectorAll(selector || '*'));
-}
+<pre class="language-javascript highlight" data-line="3,5,10"><code data-trim>
+let randomColor = () => `#${(Math.random() * 0xFFFFFF << 0).toString(16)};
 
-function randomColor() {
-  return '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
-}
+let $$ = selector => [].slice.call(document.querySelectorAll(selector || '*'));
 
-$$('.Box').forEach(function(element, index) {
+$$('.Box').forEach((element, index) => {
   element.innerText = "Box: " + index;
   element.style.backgroundColor = randomColor();
 });
 
-$$(".Circle").forEach(function(element, index) {
+$$(".Circle").forEach((element, index) => {
   element.innerText = "Circle: " + index;
   element.style.color = randomColor();
 });
-```
+</code></pre>
 
 ------
 
@@ -164,17 +153,13 @@ $$(".Circle").forEach(function(element, index) {
 
 Let's try to go further...
 
-```
-function $$(selector) {
-  return [].slice.call(document.querySelectorAll(selector || '*'));
-}
+<pre class="language-javascript highlight" data-line="5-10,12,14"><code data-trim>
+let randomColor = () => `#${(Math.random() * 0xFFFFFF << 0).toString(16)};
 
-function randomColor() {
-  return '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
-}
+let $$ = selector => [].slice.call(document.querySelectorAll(selector || '*'));
 
-function updateElement(selector, textPrefix, styleProperty) {
-  $$(selector).forEach(function(element, index) {
+let updateElement = (selector, textPrefix, styleProperty) => {
+  $$(selector).forEach((element, index) => {
     element.innerText = textPrefix + ': ' + index;
     element.style[styleProperty] = randomColor();
   });
@@ -183,13 +168,13 @@ function updateElement(selector, textPrefix, styleProperty) {
 updateElement('.Box', 'Box', 'backgroundColor');
 
 updateElement('.Circle', 'Circle', 'color');
-```
+</code></pre>
 
 ------
 
 # Resources
 <!-- .slide: data-title="Copy Paste Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--mid" -->
 
-* `jsinspect` - https://github.com/danielstjules
-* `jscpd` - https://github.com/kucherenko/jscpd
+* [`jsinspect`](https://github.com/danielstjules)
+* [`jscpd`](https://github.com/kucherenko/jscpd)
 * [CodePen](http://codepen.io/elijahmanor/pen/myQebo)

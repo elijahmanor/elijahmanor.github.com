@@ -6,8 +6,7 @@
 ## Smelly Code
 <!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
 
-```
-function getArea(shape, options) {
+<pre class="fragment fragment--code language-javascript fragment--small clean"><code data-trim>function getArea(shape, options) {
   var area = 0;
 
   switch (shape) {
@@ -34,8 +33,7 @@ getArea('Triangle',  { width: 100, height: 100 });
 getArea('Square',    { width: 100 });
 getArea('Rectangle', { width: 100, height: 100 });
 getArea('Bogus');
-```
-<!-- .element class="fragment fragment--code" -->
+</code></pre>
 
 ------
 
@@ -58,8 +56,7 @@ getArea('Bogus');
 ## Adding a New Shape
 <!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
 
-```
-function getArea(shape, options) {
+<pre class="fragment fragment--code language-javascript fragment--small clean" data-line="17-19"><code data-trim>function getArea(shape, options) {
   var area = 0;
 
   switch (shape) {
@@ -75,11 +72,9 @@ function getArea(shape, options) {
       area = options.width * options.height;
       break;
 
-    // BEGIN: New Shape
     case 'Circle':
       area = Math.PI * Math.pow(options.radius, 2);
       break;
-    // END: New Shape
 
     default:
       throw new Error('Invalid shape: ' + shape);
@@ -87,8 +82,7 @@ function getArea(shape, options) {
 
   return area;
 }
-```
-<!-- .element class="fragment fragment--code" -->
+</code></pre>
 
 ------
 
@@ -102,9 +96,7 @@ function getArea(shape, options) {
 ## Strategy Design Pattern
 <!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid statusSkill--change" data-background="#222" -->
 
-```
-// triangle.js
-(function(shapes) {
+<pre class="fragment fragment--code language-javascript fragment--small clean"><code data-trim>(function(shapes) { // triangle.js
   var Triangle = shapes.Triangle = function(options) {
     this.width = options.width;
     this.height = options.height;
@@ -132,16 +124,14 @@ getArea('Triangle',  { width: 100, height: 100 });
 getArea('Square',    { width: 100 });
 getArea('Rectangle', { width: 100, height: 100 });
 getArea('Bogus');
-```
-<!-- .element class="fragment fragment--code" -->
+</code></pre>
 
 ------
 
 ## Adding a New Shape
 <!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid" data-background="#222" -->
 
-```
-// circle.js
+<pre class="language-javascript"><code data-trim>// circle.js
 (function(shapes) {
   var Circle = shapes.Circle = function(options) {
     this.radius = options.radius;
@@ -155,13 +145,12 @@ getArea('Bogus');
     return 2 * Math.PI * this.radius;
   };
 }(window.shapes = window.shapes || {}));
-```
+</code></pre>
 
 ------
 
 # Any Other Smells?
 <!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid" data-background="#222" -->
-
 
 ## Magic Strings <!-- .element class="fragment" -->
 
@@ -170,23 +159,21 @@ getArea('Bogus');
 ## Magic Strings
 <!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid" data-background="#222" -->
 
-```
-function getArea(shape, options) {
+<pre class="language-javascript" data-line="5,15"><code data-trim>function getArea(shape, options) {
   var area = 0;
 
   switch (shape) {
-    case 'Triangle': // YUCK
+    case 'Triangle':
       area = .5 * options.width * options.height;
       break;
-    // ... more code ...
+    /* ... more code ... */
   }
 
   return area;
 }
 
-        /* YUCK */
 getArea('Triangle', { width: 100, height: 100 });
-```
+</code></pre>
 
 ------
 
@@ -195,27 +182,22 @@ getArea('Triangle', { width: 100, height: 100 });
 
 ### Object Types
 
-```
-var shapeType = {
-  triangle: 'Triangle',
-  // ... more code ...
+<pre class="language-javascript highlight" data-line="1-3,8,15"><code data-trim>var shapeType = {
+  triangle: 'Triangle'
 };
 
 function getArea(shape, options) {
   var area = 0;
-
   switch (shape) {
     case shapeType.triangle:
       area = .5 * options.width * options.height;
       break;
-    // ... more code ...
   }
-
   return area;
 }
 
 getArea(shapeType.triangle, { width: 100, height: 100 });
-```
+</code></pre>
 
 ------
 
@@ -224,27 +206,22 @@ getArea(shapeType.triangle, { width: 100, height: 100 });
 
 ### `const` & `symbols`
 
-```
-const shapeType = {
-  triangle: new Symbol(),
-  // ... more code ...
+<pre class="language-javascript highlight" data-line="1-3,8,15"><code data-trim>const shapeType = {
+  triangle: new Symbol()
 };
 
 function getArea(shape, options) {
   var area = 0;
-
   switch (shape) {
     case shapeType.triangle:
       area = .5 * options.width * options.height;
       break;
-    // ... more code ...
   }
-
   return area;
 }
 
 getArea(shapeType.triangle, { width: 100, height: 100 });
-```
+</code></pre>
 
 ------
 
@@ -253,8 +230,7 @@ getArea(shapeType.triangle, { width: 100, height: 100 });
 
 ### Applied to Strategy Pattern
 
-```
-function getArea(shape, options) {
+<pre class="language-javascript highlight" data-line="13"><code data-trim>function getArea(shape, options) {
   var Shape = window.shapes[shape], area = 0;
 
   if (Shape && typeof Shape === 'function') {
@@ -267,7 +243,7 @@ function getArea(shape, options) {
 }
 
 getArea(shapeType.triangle, { width: 100, height: 100 });
-```
+</code></pre>
 
 Notes:
 
@@ -300,34 +276,26 @@ TODO: Facebook Flow or TypeScript
 ## What about edge cases?
 <!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--custom statusSkill statusSkill--senior" data-background="#222" -->
 
-```
-/*eslint no-switch:[0] */
+<pre class="language-javascript fragment clean"><code data-trim>/*eslint no-switch:[0] */
 
 switch (test) { case 'value': break; }
-```
-<!-- .element class="fragment" -->
+</code></pre>
 
-```
-/*eslint-disable */
+<pre class="language-javascript fragment clean"><code data-trim>/*eslint-disable */
 switch (test) { case 'value': break; }
 /*eslint-enable */
-```
-<!-- .element class="fragment" -->
+</code></pre>
 
-```
-/*eslint-disable no-switch */
+<pre class="language-javascript fragment clean"><code data-trim>/*eslint-disable no-switch */
 switch (test) { case 'value': break; }
 /*eslint-enable no-switch */
-```
-<!-- .element class="fragment" -->
+</code></pre>
 
-<pre><code class="javascript" data-trim>
-switch (test) { case 'value': break; } // eslint-disable-line
-</code></pre><!-- .element class="fragment" -->
+<pre class="language-javascript fragment clean"><code data-trim>switch (test) { case 'value': break; } // eslint-disable-line
+</code></pre>
 
-<pre><code class="javascript" data-trim>
-switch (test) { case 'value': break; } // eslint-disable-line no-switch
-</code></pre><!-- .element class="fragment" -->
+<pre class="language-javascript fragment clean"><code data-trim>switch (test) { case 'value': break; } // eslint-disable-line no-switch
+</code></pre>
 
 ------
 

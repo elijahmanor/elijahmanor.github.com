@@ -6,8 +6,7 @@
 ## Smelly Code
 <!-- .slide: data-title="The This Abyss" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
 
-```
-function Person() {
+<pre class="language-javascript fragment fragment--code"><code data-trim>function Person() {
   this.teeth = [{ clean: false }, { clean: false }, { clean: false }];
 };
 
@@ -28,7 +27,7 @@ Person.prototype.clean = function(tooth) {
 var person = new Person();
 person.brush();
 console.log(person.teeth);
-```
+</code></pre>
 
 ------
 
@@ -39,20 +38,47 @@ console.log(person.teeth);
 
 ------
 
+## Smelly Code
+<!-- .slide: data-title="The This Abyss" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
+
+<pre class="language-javascript fragment--code fragment visible current-fragment highlight" data-line="6,9"><code data-trim>function Person() {
+  this.teeth = [{ clean: false }, { clean: false }, { clean: false }];
+};
+
+Person.prototype.brush = function() {
+  var that = this;
+
+  this.teeth.forEach(function(tooth) {
+    that.clean(tooth);
+  });
+
+  console.log('brushed');
+};
+
+Person.prototype.clean = function(tooth) {
+  tooth.clean = true;
+}
+
+var person = new Person();
+person.brush();
+console.log(person.teeth);
+</code></pre>
+
+------
+
 ## Alternatives
 <!-- .slide: data-title="The This Abyss" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid statusSkill--change" data-background="#222" -->
 
 1) `bind`
 
-```
-Person.prototype.brush = function() {
+<pre class="language-javascript highlight" data-line="4"><code>Person.prototype.brush = function() {
   this.teeth.forEach(function(tooth) {
     this.clean(tooth);
   }.bind(this));
 
   console.log('brushed');
 };
-```
+</code></pre>
 
 ------
 
@@ -61,19 +87,14 @@ Person.prototype.brush = function() {
 
 2) 2nd parameter of `forEach`
 
-```
-arr.forEach(callback[, thisArg])
-```
-
-```
-Person.prototype.brush = function() {
+<pre class="language-javascript highlight" data-line="4"><code>Person.prototype.brush = function() {
   this.teeth.forEach(function(tooth) {
     this.clean(tooth);
   }, this);
 
   console.log('brushed');
 };
-```
+</code></pre>
 
 ------
 
@@ -82,28 +103,38 @@ Person.prototype.brush = function() {
 
 3) ECMAScript 2015 (ES6)
 
-```
-Person.prototype.brush = function() {
+<pre class="language-javascript highlight" data-line="2-4"><code>Person.prototype.brush = function() {
   this.teeth.forEach(tooth => {
     this.clean(tooth);
   });
 
   console.log('brushed');
 };
-```
+</code></pre>
 
 ------
 
-4) Functional Programming
+4a) Functional Programming
 <!-- .slide: data-title="The This Abyss" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--senior" data-background="#222" -->
 
-```
-Person.prototype.brush = function() {
+<pre class="language-javascript highlight" data-line="2"><code>Person.prototype.brush = function() {
   this.teeth.forEach(this.clean);
 
   console.log('brushed');
 };
-```
+</code></pre>
+
+------
+
+4b) Functional Programming
+<!-- .slide: data-title="The This Abyss" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--senior" data-background="#222" -->
+
+<pre class="language-javascript highlight" data-line="2"><code>Person.prototype.brush = function() {
+  this.teeth.forEach(this.clean.bind(this));
+
+  console.log('brushed');
+};
+</code></pre>
 
 ------
 

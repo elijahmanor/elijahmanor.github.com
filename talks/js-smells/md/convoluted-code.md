@@ -31,8 +31,7 @@
 ## Smelly Code
 <!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" data-background="#222" -->
 
-```
-/* const */ var CONSONANTS = 'bcdfghjklmnpqrstvwxyz';
+<pre class="fragment fragment--code fragment--small language-javascript clean"><code data-trim>/* const */ var CONSONANTS = 'bcdfghjklmnpqrstvwxyz';
 /* const */ var VOWELS = 'aeiou';
 
 function englishToPigLatin(english) {
@@ -63,8 +62,7 @@ function englishToPigLatin(english) {
 
   return pigLatin;
 }
-```
-<!-- .element class="fragment fragment--code" -->
+</code></pre>
 
 ------
 
@@ -103,22 +101,15 @@ Notes:
 
 ### Rules <!-- .element class="fragment" data-fragment-index="1" -->
 
-```
-/*jshint maxstatements:15, maxdepth:2, maxcomplexity:5 */
-```
-<!-- .element class="fragment" data-fragment-index="1"  -->
+<pre class="fragment language-javascript" data-fragment-index="1"><code>/*jshint maxstatements:15, maxdepth:2, maxcomplexity:5 */</code></pre>
 
-```
-/*eslint max-statements:[2, 15], max-depth:[1, 2], complexity:[2, 5] */
-```
-<!-- .element class="fragment" data-fragment-index="2" -->
+<pre class="fragment language-javascript" data-fragment-index="2"><code>/*eslint max-statements:[2, 15], max-depth:[1, 2], complexity:[2, 5] */</code></pre>
 
 ### Result <!-- .element class="fragment" data-fragment-index="3" -->
 
-<pre><code class="nohighlight">7:0 - Function 'englishToPigLatin' has a complexity of 7.
+<pre class="fragment language-bash" data-fragment-index="3"><code>7:0 - Function 'englishToPigLatin' has a complexity of 7.
 7:0 - This function has too many statements (16). Maximum allowed is 15.
 22:10 - Blocks are nested too deeply (5).</code></pre>
-<!-- .element class="fragment" data-fragment-index="3" -->
 
 ------
 
@@ -144,8 +135,7 @@ Notes:
 ## Unit Test First
 <!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--mid statusSkill--change" data-background="#222" -->
 
-<pre class="fragment fragment--code"><code data-trim data-lang="javascript">
-describe('Pig Latin', function() {
+<pre class="fragment fragment--code language-javascript clean"><code data-trim>describe('Pig Latin', function() {
   describe('Invalid', function() {
     it('should return blank if passed null', function() {
       expect(englishToPigLatin(null)).toBe('');
@@ -192,19 +182,15 @@ describe('Pig Latin', function() {
 <!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--senior statusSkill--change" data-background="#222" -->
 
 <!-- /* jshint maxparams:3, maxdepth:2, maxstatements:5, maxcomplexity:6, maxlen:80, esnext:true */ -->
-<pre class="fragment fragment--code"><code data-trim data-lang="javascript">
-const CONSONANTS = ['th', 'qu', 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k',
+<pre class="fragment fragment--code language-javascript fragment--small clean"><code data-trim>const CONSONANTS = ['th', 'qu', 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k',
 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
 const VOWELS = ['a', 'e', 'i', 'o', 'u'];
 const ENDING = 'ay';
 
-var isValid = word => startsWithVowel(word) || startsWithConsonant(word);
-
-var startsWithVowel = word => !!~VOWELS.indexOf(word[0]);
-
-var startsWithConsonant = word => !!~CONSONANTS.indexOf(word[0]);
-
-var getConsonants = word => CONSONANTS.reduce((memo, char) => {
+let isValid = word => startsWithVowel(word) || startsWithConsonant(word);
+let startsWithVowel = word => !!~VOWELS.indexOf(word[0]);
+let startsWithConsonant = word => !!~CONSONANTS.indexOf(word[0]);
+let getConsonants = word => CONSONANTS.reduce((memo, char) => {
   if (word.startsWith(char)) {
     memo += char;
     word = word.substr(char.length);

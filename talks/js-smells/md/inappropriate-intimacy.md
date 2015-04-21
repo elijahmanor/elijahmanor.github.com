@@ -6,28 +6,21 @@
 ## Smelly Code
 <!-- .slide: data-title="Inappropriate Intimacy" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
-```
-var ShoppingCart = (function() {
-  function ShoppingCart() { this.items = []; }
-  ShoppingCart.prototype.addItem = function(item) {
-    this.items.push(item);
-  };
-  return ShoppingCart;
-}());
+<pre class="language-javascript"><code>function ShoppingCart() { this.items = []; }
+ShoppingCart.prototype.addItem = function(item) {
+  this.items.push(item);
+};
 
-var Product = (function() {
-  function Product(name) { this.name = name; }
-  Product.prototype.addToCart = function() {
-    shoppingCart.addItem(this);
-  };
-  return Product;
-}());
+function Product(name) { this.name = name; }
+Product.prototype.addToCart = function() {
+  shoppingCart.addItem(this);
+};
 
 var shoppingCart = new ShoppingCart();
 var product = new Product('Socks');
 product.addToCart();
-console.log(shoppingCart.items)
-```
+console.log(shoppingCart.items);
+</code></pre>
 
 ------
 
@@ -35,6 +28,27 @@ console.log(shoppingCart.items)
 <!-- .slide: data-title="Inappropriate Intimacy" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
 ## Tightly Coupled Dependencies <!-- .element class="fragment" -->
+
+------
+
+## Smelly Code
+<!-- .slide: data-title="Inappropriate Intimacy" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
+
+<pre class="language-javascript highlight" data-line="8"><code data-trim>function ShoppingCart() { this.items = []; }
+ShoppingCart.prototype.addItem = function(item) {
+  this.items.push(item);
+};
+
+function Product(name) { this.name = name; }
+Product.prototype.addToCart = function() {
+  shoppingCart.addItem(this);
+};
+
+var shoppingCart = new ShoppingCart();
+var product = new Product('Socks');
+product.addToCart();
+console.log(shoppingCart.items);
+</code></pre>
 
 ------
 
@@ -49,64 +63,50 @@ console.log(shoppingCart.items)
 ## 1. Dependency Injection
 <!-- .slide: data-title="Inappropriate Intimacy" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
-```
-var ShoppingCart = (function() {
-  function ShoppingCart() { this.items = []; }
-  ShoppingCart.prototype.addItem = function(item) {
-    this.items.push(item);
-  };
-  return ShoppingCart;
-}());
+<pre class="language-javascript highlight" data-line="6,8,15"><code>function ShoppingCart() { this.items = []; }
+ShoppingCart.prototype.addItem = function(item) {
+  this.items.push(item);
+};
 
-var Product = (function() {
-  function Product(name, shoppingCart) {
-    this.name = name;
-    this.shoppingCart = shoppingCart;
-  }
-  Product.prototype.addToCart = function() {
-    this.shoppingCart.addItem(this);
-  };
-  return Product;
-}());
+function Product(name, shoppingCart) {
+  this.name = name;
+  this.shoppingCart = shoppingCart;
+}
+Product.prototype.addToCart = function() {
+  this.shoppingCart.addItem(this);
+};
 
 var shoppingCart = new ShoppingCart();
 var product = new Product('Socks', shoppingCart);
 product.addToCart();
 console.log(shoppingCart.items);
-```
+</code></pre>
 
 ------
 
 ## 2. Message Broker
 <!-- .slide: data-title="Inappropriate Intimacy" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
-```
-var channel = postal.channel();
+<pre class="language-javascript fragment fragment--code"><code>var channel = postal.channel();
 
-var ShoppingCart = (function(channel) {
-  function ShoppingCart() {
-    this.items = [];
-    channel.subscribe('shoppingcart.add', this.addItem);
-  }
-  ShoppingCart.prototype.addItem = function(item) {
-    this.items.push(item);
-  };
-  return ShoppingCart;
-}(channel));
+function ShoppingCart() {
+  this.items = [];
+  channel.subscribe('shoppingcart.add', this.addItem);
+}
+ShoppingCart.prototype.addItem = function(item) {
+  this.items.push(item);
+};
 
-var Product = (function(channel) {
-  function Product(name) { this.name = name; }
-  Product.prototype.addToCart = function() {
-    channel.publish('shoppingcart.add', this);
-  };
-  return Product;
-}(channel));
+function Product(name) { this.name = name; }
+Product.prototype.addToCart = function() {
+  channel.publish('shoppingcart.add', this);
+};
 
 var shoppingCart = new ShoppingCart();
 var product = new Product('Socks');
 product.addToCart();
 console.log(shoppingCart.items);
-```
+</code></pre>
 
 ------
 

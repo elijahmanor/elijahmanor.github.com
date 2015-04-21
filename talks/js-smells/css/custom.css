@@ -2,9 +2,14 @@
 #dialog .modules { list-style-type: none; font-size: 1.5rem; }
 #dialog h2 { color: black; margin: 0; }
 
+.reveal pre[class*="language-"].clean { padding: 0; }
+.reveal pre[class*="language-"].highlight { padding: 0 0 0 3rem; }
+.fragment--small { font-size: 1rem; }
 [data-store] { outline: 1px dashed rgba(0, 0, 0, 0.25); }
 
 #Introduction img { background: none; border: none; box-shadow: none: }
+
+.reveal pre[class*='language'].fragment--small { font-size: 1.15rem; }
 
 .reveal .small { display: inline-block; font-size: .6em; opacity: 1.0; font-style: italic; }
 .reveal blockquote.blockquote--wide { width: 80%; padding: 2rem; text-align: left; line-height: 0; }
@@ -233,7 +238,7 @@ pre[data-line] { padding: 1em; }
 
 pre.fragment { transition: transform 5s ease-out; }
 pre.fragment code { transition: all .25s ease-out; }
-pre.fragment.fragment--code.visible { transform: translateY(-9rem); }
+pre.fragment.fragment--code.visible { transform: translateY(-9.25rem); }
 pre.fragment.fragment--code.visible code { max-height: 760px; }
 
 .reveal .slides section .fragment.highlight-red,

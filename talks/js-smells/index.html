@@ -13,7 +13,8 @@
 		<link rel="stylesheet" href="css/theme/black.css" id="theme">
 		<!-- Code syntax highlighting -->
 		<!-- <link rel="stylesheet" href="lib/css/zenburn.css"> -->
-		<link rel="stylesheet" href="lib/css/monokai_sublime.css">
+		<!-- <link rel="stylesheet" href="lib/css/monokai_sublime.css"> -->
+		<link rel="stylesheet" href="plugin/prism/prism.css" />
 		<link rel="stylesheet" href="css/custom.css" />
 		<style>
 		.reveal .slide-background.intro { opacity: 0.1; }
@@ -98,7 +99,8 @@
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); }, callback: function() { dataStore.init(); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					// { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/prism/prism.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { Prism.highlightAll(); } },
 					{ src: 'node_modules/source-by-line/srcByLine.js', async: true, callback: function() { window.srcbyline.init(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true },

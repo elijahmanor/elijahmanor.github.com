@@ -27,3 +27,10 @@ https://github.com/petkaantonov/bluebird/wiki/Promise-anti-patterns#the-deferred
 # Ghastly Global Smell
 * http://pouchdb.com/2015/03/05/taming-the-async-beast-with-es7.html
 * http://include-media.com/
+
+<pre class="language-javascript clean"><code>
+
+
+<pre class="language-javascript highlight" data-line="5-10,12,14"><code data-trim>
+
+<pre class="fragment fragment--code language-javascript fragment--small clean"><code data-trim>

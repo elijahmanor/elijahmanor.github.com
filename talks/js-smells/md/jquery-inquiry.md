@@ -6,8 +6,7 @@
 ## Smelly Code
 <!-- .slide: data-title="jQuery Inquiry" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
 
-```
-$(document).ready(function() {
+<pre class="language-javascript clean"><code>$(document).ready(function() {
   $('.Component')
     .find('button')
       .addClass('Component-button--action')
@@ -17,7 +16,7 @@ $(document).ready(function() {
     .mouseleave(function() { $(this).removeClass('Component--over'); })
     .addClass('initialized');
 });
-```
+</code></pre>
 
 ------
 
@@ -38,8 +37,7 @@ $(document).ready(function() {
 ## Refactor
 <!-- .slide: data-title="jQuery Inquiry" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--senior statusSkill--change" data-background="#222" -->
 
-```
-// Event Delegation before DOM Ready
+<pre class="language-javascript clean"><code>// Event Delegation before DOM Ready
 $(document).on('mouseenter mouseleave', '.Component', function(e) {
   $(this).toggleClass('Component--over', e.type === 'mouseenter');  
 });
@@ -51,7 +49,7 @@ $(document).on('click', '.Component', function(e) {
 $(document).ready(function() {
   $('.Component button').addClass('Component-button--action');
 });
-```
+</code></pre>
 
 ------
 

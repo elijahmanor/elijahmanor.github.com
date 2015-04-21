@@ -6,15 +6,14 @@
 ## Smelly Code
 <!-- .slide: data-title="Anonymous Algorithm" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
-```
-var search = document.querySelector('.Autocomplete');
+<pre class="language-javascript"><code>var search = document.querySelector('.Autocomplete');
 
 search.addEventListener('input', _.debounce(function(e) {
   // Make Ajax call for autocomplete
 
   console.log(e.target.value);
 }, 500));
-```
+</code></pre>
 
 ------
 
@@ -39,13 +38,12 @@ search.addEventListener('input', _.debounce(function(e) {
 
 ### Where is it?
 
-```
-var search = document.querySelector('.Autocomplete');
+<pre class="language-javascript clean"><code>var search = document.querySelector('.Autocomplete');
 
 search.addEventListener('input', function(e) {
   console.log(e.target.value);
 });
-```
+</code></pre>
 
 ![](./img/06-1-a.png)
 
@@ -56,13 +54,12 @@ search.addEventListener('input', function(e) {
 
 ### There it is!
 
-```
-var search = document.querySelector('.Autocomplete');
+<pre class="language-javascript clean"><code>var search = document.querySelector('.Autocomplete');
 
 search.addEventListener('input', function(e) {
   console.log(e.target.value);
 });
-```
+</code></pre>
 
 ![](./img/06-1-b.png)
 
@@ -73,13 +70,12 @@ search.addEventListener('input', function(e) {
 
 ### After
 
-```
-var search = document.querySelector('.Autocomplete');
+<pre class="language-javascript clean"><code>var search = document.querySelector('.Autocomplete');
 
 search.addEventListener('input', function matches(e) {
   console.log(e.target.value);
 });
-```
+</code></pre>
 
 ![](./img/06-1-c.png)
 
@@ -90,13 +86,12 @@ search.addEventListener('input', function matches(e) {
 
 ### `debounce`
 
-```
-var search = document.querySelector('.Autocomplete');
+<pre class="language-javascript clean"><code>var search = document.querySelector('.Autocomplete');
 
 search.addEventListener('input', _.debounce(function matches(e) {
   console.log(e.target.value);
 }, 500));
-```
+</code></pre>
 
 ![](./img/06-1-d.png)
 
@@ -107,13 +102,12 @@ search.addEventListener('input', _.debounce(function matches(e) {
 
 ### `debounce` (Heavy Bottom Up)
 
-```
-var search = document.querySelector('.Autocomplete');
+<pre class="language-javascript clean"><code>var search = document.querySelector('.Autocomplete');
 
 search.addEventListener('input', _.debounce(function matches(e) {
   console.log(e.target.value);
 }, 500));
-```
+</code></pre>
 
 ![](./img/06-1-e.png)
 
@@ -124,13 +118,12 @@ search.addEventListener('input', _.debounce(function matches(e) {
 
 One-time Event Handler
 
-```
-document.querySelector('button')
+<pre class="language-javascript"><code>document.querySelector('button')
   .addEventListener('click', function handler() {
   	alert('Ka-boom!');
     this.removeEventListener('click', handler);
   });
-```
+</code></pre>
 
 <iframe height='168' scrolling='no' src='//codepen.io/elijahmanor/embed/PwxBxP/?height=168' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/PwxBxP/'>PwxBxP</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
@@ -140,13 +133,12 @@ document.querySelector('button')
 ## 3. Code Reuse
 <!-- .slide: data-title="Anonymous Algorithm" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
-```
-var kaboom = function() { alert('Ka-boom'); };
+<pre class="language-javascript"><code>var kaboom = function() { alert('Ka-boom'); };
 
 document.querySelector('button').addEventListener('click', kaboom);
 
 document.querySelector('#egg').addEventListener('mouseenter', kaboom);
-```
+</code></pre>
 
 ------
 

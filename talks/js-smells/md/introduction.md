@@ -12,7 +12,7 @@
 
 <div class="Split">
   <div class="Split-column">
-    <pre><code class="json">{
+    <pre class="language-javascript clean"><code>{
   "name": "Elijah Manor",
   "priorities" : [
     "Christian", "Family", "Work"
@@ -31,6 +31,7 @@
 }</code></pre>
   </div>
   <div class="Split-column">
+    <img src="./img/family.jpg" />
     <img src="./img/ramsey-solutions.svg" />
     <img src="./img/everydollar.svg" />
   </div>
