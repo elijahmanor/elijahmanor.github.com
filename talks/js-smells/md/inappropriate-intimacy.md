@@ -87,7 +87,7 @@ console.log(shoppingCart.items);
 ## 2. Message Broker
 <!-- .slide: data-title="Inappropriate Intimacy" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
-<pre class="language-javascript fragment fragment--code"><code>var channel = postal.channel();
+<pre class="language-javascript highlight fragment fragment--code" data-line="1,5,13"><code>var channel = postal.channel();
 
 function ShoppingCart() {
   this.items = [];

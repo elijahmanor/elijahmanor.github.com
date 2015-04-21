@@ -6,15 +6,14 @@
 ## Smelly Code
 <!-- .slide: data-title="Unconfirmed Code" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
-```
-$(document).ready(function() {
+<pre class="language-javascript"><code>$(document).ready(function() {
   // wire up event handlers
 
   // declare all the things
 
   // etc...
 });
-```
+</code></pre>
 
 ------
 
@@ -28,8 +27,7 @@ $(document).ready(function() {
 ## Singleton Module
 <!-- .slide: data-title="Unconfirmed Code" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--mid statusSkill--change" data-background="#222" -->
 
-```
-(function(myApp) {
+<pre class="language-javascript"><code>(function(myApp) {
   myApp.init = function() {
     // kick off your code
   };
@@ -41,15 +39,14 @@ $(document).ready(function() {
 $(document).ready(function() {
   window.myApp.init();
 });
-```
+</code></pre>
 
 ------
 
 ## Constructor Function
 <!-- .slide: data-title="Unconfirmed Code" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--mid" data-background="#222" -->
 
-```
-var Application = (function() {
+<pre class="language-javascript"><code>var Application = (function() {
   function Application() {
     // kick off your code
   }
@@ -63,4 +60,4 @@ var Application = (function() {
 $(document).ready(function() {
   new Application();
 });
-```
+</code></pre>

@@ -6,12 +6,10 @@
 ## Smelly Code
 <!-- .slide: data-title="Temperamental Timer" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
 
-```
-setInterval(function() {
+<pre class="language-javascript"><code>setInterval(function() {
   console.log('start setInterval');
   someLongProcess(getRandomInt(2000, 4000));
 }, 3000);
-
 
 function someLongProcess(duration) {
   setTimeout(
@@ -23,7 +21,7 @@ function someLongProcess(duration) {
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-```
+</code></pre>
 
 ------
 
@@ -52,8 +50,7 @@ function getRandomInt(min, max) {
 ## `setTimeout`
 <!-- .slide: data-title="Temperamental Timer" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid statusSkill--change" data-background="#222" -->
 
-```
-setTimeout(function timer() {
+<pre class="language-javascript"><code>setTimeout(function timer() {
   console.log('start setTimeout')
   someLongProcess(getRandomInt(2000, 4000), function() {
     setTimeout(timer, 3000);
@@ -68,7 +65,7 @@ function someLongProcess(duration, callback) {
 }
 
 /* getRandomInt(min, max) {} */
-```
+</code></pre>
 
 ------
 
@@ -83,4 +80,4 @@ function someLongProcess(duration, callback) {
 # Resources
 <!-- .slide: data-title="Temperamental Timer" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid" data-background="#222" -->
 
-* CodePen - http://codepen.io/elijahmanor/pen/yyQppR?editors=001
+* [CodePen](http://codepen.io/elijahmanor/pen/yyQppR?editors=001)

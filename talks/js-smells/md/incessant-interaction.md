@@ -6,16 +6,14 @@
 ## Smelly Code
 <!-- .slide: data-title="Incessant Interaction" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--junior" data-background="#222" -->
 
-```
-var search = document.querySelector('.Autocomplete');
+<pre class="language-javascript"><code>var search = document.querySelector('.Autocomplete');
 
 search.addEventListener('input', function(e) {
   // Make Ajax call for autocomplete
 
   console.log(e.target.value);
 });
-
-```
+</code></pre>
 
 ------
 
@@ -42,15 +40,14 @@ search.addEventListener('input', function(e) {
 ## Throttle
 <!-- .slide: data-title="Incessant Interaction" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--mid" statusSkill--change data-background="#222" -->
 
-```
-var search = document.querySelector('.Autocomplete');
+<pre class="language-javascript"><code>var search = document.querySelector('.Autocomplete');
 
 search.addEventListener('input', _.throttle(function(e) {
   // Make Ajax call for autocomplete
 
   console.log(e.target.value);
 }, 500));
-```
+</code></pre>
 
 <iframe height='285' scrolling='no' src='//codepen.io/elijahmanor/embed/azQjGj/?height=285' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/azQjGj/'>azQjGj</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
@@ -66,15 +63,14 @@ search.addEventListener('input', _.throttle(function(e) {
 
 ## Debounce
 
-```
-var search = document.querySelector('.Autocomplete');
+<pre class="language-javascript"><code>var search = document.querySelector('.Autocomplete');
 
 search.addEventListener('input', _.debounce(function(e) {
   // Make Ajax call for autocomplete
 
   console.log(e.target.value);
 }, 500));
-```
+</code></pre>
 
 <iframe height='284' scrolling='no' src='//codepen.io/elijahmanor/embed/bNQjje/?height=284' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/bNQjje/'>bNQjje</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
@@ -84,7 +80,7 @@ search.addEventListener('input', _.debounce(function(e) {
 ## Resources
 <!-- .slide: data-title="Incessant Interaction" data-state="title statusLint statusLint--easy statusRule statusRule--fuzzy statusSkill statusSkill--mid" data-background="#222" -->
 
-* CodePen - http://codepen.io/elijahmanor/pen/ByGmaX
-* `lodash` - https://lodash.com/
-* `throttle` - https://lodash.com/docs#throttle
-* `debounce` - https://lodash.com/docs#debounce
+* [`lodash`](https://lodash.com/)
+* [`throttle`](https://lodash.com/docs#throttle)
+* [`debounce`](https://lodash.com/docs#debounce)
+* [CodePen](http://codepen.io/elijahmanor/pen/ByGmaX)
