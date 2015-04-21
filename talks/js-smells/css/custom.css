@@ -199,7 +199,7 @@ pre[data-line] { padding: 1em; }
 .title .Status--rule .Status-label:before { content: 'RULE'; }
 .title.statusRule--fresh .Status--rule .Status-label:after    { content: '✔'; color: #5CB85C; font-size: 2rem; }
 .title.statusRule--none .Status--rule .Status-label:after     { content: '✘'; color: #D9534F; font-size: 2rem; }
-.title.statusRule--fuzzy .Status--rule .Status-label:after    { content: '☁'; color: #FCF8E3; font-size: 2rem; }
+.title.statusRule--fuzzy .Status--rule .Status-label:after    { content: '~'; color: #FCF8E3; font-size: 2rem; } /* ☁ */
 .title.statusRule--custom .Status--rule .Status-label:after    {
   content: '☆';
   color: #FCF8E3;
