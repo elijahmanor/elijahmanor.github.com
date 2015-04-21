@@ -30,9 +30,9 @@
 
 1) [Tweet Sized JavaScript Templating Engine](http://mir.aculo.us/2011/03/09/little-helpers-a-tweet-sized-javascript-templating-engine/) by @thomasfuchs
 
-<pre class="language-javascript"><code>function t(s,d) {
+<pre class="language-javascript"><code>function t(s, d) {
   for (var p in d)
-    s = s.replace(new RegExp('{'+p+'}','g'), d[p]);
+    s = s.replace(new RegExp('{' + p + '}', 'g'), d[p]);
   return s;
 }
 
@@ -42,7 +42,7 @@ var build = function(id, href) {
     href: href
   };
 
-  return t('<div id="tab"><a href="{href}" id="{id}"></div>', options);
+  return t('&lt;div id="tab"&gt;&lt;a href="{href}" id="{id}"&gt;&lt;/div&gt;', options);
 }
 </code></pre>
 
