@@ -8,22 +8,20 @@
 
 1. <!-- .element start="1" value="1" --> If starts with consonant (or consonant cluster), then move the end and append "ay" <!-- .element class="fragment" -->
 
-```
-"pig"    &rarr; "igpay"
+<pre><code>"pig"    &rarr; "igpay"
 "banana" &rarr; "ananabay"
 "trash"  &rarr; "ashtray"
 "happy"  &rarr; "appyhay"
 "glove"  &rarr; "oveglay"
-```
+</code></pre>
 <!-- .element class="fragment" -->
 
 2. <!-- .element start="2" value="2" --> If starts with vowel or silent letter, then keep word along and append "way" <!-- .element class="fragment" -->
 
-```
-"egg"    &rarr; "eggway"
+<pre><code>"egg"    &rarr; "eggway"
 "inbox"  &rarr; "inboxway"
 "eight"  &rarr; "eightway"
-```
+</code></pre>
 <!-- .element class="fragment" -->
 
 ------
@@ -120,7 +118,7 @@ Notes:
 * `max-depth:[2, 5]`
 * `complexity:[2, 7]`
 * <!-- .element class="fragment highlight-blue" -->`max-len:[2, 65]`
-* <!-- .element class="fragment highlight-blue" -->`max-params:[2, 0]`
+* <!-- .element class="fragment highlight-blue" -->`max-params:[2, 1]`
 * <!-- .element class="fragment highlight-blue" --> <code>max-nested-callbacks:[2, 0]</code> <div class="small">(ESLint Only)</div>
 
 ------
@@ -220,7 +218,7 @@ function englishToPigLatin(english='') {
 * max-depth: 5 &rarr; 2 <!-- .element class="fragment highlight-green" -->
 * complexity: 7 &rarr; 3 <!-- .element class="fragment highlight-green" -->
 * max-len: 65 &rarr; 73 <!-- .element class="fragment highlight-red" -->
-* max-params: 0 &rarr; 2 <!-- .element class="fragment highlight-red" -->
+* max-params: 1 &rarr; 2 <!-- .element class="fragment highlight-red" -->
 * max-nested-callbacks: 0 &rarr; 1 <!-- .element class="fragment highlight-red" -->
 
 ------

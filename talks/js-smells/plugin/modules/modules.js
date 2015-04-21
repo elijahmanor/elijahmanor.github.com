@@ -85,14 +85,18 @@
     var items = [];
     var modules = window.localStorage.modules;
 
-    modules = modules ? JSON.parse(modules) : this.getModules();
-    for (var key in modules) {
-      var module = modules[key];
-      items.push('<li><input name="' + key + '" type="checkbox" ' + (module ? 'checked="checked" ' : '') + '" /> ' + key + '</li>');
-    }
-    window.localStorage.modules = JSON.stringify(modules);
+    if (!this.dialog.hasAttribute('open')) {
+      modules = modules ? JSON.parse(modules) : this.getModules();
+      for (var key in modules) {
+        var module = modules[key];
+        items.push('<li><input name="' + key + '" type="checkbox" ' + (module ? 'checked="checked" ' : '') + '" /> ' + key + '</li>');
+      }
+      window.localStorage.modules = JSON.stringify(modules);
 
-    this.dialog.querySelector('.modules').innerHTML = items.join('');
-    this.dialog.showModal();
+      this.dialog.querySelector('.modules').innerHTML = items.join('');
+      this.dialog.showModal();
+    } else {
+      this.dialog.close();
+    }
   };
 }(window.modules = window.modules || {}));

@@ -1,4 +1,27 @@
+# Conclusion
+<!-- .slide: data-title="Conclusion" data-state-"title" -->
+
+------
+
+## More ESLint Rules
+<!-- .slide: data-title="Conclusion" data-state="title -->
+
+* <!-- .element class="fragment" --> [`eslint-plugin-react`](https://www.npmjs.com/package/eslint-plugin-react)
+* <!-- .element class="fragment" --> [`eslint-plugin-angular`](https://www.npmjs.com/package/eslint-plugin-angular)
+* <!-- .element class="fragment" --> [`eslint-plugin-ember`](https://www.npmjs.com/package/eslint-plugin-ember)
+* <!-- .element class="fragment" --> [`eslint-plugin-backbone`](https://www.npmjs.com/package/eslint-plugin-backbone)
+
+------
+
+## Resources
+<!-- .slide: data-title="Conclusion" data-state-"title" -->
+
+* [NPM Search for `eslint-plugin`](https://www.npmjs.com/search?q=eslint-plugin)
+
+------
+
 # Questions?
+<!-- .slide: data-title="Conclusion" data-state-"title" -->
 
 <pre style="font-size: 1.25em; box-shadow: none;">
 <a href="http://elijahmanor.com]" style="margin-left: 2em;">http://elijahmanor.com</a>

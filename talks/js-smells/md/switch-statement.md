@@ -159,7 +159,7 @@ getArea('Bogus');
 ## Magic Strings
 <!-- .slide: data-title="Switch Statement" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--mid" data-background="#222" -->
 
-<pre class="language-javascript" data-line="5,15"><code data-trim>function getArea(shape, options) {
+<pre class="language-javascript" data-line="6,15"><code data-trim>function getArea(shape, options) {
   var area = 0;
 
   switch (shape) {
@@ -278,23 +278,23 @@ TODO: Facebook Flow or TypeScript
 
 <pre class="language-javascript fragment clean"><code data-trim>/*eslint no-switch:[0] */
 
-switch (test) { case 'value': break; }
+switch (test) { case 'val': break; }
 </code></pre>
 
 <pre class="language-javascript fragment clean"><code data-trim>/*eslint-disable */
-switch (test) { case 'value': break; }
+switch (test) { case 'val': break; }
 /*eslint-enable */
 </code></pre>
 
 <pre class="language-javascript fragment clean"><code data-trim>/*eslint-disable no-switch */
-switch (test) { case 'value': break; }
+switch (test) { case 'val': break; }
 /*eslint-enable no-switch */
 </code></pre>
 
-<pre class="language-javascript fragment clean"><code data-trim>switch (test) { case 'value': break; } // eslint-disable-line
+<pre class="language-javascript fragment clean"><code data-trim>switch (test) { case 'val': break; } // eslint-disable-line
 </code></pre>
 
-<pre class="language-javascript fragment clean"><code data-trim>switch (test) { case 'value': break; } // eslint-disable-line no-switch
+<pre class="language-javascript fragment clean"><code data-trim>switch (test) { case 'val': break; } // eslint-disable-line no-switch
 </code></pre>
 
 ------
