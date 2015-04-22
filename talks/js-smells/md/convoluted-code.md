@@ -6,7 +6,7 @@
 ## Pig Latin
 <!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--junior" -->
 
-1. <!-- .element start="1" value="1" --> If starts with consonant (or consonant cluster), then move the end and append "ay" <!-- .element class="fragment" -->
+1. <!-- .element start="1" value="1" --> If starts with consonant (or consonant cluster), then move the end and append "ay"
 
 <pre><code>"pig"    &rarr; "igpay"
 "banana" &rarr; "ananabay"
@@ -14,15 +14,13 @@
 "happy"  &rarr; "appyhay"
 "glove"  &rarr; "oveglay"
 </code></pre>
-<!-- .element class="fragment" -->
 
-2. <!-- .element start="2" value="2" --> If starts with vowel or silent letter, then keep word along and append "way" <!-- .element class="fragment" -->
+2. <!-- .element start="2" value="2" --> If starts with vowel or silent letter, then keep word along and append "way"
 
 <pre><code>"egg"    &rarr; "eggway"
 "inbox"  &rarr; "inboxway"
 "eight"  &rarr; "eightway"
 </code></pre>
-<!-- .element class="fragment" -->
 
 ------
 
@@ -101,11 +99,11 @@ Notes:
 
 <pre class="fragment languagejavascript" data-fragment-index="1"><code>/*jshint maxstatements:15, maxdepth:2, maxcomplexity:5 */</code></pre>
 
-<pre class="fragment languagejavascript" data-fragment-index="2"><code>/*eslint max-statements:[2, 15], max-depth:[1, 2], complexity:[2, 5] */</code></pre>
+<pre class="fragment languagejavascript" data-fragment-index="1"><code>/*eslint max-statements:[2, 15], max-depth:[1, 2], complexity:[2, 5] */</code></pre>
 
-### Result <!-- .element class="fragment" data-fragment-index="3" -->
+### Result <!-- .element class="fragment" data-fragment-index="2" -->
 
-<pre class="fragment language-bash" data-fragment-index="3"><code>7:0 - Function 'englishToPigLatin' has a complexity of 7.
+<pre class="fragment language-bash" data-fragment-index="2"><code>7:0 - Function 'englishToPigLatin' has a complexity of 7.
 7:0 - This function has too many statements (16). Maximum allowed is 15.
 22:10 - Blocks are nested too deeply (5).</code></pre>
 
@@ -117,9 +115,9 @@ Notes:
 * `max-statements:[2, 16]`
 * `max-depth:[2, 5]`
 * `complexity:[2, 7]`
-* <!-- .element class="fragment highlight-blue" -->`max-len:[2, 65]`
-* <!-- .element class="fragment highlight-blue" -->`max-params:[2, 1]`
-* <!-- .element class="fragment highlight-blue" --> <code>max-nested-callbacks:[2, 0]</code> <div class="small">(ESLint Only)</div>
+* <!-- .element class="fragment highlight-blue" data-fragment-index="1"  -->`max-len:[2, 65]`
+* <!-- .element class="fragment highlight-blue" data-fragment-index="1"  -->`max-params:[2, 1]`
+* <!-- .element class="fragment highlight-blue" data-fragment-index="1" --> <code>max-nested-callbacks:[2, 0]</code> <div class="small">(ESLint Only)</div>
 
 ------
 
@@ -214,12 +212,12 @@ function englishToPigLatin(english='') {
 ## Updated Stats
 <!-- .slide: data-title="Convoluted Code" data-state="title statusLint statusLint--easy statusRule statusRule--fresh statusSkill statusSkill--senior" data-background="#222" -->
 
-* max-statements: 16 &rarr; 6 <!-- .element class="fragment highlight-green" -->
-* max-depth: 5 &rarr; 2 <!-- .element class="fragment highlight-green" -->
-* complexity: 7 &rarr; 3 <!-- .element class="fragment highlight-green" -->
-* max-len: 65 &rarr; 73 <!-- .element class="fragment highlight-red" -->
-* max-params: 1 &rarr; 2 <!-- .element class="fragment highlight-red" -->
-* max-nested-callbacks: 0 &rarr; 1 <!-- .element class="fragment highlight-red" -->
+* max-statements: 16 &rarr; 6 <!-- .element class="fragment highlight-green" data-fragment-index="1" -->
+* max-depth: 5 &rarr; 2 <!-- .element class="fragment highlight-green" data-fragment-index="1" -->
+* complexity: 7 &rarr; 3 <!-- .element class="fragment highlight-green" data-fragment-index="1" -->
+* max-len: 65 &rarr; 73 <!-- .element class="fragment highlight-red" data-fragment-index="2" -->
+* max-params: 1 &rarr; 2 <!-- .element class="fragment highlight-red" data-fragment-index="2" -->
+* max-nested-callbacks: 0 &rarr; 1 <!-- .element class="fragment highlight-red" data-fragment-index="2" -->
 
 ------
 

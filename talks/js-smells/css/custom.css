@@ -32,7 +32,7 @@ pre[data-line] { padding: 1em; }
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
-  letter-spacing: 0.25rem;
+  letter-spacing: 0.65vh; //0.1rem;
   transition: left 1s ease-out;
   transform: rotate(-90deg);
   transform-origin: 0% 0%;
@@ -241,8 +241,8 @@ pre[data-line] { padding: 1em; }
 
 pre.fragment { transition: transform 5s ease-out; }
 pre.fragment code { transition: all .25s ease-out; }
-pre.fragment.fragment--code.visible { transform: translateY(-9.25rem); }
-pre.fragment.fragment--code.visible code { max-height: 760px; }
+pre.fragment.fragment--code.visible { position: fixed; top: -2rem; /* transform: translateY(-8.5rem); */ }
+pre.fragment.fragment--code.visible code { max-height: 750px; }
 
 .reveal .slides section .fragment.highlight-red,
 .reveal .slides section .fragment.highlight-green,

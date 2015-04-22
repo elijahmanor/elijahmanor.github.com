@@ -106,8 +106,6 @@ getArea('Bogus');
   };  
 }(window.shapes = window.shapes || {}));
 
-/* ... more code ... */
-
 function getArea(shape, options) {
   var Shape = window.shapes[shape], area = 0;
 
