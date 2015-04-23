@@ -1,17 +1,24 @@
 (function(dataStore) {
   dataStore.init = function() {
-    [].forEach.call(document.querySelectorAll('[data-store]'), function(element) {
+    var stores = document.querySelectorAll('[data-store]');
+
+    [].forEach.call(stores, function(element) {
       var key = element.getAttribute('data-store');
-      if (key) { element.innerHTML = window.localStorage[key]; }
+      var value;
+
+      if (key) {
+        value = window.localStorage[key];
+        element.innerHTML = window.localStorage[key] || '';
+      }
     });
 
     document.addEventListener('input', function(e) {
-    	var element = e.target;
-    	var dataStore = element.getAttribute('data-store');
+      var element = e.target;
+      var dataStore = element.getAttribute('data-store');
 
-    	if (dataStore) {
-    		window.localStorage[dataStore] = element.innerHTML;
-    	}
+      if (dataStore) {
+        window.localStorage[dataStore] = element.innerHTML;
+      }
     });
   };
 }(window.dataStore = window.dataStore || {}));

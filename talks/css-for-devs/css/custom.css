@@ -184,7 +184,7 @@ pre[data-line] { padding: 1em; }
 .specificity h2 { font-family: 'Orbitron', sans-serif; }
 .specificity .Specificity { font-family: 'Orbitron', sans-serif; margin-bottom: 4rem !important; }
 .specificity .Specificity-input { font-family: 'Orbitron', sans-serif; }
-.specificity .Specificity .Specificity-value { font-family: 'Orbitron', sans-serif; flex-direction: column; }
+.specificity .Specificity .Specificity-value { font-family: 'Orbitron', sans-serif; flex-direction: column; justify-content: flex-end; }
 .specificity .SpecificityGame button { font-family: 'Orbitron', sans-serif; font-size: 1rem; padding: 1rem; }
 .specificity .Specificity .Specificity-value:before {
   content: '';
