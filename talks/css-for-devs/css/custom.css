@@ -2,6 +2,8 @@
 #dialog .modules { list-style-type: none; font-size: 1.5rem; }
 #dialog h3 { color: black; }
 
+#Introduction img { background: none; border: none; box-shadow: none: }
+
 [data-store] {
   outline: 1px dashed rgba(0, 0, 0, 0.25);
 }

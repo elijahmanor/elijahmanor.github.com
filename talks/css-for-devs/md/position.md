@@ -15,7 +15,51 @@
 ## Position
 <!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-static, relative, absolute, fixed, float, clear, z-index, overflow
+<!-- MDN
+position: static;
+This keyword lets the element use the normal behavior, that is it is laid out in its current position in the flow.  The top, right, bottom, left and z-index properties do not apply.
+position: relative;
+This keyword lays out all elements as though the element were not positioned, and then adjust the element's position, without changing layout (and thus leaving a gap for the element where it would have been had it not been positioned). The effect of position:relative on table-*-group, table-row, table-column, table-cell, and table-caption elements is undefined.
+position: absolute;
+Do not leave space for the element. Instead, position it at a specified position relative to its closest positioned ancestor or to the containing block. Absolutely positioned boxes can have margins, they do not collapse with any other margins.
+position: fixed;
+Do not leave space for the element. Instead, position it at a specified position relative to the screen's viewport and don't move it when scrolled. When printing, position it at that fixed position on every page.
+-->
+
+|          | Default | Positioned | Flow | Space | Offset | Context |
+|----------|---|---|---|--|---|
+| Static   | ✔ | ✘ | ✔ | ✔ | ✔ | Parent |
+| Relative | ✘ | ✔ | ✔ | ✔ | ✔ | Parent |
+| Absolute | ✘ | ✔ | ✘ | ✘ | ✔ | Closest Positioned Ancestor or Body |
+| Fixed    | ✘ | ✔ | ✘ | ✘ | ✔ | Viewport |
+
+<!-- static, relative, absolute, fixed, float, clear, z-index, overflow -->
+
+------
+
+## Static
+
+This keyword lets the element use the normal behavior, that is it is laid out in its current position in the flow.  The top, right, bottom, left and z-index properties do not apply.
+
+------
+
+## Relative
+
+This keyword lays out all elements as though the element were not positioned, and then adjust the element's position, without changing layout (and thus leaving a gap for the element where it would have been had it not been positioned). The effect of position:relative on table-*-group, table-row, table-column, table-cell, and table-caption elements is undefined.
+
+------
+
+## Absolute
+
+Do not leave space for the element. Instead, position it at a specified position relative to its closest positioned ancestor or to the containing block. Absolutely positioned boxes can have margins, they do not collapse with any other margins.
+
+------
+
+## Fixed
+
+Do not leave space for the element. Instead, position it at a specified position relative to the screen's viewport and don't move it when scrolled. When printing, position it at that fixed position on every page.
+
+------
 
 ## Resources
 <!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->

@@ -37,3 +37,42 @@ For those of you writing Sass and enjoy nesting as a way of scoping styles, you 
 }
 
 https://sass-compatibility.github.io/#at_root_directive
+
+3.3
+parent selector with a suffix
+
+.Media {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1em;
+
+  &--center {
+    align-items: center
+  }
+
+  &-figure {
+    margin-right: 1em;
+
+    &--modifier {
+      color: blue;
+    }
+  }
+
+  &-title {
+    margin: 0 0 .5em;
+  }
+
+  &-body {
+    flex: 1;
+  }
+}
+
+.Media-body,
+.Media-body :last-child {
+  margin-bottom: 0
+}
+
+.Media--reverse > .Media-figure {
+  order: 1;
+  margin: 0 0 0 1em
+}
