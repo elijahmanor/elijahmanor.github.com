@@ -24,7 +24,7 @@
 <!-- .slide: data-title="Conclusion" data-state-"title" -->
 
 <pre style="font-size: 1.25em; box-shadow: none;">
-<a href="http://elijahmanor.com]" style="margin-left: 2em;">http://elijahmanor.com</a>
+<a href="http://elijahmanor.com" style="margin-left: 2em;">http://elijahmanor.com</a>
 <a href="http://twitter.com/elijahmanor" style="margin-left: 5.5em;">@elijahmanor</a>
 <!-- <a href="mailto:elijahmanor@gmail.com" style="position: absolute; left: 6.1em;">elijahmanor@gmail.com</a> -->
 <a href="http://bit.ly/js-smells" style="margin-left: 2em;">http://bit.ly/js-smells</a>
