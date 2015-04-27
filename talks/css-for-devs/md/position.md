@@ -26,12 +26,48 @@ position: fixed;
 Do not leave space for the element. Instead, position it at a specified position relative to the screen's viewport and don't move it when scrolled. When printing, position it at that fixed position on every page.
 -->
 
-|          | Default | Positioned | Flow | Space | Offset | Context |
-|----------|---|---|---|--|---|
-| Static   | ✔ | ✘ | ✔ | ✔ | ✔ | Parent |
-| Relative | ✘ | ✔ | ✔ | ✔ | ✔ | Parent |
-| Absolute | ✘ | ✔ | ✘ | ✘ | ✔ | Closest Positioned Ancestor or Body |
-| Fixed    | ✘ | ✔ | ✘ | ✘ | ✔ | Viewport |
+<table>
+  <tr>
+    <th></th>
+    <th>Default</th>
+    <th>Flow</th>
+    <th>Space</th>
+    <th>Offset</th>
+    <th>Context</th>
+  </tr>
+  <tr>
+    <td>Static</td>
+    <td><i class="icon--positive">✔</i></td>
+    <td><i class="icon--positive">✔</i></td>
+    <td><i class="icon--positive">✔</i></td>
+    <td><i class="icon--negative">✘</i></td>
+    <td>Parent</td>
+  </tr>
+  <tr class="fragment">
+    <td>Relative</td>
+    <td><i class="icon--negative">✘</i></td>
+    <td><i class="icon--positive">✔</i></td>
+    <td><i class="icon--positive">✔</i></td>
+    <td><i class="icon--positive">✔</i></td>
+    <td>Parent</td>
+  </tr>
+  <tr class="fragment">
+    <td>Absolute</td>
+    <td><i class="icon--negative">✘</i></td>
+    <td><i class="icon--negative">✘</i></td>
+    <td><i class="icon--negative">✘</i></td>
+    <td><i class="icon--positive">✔</i></td>
+    <td>Body <span class="fragment">or Closest Positioned Ancestor</span></td>
+  </tr>
+  <tr class="fragment">
+    <td>Fixed</td>
+    <td><i class="icon--negative">✘</i></td>
+    <td><i class="icon--negative">✘</i></td>
+    <td><i class="icon--negative">✘</i></td>
+    <td><i class="icon--positive">✔</i></td>
+    <td>Viewport</td>
+  </tr>
+</table>
 
 <!-- static, relative, absolute, fixed, float, clear, z-index, overflow -->
 

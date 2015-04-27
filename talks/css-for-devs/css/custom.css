@@ -29,6 +29,9 @@
   }
 }
 
+.icon--positive { color: #5CB85C; }
+.icon--negative { color: #D9534F; }
+
 [data-store] {
   outline: 1px dashed rgba(0, 0, 0, 0.25);
 }
