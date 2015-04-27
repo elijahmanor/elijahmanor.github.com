@@ -4,6 +4,31 @@
 
 #Introduction img { background: none; border: none; box-shadow: none: }
 
+#Introduction .CSSForDevelopers {
+  border: 5px solid white;
+  height: 250px;
+  width: 250px;
+  margin: 1em auto;
+  transform: perspective(500px);
+  animation: CSSForDevelopers-animation 3s ease-in 6s infinite alternate;
+}
+#Introduction .CSSForDevelopers-text {
+  font-size: 2em;
+  text-align: left;
+  width: 100px;
+  line-height: 1.1em;
+  margin-left: 0.25em;
+}
+
+/* animation: name duration timing-function delay iteration-count direction; */
+@keyframes CSSForDevelopers-animation {
+  from {}
+  to {
+    text-shadow: gray 5px 5px;
+    transform: rotateY(-25deg);
+  }
+}
+
 [data-store] {
   outline: 1px dashed rgba(0, 0, 0, 0.25);
 }

@@ -42,7 +42,7 @@ document.addEventListener('click', function(e) {
 	var button = e.target;
 	var game, result, specificity, highest;
 
-	if (button.tagName === 'BUTTON' && button.closest('#specificity')) {
+	if (button.tagName === 'BUTTON' && button.closest('#Specificity')) {
 		game = button.closest('.SpecificityGame');
 
 		[].forEach.call(game.querySelectorAll('.Specificity'), function(element) {
