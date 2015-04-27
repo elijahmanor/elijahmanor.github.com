@@ -42,7 +42,7 @@ $(document).on('mouseenter mouseleave', '.Component', function(e) {
   $(this).toggleClass('Component--over', e.type === 'mouseenter');  
 });
 
-$(document).on('click', '.Component', function(e) {
+$(document).on('click', '.Component button', function(e) {
   alert('HEY!');
 });
 
