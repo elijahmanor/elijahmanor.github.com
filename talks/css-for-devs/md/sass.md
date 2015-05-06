@@ -22,3 +22,6 @@ https://sass-compatibility.github.io/
 mixins
 extend
 https://medium.com/@drublic/learnings-from-using-sass-in-large-scale-projects-4a37d02acb6b
+https://css-tricks.com/sass-style-guide/
+http://sass-guidelin.es/
+https://davidtheclark.github.io/scut/

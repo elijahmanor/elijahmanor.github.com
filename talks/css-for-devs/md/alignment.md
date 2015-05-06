@@ -1,6 +1,8 @@
 # Alignment
 <!-- .slide: data-state="backEndBrian juniorJacob" -->
 
+* Maybe call this Layout instead?
+
 > TODO: Quote here...
 
 ------
@@ -43,5 +45,6 @@ Notes:
 http://codepen.io/elijahmanor/pen/MYxRMr?editors=110
 http://howtocenterincss.com/
 http://philipwalton.github.io/solved-by-flexbox/
+http://www.sitepoint.com/solving-layout-problems-css-table-property/
 
 ------

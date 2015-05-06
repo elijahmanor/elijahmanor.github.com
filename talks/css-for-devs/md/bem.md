@@ -3,6 +3,10 @@
 
 > TODO: Quote here...
 
+Notes:
+
+* http://www.sitepoint.com/working-bem-scale-advice-top-developers/
+
 ------
 
 ## Scenario

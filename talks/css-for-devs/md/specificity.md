@@ -148,3 +148,8 @@
 * [CSS SpeciFISHity](http://www.standardista.com/css3/css-specificity/) by [Estelle Weyl](http://twitter.com/estellevw)
 * [CSS Specificity Star Wars](http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html)
 * [`npm install specificity`](https://github.com/keeganstreet/specificity)
+
+Notes:
+
+* https://github.com/tomgenoni/cssdig
+* https://github.com/SlexAxton/css-colorguard
