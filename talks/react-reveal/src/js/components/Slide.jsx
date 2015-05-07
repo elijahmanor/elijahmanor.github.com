@@ -19,7 +19,7 @@ let Slide = React.createClass({
     console.log(markdown.toHTML("Hello *World*!"));
 
     return (
-      <section className="Slide">{slide.content}</section>
+      <section className="Slide" dangerouslySetInnerHTML={{__html: slide.content}}></section>
     );
   }
 });

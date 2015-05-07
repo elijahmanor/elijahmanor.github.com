@@ -19,3 +19,6 @@ http://www.vanseodesign.com/web-design/svg-viewport/
 * [x](#)
 
 Notes:
+
+* http://iconmonstr.com/
+* https://thenounproject.com/
