@@ -14,11 +14,11 @@ module.exports = {
     }
   },
   sass: {
-    src: src + '/styles/**/*.{sass,scss,css}',
-    dest: dest + '/styles',
+    src: src + '/css/**/*.{sass,scss,css}',
+    dest: dest + '/css',
     settings: {
       indentedSyntax: false, // Enable .sass syntax?
-      imagePath: '/images' // Used by the image-url helper
+      imagePath: '/img' // Used by the image-url helper
     }
   },
   browserify: {
@@ -33,6 +33,18 @@ module.exports = {
   html: {
     src: 'src/index.html',
     dest: dest
+  },
+  markdown: {
+    src: src + '/md/*.md',
+    dest: dest + '/md'
+  },
+  fonts: {
+    src: src + '/css/*.ttf',
+    dest: dest + '/css'
+  },
+  images: {
+    src: src + '/img/*.*',
+    dest: dest + '/img'
   },
   watch: {
     src: 'src/**/*.*',

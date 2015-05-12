@@ -2,7 +2,6 @@ const React = require('react/addons');
 const ActionCreator = require('../actions/SlideActions');
 // const Playground = require('component-playground');
 // const example = require("raw!./examples/component.example");
-const markdown = require( "markdown" ).markdown;
 
 let Slide = React.createClass({
   propTypes: {
@@ -14,12 +13,10 @@ let Slide = React.createClass({
     };
   },
   render() {
-    let {slide} = this.props;
-
-    console.log(markdown.toHTML("Hello *World*!"));
+    let { slide } = this.props;
 
     return (
-      <section className="Slide" dangerouslySetInnerHTML={{__html: slide.content}}></section>
+      <section id={ slide.id } className="Slide" dangerouslySetInnerHTML={{ __html: slide.content }}></section>
     );
   }
 });

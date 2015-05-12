@@ -5,15 +5,15 @@ const CSSTransitionGroup = React.addons.CSSTransitionGroup;
 let SlideList = React.createClass({
   render() {
     let {slides} = this.props;
+    // <CSSTransitionGroup transitionName="carousel">
+    //   </CSSTransitionGroup>
 
     return (
       <div className="SlideList">
-        <CSSTransitionGroup transitionName="carousel">
         {
           slides.filter(slide => slide.status === 'current')
-            .map(slide => <Slide slide={slide} key={slide.title} />)
+            .map(slide => <Slide slide={slide} key={slide.id} />)
         }
-        </CSSTransitionGroup>
       </div>
     );
   }
