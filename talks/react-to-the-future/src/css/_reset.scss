@@ -1,0 +1,36 @@
+/*
+ * Make media elements responsive
+ * http://fluidity.sexy
+ */
+img,
+canvas,
+iframe,
+video,
+svg,
+select,
+textarea {
+  max-width: 100%;
+}
+
+/*
+ * Miscellaneous
+ * http://davidtheclark.github.io/scut/reset.html
+ */
+
+// Make everything a border-box
+@include scut-reset-border-box;
+
+// Make <img> and <video> elements fluid-by-default
+@include scut-reset-media;
+
+// Remove presentational styles from headings and <b>
+@include scut-reset-semanticize;
+
+// Give clickable elements cursor: pointer
+@include scut-reset-pointer;
+
+// Reset fieldset and restrict textarea to vertical resizing
+@include scut-reset-form;
+
+// Remove default button styling
+@include scut-reset-button;

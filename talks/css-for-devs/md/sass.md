@@ -25,3 +25,4 @@ https://medium.com/@drublic/learnings-from-using-sass-in-large-scale-projects-4a
 https://css-tricks.com/sass-style-guide/
 http://sass-guidelin.es/
 https://davidtheclark.github.io/scut/
+http://www.smashingmagazine.com/2015/05/04/extending-in-sass-without-mess/

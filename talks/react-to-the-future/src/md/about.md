@@ -2,8 +2,8 @@
 
 <div class="Split">
   <div class="Split-column">
-    <pre class="language-javascript clean"><code>{
-  "name": "Elijah Manor",
+    <pre class="language-javascript language--clean language--small"><code>{
+  "name" : "Elijah Manor",
   "priorities" : [
     "Christian", "Family", "Work"
   ],
@@ -14,15 +14,12 @@
     "HTML", "CSS", "JavaScript",
     "React", "jQuery"
   ],
-  "titles" : [
-    "Microsoft MVP",
-    "IE userAgent"
-  ]
+  "titles" : [ "Microsoft MVP" ]
 }</code></pre>
   </div>
   <div class="Split-column">
-    <img src="./img/myfamily.jpg" />
-    <img src="./img/ramsey-solutions.svg" />
-    <img src="./img/everydollar.svg" />
+    <img src="/img/myfamily.jpg" />
+    <img src="/img/ramsey-solutions.svg" />
+    <img src="/img/everydollar.svg" />
   </div>
 </div>  

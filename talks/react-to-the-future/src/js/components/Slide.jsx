@@ -1,28 +1,30 @@
 const React = require('react/addons');
-const ActionCreator = require('../actions/SlideActions');
-// const Playground = require('component-playground');
-// const example = require("raw!./examples/component.example");
+// const ActionCreator = require('../actions/SlideActions');
+const SlideStore = require('../stores/SlideStore');
+const classNames = require('classnames');
 
-let Slide = React.createClass({
+const Slide = React.createClass({
   propTypes: {
-    content: React.PropTypes.string.isRequired
+    slide: React.PropTypes.object.isRequired
   },
-  getDefaultProps() {
-    return {
-      content: ''
-    };
+  componentDidMount() { // TODO: Think of a better way?
+    window.Prism.highlightAll();
+    window.mermaid.init();
+  },
+  componentDidUpdate() { // TODO: Think of a better way?
+    window.Prism.highlightAll();
+    window.mermaid.init();
   },
   render() {
     let { slide } = this.props;
+    let metadata = slide.metadata || {};
+    let classes = classNames('SlideManager-slide', metadata.className);
 
     return (
-      <section id={ slide.id } className="Slide" dangerouslySetInnerHTML={{ __html: slide.content }}></section>
+      <section id={metadata.id} className={classes}
+        dangerouslySetInnerHTML={{ __html: slide.content }}></section>
     );
   }
 });
-
-// <div className="component-documentation">
-//   <Playground codeText={`console.log("test");`} scope={{React: React}}/>
-// </div>
 
 module.exports = Slide;

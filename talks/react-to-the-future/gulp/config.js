@@ -46,6 +46,10 @@ module.exports = {
     src: src + '/img/*.*',
     dest: dest + '/img'
   },
+  vendor: {
+    src: src + '/vendor/*.*',
+    dest: dest + '/vendor'
+  },
   watch: {
     src: 'src/**/*.*',
     tasks: ['build']

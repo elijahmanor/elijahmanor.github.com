@@ -1,17 +1,30 @@
 @import 'node_modules/modularized-normalize-scss/_normalize.scss';
 @import 'node_modules/scut/dist/_scut.scss';
+@import '_reset.scss';
 
-$primary-color: green;
-
-h1 {
-  color: $primary-color;
-}
+$primary-color: #61dafb;
+$secondary-color: #cc7a6f;
 
 html, body {
   width: 100%;
   height: 100%;
   color: white;
   background-color: black;
+  font-size: 2.25vw; //2.5vw; //24px;
+}
+
+h1 { font-size: 2em; color: $primary-color; }
+h2 { font-size: 1.5em; }
+p { font-size: 1.1em; }
+pre, code { font-size: 1em; }
+a { color: $primary-color; }
+img { margin-bottom: 1em; }
+
+pre.language--clean {
+  margin: 0;
+}
+pre.language--small {
+  font-size: 0.8em;
 }
 
 .Convey {
@@ -19,33 +32,64 @@ html, body {
   height: 100%;
 }
 
-.Controls {
-  @include scut-center-absolutely(200px n);
+.SlideManager-controls {
+  @include scut-fixed(n 0.5em 0.5em n);
 
   color: black;
-  bottom: scut-em(25px);
   text-align: center;
+  width: 4em;
+
+  a {
+    text-decoration: none;
+  }
 }
 
-footer {}
-
-img, video, iframe {
-  max-width: 100%;
-  max-height: 100%;
+.Arrow {
+	width: 0;
+	height: 0;
+  display: inline-block;
+  margin: 0.25em;
 }
 
-.SlideList {
+.Arrow--right {
+	border-top: .75em solid transparent;
+	border-bottom: .75em solid transparent;
+	border-left: .75em solid $primary-color;
+
+  &:hover {
+    border-left-color: darkblue;
+  }
+}
+
+.Arrow--left {
+	border-top: .75em solid transparent;
+	border-bottom: .75em solid transparent;
+	border-right: .75em solid $primary-color;
+
+  &:hover {
+    border-right-color: darkblue;
+  }
+}
+
+.SlideManager {
   width: 100%;
   height: 100%;
   position: relative;
-  outline: 1px solid red;
   margin: auto;
 }
 
-.Slide {
+.SlideManager-slide {
   @include scut-fill;
 
-  padding: 100px;
+  padding: 2em;
+}
+
+.Slide--title {
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+
+  h1 { font-size: 3em; }
 }
 
 .carousel-enter {
@@ -68,65 +112,6 @@ img, video, iframe {
   src: url("./BTTF.ttf") format("truetype");
 }
 
-#Introduction .bttf {
-  font-family: BTTF;
-  line-height: 100%;
-  -webkit-text-stroke-color: #00F;
-  -webkit-text-stroke-width: 2px;
-  font-size: 8rem;
-  position: relative;
-  height: 325px;
-  transform: rotateY(20deg) translateX(20%);
-  animation: bounceOutLeft 5s ease-in 5s infinite alternate;
-}
-
-#Introduction .over > :first-child,
-#Introduction .over > :last-child {
-  color: #F00;
-  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(1,0,1,0)), to(rgba(0,1,0,1)));
-}
-
-#Introduction .under {
-  color: #FF0;
-}
-
-#Introduction .under,
-#Introduction .over {
-	position: absolute;
-	left: 0px;
-	top: 0px;
-}
-
-#Introduction .container {
-  -webkit-perspective: 400;
-}
-
-#Introduction .container > div {
-  overflow: visible;
-
-}
-
-@keyframes bounceOutLeft {
-  0%, 50% {
-    opacity: 1;
-    transform: rotateY(20deg) translateX(20%);
-  }
-
-  75% {
-    opacity: 1;
-    transform: rotateY(20deg) translateX(10%);
-  }
-
-  90%, 100% {
-    opacity: 0;
-    transform: rotateY(20deg) translateX(3000px);
-  }
-}
-
-.bounceOutLeft {
-  animation-name: bounceOutLeft
-}
-
 .Split {
   display: flex;
   flex-direction: row;
@@ -146,4 +131,27 @@ img, video, iframe {
 .Split > p,
 .Split h4 {
   text-align: left;
+}
+
+@import '_introduction.scss';
+
+.SlideManager-footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 0.25em;
+}
+
+.SlideManager-progress {
+  background-color: $secondary-color;
+  height: 100%;
+  transition: width 1s ease-out;
+  border-radius: .5em;
+}
+
+@for $i from 0 through 100 {
+  .SlideManager-progress--#{$i} {
+    width: 0% + $i;
+  }
 }
