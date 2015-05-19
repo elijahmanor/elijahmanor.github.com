@@ -335,22 +335,149 @@ var HelloWorld = React.createClass({
 
 ---
 
+# Overloaded setState
+
+<div class="Split">
+  <div class="Split-column Split-column--75">
+    <pre data-line="6-8" class="language-jsx language--clean language--small"><code>
+var HelloWorld = React.createClass({
+  getInitialState() {
+    return { count: 0 };
+  },
+  handleClick() {
+    this.setState(function(state, props) {
+      return { count: state.count + 1 };
+    });
+  },
+  render: function() {
+    return &lt;div&gt;
+      &lt;p&gt;Hello {this.state.count}!&lt;/p&gt;
+      &lt;button onClick={this.handleClick}&gt;Click Me&lt;/button&gt;
+    &lt;/div&gt;;
+  }
+});</code></pre>
+  </div>
+  <div class="Split-column">
+    <p>6-8. As of React v0.13 you can pass a callback function to `this.setState`. React will pass the current `state` & `props` and you return the new `state`.</p>
+  </div>
+</div>
+
+---
+
 # Déjà Vu
 
 [![](./img/iamdeveloper-onclick.png)](https://twitter.com/iamdevloper/status/567363727176253440)
 
 ---
 
-Component LifeCycle
-componentWillMount – Fired before the component will mount
-componentDidMount – Fired after the component mounted
-componentWillReceiveProps – Fired whenever there is a change to props
-componentWillUnmount – Fired before the component will unmount
+# [Component LifeCycle](https://facebook.github.io/react/docs/component-specs.html#lifecycle-methods)
 
-refs
+* **componentWillMount** – Fired once, before initial rendering occurs. Good place to wire-up message listeners. `this.setState` doesn't work here.
+* **componentDidMount** – Fired once, after initial rendering occurs. Can use `this.getDOMNode()`.
+* **componentDidUpdate** - Fired after the component's updates are made to the DOM. Can use `this.getDOMNode()` for updates.
+* **componentWillReceiveProps** – Fired when a component is receiving new props. You might want to `this.setState` depending on the props.
+* **shouldComponentUpdate** - Fired before rendering when new props or state are received. `return false` if you know an update isn't needed.
+* **componentWillUnmount** – Fired immediately before a component is unmounted from the DOM. Good place to remove message listeners or general clean up.
 
 ---
 
+# References
+
+<div class="Split">
+  <div class="Split-column Split-column--75">
+    <pre class="language-jsx language--clean language--small"><code>
+var HelloWorld = React.createClass({
+  getInitialState() { return { count: 0 }; },
+  componentDidMount() {
+    this.refs.count.getDOMNode().textContent = '42';
+  },
+  handleClick() { this.setState({count: ++this.state.count}) },
+  render: function() {
+    return &lt;div&gt;
+      &lt;p&gt;Hello &lt;span ref="count"&gt;{this.state.count}&lt;/span&gt;!&lt;/p&gt;
+      &lt;button onClick={this.handleClick}&gt;Click Me&lt;/button&gt;
+    &lt;/div&gt;;
+  }
+});</code></pre>
+  </div>
+  <div class="Split-column">
+    <iframe height='268' scrolling='no' src='//codepen.io/elijahmanor/embed/waWOQy/?height=268&theme-id=0&default-tab=result' data-online='//codepen.io/elijahmanor/embed/waWOQy/?height=268&theme-id=0&default-tab=result' data-offline='./pens/codepen_waWOQy/index.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/waWOQy/'>waWOQy</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
+    </iframe>
+  </div>
+</div>
+
+---
+
+# References
+
+<div class="Split">
+  <div class="Split-column Split-column--75">
+    <pre data-line="4,9" class="language-jsx language--clean language--small"><code>
+var HelloWorld = React.createClass({
+  getInitialState() { return { count: 0 }; },
+  componentDidMount() {
+    this.refs.count.getDOMNode().textContent = '42';
+  },
+  handleClick() { this.setState({count: ++this.state.count}) },
+  render: function() {
+    return &lt;div&gt;
+      &lt;p&gt;Hello &lt;span ref="count"&gt;{this.state.count}&lt;/span&gt;!&lt;/p&gt;
+      &lt;button onClick={this.handleClick}&gt;Click Me&lt;/button&gt;
+    &lt;/div&gt;;
+  }
+});</code></pre>
+  </div>
+  <div class="Split-column">
+    <p>9. Add `ref` attributes in the JSX.</p>
+    <p>4. You have access to the DOM in the `componentDidMount` life-cycle method. Call `getDOMNode()` to get the raw DOM node.</p>
+  </div>
+</div>
+
+---
+
+# Dealing with Lists
+
+<div class="Split">
+  <div class="Split-column Split-column--65">
+    <pre class="language-jsx language--clean language--small"><code>
+var speakers = ['Scott Hanselman', 'John Papa', 'Scott Guthrie', 'Michele Bustamante', 'Dan Wahlin', 'Debora Kurata', 'Zoiner Tejada', 'Scott Allen', 'Elijah Manor', 'Ward Bell', 'Todd Anglin', 'Saron Yitbare', 'Scott Hunter'];
+
+var HelloWorld = React.createClass({
+  getInitialState() { return this.props; },
+  render: function() {
+    return (
+      &lt;div&gt;
+        &lt;ul&gt;
+          {this.state.names.map(function(name) {
+            return &lt;li&gt;{name}&lt;/li&gt;;
+          })}
+        &lt;/ul&gt;
+        &lt;button onClick={this.handleSort}&gt;Sort&lt;/button&gt;
+        &lt;button onClick={this.handleScott}&gt;Scott&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  },
+  handleSort() {
+    this.setState({ names: this.state.names.sort() });
+  },
+  handleScott() {
+    var scotts = this.state.names.filter(function(name) {
+      return name.indexOf('Scott') > -1;
+    });
+    this.setState({ names: scotts });
+  }
+});
+
+React.render(
+  &lt;HelloWorld names={speakers} /&gt;,
+  document.body
+);</code></pre>
+  </div>
+  <div class="Split-column">
+    <iframe height='468' scrolling='no' src='//codepen.io/elijahmanor/embed/RPRdmg/?height=468&theme-id=0&default-tab=result' data-online='//codepen.io/elijahmanor/embed/RPRdmg/?height=468&theme-id=0&default-tab=result' data-offline='./pens/codepen_RPRdmg/index.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/RPRdmg/'>RPRdmg</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
+    </iframe>
+  </div>
+</div>
 
 ---
 
@@ -360,7 +487,7 @@ refs
 
 ---
 
-# Using ES6 in React
+# And Now You Can Use ES6
 
 React v0.13.0 supports creating components using JavaScript classes
 

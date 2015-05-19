@@ -167,6 +167,10 @@ pre[data-line].language--small {
   @include scut-margin(n 2.5rem);
 }
 
+.Split .Split-column--65 {
+  flex: 0 1 65%;
+}
+
 .Split .Split-column--75 {
   flex: 0 1 75%;
 }
@@ -210,4 +214,11 @@ pre[data-line].language--small {
 
   background-color: $tertiary-color;
   //color: $secondary-text-color;
+}
+
+.Welcome {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }

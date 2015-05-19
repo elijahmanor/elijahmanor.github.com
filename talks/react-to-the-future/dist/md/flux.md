@@ -14,64 +14,6 @@
 
 ---
 
-# Why Not MVC?
-
-RETHINK THIS EXAMPLE... MAYBE SHOW THE 2-WAY APPROACH INSTEAD
-
-<div class="mermaid">
-  graph LR;
-
-  classDef controller fill:#444142,stroke:#FFFFFF,stroke-width:4px;
-  classDef model fill:#294552,stroke:#FFFFFF,stroke-width:4px;
-  classDef view fill:#5FAF6A,stroke:#FFFFFF,stroke-width:4px;
-
-  Model(Model)-->Controller(Controller);
-  Controller-->View(View);
-  View-->Controller
-  Controller-->Model
-
-  class Model model;
-  class Controller controller;
-  class View view;
-</div>
-
----
-
-# MVC Gone Wrong
-
-RETHINK THIS EXAMPLE... MAYBE SHOW THE 2-WAY APPROACH INSTEAD
-
-<div class="mermaid">
-  graph TD;
-
-  classDef controller fill:#444142,stroke:#FFFFFF,stroke-width:4px;
-  classDef model fill:#294552,stroke:#FFFFFF,stroke-width:4px;
-  classDef view fill:#5FAF6A,stroke:#FFFFFF,stroke-width:4px;
-
-  Model1(Model)-->Controller(Controller);
-  Model2(Model)-->Controller;
-  Model3(Model)-->Controller;
-  Model4(Model)-->Controller;
-  Controller-->Model1;
-  Controller-->Model2;
-  Controller-->Model3;
-  Controller-->Model4;
-  View1(View)-->Controller;
-  View2(View)-->Controller;
-  View3(View)-->Controller;
-  View4(View)-->Controller;
-  Controller-->View1;
-  Controller-->View2;
-  Controller-->View3;
-  Controller-->View4;
-
-  class Model1,Model2,Model3,Model4 model;
-  class Controller controller;
-  class View1,View2,View3,View4 view;
-</div>
-
----
-
 # Why?
 
 > "We found that two-way data bindings led to cascading updates, where changing one object led to another object changing, which could also trigger more updates. As applications grew, these cascading updates made it very difficult to predict what would change as the result of one user interaction. When updates can only change data within a single round, the system as a whole becomes more predictable." --https://facebook.github.io/flux/docs/overview.html
@@ -123,9 +65,6 @@ RETHINK THIS EXAMPLE... MAYBE SHOW THE 2-WAY APPROACH INSTEAD
 </div>
 
 ---
-
-
-
 
 # Flux
 

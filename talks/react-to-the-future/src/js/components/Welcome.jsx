@@ -7,14 +7,14 @@ const Welcome = React.createClass({
 
     return (
       <div className="Welcome">
-        <h1>Welcome!</h1>
-        <ul>
-          <li><Link to="list">List</Link></li>
-          <li><Link to="slide" params={slide}>Start</Link></li>
-        </ul>
+        <h1>React to the Future</h1>
+        <h2>&lt;anglebrackets /&gt;</h2>
+        <Link to="slide" params={slide}>Start Slides</Link>
       </div>
     );
   }
+
+  // <li><Link to="list">List</Link></li>
 });
 
 module.exports = Welcome;

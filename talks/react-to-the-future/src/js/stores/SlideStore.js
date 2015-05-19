@@ -15,8 +15,9 @@ let SETS = [ // TODO: Have a task that will auto-add setIndex and slideIndex and
   { id: 'Tips',         markdown: './md/tips.md',          slides: [{ setIndex: 4, slideIndex: 0, content: '<h1>Tips</h1>' }] },
   { id: 'Flux',         markdown: './md/flux.md',          slides: [{ setIndex: 5, slideIndex: 0, content: '<h1>Flux</h1>' }] },
   { id: 'Isomorphic',   markdown: './md/isomporphic.md',   slides: [{ setIndex: 6, slideIndex: 0, content: '<h1>Isomorphic</h1>' }] },
-  { id: 'Conclusion',   markdown: './md/conclusion.md',    slides: [{ setIndex: 7, slideIndex: 0, content: `<h1>Conclusion</h1>` }] },
-  { id: 'Resources',    markdown: './md/resources.md',     slides: [{ setIndex: 8, slideIndex: 0, content: '<h1>Resources</h1>' }] }
+  { id: 'NodeModules',  markdown: './md/node-modules.md',  slides: [{ setIndex: 7, slideIndex: 0, content: '<h1>Node Modules</h1>' }] },
+  { id: 'Conclusion',   markdown: './md/conclusion.md',    slides: [{ setIndex: 8, slideIndex: 0, content: `<h1>Conclusion</h1>` }] },
+  { id: 'Resources',    markdown: './md/resources.md',     slides: [{ setIndex: 9, slideIndex: 0, content: '<h1>Resources</h1>' }] }
 ];
 
 const SlideStore = Reflux.createStore({
@@ -78,17 +79,9 @@ const SlideStore = Reflux.createStore({
   },
   getSlide(setIndex=this.setIndex, slideIndex=this.slideIndex) {
     slideIndex = slideIndex <= this.slides[setIndex].slides.length - 1 ? slideIndex : 0;
+
     let slide = this.slides[setIndex].slides[slideIndex];
     slide.isOffline = this.isOffline;
-    /*
-    //if (this.isOffline) {
-      let offline = slide.content.match(/<iframe[^<>]+data-offline='([^']*)'/);
-      if (offline && offline.length === 2) {
-        let offlineSrc = offline[1];
-      }
-      debugger;
-    //}
-    // */
 
     return slide;
   },

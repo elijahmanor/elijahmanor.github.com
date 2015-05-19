@@ -555,6 +555,11 @@ pre[data-line].language--small {
   margin-left: 2.5rem;
   margin-right: 2.5rem; }
 
+.Split .Split-column--65 {
+  -webkit-flex: 0 1 65%;
+  -ms-flex: 0 1 65%;
+  flex: 0 1 65%; }
+
 .Split .Split-column--75 {
   -webkit-flex: 0 1 75%;
   -ms-flex: 0 1 75%;
@@ -982,3 +987,10 @@ pre[data-line].language--small {
   margin-top: 1em;
   margin-bottom: 1em;
   background-color: #f1ede4; }
+
+.Welcome {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%); }

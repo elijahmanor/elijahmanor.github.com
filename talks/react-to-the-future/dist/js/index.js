@@ -43433,8 +43433,10 @@ var Welcome = React.createClass({ displayName: 'Welcome',
   render: function render() {
     var slide = { setIndex: 0, slideIndex: 0 };
 
-    return React.createElement('div', { className: 'Welcome' }, React.createElement('h1', null, 'Welcome!'), React.createElement('ul', null, React.createElement('li', null, React.createElement(Link, { to: 'list' }, 'List')), React.createElement('li', null, React.createElement(Link, { to: 'slide', params: slide }, 'Start'))));
+    return React.createElement('div', { className: 'Welcome' }, React.createElement('h1', null, 'React to the Future'), React.createElement('h2', null, '<anglebrackets />'), React.createElement(Link, { to: 'slide', params: slide }, 'Start Slides'));
   }
+
+  // <li><Link to="list">List</Link></li>
 });
 
 module.exports = Welcome;
@@ -43450,7 +43452,7 @@ var postal = require('postal');
 var channel = postal.channel('slides');
 
 var SETS = [// TODO: Have a task that will auto-add setIndex and slideIndex and an empty slide
-{ id: 'Introduction', markdown: './md/introduction.md', slides: [{ setIndex: 0, slideIndex: 0, content: '<h1>React to the Future</h1>' }] }, { id: 'WhatIsReact', markdown: './md/what-is-react.md', slides: [{ setIndex: 1, slideIndex: 0, content: '<h1>What is React?</h1>' }] }, { id: 'Components', markdown: './md/components.md', slides: [{ setIndex: 2, slideIndex: 0, content: '<h1>Components</h1>' }] }, { id: 'Gotchas', markdown: './md/gotchas.md', slides: [{ setIndex: 3, slideIndex: 0, content: '<h1>Gotchas</h1>' }] }, { id: 'Tips', markdown: './md/tips.md', slides: [{ setIndex: 4, slideIndex: 0, content: '<h1>Tips</h1>' }] }, { id: 'Flux', markdown: './md/flux.md', slides: [{ setIndex: 5, slideIndex: 0, content: '<h1>Flux</h1>' }] }, { id: 'Isomorphic', markdown: './md/isomporphic.md', slides: [{ setIndex: 6, slideIndex: 0, content: '<h1>Isomorphic</h1>' }] }, { id: 'Conclusion', markdown: './md/conclusion.md', slides: [{ setIndex: 7, slideIndex: 0, content: '<h1>Conclusion</h1>' }] }, { id: 'Resources', markdown: './md/resources.md', slides: [{ setIndex: 8, slideIndex: 0, content: '<h1>Resources</h1>' }] }];
+{ id: 'Introduction', markdown: './md/introduction.md', slides: [{ setIndex: 0, slideIndex: 0, content: '<h1>React to the Future</h1>' }] }, { id: 'WhatIsReact', markdown: './md/what-is-react.md', slides: [{ setIndex: 1, slideIndex: 0, content: '<h1>What is React?</h1>' }] }, { id: 'Components', markdown: './md/components.md', slides: [{ setIndex: 2, slideIndex: 0, content: '<h1>Components</h1>' }] }, { id: 'Gotchas', markdown: './md/gotchas.md', slides: [{ setIndex: 3, slideIndex: 0, content: '<h1>Gotchas</h1>' }] }, { id: 'Tips', markdown: './md/tips.md', slides: [{ setIndex: 4, slideIndex: 0, content: '<h1>Tips</h1>' }] }, { id: 'Flux', markdown: './md/flux.md', slides: [{ setIndex: 5, slideIndex: 0, content: '<h1>Flux</h1>' }] }, { id: 'Isomorphic', markdown: './md/isomporphic.md', slides: [{ setIndex: 6, slideIndex: 0, content: '<h1>Isomorphic</h1>' }] }, { id: 'NodeModules', markdown: './md/node-modules.md', slides: [{ setIndex: 7, slideIndex: 0, content: '<h1>Node Modules</h1>' }] }, { id: 'Conclusion', markdown: './md/conclusion.md', slides: [{ setIndex: 8, slideIndex: 0, content: '<h1>Conclusion</h1>' }] }, { id: 'Resources', markdown: './md/resources.md', slides: [{ setIndex: 9, slideIndex: 0, content: '<h1>Resources</h1>' }] }];
 
 var SlideStore = Reflux.createStore({
   listenables: [SlideActions],
@@ -43519,17 +43521,9 @@ var SlideStore = Reflux.createStore({
     var slideIndex = arguments[1] === undefined ? this.slideIndex : arguments[1];
 
     slideIndex = slideIndex <= this.slides[setIndex].slides.length - 1 ? slideIndex : 0;
+
     var slide = this.slides[setIndex].slides[slideIndex];
     slide.isOffline = this.isOffline;
-    /*
-    //if (this.isOffline) {
-      let offline = slide.content.match(/<iframe[^<>]+data-offline='([^']*)'/);
-      if (offline && offline.length === 2) {
-        let offlineSrc = offline[1];
-      }
-      debugger;
-    //}
-    // */
 
     return slide;
   },
