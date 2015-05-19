@@ -259,6 +259,33 @@ state - The internal data store (object) of a component.
 getInitialState - The way in which you set the initial state of a component.
 setState - A helper method for altering the state of a component.
 
+<div class="Split">
+  <div class="Split-column">
+    <pre class="language-jsx language--clean language--small"><code>
+var HelloWorld = React.createClass({
+  getInitialState() {
+    return { count: 0 };
+  },
+  handleClick() {
+    this.setState({ count: ++this.state.count });
+  },
+  render: function() {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;Hello {this.state.count}!&lt;/p&gt;
+        &lt;button onClick={this.handleClick}&gt;Click Me&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+});
+
+React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
+  </div>
+  <div class="Split-column">
+    <iframe height='268' scrolling='no' src='//codepen.io/elijahmanor/embed/aOZXQa/?height=268&theme-id=0&default-tab=result' data-online='//codepen.io/elijahmanor/embed/aOZXQa/?height=268&theme-id=0&default-tab=result' data-offline='./pens/codepen_aOZXQa/index.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/aOZXQa/'>aOZXQa</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
+    </iframe>
+  </div>
+</div>
 
 ---
 

@@ -1,0 +1,19 @@
+var HelloWorld = React.createClass({
+  getInitialState() {
+    return { count: 0 };
+  },
+  handleClick() {
+    this.setState({ count: ++this.state.count });
+    //this.setState(state => ({ count: state.count + 1 }) );
+  },
+  render: function() {
+    return (
+      <div>
+      	<p>Hello {this.state.count}!</p>
+      	<button onClick={this.handleClick}>Click Me</button>
+      </div>
+    );
+  }
+});
+
+React.render(<HelloWorld />, document.body);
