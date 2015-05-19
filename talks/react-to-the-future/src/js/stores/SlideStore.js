@@ -12,12 +12,11 @@ let SETS = [ // TODO: Have a task that will auto-add setIndex and slideIndex and
   { id: 'WhatIsReact',  markdown: './md/what-is-react.md', slides: [{ setIndex: 1, slideIndex: 0, content: '<h1>What is React?</h1>' }] },
   { id: 'Components',   markdown: './md/components.md',    slides: [{ setIndex: 2, slideIndex: 0, content: '<h1>Components</h1>' }] },
   { id: 'Gotchas',      markdown: './md/gotchas.md',       slides: [{ setIndex: 3, slideIndex: 0, content: '<h1>Gotchas</h1>' }] },
-  { id: 'Tips',         markdown: './md/tips.md',          slides: [{ setIndex: 4, slideIndex: 0, content: '<h1>Tips</h1>' }] },
-  { id: 'Flux',         markdown: './md/flux.md',          slides: [{ setIndex: 5, slideIndex: 0, content: '<h1>Flux</h1>' }] },
-  { id: 'Isomorphic',   markdown: './md/isomporphic.md',   slides: [{ setIndex: 6, slideIndex: 0, content: '<h1>Isomorphic</h1>' }] },
-  { id: 'NodeModules',  markdown: './md/node-modules.md',  slides: [{ setIndex: 7, slideIndex: 0, content: '<h1>Node Modules</h1>' }] },
-  { id: 'Conclusion',   markdown: './md/conclusion.md',    slides: [{ setIndex: 8, slideIndex: 0, content: `<h1>Conclusion</h1>` }] },
-  { id: 'Resources',    markdown: './md/resources.md',     slides: [{ setIndex: 9, slideIndex: 0, content: '<h1>Resources</h1>' }] }
+  { id: 'Flux',         markdown: './md/flux.md',          slides: [{ setIndex: 4, slideIndex: 0, content: '<h1>Flux</h1>' }] },
+  { id: 'Isomorphic',   markdown: './md/isomorphic.md',   slides: [{ setIndex: 5, slideIndex: 0, content: '<h1>Isomorphic</h1>' }] },
+  { id: 'NodeModules',  markdown: './md/node-modules.md',  slides: [{ setIndex: 6, slideIndex: 0, content: '<h1>Node Modules</h1>' }] },
+  { id: 'Conclusion',   markdown: './md/conclusion.md',    slides: [{ setIndex: 7, slideIndex: 0, content: `<h1>Conclusion</h1>` }] },
+  { id: 'Resources',    markdown: './md/resources.md',     slides: [{ setIndex: 8, slideIndex: 0, content: '<h1>Resources</h1>' }] }
 ];
 
 const SlideStore = Reflux.createStore({

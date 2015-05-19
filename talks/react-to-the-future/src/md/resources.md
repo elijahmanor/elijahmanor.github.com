@@ -10,11 +10,11 @@
 
 # Resources
 
+* https://github.com/facebook/react-devtools
 * http://ricostacruz.com/cheatsheets/react.html
 * https://github.com/mikechau/react-primer-draft
 * https://github.com/enaqx/awesome-react
 * http://buildwithreact.com/
-
 * https://facebook.github.io/react/jsx-compiler.html
 
 <!--

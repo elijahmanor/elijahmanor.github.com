@@ -633,6 +633,8 @@ Go ahead and use Babel to convert the rest of your files.
 
 Must use `React.createClass`. Unfortuneately the ES6 `class` syntax doesn't support Mixins as of yet.
 
+# Use PureRenderMixin
+
 -->
 
 <!--

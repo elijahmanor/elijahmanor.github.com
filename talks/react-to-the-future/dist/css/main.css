@@ -996,7 +996,7 @@ pre[data-line].language--small {
 .SlideManager-progress--100 {
   width: 100%; }
 
-SlideManager-footer .mermaid {
+.mermaid {
   margin-top: 1em;
   margin-bottom: 1em;
   background-color: #f1ede4; }
