@@ -239,15 +239,13 @@ React.render(
   <div class="Split-column">
     <p>2-4. Check the types of the `props` during development with `propTypes`.</p>
     <pre class="language-jsx language--clean language--small"><code>
-array, bool, func, number, object, string,
-node, element, any, instanceOf(Message),
-oneOf(['News', 'Photos']), oneOfType([]),
-arrayOf(number), objectOf(number), shape({}),
-customProp: function(props, name, _) {
-  if (!/matchme/.test(props[name])) {
-    return new Error('Validation failed!');
-  }
-}</code></pre>
+array, bool, func, number, object,
+string, node, element, any,
+instanceOf(Message),
+oneOf(['News', 'Photos']),
+oneOfType([]), arrayOf(number),
+objectOf(number), shape({}),
+customProp: function(props, name, _) {}</code></pre>
   </div>
 </div>
 
@@ -256,7 +254,7 @@ customProp: function(props, name, _) {
 # Let's Look at State
 
 <div class="Split">
-  <div class="Split-column">
+  <div class="Split-column Split-column--75">
     <pre class="language-jsx language--clean language--small"><code>
 var HelloWorld = React.createClass({
   getInitialState() {
@@ -266,20 +264,72 @@ var HelloWorld = React.createClass({
     this.setState({ count: ++this.state.count });
   },
   render: function() {
-    return (
-      &lt;div&gt;
-        &lt;p&gt;Hello {this.state.count}!&lt;/p&gt;
-        &lt;button onClick={this.handleClick}&gt;Click Me&lt;/button&gt;
-      &lt;/div&gt;
-    );
+    return &lt;div&gt;
+      &lt;p&gt;Hello {this.state.count}!&lt;/p&gt;
+      &lt;button onClick={this.handleClick}&gt;Click Me&lt;/button&gt;
+    &lt;/div&gt;;
   }
-});
-
-React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
+});</code></pre>
   </div>
   <div class="Split-column">
     <iframe height='268' scrolling='no' src='//codepen.io/elijahmanor/embed/aOZXQa/?height=268&theme-id=0&default-tab=result' data-online='//codepen.io/elijahmanor/embed/aOZXQa/?height=268&theme-id=0&default-tab=result' data-offline='./pens/codepen_aOZXQa/index.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/aOZXQa/'>aOZXQa</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
     </iframe>
+  </div>
+</div>
+
+---
+
+# Default State and Expression
+
+<div class="Split">
+  <div class="Split-column Split-column--75">
+    <pre data-line="2-4,10" class="language-jsx language--clean language--small"><code>
+var HelloWorld = React.createClass({
+  getInitialState() {
+    return { count: 0 };
+  },
+  handleClick() {
+    this.setState({ count: ++this.state.count });
+  },
+  render: function() {
+    return &lt;div&gt;
+      &lt;p&gt;Hello {this.state.count}!&lt;/p&gt;
+      &lt;button onClick={this.handleClick}&gt;Click Me&lt;/button&gt;
+    &lt;/div&gt;;
+  }
+});</code></pre>
+  </div>
+  <div class="Split-column">
+    <p>2-4. Provide default `state` by returning object from `getInitialState`.</p>
+    <p>10. Access component state via the `this.state` object.</p>
+  </div>
+</div>
+
+---
+
+# Updating State
+
+<div class="Split">
+  <div class="Split-column Split-column--75">
+    <pre data-line="5-7,11" class="language-jsx language--clean language--small"><code>
+var HelloWorld = React.createClass({
+  getInitialState() {
+    return { count: 0 };
+  },
+  handleClick() {
+    this.setState({ count: ++this.state.count });
+  },
+  render: function() {
+    return &lt;div&gt;
+      &lt;p&gt;Hello {this.state.count}!&lt;/p&gt;
+      &lt;button onClick={this.handleClick}&gt;Click Me&lt;/button&gt;
+    &lt;/div&gt;;
+  }
+});</code></pre>
+  </div>
+  <div class="Split-column">
+    <p>11. Declaratively wire-up _delegated_ Event Handlers via attributes.</p>
+    <p>5-7. Update the state by calling `this.setState` passing in the difference.</p>
   </div>
 </div>
 
@@ -290,24 +340,6 @@ React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
 [![](./img/iamdeveloper-onclick.png)](https://twitter.com/iamdevloper/status/567363727176253440)
 
 ---
-
-# Adding Comments
-
-It's easy to add comments within your JSX; they're just JS expressions. You just need to be careful to put {} around the comments when you are within the children section of a tag.
-
-var content = (
-  <Nav>
-    {/* child comment, put {} around */}
-    <Person
-      /* multi
-         line
-         comment */
-      name={window.isLoggedIn ? window.name : ''} // end of line comment
-    />
-  </Nav>
-);
-
-
 
 Component LifeCycle
 componentWillMount – Fired before the component will mount

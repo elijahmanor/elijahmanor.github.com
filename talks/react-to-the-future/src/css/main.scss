@@ -171,6 +171,10 @@ pre[data-line].language--small {
   flex: 0 1 75%;
 }
 
+.Split p:first-of-type {
+  margin-top: 0;
+}
+
 .Split p,
 .Split h4 {
   text-align: left;
