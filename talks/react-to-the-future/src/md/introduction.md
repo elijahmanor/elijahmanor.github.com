@@ -41,8 +41,8 @@
 }</code></pre>
   </div>
   <div class="Split-column">
-    <img src="/img/myfamily.jpg" />
-    <a href="http://daveramsey.com" target="_blank"><img src="/img/ramsey-solutions.svg" /></a>
-    <a href="http://everydollar.com" target="_blank"><img src="/img/everydollar.svg" /></a>
+    <img src="./img/myfamily.jpg" />
+    <a href="http://daveramsey.com" target="_blank"><img src="./img/ramsey-solutions.svg" /></a>
+    <a href="http://everydollar.com" target="_blank"><img src="./img/everydollar.svg" /></a>
   </div>
 </div>  
