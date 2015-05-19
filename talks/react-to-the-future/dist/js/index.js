@@ -43322,9 +43322,6 @@ var key = require('keymaster');
 var screenfull = require('screenfull');
 
 var SlideControls = React.createClass({ displayName: 'SlideControls',
-  // contextTypes: {
-  //   router: React.PropTypes.func
-  // },
   componentDidMount: function componentDidMount() {
     key('left, up, p', SlideActions.previous);
     key('right, down, space, enter, n', SlideActions.next);

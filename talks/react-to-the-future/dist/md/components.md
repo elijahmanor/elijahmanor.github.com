@@ -253,11 +253,7 @@ customProp: function(props, name, _) {
 
 ---
 
-TODO: Introduce state here...
-
-state - The internal data store (object) of a component.
-getInitialState - The way in which you set the initial state of a component.
-setState - A helper method for altering the state of a component.
+# Let's Look at State
 
 <div class="Split">
   <div class="Split-column">

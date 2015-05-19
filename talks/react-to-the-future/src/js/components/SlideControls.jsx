@@ -6,9 +6,6 @@ const key = require('keymaster');
 const screenfull = require('screenfull');
 
 const SlideControls = React.createClass({
-  // contextTypes: {
-  //   router: React.PropTypes.func
-  // },
   componentDidMount() {
     key('left, up, p', SlideActions.previous);
     key('right, down, space, enter, n', SlideActions.next);
