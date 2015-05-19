@@ -2,28 +2,49 @@
 @import 'node_modules/scut/dist/_scut.scss';
 @import '_reset.scss';
 
+$primary-text-color: #ffffff;
+$secondary-text-color: #484848;
 $primary-color: #61dafb;
 $secondary-color: #cc7a6f;
+$tertiary-color: #f1ede4;
+$background-color: #222222;
 
 html, body {
   width: 100%;
   height: 100%;
-  color: white;
-  background-color: black;
+  color: $primary-text-color;
+  background-color: $background-color;
+  font-size: 24px;
   font-size: 2.25vw; //2.5vw; //24px;
 }
 
 h1 { font-size: 2em; color: $primary-color; }
-h2 { font-size: 1.5em; }
-p { font-size: 1.1em; }
+h2 {
+  @include scut-margin(0.5em n);
+
+  font-size: 1.5em;
+}
+p, li { font-size: 1.1em; }
 pre, code { font-size: 1em; }
 a { color: $primary-color; }
 img { margin-bottom: 1em; }
+ul, ol { text-align: left; display: inline-block; }
+blockquote {
+  text-align: left;
+  color: $secondary-text-color;
+  background-color: $tertiary-color;
+  padding: 0.5em;
+
+  a { color: $secondary-color; }
+}
 
 pre.language--clean {
   margin: 0;
 }
+
 pre.language--small {
+  @include scut-padding(n 0.5em 0.5em);
+
   font-size: 0.8em;
 }
 
@@ -82,6 +103,7 @@ pre.language--small {
   @include scut-fill;
 
   padding: 2em;
+  text-align: center;
 }
 
 .Slide--title {
@@ -128,12 +150,17 @@ pre.language--small {
   margin: 1rem;
 }
 
+.Split .Split-column--narrow {
+  margin: 0.5rem;
+}
+
 .Split > p,
 .Split h4 {
   text-align: left;
 }
 
 @import '_introduction.scss';
+@import '_conclusion.scss';
 
 .SlideManager-footer {
   position: fixed;
@@ -154,4 +181,11 @@ pre.language--small {
   .SlideManager-progress--#{$i} {
     width: 0% + $i;
   }
+}
+
+.mermaid {
+  @include scut-margin(1em n);
+
+  background-color: $tertiary-color;
+  //color: $secondary-text-color;
 }

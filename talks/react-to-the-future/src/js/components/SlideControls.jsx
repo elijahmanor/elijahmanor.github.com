@@ -10,16 +10,16 @@ const SlideControls = React.createClass({
   //   router: React.PropTypes.func
   // },
   componentDidMount() {
-    key('left, p', SlideActions.previous);
-    key('right, space, enter, n', SlideActions.next);
+    key('left, up, p', SlideActions.previous);
+    key('right, down, space, enter, n', SlideActions.next);
     key('esc', SlideActions.list);
     key('f', () => {
       screenfull.toggle();
     });
   },
   componentWillUnmount() {
-    key.unbind('left, p');
-    key.unbind('right, space, enter, n');
+    key.unbind('left, up, p');
+    key.unbind('right, down, space, enter, n');
     key.unbind('esc');
     key.unbind('f');
   },

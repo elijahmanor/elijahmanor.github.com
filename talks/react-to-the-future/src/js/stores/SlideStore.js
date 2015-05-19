@@ -8,19 +8,13 @@ const postal = require('postal');
 const channel = postal.channel('slides');
 
 let SETS = [ // TODO: Have a task that will auto-add setIndex and slideIndex and an empty slide
-  {
-    id: 'Introduction',
-    slides: [{ setIndex: 0, slideIndex: 0, content: '<h1>React to the Future</h1>' }],
-    markdown: './md/introduction.md'
-  },
-  { id: 'About', markdown: './md/about.md', slides: [{ setIndex: 1, slideIndex: 0, content: '<h1>About</h1>' }] },
-  { id: 'Third', markdown: './md/slide3.md', slides: [{ setIndex: 2, slideIndex: 0, content: '<h1>Third</h1>' }] },
-  { id: 'Fourth', markdown: './md/slide4.md', slides: [{ setIndex: 3, slideIndex: 0, content: '<h1>Fourth</h1>' }] },
-  { id: 'Fifth', markdown: './md/slide5.md', slides: [{ setIndex: 4, slideIndex: 0, content: '<h1>Fifth</h1>' }] },
-  {
-    id: 'Conclusion',
-    slides: [{ setIndex: 5, slideIndex: 0, content: `<h1>Conclusion</h1>` }]
-  }
+  { id: 'Introduction', markdown: './md/introduction.md',  slides: [{ setIndex: 0, slideIndex: 0, content: '<h1>React to the Future</h1>' }] },
+  { id: 'WhatIsReact',  markdown: './md/what-is-react.md', slides: [{ setIndex: 1, slideIndex: 0, content: '<h1>What is React?</h1>' }] },
+  { id: 'Components',   markdown: './md/components.md',    slides: [{ setIndex: 2, slideIndex: 0, content: '<h1>Components</h1>' }] },
+  { id: 'Flux',         markdown: './md/flux.md',          slides: [{ setIndex: 3, slideIndex: 0, content: '<h1>Flux</h1>' }] },
+  { id: 'Isomorphic',   markdown: './md/isomporphic.md',   slides: [{ setIndex: 4, slideIndex: 0, content: '<h1>Isomorphic</h1>' }] },
+  { id: 'Conclusion',   markdown: './md/conclusion.md',    slides: [{ setIndex: 5, slideIndex: 0, content: `<h1>Conclusion</h1>` }] },
+  { id: 'Resources',    markdown: './md/resources.md',     slides: [{ setIndex: 6, slideIndex: 0, content: '<h1>Resources</h1>' }] }
 ];
 
 const SlideStore = Reflux.createStore({
@@ -109,7 +103,8 @@ const SlideStore = Reflux.createStore({
 
     let nextSetIndex = !hasNextSlideIndex && hasNextSetIndex ?
       this.setIndex + 1 : this.setIndex;
-    let nextSlideIndex = hasNextSlideIndex ? this.slideIndex + 1 : 0;
+    let nextSlideIndex = hasNextSlideIndex ? this.slideIndex + 1 :
+      hasNextSetIndex ? 0 : this.slideIndex;
 
     return this.getSlide(nextSetIndex, nextSlideIndex);
   },
@@ -117,7 +112,7 @@ const SlideStore = Reflux.createStore({
     let hasPrevSetIndex = this.setIndex > 0;
     let hasPrevSlideIndex = this.slideIndex > 0;
 
-    let prevSetIndex = hasPrevSetIndex ? this.setIndex - 1 : this.setIndex;
+    let prevSetIndex = !hasPrevSlideIndex && hasPrevSetIndex ? this.setIndex - 1 : this.setIndex;
     let prevSlideIndex = hasPrevSlideIndex ? this.slideIndex - 1 :
       hasPrevSetIndex ? this.slides[prevSetIndex].slides.length - 1 : 0;
 

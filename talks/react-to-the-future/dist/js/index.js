@@ -43320,16 +43320,16 @@ var SlideControls = React.createClass({ displayName: 'SlideControls',
   //   router: React.PropTypes.func
   // },
   componentDidMount: function componentDidMount() {
-    key('left, p', SlideActions.previous);
-    key('right, space, enter, n', SlideActions.next);
+    key('left, up, p', SlideActions.previous);
+    key('right, down, space, enter, n', SlideActions.next);
     key('esc', SlideActions.list);
     key('f', function () {
       screenfull.toggle();
     });
   },
   componentWillUnmount: function componentWillUnmount() {
-    key.unbind('left, p');
-    key.unbind('right, space, enter, n');
+    key.unbind('left, up, p');
+    key.unbind('right, down, space, enter, n');
     key.unbind('esc');
     key.unbind('f');
   },
@@ -43445,14 +43445,7 @@ var postal = require('postal');
 var channel = postal.channel('slides');
 
 var SETS = [// TODO: Have a task that will auto-add setIndex and slideIndex and an empty slide
-{
-  id: 'Introduction',
-  slides: [{ setIndex: 0, slideIndex: 0, content: '<h1>React to the Future</h1>' }],
-  markdown: './md/introduction.md'
-}, { id: 'About', markdown: './md/about.md', slides: [{ setIndex: 1, slideIndex: 0, content: '<h1>About</h1>' }] }, { id: 'Third', markdown: './md/slide3.md', slides: [{ setIndex: 2, slideIndex: 0, content: '<h1>Third</h1>' }] }, { id: 'Fourth', markdown: './md/slide4.md', slides: [{ setIndex: 3, slideIndex: 0, content: '<h1>Fourth</h1>' }] }, { id: 'Fifth', markdown: './md/slide5.md', slides: [{ setIndex: 4, slideIndex: 0, content: '<h1>Fifth</h1>' }] }, {
-  id: 'Conclusion',
-  slides: [{ setIndex: 5, slideIndex: 0, content: '<h1>Conclusion</h1>' }]
-}];
+{ id: 'Introduction', markdown: './md/introduction.md', slides: [{ setIndex: 0, slideIndex: 0, content: '<h1>React to the Future</h1>' }] }, { id: 'WhatIsReact', markdown: './md/what-is-react.md', slides: [{ setIndex: 1, slideIndex: 0, content: '<h1>What is React?</h1>' }] }, { id: 'Components', markdown: './md/components.md', slides: [{ setIndex: 2, slideIndex: 0, content: '<h1>Components</h1>' }] }, { id: 'Flux', markdown: './md/flux.md', slides: [{ setIndex: 3, slideIndex: 0, content: '<h1>Flux</h1>' }] }, { id: 'Isomorphic', markdown: './md/isomporphic.md', slides: [{ setIndex: 4, slideIndex: 0, content: '<h1>Isomorphic</h1>' }] }, { id: 'Conclusion', markdown: './md/conclusion.md', slides: [{ setIndex: 5, slideIndex: 0, content: '<h1>Conclusion</h1>' }] }, { id: 'Resources', markdown: './md/resources.md', slides: [{ setIndex: 6, slideIndex: 0, content: '<h1>Resources</h1>' }] }];
 
 var SlideStore = Reflux.createStore({
   listenables: [SlideActions],
@@ -43548,7 +43541,7 @@ var SlideStore = Reflux.createStore({
     var hasNextSlideIndex = this.slideIndex < this.slides[this.setIndex].slides.length - 1;
 
     var nextSetIndex = !hasNextSlideIndex && hasNextSetIndex ? this.setIndex + 1 : this.setIndex;
-    var nextSlideIndex = hasNextSlideIndex ? this.slideIndex + 1 : 0;
+    var nextSlideIndex = hasNextSlideIndex ? this.slideIndex + 1 : hasNextSetIndex ? 0 : this.slideIndex;
 
     return this.getSlide(nextSetIndex, nextSlideIndex);
   },
@@ -43557,7 +43550,7 @@ var SlideStore = Reflux.createStore({
     var hasPrevSetIndex = this.setIndex > 0;
     var hasPrevSlideIndex = this.slideIndex > 0;
 
-    var prevSetIndex = hasPrevSetIndex ? this.setIndex - 1 : this.setIndex;
+    var prevSetIndex = !hasPrevSlideIndex && hasPrevSetIndex ? this.setIndex - 1 : this.setIndex;
     var prevSlideIndex = hasPrevSlideIndex ? this.slideIndex - 1 : hasPrevSetIndex ? this.slides[prevSetIndex].slides.length - 1 : 0;
 
     return this.getSlide(prevSetIndex, prevSlideIndex);
