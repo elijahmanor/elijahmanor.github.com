@@ -1,0 +1,14 @@
+var speakers = ['Scott Hanselman', 'John Papa', 'Scott Guthrie', 'Michele Bustamante', 'Dan Wahlin', 'Debora Kurata', 'Zoiner Tejada', 'Scott Allen', 'Elijah Manor', 'Ward Bell', 'Todd Anglin', 'Saron Yitbare', 'Scott Hunter'];
+
+var HelloWorld = React.createClass({
+  handleClick(name, e) { alert(name); },
+  render: function() {
+    return <ul>{
+      this.props.names.map(
+      	name => <li onClick={this.handleClick.bind(this, name)}>{name}</li>
+    	)
+  	}</ul>;
+  }
+});
+
+React.render(<HelloWorld names={speakers} />, document.body);

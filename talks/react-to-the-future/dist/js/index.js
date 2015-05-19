@@ -43358,7 +43358,7 @@ var SlideFooter = React.createClass({ displayName: 'SlideFooter',
     var progress = SlideStore.getProgress(); //TODO: Pass in data instead of using store
     var classes = classNames({ 'SlideManager-progress': true }, 'SlideManager-progress--' + Math.floor(progress.current / progress.total * 100));
 
-    return React.createElement('footer', { className: 'SlideManager-footer' }, React.createElement('div', { className: classes }));
+    return React.createElement('footer', { className: 'SlideManager-footer' }, React.createElement('div', { className: classes, 'data-progress': '' + progress.current + ' / ' + progress.total }));
   }
 });
 

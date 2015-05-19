@@ -13,7 +13,7 @@ const SlideFooter = React.createClass({
 
     return (
       <footer className="SlideManager-footer">
-        <div className={classes}></div>
+        <div className={classes} data-progress={`${progress.current} / ${progress.total}`}></div>
       </footer>
     );
   }

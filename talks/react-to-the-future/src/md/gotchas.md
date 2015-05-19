@@ -8,23 +8,23 @@
 
 ---
 
-# Return a Tree
+# JSX Tree from Render
 
 <div class="Split">
   <div class="Split-column">
-    <p>Update code samples</p>
-    <pre class="language-javascript language--clean"><code>
+    <p>Bad</p>
+    <pre class="language-jsx language--clean"><code>
 return (
-  &lt;div&gt;Test&lt;/div&gt;
+  &lt;div&gt;Test 1&lt;/div&gt;
   &lt;div&gt;Test 2&lt;/div&gt;
 );</code></pre>
   </div>
   <div class="Split-column">
-    <p>It has to be</p>
-    <pre class="language-javascript language--clean"><code>
+    <p>Good</p>
+    <pre class="language-jsx language--clean"><code>
 return (
   &lt;div&gt;
-    &lt;div>Test&lt;/div&gt;
+    &lt;div>Test 1&lt;/div&gt;
     &lt;div>Test 2&lt;/div&gt;
   &lt;/div&gt;
 );</code></pre>
@@ -33,22 +33,91 @@ return (
 
 ---
 
+# JSX Tree from Render
+
+<div class="Split">
+  <div class="Split-column">
+    <p>JSX</p>
+    <pre class="language-jsx language--clean language--small"><code>
+return (
+  &lt;div&gt;
+    &lt;div>Test 1&lt;/div&gt;
+    &lt;div>Test 2&lt;/div&gt;
+  &lt;/div&gt;
+);</code></pre>
+  </div>
+  <div class="Split-column Split-column--75">
+    <p>JavaScript</p>
+    <pre class="language-javascript language--clean language--small"><code>
+return (
+  React.createElement("div", null,
+    React.createElement("div", null, "Test 1"),
+    React.createElement("div", null, "Test 2")
+  )
+);
+</code></pre>
+  </div>
+</div>
+
+---
+
 # Attribute Names
 
-className
+<div class="Split">
+  <div class="Split-column">
+    <p>HTML</p>
+    <pre class="language-markup language--clean language--small"><code>
+&lt;div class="Media"&gt;
+  &lt;img class="Media-figure" src="/react.jpg"&gt;
+  &lt;div class="Media-body"&gt;
+    &lt;h3 class="Media-title"&gt;React&lt;/h3&gt;
+    &lt;p&gt;Lorem Ipsum&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div class="Split-column">
+    <p>JSX</p>
+    <pre class="language-jsx language--clean language--small"><code>
+return (
+  &lt;div className="Media"&gt;
+    &lt;img className="Media-figure" src="/react.jpg"&gt;
+    &lt;div className="Media-body"&gt;
+      &lt;h3 className="Media-title"&gt;React&lt;/h3&gt;
+      &lt;p&gt;Lorem Ipsum&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+);
+</code></pre>
+  </div>
+</div>
 
 ---
 
 # Passing Arguments to Event Handlers
 
-UPDATE
+<div class="Split">
+  <div class="Split-column Split-column--65">
+    <pre class="language-jsx language--clean language--small"><code>
+var speakers = ['Scott Hanselman', 'John Papa', 'Scott Guthrie', 'Michele Bustamante', 'Dan Wahlin', 'Debora Kurata', 'Zoiner Tejada', 'Scott Allen', 'Elijah Manor', 'Ward Bell', 'Todd Anglin', 'Saron Yitbare', 'Scott Hunter'];
 
-```
-    <a href="http://google.com" onClick={this.handleClick.bind(null, 'Google')}>Google</a>
-handleClick: function(linkName, e) {
-  e.preventDefault();
-}
-```
+var HelloWorld = React.createClass({
+  handleClick(name, e) { alert(name); },
+  render: function() {
+    return &lt;ul&gt;
+      {this.props.names.map(name =&gt;
+        &lt;li onClick={this.handleClick.bind(this, name)}&gt;
+          {name}
+        &lt;/li&gt;
+      )}
+    &lt;/ul&gt;;
+  }
+});</code></pre>
+  </div>
+  <div class="Split-column">
+    <iframe height='377' scrolling='no' src='//codepen.io/elijahmanor/embed/doXLQd/?height=377&theme-id=0&default-tab=result' data-online='//codepen.io/elijahmanor/embed/doXLQd/?height=377&theme-id=0&default-tab=result' data-offline='./pens/codepen_doXLQd/index.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/doXLQd/'>doXLQd</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
+    </iframe>
+  </div>
+</div>
 
 ---
 

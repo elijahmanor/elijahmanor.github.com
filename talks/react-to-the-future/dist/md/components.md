@@ -487,58 +487,153 @@ React.render(
 
 ---
 
-# And Now You Can Use ES6
+# React v0.13.0 Supports ES6 Classes
 
-React v0.13.0 supports creating components using JavaScript classes
+<div class="Split">
+  <div class="Split-column Split-column--65">
+    <pre class="language-jsx language--clean language--small"><code>
+class HelloWorld extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: props.initialCount };
+  }
+  handleClick() {
+    this.setState({ count: this.state.count + 1 });
+  }
+  render() {
+    return &lt;div&gt;
+      &lt;p&gt;Hello {this.props.name}: {this.state.count}!&lt;/p&gt;
+      &lt;button onClick={this.handleClick.bind(this)}&gt;
+        Click Me
+      &lt;/button&gt;
+    &lt;/div&gt;;
+  }
+}
 
-JSX transformer can transpile ES6 to ES5
+HelloWorld.propTypes = {
+  name: React.PropTypes.string.isRequired,
+  initialCount: React.PropTypes.number
+};
+HelloWorld.defaultProps = {
+  name: "JavaScript",
+  initialCount: 0
+};
+
+React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
+  </div>
+  <div class="Split-column">
+    <iframe height='268' scrolling='no' src='//codepen.io/elijahmanor/embed/KpMYMY/?height=268&theme-id=0&default-tab=result' data-online='//codepen.io/elijahmanor/embed/KpMYMY/?height=268&theme-id=0&default-tab=result' data-offline='./pens/codepen_KpMYMY/index.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/KpMYMY/'>KpMYMY</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
+    </iframe>
+  </div>
+</div>
 
 ---
 
-# ES6 Example
+# React Class Differences
 
-<!-- TODO: Don't use this example... -->
-```
-import React from 'react';
-
-class ChoiceRow extends React.Component {
-
+<div class="Split">
+  <div class="Split-column Split-column--65">
+    <pre data-line="1,2-5" class="language-jsx language--clean language--small"><code>
+class HelloWorld extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: props.initialCount };
+  }
+  handleClick() {
+    this.setState({ count: this.state.count + 1 });
+  }
+  render() {
+    return &lt;div&gt;
+      &lt;p&gt;Hello {this.props.name}: {this.state.count}!&lt;/p&gt;
+      &lt;button onClick={this.handleClick.bind(this)}&gt;
+        Click Me
+      &lt;/button&gt;
+    &lt;/div&gt;;
+  }
 }
 
-export default ChoiceRow;
-```
+HelloWorld.propTypes = {
+  name: React.PropTypes.string.isRequired,
+  initialCount: React.PropTypes.number
+};
+HelloWorld.defaultProps = {
+  name: "JavaScript",
+  initialCount: 0
+};
+
+React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
+  </div>
+  <div class="Split-column">
+    <p>12. Use `class` instead of `React.createClass` to define a component</p>
+    <p>2-5. Use the `constructor` to set the initial state instead of `getInitialState`</p>
+  </div>
+</div>
+
+---
+
+# React Class Differences
+
+<div class="Split">
+  <div class="Split-column Split-column--65">
+    <pre data-line="12,19-22,23-26" class="language-jsx language--clean language--small"><code>
+class HelloWorld extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: props.initialCount };
+  }
+  handleClick() {
+    this.setState({ count: this.state.count + 1 });
+  }
+  render() {
+    return &lt;div&gt;
+      &lt;p&gt;Hello {this.props.name}: {this.state.count}!&lt;/p&gt;
+      &lt;button onClick={this.handleClick.bind(this)}&gt;
+        Click Me
+      &lt;/button&gt;
+    &lt;/div&gt;;
+  }
+}
+
+HelloWorld.propTypes = {
+  name: React.PropTypes.string.isRequired,
+  initialCount: React.PropTypes.number
+};
+HelloWorld.defaultProps = {
+  name: "JavaScript",
+  initialCount: 0
+};
+
+React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
+  </div>
+  <div class="Split-column">
+    <p>12. You must bind Event Handlers to `this`</p>
+    <p>19-22. `propTypes` are defined off of the Constructor</p>
+    <p>23-26. `defaultProps` are defined off the Constructor</p>
+  </div>
+</div>
 
 ---
 
 # More ES6
 
-<!-- TODO: Don't use this example...
-```
-// `let` keyword
-let choices = this.props.choices;
+Feel free to use ES6 in your JSX files.
 
-// arrow and map function
-let children = choices.map(c => (<Choice item={c} />));
+Go ahead and use Babel to convert the rest of your files.
 
-return <div className="row">
-         {children}
-       </div>
-```
+* [Learn More about ES6](http://babeljs.io/docs/learn-es6/)
+* [Try Out Babel Online](http://babeljs.io/)
 
----
-
-# Babel
-
----
+<!--
 
 # Mixins
 
 ---
-
 
 # Mixins
 
 Must use `React.createClass`. Unfortuneately the ES6 `class` syntax doesn't support Mixins as of yet.
+
+-->
 
 <!--
 
