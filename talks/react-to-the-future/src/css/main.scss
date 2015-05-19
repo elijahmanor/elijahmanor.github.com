@@ -37,6 +37,7 @@ blockquote {
 
   a { color: $secondary-color; }
 }
+iframe[data-offline] { background-color: $tertiary-color; }
 
 pre.language--clean {
   margin: 0;
