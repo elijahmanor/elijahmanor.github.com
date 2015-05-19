@@ -51,7 +51,7 @@ React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
 
 # Markup in my JavaScript... WHAT!?!
 
-[![](/img/iamdeveloper-jsx.png)](https://twitter.com/iamdevloper/status/598435575662813184)
+[![](./img/iamdeveloper-jsx.png)](https://twitter.com/iamdevloper/status/598435575662813184)
 
 ---
 
@@ -72,7 +72,7 @@ React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
 
 # Déjà Vu
 
-[![](/img/iamdeveloper-onclick.png)](https://twitter.com/iamdevloper/status/567363727176253440)
+[![](./img/iamdeveloper-onclick.png)](https://twitter.com/iamdevloper/status/567363727176253440)
 
 ---
 
@@ -127,7 +127,7 @@ refs
 
 # It's Just JavaScript
 
-[![](/img/ryanflorence-javascript.png)](https://twitter.com/ryanflorence/status/577685415919898625)
+[![](./img/ryanflorence-javascript.png)](https://twitter.com/ryanflorence/status/577685415919898625)
 
 ---
 
