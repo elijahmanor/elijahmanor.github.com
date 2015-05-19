@@ -10,21 +10,21 @@
 
 # State Machines
 
-> Components are Just State Machines
+> ## Components are Just State Machines
 
 > React thinks of UIs as simple state machines. By thinking of a UI as being in various states and rendering those states, it's easy to keep your UI consistent.
 
-> In React, you simply update a component's state, and then render a new UI based on this new state. React takes care of updating the DOM for you in the most efficient way. --https://facebook.github.io/react/docs/interactivity-and-dynamic-uis.html#components-are-just-state-machines
+> In React, you simply update a component's state, and then render a new UI based on this new state. React takes care of updating the DOM for you in the most efficient way. --[Interactivity and Dynamic UIs](https://facebook.github.io/react/docs/interactivity-and-dynamic-uis.html#components-are-just-state-machines)
 
 ---
 
 # Okay, Okay
 
-> "Talk is cheap. Show me the code." --Linus Torvalds
+> "Talk is cheap. Show me the code." --[Linus Torvalds](http://en.wikiquote.org/wiki/Linus_Torvalds#2000-04)
 
 ---
 
-# JSX
+# Hello World Component
 
 <div class="Split">
   <div class="Split-column">
@@ -42,8 +42,81 @@ var HelloWorld = React.createClass({
 React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
   </div>
   <div class="Split-column">
-    <iframe height='268' scrolling='no' src='//codepen.io/elijahmanor/embed/MweXEv/?height=268&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/MweXEv/'>MweXEv</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
+    <iframe height='268' scrolling='no' src='//codepen.io/elijahmanor/embed/MweXEv/?height=268&theme-id=0&default-tab=result' data-online='//codepen.io/elijahmanor/embed/MweXEv/?height=268&theme-id=0&default-tab=result' data-offline='./pens/codepen_MweXEv/index.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/MweXEv/'>MweXEv</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
     </iframe>
+  </div>
+</div>
+
+---
+
+# React.createClass
+
+<div class="Split">
+  <div class="Split-column Split-column--75">
+    <pre data-line="1" class="language-jsx language--clean language--small"><code>
+var HelloWorld = React.createClass({
+  render: function() {
+    return (
+      &lt;div&gt;
+        Hello World!
+      &lt;/div&gt;
+    )
+  }
+});
+
+React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
+  </div>
+  <div class="Split-column">
+    <p>1. <code>React.createClass</code> is how you define a component in React.</p>
+  </div>
+</div>
+
+---
+
+# Component's Render Method
+
+<div class="Split">
+  <div class="Split-column Split-column--75">
+    <pre data-line="2,3-7" class="language-jsx language--clean language--small"><code>
+var HelloWorld = React.createClass({
+  render: function() {
+    return (
+      &lt;div&gt;
+        Hello World!
+      &lt;/div&gt;
+    );
+  }
+});
+
+React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
+  </div>
+  <div class="Split-column">
+    <p>2. The <code>render</code> method is required. You can think of this as your template.</p>
+    <p>3-7. It returns a tree of React components that will eventually render to HTML.</p>
+  </div>
+</div>
+
+---
+
+# React's Render Method
+
+<div class="Split">
+  <div class="Split-column Split-column--75">
+    <pre data-line="11" class="language-jsx language--clean language--small"><code>
+var HelloWorld = React.createClass({
+  render: function() {
+    return (
+      &lt;div&gt;
+        Hello World!
+      &lt;/div&gt;
+    );
+  }
+});
+
+React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
+  </div>
+  <div class="Split-column">
+    <p>11. <code>React.render</code> creates the component, starts the framework, and injects HTML into a DOM node.</p>
   </div>
 </div>
 
@@ -60,12 +133,131 @@ React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
 > React component is "...a highly cohesive building block for UIs loosely coupled with other components." --[Pete Hunt](http://www.slideshare.net/floydophone/react-preso-v2)
 
 * Templates separate technologies, not concerns
-* Focus on building components, not templates
-* Combining reduces context switching
+* Allows you to focus on building components, not templates
+* Combining Markup and JavaScript reduces context switching
 
 ---
 
+# JSX Compiles Down to JavaScript
 
+```
+var HelloWorld = React.createClass({
+  displayName: "HelloWorld",
+  render: function() {
+    return (
+      React.createElement("div", null,"Hello World!")
+    );
+  }
+});
+
+React.render(React.createElement(HelloWorld, null), document.body);
+```
+
+---
+
+# Let's Get Dynamic
+
+<!-- getDefaultProps - Allows you to set default props for your component. -->
+
+<div class="Split">
+  <div class="Split-column">
+    <pre class="language-jsx language--clean language--small"><code>
+var HelloWorld = React.createClass({
+  propTypes: {
+    name: React.PropTypes.string.isRequired
+  },
+  render: function() {
+    return (
+      &lt;div&gt;Hello {this.props.name}!&lt;/div&gt;
+    );
+  }
+});
+
+React.render(
+  &lt;HelloWorld name="JavaScript" /&gt;,
+  document.getElementById('widget')
+);</code></pre>
+  </div>
+  <div class="Split-column">
+    <iframe height='268' scrolling='no' src='//codepen.io/elijahmanor/embed/xGOmXg/?height=268&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/xGOmXg/'>xGOmXg</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
+    </iframe>
+  </div>
+</div>
+
+---
+
+# Props
+
+<div class="Split">
+  <div class="Split-column Split-column--75">
+    <pre data-line="7,13" class="language-jsx language--clean language--small"><code>
+var HelloWorld = React.createClass({
+  propTypes: {
+    name: React.PropTypes.string.isRequired
+  },
+  render: function() {
+    return (
+      &lt;div&gt;Hello {this.props.name}!&lt;/div&gt;
+    );
+  }
+});
+
+React.render(
+  &lt;HelloWorld name="JavaScript" /&gt;,
+  document.getElementById('widget')
+);</code></pre>
+  </div>
+  <div class="Split-column">
+    <p>13. You can pass read-only properties to a React component via its attributes.</p>
+    <p>7. You can access this data with the `this.props` object inside of a JavaScript Expression `{}`.</p>
+  </div>
+</div>
+
+---
+
+# Prop Types
+
+<div class="Split">
+  <div class="Split-column Split-column--75">
+    <pre data-line="2-4" class="language-jsx language--clean language--small"><code>
+var HelloWorld = React.createClass({
+  propTypes: {
+    name: React.PropTypes.string.isRequired
+  },
+  render: function() {
+    return (
+      &lt;div&gt;Hello {this.props.name}!&lt;/div&gt;
+    );
+  }
+});
+
+React.render(
+  &lt;HelloWorld name="JavaScript" /&gt;,
+  document.getElementById('widget')
+);</code></pre>
+  </div>
+  <div class="Split-column">
+    <p>2-4. Check the types of the `props` during development with `propTypes`.</p>
+    <pre class="language-jsx language--clean language--small"><code>
+array, bool, func, number, object, string,
+node, element, any, instanceOf(Message),
+oneOf(['News', 'Photos']), oneOfType([]),
+arrayOf(number), objectOf(number), shape({}),
+customProp: function(props, name, _) {
+  if (!/matchme/.test(props[name])) {
+    return new Error('Validation failed!');
+  }
+}</code></pre>
+  </div>
+</div>
+
+---
+
+TODO: Introduce state here...
+
+state - The internal data store (object) of a component.
+getInitialState - The way in which you set the initial state of a component.
+setState - A helper method for altering the state of a component.
 
 
 ---
@@ -76,14 +268,8 @@ React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
 
 ---
 
-React.createClass - The way in which you create a new component.
-render (method) - What we would like our HTML Template to look like.
-React.render - Renders a React component to a DOM node.
+# Adding Comments
 
-JavaScript Expressions
-var person = <Person name={window.isLoggedIn ? window.name : ''} />;
-
-Comments
 It's easy to add comments within your JSX; they're just JS expressions. You just need to be careful to put {} around the comments when you are within the children section of a tag.
 
 var content = (
@@ -98,30 +284,18 @@ var content = (
   </Nav>
 );
 
-state - The internal data store (object) of a component.
-getInitialState - The way in which you set the initial state of a component.
-setState - A helper method for altering the state of a component.
-props - The data which is passed to the child component from the parent component.
-propTypes - Allows you to control the presence, or types of certain props passed to the child component.
-getDefaultProps - Allows you to set default props for your component.
+
+
 Component LifeCycle
 componentWillMount – Fired before the component will mount
 componentDidMount – Fired after the component mounted
 componentWillReceiveProps – Fired whenever there is a change to props
 componentWillUnmount – Fired before the component will unmount
-Events
-onClick
-onSubmit
-onChange
+
 refs
 
 ---
 
-# Angular Directive
-
-* Isolate Scoped (yield template inside)
-* Element Restricted (doesn't inherit from parent scope)
-* Transcluded Directive (an element, not an attribute)
 
 ---
 
@@ -154,50 +328,6 @@ export default ChoiceRow;
 
 ---
 
-# GOTCHAS
-
-<div class="Split">
-  <div class="Split-column">
-    <p>Update code samples</p>
-    <pre class="language-javascript language--clean"><code>
-return (
-  &lt;div&gt;Test&lt;/div&gt;
-  &lt;div&gt;Test 2&lt;/div&gt;
-);</code></pre>
-  </div>
-  <div class="Split-column">
-    <p>It has to be</p>
-    <pre class="language-javascript language--clean"><code>
-return (
-  &lt;div&gt;
-    &lt;div>Test&lt;/div&gt;
-    &lt;div>Test 2&lt;/div&gt;
-  &lt;/div&gt;
-);</code></pre>
-  </div>
-</div>
-
----
-
-# GOTCHAS
-
-className
-
----
-
-# Pass custom info
-
-UPDATE
-
-```
-    <a href="http://google.com" onClick={this.handleClick.bind(null, 'Google')}>Google</a>
-handleClick: function(linkName, e) {
-  e.preventDefault();
-}
-```
-
----
-
 # More ES6
 
 <!-- TODO: Don't use this example...
@@ -223,41 +353,19 @@ return <div className="row">
 
 ---
 
-# Tips
-
----
-
-## Use PureRenderMixin
-
-Notes:
-
-* http://aeflash.com/2015-02/react-tips-and-best-practices.html
-
----
-
-# Tips
-
-## Use PropTypes
-
----
-
-# Tips
-
-## It's Okay to Use Instance Properties
-
----
-
-# Tips
-
-## Reduce State
-
----
 
 # Mixins
 
 Must use `React.createClass`. Unfortuneately the ES6 `class` syntax doesn't support Mixins as of yet.
 
 <!--
+
+# Angular Directive
+
+* Isolate Scoped (yield template inside)
+* Element Restricted (doesn't inherit from parent scope)
+* Transcluded Directive (an element, not an attribute)
+
 components are
 reusable
 composable

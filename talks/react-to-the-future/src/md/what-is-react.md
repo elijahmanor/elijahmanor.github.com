@@ -63,37 +63,15 @@ Add your own entry to [Facebook's Sites Using React Wiki](https://github.com/fac
 
 ---
 
-# So, Why is it Compelling?
+# Why is it Compelling?
 
+* Declarative & Composable
 * Virtual DOM
-* Declarative
-* Composable Components
 * One-Way Data Flow
-* SEO Friendly (Isomorphic)
 
 ---
 
-
-Design
-Re-render the whole app on every update
-
-components are
-reusable
-composable
-testable
-
-# Virtual DOM
-
-> "I tend to think of React as Version Control for the DOM" —AdonisSMU
-
-* More than Just Performance
-* About Abstraction & Simplicity of Mental Model
-
-Virtual DOM is much like a Game Engine
-
----
-
-# Imperative versus Declarative
+# Declarative & Composable
 
 <div class="Split">
   <div class="Split-column Split-column--narrow">
@@ -130,28 +108,47 @@ var NoteBox = React.createClass({
 
 ---
 
-# Composable Components
+# Declarative & Composable
 
-TODO: Need content here...
+* React is an Abstraction away from the DOM
+* It Simplifies the Mental Model
+* Re-render the whole app on every update
+* Mix and match components to build UIs
+
+---
+
+# Virtual DOM
+
+* Re-rendering the whole app on every update is not efficient
+* The Virtual DOM will only update what is necessary
+* It works much like a Gaming Engine
+
+> "I tend to think of React as Version Control for the DOM" —AdonisSMU
 
 ---
 
 # One-Way Data Flow
 
-TODO: Need content here...
+> "...you can set the directionality of it to be 2-Way Data Binding. That actually seems to be a good idea until you have a large scale application and then it turns out you have no idea whats going on... and turns out to be an anti-pattern for large apps." --[Misko Hevery](https://www.youtube.com/watch?v=uD6Okha_Yj0#t=1785)
 
 ---
 
-## Declarative → Predictable → Confidence → Reliability *
+# So, Why is it Compelling?
 
-* Tom Ochino's [React.js Conf keynote](https://www.youtube.com/watch?v=KVZ-P-ZI6W4#t=868)
+## Declarative → Predictable → Confidence → Reliability <span class="Footnote">*<span>
+
+<br />
+
+<span class="Footnote">*</span> Tom Ochino's [React.js Conf keynote](https://www.youtube.com/watch?v=KVZ-P-ZI6W4#t=868)
 
 ---
 
 # So, What is the Learning Curve?
 
-* Learning React? Easy
-* Learning the Rest? Intermediate
+* Learning React? **Easy**
+* Learning the Rest? **Intermediate**
+
+<!--
 
 ---
 
@@ -177,3 +174,5 @@ React is abstracted away from the browser, while Web Components will be a native
 
 * [Improving Angular Rendering Performance](http://mono.software/posts/Improving-AngularJS-long-list-rendering-performance-using-ReactJS/) & [Faster Angular Rendering](http://www.williambrownstreet.net/blog/2014/04/faster-angularjs-rendering-angularjs-and-reactjs/)
 * [Using React as Backbone View](http://www.thomasboyt.com/2013/12/17/using-reactjs-as-a-backbone-view.html)
+
+-->

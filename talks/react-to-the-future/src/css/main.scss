@@ -48,6 +48,10 @@ pre.language--small {
   font-size: 0.8em;
 }
 
+pre[data-line].language--small {
+  padding-left: 2.5em;
+}
+
 .Convey {
   width: 100%;
   height: 100%;
@@ -114,6 +118,10 @@ pre.language--small {
   h1 { font-size: 3em; }
 }
 
+.Footnote {
+  color: $secondary-color;
+}
+
 .carousel-enter {
   opacity: 0;
 }
@@ -151,12 +159,21 @@ pre.language--small {
 }
 
 .Split .Split-column--narrow {
-  margin: 0.5rem;
+  @include scut-margin(n 0.5rem);
 }
 
-.Split > p,
+.Split .Split-column--wide {
+  @include scut-margin(n 2.5rem);
+}
+
+.Split .Split-column--75 {
+  flex: 0 1 75%;
+}
+
+.Split p,
 .Split h4 {
   text-align: left;
+  line-height: 1.5em;
 }
 
 @import '_introduction.scss';

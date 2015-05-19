@@ -24,7 +24,7 @@
 # `me.json`
 
 <div class="Split">
-  <div class="Split-column">
+  <div class="Split-column Split-column--wide">
     <pre class="language-javascript language--clean language--small"><code>{
   "name" : "Elijah Manor",
   "priorities" : [
@@ -40,7 +40,7 @@
   "titles" : [ "Microsoft MVP" ]
 }</code></pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--wide">
     <img src="./img/myfamily.jpg" />
     <a href="http://daveramsey.com" target="_blank"><img src="./img/ramsey-solutions.svg" /></a>
     <a href="http://everydollar.com" target="_blank"><img src="./img/everydollar.svg" /></a>

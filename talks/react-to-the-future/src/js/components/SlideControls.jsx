@@ -16,12 +16,14 @@ const SlideControls = React.createClass({
     key('f', () => {
       screenfull.toggle();
     });
+    key('o', SlideActions.offline);
   },
   componentWillUnmount() {
     key.unbind('left, up, p');
     key.unbind('right, down, space, enter, n');
     key.unbind('esc');
     key.unbind('f');
+    key.unbind('o');
   },
   render() {
     return (

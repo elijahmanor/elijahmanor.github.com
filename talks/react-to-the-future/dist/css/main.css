@@ -431,6 +431,9 @@ pre.language--small {
   padding-bottom: 0.5em;
   font-size: 0.8em; }
 
+pre[data-line].language--small {
+  padding-left: 2.5em; }
+
 .Convey {
   width: 100%;
   height: 100%; }
@@ -488,6 +491,9 @@ pre.language--small {
   .Slide--title h1 {
     font-size: 3em; }
 
+.Footnote {
+  color: #cc7a6f; }
+
 .carousel-enter {
   opacity: 0; }
 
@@ -539,10 +545,21 @@ pre.language--small {
   margin: 1rem; }
 
 .Split .Split-column--narrow {
-  margin: 0.5rem; }
+  margin-left: 0.5rem;
+  margin-right: 0.5rem; }
 
-.Split > p, .Split h4 {
-  text-align: left; }
+.Split .Split-column--wide {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem; }
+
+.Split .Split-column--75 {
+  -webkit-flex: 0 1 75%;
+  -ms-flex: 0 1 75%;
+  flex: 0 1 75%; }
+
+.Split p, .Split h4 {
+  text-align: left;
+  line-height: 1.5em; }
 
 #Introduction {
   display: -webkit-flex;

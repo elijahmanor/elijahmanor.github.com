@@ -11,10 +11,12 @@ let SETS = [ // TODO: Have a task that will auto-add setIndex and slideIndex and
   { id: 'Introduction', markdown: './md/introduction.md',  slides: [{ setIndex: 0, slideIndex: 0, content: '<h1>React to the Future</h1>' }] },
   { id: 'WhatIsReact',  markdown: './md/what-is-react.md', slides: [{ setIndex: 1, slideIndex: 0, content: '<h1>What is React?</h1>' }] },
   { id: 'Components',   markdown: './md/components.md',    slides: [{ setIndex: 2, slideIndex: 0, content: '<h1>Components</h1>' }] },
-  { id: 'Flux',         markdown: './md/flux.md',          slides: [{ setIndex: 3, slideIndex: 0, content: '<h1>Flux</h1>' }] },
-  { id: 'Isomorphic',   markdown: './md/isomporphic.md',   slides: [{ setIndex: 4, slideIndex: 0, content: '<h1>Isomorphic</h1>' }] },
-  { id: 'Conclusion',   markdown: './md/conclusion.md',    slides: [{ setIndex: 5, slideIndex: 0, content: `<h1>Conclusion</h1>` }] },
-  { id: 'Resources',    markdown: './md/resources.md',     slides: [{ setIndex: 6, slideIndex: 0, content: '<h1>Resources</h1>' }] }
+  { id: 'Gotchas',      markdown: './md/gotchas.md',       slides: [{ setIndex: 3, slideIndex: 0, content: '<h1>Gotchas</h1>' }] },
+  { id: 'Tips',         markdown: './md/tips.md',          slides: [{ setIndex: 4, slideIndex: 0, content: '<h1>Tips</h1>' }] },
+  { id: 'Flux',         markdown: './md/flux.md',          slides: [{ setIndex: 5, slideIndex: 0, content: '<h1>Flux</h1>' }] },
+  { id: 'Isomorphic',   markdown: './md/isomporphic.md',   slides: [{ setIndex: 6, slideIndex: 0, content: '<h1>Isomorphic</h1>' }] },
+  { id: 'Conclusion',   markdown: './md/conclusion.md',    slides: [{ setIndex: 7, slideIndex: 0, content: `<h1>Conclusion</h1>` }] },
+  { id: 'Resources',    markdown: './md/resources.md',     slides: [{ setIndex: 8, slideIndex: 0, content: '<h1>Resources</h1>' }] }
 ];
 
 const SlideStore = Reflux.createStore({
@@ -57,6 +59,7 @@ const SlideStore = Reflux.createStore({
 
     this.setIndex = 0;
     this.slideIndex = 0;
+    this.isOffline = false;
     this.slides = SETS; // TODO: Can this be removed?
     this.slideApi = new SlideApi(SETS); // TODO - These can be combined or constructor can kick off enhance
     this.slideApi.enhance();
@@ -75,8 +78,19 @@ const SlideStore = Reflux.createStore({
   },
   getSlide(setIndex=this.setIndex, slideIndex=this.slideIndex) {
     slideIndex = slideIndex <= this.slides[setIndex].slides.length - 1 ? slideIndex : 0;
+    let slide = this.slides[setIndex].slides[slideIndex];
+    slide.isOffline = this.isOffline;
+    /*
+    //if (this.isOffline) {
+      let offline = slide.content.match(/<iframe[^<>]+data-offline='([^']*)'/);
+      if (offline && offline.length === 2) {
+        let offlineSrc = offline[1];
+      }
+      debugger;
+    //}
+    // */
 
-    return this.slides[setIndex].slides[slideIndex];
+    return slide;
   },
   onNext() {
     let slide = this.getNext();
@@ -96,6 +110,11 @@ const SlideStore = Reflux.createStore({
   },
   onList() {
     this.router.transitionTo('list');
+  },
+  onOffline() {
+    this.isOffline = !this.isOffline;
+
+    this.trigger({ slides: this.slides });
   },
   getNext() { // TODO: This seems somewhat complex
     let hasNextSetIndex = this.setIndex < this.slides.length - 1;

@@ -50,6 +50,10 @@ module.exports = {
     src: src + '/vendor/*.*',
     dest: dest + '/vendor'
   },
+  pens: {
+    src: src + '/pens/**/*.*',
+    dest: dest + '/pens'
+  },
   watch: {
     src: 'src/**/*.*',
     tasks: ['build']

@@ -43249,7 +43249,7 @@ exports.throwIf = function(val,msg){
 
 var Reflux = require('reflux');
 
-var SlideActions = Reflux.createActions(['previous', 'next', 'list']);
+var SlideActions = Reflux.createActions(['previous', 'next', 'list', 'offline']);
 
 module.exports = SlideActions;
 
@@ -43291,6 +43291,12 @@ var Slide = React.createClass({ displayName: 'Slide',
     // TODO: Think of a better way?
     window.Prism.highlightAll();
     window.mermaid.init();
+
+    var iframe = this.refs.slide.getDOMNode().querySelector('iframe');
+    if (iframe) {
+      var src = this.props.slide.isOffline ? iframe.getAttribute('data-offline') : iframe.getAttribute('data-online');
+      iframe.setAttribute('src', src);
+    }
   },
   render: function render() {
     var slide = this.props.slide;
@@ -43298,7 +43304,7 @@ var Slide = React.createClass({ displayName: 'Slide',
     var metadata = slide.metadata || {};
     var classes = classNames('SlideManager-slide', metadata.className);
 
-    return React.createElement('section', { id: metadata.id, className: classes,
+    return React.createElement('section', { ref: 'slide', id: metadata.id, className: classes,
       dangerouslySetInnerHTML: { __html: slide.content } });
   }
 });
@@ -43326,12 +43332,14 @@ var SlideControls = React.createClass({ displayName: 'SlideControls',
     key('f', function () {
       screenfull.toggle();
     });
+    key('o', SlideActions.offline);
   },
   componentWillUnmount: function componentWillUnmount() {
     key.unbind('left, up, p');
     key.unbind('right, down, space, enter, n');
     key.unbind('esc');
     key.unbind('f');
+    key.unbind('o');
   },
   render: function render() {
     return React.createElement('nav', { className: 'SlideManager-controls' }, React.createElement(Link, { to: 'slide', params: SlideStore.getPrevious(), className: 'Arrow Arrow--left' }), React.createElement(Link, { to: 'slide', params: SlideStore.getNext(), className: 'Arrow Arrow--right' }));
@@ -43445,7 +43453,7 @@ var postal = require('postal');
 var channel = postal.channel('slides');
 
 var SETS = [// TODO: Have a task that will auto-add setIndex and slideIndex and an empty slide
-{ id: 'Introduction', markdown: './md/introduction.md', slides: [{ setIndex: 0, slideIndex: 0, content: '<h1>React to the Future</h1>' }] }, { id: 'WhatIsReact', markdown: './md/what-is-react.md', slides: [{ setIndex: 1, slideIndex: 0, content: '<h1>What is React?</h1>' }] }, { id: 'Components', markdown: './md/components.md', slides: [{ setIndex: 2, slideIndex: 0, content: '<h1>Components</h1>' }] }, { id: 'Flux', markdown: './md/flux.md', slides: [{ setIndex: 3, slideIndex: 0, content: '<h1>Flux</h1>' }] }, { id: 'Isomorphic', markdown: './md/isomporphic.md', slides: [{ setIndex: 4, slideIndex: 0, content: '<h1>Isomorphic</h1>' }] }, { id: 'Conclusion', markdown: './md/conclusion.md', slides: [{ setIndex: 5, slideIndex: 0, content: '<h1>Conclusion</h1>' }] }, { id: 'Resources', markdown: './md/resources.md', slides: [{ setIndex: 6, slideIndex: 0, content: '<h1>Resources</h1>' }] }];
+{ id: 'Introduction', markdown: './md/introduction.md', slides: [{ setIndex: 0, slideIndex: 0, content: '<h1>React to the Future</h1>' }] }, { id: 'WhatIsReact', markdown: './md/what-is-react.md', slides: [{ setIndex: 1, slideIndex: 0, content: '<h1>What is React?</h1>' }] }, { id: 'Components', markdown: './md/components.md', slides: [{ setIndex: 2, slideIndex: 0, content: '<h1>Components</h1>' }] }, { id: 'Gotchas', markdown: './md/gotchas.md', slides: [{ setIndex: 3, slideIndex: 0, content: '<h1>Gotchas</h1>' }] }, { id: 'Tips', markdown: './md/tips.md', slides: [{ setIndex: 4, slideIndex: 0, content: '<h1>Tips</h1>' }] }, { id: 'Flux', markdown: './md/flux.md', slides: [{ setIndex: 5, slideIndex: 0, content: '<h1>Flux</h1>' }] }, { id: 'Isomorphic', markdown: './md/isomporphic.md', slides: [{ setIndex: 6, slideIndex: 0, content: '<h1>Isomorphic</h1>' }] }, { id: 'Conclusion', markdown: './md/conclusion.md', slides: [{ setIndex: 7, slideIndex: 0, content: '<h1>Conclusion</h1>' }] }, { id: 'Resources', markdown: './md/resources.md', slides: [{ setIndex: 8, slideIndex: 0, content: '<h1>Resources</h1>' }] }];
 
 var SlideStore = Reflux.createStore({
   listenables: [SlideActions],
@@ -43492,6 +43500,7 @@ var SlideStore = Reflux.createStore({
 
     this.setIndex = 0;
     this.slideIndex = 0;
+    this.isOffline = false;
     this.slides = SETS; // TODO: Can this be removed?
     this.slideApi = new SlideApi(SETS); // TODO - These can be combined or constructor can kick off enhance
     this.slideApi.enhance();
@@ -43513,8 +43522,19 @@ var SlideStore = Reflux.createStore({
     var slideIndex = arguments[1] === undefined ? this.slideIndex : arguments[1];
 
     slideIndex = slideIndex <= this.slides[setIndex].slides.length - 1 ? slideIndex : 0;
+    var slide = this.slides[setIndex].slides[slideIndex];
+    slide.isOffline = this.isOffline;
+    /*
+    //if (this.isOffline) {
+      let offline = slide.content.match(/<iframe[^<>]+data-offline='([^']*)'/);
+      if (offline && offline.length === 2) {
+        let offlineSrc = offline[1];
+      }
+      debugger;
+    //}
+    // */
 
-    return this.slides[setIndex].slides[slideIndex];
+    return slide;
   },
   onNext: function onNext() {
     var slide = this.getNext();
@@ -43534,6 +43554,11 @@ var SlideStore = Reflux.createStore({
   },
   onList: function onList() {
     this.router.transitionTo('list');
+  },
+  onOffline: function onOffline() {
+    this.isOffline = !this.isOffline;
+
+    this.trigger({ slides: this.slides });
   },
   getNext: function getNext() {
     // TODO: This seems somewhat complex
