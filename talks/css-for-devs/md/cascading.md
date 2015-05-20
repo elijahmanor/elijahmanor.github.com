@@ -72,9 +72,12 @@ Resource: [W3C: The Cascade](http://www.w3.org/TR/CSS2/cascade.html#cascade)
 ------
 
 ## CSS Resets & Normalize
-<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-TODO: Talk about the need for these... with regards to previous slide
+User Agent Stylesheets vary from Browser to Browser
+
+* [Reset CSS](http://meyerweb.com/eric/tools/css/reset/): <p>Will strip pretty much all styles away and let you start from scratch. Think of something like...</p><pre class="language-css"><code>* {margin: 0; padding: 0;}</code></pre>
+* [Normalize.css](http://necolas.github.io/normalize.css/): <p>Will tear down elements to a reasonable baseline that you can build from</p>
 
 ------
 
@@ -112,10 +115,32 @@ TODO: Talk about the need for these... with regards to previous slide
 
 ------
 
-## Making Non-Inherited Properties Cascade
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa InProgress" -->
+## Making Non-Inherited Properties Cascade <small>([CodePen](http://codepen.io/elijahmanor/pen/bdwpvE?editors=110))</small><!-- .element style="vertical-align: middle;" -->
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-TODO: code snippet showing the inherit value
+<div class="Split">
+  <div class="Split-column">
+    <pre class="language-markup"><code>
+&lt;h1&gt;Inherit&lt;/h1&gt;
+&lt;div class="container"&gt;
+  &lt;div class="box"&gt;Box 1&lt;/div&gt;
+  &lt;div class="box"&gt;Box 2&lt;/div&gt;
+  &lt;div class="box"&gt;Box 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div class="Split-column">
+    <pre class="language-css"><code>
+.container {
+  padding: 1em;
+  border: 1px dashed green;
+}
+
+.box {
+  margin: 1em;
+  border: inherit;
+}</code></pre>
+  </div>
+</div>
 
 ------
 
