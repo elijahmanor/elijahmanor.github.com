@@ -1,7 +1,7 @@
 # Linting
-<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-> TODO: Quote here...
+> "You should lint your Sass!" --[Me](http://twitter.com/elijahmanor)
 
 ------
 

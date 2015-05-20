@@ -8,7 +8,22 @@
 ## Scenario
 <!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
 
-> TODO: Put some scenario where dev looks to see why style isn't applied...
+<!-- TODO: Put some scenario where dev looks to see why style isn't applied... -->
+
+<pre class="language-css"><code>
+.container {
+border: 1px solid blue; padding: 25px;
+position: relative;
+}
+.box {
+width: 100px; height: 100px;
+margin: 5px auto; background: red;
+border: 1px solid white;
+}
+.box2 {
+position: fixed; top: 0; left: 0;
+}</code></pre>
+
 
 Show example of repeated styles over and over again that aren't needed... like fonts and colors (that could be cascaded)
 

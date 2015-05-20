@@ -1,22 +1,32 @@
 # Sass Docs
-<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-> TODO: Quote here...
+> "SassDoc is to Sass what JSDoc is to JavaScript: a documentation system to build pretty and powerful docs in the blink of an eye." --[SassDoc](http://sassdoc.com/)
 
 ------
 
 ## Scenario
-<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-> TODO: Put some scenario where dev looks to see why style isn't applied...
+Have you ever thought one of these thoughts?
+
+1. <!-- .element class="fragment" --> Ohh, I never knew that mixin existed. That would have been helpful ages ago!
+2. <!-- .element class="fragment" --> Hmm, what arguments does this mixin expect?
+3. <!-- .element class="fragment" --> Ugg, I wish there was an example of how to use this mixin.
+4. <!-- .element class="fragment" --> Umm, I have no idea what this variable exists.
+
+------
+
+## SassDoc Example
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+
+[![](./imgs/sassdoc-example.png)](http://thoughtbot.github.io/neat-docs/latest/)
 
 ------
 
 ## Resources
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa InProgress" -->
-
-* [x](#)
-
-Notes:
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 * [SassDoc](http://sassdoc.com/)
+
+Notes:
