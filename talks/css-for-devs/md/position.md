@@ -1,30 +1,56 @@
 # Position
 <!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-> TODO: x.
+> "The position CSS property chooses alternative rules for positioning elements, designed to be useful for scripted animation effects." --[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
 
 ------
 
-## Scenario
+## Scenario <small>([CodePen](http://codepen.io/elijahmanor/pen/GJjJRP?editors=110))</small><!-- .element style="vertical-align: middle;" -->
 <!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-> TODO: Put some scenario where dev looks to see why style isn't applied...
+<div class="Split">
+  <div class="Split-column">
+    <div class="fragment">
+      <h4>Have you ever wanted to do something like...</h4>
+      <div class="DemoPositionScenario">
+        <div class="DemoPositionScenario-box">.box1</div>
+        <div class="DemoPositionScenario-box">.box2</div>
+      </div>
+    </div>
+    <div class="fragment">
+      <h4>So, you tried this... and failed</h4>
+      <pre class="language-css"><code>
+.box2 {
+  top: -10px;
+  left: 10px;
+}</code></pre>
+    </div>
+  </div>
+  <div class="Split-column">
+    <div class="fragment">
+      <h4>And this... and failed :(</h4>
+      <pre class="language-css"><code>
+.box2 {
+  top: -10px !important;
+  left: 10px !important;
+}</code></pre>
+    </div>
+    <div class="fragment">
+      <h4>And this... and failed :(</h4>
+      <pre class="language-css"><code>
+.box2 {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+}</code></pre>
+    </div>
+  </div>
+</div>
 
 ------
 
 ## Position
 <!-- .slide: data-state="backEndBrian juniorJacob" -->
-
-<!-- MDN
-position: static;
-This keyword lets the element use the normal behavior, that is it is laid out in its current position in the flow.  The top, right, bottom, left and z-index properties do not apply.
-position: relative;
-This keyword lays out all elements as though the element were not positioned, and then adjust the element's position, without changing layout (and thus leaving a gap for the element where it would have been had it not been positioned). The effect of position:relative on table-*-group, table-row, table-column, table-cell, and table-caption elements is undefined.
-position: absolute;
-Do not leave space for the element. Instead, position it at a specified position relative to its closest positioned ancestor or to the containing block. Absolutely positioned boxes can have margins, they do not collapse with any other margins.
-position: fixed;
-Do not leave space for the element. Instead, position it at a specified position relative to the screen's viewport and don't move it when scrolled. When printing, position it at that fixed position on every page.
--->
 
 <table>
   <tr>
@@ -74,43 +100,208 @@ Do not leave space for the element. Instead, position it at a specified position
 ------
 
 ## Static
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-This keyword lets the element use the normal behavior, that is it is laid out in its current position in the flow.  The top, right, bottom, left and z-index properties do not apply.
+> "This keyword lets the element use the normal behavior, that is it is laid out in its current position in the flow.  The top, right, bottom, left and z-index properties do not apply." --[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
+
+------
+
+## Static: Example <small>([CodePen](http://codepen.io/elijahmanor/pen/rVMVjw))</small><!-- .element style="vertical-align: middle;" -->
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
+
+<div class="Split">
+  <div class="Split-column">
+    <pre class="language-markup"><code>
+&lt;div class="static"&gt;&lt;/div&gt;
+&lt;div class="static"&gt;&lt;/div&gt;
+&lt;div class="static"&gt;&lt;/div&gt;</code></pre>
+    <pre class="language-css"><code>
+.static {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  background: red;
+  /\* top, right, bottom, left, z-index
+     properties don't apply \*/
+}</code></pre>
+  </div>
+  <div class="Split-column">
+    <div class="DemoPositionStatic-box"></div>
+    <div class="DemoPositionStatic-box"></div>
+    <div class="DemoPositionStatic-box"></div>
+  </div>
+</div>
 
 ------
 
 ## Relative
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-This keyword lays out all elements as though the element were not positioned, and then adjust the element's position, without changing layout (and thus leaving a gap for the element where it would have been had it not been positioned). The effect of position:relative on table-*-group, table-row, table-column, table-cell, and table-caption elements is undefined.
+> "This keyword lays out all elements as though the element were not positioned, and then adjust the element's position, without changing layout (and thus leaving a gap for the element where it would have been had it not been positioned)." --[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
+
+------
+
+## Relative: Example <small>([CodePen](http://codepen.io/elijahmanor/pen/KpgpEq))</small><!-- .element style="vertical-align: middle;" -->
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
+
+<div class="Split">
+  <div class="Split-column">
+    <pre class="language-markup"><code>
+&lt;div class="relative box1"&gt;&lt;/div&gt;
+&lt;div class="relative box2"&gt;&lt;/div&gt;
+&lt;div class="relative box3"&gt;&lt;/div&gt;</code></pre>
+    <pre class="language-css"><code>
+.relative {
+  width: 100px; height: 100px;
+  margin: 5px; background: red;
+  border: 1px solid white;
+  position: relative;
+}
+.box1 { top: 25px; }
+.box2 { left: -25px; z-index: 1; }
+.box3 { top: -25px; left: 25px; }</code></pre>
+  </div>
+  <div class="Split-column">
+    <div class="DemoPositionRelative-box">.box1</div>
+    <div class="DemoPositionRelative-box">.box2</div>
+    <div class="DemoPositionRelative-box">.box3</div>
+  </div>
+</div>
 
 ------
 
 ## Absolute
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-Do not leave space for the element. Instead, position it at a specified position relative to its closest positioned ancestor or to the containing block. Absolutely positioned boxes can have margins, they do not collapse with any other margins.
+> "Do not leave space for the element. Instead, position it at a specified position relative to its closest positioned ancestor or to the containing block." --[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
+
+------
+
+## Absolute: Example 1 <small>([CodePen](http://codepen.io/elijahmanor/pen/BNLNEK?editors=110))</small><!-- .element style="vertical-align: middle;" -->
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
+
+<div class="Split">
+  <div class="Split-column">
+    <pre class="language-markup"><code>
+&lt;div class="container"&gt;
+  &lt;div class="box box1"&gt;&lt;/div&gt;
+  &lt;div class="box box2"&gt;&lt;/div&gt;
+  &lt;div class="box box3"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    <pre class="language-css"><code>
+.container {
+  border: 1px solid blue; padding: 25px;
+}
+.box {
+  width: 100px; height: 100px;
+  margin: 5px auto; background: red;
+  border: 1px solid white;
+}
+.box2 {
+  position: absolute; top: 0; left: 0;
+}</code></pre>
+  </div>
+  <div class="Split-column">
+    <div class="DemoPositionAbsolute">
+      <div class="DemoPositionAbsolute-box">.box1</div>
+      <div class="DemoPositionAbsolute-box">.box2</div>
+      <div class="DemoPositionAbsolute-box">.box3</div>
+    </div>
+  </div>
+</div>
+
+------
+
+## Absolute: Example 2 <small>([CodePen](http://codepen.io/elijahmanor/pen/JdRdVw?editors=110))</small><!-- .element style="vertical-align: middle;" -->
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
+
+<div class="Split">
+  <div class="Split-column">
+    <pre class="language-markup"><code>
+&lt;div class="container"&gt;
+  &lt;div class="box box1"&gt;&lt;/div&gt;
+  &lt;div class="box box2"&gt;&lt;/div&gt;
+  &lt;div class="box box3"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    <pre class="language-css"><code>
+.container {
+  border: 1px solid blue; padding: 25px;
+  position: relative;
+}
+.box {
+  width: 100px; height: 100px;
+  margin: 5px auto; background: red;
+  border: 1px solid white;
+}
+.box2 {
+  position: absolute; top: 0; left: 0;
+}</code></pre>
+  </div>
+  <div class="Split-column">
+    <div class="DemoPositionAbsolute DemoPositionAbsolute--2">
+      <div class="DemoPositionAbsolute-box">.box1</div>
+      <div class="DemoPositionAbsolute-box">.box2</div>
+      <div class="DemoPositionAbsolute-box">.box3</div>
+    </div>
+  </div>
+</div>
 
 ------
 
 ## Fixed
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-Do not leave space for the element. Instead, position it at a specified position relative to the screen's viewport and don't move it when scrolled. When printing, position it at that fixed position on every page.
+> "Do not leave space for the element. Instead, position it at a specified position relative to the screen's viewport and don't move it when scrolled." --[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
+
+------
+
+## Fixed: Example <small>([CodePen](http://codepen.io/elijahmanor/pen/dopoLE?editors=110))</small><!-- .element style="vertical-align: middle;" -->
+<!-- .slide: data-state="backEndBrian juniorJacob slide--demoPositionFixed" -->
+
+<div class="Split">
+  <div class="Split-column">
+    <pre class="language-markup"><code>
+&lt;div class="container"&gt;
+  &lt;div class="box box1"&gt;&lt;/div&gt;
+  &lt;div class="box box2"&gt;&lt;/div&gt;
+  &lt;div class="box box3"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    <pre class="language-css"><code>
+.container {
+  border: 1px solid blue; padding: 25px;
+  position: relative;
+}
+.box {
+  width: 100px; height: 100px;
+  margin: 5px auto; background: red;
+  border: 1px solid white;
+}
+.box2 {
+  position: fixed; top: 0; left: 0;
+}</code></pre>
+  </div>
+  <div class="Split-column">
+    <div class="DemoPositionFixed">
+      <div class="DemoPositionFixed-box">.box1</div>
+      <div class="DemoPositionFixed-box">.box2</div>
+      <div class="DemoPositionFixed-box">.box3</div>
+    </div>
+  </div>
+</div>
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 ------
 
 ## Resources
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
 * [CSS Position](https://developer.mozilla.org/en-US/docs/Web/CSS/position) by MDN
 * [Codecademy CSS Positioning](http://www.codecademy.com/courses/web-beginner-en-6merh/0/1)
 
 Notes:
 
-http://www.smashingmagazine.com/2009/09/15/the-z-index-css-property-a-comprehensive-look/
-
 z-index will only work on an element whose position property has been explicitly set to absolute, fixed, or relative.
-
-
-`overflow: visible, scroll, hidden;`
 
 http://blog.teamtreehouse.com/css-positioning
 https://www.khanacademy.org/computing/computer-programming/html-css/css-layout-properties/p/css-position
@@ -125,15 +316,7 @@ https://css-tricks.com/all-about-floats/
 http://davidwalsh.name/demo/css-fixed-position.php
 https://www.youtube.com/watch?v=dK-NwjlhmqU
 http://www.sitepoint.com/3-things-almost-one-knows-css/
-
-http://www.impressivewebs.com/a-detailed-look-at-the-z-index-css-property/
-http://alistapart.com/article/css-positioning-101
 http://learn.shayhowe.com/advanced-html-css/detailed-css-positioning/
 http://learnlayout.com/float-layout.html
-http://www.barelyfitz.com/screencast/html-training/css/positioning/
-http://www.codecademy.com/courses/web-beginner-en-6merh/0/3
-https://www.khanacademy.org/computing/computer-programming/html-css/css-layout-properties/p/css-position
-http://blog.teamtreehouse.com/css-positioning
 http://www.smashingmagazine.com/2009/09/15/the-z-index-css-property-a-comprehensive-look/
-http://www.codecademy.com/courses/web-beginner-en-6merh/0/1
 https://developer.mozilla.org/en-US/docs/Web/CSS/position
