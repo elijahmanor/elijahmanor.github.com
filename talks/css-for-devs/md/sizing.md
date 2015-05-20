@@ -5,49 +5,163 @@
 
 ------
 
-## Scenario
-<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
+## Scenario <small>([CodePen](http://codepen.io/elijahmanor/pen/VLKaVN?editors=110))</small><!-- .element style="vertical-align: middle;" -->
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-> TODO: Put some scenario where dev looks to see why style isn't applied...
+<div class="Split">
+  <div class="Split-column">
+    <pre class="language-markup"><code>
+&lt;h1&gt;Sizing&lt;/h1&gt;
+&lt;div class="container"&gt;
+  &lt;div class="box"&gt;Box 1&lt;/div&gt;
+  &lt;div class="box"&gt;
+    &lt;div class="box"&gt;Box 2a&lt;/div&gt;
+    &lt;div class="box"&gt;
+      &lt;div class="box"&gt;Box 3a&lt;/div&gt;
+      &lt;div class="box"&gt;Box 3b&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="box"&gt;Box 4&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div class="Split-column">
+    <pre class="language-css"><code>
+html, body { font-size: 16px; }
 
-TODO: Have px fonts everywhere...
+.container {
+font-size: 24px;
+}
+
+.box {
+font-size: 1.25em;
+padding: 0.75em;
+margin: 0.75em;
+border: 1px solid black;
+}</code></pre>
+  </div>
+</div>
 
 ------
 
-## List Font Values
-<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
+## List Font Size Units
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-TODO: List a lot of the common & non-common font types... rem, em, pt, px, etc
-
-https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
+<div class="Split">
+  <div class="Split-column">
+    <ul>
+      <li>em</li>
+      <li>ex</li>
+      <li>%</li>
+      <li>px</li>
+      <li>cm</li>
+      <li>mm</li>
+      <li>in</li>
+    </ul>
+  </div>
+  <div class="Split-column">
+    <ul>
+      <li>pt</li>
+      <li>pc</li>
+      <li>ch</li>
+      <li>rem</li>
+      <li>vh</li>
+      <li>vw</li>
+      <li>vmin</li>
+      <li>vmax</li>
+    </ul>
+  </div>
+</div>
 
 ------
 
 ## `em`
-<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-TOOD: Example what em is and how it can be used
+> "The em unit is a relative unit based on the computed value of the font size of the parent element. This means that child elements are always dependent on their parent to set their font-size." --[CSS Almanac: font-size](https://css-tricks.com/almanac/properties/f/font-size/)
+
+------
+
+## `em` Example
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
+
+<div class="Split">
+  <div class="Split-column">
+  <pre class="language-css"><code>
+.container {
+  font-size: 16px;
+}
+
+.box1 {
+  font-size: 1em;
+}
+
+.box2 {
+  font-size: 2em;
+  margin: 0.25em;
+}</code></pre>
+  </div>
+  <div class="Split-column">
+    <p>`.box1` will have a  `font-size` of `16px` because `1em * 16px = 16px`</p>
+    <p>`.box2` will have a  `font-size` of `32px` because `2em * 16px = 32px`</p>
+    <p>`.box2` will have a  `margin` of `32px` because `0.25em * 32px = 8px`</p>
+  </div>
+</div>
 
 ------
 
 ## `rem`
-<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-TODO: Explain what rem and how it can be used
+> "In the case of rem units, however, the font-size is dependent on the value of the root element (or the html element)." --[CSS Almanac: font-size](https://css-tricks.com/almanac/properties/f/font-size/)
+
+------
+
+## `rem` Example
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
+
+<div class="Split">
+  <div class="Split-column">
+  <pre class="language-css"><code>
+.container {
+  font-size: 16px;
+}
+
+.box1 {
+  font-size: 1rem;
+}
+
+.box2 {
+  font-size: 2em;
+  margin: 0.5rem;
+}</code></pre>
+  </div>
+  <div class="Split-column">
+    <p>`.box1` will have a  `font-size` of `16px` because `1em * 16px = 16px`</p>
+    <p>`.box2` will have a  `font-size` of `32px` because `2em * 16px = 32px`</p>
+    <p>`.box2` will have a  `margin` of `8px` because `0.5rem * 16px = 8px`</p>
+  </div>
+</div>
 
 ------
 
 ## 62.5%
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-TODO: Show the trick of setting the body font-size to 62.5% to make top level em and anywhere rem conversion easier http://snook.ca/archives/html_and_css/font-size-with-rem
+> "The technique modifies the base font-size on the body using a percentage. This adjusts things so that 1em equals 10px, instead of the default 16px."
+
+<pre class="language-css"><code>
+html { font-size: 62.5%; }
+body { font-size: 1.4rem; } /* =14px */
+h1   { font-size: 2.4rem; } /* =24px */</code></pre>
+
+Source: [Font Sizing with REM](http://snook.ca/archives/html_and_css/font-size-with-rem) by [Jonathan Snook](https://twitter.com/snookca)
 
 ------
 
-## `rem` for Components and `em` for Text
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa InProgress" -->
+## Coyier's Idea ([Mixing `rem`s & `em`s](https://css-tricks.com/rems-ems/))
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-TODO: Show Chris Coyier's idea https://css-tricks.com/rems-ems/
+![](./imgs/csstricks-ems-rems.svg)
 
 ------
 
