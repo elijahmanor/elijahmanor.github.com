@@ -86,7 +86,7 @@ TODO: Talk about the need for these... with regards to previous slide
 ------
 
 ## Making Non-Inherited Properties Cascade
-<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa InProgress" -->
 
 TODO: code snippet showing the inherit value
 
