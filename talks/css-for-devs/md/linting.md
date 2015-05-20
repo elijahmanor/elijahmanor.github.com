@@ -3,33 +3,35 @@
 
 > "You should lint your Sass!" --[Me](http://twitter.com/elijahmanor)
 
-------
+Notes:
 
 ## Scenario
-<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 > TODO: Put some scenario where dev looks to see why style isn't applied...
 
 ------
 
-## Resources
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa InProgress" -->
+## SCSS-Lint
 
-* [x](#)
+> "Configurable tool for writing clean and consistent SCSS" --[SCSS-Lint](https://github.com/brigade/scss-lint)
 
-Notes:
-
-## SCSS Lint
-
+* NestingDepth
+* SelectorDepth
+* SelectorFormat
+* NameFormat
+* ColorVariable
+* [& more...](https://github.com/brigade/scss-lint/blob/master/lib/scss_lint/linter/README.md)
 
 ------
 
-#
+## Resources
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-* [SCSS-Lint](https://github.com/brigade/scss-lint)
-css-comb
-http://csslint.net/
-CSS Dig
-http://cssstats.com/stats?url=http%3A%2F%2Fdaveramsey.com
-https://github.com/cssstats/css-statistics
-https://github.com/springload/css-reporter
+* [SCSS Lint](https://github.com/brigade/scss-lint)
+* [CSS Comb](css-comb)
+* [CSS Lint](http://csslint.net/)
+* [CSS Dig]()
+* [CSS Stats](http://cssstats.com/)
+* [CSS Statistics](https://github.com/cssstats/css-statistics)
+* [CSS Reporter](https://github.com/springload/css-reporter)

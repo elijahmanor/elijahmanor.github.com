@@ -7,10 +7,8 @@ Notes:
 
 * http://www.sitepoint.com/working-bem-scale-advice-top-developers/
 
-------
-
 ## Scenario
-<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
 > TODO: Put some scenario where dev looks to see why style isn't applied...
 
@@ -40,52 +38,91 @@ Source: [Origins of the BEM Methodology](https://en.bem.info/method/#origins-of-
 ------
 
 ## Examples
-<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-TODO: show the official ways to name things
+<pre class="language-css"><code>
+/* Block */
+.block-name {}
+
+/* Element */
+.block-name__element-name {}
+
+/* Modifier */
+.block-name--modifier-name {}
+
+/* Element with Modifier */
+.block-name__element-name--modifier-name {}</code></pre>
 
 ------
 
 ## Modified BEM Syntax for Usability
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
+<pre class="language-css"><code>
+/* Block */
+.BlockName {}
 
-TODO: Show the Modified syntax that we use
+/* Element */
+.BlockName-elementName {}
+
+/* Modifier */
+.BlockName--modifierName {}
+
+/* Element with Modifier */
+.BlockName-elementName--modifierName {}</code></pre>
+
+Source: [A BEM syntax with UX in mind](http://simurai.com/blog/2013/10/24/BEM-syntax-with-ux-in-mind/)
 
 ------
 
 ## Media Example
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-TODO: Show media example with the modified syntax
+<pre class="language-css"><code>
+.Media {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1em;
+}
+
+.Media--center {
+  align-items: center
+}
+
+.Media-figure {
+  margin-right: 1em;
+}
+
+.Media-title {
+  margin: 0 0 .5em;
+}
+
+.Media-body {
+  flex: 1;
+}</code></pre>
+
+------
+
+## Sass @at-root
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+
+<pre class="language-css"><code>
+.block {
+  @at-root #{&}__element {}
+  @at-root #{&}--modifier {}
+}</code></pre>
+
+<pre class="language-css"><code>
+.block {}
+.block__element {}
+.block--modifier {}</code></pre>
 
 ------
 
 ## Media Example with Sass
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-```
-.block {
-  @at-root #{&}__element {
-  }
-  @at-root #{&}--modifier {
-  }
-}
-```
-
-```
-.block {
-}
-.block__element {
-}
-.block--modifier {
-}
-```
-
-## Media Example with Sass
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa InProgress" -->
-
-```
+<pre class="language-css"><code>
 .Media {
   display: flex;
   align-items: flex-start;
@@ -97,10 +134,6 @@ TODO: Show media example with the modified syntax
 
   &-figure {
     margin-right: 1em;
-
-    &--modifier {
-      color: blue;
-    }
   }
 
   &-title {
@@ -110,43 +143,7 @@ TODO: Show media example with the modified syntax
   &-body {
     flex: 1;
   }
-}
-```
-
-------
-
-## Sass
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa InProgress" -->
-
-Parent Selector with a Suffix
-
-```
-.Media {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 1em;
-
-  &--center {
-    align-items: center
-  }
-
-  &-figure {
-    margin-right: 1em;
-
-    &--modifier {
-      color: blue;
-    }
-  }
-
-  &-title {
-    margin: 0 0 .5em;
-  }
-
-  &-body {
-    flex: 1;
-  }
-}
-```
+}</code></pre>
 
 ------
 
@@ -155,6 +152,6 @@ Parent Selector with a Suffix
 
 * [Yandex BEM](https://en.bem.info/)
 * [BEM 101](https://css-tricks.com/bem-101/) by [Joe Richardson](https://twitter.com/joericho)
-
+* [A BEM syntax with UX in mind](http://simurai.com/blog/2013/10/24/BEM-syntax-with-ux-in-mind/)
 
 Notes:

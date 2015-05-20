@@ -3,12 +3,11 @@
 
 > "Atomic design is methodology for creating design systems." --[Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/)
 
-------
-
+<!--
 ## Scenario
-<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
 
 TODO: Show some problem where things aren't oragnaized very well into components
+-->
 
 ------
 

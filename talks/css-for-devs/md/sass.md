@@ -1,95 +1,193 @@
 # Sass
-<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-> TODO: Quote here...
+> "CSS with superpowers" --[Sass](http://sass-lang.com/)
 
-------
+<!--
 
 ## Scenario
-<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
 
-> TODO: show some nasty code with colors everywhere some crazy selectors, yada yada
+TODO: show some nasty code with colors everywhere some crazy selectors, yada yada
+
+-->
 
 ------
 
-## Variable
-<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
+## Variables
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-TODO: Show use of variables
+<pre class="language-scss"><code>
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+</code></pre>
 
 ------
 
 ## Nesting
-<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-TODO: Show nesting example
+<pre class="language-scss"><code>
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li { display: inline-block; }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
+</code></pre>
 
 ------
 
 ## Imports
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-TODO: Show example of organizing your CSS with Imports
+<pre class="language-scss"><code>
+/* base.scss */
+
+@import 'reset';
+
+body {
+  font: 100% Helvetica, sans-serif;
+  background-color: #efefef;
+}
+</code></pre>
 
 ------
 
 ## Mixins
-<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-TODO: Show example of a mixin
+<pre class="language-scss"><code>
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+.box { @include border-radius(10px); }
+</code></pre>
 
 ------
 
 ## Extend
-<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-TODO: Show an example of extending a button or something... but extending a class
+<pre class="language-scss"><code>
+.message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  @extend .message;
+
+  border-color: green;
+}
+</code></pre>
 
 ------
 
 ## Extending Place Holders
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-TODO: Show exmaple of extending a place holder instead of a class
+<pre class="language-scss"><code>
+%message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  @extend %message;
+
+  border-color: green;
+}
+</code></pre>
 
 ------
 
 ## Scut
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-TODO: Show examples of some handy scut mixins
+> "You can think of the word Scut as an acronym for Sass-CSS Utitilies. Or think of it this way: Scut will help you, the frontend laborer, do your scut work." --[Scut](https://davidtheclark.github.io/scut/)
+
+------
+
+## Scut
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+
+<pre class="language-scss"><code>
+.eg-absolute-2 {
+  @include scut-absolute(n 0.5em 1em n);
+}
+
+.eg-margin-1 {
+  @include scut-margin(1em n);
+}
+</code></pre>
 
 ------
 
 ## LibSass
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-TODO: Briefly talk about Ruby Sass vs LibSass
+* Ruby Sass
+* LibSass
 
+[Sass Compatibility Guide](https://sass-compatibility.github.io/)
 
 ------
 
 ## Style Guidelines
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-TODO: Have links to some common styleguides
+* [CSS Tricks: Sass Style Guide](https://css-tricks.com/sass-style-guide/
+)
+* [Sass Guidelines](http://sass-guidelin.es/)
 
 ------
 
 ## Finding Unused Sass variables
 
-TODO: Show that script I found
+<pre class="language-bash"><code>
+#!/usr/bin/env bash
+# HOW TO USE
+# Save code to file
+# Run as "SCRIPT_FILE_NAME SASS_DIRECTORY"
+# e.g "./find_unused_variables.sh ./sass"
+
+VAR_NAME_CHARS='A-Za-z0-9_-'
+
+find "$1" -type f -name "*.scss" -exec grep -o "\$[$VAR_NAME_CHARS]*" {} ';' | sort | uniq -u
+</code></pre>
+
+Source: [Finding unused SCSS variables](http://blog.gospodarets.com/finding_unused_scss_variables/)
 
 ------
 
 ## Resources
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 * [Sass Compatibility Guide](https://sass-compatibility.github.io/)
 * [CSS Tricks: Sass Style Guide](https://css-tricks.com/sass-style-guide/
 )
 * [Sass Guidelines](http://sass-guidelin.es/)
-* [Scut](https://davidtheclark.github.io/scut/
-)
+* [Scut](https://davidtheclark.github.io/scut/)
 
 Notes:
 
