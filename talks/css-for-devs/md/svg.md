@@ -1,4 +1,5 @@
 # SVG
+<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
 
 http://www.vanseodesign.com/web-design/svg-viewport/
 <!-- .slide: data-state="backEndBrian juniorJacob" -->
@@ -8,13 +9,14 @@ http://www.vanseodesign.com/web-design/svg-viewport/
 ------
 
 ## Scenario
+<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
 
 > TODO: Put some scenario where dev looks to see why style isn't applied...
 
 ------
 
 ## Resources
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa InProgress" -->
 
 * [x](#)
 

@@ -1,5 +1,5 @@
 # Alignment
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
 
 * Maybe call this Layout instead?
 
@@ -8,13 +8,14 @@
 ------
 
 ## Scenario
+<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
 
 > TODO: Put some scenario where dev looks to see why style isn't applied...
 
 ------
 
 ## Floats
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
 
 Notes:
 
@@ -24,7 +25,7 @@ Notes:
 ------
 
 ## Flex-box
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa InProgress" -->
 
 <div class="caniuse" data-feature="flexbox"></div>
 
@@ -36,7 +37,7 @@ Notes:
 ------
 
 ## Resources
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa InProgress" -->
 
 * [x](#)
 
