@@ -17,6 +17,7 @@
 
 TODO: Show use of variables
 
+------
 
 ## Nesting
 <!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
