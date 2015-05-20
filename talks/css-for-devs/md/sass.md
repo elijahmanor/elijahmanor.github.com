@@ -75,6 +75,12 @@ TODO: Have links to some common styleguides
 
 ------
 
+## Finding Unused Sass variables
+
+TODO: Show that script I found
+
+------
+
 ## Resources
 <!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa InProgress" -->
 

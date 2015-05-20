@@ -5,27 +5,39 @@
 
 ------
 
-## Scenario
-<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
+## Scenario <small>([CodePen](http://codepen.io/elijahmanor/pen/pJEyRE?editors=110))</small><!-- .element style="vertical-align: middle;" -->
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-<!-- TODO: Put some scenario where dev looks to see why style isn't applied... -->
+### Have you ever done this?
 
-<pre class="language-css"><code>
-.container {
-border: 1px solid blue; padding: 25px;
-position: relative;
+<div class="Split">
+  <div class="Split-column">
+    <pre class="language-markup"><code>
+&lt;h1&gt;Cascades&lt;/h1&gt;
+&lt;div class="container"&gt;
+  &lt;div class="box"&gt;Box 1&lt;/div&gt;
+  &lt;div class="box"&gt;Box 2&lt;/div&gt;
+  &lt;div class="box"&gt;Box 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+  <div class="Split-column">
+    <pre class="language-css"><code>
+html, body { color: black; }
+
+h1 {
+  font-family: Verdana, Arial, Serif;
 }
+
+.container { color: black; }
+
 .box {
-width: 100px; height: 100px;
-margin: 5px auto; background: red;
-border: 1px solid white;
-}
-.box2 {
-position: fixed; top: 0; left: 0;
+  font-family: Verdana, Arial, Serif;
+  color: white;
+  width: 100px; height: 100px;
+  background-color: red;
 }</code></pre>
-
-
-Show example of repeated styles over and over again that aren't needed... like fonts and colors (that could be cascaded)
+  </div>
+</div>
 
 ------
 
@@ -107,10 +119,45 @@ TODO: code snippet showing the inherit value
 
 ------
 
-## Leveraging the Cascade
-<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
+## Leveraging the Cascade <small>([CodePen](http://codepen.io/elijahmanor/pen/aOmNWq?editors=110))</small><!-- .element style="vertical-align: middle;" -->
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-TODO: Write some sample code that uses better practices to take advantage of CSS cascade
+<div class="Split">
+  <div class="Split-column">
+    <h4>Old CSS</h4>
+    <pre class="language-css"><code>
+html, body { color: black; }
+
+h1 {
+  font-family: Verdana, Arial, Serif;
+}
+
+.container { color: black; }
+
+.box {
+  font-family: Verdana, Arial, Serif;
+  color: white;
+  width: 100px; height: 100px;
+  background-color: red;
+}</code></pre>
+  </div>
+  <div class="Split-column">
+    <h4>New CSS</h4>
+    <pre class="language-css"><code>
+html, body {
+  font-family: Verdana, Arial, Serif;
+  color: black;
+}
+
+.box {
+  color: white;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}</code></pre>
+  </div>
+</div>
+
 
 ------
 
