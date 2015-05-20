@@ -1,18 +1,19 @@
 # Linting
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
 
 > TODO: Quote here...
 
 ------
 
 ## Scenario
+<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
 
 > TODO: Put some scenario where dev looks to see why style isn't applied...
 
 ------
 
 ## Resources
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa InProgress" -->
 
 * [x](#)
 
