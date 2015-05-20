@@ -2,7 +2,6 @@
 <!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
 
 http://www.vanseodesign.com/web-design/svg-viewport/
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
 > TODO: Quote here...
 
