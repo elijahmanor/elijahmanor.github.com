@@ -1,7 +1,7 @@
 # Sizing
-<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-> TODO: Quote here...
+> "Both rem and em are relative units, px is not. Before considering rem, it’s important to understand the relationship between em, markup and inheritance." --[Confused About REM and EM?](https://j.eremy.net/confused-about-rem-and-em/) by [Jeremy Church](jeremybchurch)
 
 ------
 
