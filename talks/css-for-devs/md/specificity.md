@@ -8,7 +8,43 @@
 ## Scenario
 <!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-> TODO: Put some scenario where dev looks to see why style isn't applied...
+<div class="Split">
+  <div class="Split-column">
+    <div class="fragment">
+      <h4>Have you ever wanted to do this...</h4>
+      <pre class="language-css"><code>
+.big-html-area {
+  width: 400px;
+  height: 300px;
+}</code></pre>
+    </div>
+    <div class="fragment">
+      <h4>But it didn't work so you did this...</h4>
+      <pre class="language-css"><code>
+.big-html-area {
+  width: 400px !important;
+  height: 300px !important;
+}</code></pre>
+    </div>
+  </div>
+  <div class="Split-column">
+    <div class="fragment">
+      <h4>Or maybe you tried this...</h4>
+      <pre class="language-markup"><code>
+&lt;div class="big-html-area"
+  style="width: 400px; height: 300px"&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+    <div class="fragment">
+      <h4>Or even this...</h4>
+      <pre class="language-javascript"><code>
+$(".big-html-area").css({
+  width: '400px',
+  height: '300px'
+});</code></pre>
+    </div>
+  </div>
+</div>
 
 ------
 
