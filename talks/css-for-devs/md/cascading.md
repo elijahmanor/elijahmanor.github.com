@@ -14,6 +14,43 @@ Show example of repeated styles over and over again that aren't needed... like f
 
 ------
 
+## Importance
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
+
+### Sources
+
+1. User Agent <p>Each browser provides its own default style sheet</p>
+
+2. User <p>Specific user overrides specifies via browser options</p>
+
+3. Author <p>Developer specified style sheets (in document or external)</p>
+
+Resource: [W3C: The Cascade](http://www.w3.org/TR/CSS2/cascade.html#cascade)
+
+------
+
+## Importance
+<!-- .slide: data-state="backEndBrian juniorJacob" -->
+
+### Priority <small>(lowest to highest)</small><!-- .element style="vertical-align: middle;" -->
+
+1. User Agent's Stylesheet
+2. User's Stylesheet
+3. Author's Stylesheet
+4. Author's !important rules
+5. User's !important rules
+
+Resource: [W3C: The Cascade](http://www.w3.org/TR/CSS2/cascade.html#cascade)
+
+------
+
+## CSS Resets & Normalize
+<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
+
+TODO: Talk about the need for these... with regards to previous slide
+
+------
+
 ## [Cascaded properties](http://www.w3.org/TR/CSS21/propidx.html)
 <!-- .slide: data-state="backEndBrian juniorJacob" -->
 
@@ -48,6 +85,20 @@ Show example of repeated styles over and over again that aren't needed... like f
 
 ------
 
+## Making Non-Inherited Properties Cascade
+<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
+
+TODO: code snippet showing the inherit value
+
+------
+
+## Leveraging the Cascade
+<!-- .slide: data-state="backEndBrian juniorJacob InProgress" -->
+
+TODO: Write some sample code that uses better practices to take advantage of CSS cascade
+
+------
+
 ## Resources
 <!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
@@ -56,6 +107,3 @@ Show example of repeated styles over and over again that aren't needed... like f
 * [CSS Specificity And Inheritance](http://www.smashingmagazine.com/2010/04/07/css-specificity-and-inheritance/) by [Inayaili de Leon](https://twitter.com/yaili)
 
 Notes:
-
-
-not
