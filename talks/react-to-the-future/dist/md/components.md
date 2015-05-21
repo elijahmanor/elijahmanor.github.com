@@ -335,6 +335,12 @@ var HelloWorld = React.createClass({
 
 ---
 
+<!--
+{
+  "className": "Slide--static"
+}
+-->
+
 # Overloaded setState
 
 <div class="Split">
@@ -435,6 +441,12 @@ var HelloWorld = React.createClass({
 
 ---
 
+<!--
+{
+  "className": "Slide--static"
+}
+-->
+
 # Dealing with Lists
 
 <div class="Split">
@@ -487,6 +499,12 @@ React.render(
 
 ---
 
+<!--
+{
+  "className": "Slide--static"
+}
+-->
+
 # React v0.13.0 Supports ES6 Classes
 
 <div class="Split">
@@ -529,6 +547,12 @@ React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
 
 ---
 
+<!--
+{
+  "className": "Slide--static"
+}
+-->
+
 # React Class Differences
 
 <div class="Split">
@@ -570,6 +594,12 @@ React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
 </div>
 
 ---
+
+<!--
+{
+  "className": "Slide--static"
+}
+-->
 
 # React Class Differences
 

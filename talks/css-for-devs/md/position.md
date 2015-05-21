@@ -6,7 +6,7 @@
 ------
 
 ## Scenario <small>([CodePen](http://codepen.io/elijahmanor/pen/GJjJRP?editors=110))</small><!-- .element style="vertical-align: middle;" -->
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
   <div class="Split-column">
@@ -50,7 +50,7 @@
 ------
 
 ## Position
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
 
 <table>
   <tr>
@@ -100,14 +100,14 @@
 ------
 
 ## Static
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
 
 > "This keyword lets the element use the normal behavior, that is it is laid out in its current position in the flow.  The top, right, bottom, left and z-index properties do not apply." --[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
 
 ------
 
 ## Static: Example <small>([CodePen](http://codepen.io/elijahmanor/pen/rVMVjw))</small><!-- .element style="vertical-align: middle;" -->
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
   <div class="Split-column">
@@ -135,14 +135,14 @@
 ------
 
 ## Relative
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
 
 > "This keyword lays out all elements as though the element were not positioned, and then adjust the element's position, without changing layout (and thus leaving a gap for the element where it would have been had it not been positioned)." --[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
 
 ------
 
 ## Relative: Example <small>([CodePen](http://codepen.io/elijahmanor/pen/KpgpEq))</small><!-- .element style="vertical-align: middle;" -->
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
   <div class="Split-column">
@@ -150,8 +150,7 @@
 &lt;div class="relative box1"&gt;&lt;/div&gt;
 &lt;div class="relative box2"&gt;&lt;/div&gt;
 &lt;div class="relative box3"&gt;&lt;/div&gt;</code></pre>
-    <pre class="language-css" data-line="5,7-9"><code>
-.relative {
+    <pre class="language-css" data-line="5,7-9"><code>.relative {
   width: 100px; height: 100px;
   margin: 5px; background: red;
   border: 1px solid white;
@@ -171,14 +170,14 @@
 ------
 
 ## Absolute
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
 
 > "Do not leave space for the element. Instead, position it at a specified position relative to its closest positioned ancestor or to the containing block." --[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
 
 ------
 
 ## Absolute: Example 1 <small>([CodePen](http://codepen.io/elijahmanor/pen/BNLNEK?editors=110))</small><!-- .element style="vertical-align: middle;" -->
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
   <div class="Split-column">
@@ -188,8 +187,7 @@
   &lt;div class="box box2"&gt;&lt;/div&gt;
   &lt;div class="box box3"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-    <pre class="language-css" data-line="10"><code>
-.container {
+    <pre class="language-css" data-line="10"><code>.container {
   border: 1px solid blue; padding: 25px;
 }
 .box {
@@ -213,7 +211,7 @@
 ------
 
 ## Absolute: Example 2 <small>([CodePen](http://codepen.io/elijahmanor/pen/JdRdVw?editors=110))</small><!-- .element style="vertical-align: middle;" -->
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
   <div class="Split-column">
@@ -223,8 +221,7 @@
   &lt;div class="box box2"&gt;&lt;/div&gt;
   &lt;div class="box box3"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-    <pre class="language-css" data-line="3"><code>
-.container {
+    <pre class="language-css" data-line="3"><code>.container {
   border: 1px solid blue; padding: 25px;
   position: relative;
 }
@@ -249,14 +246,14 @@
 ------
 
 ## Fixed
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
 
 > "Do not leave space for the element. Instead, position it at a specified position relative to the screen's viewport and don't move it when scrolled." --[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
 
 ------
 
 ## Fixed: Example <small>([CodePen](http://codepen.io/elijahmanor/pen/dopoLE?editors=110))</small><!-- .element style="vertical-align: middle;" -->
-<!-- .slide: data-state="backEndBrian juniorJacob slide--demoPositionFixed" -->
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob slide--demoPositionFixed" -->
 
 <div class="Split">
   <div class="Split-column">
@@ -266,8 +263,7 @@
   &lt;div class="box box2"&gt;&lt;/div&gt;
   &lt;div class="box box3"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-    <pre class="language-css" data-line="11"><code>
-.container {
+    <pre class="language-css" data-line="11"><code>.container {
   border: 1px solid blue; padding: 25px;
   position: relative;
 }
@@ -294,7 +290,7 @@
 ------
 
 ## Resources
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
 
 * [CSS Position](https://developer.mozilla.org/en-US/docs/Web/CSS/position) by MDN
 * [Codecademy CSS Positioning](http://www.codecademy.com/courses/web-beginner-en-6merh/0/1)

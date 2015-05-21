@@ -478,13 +478,17 @@ pre[data-line].language--small {
   margin: auto; }
 
 .SlideManager-slide {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  top: 50%;
+  position: relative;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
   padding: 2em;
   text-align: center; }
+
+.Slide--static {
+  position: static;
+  -webkit-transform: none;
+  transform: none; }
 
 .Slide--title {
   top: 50%;

@@ -2,18 +2,11 @@
 
 <pre style="font-size: 1.25em; box-shadow: none;">
 <a href="http://elijahmanor.com]" style="margin-left: -3.2em;">http://elijahmanor.com</a>
-<a href="http://twitter.com/elijahmanor" style="margin-left: -2em;">@elijahmanor</a>
-<a href="mailto:elijahmanor@gmail.com" style="position: absolute; left: 6.1em;">elijahmanor@gmail.com</a>
+<a href="http://twitter.com/elijahmanor" style="margin-left: -2em;">@elijahmanor</a><br/>
 <a href="http://bit.ly/css-for-devs" style="margin-left: 2em;">http://bit.ly/css-for-devs</a>
 </pre>
 
-### @abracketsconf / #anglebrackets
-
-------
-
-## Resources
-
-* xyz
+<h3 data-store="conclusion-social" contenteditable></h3>
 
 Notes:
 

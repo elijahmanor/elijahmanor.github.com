@@ -1,4 +1,4 @@
-/* http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+clike+javascript+bash+css-extras+git+markdown+jsx+ruby+scss&plugins=line-highlight+line-numbers+autolinker+file-highlight+show-language */
+/* http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+clike+javascript+bash+css-extras+git+http+markdown+jsx+ruby+scss+typescript&plugins=line-highlight+line-numbers+autolinker+show-language+highlight-keywords */
 /**
  * okaidia theme for JavaScript, CSS and HTML
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/
@@ -212,12 +212,7 @@ pre.line-numbers > code {
 pre[class*='language-'] {
 	position: relative;
 }
-pre[class*='language-'] > code[data-language] {
-	overflow: auto;
-	max-height: 28em;
-	display: block;
-}
-pre[class*='language-'] > code[data-language]::before {
+pre[class*='language-'][data-language]::before {
 	content: attr(data-language);
 	color: black;
 	background-color: #CFCFCF;

@@ -6,7 +6,7 @@
 ------
 
 ## Crazy Box
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
   <div class="Split-column">
@@ -35,7 +35,7 @@
 ------
 
 ## Crazy Box
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
   <div class="Split-column">
@@ -68,7 +68,7 @@
 ------
 
 ## Smart Box
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
   <div class="Split-column">
@@ -103,12 +103,12 @@
 ------
 
 # THERE WAS MUCH REJOINCING!
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob" -->
 
 ------
 
 # Border Box FTW!
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob" -->
 
 So, we could...
 
@@ -123,7 +123,7 @@ or better yet...
 ------
 
 ## Slightly Better Best Practice
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 <pre class="language-css"><code>html {
   box-sizing: border-box;
@@ -141,14 +141,14 @@ or better yet...
 
 #### February 1st
 #### International Box-Sizing Awareness Day
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 <img src="imgs/mega-protest-city-yah1.svg" style="height: 550px;" />
 
 ------
 
 # Resources
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 * [CSS Box Model](https://developer.mozilla.org/en-US/docs/Web/CSS/box_model) by MDN
 * [* { Box-sizing: Border-box } FTW]() by [Paul Irish](http://www.paulirish.com/2012/box-sizing-border-box-ftw/)

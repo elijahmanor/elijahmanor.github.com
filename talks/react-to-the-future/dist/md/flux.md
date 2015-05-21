@@ -130,6 +130,12 @@ module.exports = SlideActions;
 
 ---
 
+<!--
+{
+  "className": "Slide--static"
+}
+-->
+
 # Store (`SlideStore.js`)
 
 ```
@@ -171,6 +177,12 @@ module.exports = SlideStore;
 
 ---
 
+<!--
+{
+  "className": "Slide--static"
+}
+-->
+
 # View (`index.jsx`)
 
 ```
@@ -198,6 +210,12 @@ Router.run(routes, (Handler) => {
 ```
 
 ---
+
+<!--
+{
+  "className": "Slide--static"
+}
+-->
 
 # View (`SlideManager.js`)
 

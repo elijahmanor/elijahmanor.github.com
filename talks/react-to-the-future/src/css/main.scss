@@ -105,10 +105,16 @@ pre[data-line].language--small {
 }
 
 .SlideManager-slide {
-  @include scut-fill;
-
+  top: 50%;
+  position: relative;
+  transform: translateY(-50%);
   padding: 2em;
   text-align: center;
+}
+
+.Slide--static {
+  position: static;
+  transform: none;
 }
 
 .Slide--title {

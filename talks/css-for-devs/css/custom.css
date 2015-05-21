@@ -29,17 +29,41 @@
   }
 }
 
+.Title {
+  position: absolute;
+  color: white; /* #999; */
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.65vh; //0.1rem;
+  transition: left 1s ease-out;
+  transform: rotate(-90deg);
+  transform-origin: 0% 0%;
+  right: 0;
+  text-align: end;
+  left: -3rem;
+  top: 100vh;
+  width: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.Title.Title--show {
+  padding: 0.5rem;
+  left: 0;
+}
+
 .icon--positive { color: #5CB85C; }
 .icon--negative { color: #D9534F; }
 
 [data-store] {
   outline: 1px dashed rgba(0, 0, 0, 0.25);
 }
+
 pre[class*='language'] { font-size: 1.25rem; }
 pre[data-line] { padding: 1em; }
 .line-highlight:before, .line-highlight[data-end]:after { content: ''; }
 .line-highlight { background: -webkit-linear-gradient(left, rgba(153, 122, 102, 0.25) 70%, rgba(153, 122, 103, 0.15)); }
-.line-highlight { transform: translateY(0.8em); }
+.line-highlight { transform: translateY(25px); }
 
 .PersonaList { position: fixed; left: 1rem; bottom: 1rem; z-index: 1; }
 .PersonaList .Persona {
@@ -77,6 +101,11 @@ pre[data-line] { padding: 1em; }
   align-self: auto;
   margin: 1rem;
 }
+.Split .Split-column blockquote {
+  width: 100%;
+  margin: 10px auto;
+}
+
 .Split-column > p, .Split-column h4 {
   text-align: left;
 }

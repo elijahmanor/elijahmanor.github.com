@@ -6,7 +6,7 @@
 ------
 
 ## Scenario
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Specificity" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
   <div class="Split-column">
@@ -49,7 +49,7 @@ $(".big-html-area").css({
 ------
 
 ## Specificity Hierarchy
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Specificity" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
   <div class="Split-column">
@@ -81,7 +81,7 @@ $(".big-html-area").css({
 ------
 
 ## How to Measure Specificity
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Specificity" data-state="backEndBrian juniorJacob" -->
 
 1. Start at 0
 2. Add 1000 for each inline style
@@ -92,7 +92,7 @@ $(".big-html-area").css({
 ------
 
 ## Examples of Specificity
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Specificity" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
   <div class="Split-column">
@@ -148,7 +148,7 @@ $(".big-html-area").css({
 ------
 
 ## Specificity Games
-<!-- .slide: data-state="specificity backEndBrian juniorJacob midLevelMelissa" data-background="imgs/the-hunger-games.jpeg" -->
+<!-- .slide: data-title="Specificity" data-state="specificity backEndBrian juniorJacob midLevelMelissa" data-background="imgs/the-hunger-games.jpeg" -->
 
 <div class="SpecificityGame">
   <div class="Specificity">
@@ -177,7 +177,7 @@ $(".big-html-area").css({
 ------
 
 ## Resources
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Specificity" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 * [Specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) by MDN
 * [Specifics on CSS Specificity](https://css-tricks.com/specifics-on-css-specificity/) by [Chris Coyier](http://twitter.com/chriscoyier)

@@ -14,7 +14,7 @@ TODO: show some nasty code with colors everywhere some crazy selectors, yada yad
 ------
 
 ## Variables
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob" -->
 
 <pre class="language-scss"><code>
 $font-stack:    Helvetica, sans-serif;
@@ -29,7 +29,7 @@ body {
 ------
 
 ## Nesting
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob" -->
 
 <pre class="language-scss"><code>
 nav {
@@ -52,7 +52,7 @@ nav {
 ------
 
 ## Imports
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob" -->
 
 <pre class="language-scss"><code>
 /* base.scss */
@@ -68,7 +68,7 @@ body {
 ------
 
 ## Mixins
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob" -->
 
 <pre class="language-scss"><code>
 @mixin border-radius($radius) {
@@ -84,7 +84,7 @@ body {
 ------
 
 ## Extend
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob" -->
 
 <pre class="language-scss"><code>
 .message {
@@ -103,7 +103,7 @@ body {
 ------
 
 ## Extending Place Holders
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 <pre class="language-scss"><code>
 %message {
@@ -122,14 +122,14 @@ body {
 ------
 
 ## Scut
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 > "You can think of the word Scut as an acronym for Sass-CSS Utitilies. Or think of it this way: Scut will help you, the frontend laborer, do your scut work." --[Scut](https://davidtheclark.github.io/scut/)
 
 ------
 
 ## Scut
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 <pre class="language-scss"><code>
 .eg-absolute-2 {
@@ -144,7 +144,7 @@ body {
 ------
 
 ## LibSass
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 * Ruby Sass
 * LibSass
@@ -154,7 +154,7 @@ body {
 ------
 
 ## Style Guidelines
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 * [CSS Tricks: Sass Style Guide](https://css-tricks.com/sass-style-guide/
 )
@@ -163,6 +163,7 @@ body {
 ------
 
 ## Finding Unused Sass variables
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 <pre class="language-bash"><code>
 #!/usr/bin/env bash
@@ -181,7 +182,7 @@ Source: [Finding unused SCSS variables](http://blog.gospodarets.com/finding_unus
 ------
 
 ## Resources
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 * [Sass Compatibility Guide](https://sass-compatibility.github.io/)
 * [CSS Tricks: Sass Style Guide](https://css-tricks.com/sass-style-guide/

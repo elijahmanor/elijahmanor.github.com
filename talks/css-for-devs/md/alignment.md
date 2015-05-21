@@ -33,7 +33,7 @@ Thinking about example using floats for layout (grid system), but then trying to
 ------
 
 ## Alignment in CSS is a Pain
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 * [Centering in CSS: A Complete Guide](https://css-tricks.com/centering-css-complete-guide/)
 * [How to Center in CSS](http://howtocenterincss.com/
@@ -42,13 +42,14 @@ Thinking about example using floats for layout (grid system), but then trying to
 ------
 
 ## Flex-box
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 <div class="caniuse" data-feature="flexbox"></div>
 
 ------
 
 ## Flexbox: What & How?
+<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 * [Solved by Flexbox](http://philipwalton.github.io/solved-by-flexbox/)
 * [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
@@ -59,14 +60,14 @@ Notes:
 * https://blog.codepen.io/2015/04/12/flexbox-fridays-by-lincoln-loop/
 
 ## Quick Introduction to Flex-box
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 TODO: Quick intro to flexbox because that could be a whole talk by itself probably
 
 ------
 
 ## Resources
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 * [Centering in CSS: A Complete Guide](https://css-tricks.com/centering-css-complete-guide/)
 * [How to Center in CSS](http://howtocenterincss.com/

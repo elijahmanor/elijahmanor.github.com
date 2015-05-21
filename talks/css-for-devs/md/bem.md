@@ -15,7 +15,7 @@ Notes:
 ------
 
 ## Origins
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob" -->
 
 > The BEM methodology was developed at Yandex with the following goals in mind:
 
@@ -29,7 +29,7 @@ Source: [Origins of the BEM Methodology](https://en.bem.info/method/#origins-of-
 ------
 
 ## So, What is BEM?
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob" -->
 
 * **B**<!-- .element style="color: red" -->lock
 * **E**<!-- .element style="color: red" -->lement
@@ -38,7 +38,7 @@ Source: [Origins of the BEM Methodology](https://en.bem.info/method/#origins-of-
 ------
 
 ## Examples
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob" -->
 
 <pre class="language-css"><code>
 /* Block */
@@ -56,7 +56,7 @@ Source: [Origins of the BEM Methodology](https://en.bem.info/method/#origins-of-
 ------
 
 ## Modified BEM Syntax for Usability
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 <pre class="language-css"><code>
 /* Block */
@@ -76,7 +76,7 @@ Source: [A BEM syntax with UX in mind](http://simurai.com/blog/2013/10/24/BEM-sy
 ------
 
 ## Media Example
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 <pre class="language-css"><code>
 .Media {
@@ -104,7 +104,7 @@ Source: [A BEM syntax with UX in mind](http://simurai.com/blog/2013/10/24/BEM-sy
 ------
 
 ## Sass @at-root
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 <pre class="language-css"><code>
 .block {
@@ -120,7 +120,7 @@ Source: [A BEM syntax with UX in mind](http://simurai.com/blog/2013/10/24/BEM-sy
 ------
 
 ## Media Example with Sass
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 <pre class="language-css"><code>
 .Media {
@@ -148,7 +148,7 @@ Source: [A BEM syntax with UX in mind](http://simurai.com/blog/2013/10/24/BEM-sy
 ------
 
 ## Resources
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 * [Yandex BEM](https://en.bem.info/)
 * [BEM 101](https://css-tricks.com/bem-101/) by [Joe Richardson](https://twitter.com/joericho)

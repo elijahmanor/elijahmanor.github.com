@@ -6,7 +6,7 @@
 ------
 
 ## Scenario
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Sass Docs" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 Have you ever thought one of these thoughts?
 
@@ -18,14 +18,14 @@ Have you ever thought one of these thoughts?
 ------
 
 ## SassDoc Example
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Sass Docs" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 [![](./imgs/sassdoc-example.png)](http://thoughtbot.github.io/neat-docs/latest/)
 
 ------
 
 ## Resources
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Sass Docs" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 * [SassDoc](http://sassdoc.com/)
 

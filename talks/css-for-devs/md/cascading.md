@@ -6,7 +6,7 @@
 ------
 
 ## Scenario <small>([CodePen](http://codepen.io/elijahmanor/pen/pJEyRE?editors=110))</small><!-- .element style="vertical-align: middle;" -->
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob" -->
 
 ### Have you ever done this?
 
@@ -42,7 +42,7 @@ h1 {
 ------
 
 ## Importance
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob" -->
 
 ### Sources
 
@@ -57,7 +57,7 @@ Resource: [W3C: The Cascade](http://www.w3.org/TR/CSS2/cascade.html#cascade)
 ------
 
 ## Importance
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob" -->
 
 ### Priority <small>(lowest to highest)</small><!-- .element style="vertical-align: middle;" -->
 
@@ -72,7 +72,7 @@ Resource: [W3C: The Cascade](http://www.w3.org/TR/CSS2/cascade.html#cascade)
 ------
 
 ## CSS Resets & Normalize
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob" -->
 
 User Agent Stylesheets vary from Browser to Browser
 
@@ -82,7 +82,7 @@ User Agent Stylesheets vary from Browser to Browser
 ------
 
 ## [Cascaded properties](http://www.w3.org/TR/CSS21/propidx.html)
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
   <div class="Split-column fragment">
@@ -116,7 +116,7 @@ User Agent Stylesheets vary from Browser to Browser
 ------
 
 ## Making Non-Inherited Properties Cascade <small>([CodePen](http://codepen.io/elijahmanor/pen/bdwpvE?editors=110))</small><!-- .element style="vertical-align: middle;" -->
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 <div class="Split">
   <div class="Split-column">
@@ -129,8 +129,7 @@ User Agent Stylesheets vary from Browser to Browser
 &lt;/div&gt;</code></pre>
   </div>
   <div class="Split-column">
-    <pre class="language-css"><code>
-.container {
+    <pre class="language-css" data-line="8"><code>.container {
   padding: 1em;
   border: 1px dashed green;
 }
@@ -145,7 +144,7 @@ User Agent Stylesheets vary from Browser to Browser
 ------
 
 ## Leveraging the Cascade <small>([CodePen](http://codepen.io/elijahmanor/pen/aOmNWq?editors=110))</small><!-- .element style="vertical-align: middle;" -->
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
   <div class="Split-column">
@@ -187,7 +186,7 @@ html, body {
 ------
 
 ## Resources
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 * [W3C: CSS Cascading and Inheritance Level 3](http://www.w3.org/TR/css3-cascade/)
 * [W3C: Appendix F. Full property table](http://www.w3.org/TR/CSS21/propidx.html)

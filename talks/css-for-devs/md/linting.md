@@ -13,6 +13,7 @@ Notes:
 ------
 
 ## SCSS-Lint
+<!-- .slide: data-title="Linting" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 > "Configurable tool for writing clean and consistent SCSS" --[SCSS-Lint](https://github.com/brigade/scss-lint)
 
@@ -26,7 +27,7 @@ Notes:
 ------
 
 ## Resources
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Linting" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 * [SCSS Lint](https://github.com/brigade/scss-lint)
 * [CSS Comb](css-comb)
