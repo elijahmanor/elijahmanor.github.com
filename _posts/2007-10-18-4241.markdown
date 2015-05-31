@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-10-18 12:33:00'
+---
+
+"Manual testing is immoral. Not only is it high stress, tedious, and error prone; it's just wrong to turn humans into machines." --<a href="http://blog.objectmentor.com/articles/2007/10/17/tdd-with-acceptance-tests-and-unit-tests">Uncle Bob</a>

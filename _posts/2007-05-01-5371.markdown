@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-05-01 13:09:00'
+---
+
+"Real programmers don't document. If it was hard to write, it should be hard to understand." --Unknown

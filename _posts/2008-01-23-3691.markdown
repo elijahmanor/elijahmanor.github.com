@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2008-01-23 14:41:00'
+---
+
+There is no programming language, no matter how structured, that will prevent programmers from making bad programs. --Larry Flon<br><br>

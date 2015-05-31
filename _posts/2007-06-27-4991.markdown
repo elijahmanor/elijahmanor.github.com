@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-06-27 13:07:00'
+---
+
+"There is nothing more unproductive than to build something efficiently that should not have been built at all." -Milt Bryce<br>

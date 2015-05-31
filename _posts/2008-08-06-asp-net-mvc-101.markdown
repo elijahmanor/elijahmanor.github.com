@@ -1,0 +1,7 @@
+---
+layout: post
+title: ASP.NET MVC 101
+date: '2008-08-06 12:20:00'
+---
+
+<a href="http://docs.google.com/Doc?id=ajdmxxp7gmjz_128nf7kr5fh"><img src="http://2.bp.blogspot.com/_L6DiZQsfJzs/SJmaxjXAPqI/AAAAAAAAD3c/Uxc3fqW_chw/s400/AspMvc101.JPG" border="0" alt=""></a><br>This is definitely a work in progress, but I put together a <a href="http://docs.google.com/Doc?id=ajdmxxp7gmjz_128nf7kr5fh">document</a> of resources (videos and blog posts) that helped me get up to speed on ASP.NET MVC. <br><br>Hopefully, this can help you get acclimated to MVC quickly.I plan to continue to update and reorganize the <a href="http://docs.google.com/Doc?id=ajdmxxp7gmjz_128nf7kr5fh">document</a> as I learn more.<br><br>If you know of any other helpful links or resources, please leave a comment.

@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-07-25 12:08:00'
+---
+
+"If you can read this, thank a Software Developer." --Abounader Joseph<br>

@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-09-26 15:00:00'
+---
+
+"One of the things that tools can do is to help bad designers create ghastly designs much more quickly than they ever could in the past." --Grady Booch

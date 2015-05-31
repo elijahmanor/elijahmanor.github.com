@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-06-04 12:56:00'
+---
+
+<p>"The trouble with programmers is that you can never tell what a programmer is doing until it's too late." --Seymour Cray</p>

@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-10-29 12:20:00'
+---
+
+"You can't have great software without a great team, and most software teams behave like dysfunctional families." --Jim McCarthy

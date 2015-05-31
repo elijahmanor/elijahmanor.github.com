@@ -1,0 +1,7 @@
+---
+layout: post
+title: IE8 Beta 2 Pros
+date: '2008-09-25 12:30:00'
+---
+
+<div><a href="http://1.bp.blogspot.com/_L6DiZQsfJzs/SMXiYX_4ANI/AAAAAAAAERU/wyR7_Yljfns/s1600-h/Ie8DevTools.PNG" imageanchor="1"><img border="0" src="http://1.bp.blogspot.com/_L6DiZQsfJzs/SMXiYX_4ANI/AAAAAAAAERU/AI7Ab-QLOts/s400-R/Ie8DevTools.PNG"></a></div><br>I do like the <a href="http://blogs.msdn.com/ie/archive/2008/09/11/introducing-the-ie8-developer-tools-jscript-profiler.aspx" target="_blank">Developer Tools</a> that are embedded in IE 8 Beta 2. They are about equivalent to what <a href="http://getfirebug.com/" target="_blank">Firebug</a> is to Firefox, which is a great step in the right direction. <br><br>I have also noticed that the errors returned from JavaScript exceptions are much more descriptive and accurate compared to IE7 or before.

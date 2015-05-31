@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-12-04 13:27:00'
+---
+
+"A little known fact: the Strategy and State Patterns were twins separated at birth. As you know, the Strategy Pattern went on to create a wildly successful business around interchangeable algorithms. State, however, took the perhaps more noble path of helping objects to control their behavior by changing their internal state. He's often overheard telling his object clients, "Just repeat after me: I'm good enough, I'm smart enough, and doggonit..." --Head First Design Patterns <br>

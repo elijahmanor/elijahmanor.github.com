@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2008-02-07 14:21:00'
+---
+
+"Real Programmers disdain structured programming. Structured programming is for compulsive neurotics who were prematurely toilet trained. They wear neckties and carefully line up sharp pencils on an otherwise clear desk." --Unknown<br><br>

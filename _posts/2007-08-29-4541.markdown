@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-08-29 13:12:00'
+---
+
+"Computers allow you to make more mistakes faster than any other invention in human history with the possible exception of handguns and tequila." --Mitch Ratcliffe

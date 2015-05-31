@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-12-05 15:20:00'
+---
+
+"Ugly programs are like ugly suspension bridges: they're much more liable to collapse than pretty ones, because the way humans (especially engineer-humans) perceive beauty is intimately related to our ability to process and understand complexity. A language that makes it hard to write elegant code makes it hard to write good code." --Eric S. Raymond

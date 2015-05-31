@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-05-22 13:06:00'
+---
+
+standards, n.: The principles we use to reject other people's code.

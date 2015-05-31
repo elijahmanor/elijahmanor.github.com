@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-10-11 12:38:00'
+---
+
+Real Programmer Week: "Real Programmers don't need comments—the code is obvious." --Unknown<br>

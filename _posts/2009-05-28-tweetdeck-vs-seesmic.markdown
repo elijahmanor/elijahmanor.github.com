@@ -1,0 +1,7 @@
+---
+layout: post
+title: TweetDeck vs. Seesmic
+date: '2009-05-28 03:02:00'
+---
+
+<p>To <a href="http://www.tweetdeck.com/beta/" target="_blank">TweetDeck</a> or not to TweetDeck? That is the question…</p>  <p>Seriously, with the recent release of Twhirl’s big daddy <a href="http://desktop.seesmic.com/" target="_blank">Seesmic</a>, should you abandon TweetDeck and change your loyalties? </p>  <p>Well, there are two main reasons why you may consider changing your twitter client…</p>  <ol><li>Smaller Footprint</li>    <li>Supports Multiple Accounts</li> </ol><p>For more information</p>  <blockquote>   <p>Seesmic Desktop doesn't have TweetDeck's voracious appetite for RAM. At startup it weighed in at about 65Mb and has reached 79Mb after letting it run overnight. Leaving TweetDeck on would typically result in anywhere between 300 and 600Mb of memory consumed. Seesmic also supports multiple Twitter accounts, so it bests TweetDeck beaten on two fronts. --<a href="http://www.downloadsquad.com/2009/04/08/seesmic-desktop-packs-tweetdecks-features-with-a-smaller-footpr/" target="_blank">Seesmic Desktop packs TweetDeck's features with a smaller footprint</a></p> </blockquote>  <p>I’ve been using Seesmic for the past week or so and I’ve found it to be very refreshing. Most of the features from TweetDeck are present in Seesmic and I would imagine in the near future the gap between them will become even closer.</p>

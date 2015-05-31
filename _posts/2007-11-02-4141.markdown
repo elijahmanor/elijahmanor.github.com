@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-11-02 13:29:00'
+---
+
+"Two things are infinite: the universe and human stupidity; and I'm not sure about the universe." --Albert Einstein

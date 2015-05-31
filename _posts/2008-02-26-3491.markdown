@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2008-02-26 13:00:00'
+---
+
+"At the beach, the Real Programmer is the one drawing flowcharts in the sand." --Unknown

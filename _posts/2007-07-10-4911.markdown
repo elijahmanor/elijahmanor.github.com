@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-07-10 12:53:00'
+---
+
+"One of my most productive days was throwing away 1000 lines of code." --Ken Thompson

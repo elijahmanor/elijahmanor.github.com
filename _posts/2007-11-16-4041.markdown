@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-11-16 13:43:00'
+---
+
+"Alzheimer's Law of Programming: Looking at code you wrote more than two weeks ago is like looking at code you are seeing for the first time." -Via Dan Hurvitz

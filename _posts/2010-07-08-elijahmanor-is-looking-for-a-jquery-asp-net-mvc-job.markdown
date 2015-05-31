@@ -1,0 +1,7 @@
+---
+layout: post
+title: "@ElijahManor is Looking for a jQuery &amp;| ASP.NET MVC Job"
+date: '2010-07-08 19:26:00'
+---
+
+<p>If you haven’t heard already, I am looking for a new job opportunity… and yes, I realize the title of this blog is speaking in the 3rd person ;)</p>  <p>I am primarily looking for a full-time position where I can either work in a Nashville office or work remotely from Nashville.</p>  <p>I am a Microsoft MVP of ASP.NET and a member of the ASPInsiders group. </p>  <p>I specialize in developing with jQuery and ASP.NET MVC. I tend to focus on the UI only (everything up to the web service call to the middle tier). </p>  <p>I enjoy blogging, writing technical articles, speaking, and playing with the latest and greatest web development tools and libraries.</p>  <p>You can find my resume on my <a href="http://bit.ly/etm-linkedin" target="_blank">LinkedIn</a> profile.</p>  <p>I look forward to hearing more about your company & the positions that you have available.</p>  <p>Please contact me either through <a href="http://bit.ly/etm-linkedin" target="_blank">LinkedIn</a>, Twitter (<a href="http://twitter.com/elijahmanor" target="_blank">@elijahmanor</a>), or my <a href="http://elijahmanor.com/contact.aspx" target="_blank">Contact</a> page.</p>

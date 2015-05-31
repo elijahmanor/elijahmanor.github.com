@@ -1,0 +1,7 @@
+---
+layout: post
+title: JavaScript DevExpress Webinar on 2-Feb-2011
+date: '2011-01-27 16:37:00'
+---
+
+The fine people at <a href="http://www.devexpress.com/">DevExpress</a> are letting me present a <a href="http://community.devexpress.com/blogs/aspnet/archive/2011/01/24/javascript-webinar-w-elijah-manor-learn-how-good-c-habits-can-encourage-bad-javascript-habits.aspx">Webinar</a> covering the<b> Good C# Habits can Encourage Bad JavaScript Habits</b> series that I wrote on the <a href="http://enterprisejquery.com/">Enterprise jQuery</a> website.<br><br>The Webinar will take place on Wednesday February 2nd, 2011 at 12:00pm CST (<a href="http://timeanddate.com/worldclock/fixedtime.html?month=2&day=2&year=2011&hour=12&min=0&sec=0&p1=171">other time zones</a>).<br><blockquote>This happens to be the same talk that I submitted as a proposed topic to the Mix11 conference. I would appreciate if you could <a href="http://j.mp/gdg3bg">vote for my session</a> to be included in the conference line-up. Thanks!</blockquote>The session is considered beginning as it covered introduction level  JavaScript concepts that may not be known by a typical C# developer. The  talk will last about an hour, but it may go a little over with  questions and answers.<br><br><a href="https://www3.gotomeeting.com/register/662401030">Register Now</a><br><br>

@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-09-25 12:26:00'
+---
+
+"Why bother with subroutines when you can type fast?" --Vaughn Rokosz

@@ -1,0 +1,7 @@
+---
+layout: post
+title: Geek Art
+date: '2008-06-16 11:41:00'
+---
+
+q. We can show up in many places throughout your precious code.<br>We can help you when you start; we can help you down the road.<br>We like to collaborate with others; we mix and match and play.<br>We compose a geek's work of art; one that he's happy to display.<br><br>Who are we?<br><br>a. Design Patterns<br><br>~/joke by me

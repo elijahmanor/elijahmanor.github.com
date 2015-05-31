@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2008-02-28 14:31:00'
+---
+
+"There comes a time when we must refactor our code in order for it to grow. To not do so would leave us with rigid, inflexible code that has no hope of ever sprouting new life." --Head First Design Patterns<br>

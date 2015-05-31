@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-06-18 12:05:00'
+---
+
+"If the code and the comments disagree, then both are probably wrong." --Norm Schryer

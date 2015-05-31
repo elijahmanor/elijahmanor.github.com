@@ -1,0 +1,7 @@
+---
+layout: post
+title: Lead Spot
+date: '2008-06-12 10:59:00'
+---
+
+q. What leads the way and also marks the spot?<br><br>a. XPath<br><br>~/joke by me

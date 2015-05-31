@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-10-04 12:10:00'
+---
+
+McConnell week: "A brute force solution that works is better than an elegant solution that doesn't work." --Steve McConnell

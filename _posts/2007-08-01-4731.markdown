@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-08-01 13:52:00'
+---
+
+"Software gets slower faster than hardware gets faster." --Wirth's Law<br>

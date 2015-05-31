@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2008-01-09 15:31:00'
+---
+
+"Good judgement comes from experience, and experience comes from bad judgement." --Frederick P. Brooks

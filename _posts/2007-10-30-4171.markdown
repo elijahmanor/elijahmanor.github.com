@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-10-30 13:24:00'
+---
+
+"Programming can be fun, so can cryptography; however they should not be combined." --Kreitzberg and Shneiderman

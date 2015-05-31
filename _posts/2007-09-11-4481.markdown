@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-09-11 12:35:00'
+---
+
+"If you cannot grok the overall structure of a program while taking a shower, you are not ready to code it." --Richard Pattis

@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-07-30 12:13:00'
+---
+
+"Adding manpower to a late software project makes it later." --Brook's Law<br>

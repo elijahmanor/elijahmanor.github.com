@@ -1,0 +1,7 @@
+---
+layout: post
+title: CodeStock 2009 Call for Speakers
+date: '2009-03-23 15:20:00'
+---
+
+<a href="http://2.bp.blogspot.com/_L6DiZQsfJzs/ScelM5OFh3I/AAAAAAAAGu0/cXkRxNDzb8c/s1600-h/codestock_title_09.png" imageanchor="1"><img border="0" src="http://2.bp.blogspot.com/_L6DiZQsfJzs/ScelM5OFh3I/AAAAAAAAGu0/cXkRxNDzb8c/s320/codestock_title_09.png"></a><p><a href="http://codestock.org/Default.aspx">CodeStock 2009</a> is just around the corner.</p><p><a href="http://codestock.org/Default.aspx">CodeStock</a> is a .NET developer's conference held in Knoxville, TN on June 26-27, 2009.</p><p>This is a great opportunity to hear lots of great speakers and collaborate with other geeks for only $25!</p><p>If you are at all interested in speaking at CodeStock then I encourage you to  <a href="http://codestock.org/Speakers.aspx">submit your abstracts today!</a>. You have until March 30th to submit yourself as a speaker.</p><p>Here is a snippet from their <a href="http://codestock.org/Default.aspx">website</a>...</p><blockquote><p>CodeStock 2009 is going to be held on June 26th and 27th. Registration will open on or after March 31st and the cost for CodeStock will stay the same as 2008 - $25.</p> <p>CodeStock will be held on June 26th and 27th, 2009 in Knoxville, TN. Speaker applications are due March 30th. Speaker selections will be announced on or before May 15th.</p></blockquote>

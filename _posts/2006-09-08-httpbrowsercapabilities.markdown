@@ -1,0 +1,7 @@
+---
+layout: post
+title: HttpBrowserCapabilities
+date: '2006-09-08 01:34:00'
+---
+
+The current project I am working on involves a website that is external facing. Since I am using CSS and JavaScript in ASP.NET 2.0 older browsers may not behave as expected. Therefore, I implemented White, Black, and Gray browser lists.<br><br>Initially, I used a <a href="http://jsbrwsniff.sf.net/">JavaScript Browser Sniffer Library</a> written by Pau Garcia i Quiles, but then I became aware of the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpref/html/frlrfSystemWebHttpBrowserCapabilitiesClassTopic.asp">HttpBrowserCompatibilites</a> class in .NET!<br><br>I just finished rewritting the lists using .NET's Browser object ( located off the Request object ). If you are interested in knowing how .NET figures out all this information check out the <a href="http://msdn2.microsoft.com/en-us/library/ms228122.aspx">Browser Definition File Schema</a>. You can find all of the browser definitions on your machine at "%SystemRoot%\Microsoft.NET\Framework\version\CONFIG\Browsers". Its very interesting to look through the files and see what information .NET uses to determine your browser information.

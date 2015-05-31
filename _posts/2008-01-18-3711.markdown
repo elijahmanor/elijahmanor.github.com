@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2008-01-18 18:56:00'
+---
+
+"When an Indian shakes his head at your software design, don't take it personally; he is probably agreeing with you!" --Elijah Manor

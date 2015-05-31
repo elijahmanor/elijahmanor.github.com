@@ -1,0 +1,398 @@
+#dialog { z-index: 999; }
+#dialog .modules { list-style-type: none; font-size: 1.5rem; }
+#dialog h3 { color: black; }
+
+#Introduction img { background: none; border: none; box-shadow: none: }
+
+#Introduction .CSSForDevelopers {
+  border: 5px solid white;
+  height: 250px;
+  width: 250px;
+  margin: 1em auto;
+  transform: perspective(500px);
+  animation: CSSForDevelopers-animation 3s ease-in 6s infinite alternate;
+}
+#Introduction .CSSForDevelopers-text {
+  font-size: 2em;
+  text-align: left;
+  width: 100px;
+  line-height: 1.1em;
+  margin-left: 0.25em;
+}
+
+/* animation: name duration timing-function delay iteration-count direction; */
+@keyframes CSSForDevelopers-animation {
+  from {}
+  to {
+    text-shadow: gray 5px 5px;
+    transform: rotateY(-25deg);
+  }
+}
+
+.Title {
+  position: absolute;
+  color: white; /* #999; */
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.65vh; //0.1rem;
+  transition: left 1s ease-out;
+  transform: rotate(-90deg);
+  transform-origin: 0% 0%;
+  right: 0;
+  text-align: end;
+  left: -3rem;
+  top: 100vh;
+  width: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.Title.Title--show {
+  padding: 0.5rem;
+  left: 0;
+}
+
+.icon--positive { color: #5CB85C; }
+.icon--negative { color: #D9534F; }
+
+[data-store] {
+  outline: 1px dashed rgba(0, 0, 0, 0.25);
+}
+
+pre[class*='language'] { font-size: 1.25rem; }
+pre[data-line] { padding: 1em; }
+.line-highlight:before, .line-highlight[data-end]:after { content: ''; }
+.line-highlight { background: -webkit-linear-gradient(left, rgba(153, 122, 102, 0.25) 70%, rgba(153, 122, 103, 0.15)); }
+.line-highlight { transform: translateY(25px); }
+
+.PersonaList { position: fixed; left: 1rem; bottom: 1rem; z-index: 1; }
+.PersonaList .Persona {
+  width: 6rem;
+  float: left;
+  text-align: center;
+  margin: 0.5rem;
+  transition: all 1s ease-in;
+  position: relative;
+  top: 10rem;
+}
+.Persona .Persona-image { border-radius: 50%; border: 3px solid white; }
+.Persona .Persona-name { font-size: 0.75rem; }
+.backEndBrian .Persona--backEndBrian {
+  top: 0;
+}
+.juniorJacob .Persona--juniorJacob {
+  top: 0;
+}
+.midLevelMelissa .Persona--midLevelMelissa {
+  top: 0;
+}
+
+.Split {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: flex-start;
+}
+.Split .Split-column {
+  order: 0;
+  flex: 0 1 50%;
+  align-self: auto;
+  margin: 1rem;
+}
+.Split .Split-column blockquote {
+  width: 100%;
+  margin: 10px auto;
+}
+
+.Split-column > p, .Split-column h4 {
+  text-align: left;
+}
+
+.crazybox--2 {
+  width: 200px;
+  height: 200px;
+  background-color: #F00;
+  box-sizing: content-box;
+  font-size: 2rem !important;
+  line-height: 200px !important;
+}
+.stick--200--2 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  width: 200px;
+  height: 5px;
+  background-color: blue;
+}
+
+.crazybox--3 {
+  width: 200px;
+  height: 200px;
+  background-color: #F00;
+  box-sizing: content-box;
+  font-size: 2rem !important;
+  line-height: 200px !important;
+  padding: 1rem !important;
+  border: 1rem solid blue !important;
+  position: relative !important;
+}
+.crazybox--3:after,
+.crazybox--3::after {
+  content: ' ' !important;
+  display: block !important;
+  position: absolute !important;
+  top: 1rem !important;
+  left: 1rem !important;
+  right: 1rem !important;
+  bottom: 1rem !important;
+  outline: 1px dashed white;
+}
+.stick--200--3 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  width: 200px;
+  height: 5px;
+  background-color: blue;
+}
+
+.smartbox--4 {
+  width: 200px;
+  height: 200px;
+  background-color: #F00;
+  box-sizing: border-box;
+  font-size: 2rem !important;
+  padding: 1rem !important;
+  border: 1rem solid blue !important;
+  position: relative !important;
+  display: table-cell !important;
+  vertical-align: middle !important;
+}
+.smartbox--4:after,
+.smartbox--4::after {
+  content: ' ' !important;
+  display: block !important;
+  position: absolute !important;
+  top: 1rem !important;
+  left: 1rem !important;
+  right: 1rem !important;
+  bottom: 1rem !important;
+  outline: 1px dashed white;
+}
+.stick--200--4 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  width: 200px;
+  height: 5px;
+  background-color: blue;
+}
+
+.Specificity { margin-bottom: 7rem !important; }
+.Specificity-input {
+  width: 70%;
+  font-size: 2rem;
+  height: 2rem;
+  padding: 0.75rem 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+.Specificity--fire .Specificity-input, .Specificity--fire .Specificity-value {
+  text-shadow:
+    0 3px 20px red,
+    0 0 20px red,
+    0 0 10px orange,
+    4px -5px 6px yellow,
+    -4px -10px 10px yellow,
+    0 -10px 30px yellow;
+  animation: 1s Blazing infinite alternate ease-in;
+}
+.Specificity-score { display: flex; justify-content: center; }
+.Specificity .Specificity-value {
+  margin: 0 .5rem; border-radius: 50%; padding: 0.5rem; color: black;
+  background-color: white; height: 3rem; width:  3rem; justify-content: center;
+  flex-direction: row; text-align: center; display: flex; align-items: center; position: relative;
+}
+.Specificity .Specificity-value:after {
+  display: inline-block;
+  font-size: 0.7rem;
+  color: #FFF;
+  position: absolute;
+  top: 5rem;
+  left: 0rem;
+  text-align: center;
+  width: 100%;
+}
+.Specificity-value.Specificity-value--inline { border: solid 5px #F8D400; }
+.Specificity-value.Specificity-value--inline:after {
+  content: 'Inline Styles';
+}
+.Specificity-value.Specificity-value--ids { border: solid 5px  #E1091C; }
+.Specificity-value.Specificity-value--ids:after {
+  content: 'IDs';
+}
+.Specificity-value.Specificity-value--classes { border: solid 5px #5DB1DC; }
+.Specificity-value.Specificity-value--classes:after {
+  content: 'Classes, attrs, & pseudo-classes';
+}
+.Specificity-value.Specificity-value--elements { border: solid 5px #006633; }
+.Specificity-value.Specificity-value--elements:after {
+  content: 'Elements & psuedo-elements';
+}
+
+.specificity .slide-background.present { opacity: 0.5; }
+.specificity h2 { font-family: 'Orbitron', sans-serif; }
+.specificity .Specificity { font-family: 'Orbitron', sans-serif; margin-bottom: 2rem !important; }
+.specificity .Specificity-input { font-family: 'Orbitron', sans-serif; }
+.specificity .Specificity .Specificity-value { font-family: 'Orbitron', sans-serif; flex-direction: column; justify-content: flex-end; }
+.specificity .SpecificityGame button { font-family: 'Orbitron', sans-serif; font-size: 1rem; padding: 1rem; }
+.specificity .Specificity .Specificity-value:before {
+  content: '';
+  background-image: url('../imgs/hungergames-token-classic.png');
+  background-size: cover;
+  opacity: 0.25;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
+
+/* http://codepen.io/makan/pen/yyjRZx */
+@keyframes Blazing {
+0%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+  0 0 10px orange,
+  0 0 0 yellow,
+  0 0 5px yellow,
+  -2px -5px 5px yellow,
+  4px -10px 10px yellow; }
+25%   { text-shadow: 0 3px 20px red, 0 0 30px red,
+  0 0 20px orange,
+  0 0 5px yellow,
+  -2px -5px 5px yellow,
+  3px -10px 10px yellow,
+  -4px -15px 20px yellow; }
+50%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+  0 -5px 10px orange,
+  -2px -5px 5px yellow,
+  3px -10px 10px yellow,
+  -4px -15px 20px yellow,
+  2px -20px 30px rgba(255,255,0,0.5); }
+75%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+  0 -5px 10px orange,
+  3px -5px 5px yellow,
+  -4px -10px 10px yellow,
+  2px -20px 30px rgba(255,255,0,0.5),
+  0px -25px 40px rgba(255,255,0,0)}
+100%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+  0 0 10px orange,
+  0 0 0 yellow,
+  0 0 5px yellow,
+  -2px -5px 5px yellow,
+  4px -10px 10px yellow; }
+}
+
+.caniuse {
+  margin: auto !important;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  color: #333;
+  padding: 1rem !important;
+  font-size: 1rem !important;
+  width: 40rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.caniuse .agents, .caniuse .legend { width: 100% !important; }
+
+.DemoPositionScenario {
+}
+.DemoPositionScenario-box {
+  background-color: blue;
+  position: relative;
+  width: 200px;
+  height: 50px;
+  border: 1px solid white !important;
+}
+.DemoPositionScenario-box:first-of-type {
+}
+.DemoPositionScenario-box:last-of-type {
+  position: relative;
+  top: -10px;
+  left: 10px;
+}
+
+.DemoPositionStatic-box {
+  width: 100px;
+  height: 100px;
+  margin: 5px !important;
+  background: red;
+}
+
+.DemoPositionRelative-box {
+  width: 100px;
+  height: 100px;
+  margin: 5px !important;
+  background: red;
+  border: 1px solid white !important;
+  position: relative;
+  text-align: center;
+  line-height: 100px !important;
+  font-size: 0.75em !important;
+}
+.DemoPositionRelative-box:nth-of-type(1) { top: 25px; }
+.DemoPositionRelative-box:nth-of-type(2) { left: -25px; z-index: 1; }
+.DemoPositionRelative-box:nth-of-type(3) { top: -25px; left: 25px; }
+
+.DemoPositionAbsolute {
+  border: 1px solid blue !important;
+  padding: 3em !important;
+}
+.DemoPositionAbsolute-box {
+  width: 100px;
+  height: 100px;
+  margin: 5px auto !important;
+  background: red;
+  border: 1px solid white !important;
+  text-align: center;
+  line-height: 100px !important;
+  font-size: 0.75em !important;
+}
+.DemoPositionAbsolute-box:nth-of-type(1) { }
+.DemoPositionAbsolute-box:nth-of-type(2) { position: absolute; top: 0; left: 0; }
+.DemoPositionAbsolute-box:nth-of-type(3) { }
+
+.DemoPositionAbsolute--2 {
+  position: relative;
+}
+
+/* .slide--demoPositionFixed { height: 200vh; } */
+.DemoPositionFixed {
+  border: 1px solid blue !important;
+  padding: 3em !important;
+}
+.DemoPositionFixed-box {
+  width: 100px;
+  height: 100px;
+  margin: 5px auto !important;
+  background: red;
+  border: 1px solid white !important;
+  text-align: center;
+  line-height: 100px !important;
+  font-size: 0.75em !important;
+}
+.DemoPositionFixed-box:nth-of-type(1) { }
+.DemoPositionFixed-box:nth-of-type(2) { position: fixed; top: 0; left: 0; }
+.DemoPositionFixed-box:nth-of-type(3) { }
+
+.InProgress .reveal::after {
+  content: 'In Progress';
+  color: red;
+  font-size: .75em;
+  border: 3px solid red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: .5em;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+}

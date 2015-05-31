@@ -1,0 +1,7 @@
+---
+layout: post
+title: Regular Expression Tools
+date: '2006-07-31 12:52:00'
+---
+
+As I develop, it seems I am using regular expressions more and more. So, I am always on the lookout for a good tool to help me edit and verify my expressions.<br><br>I used to use an online tool called the <a href="http://www.miningtools.net/regextester.aspx">Regex .NET Tester</a>, but recently I have found a rich thick client called <a href="http://tools.osherove.com/CoolTools/Regulator/tabid/185/Default.aspx">The Regulator</a>. This is a free advanced regular expression editor written by <a href="http://www.iserializable.com/">Roy Osherove</a>.<br><br>Roy has also written a regular expression creation tool for beginners called <a href="http://tools.osherove.com/CoolTools/Regulazy/tabid/182/Default.aspx">Regulazy</a>. I haven't tried this one, but it looks like it might be a good learning tool.<br><br>In addition to the tools above I find that a good regular expression cheet sheet comes in useful every once in a while. There are two good cheet sheets located at the  <a href="http://www.regexlib.com/CheatSheet.aspx">RegExLib</a> and <a href="http://visibone.com/regular-expressions/">Visibone</a> websites.

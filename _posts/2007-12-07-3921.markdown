@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-12-07 15:59:00'
+---
+
+"A good programmer is someone who looks both ways before crossing a one-way street." --Doug Linder

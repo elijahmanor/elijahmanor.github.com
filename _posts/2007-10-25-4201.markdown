@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-10-25 12:01:00'
+---
+
+"XP is the answer to the question, 'How little can we do and still build great software?'" --Unknown<br>

@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-07-13 13:02:00'
+---
+
+"I released a piece of software once on a Friday 13th and vowed never to do it again." --Unknown

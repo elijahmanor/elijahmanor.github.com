@@ -1,0 +1,7 @@
+---
+layout: post
+title: More Keyboard Shortcuts
+date: '2007-03-20 00:34:00'
+---
+
+A friend of mine is planning to go mouseless... <br><br>He just installed <a href="http://www.launchy.net/" target="_blank">Launchy</a> ( which I just installed and its awesome ) to help launch applications and <a href="http://www.jetbrains.com/resharper/" target="_blank">ReSharper</a> to help him when he develops.<br><br>Here are some other helpful <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=C15D210D-A926-46A8-A586-31F8A2E576FE&displaylang=en">c# Shortcuts</a> you can use for developement. Another useful resource I found was a blog entry on <a href="http://tech.cybernetnews.com/2006/08/29/cybernotes-keyboard-shortcuts-for-your-programs/" target="_blank">CyberNetNews</a> listing shortcuts for many other applications.<br><br>Personally, from my start menu I have isolated the entries that I use most often and assigned shortcut keys to them. For example, I have the Shortcut key property on the link from "Start->Programs->Mozilla Firefox->Mozilla Firefox" defined as "Ctrl + Shift + F".<br><br>If you know of any other great tools or techniques for going mouseless, please leave a comment and share it with others.

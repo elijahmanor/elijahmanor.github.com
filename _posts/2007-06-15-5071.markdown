@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-06-15 13:09:00'
+---
+
+"Software and cathedrals are much the same - first we build them, then we pray." --Unknown<br>

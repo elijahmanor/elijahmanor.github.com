@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2008-01-07 15:34:00'
+---
+
+"A known bug is better than an unknown feature." --Manoj Sati

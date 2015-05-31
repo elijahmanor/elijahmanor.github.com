@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-06-14 13:09:00'
+---
+
+"Testing can only prove the presence of bugs, not their absence." --Edsger Dijkstra

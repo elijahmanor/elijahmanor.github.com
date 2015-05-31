@@ -1,0 +1,7 @@
+---
+layout: post
+title: VS 2005 Shortcuts
+date: '2006-08-22 03:16:00'
+---
+
+A college of mine asked me if I knew the shortcut for getting the matching brace/bracket/parethesis in Visual Studio 2005. I didn't know, so in my search for the answer I ran across a useful page with lots of useful <a href="http://www.codinghorror.com/blog/files/Visual%20Studio%20.NET%202005%20Keyboard%20Shortcuts.htm">Shortcuts for Visual Studio 2005</a>.<br><br>By the way, the shortcut for matching a brace/bracket/parethesis is “Ctrl-]”.

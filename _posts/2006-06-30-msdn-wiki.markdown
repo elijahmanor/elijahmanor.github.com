@@ -1,0 +1,7 @@
+---
+layout: post
+title: MSDN Wiki
+date: '2006-06-30 12:32:00'
+---
+
+For those of you who would like to add your thoughts, code examples, tips and tricks, or whatever to the MSDN VS 2005 documentation there is a Wiki hosted by Microsoft.<br><br>http://msdnwiki.microsoft.com/en-us/mtpswiki/default.aspx

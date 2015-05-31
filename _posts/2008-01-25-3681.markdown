@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2008-01-25 13:20:00'
+---
+
+"A C program is like a fast dance on a newly waxed dance floor by people carrying razors." --Waldi Ravens

@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-07-18 12:15:00'
+---
+
+"Measuring programming progress by lines of code is like measuring aircraft building progress by weight." --Bill Gates<br>

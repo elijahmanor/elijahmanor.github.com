@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-10-31 12:12:00'
+---
+
+"In My Egotistical Opinion, most people's C programs should be indented six feet downward and covered with dirt." --Blair P. Houghton

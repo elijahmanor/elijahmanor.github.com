@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-08-03 11:58:00'
+---
+
+"A task always takes longer than you expect, even when you take into account Hofstadter's Law." --Hofstadter's Law<br>

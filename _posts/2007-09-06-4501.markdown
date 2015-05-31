@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-09-06 12:08:00'
+---
+
+"Designers must do two seemingly contradictory things at the same time: They must design for perfection, and they must design as though errors are inevitable. And they must do the second without compromising the first." --Bob Colwell

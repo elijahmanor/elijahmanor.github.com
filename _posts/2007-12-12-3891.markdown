@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-12-12 15:11:00'
+---
+
+"Most software isn't designed. Rather, it emerges from the development team like a zombie emerging from a bubbling vat of Research and Development juice. When a discipline is hugging the ragged edge of technology, this might be expected, but most of today's software is comprised of mostly 'D' and very little 'R'." --Alan Cooper

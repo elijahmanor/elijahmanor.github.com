@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2008-01-29 13:33:00'
+---
+
+"The key to performance is elegance, not battalions of special cases." --Jon Bentley and Doug McIlroy

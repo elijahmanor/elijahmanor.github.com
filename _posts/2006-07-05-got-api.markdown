@@ -1,0 +1,7 @@
+---
+layout: post
+title: Got API?
+date: '2006-07-05 22:23:00'
+---
+
+For those of you who do web UI development I ran across an online API tool (for HTML, CSS, JavaScript, XSL, XPath, etc…) and thought it looked very useful, especially since it pulls from some of the sites I frequent anyway ( <a href="http://www.w3schools.com/">w3schools</a> & <a href="http://msdn.microsoft.com/library/default.asp?url=/workshop/author/html/reference/elements.asp">MSDN</a> ).<br><br>There seems to be plans to expand the site to include other technologies as well.<br><br>The site is <a href="http://www.gotapi.com/">http://www.gotapi.com/</a>

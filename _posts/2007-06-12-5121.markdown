@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-06-12 12:17:00'
+---
+
+"There are only two industries that refer to their customers as 'users'." --Edward Tufte

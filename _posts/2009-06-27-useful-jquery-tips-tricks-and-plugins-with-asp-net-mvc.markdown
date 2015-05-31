@@ -1,0 +1,7 @@
+---
+layout: post
+title: Useful jQuery Tips, Tricks, and Plugins with ASP.NET MVC
+date: '2009-06-27 03:05:00'
+---
+
+<p>I’ve given several User Group talks thus far, but this morning I gave my first conference presentation this morning at <a href="http://www.codestock.org/Default.aspx">CodeStock</a> in Knoxville, TN.</p>  <p>Thanks to all that came out to the talk. I hope you found some useful tips &| tricks that you can your in your near to short term development.</p>  <p>If you were able to attend the presentation could you please consider <a href="http://speakerrate.com/talks/1218-useful-jquery-tips-tricks-and-plugins-with-asp-net-mvc">filling out a rating of the talk</a> to help assist me become a better presenter?</p>  <p>Feel free to grab the <a href="http://cid-3aca4e8ff9604b56.skydrive.live.com/self.aspx/Public/jQueryTipsTricksAspNetMvc.zip">sample code</a> that I used during my presentation. Since I used Google Docs Presentation for my slides I am going to embed those here for your review.</p>  <p></p>  <p>Personally, I like it when people post their slides & code on their blog, but then several months down the line it is difficult to find that information again… </p>  <p>So, I plan to split apart the presentation into numerous detailed blog posts for those that were unable to make CodeStock and for those who would like to find the material easier in the future.</p>  <p>Thanks again for all of you who attended my presentation. I look forward to the rest of the conference.</p>

@@ -1,0 +1,7 @@
+---
+layout: post
+title: 'Acronym Seeking Abbreviation: ASP.NET MVC'
+date: '2009-01-13 05:22:00'
+---
+
+<p>I don't know about you, but ever since I got on the "ASP.NET MVC" bandwagon I started to feel something inside of me that really didn't want to type 11 characters to represent the technology, and the funny thing is that "ASP.NET MVC" is already an Acronym! I am thankful that I don't have to type out "Active Server Pages .NET Model View Controller" Whew!!!</p><p>Anyway, although this might muddy the waters, as someone has already mentioned, I thought I would start a poll in seek of an abbreviated term to represent "ASP.NET MVC". Here are my findings...</p><br><a href="http://1.bp.blogspot.com/_L6DiZQsfJzs/SWwoXMW-V8I/AAAAAAAAGek/ZhYJfBOdP6M/s1600-h/MvcPollResults.PNG"><img src="http://1.bp.blogspot.com/_L6DiZQsfJzs/SWwoXMW-V8I/AAAAAAAAGek/ZhYJfBOdP6M/s400/MvcPollResults.PNG" border="0" alt=""></a><br><p>After all of that... what does it mean!?! Honestly, probably not a whole lot :)</p><p>Although, I really like the idea of typing "MVC.NET", we probably should just stick to the original term "ASP.NET MVC" because that is what people are used to and that is what they understand. If we introduce another term it would probably just confuse people and force us to explain ourselves at every turn.</p><p>Oh, I had several people note that the numbers don't quite add up on the poll results. The reason for that is I allowed each voter to select one or more answers. I apologize for the confusion :)</p>

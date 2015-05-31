@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2008-02-15 13:46:00'
+---
+
+"Real Programmers write self-modifying code, especially if they can save 20 nanoseconds in the middle of a tight loop." --Unknown<br><br>

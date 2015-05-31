@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2008-02-21 13:00:00'
+---
+
+"Real Programmers don't use Visual programs, they program right down on the bare metal. Visual programming is for feebs who can't do system programming." --Unknown

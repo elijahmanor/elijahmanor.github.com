@@ -1,0 +1,7 @@
+---
+layout: post
+title: Friend
+date: '2008-04-18 12:10:00'
+---
+
+<div xmlns="http://www.w3.org/1999/xhtml">"A friend isn't a friend unless you can depend on him to not pretend his befriendment, otherwise, they are a fiend and should descend to a foreign land." --Elijah Manor</div>

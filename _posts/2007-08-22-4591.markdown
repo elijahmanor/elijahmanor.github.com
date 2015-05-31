@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-08-22 12:14:00'
+---
+
+"The perfect project plan is possible if one first documents a list of all the unknowns." --Bill Langley<br>

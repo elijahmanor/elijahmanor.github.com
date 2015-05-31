@@ -1,0 +1,7 @@
+---
+layout: post
+title: VS 2005 Debugging Visualizers
+date: '2006-08-23 05:52:00'
+---
+
+A new feature of Visual Studio 2005 is the introduction of Debugger Visualizers. They  offer an advanced, customized data display while you are running your application under the Visual Studio Debugger.<br><br>Here is a list of Debugger Visualizers that I have found...<br><ul><br><li><a href="http://devmatter.blogspot.com/2006/04/guid-debugger-visualizer-for-visual.html">GUID Debugger Visualizer for Visual Studio 2005</a> by Jeff Bramwell</li><br><li><a href="http://geekswithblogs.net/khanna/archive/2006/01/05/64903.aspx">WindowsIdentity Debugger Visualizer for Visual Studio 2005</a></li><br><li><a href="http://blogs.conchango.com/howardvanrooijen/archive/2005/11/24/2424.aspx">Conchango Xml Visualizer for Visual Studio 2005 (RTM)</a> by Howard van Rooijen</li><li><a href="http://odetocode.com/Blogs/scott/archive/2006/01/12/2726.aspx">ControlTree visualizer</a> by K. Scott Allen</li><br><li><a href="http://blog.bretts.net/?p=11">Visual Studio 2005 Cache Visualizer</a> by Brett Johnson</li><br><li><a href="http://blog.bretts.net/?p=9">Visual Studio 2005 Control Visualizer</a> by Brett Johnson</li><br><li><a href="http://tools.osherove.com/Default.aspx?tabid=187">Regex Visualizer Kit</a> by Roy Osherove</li><br></ul>If you are interested in developing your own Debugger Visualizer, then here are some <a href="http://weblogs.asp.net/fbouma/archive/2006/02/06/437536.aspx">tips</a>.

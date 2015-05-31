@@ -1,0 +1,7 @@
+---
+layout: post
+title: Seat Belt
+date: '2008-04-22 12:11:00'
+---
+
+<div xmlns="http://www.w3.org/1999/xhtml">"Some people think they have the need to buckle their seat belt, but I always say, 'There is nothing like the feeling of flying through the windshield on a brisk spring morning.'" --Elijah Manor</div>

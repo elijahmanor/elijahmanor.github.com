@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-11-13 14:10:00'
+---
+
+"Most of you are familiar with the virtues of a programmer. There are three, of course: laziness, impatience, and hubris." --Larry Wall

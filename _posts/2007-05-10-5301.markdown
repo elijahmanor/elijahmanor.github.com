@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-05-10 13:08:00'
+---
+
+"640 K ought to be enough for anybody." --Bill Gates, 1981

@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2008-02-18 14:02:00'
+---
+
+"Real Programmers write programs, not documentation." --Unknown

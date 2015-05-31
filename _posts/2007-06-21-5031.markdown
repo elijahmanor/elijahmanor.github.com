@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-06-21 12:05:00'
+---
+
+"In a room full of top software designers, if any two of them agree, that's a majority." --Bill Curtis<br>

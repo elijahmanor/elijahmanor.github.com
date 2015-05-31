@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-11-20 14:13:00'
+---
+
+"I used to think real men subclassed everything. That was until I learned the power of extension at runtime, rather than at compile time. Now look at me!" --Head First Design Patterns: The Decorator Pattern

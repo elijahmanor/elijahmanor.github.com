@@ -1,0 +1,17 @@
+name: Front-End Manorisms
+description: Tips, Tricks, and Tools
+meta_description: "Front-End Manorisms: Tips, Tricks, and Tools"
+
+markdown: redcarpet
+highlighter: pygments
+logo: false
+paginate: 15
+baseurl: /
+domain_name: 'http://elijahmanor.com'
+google_analytics: 'UA-XXXXXXXX-X'
+
+# Details for the RSS feed generator
+url:            'http://elijahmanor.com'
+author:         'Elijah Manor'
+
+permalink: none

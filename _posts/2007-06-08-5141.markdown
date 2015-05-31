@@ -1,0 +1,7 @@
+---
+layout: post
+title: "(no title)"
+date: '2007-06-08 18:17:00'
+---
+
+"You're bound to be unhappy if you optimize everything." --Donald Knuth<br>
