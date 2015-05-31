@@ -1,9 +1,0 @@
-/* Styles go here */
-
-body { margin: 15px; }
-#output { margin-left: 0; display: none; }
-table img { height: 20px; width: 20px; vertical-align: top; }
-#error { color: red; font-weight: bold; padding-left: 15px; }
-.alert { margin-top: 15px; display: none; }
-.controls { padding-top: 5px; }
-.control-label { font-variant: small-caps; }
