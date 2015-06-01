@@ -21,7 +21,7 @@ You might even end up having some Sass that look something like the following. D
 
 #### Reaction
 
-<img src="/content/images/2014/Jul/frodo_sad.gif" style="float: right; margin-left: 1.5em;" /> If you are anything like Frodo, the sight of the above Sass code might have you shedding a tear or two yourself. However, don't fear, there is a better way!
+<img src="/assets/images/2014/Jul/frodo_sad.gif" style="float: right; margin-left: 1.5em;" /> If you are anything like Frodo, the sight of the above Sass code might have you shedding a tear or two yourself. However, don't fear, there is a better way!
 
 ### Refactor with a Mixin and 3 colors
 
@@ -35,7 +35,7 @@ Our mixin will accept 3 color parameters that will serve as its base color, a da
 
 #### Reaction
 
-<img src="/content/images/2014/Jul/frodo_happier.gif" style="float: left; margin-right: 1.5em;" />
+<img src="/assets/images/2014/Jul/frodo_happier.gif" style="float: left; margin-right: 1.5em;" />
 
 We can breath a little bit easier now that the repeated rules have been abstracted into a common Sass mixin.
 
@@ -47,7 +47,7 @@ Things are a little bit more organized, but let's take a look at how we can make
 
 I really like the idea of having one color to rule them all...
 
-<img src="/content/images/2014/Jul/one_ring_wiggle.gif" style="float: right; margin-left: 1.5em;" />
+<img src="/assets/images/2014/Jul/one_ring_wiggle.gif" style="float: right; margin-left: 1.5em;" />
 
 > One Color to rule them all, One Color to find them,
 One Color to bring them all and in the darkness bind them
@@ -62,7 +62,7 @@ The following mixin uses a combination of the [`darken`](http://sass-lang.com/do
 
 #### Reaction
 
-<img src="/content/images/2014/Jul/gandalf.gif" style="float: left; margin-right: 1.5em" />
+<img src="/assets/images/2014/Jul/gandalf.gif" style="float: left; margin-right: 1.5em" />
 
 The following buttons are the result of importing `Button-theme(#006dcc)` for the primary button, `Button-theme(#5bb75b)` for the success button, and `Button-theme(#da4f49)` for the danger button. The rest of the colors were determined during the Sass compilation process.
 

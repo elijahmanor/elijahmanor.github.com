@@ -12,7 +12,7 @@ I've been using Blogger for quite some time, but over the last several years I'v
 
 So, how did I make the transition from Blogger to Ghost? Well, it wasn't too bad. Thankfully Windows Azure has Ghost listed in its web site gallery `New->Compute->Web Site->From Gallary`, which made it really easy to get started.
 
-![](/content/images/2013/Dec/azure_ghost_PNG.png)
+![](/assets/images/2013/Dec/azure_ghost_PNG.png)
 
 For most of this phase I followed the excellent instructions from Jeremiah Billmann's ([@jbillmann](http://twitter.com/jbillmann)) post entitled [Installing Ghost from the Azure Web Site Gallery](http://www.jbillmann.com/installing-ghost-from-the-azure-web-site-gallery/).
 
@@ -24,17 +24,17 @@ The next step was to somehow migrate my posts from Blogger over to Ghost. Unfort
 
 So, what I did was create a temporary WordPress blog from the Azure Web Site Gallery and import all of my Blogger posts into it. Then I installed the [Ghost WordPress Plugin](http://wordpress.org/plugins/ghost/), which exports WordPress posts to a JSON format that Ghost can import.
 
-![](/content/images/2013/Dec/import_blogger_PNG.png)
+![](/assets/images/2013/Dec/import_blogger_PNG.png)
 
 At that point you can navigate to your Ghost blog... http://yourdomain/ghost/debug/ and  you'll be presented with a simple GUI to import the JSON file you exported from WordPress.
 
-![](/content/images/2013/Dec/import_tool_PNG.png)
+![](/assets/images/2013/Dec/import_tool_PNG.png)
 
 ## Visual Studio Online
 
 In order to make modifications to Ghost once I installed it I decided to go ahead and use the new [Visual Studio Online "Monaco" Code Editor](http://www.visualstudio.com/en-us/news/2013-nov-13-vso.aspx) that was recently released.
 
-![](/content/images/2013/Dec/visual_studio_online_PNG.png)
+![](/assets/images/2013/Dec/visual_studio_online_PNG.png)
 
 I've been pleased with my experience thus far and I look forward to see this online tool mature.
 
@@ -56,7 +56,7 @@ Trying to match up my Disqus comments from Blogger to Ghost took a bit of work a
 
 Thankully Disqus has some [migration tools](http://help.disqus.com/customer/portal/articles/286778-migration-tools) built to assist with this issue. I used the [URL Mapper](http://help.disqus.com/customer/portal/articles/912757-url-mapper) tool which let me redifine the URLs associated with particular comment threads. 
 
-![](/content/images/2013/Dec/disqus_csv_PNG.png)
+![](/assets/images/2013/Dec/disqus_csv_PNG.png)
 
 You can provide a CSV file mapping the old URL to the new URL and it will change the mappings for you. The following is an example of what one of the lines from the CSV looks like. 
 

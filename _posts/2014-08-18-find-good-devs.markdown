@@ -18,7 +18,7 @@ One such company that has employed all of the above is Etsy as seen in the below
 
 > "Is code your craft? https://www.etsy.com/careers" 
 
-![](/content/images/2014/Aug/Screenshot_2014_08_18_22_30_34_2.png)
+![](/assets/images/2014/Aug/Screenshot_2014_08_18_22_30_34_2.png)
 
 For those of you who enjoy the command line experience, here is an animated gif of me `curl`ing for the dev messages ;)
 
@@ -28,7 +28,7 @@ vim etsy.html
 curl -I https://www.etsy.com | less
 ```
 
-![](/content/images/2014/Aug/code_craft_2.gif)
+![](/assets/images/2014/Aug/code_craft_2.gif)
 
 ### Mozilla 
 
@@ -36,13 +36,13 @@ The [Mozilla](https://www.mozilla.org/en-US/) webpage is another good example of
 
 #### Markup
 
-![](/content/images/2014/Aug/Screen_Shot_2014_08_14_at_12_52_33_PM.png)
+![](/assets/images/2014/Aug/Screen_Shot_2014_08_14_at_12_52_33_PM.png)
 
 #### Console
 
 I like that they extra effort to disable the `console.log` message with `Tabzilla.disableEasterEgg()`. 
 
-![](/content/images/2014/Aug/Screen_Shot_2014_08_14_at_12_52_54_PM-1.png)
+![](/assets/images/2014/Aug/Screen_Shot_2014_08_14_at_12_52_54_PM-1.png)
 
 ---
 

@@ -4,13 +4,13 @@ title: 'AngleBrackets: April 13 - 16, 2014'
 date: '2014-03-03 14:21:40'
 ---
 
-![](/content/images/2014/Mar/3_1_2014_9_36_19_PM.png)
+![](/assets/images/2014/Mar/3_1_2014_9_36_19_PM.png)
 
 The time is coming for the 3rd [AngleBrackets](http://anglebrackets.org/) conference. I've been honored to  participate in the past 2 events and I look forward to the 3rd event in Orlando, FL. I'll be presenting 3 different sessions on front-end web development topics.
 
 ## Speakers
 
-![](/content/images/2014/Mar/3_1_2014_9_33_28_PM.png)
+![](/assets/images/2014/Mar/3_1_2014_9_33_28_PM.png)
 
 Some of the other speakers that you might recognize include Scott Hanselman, Scott Guthrie, John Papa, Dan Wahlin, Douglas Crockford, Denise Jacobs, Todd Anglin, and [lots of other talented speakers](http://anglebrackets.org/speakers.aspx).
 

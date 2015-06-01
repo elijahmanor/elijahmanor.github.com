@@ -4,13 +4,13 @@ title: "&lt;anglebrackets /&gt; Fall 2014 Conference"
 date: '2014-08-04 12:37:09'
 ---
 
-![](/content/images/2014/Aug/AB_Fall14_SpkrDscnt_650x100_MANOR.gif)
+![](/assets/images/2014/Aug/AB_Fall14_SpkrDscnt_650x100_MANOR.gif)
 
 I'm excited to be on the speaker line-up for the [`<anglebrackets />`](https://anglebrackets.org/) conference this fall. I've spoken at the last 3 events, and it gets better each time. 
 
 ### Speakers
 
-![](/content/images/2014/Aug/Screen_Shot_2014_07_31_at_9_49_12_PM.png)
+![](/assets/images/2014/Aug/Screen_Shot_2014_07_31_at_9_49_12_PM.png)
 
 I'm honored to be speaking alongside a top notch group of seasoned speakers such as Scott Hanselman, John Papa, Scott Guthrie, Lara Swanson, Dan Wahlin, Douglas Crockford, Todd Anglin, and much more.
 

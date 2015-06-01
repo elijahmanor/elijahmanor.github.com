@@ -6,7 +6,7 @@ date: '2014-06-24 04:25:58'
 
 You are probably already aware that the current Chrome DevTools have a decent set of [mobile emulation tools](https://developer.chrome.com/devtools/docs/mobile-emulation). Thankfully for us, the tools are getting even better! If you are using the [Canary version of Chrome](http://www.google.com/intl/en/chrome/browser/canary.html) the emulation tools look much different than they do on the stable branch.
 
-![](/content/images/2014/Jun/Screenshot_2014_06_23_23_44_11b_png.png)
+![](/assets/images/2014/Jun/Screenshot_2014_06_23_23_44_11b_png.png)
 
 When you pull up the DevTools you'll now see a "mobile icon" next to the magnifying glass. Clicking on the "mobile icon" brings up a new user interface that reminds me a little bit of Firefox's [Responsive Design View]( https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_View).
 

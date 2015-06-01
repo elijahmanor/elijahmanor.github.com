@@ -29,7 +29,7 @@ The trick about waking up early is to **not** wake up your spouse! My wife is a 
 
 ### Habits
 
-<img src="/content/images/2013/Dec/photo_PNG.png" style="float: right; width: 300px; padding-left: 25px; padding-bottom: 25px;" /> You first go through and pick all your daily goals or plans that you want to accomplish.
+<img src="/assets/images/2013/Dec/photo_PNG.png" style="float: right; width: 300px; padding-left: 25px; padding-bottom: 25px;" /> You first go through and pick all your daily goals or plans that you want to accomplish.
 
 It took a while for me to find existing goals or thing of unique ones just for me, but once I did I've settled on a set of about 20 items.
 
@@ -41,7 +41,7 @@ But for the most part, this is the screen that I primarily interact with on a da
 
 ### Activity
 
-<img src="/content/images/2013/Dec/photo_2__1__PNG.png" style="float: right; width: 300px; padding-left: 25px; padding-bottom: 25px;" /> The social aspect comes into play when you actually check off one of the items for the day. In addition you can add a note to your item to give more context as to what you did exactly. From that point you can then see the activity of everyone else who has subscribed to that goal and can give them props or add a comment to their entry. 
+<img src="/assets/images/2013/Dec/photo_2__1__PNG.png" style="float: right; width: 300px; padding-left: 25px; padding-bottom: 25px;" /> The social aspect comes into play when you actually check off one of the items for the day. In addition you can add a note to your item to give more context as to what you did exactly. From that point you can then see the activity of everyone else who has subscribed to that goal and can give them props or add a comment to their entry. 
 
 You can also give props and add comments on the activity tab which lists the progress of your friends. I am usually more included to give props or add a comment when the author as provided additional notes to their entry.
 
@@ -51,7 +51,7 @@ When you are working on goals and trying to develop good habits, then every litt
 
 ### Me
 
-<img src="/content/images/2013/Dec/photo_3__1__PNG.png" style="float: right; width: 300px; padding-left: 25px; padding-bottom: 25px;" /> And for you statistics nerds there is a nice dashboard listing all of your goals and graphs of how many times you've completed each one across a range of weeks.
+<img src="/assets/images/2013/Dec/photo_3__1__PNG.png" style="float: right; width: 300px; padding-left: 25px; padding-bottom: 25px;" /> And for you statistics nerds there is a nice dashboard listing all of your goals and graphs of how many times you've completed each one across a range of weeks.
 
 You can also drill into each of these goals to get more fine-grained details of frequency per month, a calendar overview, highlighting longest day streak, etc...
 
