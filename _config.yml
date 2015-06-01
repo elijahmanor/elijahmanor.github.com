@@ -8,10 +8,9 @@ logo: false
 paginate: 15
 baseurl: /
 domain_name: 'http://elijahmanor.com'
-google_analytics: 'UA-XXXXXXXX-X'
+google_analytics: 'UA-21163683-1'
+permalink: none
 
 # Details for the RSS feed generator
-url:            'http://elijahmanor.com'
-author:         'Elijah Manor'
-
-permalink: none
+url: 'http://elijahmanor.com'
+author: 'Elijah Manor'
