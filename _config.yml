@@ -9,8 +9,8 @@ paginate: 15
 baseurl: /
 domain_name: 'http://elijahmanor.com'
 google_analytics: 'UA-21163683-1'
-permalink: none
+permalink: /:categories/:title/
 
 # Details for the RSS feed generator
-url: 'http://elijahmanor.com'
+url: 'http://feeds.feedburner.com/webdevnet'
 author: 'Elijah Manor'
