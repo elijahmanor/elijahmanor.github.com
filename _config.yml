@@ -13,4 +13,3 @@ permalink: /:categories/:title/
 
 # Details for the RSS feed generator
 url: 'http://feeds.feedburner.com/webdevnet'
-author: 'Elijah Manor'
