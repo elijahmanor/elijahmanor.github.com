@@ -4,7 +4,7 @@ title: CSS for Developers
 date: '2015-06-03 05:30:00'
 ---
 
-Wait, what!?! __CSS for Developers__? Aren't developers supposed to know **CSS**? Yes, the title of this blog post and associated talk may seem odd at first, but I feel it reaches out to several audiences that need it... and one of those used to be **me**.
+<img src="/assets/images/2015/Jun/css-for-devs.png" style="float: left; width: 300px; margin: 0 1em 1em 0; padding: 0;" /> Wait, what!?! __CSS for Developers__? Aren't developers supposed to know **CSS**? Yes, the title of this blog post and associated talk may seem odd at first, but I feel it reaches out to several audiences that need it... and one of those used to be **me**.
 
 The more that I meet and build relationships with other Front-End Developers I'm starting to see a trend of really talented software developers moving towards Front-End development and trying as hard as they can to stay away from **CSS**.
 
