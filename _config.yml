@@ -12,4 +12,4 @@ google_analytics: 'UA-21163683-1'
 permalink: /:categories/:title/
 
 # Details for the RSS feed generator
-url: 'http://feeds.feedburner.com/webdevnet'
+url: 'http://elijahmanor.com'
