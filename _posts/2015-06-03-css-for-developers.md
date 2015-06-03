@@ -58,3 +58,7 @@ Thankfully with a some basic foundational concepts, modern techniques, and tooli
 You can find the slides from the presentation online at [elijahmanor.com/talks/css-for-devs/](http://elijahmanor.com/talks/css-for-devs/)
 
 > **Note**: _This slide deck is fairly new. I have plans to iterate on some of the later modules in the talk. Stay tuned :)_
+
+## Podcast
+
+I was intervied on the [.NET Rocks](http://www.dotnetrocks.com/default.aspx?showNum=1147) podcast last week by [Carl Franklin](https://twitter.com/carlfranklin) and [Richard Campbell](https://twitter.com/richcampbell). The episode is now online [#1147: CSS for Developers with Elijah Manor](http://www.dotnetrocks.com/default.aspx?showNum=1147).

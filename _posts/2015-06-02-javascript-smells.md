@@ -18,6 +18,8 @@ So, I've come up with a new presentation called [JavaScript Code Smells](http://
 
 ## Video
 
+The following video was recorded this year at [FluentConf](http://fluentconf.com/javascript-html-2015). This is the 30 minute version of the talk. The full talk is 60 minutes, but I don't have a recording of that yet. All the content for the 60 minute version is contained in my [slides](http://elijahmanor.com/talks/js-smells) if you are interested.
+
 <div class="videoWrapper"><iframe width="420" height="315" src="https://www.youtube.com/embed/JVlfj7mQZPo?rel=0" frameborder="0" allowfullscreen></iframe></div>
 
 ## Types of Smells
