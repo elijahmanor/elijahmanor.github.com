@@ -1,12 +1,17 @@
 ---
 layout: page
 title: Speaking
-permalink: /speaking/
 ---
 
 * [Eliminating JavaScript Code Smells](/talks/js-smells)
 * [CSS for Developers](/talks/css-for-devs)
 * [React to the Future](/talks/react-to-the-future/dist)
+
+<!--
+## Podcasts
+
+* []()
+-->
 
 <!--
 * [Prototyping and Unit Testing](/talks/prototyping-unit-testing/builder)
