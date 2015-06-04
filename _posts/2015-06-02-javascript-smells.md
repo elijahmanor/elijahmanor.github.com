@@ -4,7 +4,7 @@ title: JavaScript Code Smells
 date: '2015-06-02 05:30:00'
 ---
 
-In the past I've given presentations, recorded videos, and written blog posts about fixing common JavaScript and jQuery bugs. This is a good skill to have, but what about working code? Fixing broken code is important, but have you ever gotten into the situation where your code works, but it doesn't feel quite right... maybe even smells?
+<img src="/assets/images/2015/Jun/js-code-smells-cover.png" style="float: left; width: 300px; margin: 0 1em 1em 0; padding: 0;" /> In the past I've given presentations, recorded videos, and written blog posts about fixing common JavaScript and jQuery bugs. This is a good skill to have, but what about working code? Fixing broken code is important, but have you ever gotten into the situation where your code works, but it doesn't feel quite right... maybe even smells?
 
 > "A code smell is a surface indication that usually corresponds to a deeper problem in the system" --[CodeSmell](http://martinfowler.com/bliki/CodeSmell.html) by [Martin Fowler](http://twitter.com/martinfowler)
 

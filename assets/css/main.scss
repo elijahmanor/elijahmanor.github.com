@@ -55,3 +55,49 @@
 	height: 100%;
 	margin: 0;
 }
+
+/*
+<ul class="Events">
+	<li class="Event">
+	  <header class="Event-name">
+	    <a href="http://www.meetup.com/nashjs">JavaScript Meetup</div>
+	  </header>
+	  <div class="Event-date">2014-02-12 - 2014-02-12</div>
+	  <div class="Event-location">Nashville, TN</div>
+	  <ul class="Sessions">
+	    <li class="Session">
+	      <div class="Session-name">jQuery-free JavaScript</div>
+	      <ul class="Session-links">
+	        <li><a class="Session-link" href="#">Slides</a></li>
+	        <li><a class="Session-link" href="#">Video</a></li>
+	        <li><a class="Session-link" href="#">Feedback</a></li>
+	      </ul>
+	    </li>
+	  </ul>
+	</li>
+</ul>
+*/
+
+.Events {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	list-style: none;
+	padding: 0;
+}
+.Event {
+	background-color: #eee;
+	border-radius: .25rem;
+	-webkit-flex: 1 auto;
+	flex: 1 auto;
+	margin: .25rem;
+}
+.Event-name {}
+.Event-date {}
+.Event-location {}
+.Sessions {}
+.Session {}
+.Session-name {}
+.Session-links {}
+.Session-link {}
