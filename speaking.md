@@ -24,7 +24,7 @@ title: Speaking
 <ul class="Events">
 {% for event in site.data.events reversed %}
 	{% capture eventdate %}{{ event.date | date: '%s' }}{% endcapture %}
-  <li class="Event {% if nowunix < eventdate %}Event--upcoming{% endif %}" data-date="{{ event.date }} data-employer="{{event.employer}}">
+  <li class="Event {% if nowunix < eventdate %}Event--upcoming{% endif %}" data-date="{{ event.date }}" data-employer="{{event.employer}}">
 		<div class="Event-date Date">
 			<div class="Date-day">{{ event.days }}</div>
 			<div class="Date-summary">
@@ -43,9 +43,9 @@ title: Speaking
 			<li class="Session">
 				<div class="Session-name">{{ session.name }}</div>
 				<ul class="Session-links">
-					<li class="Session-link {% if session.slides == empty %}Session-link--unavailable{% endif %}"><a href="{{ session.slides }}">Slides</a></li>
-					<li class="Session-link {% if session.video == empty %}Session-link--unavailable{% endif %}"><a href="{{ session.video }}">Video</a></li>
-					<li class="Session-link {% if session.feedback == empty %}Session-link--unavailable{% endif %}"><a href="{{ session.feedback }}">Feedback</a></li>
+					<li class="Session-link {% if session.slides == empty %}Session-link--unavailable{% endif %}"><a href="{{ session.slides }}" target="_blank">Slides</a></li>
+					<li class="Session-link {% if session.video == empty %}Session-link--unavailable{% endif %}"><a href="{{ session.video }}" target="_blank">Video</a></li>
+					<li class="Session-link {% if session.feedback == empty %}Session-link--unavailable{% endif %}"><a href="{{ session.feedback }}" target="_blank">Feedback</a></li>
 				</ul>
 			</li>
 		{% endfor %}
