@@ -635,7 +635,7 @@
   employer: 'appendto'
   sessions:
   - name: 'Angry Birds of JavaScript'
-    slides: ''
+    slides: '/talks/angry-birds-javascript'
     video: ''
     feedback: ''
   - name: 'Introduction to Backbone.js'
@@ -656,7 +656,7 @@
   employer: 'appendto'
   sessions:
   - name: 'Angry Birds of JavaScript'
-    slides: ''
+    slides: '/talks/angry-birds-javascript'
     video: ''
     feedback: ''
 
@@ -680,7 +680,7 @@
     video: ''
     feedback: ''
   - name: 'Angry Birds of JavaScript'
-    slides: ''
+    slides: '/talks/angry-birds-javascript'
     video: ''
     feedback: ''
 
@@ -697,7 +697,7 @@
   employer: 'appendto'
   sessions:
   - name: 'Angry Birds of JavaScript'
-    slides: ''
+    slides: '/talks/angry-birds-javascript'
     video: ''
     feedback: ''
 
@@ -717,7 +717,7 @@
   employer: 'appendto'
   sessions:
   - name: 'Angry Birds of JavaScript'
-    slides: ''
+    slides: '/talks/angry-birds-javascript'
     video: ''
     feedback: ''
   - name: 'Comparing Backbone & Angular while Refactoring Spaghetti jQuery'
@@ -738,7 +738,7 @@
   employer: 'appendto'
   sessions:
   - name: 'Angry Birds of JavaScript'
-    slides: ''
+    slides: '/talks/angry-birds-javascript'
     video: ''
     feedback: ''
 
@@ -755,7 +755,7 @@
   employer: 'appendto'
   sessions:
   - name: 'Angry Birds of JavaScript'
-    slides: ''
+    slides: '/talks/angry-birds-javascript'
     video: ''
     feedback: ''
   - name: 'Comparing Backbone & Angular while Refactoring Spaghetti jQuery'
@@ -831,7 +831,7 @@
   employer: 'appendto'
   sessions:
   - name: 'Angry Birds of JavaScript'
-    slides: ''
+    slides: '/talks/angry-birds-javascript'
     video: ''
     feedback: ''
 
