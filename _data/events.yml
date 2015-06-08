@@ -1,0 +1,1212 @@
+#Webcast Good C# Habits Can Encourage Bad JavaScript Habits	ASP.NET	http://community.devexpress.com/blogs/aspnet/archive/2011/02/07/video-learn-how-good-c-habits-can-encourage-bad-javascript-habits.aspx	3/9/11	Webinar hosted by DevExpress	Developer
+#Webcast CodeStock 2011 - Elijah Manor	ASP.NET	http://tv.devexpress.com/#CodeStock11ElijahManor	6/8/11	DevExpress interviewed me while at the CodeStock conference	Developer
+#Webcase 06/13/2013 O’Reilly Webcast - Angry Birds of JavaScript - 313 Attendees #http://oreillynet.com/pub/e/2636
+
+- dates:
+  - day: 09
+    month: 'Oct'
+    year: 2008
+  date: '2008-10-09'
+  days: '09'
+  name: 'Nashville .NET User Group'
+  type: 'usergroup'
+  url: ''
+  location: 'Nashville, TN'
+  employer: 'sommet'
+  sessions:
+  - name: 'A Crash Course in ASP.NET MVC'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 15
+    month: 'Apr'
+    year: 2009
+  date: '2009-04-15'
+  days: '15'
+  name: 'New Tech Cast by Tanton Gibbs'
+  title: 'Podcast with Elijah Manor'
+  type: 'podcast'
+  url: 'http://newtechcast.com/2009/04/podcast-with-elijah-manor.html'
+  location: 'Nashville, TN'
+  employer: 'sommet'
+
+- dates:
+  - day: 21
+    month: 'May'
+    year: 2009
+  date: '2009-05-21'
+  days: '21'
+  name: 'Nashville .NET User Group'
+  type: 'usergroup'
+  url: ''
+  location: 'Nashville, TN'
+  employer: 'sommet'
+  sessions:
+  - name: 'jQuery Introduction'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 28
+    month: 'May'
+    year: 2009
+  date: '2009-05-28'
+  days: '21'
+  name: 'Nashville Web Dev User Group'
+  type: 'usergroup'
+  url: ''
+  location: 'Nashville, TN'
+  employer: 'sommet'
+  sessions:
+  - name: 'jQuery Introduction'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 26
+    month: 'Jun'
+    year: 2009
+  date: '2009-06-26'
+  days: '26'
+  name: 'CodeStock'
+  type: 'conference'
+  url: 'http://www.codestock.org'
+  location: 'Knoxville, TN'
+  employer: 'sommet'
+  sessions:
+  - name: 'Useful jQuery tips, tricks, and plugins with ASP.NET MVC'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 09
+    month: 'Jul'
+    year: 2009
+  date: '2009-07-09'
+  days: '15'
+  name: 'High On Coding by Mohammad Azam'
+  title: 'Elijah Manor Tweets Knowledge'
+  type: 'podcast'
+  url: 'http://www.highoncoding.com/Podcasts/589_Elijah_Manor_Tweets_Knowledge.aspx'
+  employer: 'sommet'
+
+- dates:
+  - day: 13
+    month: 'Aug'
+    year: 2009
+  date: '2009-08-13'
+  days: '13'
+  name: 'DevLink'
+  type: 'conference'
+  url: 'http://www.devlink.net/Speakers/ElijahManor/tabid/195/Default.aspx'
+  location: 'Chattanooga, TN'
+  employer: 'sommet'
+  sessions:
+  - name: 'How to create your own jQuery Plugin'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 13
+    month: 'Nov'
+    year: 2009
+  date: '2009-11-13'
+  days: '13'
+  name: 'The Official jQuery Podcast'
+  title: '#1 - John Resig'
+  description: 'John Resig joins us on our first podcast to talk jQuery, the Software Freedom Conservancy, the upcoming 1.4 release and why Google Groups is dead.'
+  type: 'podcast'
+  url: 'http://blog.jquery.com/2009/11/13/announcing-the-official-jquery-podcast/'
+  employer: 'lampo'
+
+- dates:
+  - day: 20
+    month: 'Nov'
+    year: 2009
+  date: '2009-11-20'
+  days: '20'
+  name: 'The Official jQuery Podcast'
+  title: '#2 - Richard D. Worth'
+  description: 'Richard D. Worth, Release Manager for the jQuery UI project joins us to explain jQuery UI and how you can contribute.'
+  type: 'podcast'
+  url: 'http://blog.jquery.com/2009/11/20/the-official-jquery-podcast-episode-2-richard-d-worth/'
+  employer: 'lampo'
+
+- dates:
+  - day: 04
+    month: 'Dec'
+    year: 2009
+  date: '2009-12-04'
+  days: '04'
+  name: 'The Official jQuery Podcast'
+  title: '#3 - Paul Irish'
+  description: 'Paul Irish is a front-end developer and co-host of the other jQuery podcast called yayQuery.'
+  type: 'podcast'
+  url: 'http://blog.jquery.com/2009/12/04/the-official-jquery-podcast-episode-3-paul-irish/'
+  employer: 'lampo'
+
+- dates:
+  - day: 11
+    month: 'Dec'
+    year: 2009
+  date: '2009-12-11'
+  days: '11'
+  name: 'The Official jQuery Podcast'
+  title: '#4 - Cody Lindley'
+  description: 'Cody Lindley is the author of the e-book jQuery Enlightenment and the coauthor of jQuery Cookbook. Learn all about the recently released jQuery books.'
+  type: 'podcast'
+  url: 'http://blog.jquery.com/2009/12/11/the-official-jquery-podcast-episode-4-cody-lindley/'
+  employer: 'lampo'
+
+- dates:
+  - day: 18
+    month: 'Dec'
+    year: 2009
+  date: '2009-12-18'
+  days: '18'
+  name: 'The Official jQuery Podcast'
+  title: '#5 - Rey Bango'
+  description: 'Rey Bango is the Head jQuery Evangelist, he talks with us about evangelism and what to expect in 2010.'
+  type: 'podcast'
+  url: 'http://blog.jquery.com/2010/01/01/the-official-jquery-podcast-episode-5-rey-bango/'
+  employer: 'lampo'
+
+- dates:
+  - day: 01
+    month: 'Jan'
+    year: 2010
+  date: '2010-01-08'
+  days: '01'
+  name: 'The Official jQuery Podcast'
+  title: '#6 - Ben Alman'
+  description: 'We talk with Ben Alman about writing plugins and contributing to jQuery. Elijah joins us after getting braces on, much hilarity ensues.'
+  type: 'podcast'
+  url: 'http://blog.jquery.com/2010/01/10/the-official-jquery-podcast-episode-6-ben-alman/'
+  employer: 'lampo'
+
+- dates:
+  - day: 15
+    month: 'Jan'
+    year: 2010
+  date: '2010-01-15'
+  days: '15'
+  name: 'The Official jQuery Podcast'
+  title: '#7 - jQuery 1.4 (John Resig)'
+  description: 'We are in Washington DC and we are all sitting face-to-face with John Resig as we talk about the jQuery 1.4 Release.'
+  type: 'podcast'
+  url: 'http://blog.jquery.com/2010/01/15/the-official-jquery-podcast-episode-7-jquery-14-release-john-resig/'
+  employer: 'lampo'
+
+- dates:
+  - day: 22
+    month: 'Jan'
+    year: 2010
+  date: '2010-01-22'
+  days: '22'
+  name: 'The Official jQuery Podcast'
+  title: '#8 - api.jquery.com'
+  description: 'The jQuery Documentation got a major facelift and was released during the 14 Days of jQuery. Find out what iss new in the site.'
+  type: 'podcast'
+  url: 'http://blog.jquery.com/2010/01/22/the-official-jquery-podcast-episode-8-api-jquery-com/'
+  employer: 'lampo'
+
+- dates:
+  - day: 29
+    month: 'Jan'
+    year: 2010
+  date: '2010-01-29'
+  days: '29'
+  name: 'The Official jQuery Podcast'
+  title: '#9 - David Artz, Aol.'
+  description: 'We took the opportunity to sit down with David Artz and discuss how jQuery is used at Aol.'
+  type: 'podcast'
+  url: 'http://blog.jquery.com/2010/01/29/the-official-jquery-podcast-episode-9-david-artz-aol/'
+  employer: 'lampo'
+
+- dates:
+  - day: 05
+    month: 'Feb'
+    year: 2010
+  date: '2010-02-05'
+  days: '05'
+  name: 'The Official jQuery Podcast'
+  title: '#10 - appendTo'
+  description: 'We took the opportunity to sit down with Mike Hostetler and Jonathon Sharp to discuss appendTo. The irst jQuery company that provides support, training and consultation at the Enterprise level.'
+  type: 'podcast'
+  url: 'http://blog.jquery.com/2010/02/14/the-official-jquery-podcast-episode-10-appendto/'
+  employer: 'lampo'
+
+- dates:
+  - day: 12
+    month: 'Feb'
+    year: 2010
+  date: '2010-02-12'
+  days: '12'
+  name: 'The Official jQuery Podcast'
+  title: '#11 - Yehuda Katz'
+  description: 'Our last show while in Washington DC we sat down and talked with Yehuda Katz about Rails 3 and jQuery.'
+  type: 'podcast'
+  url: 'http://blog.jquery.com/2010/02/15/the-official-jquery-podcast-episode-11-yehuda-katz/'
+  employer: 'lampo'
+
+- dates:
+  - day: 26
+    month: 'Feb'
+    year: 2010
+  date: '2010-02-26'
+  days: '26'
+  name: 'The Official jQuery Podcast'
+  title: '#13 - David Walsh'
+  description: 'We talk with Mootools developer David Walsh and discuss the relationship between our teams and compare the libraries.'
+  type: 'podcast'
+  url: 'http://blog.jquery.com/2010/02/26/the-official-jquery-podcast-episode-13-david-walsh'
+  employer: 'lampo'
+
+- dates:
+  - day: 05
+    month: 'Mar'
+    year: 2010
+  date: '2010-03-05'
+  days: '05'
+  name: 'The Official jQuery Podcast'
+  title: '#14 - Phil Haack'
+  description: 'We talk with Phil Haack of Microsoft to talk about how jQuery is now included in Visual Studio and ASP.NET MVC and how easy it is to use.'
+  type: 'podcast'
+  url: 'http://blog.jquery.com/2010/03/05/the-official-jquery-podcast-episode-14-phil-haack/'
+  employer: 'lampo'
+
+- dates:
+  - day: 12
+    month: 'Mar'
+    year: 2010
+  date: '2010-03-11'
+  days: '12'
+  name: 'The Official jQuery Podcast'
+  title: '#15 - John Resig (1.4.1 - 1.4.2)'
+  description: 'We talk with John Resig about jQuery 1.4.1 and jQuery 1.4.2 as well as what is ahead in jQuery 1.4.3 and beyond.'
+  type: 'podcast'
+  url: 'http://blog.jquery.com/2010/03/12/the-official-jquery-podcast-episode-15-john-resig-jquery-1-4-1-1-4-2/'
+  employer: 'lampo'
+
+- dates:
+  - day: 16
+    month: 'Mar'
+    year: 2010
+  date: '2010-03-16'
+  days: '16'
+  name: 'Mix10'
+  type: 'conference'
+  url: ''
+  location: 'Las Vegas, NV'
+  employer: 'sommet'
+  sessions:
+  - name: 'Six Things Every jQuery Developer Should Know'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 19
+    month: 'Mar'
+    year: 2010
+  date: '2010-03-19'
+  days: '19'
+  name: 'The Official jQuery Podcast'
+  title: '#16 - jQuery Meetups'
+  description: 'We talk with Cody Lindley, Jonathan Sharp and Boaz Sender about meetups.jquery.com and try to help come up with ideas and process for hosting jQuery Meetups in your area.'
+  type: 'podcast'
+  url: 'http://blog.jquery.com/2010/03/19/the-official-jquery-podcast-episode-16-jquery-meetups/'
+  employer: 'lampo'
+
+- dates:
+  - day: 02
+    month: 'Apr'
+    year: 2010
+  date: '2010-04-02'
+  days: '02'
+  name: 'The Official jQuery Podcast'
+  title: '#18 - Jeffery Way (Nettuts)'
+  description: 'This week we talked with Jeffrey Way. He is the editor of Nettuts+, and the Site Manager of ThemeForest and CodeCanyon. Jeffrey gives an overview of the Nettuts+ website and explains why their tutorials focus so much on jQuery and gives some examples of recent jQuery related articles.'
+  type: 'podcast'
+  url: 'http://blog.jquery.com/2010/04/02/the-official-jquery-podcast-episode-18-jeffery-way-nettuts/'
+  employer: 'lampo'
+
+- dates:
+  - day: 09
+    month: 'Apr'
+    year: 2010
+  date: '2010-04-09'
+  days: '09'
+  name: 'The Official jQuery Podcast'
+  title: '#19 - jQuery in Action, 2nd Ed.'
+  description: 'This week we talked with Yehuda Katz and Bear Bibeault about the upcoming second edition of the popular jQuery in Action book from Manning.'
+  type: 'podcast'
+  url: 'http://blog.jquery.com/2010/04/09/the-official-jquery-podcast-episode-19-jquery-in-action-2nd-ed/'
+  employer: 'lampo'
+
+- dates:
+  - day: 11
+    month: 'Nov'
+    year: 2010
+  date: '2010-11-11'
+  days: '11'
+  name: 'Nashville .NET User Group'
+  type: 'usergroup'
+  url: ''
+  location: 'Nashville, TN'
+  employer: 'appendto'
+  sessions:
+  - name: 'Good C# Habits Can Encourage Bad JavaScript Habits'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 28
+    month: 'Jan'
+    year: 2011
+  date: '2011-01-28'
+  days: '28'
+  name: 'Delloite	Developer Meeting'
+  type: 'usergroup'
+  url: ''
+  location: 'Nashville, TN'
+  employer: 'appendto'
+  sessions:
+  - name: 'Good C# Habits Can Encourage Bad JavaScript Habits'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 03
+    month: 'Jan'
+    year: 2011
+  date: '2011-02-03'
+  days: '03'
+  name: 'Nashville Java User Group'
+  type: 'usergroup'
+  url: ''
+  location: 'Nashville, TN'
+  employer: 'appendto'
+  sessions:
+  - name: 'Good Java Habits Can Encourage Bad JavaScript Habits'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 02
+    month: 'Mar'
+    year: 2011
+  date: '2011-03-02'
+  days: '15'
+  name: 'Hanselminutes by Scott Hanselman'
+  title: '<JavaScript and jQuery: Moving beyond Alert()/>'
+  description: 'Scott talks to Elijah Manor and Dave Ward about how one can take their JavaScript knowledge to the next level. What are the major concepts I should study? Which plugins are the must-haves? What is "Modernizr" and how does it, along with the concept of feature detection make my life easier?'
+  type: 'podcast'
+  url: 'http://www.hanselminutes.com/default.aspx?showID=275'
+  employer: 'sommet'
+
+- dates:
+  - day: 12
+    month: 'Apr'
+    year: 2011
+  date: '2011-04-12'
+  days: '12'
+  name: 'Mix11'
+  type: 'conference'
+  url: 'http://channel9.msdn.com/Events/MIX/MIX11/OPN08'
+  location: 'Las Vegas, NV'
+  employer: 'appendto'
+  sessions:
+  - name: 'Good JavaScript Habits for C# Developers'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 16
+    month: 'Apr'
+    year: 2011
+  date: '2011-04-16'
+  days: '16'
+  name: 'jQuery Conference: San Francisco'
+  type: 'conference'
+  url: 'http://events.jquery.org/2011/sf-bay-area/'
+  location: 'Las Vegas, NV'
+  employer: 'appendto'
+  sessions:
+  - name: 'Prototyping and Unit Testing with Mockjax and mockJSON'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 11
+    month: 'Jun'
+    year: 2011
+  date: '2011-06-11'
+  days: '11'
+  name: 'CodeStock'
+  type: 'conference'
+  url: 'http://www.codestock.org/'
+  location: 'Knoxville, TN'
+  employer: 'appendto'
+  sessions:
+  - name: 'Good JavaScript Habits for C# Developers'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 11
+    month: 'Jul'
+    year: 2011
+  date: '2011-07-11'
+  days: '11'
+  name: 'Yet Another Podcast #41 by Jesse Liberty'
+  title: 'jQuery with Elijah Manor'
+  description: 'Talking with Elijah Manor, Senior Architect for appendTo: The jQuery Company and Microsoft ASP.NET MVP,  about jQuery and Javascript.'
+  type: 'podcast'
+  url: 'http://jesseliberty.com/2011/07/06/yet-another-podcast-41jquery-with-elijah-manor/'
+  employer: 'sommet'
+
+- dates:
+  - day: 17
+    month: 'Aug'
+    year: 2011
+  date: '2011-08-17'
+  days: '17'
+  name: 'DevLink'
+  type: 'conference'
+  url: 'http://devlink.net'
+  location: 'Chattanooga, TN'
+  employer: 'appendto'
+  sessions:
+  - name: 'Extend your jQuery Application with AmplifyJS'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 30
+    month: 'Sep'
+    year: 2011
+  date: '2011-09-30'
+  days: '30'
+  name: 'jQuery Conference: Boston'
+  type: 'conference'
+  url: 'http://events.jquery.org/2011/boston/'
+  location: 'Boston, MA'
+  employer: 'appendto'
+  sessions:
+  - name: 'Extend your jQuery Application with AmplifyJS'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 03
+    month: 'Nov'
+    year: 2011
+  date: '2011-11-03'
+  days: '03'
+  name: 'Web & Phone UX Tour Belgium'
+  type: 'conference'
+  url: 'http://uxtour.cloudapp.net/'
+  location: 'Edeghem, Belgium'
+  employer: 'appendto'
+  sessions:
+  - name: 'Good JavaScript Habits'
+    slides: ''
+    video: ''
+    feedback: ''
+  - name: 'What is HTML5 and CSS3 and how can I use it today?'
+    slides: ''
+    video: ''
+    feedback: ''
+  - name: '6 Things Every jQuery Developer Should Know'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 17
+    month: 'Nov'
+    year: 2011
+  date: '2011-11-17'
+  days: '17'
+  name: 'Harding University Computer Science Seminar'
+  type: 'usergroup'
+  url: 'http://harding.edu'
+  location: 'Searcy, AR'
+  employer: 'appendto'
+  sessions:
+  - name: 'Good JavaScript Habits'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 31
+    month: 'Mar'
+    year: 2012
+  date: '2012-03-31'
+  days: '31'
+  name: 'Orlando Code Camp'
+  type: 'conference'
+  url: 'http://orlandocodecamp.com/'
+  location: 'Orlando, FL'
+  employer: 'appendto'
+  sessions:
+  - name: 'Exterminating Those Common Pesky jQuery Bugs'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 28
+    month: 'Jun'
+    year: 2012
+  date: '2012-06-28'
+  days: '28'
+  name: 'jQuery Conference: San Francisco'
+  type: 'conference'
+  url: 'http://events.jquery.org/2012/sf/'
+  location: 'San Francisco, CA'
+  employer: 'appendto'
+  sessions:
+  - name: 'Exterminating Common jQuery Bugs'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 17
+    month: 'Jul'
+    year: 2012
+  date: '2012-07-17'
+  days: '17'
+  name: 'aspConf'
+  type: 'conference'
+  url: 'http://www.aspconf.net/'
+  location: 'Online'
+  employer: 'appendto'
+  sessions:
+  - name: 'Exterminating Common jQuery Bugs'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 10
+    month: 'Jan'
+    year: 2013
+  date: '2013-01-10'
+  days: '10'
+  name: 'Nashville .NET User Group'
+  type: 'usergroup'
+  url: 'http://nashdotnet.org/2013/01/january-10th-career-panel/'
+  location: 'Nashville, TN'
+  employer: 'appendto'
+  sessions:
+  - name: 'Career Panel'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 08
+    month: 'Apr'
+    year: 2013
+  date: '2013-04-08'
+  days: '08'
+  name: 'AngleBrackets'
+  type: 'conference'
+  url: 'http://anglebrackets.org/'
+  location: 'Las Vegas, NV'
+  employer: 'appendto'
+  sessions:
+  - name: 'Angry Birds of JavaScript'
+    slides: ''
+    video: ''
+    feedback: ''
+  - name: 'Introduction to Backbone.js'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 15
+    month: 'May'
+    year: 2013
+  date: '2013-05-15'
+  days: '15'
+  name: 'Panama City .NET User Group'
+  type: 'usergroup'
+  url: 'http://www.gulfcoastdotnet.org/Meetings/May-2013-Meeting.aspx'
+  location: 'Panama City, FL'
+  employer: 'appendto'
+  sessions:
+  - name: 'Angry Birds of JavaScript'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 28
+    month: 'May'
+    year: 2013
+  - day: 29
+    month: 'May'
+    year: 2013
+  date: '2013-05-28'
+  days: '28-29'
+  name: 'FluentConf'
+  type: 'conference'
+  url: 'http://fluentconf.com/fluent2013/public/schedule/speaker/149259'
+  location: 'Panama City, FL'
+  employer: 'appendto'
+  sessions:
+  - name: 'Advanced jQuery Techniques'
+    slides: ''
+    video: ''
+    feedback: ''
+  - name: 'Angry Birds of JavaScript'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 10
+    month: 'Jun'
+    year: 2013
+  date: '2013-06-10'
+  days: '10'
+  name: 'Fort Smith .NET User Group'
+  type: 'usergroup'
+  url: 'http://www.eventbrite.com/event/7018341047/es2'
+  location: 'Fort Smith, AR'
+  employer: 'appendto'
+  sessions:
+  - name: 'Angry Birds of JavaScript'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 11
+    month: 'Jul'
+    year: 2013
+  - day: 12
+    month: 'Jul'
+    year: 2013
+  date: '2013-07-11'
+  days: '11-12'
+  name: 'CodeStock'
+  type: 'conference'
+  url: 'http://www.codestock.org'
+  location: 'Knoxville, TN'
+  employer: 'appendto'
+  sessions:
+  - name: 'Angry Birds of JavaScript'
+    slides: ''
+    video: ''
+    feedback: ''
+  - name: 'Comparing Backbone & Angular while Refactoring Spaghetti jQuery'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 16
+    month: 'Jul'
+    year: 2013
+  date: '2013-07-16'
+  days: '16'
+  name: 'Interactive Developers of Nashville'
+  type: 'usergroup'
+  url: 'http://www.meetup.com/interactivedev/events/122989392/'
+  location: 'Nashville, TN'
+  employer: 'appendto'
+  sessions:
+  - name: 'Angry Birds of JavaScript'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 28
+    month: 'Aug'
+    year: 2013
+  date: '2013-08-28'
+  days: '28'
+  name: 'DevLink'
+  type: 'conference'
+  url: 'http://www.devlink.net'
+  location: 'Chattanooga, TN'
+  employer: 'appendto'
+  sessions:
+  - name: 'Angry Birds of JavaScript'
+    slides: ''
+    video: ''
+    feedback: ''
+  - name: 'Comparing Backbone & Angular while Refactoring Spaghetti jQuery'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 19
+    month: 'Sep'
+    year: 2013
+  date: '2013-09-19'
+  days: '19'
+  name: 'Nashville .NET User Group'
+  type: 'usergroup'
+  url: 'http://nashdotnet.org/2013/09/september-19th-lab-fixing-common-javascript-bugs/'
+  location: 'Nashville, TN'
+  employer: 'appendto'
+  sessions:
+  - name: 'Fixing Common JavaScript Bugs'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 10
+    month: 'Sep'
+    year: 2013
+  date: '2013-10-10'
+  days: '10'
+  name: 'Nashville .NET User Group'
+  type: 'usergroup'
+  url: 'http://nashdotnet.org/2013/10/october-10th-jquery-free-javascript/'
+  location: 'Nashville, TN'
+  employer: 'appendto'
+  sessions:
+  - name: 'jQuery-free JavaScript'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 27
+    month: 'Oct'
+    year: 2013
+  date: '2013-10-27'
+  days: '27'
+  name: 'AngleBrackets'
+  type: 'conference'
+  url: 'http://anglebrackets.org/'
+  location: 'Las Vegas, NV'
+  employer: 'appendto'
+  sessions:
+  - name: 'Fixing Common JavaScript Bugs'
+    slides: ''
+    video: ''
+    feedback: ''
+  - name: 'jQuery-free JavaScript'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 20
+    month: 'Nov'
+    year: 2013
+  date: '2013-11-20'
+  days: '20'
+  name: 'JavaScript Summit'
+  type: 'conference'
+  url: 'http://environmentsforhumans.com/2013/javascript-summit/'
+  location: 'Online'
+  employer: 'appendto'
+  sessions:
+  - name: 'Angry Birds of JavaScript'
+    slides: ''
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 13
+    month: 'Dec'
+    year: 2013
+  date: '2013-12-13'
+  days: '11'
+  name: 'Yet Another Podcast #117 by Jesse Liberty'
+  title: 'Elijah Manor and John Papa on jQuery and other JavaScript Libraries'
+  description: 'Two extraordinary guests, John Papa and Elijah Manor, discuss the role of jQuery in JavaScript today, and how it works zombie outbreakand plays with other libraries such as Angular.'
+  type: 'podcast'
+  url: 'http://jesseliberty.com/2013/12/13/yet-another-podcast-117elijah-manor-and-john-papa-on-jquery-and-other-javascript-libraries/'
+  employer: 'sommet'
+
+- dates:
+  - day: 12
+    month: 'Feb'
+    year: 2014
+  date: '2014-02-12'
+  days: '12'
+  name: 'NashJS'
+  type: 'usergroup'
+  url: 'http://www.meetup.com/nashjs'
+  location: 'Nashville, TN'
+  employer: 'lampo'
+  sessions:
+  - name: 'jQuery-free JavaScript'
+    slides: 'jqfreejs-slides'
+    video: 'jqfreejs-video'
+    feedback: 'jqfreejs-feedback'
+
+- dates:
+  - day: 11
+    month: 'Mar'
+    year: 2014
+  - day: 13
+    month: 'Mar'
+    year: 2014
+  date: '2014-03-11'
+  days: '11-13'
+  name: 'FluentConf'
+  type: 'conference'
+  url: 'http://fluentconf.com'
+  location: 'San Francisco, CA'
+  employer: 'lampo'
+  sessions:
+  - name: 'jQuery-free JavaScript'
+    slides: 'jqfreejs-slides'
+    video: 'jqfreejs-video'
+    feedback: 'jqfreejs-feedback'
+
+- dates:
+  - day: 13
+    month: 'Dec'
+    year: 2013
+  date: '2014-04-01'
+  days: '11'
+  name: 'Yet Another Podcast #122 by Jesse Liberty'
+  title: 'JavaScript: Core Concepts'
+  description: 'Jon Galloway and I welcome Ward Bell and Elijah Manor to discuss the fundamentals every serious JavaScript programmer should know.'
+  type: 'podcast'
+  url: 'http://jesseliberty.com/2014/04/02/yet-another-podcast-122javascript-fundamentals/'
+  employer: 'sommet'
+
+- dates:
+  - day: 15
+    month: 'Apr'
+    year: 2014
+  - day: 16
+    month: 'Apr'
+    year: 2014
+  date: '2014-04-16'
+  days: '15-16'
+  name: 'AngleBrackets'
+  type: 'conference'
+  url: 'http://anglebrackets.org'
+  location: 'Orlando, FL'
+  employer: 'lampo'
+  sessions:
+  - name: 'jQuery-free JavaScript'
+    slides: 'jqfreejs-slides'
+    video: 'jqfreejs-video'
+    feedback: 'jqfreejs-feedback'
+  - name: 'Grunt-ifying Your Front-End Workflow'
+    slides: 'gruntify-slides'
+    video: 'gruntify-video'
+    feedback: 'gruntify-feedback'
+  - name: 'Fixing Common JavaScript Bugs'
+    slides: 'fixjsbugs-slides'
+    video: 'fixjsbugs-video'
+    feedback: 'fixjsbugs-feedback'
+
+- dates:
+  - day: 05
+    month: 'Aug'
+    year: 2014
+  - day: 07
+    month: 'Aug'
+    year: 2014
+  date: '2014-08-05'
+  days: '05-07'
+  name: 'ModernWeb Con'
+  type: 'conference'
+  url: 'http://modernwebconf.com/'
+  location: 'Online'
+  employer: 'lampo'
+  sessions:
+  - name: 'Grunt-ifying Your Front-End Workflow'
+    slides: 'gruntify-slides'
+    video: 'gruntify-video'
+    feedback: 'gruntify-feedback'
+
+- dates:
+  - day: 28
+    month: 'Aug'
+    year: 2014
+  - day: 30
+    month: 'Aug'
+    year: 2014
+  date: '2014-08-28'
+  days: '28-30'
+  name: 'DevLink'
+  type: 'conference'
+  url: 'http://devlink.net'
+  location: 'Chattanooga, TN'
+  employer: 'lampo'
+  sessions:
+  - name: 'jQuery-free JavaScript'
+    slides: 'jqfreejs-slides'
+    video: 'jqfreejs-video'
+    feedback: 'jqfreejs-feedback'
+  - name: 'Grunt-ifying Your Front-End Workflow'
+    slides: 'gruntify-slides'
+    video: 'gruntify-video'
+    feedback: 'gruntify-feedback'
+
+- dates:
+  - day: 20
+    month: 'Sep'
+    year: 2014
+  - day: 21
+    month: 'Sep'
+    year: 2014
+  date: '2014-09-20'
+  days: '20-21'
+  name: 'CoderFaire'
+  type: 'conference'
+  url: 'http://coderfaire.com'
+  location: 'Nashville, TN'
+  employer: 'lampo'
+  sessions:
+  - name: 'Grunt-ifying Your Front-End Workflow'
+    slides: 'gruntify-slides'
+    video: 'gruntify-video'
+    feedback: 'gruntify-feedback'
+
+- dates:
+  - day: 10
+    month: 'Nov'
+    year: 2014
+  - day: 13
+    month: 'Nov'
+    year: 2014
+  date: '2014-11-10'
+  days: '10-13'
+  name: 'AngleBrackets'
+  type: 'conference'
+  url: 'http://anglebrackets.org'
+  location: 'Las Vegas, NV'
+  employer: 'lampo'
+  sessions:
+  - name: 'jQuery-free JavaScript'
+    slides: 'jqfreejs-slides'
+    video: 'jqfreejs-video'
+    feedback: 'jqfreejs-feedback'
+  - name: 'Grunt-ifying Your Front-End Workflow'
+    slides: 'gruntify-slides'
+    video: 'gruntify-video'
+    feedback: 'gruntify-feedback'
+  - name: 'How to Pick Good JavaScript Libraries'
+    slides: 'goodjslibs-slides'
+    video: 'goodjslibs-video'
+    feedback: 'goodjslibs-feedback'
+
+- dates:
+  - day: 15
+    month: 'Nov'
+    year: 2014
+  - day: 16
+    month: 'Nov'
+    year: 2014
+  date: '2014-11-15'
+  days: '15-16'
+  name: 'Node.vember'
+  type: 'conference'
+  url: 'http://nodevember.org/'
+  location: 'Nasvhille, TN'
+  employer: 'lampo'
+  sessions:
+  - name: 'Grunt-ifying Your Front-End Workflow'
+    slides: 'gruntify-slides'
+    video: 'gruntify-video'
+    feedback: 'gruntify-feedback'
+
+- dates:
+  - day: 19
+    month: 'Nov'
+    year: 2014
+  - day: 21
+    month: 'Nov'
+    year: 2014
+  date: '2014-11-19'
+  days: '19-21'
+  name: 'JavaScript Summit'
+  type: 'conference'
+  url: 'http://environmentsforhumans.com/2013/javascript-summit/'
+  location: 'Online'
+  employer: 'lampo'
+  sessions:
+  - name: 'jQuery-free JavaScript'
+    slides: 'jqfreejs-slides'
+    video: 'jqfreejs-video'
+    feedback: 'jqfreejs-feedback'
+
+- dates:
+  - day: 17
+    month: 'Mar'
+    year: 2015
+  date: '2015-03-17'
+  days: '17'
+  name: 'NomadJS'
+  type: 'usergroup'
+  url: 'http://nomadjavascript.com/'
+  location: 'Online'
+  employer: 'lampo'
+  sessions:
+  - name: 'Eliminating JavaScript Code Smells'
+    slides: '/talks/js-smells'
+    video: 'https://www.youtube.com/watch?v=JVlfj7mQZPo'
+    feedback: ''
+
+- dates:
+  - day: 8
+    month: 'Apr'
+    year: 2015
+  date: '2015-04-08'
+  days: '08'
+  name: 'NashJS'
+  type: 'usergroup'
+  url: 'http://nashjs.org/'
+  location: 'Nashville, TN'
+  employer: 'lampo'
+  sessions:
+  - name: 'Eliminating JavaScript Code Smells'
+    slides: '/talks/js-smells'
+    video: 'https://www.youtube.com/watch?v=JVlfj7mQZPo'
+    feedback: ''
+
+- dates:
+  - day: 20
+    month: 'Apr'
+    year: 2015
+  - day: 22
+    month: 'Apr'
+    year: 2015
+  date: '2015-04-20'
+  days: '20-22'
+  name: 'FluentConf'
+  type: 'conference'
+  url: 'http://fluentconf.com'
+  location: 'San Francisco, CA'
+  employer: 'lampo'
+  sessions:
+  - name: 'Eliminating JavaScript Code Smells'
+    slides: '/talks/js-smells'
+    video: 'https://www.youtube.com/watch?v=JVlfj7mQZPo'
+    feedback: ''
+
+- dates:
+  - day: 18
+    month: 'May'
+    year: 2015
+  - day: 21
+    month: 'May'
+    year: 2015
+  date: '2015-05-18'
+  days: '20-22'
+  name: 'AngleBrackets'
+  type: 'conference'
+  url: 'http://anglebrackets.org'
+  location: 'Scottsdale, AZ'
+  employer: 'lampo'
+  sessions:
+  - name: 'Eliminating JavaScript Code Smells'
+    slides: '/talks/js-smells'
+    video: 'https://www.youtube.com/watch?v=JVlfj7mQZPo'
+    feedback: ''
+  - name: 'React to the Future'
+    slides: '/talks/react-to-the-future/dist'
+    video: ''
+    feedback: 'reactfuture-feedback'
+  - name: 'CSS for Developers'
+    slides: '/talks/css-for-devs'
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 03
+    month: 'Jun'
+    year: 2015
+  date: '2015-06-03'
+  days: '03'
+  name: '.NET Rocks #1147'
+  title: 'CSS for Developers with Elijah Manor'
+  description: 'Do you fear the CSS? You are not alone! Carl and Richard chat with Elijah Manor about his experiences becoming a real front end developer and embracing CSS development.'
+  type: 'podcast'
+  url: 'http://www.dotnetrocks.com/default.aspx?showNum=1147'
+  employer: 'lampo'
+
+- dates:
+  - day: 10
+    month: 'Jun'
+    year: 2015
+  date: '2015-06-10'
+  days: '10'
+  name: 'Polymorphic Podcast by Craig Shoemaker'
+  title: 'T.B.D.'
+  description: 'T.B.D.'
+  type: 'podcast'
+  url: 'http://polymorphicpodcast.com/'
+  employer: 'lampo'
+
+- dates:
+  - day: 25
+    month: 'Jun'
+    year: 2015
+  - day: 26
+    month: 'Jun'
+    year: 2015
+  date: '2015-06-25'
+  days: '25-26'
+  name: 'Web Directions'
+  type: 'conference'
+  url: 'http://www.webdirections.org/code15/'
+  location: 'Melbourne, Australia'
+  employer: 'lampo'
+  sessions:
+  - name: 'Eliminating JavaScript Code Smells'
+    slides: '/talks/js-smells'
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 07
+    month: 'Aug'
+    year: 2015
+  - day: 09
+    month: 'Aug'
+    year: 2015
+  date: '2015-08-07'
+  days: '07-09'
+  name: 'Code on the Beach'
+  type: 'conference'
+  url: 'https://www.codeonthebeach.com/'
+  location: 'Atlantic Beach, FL'
+  employer: 'lampo'
+  sessions:
+  - name: 'Growing Developers'
+    slides: ''
+    video: ''
+    feedback: ''
+    type: 'keynote'
+  - name: 'Eliminating JavaScript Code Smells'
+    slides: '/talks/js-smells'
+    video: ''
+    feedback: ''

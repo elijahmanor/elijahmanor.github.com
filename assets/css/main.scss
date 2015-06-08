@@ -3,6 +3,10 @@
 # Change this file for any custom CSS.
 ---
 
+.post--wide {
+	max-width: none;
+}
+
 /* We need to add display:inline in order to align the '>>' of the 'read more' link */
 .post-excerpt p {
 	display: inline;
@@ -106,6 +110,10 @@
     a { color: black; }
   }
 
+	&-title { font-weight: bold; font-size: 2rem; margin-bottom: 1rem; }
+
+	&-description { font-size: 1.5rem; }
+
   &-location {
 		font-style: italic;
     color: #555;
@@ -160,6 +168,13 @@
   &-link {
     margin-right: 1.5rem;
     a { color: black; }
+  }
+	&-link--unavailable {
+    a {
+			color: #ccc;
+			pointer-events: none;
+			cursor: default;
+		}
   }
 }
 

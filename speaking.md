@@ -1,372 +1,57 @@
 ---
-layout: page
+layout: page-wide
 title: Speaking
 ---
 
+{% assign talks = 0 %}
+{% assign usergroups = 0 %}
+{% assign conferences = 0 %}
+{% assign podcasts = 0 %}
+{% for event in site.data.events %}
+	{% assign talks = talks | plus: event.sessions.size %}
+	{% case event.type %}
+	{% when 'usergroup' %}
+		{% assign usergroups = usergroups | plus: 1 %}
+	{% when 'conference' %}
+		{% assign conferences = conferences | plus: 1 %}
+	{% when 'podcast' %}
+		{% assign podcasts = podcasts | plus: 1 %}
+	{% endcase %}
+{% endfor %}
+
+<div>{{ site.data.events | size }} Events ({{ talks }} Talks ({{ usergroups }} User Groups, {{ conferences }} Conferences) and {{ podcasts }} Podcasts)</div>
+{% capture nowunix %}{{ 'now' | date: '%s' }}{% endcapture %}
 <ul class="Events">
-    <li class="Event Event--upcoming">
-      <div class="Event-date Date">
-        <div class="Date-day">07-09</div>
-        <div class="Date-summary">
-          <div class="Date-month">Aug</div>
-          <div class="Date-year">2015</div>
-        </div>
-      </div>
-      <header class="Event-name">
-        <a href="https://www.codeonthebeach.com/">Code on the Beach</a>
-      </header>
-      <div class="Event-location">Melbourne, Australia</div>
-      <ul class="Sessions">
-        <li class="Session">
-          <div class="Session-name">Growing Developers</div>
-          <ul class="Session-links">
-            <li class="Session-link"><a href="#">Slides</a></li>
-            <li class="Session-link"><a href="#">Video</a></li>
-            <li class="Session-link"><a href="#">Feedback</a></li>
-          </ul>
-        </li>
-        <li class="Session">
-          <div class="Session-name">Eliminate JavaScript Code Smells</div>
-          <ul class="Session-links">
-            <li class="Session-link"><a href="/talks/js-smells">Slides</a></li>
-            <li class="Session-link"><a href="#">Video</a></li>
-            <li class="Session-link"><a href="#">Feedback</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li class="Event Event--upcoming">
-      <div class="Event-date Date">
-        <div class="Date-day">25-26</div>
-        <div class="Date-summary">
-          <div class="Date-month">Jun</div>
-          <div class="Date-year">2015</div>
-        </div>
-      </div>
-      <header class="Event-name">
-        <a href="http://www.webdirections.org/code15/">Web Directions</a>
-      </header>
-      <div class="Event-location">Melbourne, Australia</div>
-      <ul class="Sessions">
-        <li class="Session">
-          <div class="Session-name">Eliminate JavaScript Code Smells</div>
-          <ul class="Session-links">
-            <li class="Session-link"><a href="/talks/js-smells">Slides</a></li>
-            <li class="Session-link"><a href="#">Video</a></li>
-            <li class="Session-link"><a href="#">Feedback</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li class="Event">
-      <div class="Event-date Date">
-        <div class="Date-day">18-21</div>
-        <div class="Date-summary">
-          <div class="Date-month">May</div>
-          <div class="Date-year">2015</div>
-        </div>
-      </div>
-      <header class="Event-name">
-        <a href="http://anglebrackets.org">AngleBrackets</a>
-      </header>
-      <div class="Event-location">Scottsdale, AZ</div>
-      <ul class="Sessions">
-        <li class="Session">
-          <div class="Session-name">Eliminate JavaScript Code Smells</div>
-          <ul class="Session-links">
-            <li class="Session-link"><a href="/talks/js-smells">Slides</a></li>
-            <li class="Session-link"><a href="#">Video</a></li>
-            <li class="Session-link"><a href="#">Feedback</a></li>
-          </ul>
-        </li>
-        <li class="Session">
-          <div class="Session-name">CSS for Developers</div>
-          <ul class="Session-links">
-            <li class="Session-link"><a href="/talks/css-for-devs">Slides</a></li>
-            <li class="Session-link"><a href="#">Video</a></li>
-            <li class="Session-link"><a href="#">Feedback</a></li>
-          </ul>
-        </li>
-        <li class="Session">
-          <div class="Session-name">React to the Future</div>
-          <ul class="Session-links">
-            <li class="Session-link"><a href="/talks/react-to-the-future/dist">Slides</a></li>
-            <li class="Session-link"><a href="#">Video</a></li>
-            <li class="Session-link"><a href="#">Feedback</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li class="Event">
-      <div class="Event-date Date">
-        <div class="Date-day">20-22</div>
-        <div class="Date-summary">
-          <div class="Date-month">Apr</div>
-          <div class="Date-year">2015</div>
-        </div>
-      </div>
-      <header class="Event-name">
-        <a href="http://fluentconf.com">FluentConf</a>
-      </header>
-      <div class="Event-location">San Francisco, CA</div>
-      <ul class="Sessions">
-        <li class="Session">
-          <div class="Session-name">Eliminate JavaScript Code Smells</div>
-          <ul class="Session-links">
-            <li class="Session-link"><a href="/talks/js-smells">Slides</a></li>
-            <li class="Session-link"><a href="#">Video</a></li>
-            <li class="Session-link"><a href="#">Feedback</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li class="Event">
-      <div class="Event-date Date">
-        <div class="Date-day">17</div>
-        <div class="Date-summary">
-          <div class="Date-month">Mar</div>
-          <div class="Date-year">2015</div>
-        </div>
-      </div>
-      <header class="Event-name">
-        <a href="http://nomadjavascript.com/">NomadJS</a>
-      </header>
-      <div class="Event-location">Online</div>
-      <ul class="Sessions">
-        <li class="Session">
-          <div class="Session-name">Eliminate JavaScript Code Smells</div>
-          <ul class="Session-links">
-            <li class="Session-link"><a href="/talks/js-smells">Slides</a></li>
-            <li class="Session-link"><a href="#">Video</a></li>
-            <li class="Session-link"><a href="#">Feedback</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li class="Event">
-      <div class="Event-date Date">
-        <div class="Date-day">19-21</div>
-        <div class="Date-summary">
-          <div class="Date-month">Nov</div>
-          <div class="Date-year">2014</div>
-        </div>
-      </div>
-      <header class="Event-name">
-        <a href="http://environmentsforhumans.com/2013/javascript-summit/">JavaScript Summit</a>
-      </header>
-      <div class="Event-location">Online</div>
-      <ul class="Sessions">
-        <li class="Session">
-          <div class="Session-name">jQuery-free JavaScript</div>
-          <ul class="Session-links">
-            <li class="Session-link"><a href="#">Slides</a></li>
-            <li class="Session-link"><a href="#">Video</a></li>
-            <li class="Session-link"><a href="#">Feedback</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li class="Event">
-      <div class="Event-date Date">
-        <div class="Date-day">10-13</div>
-        <div class="Date-summary">
-          <div class="Date-month">Aug</div>
-          <div class="Date-year">2014</div>
-        </div>
-      </div>
-      <header class="Event-name">
-        <a href="http://anglebrackets.org">AngleBrackets</a>
-      </header>
-      <div class="Event-location">Nashville, TN</div>
-      <ul class="Sessions">
-        <li class="Session">
-          <div class="Session-name">jQuery-free JavaScript</div>
-          <ul class="Session-links">
-            <li class="Session-link"><a href="#">Slides</a></li>
-            <li class="Session-link"><a href="#">Video</a></li>
-            <li class="Session-link"><a href="#">Feedback</a></li>
-          </ul>
-        </li>
-        <li class="Session">
-          <div class="Session-name">Grunt-ifying Your Front-End Workflow</div>
-          <ul class="Session-links">
-            <li class="Session-link"><a href="#">Slides</a></li>
-            <li class="Session-link"><a href="#">Video</a></li>
-            <li class="Session-link"><a href="#">Feedback</a></li>
-          </ul>
-        </li>
-        <li class="Session">
-          <div class="Session-name">How to Pick Good JavaScript Libraries</div>
-          <ul class="Session-links">
-            <li class="Session-link"><a href="#">Slides</a></li>
-            <li class="Session-link"><a href="#">Video</a></li>
-            <li class="Session-link"><a href="#">Feedback</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li class="Event">
-      <div class="Event-date Date">
-        <div class="Date-day">20-21</div>
-        <div class="Date-summary">
-          <div class="Date-month">Aug</div>
-          <div class="Date-year">2014</div>
-        </div>
-      </div>
-      <header class="Event-name">
-        <a href="http://devlink.net">CoderFaire</a>
-      </header>
-      <div class="Event-location">Nashville, TN</div>
-      <ul class="Sessions">
-        <li class="Session">
-          <div class="Session-name">Grunt-ifying Your Front-End Workflow</div>
-          <ul class="Session-links">
-            <li class="Session-link"><a href="#">Slides</a></li>
-            <li class="Session-link"><a href="#">Video</a></li>
-            <li class="Session-link"><a href="#">Feedback</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li class="Event">
-      <div class="Event-date Date">
-        <div class="Date-day">28-30</div>
-        <div class="Date-summary">
-          <div class="Date-month">Aug</div>
-          <div class="Date-year">2014</div>
-        </div>
-      </div>
-      <header class="Event-name">
-        <a href="http://devlink.net">DevLink</a>
-      </header>
-      <div class="Event-location">Chattanooga, TN</div>
-      <ul class="Sessions">
-        <li class="Session">
-          <div class="Session-name">jQuery-free JavaScript</div>
-          <ul class="Session-links">
-            <li class="Session-link"><a href="#">Slides</a></li>
-            <li class="Session-link"><a href="#">Video</a></li>
-            <li class="Session-link"><a href="#">Feedback</a></li>
-          </ul>
-        </li>
-        <li class="Session">
-          <div class="Session-name">Grunt-ifying Your Front-End Workflow</div>
-          <ul class="Session-links">
-            <li class="Session-link"><a href="#">Slides</a></li>
-            <li class="Session-link"><a href="#">Video</a></li>
-            <li class="Session-link"><a href="#">Feedback</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li class="Event">
-      <div class="Event-date Date">
-        <div class="Date-day">05-07</div>
-        <div class="Date-summary">
-          <div class="Date-month">Aug</div>
-          <div class="Date-year">2014</div>
-        </div>
-      </div>
-      <header class="Event-name">
-        <a href="http://modernwebconf.com/">ModernWeb Conf</a>
-      </header>
-      <div class="Event-location">Online</div>
-      <ul class="Sessions">
-        <li class="Session">
-          <div class="Session-name">Grunt-ifying Your Front-End Workflow</div>
-          <ul class="Session-links">
-            <li class="Session-link"><a href="#">Slides</a></li>
-            <li class="Session-link"><a href="#">Video</a></li>
-            <li class="Session-link"><a href="#">Feedback</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li class="Event">
-      <div class="Event-date Date">
-        <div class="Date-day">16</div>
-        <div class="Date-summary">
-          <div class="Date-month">Apr</div>
-          <div class="Date-year">2014</div>
-        </div>
-      </div>
-      <header class="Event-name">
-        <a href="http://anglebrackets.org">AngleBrackets</a>
-      </header>
-      <div class="Event-location">Orlando, FL</div>
-      <ul class="Sessions">
-        <li class="Session">
-          <div class="Session-name">Fixing Common JavaScript Bugs</div>
-          <ul class="Session-links">
-            <li class="Session-link"><a href="#">Slides</a></li>
-            <li class="Session-link"><a href="#">Video</a></li>
-            <li class="Session-link"><a href="#">Feedback</a></li>
-          </ul>
-        </li>
-        <li class="Session">
-          <div class="Session-name">jQuery-free JavaScript</div>
-          <ul class="Session-links">
-            <li class="Session-link"><a href="#">Slides</a></li>
-            <li class="Session-link"><a href="#">Video</a></li>
-            <li class="Session-link"><a href="#">Feedback</a></li>
-          </ul>
-        </li>
-        <li class="Session">
-          <div class="Session-name">Grunt-ifying Your Front-End Workflow</div>
-          <ul class="Session-links">
-            <li class="Session-link"><a href="#">Slides</a></li>
-            <li class="Session-link"><a href="#">Video</a></li>
-            <li class="Session-link"><a href="#">Feedback</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li class="Event">
-      <div class="Event-date Date">
-        <div class="Date-day">11-13</div>
-        <div class="Date-summary">
-          <div class="Date-month">Mar</div>
-          <div class="Date-year">2014</div>
-        </div>
-      </div>
-      <header class="Event-name">
-        <a href="http://fluentconf.com">FluentConf</a>
-      </header>
-      <div class="Event-location">San Francisco, CA</div>
-      <ul class="Sessions">
-        <li class="Session">
-          <div class="Session-name">jQuery-free JavaScript</div>
-          <ul class="Session-links">
-            <li class="Session-link"><a href="#">Slides</a></li>
-            <li class="Session-link"><a href="#">Video</a></li>
-            <li class="Session-link"><a href="#">Feedback</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li class="Event">
-      <div class="Event-date Date">
-        <div class="Date-day">12</div>
-        <div class="Date-summary">
-          <div class="Date-month">Feb</div>
-          <div class="Date-year">2014</div>
-        </div>
-      </div>
-      <header class="Event-name">
-        <a href="http://www.meetup.com/nashjs">JavaScript Meetup</a>
-      </header>
-      <div class="Event-location">Nashville, TN</div>
-      <ul class="Sessions">
-        <li class="Session">
-          <div class="Session-name">jQuery-free JavaScript</div>
-          <ul class="Session-links">
-            <li class="Session-link"><a href="#">Slides</a></li>
-            <li class="Session-link"><a href="#">Video</a></li>
-            <li class="Session-link"><a href="#">Feedback</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+{% for event in site.data.events reversed %}
+	{% capture eventdate %}{{ event.date | date: '%s' }}{% endcapture %}
+  <li class="Event {% if nowunix < eventdate %}Event--upcoming{% endif %}" data-date="{{ event.date }} data-employer="{{event.employer}}">
+		<div class="Event-date Date">
+			<div class="Date-day">{{ event.days }}</div>
+			<div class="Date-summary">
+				<div class="Date-month">{{ event.date | date: "%b" }}</div>
+				<div class="Date-year">{{ event.date | date: "%Y" }}</div>
+			</div>
+		</div>
+		<header class="Event-name">
+			<a href="{{ event.url }}" target="_blank">{{ event.name }}</a>
+		</header>
+		<div class="Event-location">{{ event.location }}</div>
+		<div class="Event-title">{{ event.title }}</div>
+		<div class="Event-description">{{ event.description }}</div>
+		<ul class="Sessions">
+		{% for session in event.sessions %}
+			<li class="Session">
+				<div class="Session-name">{{ session.name }}</div>
+				<ul class="Session-links">
+					<li class="Session-link {% if session.slides == empty %}Session-link--unavailable{% endif %}"><a href="{{ session.slides }}">Slides</a></li>
+					<li class="Session-link {% if session.video == empty %}Session-link--unavailable{% endif %}"><a href="{{ session.video }}">Video</a></li>
+					<li class="Session-link {% if session.feedback == empty %}Session-link--unavailable{% endif %}"><a href="{{ session.feedback }}">Feedback</a></li>
+				</ul>
+			</li>
+		{% endfor %}
+		</ul>
+	</li>
+{% endfor %}
 </ul>
 
 <!--
