@@ -920,7 +920,7 @@
   - name: 'Grunt-ifying Your Front-End Workflow'
     slides: '/talks/gruntify-fed'
     video: 'https://www.youtube.com/watch?v=5PJZC71Pac0'
-    feedback: 'gruntify-feedback'
+    feedback: ''
   - name: 'Fixing Common JavaScript Bugs'
     slides: 'fixjsbugs-slides'
     video: 'fixjsbugs-video'
@@ -944,7 +944,7 @@
   - name: 'Grunt-ifying Your Front-End Workflow'
     slides: '/talks/gruntify-fed'
     video: 'https://www.youtube.com/watch?v=5PJZC71Pac0'
-    feedback: 'gruntify-feedback'
+    feedback: ''
 
 - dates:
   - day: 28
@@ -968,7 +968,7 @@
   - name: 'Grunt-ifying Your Front-End Workflow'
     slides: '/talks/gruntify-fed'
     video: 'https://www.youtube.com/watch?v=5PJZC71Pac0'
-    feedback: 'gruntify-feedback'
+    feedback: ''
 
 - dates:
   - day: 20
@@ -988,7 +988,7 @@
   - name: 'Grunt-ifying Your Front-End Workflow'
     slides: '/talks/gruntify-fed'
     video: 'https://www.youtube.com/watch?v=5PJZC71Pac0'
-    feedback: 'gruntify-feedback'
+    feedback: ''
 
 - dates:
   - day: 10
@@ -1036,7 +1036,7 @@
   - name: 'Grunt-ifying Your Front-End Workflow'
     slides: '/talks/gruntify-fed'
     video: 'https://www.youtube.com/watch?v=5PJZC71Pac0'
-    feedback: 'gruntify-feedback'
+    feedback: ''
 
 - dates:
   - day: 19
