@@ -1134,7 +1134,7 @@
   - name: 'React to the Future'
     slides: '/talks/react-to-the-future/dist'
     video: ''
-    feedback: 'reactfuture-feedback'
+    feedback: ''
   - name: 'CSS for Developers'
     slides: '/talks/css-for-devs'
     video: ''
