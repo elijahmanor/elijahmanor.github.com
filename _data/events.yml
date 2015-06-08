@@ -861,9 +861,9 @@
   employer: 'lampo'
   sessions:
   - name: 'jQuery-free JavaScript'
-    slides: 'jqfreejs-slides'
-    video: 'jqfreejs-video'
-    feedback: 'jqfreejs-feedback'
+    slides: '/talks/jquery-free-javascript'
+    video: 'https://www.youtube.com/watch?v=bzDa-I_S4i8'
+    feedback: ''
 
 - dates:
   - day: 11
@@ -881,9 +881,9 @@
   employer: 'lampo'
   sessions:
   - name: 'jQuery-free JavaScript'
-    slides: 'jqfreejs-slides'
-    video: 'jqfreejs-video'
-    feedback: 'jqfreejs-feedback'
+    slides: '/talks/jquery-free-javascript'
+    video: 'https://www.youtube.com/watch?v=bzDa-I_S4i8'
+    feedback: ''
 
 - dates:
   - day: 13
@@ -914,12 +914,12 @@
   employer: 'lampo'
   sessions:
   - name: 'jQuery-free JavaScript'
-    slides: 'jqfreejs-slides'
-    video: 'jqfreejs-video'
-    feedback: 'jqfreejs-feedback'
+    slides: '/talks/jquery-free-javascript'
+    video: 'https://www.youtube.com/watch?v=bzDa-I_S4i8'
+    feedback: ''
   - name: 'Grunt-ifying Your Front-End Workflow'
-    slides: 'gruntify-slides'
-    video: 'gruntify-video'
+    slides: '/talks/gruntify-fed'
+    video: 'https://www.youtube.com/watch?v=5PJZC71Pac0'
     feedback: 'gruntify-feedback'
   - name: 'Fixing Common JavaScript Bugs'
     slides: 'fixjsbugs-slides'
@@ -942,8 +942,8 @@
   employer: 'lampo'
   sessions:
   - name: 'Grunt-ifying Your Front-End Workflow'
-    slides: 'gruntify-slides'
-    video: 'gruntify-video'
+    slides: '/talks/gruntify-fed'
+    video: 'https://www.youtube.com/watch?v=5PJZC71Pac0'
     feedback: 'gruntify-feedback'
 
 - dates:
@@ -962,12 +962,12 @@
   employer: 'lampo'
   sessions:
   - name: 'jQuery-free JavaScript'
-    slides: 'jqfreejs-slides'
-    video: 'jqfreejs-video'
-    feedback: 'jqfreejs-feedback'
+    slides: '/talks/jquery-free-javascript'
+    video: 'https://www.youtube.com/watch?v=bzDa-I_S4i8'
+    feedback: ''
   - name: 'Grunt-ifying Your Front-End Workflow'
-    slides: 'gruntify-slides'
-    video: 'gruntify-video'
+    slides: '/talks/gruntify-fed'
+    video: 'https://www.youtube.com/watch?v=5PJZC71Pac0'
     feedback: 'gruntify-feedback'
 
 - dates:
@@ -986,8 +986,8 @@
   employer: 'lampo'
   sessions:
   - name: 'Grunt-ifying Your Front-End Workflow'
-    slides: 'gruntify-slides'
-    video: 'gruntify-video'
+    slides: '/talks/gruntify-fed'
+    video: 'https://www.youtube.com/watch?v=5PJZC71Pac0'
     feedback: 'gruntify-feedback'
 
 - dates:
@@ -1006,17 +1006,17 @@
   employer: 'lampo'
   sessions:
   - name: 'jQuery-free JavaScript'
-    slides: 'jqfreejs-slides'
-    video: 'jqfreejs-video'
-    feedback: 'jqfreejs-feedback'
+    slides: '/talks/jquery-free-javascript'
+    video: 'https://www.youtube.com/watch?v=bzDa-I_S4i8'
+    feedback: ''
   - name: 'Grunt-ifying Your Front-End Workflow'
-    slides: 'gruntify-slides'
-    video: 'gruntify-video'
-    feedback: 'gruntify-feedback'
+    slides: '/talks/gruntify-fed'
+    video: 'https://www.youtube.com/watch?v=5PJZC71Pac0'
+    feedback: ''
   - name: 'How to Pick Good JavaScript Libraries'
-    slides: 'goodjslibs-slides'
-    video: 'goodjslibs-video'
-    feedback: 'goodjslibs-feedback'
+    slides: '/talks/good-js-libs'
+    video: ''
+    feedback: ''
 
 - dates:
   - day: 15
@@ -1034,8 +1034,8 @@
   employer: 'lampo'
   sessions:
   - name: 'Grunt-ifying Your Front-End Workflow'
-    slides: 'gruntify-slides'
-    video: 'gruntify-video'
+    slides: '/talks/gruntify-fed'
+    video: 'https://www.youtube.com/watch?v=5PJZC71Pac0'
     feedback: 'gruntify-feedback'
 
 - dates:
@@ -1054,9 +1054,9 @@
   employer: 'lampo'
   sessions:
   - name: 'jQuery-free JavaScript'
-    slides: 'jqfreejs-slides'
-    video: 'jqfreejs-video'
-    feedback: 'jqfreejs-feedback'
+    slides: '/talks/jquery-free-javascript'
+    video: 'https://www.youtube.com/watch?v=bzDa-I_S4i8'
+    feedback: ''
 
 - dates:
   - day: 17
