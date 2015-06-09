@@ -82,18 +82,18 @@
 	&--upcoming {
 		&:before {
 			content: 'Upcoming';
-	    display: block;
-	    position: absolute;
-	    background-color: #D9EDF7;
-	    right: 0;
-	    top: 0;
-	    width: 12rem;
-	    height: 4rem;
-	    text-align: center;
-	    font-size: 2rem;
-	    line-height: 4rem;
-	    border-radius: 0 1rem;
-	    border-bottom: 1px solid #CCC;
+			display: block;
+			position: absolute;
+			background-color: #D9EDF7;
+			right: 0;
+			bottom: 0;
+			width: 10rem;
+			height: 2.25rem;
+			text-align: center;
+			font-size: 1.25rem;
+			line-height: 2.25rem;
+			BORDER-RADIUS: 1rem 0rem;
+			border-top: 1px solid #CCC;
 			border-left: 1px solid #CCC;
 		}
 	}
@@ -207,6 +207,33 @@
 
 	&-button--selected {
 		background-color: #ccc;
+	}
+}
+
+.Badges {
+	position: absolute;
+	right: 1rem;
+	top: 0.5rem;
+	font-size: 1.5rem;
+	text-align: right;
+	display: flex;
+	align-items: flex-end;
+	flex-direction: column;
+
+	&-badge {
+		border-radius: 2rem;
+		line-height: 2rem;
+		padding: 0.25rem 1rem;
+		margin-bottom: .5rem;
+		border: 1px solid #ccc;
+	}
+
+	&-badge--type {
+		background-color: #DFF0D8;
+	}
+
+	&-badge--employer {
+		background-color: #FCF8E3;
 	}
 }
 

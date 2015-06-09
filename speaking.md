@@ -43,6 +43,10 @@ title: Speaking
 				<div class="Date-year">{{ event.date | date: "%Y" }}</div>
 			</div>
 		</div>
+		<div class="Badges">
+			<div class="Badges-badge Badges-badge--type Event-type">{{ event.type }}</div>
+			<div class="Badges-badge Badges-badge--employer Event-employer">{{ event.employer }}</div>
+		</div>
 		<header class="Event-name">
 			<a href="{{ event.url }}" target="_blank">{{ event.name }}</a>
 		</header>
