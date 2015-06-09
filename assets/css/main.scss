@@ -178,6 +178,38 @@
   }
 }
 
+
+/*
+<div class="ButtonGroup" role="group" aria-label="...">
+  <button type="button" class="ButtonGroup-button">Left</button>
+  <button type="button" class="ButtonGroup-button">Middle</button>
+  <button type="button" class="ButtonGroup-button">Right</button>
+</div>
+*/
+.ButtonGroup {
+	display: inline-block;
+
+	&-button {
+		float: left;
+		display: inline-block;
+		border: 1px solid #ccc;
+		background-color: #eee;
+		margin-left: -1px;
+	}
+
+	&-button:first-of-type {
+		border-radius: 0.5rem 0rem 0rem 0.5rem;
+	}
+
+	&-button:last-of-type {
+		border-radius: 0rem 0.5rem 0.5rem 0rem;
+	}
+
+	&-button--selected {
+		background-color: #ccc;
+	}
+}
+
 @media only screen and (max-width: 900px) {
 	.Event {
 		max-width: 100%;

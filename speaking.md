@@ -19,12 +19,23 @@ title: Speaking
 	{% endcase %}
 {% endfor %}
 
-<div>{{ site.data.events | size }} Events ({{ talks }} Talks ({{ usergroups }} User Groups, {{ conferences }} Conferences) and {{ podcasts }} Podcasts)</div>
+<div><span class="eventSize">{{ site.data.events | size }}</span> Events (<span class="talkSize">{{ talks }}</span> Talks (<span class="userGroupSize">{{ usergroups }}</span> User Groups, <span class="conferenceSize">{{ conferences }}</span> Conferences) and <span class="podcastSize">{{ podcasts }}</span> Podcasts)</div>
 {% capture nowunix %}{{ 'now' | date: '%s' }}{% endcapture %}
+<div id="eventEmployer" class="ButtonGroup">
+  <button type="button" class="ButtonGroup-button" data-value="sommet">Sommet</button>
+  <button type="button" class="ButtonGroup-button" data-value="appendto">appendTo</button>
+  <button type="button" class="ButtonGroup-button" data-value="manorism">Manorism</button>
+  <button type="button" class="ButtonGroup-button" data-value="lampo">Ramsey Solutions</button>
+</div>
+<div id="eventType" class="ButtonGroup">
+  <button type="button" class="ButtonGroup-button" data-value="usergroup">User Groups</button>
+  <button type="button" class="ButtonGroup-button" data-value="conference">Conferences</button>
+  <button type="button" class="ButtonGroup-button" data-value="podcast">Podcasts</button>
+</div>
 <ul class="Events">
 {% for event in site.data.events reversed %}
 	{% capture eventdate %}{{ event.date | date: '%s' }}{% endcapture %}
-  <li class="Event {% if nowunix < eventdate %}Event--upcoming{% endif %}" data-date="{{ event.date }}" data-employer="{{event.employer}}">
+  <li class="Event {% if nowunix < eventdate %}Event--upcoming{% endif %}" data-date="{{ event.date }}" data-employer="{{event.employer}}" data-type="{{ event.type }}">
 		<div class="Event-date Date">
 			<div class="Date-day">{{ event.days }}</div>
 			<div class="Date-summary">

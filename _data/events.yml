@@ -2,6 +2,8 @@
 #Webcast CodeStock 2011 - Elijah Manor	ASP.NET	http://tv.devexpress.com/#CodeStock11ElijahManor	6/8/11	DevExpress interviewed me while at the CodeStock conference	Developer
 #Webcase 06/13/2013 O’Reilly Webcast - Angry Birds of JavaScript - 313 Attendees #http://oreillynet.com/pub/e/2636
 
+# sommet
+
 - dates:
   - day: 09
     month: 'Oct'
@@ -110,7 +112,7 @@
   - name: 'How to create your own jQuery Plugin'
     slides: ''
     video: ''
-    feedback: ''
+    feedback: 'sommet'
 
 - dates:
   - day: 13
@@ -123,7 +125,7 @@
   description: 'John Resig joins us on our first podcast to talk jQuery, the Software Freedom Conservancy, the upcoming 1.4 release and why Google Groups is dead.'
   type: 'podcast'
   url: 'http://blog.jquery.com/2009/11/13/announcing-the-official-jquery-podcast/'
-  employer: 'lampo'
+  employer: 'sommet'
 
 - dates:
   - day: 20
@@ -136,7 +138,7 @@
   description: 'Richard D. Worth, Release Manager for the jQuery UI project joins us to explain jQuery UI and how you can contribute.'
   type: 'podcast'
   url: 'http://blog.jquery.com/2009/11/20/the-official-jquery-podcast-episode-2-richard-d-worth/'
-  employer: 'lampo'
+  employer: 'sommet'
 
 - dates:
   - day: 04
@@ -149,7 +151,7 @@
   description: 'Paul Irish is a front-end developer and co-host of the other jQuery podcast called yayQuery.'
   type: 'podcast'
   url: 'http://blog.jquery.com/2009/12/04/the-official-jquery-podcast-episode-3-paul-irish/'
-  employer: 'lampo'
+  employer: 'sommet'
 
 - dates:
   - day: 11
@@ -162,7 +164,7 @@
   description: 'Cody Lindley is the author of the e-book jQuery Enlightenment and the coauthor of jQuery Cookbook. Learn all about the recently released jQuery books.'
   type: 'podcast'
   url: 'http://blog.jquery.com/2009/12/11/the-official-jquery-podcast-episode-4-cody-lindley/'
-  employer: 'lampo'
+  employer: 'sommet'
 
 - dates:
   - day: 18
@@ -175,7 +177,7 @@
   description: 'Rey Bango is the Head jQuery Evangelist, he talks with us about evangelism and what to expect in 2010.'
   type: 'podcast'
   url: 'http://blog.jquery.com/2010/01/01/the-official-jquery-podcast-episode-5-rey-bango/'
-  employer: 'lampo'
+  employer: 'sommet'
 
 - dates:
   - day: 01
@@ -188,7 +190,7 @@
   description: 'We talk with Ben Alman about writing plugins and contributing to jQuery. Elijah joins us after getting braces on, much hilarity ensues.'
   type: 'podcast'
   url: 'http://blog.jquery.com/2010/01/10/the-official-jquery-podcast-episode-6-ben-alman/'
-  employer: 'lampo'
+  employer: 'sommet'
 
 - dates:
   - day: 15
@@ -201,7 +203,7 @@
   description: 'We are in Washington DC and we are all sitting face-to-face with John Resig as we talk about the jQuery 1.4 Release.'
   type: 'podcast'
   url: 'http://blog.jquery.com/2010/01/15/the-official-jquery-podcast-episode-7-jquery-14-release-john-resig/'
-  employer: 'lampo'
+  employer: 'sommet'
 
 - dates:
   - day: 22
@@ -214,7 +216,7 @@
   description: 'The jQuery Documentation got a major facelift and was released during the 14 Days of jQuery. Find out what iss new in the site.'
   type: 'podcast'
   url: 'http://blog.jquery.com/2010/01/22/the-official-jquery-podcast-episode-8-api-jquery-com/'
-  employer: 'lampo'
+  employer: 'sommet'
 
 - dates:
   - day: 29
@@ -227,7 +229,7 @@
   description: 'We took the opportunity to sit down with David Artz and discuss how jQuery is used at Aol.'
   type: 'podcast'
   url: 'http://blog.jquery.com/2010/01/29/the-official-jquery-podcast-episode-9-david-artz-aol/'
-  employer: 'lampo'
+  employer: 'sommet'
 
 - dates:
   - day: 05
@@ -240,7 +242,7 @@
   description: 'We took the opportunity to sit down with Mike Hostetler and Jonathon Sharp to discuss appendTo. The irst jQuery company that provides support, training and consultation at the Enterprise level.'
   type: 'podcast'
   url: 'http://blog.jquery.com/2010/02/14/the-official-jquery-podcast-episode-10-appendto/'
-  employer: 'lampo'
+  employer: 'sommet'
 
 - dates:
   - day: 12
@@ -253,7 +255,7 @@
   description: 'Our last show while in Washington DC we sat down and talked with Yehuda Katz about Rails 3 and jQuery.'
   type: 'podcast'
   url: 'http://blog.jquery.com/2010/02/15/the-official-jquery-podcast-episode-11-yehuda-katz/'
-  employer: 'lampo'
+  employer: 'sommet'
 
 - dates:
   - day: 26
@@ -266,7 +268,7 @@
   description: 'We talk with Mootools developer David Walsh and discuss the relationship between our teams and compare the libraries.'
   type: 'podcast'
   url: 'http://blog.jquery.com/2010/02/26/the-official-jquery-podcast-episode-13-david-walsh'
-  employer: 'lampo'
+  employer: 'sommet'
 
 - dates:
   - day: 05
@@ -279,7 +281,7 @@
   description: 'We talk with Phil Haack of Microsoft to talk about how jQuery is now included in Visual Studio and ASP.NET MVC and how easy it is to use.'
   type: 'podcast'
   url: 'http://blog.jquery.com/2010/03/05/the-official-jquery-podcast-episode-14-phil-haack/'
-  employer: 'lampo'
+  employer: 'sommet'
 
 - dates:
   - day: 12
@@ -292,7 +294,7 @@
   description: 'We talk with John Resig about jQuery 1.4.1 and jQuery 1.4.2 as well as what is ahead in jQuery 1.4.3 and beyond.'
   type: 'podcast'
   url: 'http://blog.jquery.com/2010/03/12/the-official-jquery-podcast-episode-15-john-resig-jquery-1-4-1-1-4-2/'
-  employer: 'lampo'
+  employer: 'sommet'
 
 - dates:
   - day: 16
@@ -322,7 +324,7 @@
   description: 'We talk with Cody Lindley, Jonathan Sharp and Boaz Sender about meetups.jquery.com and try to help come up with ideas and process for hosting jQuery Meetups in your area.'
   type: 'podcast'
   url: 'http://blog.jquery.com/2010/03/19/the-official-jquery-podcast-episode-16-jquery-meetups/'
-  employer: 'lampo'
+  employer: 'sommet'
 
 - dates:
   - day: 02
@@ -335,7 +337,7 @@
   description: 'This week we talked with Jeffrey Way. He is the editor of Nettuts+, and the Site Manager of ThemeForest and CodeCanyon. Jeffrey gives an overview of the Nettuts+ website and explains why their tutorials focus so much on jQuery and gives some examples of recent jQuery related articles.'
   type: 'podcast'
   url: 'http://blog.jquery.com/2010/04/02/the-official-jquery-podcast-episode-18-jeffery-way-nettuts/'
-  employer: 'lampo'
+  employer: 'sommet'
 
 - dates:
   - day: 09
@@ -348,7 +350,9 @@
   description: 'This week we talked with Yehuda Katz and Bear Bibeault about the upcoming second edition of the popular jQuery in Action book from Manning.'
   type: 'podcast'
   url: 'http://blog.jquery.com/2010/04/09/the-official-jquery-podcast-episode-19-jquery-in-action-2nd-ed/'
-  employer: 'lampo'
+  employer: 'sommet'
+
+# appendto
 
 - dates:
   - day: 11
@@ -412,7 +416,7 @@
   description: 'Scott talks to Elijah Manor and Dave Ward about how one can take their JavaScript knowledge to the next level. What are the major concepts I should study? Which plugins are the must-haves? What is "Modernizr" and how does it, along with the concept of feature detection make my life easier?'
   type: 'podcast'
   url: 'http://www.hanselminutes.com/default.aspx?showID=275'
-  employer: 'sommet'
+  employer: 'appendto'
 
 - dates:
   - day: 12
@@ -476,7 +480,7 @@
   description: 'Talking with Elijah Manor, Senior Architect for appendTo: The jQuery Company and Microsoft ASP.NET MVP,  about jQuery and Javascript.'
   type: 'podcast'
   url: 'http://jesseliberty.com/2011/07/06/yet-another-podcast-41jquery-with-elijah-manor/'
-  employer: 'sommet'
+  employer: 'appendto'
 
 - dates:
   - day: 17
@@ -643,6 +647,8 @@
     video: ''
     feedback: ''
 
+# manorism
+
 - dates:
   - day: 15
     month: 'May'
@@ -653,7 +659,7 @@
   type: 'usergroup'
   url: 'http://www.gulfcoastdotnet.org/Meetings/May-2013-Meeting.aspx'
   location: 'Panama City, FL'
-  employer: 'appendto'
+  employer: 'manorism'
   sessions:
   - name: 'Angry Birds of JavaScript'
     slides: '/talks/angry-birds-javascript'
@@ -673,7 +679,7 @@
   type: 'conference'
   url: 'http://fluentconf.com/fluent2013/public/schedule/speaker/149259'
   location: 'Panama City, FL'
-  employer: 'appendto'
+  employer: 'manorism'
   sessions:
   - name: 'Advanced jQuery Techniques'
     slides: ''
@@ -694,7 +700,7 @@
   type: 'usergroup'
   url: 'http://www.eventbrite.com/event/7018341047/es2'
   location: 'Fort Smith, AR'
-  employer: 'appendto'
+  employer: 'manorism'
   sessions:
   - name: 'Angry Birds of JavaScript'
     slides: '/talks/angry-birds-javascript'
@@ -714,7 +720,7 @@
   type: 'conference'
   url: 'http://www.codestock.org'
   location: 'Knoxville, TN'
-  employer: 'appendto'
+  employer: 'manorism'
   sessions:
   - name: 'Angry Birds of JavaScript'
     slides: '/talks/angry-birds-javascript'
@@ -735,7 +741,7 @@
   type: 'usergroup'
   url: 'http://www.meetup.com/interactivedev/events/122989392/'
   location: 'Nashville, TN'
-  employer: 'appendto'
+  employer: 'manorism'
   sessions:
   - name: 'Angry Birds of JavaScript'
     slides: '/talks/angry-birds-javascript'
@@ -752,7 +758,7 @@
   type: 'conference'
   url: 'http://www.devlink.net'
   location: 'Chattanooga, TN'
-  employer: 'appendto'
+  employer: 'manorism'
   sessions:
   - name: 'Angry Birds of JavaScript'
     slides: '/talks/angry-birds-javascript'
@@ -773,12 +779,14 @@
   type: 'usergroup'
   url: 'http://nashdotnet.org/2013/09/september-19th-lab-fixing-common-javascript-bugs/'
   location: 'Nashville, TN'
-  employer: 'appendto'
+  employer: 'manorism'
   sessions:
   - name: 'Fixing Common JavaScript Bugs'
     slides: ''
     video: ''
     feedback: ''
+
+# lampo
 
 - dates:
   - day: 10
@@ -790,7 +798,7 @@
   type: 'usergroup'
   url: 'http://nashdotnet.org/2013/10/october-10th-jquery-free-javascript/'
   location: 'Nashville, TN'
-  employer: 'appendto'
+  employer: 'lampo'
   sessions:
   - name: 'jQuery-free JavaScript'
     slides: ''
@@ -807,7 +815,7 @@
   type: 'conference'
   url: 'http://anglebrackets.org/'
   location: 'Las Vegas, NV'
-  employer: 'appendto'
+  employer: 'lampo'
   sessions:
   - name: 'Fixing Common JavaScript Bugs'
     slides: ''
@@ -828,7 +836,7 @@
   type: 'conference'
   url: 'http://environmentsforhumans.com/2013/javascript-summit/'
   location: 'Online'
-  employer: 'appendto'
+  employer: 'lampo'
   sessions:
   - name: 'Angry Birds of JavaScript'
     slides: '/talks/angry-birds-javascript'
@@ -846,7 +854,7 @@
   description: 'Two extraordinary guests, John Papa and Elijah Manor, discuss the role of jQuery in JavaScript today, and how it works zombie outbreakand plays with other libraries such as Angular.'
   type: 'podcast'
   url: 'http://jesseliberty.com/2013/12/13/yet-another-podcast-117elijah-manor-and-john-papa-on-jquery-and-other-javascript-libraries/'
-  employer: 'sommet'
+  employer: 'lampo'
 
 - dates:
   - day: 12
@@ -896,7 +904,7 @@
   description: 'Jon Galloway and I welcome Ward Bell and Elijah Manor to discuss the fundamentals every serious JavaScript programmer should know.'
   type: 'podcast'
   url: 'http://jesseliberty.com/2014/04/02/yet-another-podcast-122javascript-fundamentals/'
-  employer: 'sommet'
+  employer: 'lampo'
 
 - dates:
   - day: 15
