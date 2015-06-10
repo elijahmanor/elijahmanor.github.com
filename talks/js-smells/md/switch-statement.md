@@ -205,7 +205,7 @@ getArea(shapeType.triangle, { width: 100, height: 100 });
 ### `const` & `symbols`
 
 <pre class="language-javascript highlight" data-line="1-3,8,15"><code data-trim>const shapeType = {
-  triangle: new Symbol()
+  triangle: Symbol()
 };
 
 function getArea(shape, options) {
