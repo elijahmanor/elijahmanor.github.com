@@ -10,3 +10,4 @@ https://github.com/elijahmanor/kasper
 http://azure.microsoft.com/blog/2014/03/04/windows-azure-websites-online-tools-you-should-know-about/
 https://elijahmanor.scm.azurewebsites.net/DebugConsole
 https://github.com/snaptortoise/jekyll-rss-feeds
+https://github.com/Shopify/liquid/wiki/Liquid-for-Designers

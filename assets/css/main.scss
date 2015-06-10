@@ -3,6 +3,13 @@
 # Change this file for any custom CSS.
 ---
 
+@media only screen and (max-width: 500px) {
+	.post-content img {
+		min-width: 100%;
+		float: none;
+	}
+}
+
 .post--wide {
 	max-width: none;
 }

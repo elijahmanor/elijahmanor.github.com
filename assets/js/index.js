@@ -3,6 +3,16 @@
   var selectedEmployer;
   var selectedType;
 
+  function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(
+      /[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+        vars[key] = value;
+      }
+    );
+    return vars;
+  }
+
   $('#eventEmployer').on('click', 'button', function(e) {
     var $button = $(this);
 
@@ -68,5 +78,13 @@
     $('.userGroupSize').text(userGroupSize);
     $('.conferenceSize').text(conferenceSize);
     $('.podcastSize').text(podcastSize);
+  }
+
+  var urlParameters = getUrlVars();
+  if (urlParameters.employer) {
+    $('#eventEmployer button[data-value="' + urlParameters.employer + '"]').trigger('click');
+  }
+  if (urlParameters.type) {
+    $('#eventType button[data-value="' + urlParameters.type + '"]').trigger('click');
   }
 }(jQuery));
