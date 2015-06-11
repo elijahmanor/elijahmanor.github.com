@@ -79,13 +79,14 @@
 
 .Event {
 	background-color: #eee;
-	border: 1px solid #CCC;
-	border-radius: 1rem;
-	flex: 1 auto;
-	margin: 1.25rem;
+  border: 1px solid #CCC;
+  border-radius: 1rem;
+  flex: 1 auto;
+  margin: 1rem;
   padding: 2rem;
-	max-width: 28.8rem;
-	position: relative;
+  max-width: 27rem;
+  position: relative;
+  min-width: 10rem;
 
 	&--upcoming {
 		&:before {
@@ -205,6 +206,12 @@
 		margin-left: -1px;
 	}
 
+	&-button:focus {
+		outline: thin dotted;
+		outline: 5px auto -webkit-focus-ring-color;
+		outline-offset: -3px;
+	}
+
 	&-button:first-of-type {
 		border-radius: 0.5rem 0rem 0rem 0.5rem;
 	}
@@ -234,6 +241,7 @@
 		padding: 0.25rem 1rem;
 		margin-bottom: .5rem;
 		border: 1px solid #ccc;
+		outline: none;
 	}
 
 	&-badge--type {

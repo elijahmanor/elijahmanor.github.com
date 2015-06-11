@@ -10,6 +10,7 @@
         vars[key] = value;
       }
     );
+
     return vars;
   }
 
@@ -51,6 +52,7 @@
     });
 
     updateCounts();
+    pushUrl();
   }
 
   function updateCounts() {
@@ -80,11 +82,33 @@
     $('.podcastSize').text(podcastSize);
   }
 
-  var urlParameters = getUrlVars();
-  if (urlParameters.employer) {
-    $('#eventEmployer button[data-value="' + urlParameters.employer + '"]').trigger('click');
+  function pushUrl() {
+    var employer = $('#eventEmployer').find('.ButtonGroup-button--selected').data('value');
+    var type = $('#eventType').find('.ButtonGroup-button--selected').data('value');
+    var params = [];
+
+    if (employer) { params.push('employer=' + employer); }
+    if (type) { params.push('type=' + type); }
+
+    history.pushState(null, null, params.length ? '?' + params.join('&') : '');
   }
-  if (urlParameters.type) {
-    $('#eventType button[data-value="' + urlParameters.type + '"]').trigger('click');
+
+  function readUrlAndUpdate(push) {
+    var urlParameters = getUrlVars();
+
+    if (urlParameters.employer) {
+      $('#eventEmployer button[data-value="' + urlParameters.employer + '"]').trigger('click');
+    }
+    if (urlParameters.type) {
+      $('#eventType button[data-value="' + urlParameters.type + '"]').trigger('click');
+    }
+
+    if (push) {
+      pushUrl();
+    }
   }
+
+  window.addEventListener('popstate', readUrlAndUpdate);
+
+  readUrlAndUpdate(true);
 }(jQuery));

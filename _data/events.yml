@@ -1162,11 +1162,11 @@
   employer: 'lampo'
 
 - dates:
-  - day: 10
+  - day: 12
     month: 'Jun'
     year: 2015
-  date: '2015-06-10'
-  days: '10'
+  date: '2015-06-12'
+  days: '12'
   name: 'Polymorphic Podcast by Craig Shoemaker'
   title: 'T.B.D.'
   description: 'T.B.D.'
