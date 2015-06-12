@@ -10,6 +10,8 @@ baseurl: /
 domain_name: 'http://elijahmanor.com'
 google_analytics: 'UA-21163683-1'
 permalink: /:categories/:title/
+safe: true
+lsi: false
 
 # Details for the RSS feed generator
 url: 'http://elijahmanor.com'
