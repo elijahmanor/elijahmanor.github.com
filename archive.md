@@ -14,7 +14,9 @@ title: Archive
     {% endif %}
     <li>
       <time>{{ post.date | date:"%d %b" }}</time>
-      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      <a href="{{ post.url | prepend: site.baseurl }}">
+        {{ post.title | strip_html }}
+      </a>
     </li>
   {% endfor %}
 </section>
