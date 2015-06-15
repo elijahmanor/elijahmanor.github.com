@@ -15,7 +15,7 @@ title: Archive
     <li>
       <time>{{ post.date | date:"%d %b" }}</time>
       <a href="{{ post.url | prepend: site.baseurl }}">
-        {{ post.title | strip_html }}
+        {{ post.title | strip_html | escape }}
       </a>
     </li>
   {% endfor %}
