@@ -12,12 +12,12 @@ In this open-ended series I'll be showcasing a snippet of buggy jQuery code that
 <blockquote>
 You can view other posts in this series...
 <ul>
-<li><a href="http://www.elijahmanor.com/2011/08/find-jquery-bug-1-chicken-or-egg.html">Find the jQuery Bug #1: Chicken or the Egg</a></li>
-<li><a href="http://www.elijahmanor.com/2012/01/find-jquery-bug-2-point-of-no-return.html">Find the jQuery Bug #2: Point of No Return</a></li>
-<li><a href="http://www.elijahmanor.com/2012/01/find-jquery-bug-3-give-me-truth.html">Find the jQuery Bug #3: Give Me Truth</a></li>
-<li><a href="http://www.elijahmanor.com/2012/02/find-jquery-bug-4-animations-gone-wild.html">Find the jQuery Bug #4: Animations Gone Wild</a></li>
-<li><a href="http://www.elijahmanor.com/2012/03/find-jquery-bug-5-defective-data.html">Find the jQuery Bug #5: Defective Data</a></li>
-<li><a href="http://www.elijahmanor.com/2012/03/find-jquery-bug-6-traversing-trouble.html">Find the jQuery Bug #6: Traversing Trouble</a></li>
+<li><a href="http://elijahmanor.com/find-the-jquery-bug-1-chicken-or-the-egg/">Find the jQuery Bug #1: Chicken or the Egg</a></li>
+<li><a href="http://elijahmanor.com/find-the-jquery-bug-2-point-of-no-return/">Find the jQuery Bug #2: Point of No Return</a></li>
+<li><a href="http://elijahmanor.com/find-the-jquery-bug-3-give-me-truth/">Find the jQuery Bug #3: Give Me Truth</a></li>
+<li><a href="http://elijahmanor.com/find-the-jquery-bug-4-animations-gone-wild/">Find the jQuery Bug #4: Animations Gone Wild</a></li>
+<li><a href="http://elijahmanor.com/find-the-jquery-bug-5-defective-data/">Find the jQuery Bug #5: Defective Data</a></li>
+<li><a href="http://elijahmanor.com/find-the-jquery-bug-6-traversing-trouble/">Find the jQuery Bug #6: Traversing Trouble</a></li>
 </ul>
 </blockquote>
 
@@ -45,7 +45,7 @@ The result that we expected was to see was an alert box showing up when the user
 <h3>
 The Underlying Problem</h3>
 
-At the root of the problem is that once the event handler is invoked jQuery makes sure the <code>this</code> pseudo parameter is set to the DOM element that caused the event. 
+At the root of the problem is that once the event handler is invoked jQuery makes sure the <code>this</code> pseudo parameter is set to the DOM element that caused the event.
 
 <script src="https://gist.github.com/1954271.js?file=_snippet.js"></script>
 Inside of the <code>conference.register</code> method listed above, the <code>this</code> parameter refers to the register button DOM element. Since <code>this</code> is a DOM element that is why we are getting the "Cannot call method 'push' of undefined" error.
@@ -55,10 +55,10 @@ What we need to resolve this issue is a way to control the value of the <code>th
 <h3>
 A Solution</h3>
 
-The solution to fix this problem is really simple and straightforward. As of version 1.4, jQuery added the <code>$.proxy()</code> method to help solve the bug found in the previous example. 
+The solution to fix this problem is really simple and straightforward. As of version 1.4, jQuery added the <code>$.proxy()</code> method to help solve the bug found in the previous example.
 
 <blockquote>
-<code>jQuery.proxy( function, context )</code> 
+<code>jQuery.proxy( function, context )</code>
 <div style="position: relative; text-align: right; top: -21px;">
 <i>Returns: Function</i></div>
 Takes a function and returns a new one that will always have a particular context.
@@ -82,7 +82,7 @@ The above solution shows how you can use the <code>$.proxy()</code> method to so
 The following code snippet shows how you can use the <code>.call()</code> method to control the <code>this</code> parameter.
 
 <script src="https://gist.github.com/1954558.js?file=call.js"></script>
-In a very similar way the next snippet of code shows how you can use the <code>.apply()</code> method as an alternate solution. 
+In a very similar way the next snippet of code shows how you can use the <code>.apply()</code> method as an alternate solution.
 
 <blockquote>
 NOTE: While the syntax of this function is almost identical to that of call(), the fundamental difference is that call() accepts an argument list, while apply() accepts a single array of arguments. -- <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/apply">https://developer.mozilla.org/...</a></blockquote>

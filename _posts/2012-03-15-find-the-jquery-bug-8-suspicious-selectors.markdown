@@ -12,13 +12,13 @@ In this open-ended series I'll be showcasing a snippet of buggy jQuery code that
 <blockquote>
 You can view other posts in this series...
 <ul>
-<li><a href="http://www.elijahmanor.com/2011/08/find-jquery-bug-1-chicken-or-egg.html">Find the jQuery Bug #1: Chicken or the Egg</a></li>
-<li><a href="http://www.elijahmanor.com/2012/01/find-jquery-bug-2-point-of-no-return.html">Find the jQuery Bug #2: Point of No Return</a></li>
-<li><a href="http://www.elijahmanor.com/2012/01/find-jquery-bug-3-give-me-truth.html">Find the jQuery Bug #3: Give Me Truth</a></li>
-<li><a href="http://www.elijahmanor.com/2012/02/find-jquery-bug-4-animations-gone-wild.html">Find the jQuery Bug #4: Animations Gone Wild</a></li>
-<li><a href="http://www.elijahmanor.com/2012/03/find-jquery-bug-5-defective-data.html">Find the jQuery Bug #5: Defective Data</a></li>
-<li><a href="http://www.elijahmanor.com/2012/03/find-jquery-bug-6-traversing-trouble.html">Find the jQuery Bug #6: Traversing Trouble</a></li>
-<li><a href="http://www.elijahmanor.com/2012/03/find-jquery-bug-7-using-method-as-event.html">Find the jQuery Bug #7: Using a Method as an Event Handler</a></li>
+<li><a href="http://elijahmanor.com/find-the-jquery-bug-1-chicken-or-the-egg/">Find the jQuery Bug #1: Chicken or the Egg</a></li>
+<li><a href="http://elijahmanor.com/find-the-jquery-bug-2-point-of-no-return/">Find the jQuery Bug #2: Point of No Return</a></li>
+<li><a href="http://elijahmanor.com/find-the-jquery-bug-3-give-me-truth/">Find the jQuery Bug #3: Give Me Truth</a></li>
+<li><a href="http://elijahmanor.com/find-the-jquery-bug-4-animations-gone-wild/">Find the jQuery Bug #4: Animations Gone Wild</a></li>
+<li><a href="http://elijahmanor.com/find-the-jquery-bug-5-defective-data/">Find the jQuery Bug #5: Defective Data</a></li>
+<li><a href="http://elijahmanor.com/find-the-jquery-bug-6-traversing-trouble/">Find the jQuery Bug #6: Traversing Trouble</a></li>
+<li><a href="http://elijahmanor.com/find-the-jquery-bug-7-using-a-method-as-an-event-handler/">Find the jQuery Bug #7: Using a Method as an Event Handler</a></li>
 </ul>
 </blockquote>
 
@@ -43,7 +43,7 @@ The result that we expected was to see the first name textbox with a red border,
 <h3>
 The Underlying Problem</h3>
 
-At the root of the problem is that JSF inserts a <code>:</code> delimiter inside of the <code>id</code> attribute. jQuery abides by the <a href="http://www.w3.org/TR/CSS21/syndata.html#value-def-identifier">W3C CSS Specification Rules</a> when it comes to valid characters in a selector. 
+At the root of the problem is that JSF inserts a <code>:</code> delimiter inside of the <code>id</code> attribute. jQuery abides by the <a href="http://www.w3.org/TR/CSS21/syndata.html#value-def-identifier">W3C CSS Specification Rules</a> when it comes to valid characters in a selector.
 
 <blockquote>
 If your ID, name, or class contains one of the following meta-characters then you have a problem... <code>!"#$%&'()*+,./:;<=>?@[\]^`{|}~</code></blockquote>

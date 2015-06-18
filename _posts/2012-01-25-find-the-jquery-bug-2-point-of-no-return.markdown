@@ -12,7 +12,7 @@ In this open-ended series I'll be showcasing a snippet of buggy jQuery code that
 <blockquote>
 You can view my other post in this series...
 <ul>
-<li><a href="http://www.elijahmanor.com/2011/08/find-jquery-bug-1-chicken-or-egg.html">Find the jQuery Bug #1: Chicken or the Egg</a></li>
+<li><a href="http://elijahmanor.com/find-the-jquery-bug-1-chicken-or-the-egg/">Find the jQuery Bug #1: Chicken or the Egg</a></li>
 </li>
 </ul>
 </blockquote>
@@ -31,7 +31,7 @@ The following code snippets is our first attempt at solving the problem, but the
 <script src="https://gist.github.com/1670182.js?file=fiddle.js"></script>
 You can <a href="http://jsbin.com/gist/1670182#javascript,html,live">view, run, and edit</a> the above code sample from JSBin.
 
-The results that we expected were <code>false, true, true, true, false</code>, but instead the output in the console is <code>false, false, false, false, false</code>. 
+The results that we expected were <code>false, true, true, true, false</code>, but instead the output in the console is <code>false, false, false, false, false</code>.
 
 <h3>
 The Underlying Problem</h3>
@@ -64,7 +64,7 @@ An alternate way to solve this problem would be to use another technique complet
 <script src="https://gist.github.com/1670312.js?file=fiddle.js"></script>
 You can <a href="http://jsbin.com/urofar/edit#javascript,html,live">view, run, and edit</a> the above code sample from JSBin.
 
-Although the code looks shorter, it is less performant than the previous solution. Can you tell why? The code is not exiting once the number has been found, but instead goes through each array item and executes the callback function. We get the correct answer, but for a price. 
+Although the code looks shorter, it is less performant than the previous solution. Can you tell why? The code is not exiting once the number has been found, but instead goes through each array item and executes the callback function. We get the correct answer, but for a price.
 
 <h3>
 Conclusion</h3>

@@ -12,15 +12,15 @@ In this open-ended series I'll be showcasing a snippet of buggy jQuery code that
 <blockquote>
 You can view other posts in this series...
 <ul>
-<li><a href="http://www.elijahmanor.com/2011/08/find-jquery-bug-1-chicken-or-egg.html">Find the jQuery Bug #1: Chicken or the Egg</a></li>
-<li><a href="http://www.elijahmanor.com/2012/01/find-jquery-bug-2-point-of-no-return.html">Find the jQuery Bug #2: Point of No Return</a></li>
+<li><a href="http://elijahmanor.com/find-the-jquery-bug-1-chicken-or-the-egg/">Find the jQuery Bug #1: Chicken or the Egg</a></li>
+<li><a href="http://elijahmanor.com/find-the-jquery-bug-2-point-of-no-return/">Find the jQuery Bug #2: Point of No Return</a></li>
 </ul>
 </blockquote>
 
 <h3>
 The Desired Feature</h3>
 
-We want to take the following HTML <code>div</code> and build a simple <code>popover</code> module that uses the jQuery UI Dialog widget. 
+We want to take the following HTML <code>div</code> and build a simple <code>popover</code> module that uses the jQuery UI Dialog widget.
 
 <script src="https://gist.github.com/1702566.js?file=_snippet.html"></script>
 <h3>
@@ -63,7 +63,7 @@ If you run the above code again you'll notice that the <code>console.log</code> 
 <h3>
 Conclusion</h3>
 
-The key concept to remember here is to realize that testing against the jQuery object will always evaluate as <code>true</code>. As shown above it is easy to adjust your code accordingly. 
+The key concept to remember here is to realize that testing against the jQuery object will always evaluate as <code>true</code>. As shown above it is easy to adjust your code accordingly.
 
 There are other more advanced techniques that can be used for initialization as well. I'd encourage you to look into Doug Neiner's (<a href="http://twitter.com/dougneiner">@dougneiner</a>) Contextual jQuery series (<a href="http://events.jquery.org/2010/boston/video/video.php?talk=doug-neiner">Part 1</a> and <a href="http://speakerdeck.com/u/dougneiner/p/contextual-jquery-in-practice">Part 2</a>) that he gave at the jQuery Boston 2010 and 2011 Conferences. In particular he gave some really interesting just-in-time initialization techniques in the 2nd talk. I highly encourage you viewing these if you haven't already.
 
