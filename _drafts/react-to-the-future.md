@@ -23,10 +23,11 @@ xyz
 
 ## Slides
 
-You can find the slides from the presentation online at [elijahmanor.com/talks/css-for-devs/](http://elijahmanor.com/talks/css-for-devs/)
+You can find the slides from the presentation online at [elijahmanor.com/talks/react-to-the-future/](http://elijahmanor.com/talks/react-to-the-future/)
 
 > **Note**: _This slide deck is fairly new. I have plans to iterate on some of the later modules in the talk. Stay tuned :)_
 
 ## Podcast
 
-I was interviewed on the [PolymorphicPodcast](polymorphicpodcast.com) podcast last week by [Craig Shoemaker](http://twitter.com/craigshoemaker). The episode should go live soon. I'll update this section with a link when it is live.
+<img src="/assets/images/2015/Jun/reactjs-with-elijah-manor.png" style="float: left; width: 300px; margin: 0 1em 1em 0; padding: 0;" /> I was recently interviewed on the [PolymorphicPodcast](http://polymorphicpodcast.com/shows/react) podcast by [Craig Shoemaker](http://twitter.com/craigshoemaker).
+<div style="clear: both"></div>
