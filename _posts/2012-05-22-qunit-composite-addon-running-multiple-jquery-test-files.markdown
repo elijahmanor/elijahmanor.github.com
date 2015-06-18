@@ -28,7 +28,7 @@ Setting up the Composite addon is pretty easy. All you really need to do is to g
 <h3>
  Running Example</h3>
 
-I've taken the Unit Tests from a couple of blog posts I've done recently (<a href="http://www.elijahmanor.com/2011/07/filterbydata-jquery-plugin.html">filterByData jQuery Plugin: Select by HTML5 Data Attr Value</a> &amp; <a href="http://www.elijahmanor.com/2011/07/jquery-dataattr-pseudo-selector.html">jQuery :dataAttr Pseudo Selector</a>) and have decided to bundle them together using the QUnit Composite Addon.
+I've taken the Unit Tests from a couple of blog posts I've done recently (<a href="http://elijahmanor.com/filterbydata-jquery-plugin-select-by-html5-data-attr-value/">filterByData jQuery Plugin: Select by HTML5 Data Attr Value</a> &amp; <a href="http://elijahmanor.com/jquery-html5-dataattr-pseudo-selector/">jQuery :dataAttr Pseudo Selector</a>) and have decided to bundle them together using the QUnit Composite Addon.
 
 <iframe allowfullscreen="allowfullscreen" frameborder="0" src="http://jsfiddle.net/bCgV6/9/embedded/result,js,html,css,resources/presentation" style="height: 300px; width: 100%;"></iframe>
 

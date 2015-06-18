@@ -9,7 +9,7 @@ Introduction</h2>
 <!-- Yellow Bird - RequireJS http://jsfiddle.net/4QG5Q/ http://plnkr.co/edit/syYXSOWx1UWUlbFAd0v9 -->
 <div class="separator" style="clear: both; text-align: center;">
 <a href="http://2.bp.blogspot.com/-efyDWffod9w/UVpR-LEJYyI/AAAAAAAAZgE/w6UXvXY3u9w/s1600/000001611.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="200" src="http://2.bp.blogspot.com/-efyDWffod9w/UVpR-LEJYyI/AAAAAAAAZgE/w6UXvXY3u9w/s200/000001611.jpg" width="154" /></a></div>
-A diabolical herd of pigs stole all of the front-end architecture from an innocent flock of birds and now they want it back! 
+A diabolical herd of pigs stole all of the front-end architecture from an innocent flock of birds and now they want it back!
 
 A team of special agent hero birds will attack those despicable pigs until they recover what is rightfully theirs, front-end JavaScript architecture!
 
@@ -52,7 +52,7 @@ It appears <a href="http://plnkr.co/">Plunker</a> is not embedding correctly at 
 And to refresh your memory, here is the supporting code used for the above web application. You should notice that a lot of concerns are all being mixed together (DOM events, Modifying the View, AJAX Communication, etc...)
 
 <script src="https://gist.github.com/elijahmanor/5283260.js?file=jquery-worms.js"></script>
-Do you see the problem? It is so tempting to write code like the above, but I hope you see that it can be a bear to work with and maintain. Don't worry, we have all written code just like the above. The good news is that we don't have to continue to write it that way. Let's take a look at what Backbone.js is and how it can help us out in this situation. 
+Do you see the problem? It is so tempting to write code like the above, but I hope you see that it can be a bear to work with and maintain. Don't worry, we have all written code just like the above. The good news is that we don't have to continue to write it that way. Let's take a look at what Backbone.js is and how it can help us out in this situation.
 
 <blockquote>
 There are many other MV* front-end frameworks (Knockout, or AngularJS, EmberJS, & others) that could also bring structure to the above code. I would encourage you to pick a tool that you can be productive with and get comfortable with it.</blockquote>
@@ -75,7 +75,7 @@ Backbone.js has several pieces that can all work together to make a web applicat
 <h2>
 Refactoring the Tightly Coupled Code</h2>
 
-Let's take a stab at refactoring the above jQuery mess and use Backbone.js to split out some of the various concerns. 
+Let's take a stab at refactoring the above jQuery mess and use Backbone.js to split out some of the various concerns.
 
 I'm not going to dive into all of the above pieces in this post, but will focus on 3 of the main pieces (Models, Collections, and Views). I'll touch on some of the Sync concerns, but as part of the other topics. I'll have resources listed at the end if you want to dig deeper into any of these topics.
 
@@ -90,14 +90,14 @@ If you've never seen RequireJS before then you might want to check out the previ
 <h4>
 main.js</h4>
 <script src="https://gist.github.com/elijahmanor/5283260.js?file=main.js"></script>
-The above code is defining the paths for jQuery, Underscore, Backbone, Postal, and Bootstrap. We needed to shim Underscore, Backbone, and Bootstrap since they are not defined as AMD modules. 
+The above code is defining the paths for jQuery, Underscore, Backbone, Postal, and Bootstrap. We needed to shim Underscore, Backbone, and Bootstrap since they are not defined as AMD modules.
 
 Then the <code>require</code> function is called to request a set of dependencies before the callback is invoked. At that point, jQuery and all the other views and models will be ready for usage!
 
 <h3>
 Models</h3>
 
-We are going to make 2 models (Search and Movie) to represent the above application. 
+We are going to make 2 models (Search and Movie) to represent the above application.
 
 The following Search Model is really simple and its main job is to respond when the <code>term</code> property has changed. We are using Backbone's events (Observer Events) to listen to changes on the model and then propagating the message to Postal.js (Mediated Events). For more information about those terms and how they are different you can reference the <a href="http://elijahmanor.com/angry-birds-of-javascript-blue-bird-events/" target="_blank">Blue Angry Bird Post</a> about events.  
 
@@ -140,10 +140,10 @@ movie-template.html</h4>
 <h2>
 Additional Resources</h2>
 
-I only scratched the surface on all the things you can do with Backbone.js. If you are interesting in learning more about these concepts you may want to look at some of the following resources. 
+I only scratched the surface on all the things you can do with Backbone.js. If you are interesting in learning more about these concepts you may want to look at some of the following resources.
 
 <blockquote>
-The following resources were taken from the <strong><a href="http://www.elijahmanor.com/2013/01/beginner-html5-javascript-jquery.html" target="_blank">Beginner HTML5, JavaScript, jQuery, Backbone, and CSS3 Resources</a></strong> blog post.</blockquote>
+The following resources were taken from the <strong><a href="http://elijahmanor.com/beginner-html5-javascript-jquery-backbone-and-css3-resources/" target="_blank">Beginner HTML5, JavaScript, jQuery, Backbone, and CSS3 Resources</a></strong> blog post.</blockquote>
 
 <ul>
 <li><a href="http://backbonejs.org/">Backbone.js API</a></li>

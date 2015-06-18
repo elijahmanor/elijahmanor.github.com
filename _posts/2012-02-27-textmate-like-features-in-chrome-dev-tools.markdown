@@ -12,7 +12,7 @@ Introduction</h3>
 For the past year or so I've used <a href="http://tools.google.com/dlpage/chromesxs">Google Chrome Canary</a> as my primary web browser, however, about a month ago I temporarily switched to the stable&nbsp;build&nbsp;of Chrome because of some&nbsp;instability&nbsp;in the dev tools. I just recently switched back to Canary and was&nbsp;pleasantly&nbsp;surprised to see numerous new features in the dev tools there were very welcome indeed!
 
 <blockquote>
-This post only covers the extreme latest in Chrome Dev Tools. There are so many more rich features that can be found. If you are interested about more helpful features you might be interested in a post I did last year entitled <a href="http://www.elijahmanor.com/2011/08/7-chrome-tips-developers-designers-may.html">7 Chrome Tips Developers & Designers May Not Know</a></blockquote>
+This post only covers the extreme latest in Chrome Dev Tools. There are so many more rich features that can be found. If you are interested about more helpful features you might be interested in a post I did last year entitled <a href="http://elijahmanor.com/7-chrome-tips-developers-designers-may-not-know/">7 Chrome Tips Developers & Designers May Not Know</a></blockquote>
 
 If you are not familiar with the Canary build of Chrome, it is a extremely dev version of the browser. You should be&nbsp;cautious&nbsp;because it does update almost every day, but at the same time you get first in line to see all the new features. Unlike the dev or beta builds of Chrome you can actually install Canary side-by-side next to your Stable or Beta build of Chrome. This makes switching between versions very&nbsp;convenient.
 

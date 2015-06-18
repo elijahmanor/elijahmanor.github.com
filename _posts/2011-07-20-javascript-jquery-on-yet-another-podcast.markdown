@@ -17,7 +17,7 @@ Some of the things that Jesse and I talked about were...
 
 <ul>
 <li>How I got started into the world of JavaScript and jQuery</li>
-<li>An overview of my Mix&nbsp;presentation entitled <a href="http://www.elijahmanor.com/2011/04/mix11-video-good-javascript-habits-for.html">Good JavaScript Habits for C# Developers</a></li>
+<li>An overview of my Mix&nbsp;presentation entitled <a href="http://elijahmanor.com/mix11-video-good-javascript-habits-for-c-developers/">Good JavaScript Habits for C# Developers</a></li>
 <li>My involvement into social media (<a href="http://twitter.com/elijahmanor">Twitter</a> &amp; <a href="http://gplus.to/elijahmanor">Google+</a>)</li>
 <li>Some resources I recommend for developers getting into JavaScript and jQuery</li>
 <ul>

@@ -152,4 +152,4 @@ Mighty Eagle</h4>
 <h3>
 Conclusion</h3>
 
-The above series will be presented at the upcoming <a href="http://www.elijahmanor.com/2013/03/front-end-web-conference.html">&lt;anglebrackets /&gt;</a> and <a href="http://www.elijahmanor.com/2013/02/fluentconf-advanced-jquery-training.html">FluentConf</a> conferences and possibly others. I hope you enjoy the series. I am having fun putting it together and I look forward to giving it in front of an audience ;)
+The above series will be presented at the upcoming <a href="http://elijahmanor.com/anglebrackets-front-end-web-conference/">&lt;anglebrackets /&gt;</a> and <a href="http://elijahmanor.com/fluentconf-advanced-jquery-training-session/">FluentConf</a> conferences and possibly others. I hope you enjoy the series. I am having fun putting it together and I look forward to giving it in front of an audience ;)
