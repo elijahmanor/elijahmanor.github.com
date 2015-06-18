@@ -27,7 +27,7 @@ Red Bird</h4>
 
 <span>The Red bird attacks with the force of their trusty IIFE, the basic block of all privacy.</span>
 
-<span>Status: <strong><a href="http://www.elijahmanor.com/2013/03/angry-birds-of-javascript-red-bird.html" target="_blank">Published</a></strong></span>
+<span>Status: <strong><a href="http://elijahmanor.com/angry-birds-of-javascript-red-bird-iife/" target="_blank">Published</a></strong></span>
 </div>
 </div>
 
@@ -41,7 +41,7 @@ Blue Bird</h4>
 
 <span>The Blue Bird triggers events and messages that scatter to infiltrate the pig's castle.</span>
 
-<span>Status: <strong><a href="http://www.elijahmanor.com/2013/03/angry-birds-of-javascript-blue-bird.html" target="_blank">Published</a></strong></span>
+<span>Status: <strong><a href="http://elijahmanor.com/angry-birds-of-javascript-blue-bird-events/" target="_blank">Published</a></strong></span>
 </div>
 </div>
 
@@ -55,7 +55,7 @@ Yellow Bird</h4>
 
 <span>The Yellow Bird comes with a RequireJS speed booster and dynamically injects scripts against those pesky swine.</span>
 
-<span>Status: <strong><a href="http://www.elijahmanor.com/2013/04/angry-birds-of-javascript-yellow-bird.html" target="_blank">Published</a></strong></span>
+<span>Status: <strong><a href="http://elijahmanor.com/angry-birds-of-javascript-yellow-bird-requirejs/" target="_blank">Published</a></strong></span>
 </div>
 </div>
 
@@ -69,7 +69,7 @@ Black Bird</h4>
 
 <span>The Black Bird proves to be a much more organized approach to fighting these porkers and introduces the Backbone.js bomb to their dismay.</span>
 
-<span>Status: <strong><a href="http://www.elijahmanor.com/2013/04/angry-birds-of-javascript-black-bird.html" target="_blank">Published</a></strong></span>
+<span>Status: <strong><a href="http://elijahmanor.com/angry-birds-of-javascript-black-bird-backbone/" target="_blank">Published</a></strong></span>
 </div>
 </div>
 
@@ -83,7 +83,7 @@ White Bird</h4>
 
 <span>The White Bird appears to be seemingly harmless, but when it pulls out it's strict coding style and bursts of quality checks the hogs are sure to squeal.</span>
 
-<span>Status: <strong><a href="http://www.elijahmanor.com/2013/04/angry-birds-of-javascript-white-bird.html" target="_blank">Published</a></strong></span>
+<span>Status: <strong><a href="http://elijahmanor.com/angry-birds-of-javascript-white-bird-linting/" target="_blank">Published</a></strong></span>
 </div>
 </div>
 
@@ -97,7 +97,7 @@ Green Bird</h4>
 
 <span>The Green Bird can reach all of those hard to reach places and will mock and spy those stealing swine right where it hurts!</span>
 
-<span>Status: <strong><a href="http://www.elijahmanor.com/2013/04/angry-birds-of-javascript-green-bird.html" target="_blank">Published</a></strong></span>
+<span>Status: <strong><a href="http://elijahmanor.com/angry-birds-of-javascript-green-bird-mocking/" target="_blank">Published</a></strong></span>
 </div>
 </div>
 
@@ -111,7 +111,7 @@ Orange Bird</h4>
 
 <span>The Orange Bird starts out small with a simple template, but then expands itself into a DOM blast that will surely send the message that the birds mean business.</span>
 
-<span>Status: <strong><a href="http://www.elijahmanor.com/2013/04/angry-birds-of-javascript-orange-bird.html" target="_blank">Published</a></strong></span>
+<span>Status: <strong><a href="http://elijahmanor.com/angry-birds-of-javascript-orange-bird-templating/" target="_blank">Published</a></strong></span>
 </div>
 </div>
 
@@ -125,7 +125,7 @@ Big Brother</h4>
 
 <span>The Big Brother pulls out the big guns with his finite state machine and other proven design patterns of destruction.</span>
 
-<span>Status: <strong><a href="http://www.elijahmanor.com/2013/04/angry-birds-of-javascript-big-brother.html" target="_blank">Published</a></strong></span>
+<span>Status: <strong><a href="http://elijahmanor.com/angry-birds-of-javascript-big-brother-bird-patterns/" target="_blank">Published</a></strong></span>
 </div>
 </div>
 
@@ -139,7 +139,7 @@ Mighty Eagle</h4>
 
 <span>The Mightly Eagle uses the most superior weapon of them all, a suite of tools that can organize and deploy all the other birds into battle against their soon to be vanquished foe.</span>
 
-<span>Status: <strong><a href="http://www.elijahmanor.com/2013/04/angry-birds-of-javascript-mighty-eagle.html" target="_blank">Published</a></strong></span>
+<span>Status: <strong><a href="http://elijahmanor.com/angry-birds-of-javascript-mighty-eagle-automation/" target="_blank">Published</a></strong></span>
 </div>
 </div>
 

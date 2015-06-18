@@ -9,7 +9,7 @@ I had a great time this week at the <a href="http://www.anglebrackets.org/">Angl
 
 <h3>Angry Birds of JavaScript</h3>
 
-AngleBrackets was the first time I've given my Angry Birds of JavaScript talk based on the <strong><a href="http://www.elijahmanor.com/2013/03/angry-birds-of-javascript-series.html" target="_blank">blog series</a></strong> that ended yesterday. You can click the following image to see the slides.
+AngleBrackets was the first time I've given my Angry Birds of JavaScript talk based on the <strong><a href="http://elijahmanor.com/angry-birds-of-javascript-series/" target="_blank">blog series</a></strong> that ended yesterday. You can click the following image to see the slides.
 
 <blockquote>I used the reveal.js slide presentation framework for my slides. You'll need to down-arrow down to drill into each topic and then right-arrow to the next topic. The last slide of the Red Angry Bird is an interactive game. You have to destroy both pigs before you can proceed to the next topic ;)</blockquote>
 

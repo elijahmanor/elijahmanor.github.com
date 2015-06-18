@@ -16,15 +16,15 @@ A team of special agent hero birds will attack those despicable pigs until they 
 Will the birds be successful in the end? Will they defeat their bacon flavored foe? Let's find out together in another nail biting episode of Angry Birds of JavaScript!
 
 <blockquote>
-Check out the <strong><a href="http://www.elijahmanor.com/2013/03/angry-birds-of-javascript-series.html" target="_blank">series introduction post</a></strong> for a list of all the birds and their attack powers.</blockquote>
+Check out the <strong><a href="http://elijahmanor.com/angry-birds-of-javascript-series/" target="_blank">series introduction post</a></strong> for a list of all the birds and their attack powers.</blockquote>
 
 <a href="http://4.bp.blogspot.com/-wjhQKJKNuks/UVdeWffTYoI/AAAAAAAAZNY/XpHY_8R3tQs/s1600/black-bird.png" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" src="http://4.bp.blogspot.com/-wjhQKJKNuks/UVdeWffTYoI/AAAAAAAAZNY/XpHY_8R3tQs/s1600/black-bird.png" /></a>
 <h3>
 Previous Attacks</h3>
 <ul>
-<li><a href="http://www.elijahmanor.com/2013/03/angry-birds-of-javascript-red-bird.html" target="_blank">Red Bird - IIFE</a></li>
-<li><a href="http://www.elijahmanor.com/2013/03/angry-birds-of-javascript-blue-bird.html" target="_blank">Blue Bird - Events</a></li>
-<li><a href="http://www.elijahmanor.com/2013/04/angry-birds-of-javascript-yellow-bird.html" target="_blank">Yellow Bird - RequireJS</a></li>
+<li><a href="http://elijahmanor.com/angry-birds-of-javascript-red-bird-iife/" target="_blank">Red Bird - IIFE</a></li>
+<li><a href="http://elijahmanor.com/angry-birds-of-javascript-blue-bird-events/" target="_blank">Blue Bird - Events</a></li>
+<li><a href="http://elijahmanor.com/angry-birds-of-javascript-yellow-bird-requirejs/" target="_blank">Yellow Bird - RequireJS</a></li>
 </ul>
 
 <h3>
@@ -85,7 +85,7 @@ RequireJS</h3>
 Before we get into the Models, Collections, and Views I want to show you how we took out all the scripts from the index.html page and used RequireJS to help us out.
 
 <blockquote>
-If you've never seen RequireJS before then you might want to check out the previous <strong><a href="http://www.elijahmanor.com/2013/04/angry-birds-of-javascript-yellow-bird.html" target="_blank">Yellow Angry Bird Post</a></strong> about RequireJS.</blockquote>
+If you've never seen RequireJS before then you might want to check out the previous <strong><a href="http://elijahmanor.com/angry-birds-of-javascript-yellow-bird-requirejs/" target="_blank">Yellow Angry Bird Post</a></strong> about RequireJS.</blockquote>
 
 <h4>
 main.js</h4>
@@ -99,7 +99,7 @@ Models</h3>
 
 We are going to make 2 models (Search and Movie) to represent the above application. 
 
-The following Search Model is really simple and its main job is to respond when the <code>term</code> property has changed. We are using Backbone's events (Observer Events) to listen to changes on the model and then propagating the message to Postal.js (Mediated Events). For more information about those terms and how they are different you can reference the <a href="http://www.elijahmanor.com/2013/03/angry-birds-of-javascript-blue-bird.html" target="_blank">Blue Angry Bird Post</a> about events.  
+The following Search Model is really simple and its main job is to respond when the <code>term</code> property has changed. We are using Backbone's events (Observer Events) to listen to changes on the model and then propagating the message to Postal.js (Mediated Events). For more information about those terms and how they are different you can reference the <a href="http://elijahmanor.com/angry-birds-of-javascript-blue-bird-events/" target="_blank">Blue Angry Bird Post</a> about events.  
 
 <h4>
 search.js</h4>

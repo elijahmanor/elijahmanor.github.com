@@ -11,23 +11,23 @@ Introduction</h2>
 </div>
 <div class="separator" style="clear: both; text-align: center;">
 <a href="http://4.bp.blogspot.com/-hbs_feLNzNE/UVx7DKXG-cI/AAAAAAAAZug/vDk6cFJ7Jgk/s1600/angry_birds_wall_decal_by_graphicwolf-d4fwzrc.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="243" src="http://4.bp.blogspot.com/-hbs_feLNzNE/UVx7DKXG-cI/AAAAAAAAZug/vDk6cFJ7Jgk/s400/angry_birds_wall_decal_by_graphicwolf-d4fwzrc.jpg" width="400" /></a></div>
-A diabolical herd of pigs stole all of the front-end architecture from an innocent flock of birds and now they want it back! 
+A diabolical herd of pigs stole all of the front-end architecture from an innocent flock of birds and now they want it back!
 
 A team of special agent hero birds will attack those despicable pigs until they recover what is rightfully theirs, front-end JavaScript architecture!
 
 Will the birds be successful in the end? Will they defeat their bacon flavored foe? Let's find out together in another nail biting episode of Angry Birds of JavaScript!
 
 <blockquote>
-Check out the <strong><a href="http://www.elijahmanor.com/2013/03/angry-birds-of-javascript-series.html" target="_blank">series introduction post</a></strong> for a list of all the birds and their attack powers.</blockquote>
+Check out the <strong><a href="http://elijahmanor.com/angry-birds-of-javascript-series/" target="_blank">series introduction post</a></strong> for a list of all the birds and their attack powers.</blockquote>
 
 <div class="separator" style="clear: both; text-align: center;">
 <a href="http://3.bp.blogspot.com/-c3JawpCl3ys/UVx7L_dMWxI/AAAAAAAAZuo/YEClyACJaZg/s1600/white-bird.png" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" src="http://3.bp.blogspot.com/-c3JawpCl3ys/UVx7L_dMWxI/AAAAAAAAZuo/YEClyACJaZg/s1600/white-bird.png" /></a></div>
 <h3>
 Previous Attacks</h3>
 <ul>
-<li><a href="http://www.elijahmanor.com/2013/03/angry-birds-of-javascript-red-bird.html" target="_blank">Red Bird - IIFE</a></li>
-<li><a href="http://www.elijahmanor.com/2013/03/angry-birds-of-javascript-blue-bird.html" target="_blank">Blue Bird - Events</a></li>
-<li><a href="http://www.elijahmanor.com/2013/04/angry-birds-of-javascript-yellow-bird.html" target="_blank">Yellow Bird - RequireJS</a></li>
+<li><a href="http://elijahmanor.com/angry-birds-of-javascript-red-bird-iife/" target="_blank">Red Bird - IIFE</a></li>
+<li><a href="http://elijahmanor.com/angry-birds-of-javascript-blue-bird-events/" target="_blank">Blue Bird - Events</a></li>
+<li><a href="http://elijahmanor.com/angry-birds-of-javascript-yellow-bird-requirejs/" target="_blank">Yellow Bird - RequireJS</a></li>
 <li><a href="http://www.elijahmanor.com/angry-birds-of-javascript-black-bird-backbone/" target="_blank">Black Bird - Backbone</a></li>
 </ul>
 
@@ -68,14 +68,14 @@ Here are some of the coding standards that I am aware of...
 <li>Google's <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml" target="_blank">JavaScript Style Guide</a></li>
 </ul>
 
-Addy Osmani (<a href="http://twitter.com/addyosmani" target="_blank">@addyosmani</a>) has a nice post entitled <a href="http://addyosmani.com/blog/javascript-style-guides-and-beautifiers/" target="_blank">JavaScript Style Guides And Beautifiers</a> that covers some of these styles in depth with examples showing how to abide by the standards recommended. 
+Addy Osmani (<a href="http://twitter.com/addyosmani" target="_blank">@addyosmani</a>) has a nice post entitled <a href="http://addyosmani.com/blog/javascript-style-guides-and-beautifiers/" target="_blank">JavaScript Style Guides And Beautifiers</a> that covers some of these styles in depth with examples showing how to abide by the standards recommended.
 
 <h2>
 JavaScript Linting</h2>
 
 A linter is a tool that helps find errors and possible issues with your code. In many cases it can help enforce whatever coding standard you chose from the above list.
 
-There are actually several JavaScript linters out there, but the one I like the best is <a href="http://jshint.com/" target="_blank">JSHint</a> created by Anton Kovalyov (<a href="http://twitter.com/valueof">@valueof</a>). It grew out of a community effort to fork the popular JSLint library written by Douglas Crockford. I've enjoyed watching the project grow and see bugs and new features being added. JSHint has a lot of options that you can choose to opt-in or opt-out of which enables a team to figure out what works best for them. 
+There are actually several JavaScript linters out there, but the one I like the best is <a href="http://jshint.com/" target="_blank">JSHint</a> created by Anton Kovalyov (<a href="http://twitter.com/valueof">@valueof</a>). It grew out of a community effort to fork the popular JSLint library written by Douglas Crockford. I've enjoyed watching the project grow and see bugs and new features being added. JSHint has a lot of options that you can choose to opt-in or opt-out of which enables a team to figure out what works best for them.
 
 Some of the standard checks that JSHint can verify include...
 
@@ -126,11 +126,11 @@ JavaScript Analysis</h2>
 
 Code linting is great, but sometimes it is nice to get a high level overview of your codebase and then be able to drill down and analyze small portions of your application.
 
-Thankfully there is a tool called <a href="https://github.com/jsoverson/plato" target="_blank">Plato</a> that will analyse your code and provide a visual report where you can view the complexity of your application. The tool runs in Node and you can install it using <code>npm install plato -g</code>. 
+Thankfully there is a tool called <a href="https://github.com/jsoverson/plato" target="_blank">Plato</a> that will analyse your code and provide a visual report where you can view the complexity of your application. The tool runs in Node and you can install it using <code>npm install plato -g</code>.
 
 Once installed you can run the tool on the command line by <code>plato -r -d report myDirectory</code>, which will recursively analyse the code in the <code>myDirectory</code> folder and export the results to the <code>report</code> folder.
 
-If you were to run the report on the jQuery source code it would look much like the following report. As you can see, the average number of lines is decreasing over time, which is good. The maintainability is decent and then a breakdown of the maintainability of each JavaScript file is listed in a bar chart. Further down in the report there are a bar charts for Lines of code broken per file, Estimated errors per file, and also JSLint errors per file. 
+If you were to run the report on the jQuery source code it would look much like the following report. As you can see, the average number of lines is decreasing over time, which is good. The maintainability is decent and then a breakdown of the maintainability of each JavaScript file is listed in a bar chart. Further down in the report there are a bar charts for Lines of code broken per file, Estimated errors per file, and also JSLint errors per file.
 
 <div class="separator" style="clear: both; text-align: center;">
 <a href="http://2.bp.blogspot.com/-WfsE5xqGhjc/UV0Fi3Kd9vI/AAAAAAAAZvg/IWnkno7LaK8/s1600/jquery-top-level.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="548" src="http://2.bp.blogspot.com/-WfsE5xqGhjc/UV0Fi3Kd9vI/AAAAAAAAZvg/IWnkno7LaK8/s640/jquery-top-level.png" width="640" /></a></div>
@@ -156,6 +156,6 @@ Press the <code>space bar</code> to launch the White Bird and you can also use t
 <h3>
 Conclusion</h3>
 
-Front-end web applications can get complicated quickly. If your developers aren't all on the same page then things can fall apart in a heartbeat, especially on a large project. Having a unified coding standard and implementing some tools to help find issues before they become a problem can really help to make your project a success. 
+Front-end web applications can get complicated quickly. If your developers aren't all on the same page then things can fall apart in a heartbeat, especially on a large project. Having a unified coding standard and implementing some tools to help find issues before they become a problem can really help to make your project a success.
 
 There are many other front-end architecture techniques that have been stolen by the pigs. Tune in next time as the next Angry Bird takes its revenge! Dun, dun, daaaaaaa!

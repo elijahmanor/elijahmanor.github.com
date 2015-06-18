@@ -18,19 +18,19 @@ A team of special agent hero birds will attack those despicable pigs until they 
 Will the birds be successful in the end? Will they defeat their bacon flavored foe? Let's find out together in another nail biting episode of Angry Birds of JavaScript!
 
 <blockquote>
-Check out the <strong><a href="http://www.elijahmanor.com/2013/03/angry-birds-of-javascript-series.html" target="_blank">series introduction post</a></strong> for a list of all the birds and their attack powers.</blockquote>
+Check out the <strong><a href="http://elijahmanor.com/angry-birds-of-javascript-series/" target="_blank">series introduction post</a></strong> for a list of all the birds and their attack powers.</blockquote>
 
 <div class="separator" style="clear: both; text-align: center;">
 <a href="http://4.bp.blogspot.com/-MsnBfq6yXiQ/UV-aF4EH1EI/AAAAAAAAZ0o/bUCCPM5vfUQ/s1600/Orange_bird_space.png" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" src="http://4.bp.blogspot.com/-MsnBfq6yXiQ/UV-aF4EH1EI/AAAAAAAAZ0o/bUCCPM5vfUQ/s1600/Orange_bird_space.png" /></a></div>
 <h3>
 Previous Attacks</h3>
 <ul>
-<li><a href="http://www.elijahmanor.com/2013/03/angry-birds-of-javascript-red-bird.html" target="_blank">Red Bird - IIFE</a></li>
-<li><a href="http://www.elijahmanor.com/2013/03/angry-birds-of-javascript-blue-bird.html" target="_blank">Blue Bird - Events</a></li>
-<li><a href="http://www.elijahmanor.com/2013/04/angry-birds-of-javascript-yellow-bird.html" target="_blank">Yellow Bird - RequireJS</a></li>
-<li><a href="http://www.elijahmanor.com/2013/04/angry-birds-of-javascript-black-bird.html" target="_blank">Black Bird - Backbone</a></li>
-<li><a href="http://www.elijahmanor.com/2013/04/angry-birds-of-javascript-white-bird.html" target="_blank">White Bird - Linting</a></li>
-<li><a href="http://www.elijahmanor.com/2013/04/angry-birds-of-javascript-green-bird.html" target="_blank">Green Bird - Mocking</a></li>
+<li><a href="http://elijahmanor.com/angry-birds-of-javascript-red-bird-iife/" target="_blank">Red Bird - IIFE</a></li>
+<li><a href="http://elijahmanor.com/angry-birds-of-javascript-blue-bird-events/" target="_blank">Blue Bird - Events</a></li>
+<li><a href="http://elijahmanor.com/angry-birds-of-javascript-yellow-bird-requirejs/" target="_blank">Yellow Bird - RequireJS</a></li>
+<li><a href="http://elijahmanor.com/angry-birds-of-javascript-black-bird-backbone/" target="_blank">Black Bird - Backbone</a></li>
+<li><a href="http://elijahmanor.com/angry-birds-of-javascript-white-bird-linting/" target="_blank">White Bird - Linting</a></li>
+<li><a href="http://elijahmanor.com/angry-birds-of-javascript-green-bird-mocking/" target="_blank">Green Bird - Mocking</a></li>
 </ul>
 
 <h3>

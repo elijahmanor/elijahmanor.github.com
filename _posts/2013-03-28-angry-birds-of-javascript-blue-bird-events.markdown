@@ -11,20 +11,20 @@ Introduction</h2>
 </div>
 <div class="separator" style="clear: both; text-align: center;">
 <a href="http://2.bp.blogspot.com/-6ILPSz-pyp0/UVEnzs_iVfI/AAAAAAAAYVE/yXkm3RWutRs/s1600/angry-birds-game-for-windows-1.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="256" src="http://2.bp.blogspot.com/-6ILPSz-pyp0/UVEnzs_iVfI/AAAAAAAAYVE/yXkm3RWutRs/s320/angry-birds-game-for-windows-1.png" width="320" /></a></div>
-A diabolical herd of pigs stole all of the front-end architecture from an innocent flock of birds and now they want it back! 
+A diabolical herd of pigs stole all of the front-end architecture from an innocent flock of birds and now they want it back!
 
 A team of special agent hero birds will attack those despicable pigs until they recover what is rightfully theirs, front-end JavaScript architecture!
 
 Will the birds be successful in the end? Will they defeat their bacon flavored foe? Let's find out together in another nail biting episode of Angry Birds of JavaScript!
 
 <blockquote>
-Check out the <a href="http://www.elijahmanor.com/2013/03/angry-birds-of-javascript-series.html" target="_blank">series introduction post</a> for a list of all the birds and their attack powers.</blockquote>
+Check out the <a href="http://elijahmanor.com/angry-birds-of-javascript-series/" target="_blank">series introduction post</a> for a list of all the birds and their attack powers.</blockquote>
 
 <h3>
 Previous Attacks</h3>
 
 <ul>
-<li><a href="http://www.elijahmanor.com/2013/03/angry-birds-of-javascript-red-bird.html" target="_blank">Red Bird - IIFE</a></li>
+<li><a href="http://elijahmanor.com/angry-birds-of-javascript-red-bird-iife/" target="_blank">Red Bird - IIFE</a></li>
 </ul>
 
 <h3>
@@ -61,7 +61,7 @@ Types of Messages</h2>
 <h3>
 Observer Events</h3>
 
-An observer event is probably one that you are most used to if you are familiar with front-end web development. In relation to the DOM you can think of this as adding event handlers to an element. The element has a direct reference to the callbacks that will be invoked when the event type occurs. 
+An observer event is probably one that you are most used to if you are familiar with front-end web development. In relation to the DOM you can think of this as adding event handlers to an element. The element has a direct reference to the callbacks that will be invoked when the event type occurs.
 
 <h4>
 Example</h4>
@@ -92,7 +92,7 @@ There are several libraries out there that facilitate mediated events. The follo
 <h3>
 Hybrid Events</h3>
 
-There is another type of event that is sort of a hybrid between observer and mediated. This type looks like a mediated event, but if you look hard enough there you could actually trace the origin of the event back to the original subject. A good example of this is jQuery's delegated event model. Delegated events are great, but it is based on the concept of events bubbling up the DOM and therefore we can trace where it came from. 
+There is another type of event that is sort of a hybrid between observer and mediated. This type looks like a mediated event, but if you look hard enough there you could actually trace the origin of the event back to the original subject. A good example of this is jQuery's delegated event model. Delegated events are great, but it is based on the concept of events bubbling up the DOM and therefore we can trace where it came from.
 
 <h4>
 Example</h4>
@@ -115,7 +115,7 @@ Another technique that Jim brings up in his article is to promote observer event
 <h2>
 Additional Resources</h2>
 
-If you are interesting in more information about the above concepts you may consider looking through some of the following resources about events and messaging. 
+If you are interesting in more information about the above concepts you may consider looking through some of the following resources about events and messaging.
 
 <ul>
 <li><strong>Jim Cowart's (<a href="http://twitter.com/ifandelse" target="_blank">@ifandelse</a>) <a href="http://freshbrewedcode.com/jimcowart/2013/02/07/client-side-messaging-essentials/" target="_blank">Client-side Messaging Essentials</a> article</strong></li>
@@ -126,7 +126,7 @@ If you are interesting in more information about the above concepts you may cons
 <h2>
 Loosely Coupled Code</h2>
 
-I was tempted to write the following code using Backbone.js or create constructor functions, but in order to keep it simple and convey the idea of messaging I tried to remove all of that. So, this probably isn't what you'd have in your code-base, but hopefully it gets the point across. 
+I was tempted to write the following code using Backbone.js or create constructor functions, but in order to keep it simple and convey the idea of messaging I tried to remove all of that. So, this probably isn't what you'd have in your code-base, but hopefully it gets the point across.
 
 <script src="https://gist.github.com/elijahmanor/5235011.js?file=loosely-coupled.js"></script>
 <h2>

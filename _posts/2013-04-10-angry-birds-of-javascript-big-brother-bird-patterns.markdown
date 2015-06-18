@@ -18,20 +18,20 @@ A team of special agent hero birds will attack those despicable pigs until they 
 Will the birds be successful in the end? Will they defeat their bacon flavored foe? Let's find out together in another nail biting episode of Angry Birds of JavaScript!
 
 <blockquote>
-Check out the <strong><a href="http://www.elijahmanor.com/2013/03/angry-birds-of-javascript-series.html" target="_blank">series introduction post</a></strong> for a list of all the birds and their attack powers.</blockquote>
+Check out the <strong><a href="http://elijahmanor.com/angry-birds-of-javascript-series/" target="_blank">series introduction post</a></strong> for a list of all the birds and their attack powers.</blockquote>
 
 <div class="separator" style="clear: both; text-align: center;">
 <a href="http://4.bp.blogspot.com/-wqME_pIXlMg/UWCKU5PVcVI/AAAAAAAAZ2A/yoODl8TYwKU/s1600/big-brother-bird.png" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" src="http://4.bp.blogspot.com/-wqME_pIXlMg/UWCKU5PVcVI/AAAAAAAAZ2A/yoODl8TYwKU/s1600/big-brother-bird.png" /></a></div>
 <h3>
 Previous Attacks</h3>
 <ul>
-<li><a href="http://www.elijahmanor.com/2013/03/angry-birds-of-javascript-red-bird.html" target="_blank">Red Bird - IIFE</a></li>
-<li><a href="http://www.elijahmanor.com/2013/03/angry-birds-of-javascript-blue-bird.html" target="_blank">Blue Bird - Events</a></li>
-<li><a href="http://www.elijahmanor.com/2013/04/angry-birds-of-javascript-yellow-bird.html" target="_blank">Yellow Bird - RequireJS</a></li>
-<li><a href="http://www.elijahmanor.com/2013/04/angry-birds-of-javascript-black-bird.html" target="_blank">Black Bird - Backbone</a></li>
-<li><a href="http://www.elijahmanor.com/2013/04/angry-birds-of-javascript-white-bird.html" target="_blank">White Bird - Linting</a></li>
-<li><a href="http://www.elijahmanor.com/2013/04/angry-birds-of-javascript-green-bird.html" target="_blank">Green Bird - Mocking</a></li>
-<li><a href="http://www.elijahmanor.com/2013/04/angry-birds-of-javascript-orange-bird.html" target="_blank">Orange Bird - Templating</a></li>
+<li><a href="http://elijahmanor.com/angry-birds-of-javascript-red-bird-iife/" target="_blank">Red Bird - IIFE</a></li>
+<li><a href="http://elijahmanor.com/angry-birds-of-javascript-blue-bird-events/" target="_blank">Blue Bird - Events</a></li>
+<li><a href="http://elijahmanor.com/angry-birds-of-javascript-yellow-bird-requirejs/" target="_blank">Yellow Bird - RequireJS</a></li>
+<li><a href="http://elijahmanor.com/angry-birds-of-javascript-black-bird-backbone/" target="_blank">Black Bird - Backbone</a></li>
+<li><a href="http://elijahmanor.com/angry-birds-of-javascript-white-bird-linting/" target="_blank">White Bird - Linting</a></li>
+<li><a href="http://elijahmanor.com/angry-birds-of-javascript-green-bird-mocking/" target="_blank">Green Bird - Mocking</a></li>
+<li><a href="http://elijahmanor.com/angry-birds-of-javascript-orange-bird-templating/" target="_blank">Orange Bird - Templating</a></li>
 </ul>
 
 <h3>
@@ -134,7 +134,7 @@ Much of the jquery-win8 repository is not needed anymore since Jonathan Sampson 
 <h3>
 Observer</h3>
 
-We've covered the Observer pattern already in the <a href="http://www.elijahmanor.com/2013/03/angry-birds-of-javascript-blue-bird.html" target="_blank">Blue Bird</a> past a while back in this series, but it is a powerful pattern that can help decouple various components. My recommendation is to use the <a href="https://github.com/postaljs/postal.js" target="_blank">postal.js library</a>.
+We've covered the Observer pattern already in the <a href="http://elijahmanor.com/angry-birds-of-javascript-blue-bird-events/" target="_blank">Blue Bird</a> past a while back in this series, but it is a powerful pattern that can help decouple various components. My recommendation is to use the <a href="https://github.com/postaljs/postal.js" target="_blank">postal.js library</a>.
 
 <script src="https://gist.github.com/elijahmanor/5328936.js?file=observer.js"></script>
 <h2>
@@ -160,7 +160,7 @@ In the front-end world chaining became popular by the jQuery library. It is actu
 <h3>
 Encapsulating</h3>
 
-We've already covered encapsulating in the <a href="http://www.elijahmanor.com/2013/03/angry-birds-of-javascript-red-bird.html" target="_blank">Red Bird</a> past where we talked about the IIFE pattern. This allows you to have public and private properties and methods to help encapsulate your code. The follow is a very brief example of that. Check out the <a href="http://www.elijahmanor.com/2013/03/angry-birds-of-javascript-red-bird.html" target="_blank">Red Bird</a> post for more details.
+We've already covered encapsulating in the <a href="http://elijahmanor.com/angry-birds-of-javascript-red-bird-iife/" target="_blank">Red Bird</a> past where we talked about the IIFE pattern. This allows you to have public and private properties and methods to help encapsulate your code. The follow is a very brief example of that. Check out the <a href="http://elijahmanor.com/angry-birds-of-javascript-red-bird-iife/" target="_blank">Red Bird</a> post for more details.
 
 <script src="https://gist.github.com/elijahmanor/5328936.js?file=encapsulating.js"></script>
 <h3>
