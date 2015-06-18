@@ -559,6 +559,16 @@ pre[data-line].language--small {
   margin-left: 2.5rem;
   margin-right: 2.5rem; }
 
+.Split .Split-column--25 {
+  -webkit-flex: 0 1 25%;
+  -ms-flex: 0 1 25%;
+  flex: 0 1 25%; }
+
+.Split .Split-column--45 {
+  -webkit-flex: 0 1 45%;
+  -ms-flex: 0 1 45%;
+  flex: 0 1 45%; }
+
 .Split .Split-column--65 {
   -webkit-flex: 0 1 65%;
   -ms-flex: 0 1 65%;

@@ -173,6 +173,14 @@ pre[data-line].language--small {
   @include scut-margin(n 2.5rem);
 }
 
+.Split .Split-column--25 {
+  flex: 0 1 25%;
+}
+
+.Split .Split-column--45 {
+  flex: 0 1 45%;
+}
+
 .Split .Split-column--65 {
   flex: 0 1 65%;
 }

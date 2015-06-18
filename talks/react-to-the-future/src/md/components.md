@@ -485,7 +485,7 @@ React.render(
   document.body
 );</code></pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--25">
     <iframe height='468' scrolling='no' src='//codepen.io/elijahmanor/embed/RPRdmg/?height=468&theme-id=0&default-tab=result' data-online='//codepen.io/elijahmanor/embed/RPRdmg/?height=468&theme-id=0&default-tab=result' data-offline='./pens/codepen_RPRdmg/index.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/RPRdmg/'>RPRdmg</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
     </iframe>
   </div>
@@ -539,7 +539,7 @@ HelloWorld.defaultProps = {
 
 React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--25">
     <iframe height='268' scrolling='no' src='//codepen.io/elijahmanor/embed/KpMYMY/?height=268&theme-id=0&default-tab=result' data-online='//codepen.io/elijahmanor/embed/KpMYMY/?height=268&theme-id=0&default-tab=result' data-offline='./pens/codepen_KpMYMY/index.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/KpMYMY/'>KpMYMY</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
     </iframe>
   </div>
@@ -587,7 +587,7 @@ HelloWorld.defaultProps = {
 
 React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--25">
     <p>12. Use `class` instead of `React.createClass` to define a component</p>
     <p>2-5. Use the `constructor` to set the initial state instead of `getInitialState`</p>
   </div>
@@ -635,7 +635,7 @@ HelloWorld.defaultProps = {
 
 React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--25">
     <p>12. You must bind Event Handlers to `this`</p>
     <p>19-22. `propTypes` are defined off of the Constructor</p>
     <p>23-26. `defaultProps` are defined off the Constructor</p>

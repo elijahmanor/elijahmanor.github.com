@@ -64,7 +64,7 @@ return (
 # Attribute Names
 
 <div class="Split">
-  <div class="Split-column">
+  <div class="Split-column Split-column--45">
     <p>HTML</p>
     <pre class="language-markup language--clean language--small"><code>
 &lt;div class="Media"&gt;
@@ -75,7 +75,7 @@ return (
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--45">
     <p>JSX</p>
     <pre class="language-jsx language--clean language--small"><code>
 return (
@@ -113,7 +113,7 @@ var HelloWorld = React.createClass({
   }
 });</code></pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--25">
     <iframe height='377' scrolling='no' src='//codepen.io/elijahmanor/embed/doXLQd/?height=377&theme-id=0&default-tab=result' data-online='//codepen.io/elijahmanor/embed/doXLQd/?height=377&theme-id=0&default-tab=result' data-offline='./pens/codepen_doXLQd/index.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/doXLQd/'>doXLQd</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
     </iframe>
   </div>
