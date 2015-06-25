@@ -28,7 +28,7 @@ Previous Attacks</h3>
 <li><a href="http://elijahmanor.com/angry-birds-of-javascript-red-bird-iife/" target="_blank">Red Bird - IIFE</a></li>
 <li><a href="http://elijahmanor.com/angry-birds-of-javascript-blue-bird-events/" target="_blank">Blue Bird - Events</a></li>
 <li><a href="http://elijahmanor.com/angry-birds-of-javascript-yellow-bird-requirejs/" target="_blank">Yellow Bird - RequireJS</a></li>
-<li><a href="http://www.elijahmanor.com/angry-birds-of-javascript-black-bird-backbone/" target="_blank">Black Bird - Backbone</a></li>
+<li><a href="http://elijahmanor.com/angry-birds-of-javascript-black-bird-backbone/" target="_blank">Black Bird - Backbone</a></li>
 </ul>
 
 <h3>
