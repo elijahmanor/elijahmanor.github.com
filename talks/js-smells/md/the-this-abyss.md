@@ -46,10 +46,10 @@ console.log(person.teeth);
 };
 
 Person.prototype.brush = function() {
-  var that = this;
+  var that = this; // 6: Stink
 
   this.teeth.forEach(function(tooth) {
-    that.clean(tooth);
+    that.clean(tooth); // 9: Stink
   });
 
   console.log('brushed');
@@ -74,7 +74,7 @@ console.log(person.teeth);
 <pre class="language-javascript highlight" data-line="4"><code>Person.prototype.brush = function() {
   this.teeth.forEach(function(tooth) {
     this.clean(tooth);
-  }.bind(this));
+  }.bind(this)); // 4: Use .bind() to change context
 
   console.log('brushed');
 };
@@ -90,7 +90,7 @@ console.log(person.teeth);
 <pre class="language-javascript highlight" data-line="4"><code>Person.prototype.brush = function() {
   this.teeth.forEach(function(tooth) {
     this.clean(tooth);
-  }, this);
+  }, this); // 4: Use 2nd parameter of .forEach to change context
 
   console.log('brushed');
 };
@@ -104,7 +104,7 @@ console.log(person.teeth);
 3) ECMAScript 2015 (ES6)
 
 <pre class="language-javascript highlight" data-line="2-4"><code>Person.prototype.brush = function() {
-  this.teeth.forEach(tooth => {
+  this.teeth.forEach(tooth => { // 2: Use ES6 Arrow Function to bind `this`
     this.clean(tooth);
   });
 
@@ -118,7 +118,7 @@ console.log(person.teeth);
 <!-- .slide: data-title="The This Abyss" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--senior" data-background="#222" -->
 
 <pre class="language-javascript highlight" data-line="2"><code>Person.prototype.brush = function() {
-  this.teeth.forEach(this.clean);
+  this.teeth.forEach(this.clean); // 2: Use functional programming
 
   console.log('brushed');
 };
@@ -130,7 +130,7 @@ console.log(person.teeth);
 <!-- .slide: data-title="The This Abyss" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--senior" data-background="#222" -->
 
 <pre class="language-javascript highlight" data-line="2"><code>Person.prototype.brush = function() {
-  this.teeth.forEach(this.clean.bind(this));
+  this.teeth.forEach(this.clean.bind(this)); // 2: Bind `this` if clean needs it
 
   console.log('brushed');
 };

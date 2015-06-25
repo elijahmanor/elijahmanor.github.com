@@ -112,13 +112,13 @@ Let's pull out the random color portion...
 let boxes = document.querySelectorAll(".Box");
 [].forEach.call(boxes, (element, index) => {
   element.innerText = "Box: " + index;
-  element.style.backgroundColor = randomColor();
+  element.style.backgroundColor = randomColor(); // 6: Refactored
 });
 
 let circles = document.querySelectorAll(".Circle");
 [].forEach.call(circles, (element, index) => {
   element.innerText = "Circle: " + index;
-  element.style.color = randomColor();
+  element.style.color = randomColor(); // 12: Refactored
 });
 </code></pre>
 
@@ -134,12 +134,12 @@ let randomColor = () => `#${(Math.random() * 0xFFFFFF << 0).toString(16)};
 
 let $$ = selector => [].slice.call(document.querySelectorAll(selector || '*'));
 
-$$('.Box').forEach((element, index) => {
+$$('.Box').forEach((element, index) => { // 5: Refactored
   element.innerText = "Box: " + index;
   element.style.backgroundColor = randomColor();
 });
 
-$$(".Circle").forEach((element, index) => {
+$$(".Circle").forEach((element, index) => { // 10: Refactored
   element.innerText = "Circle: " + index;
   element.style.color = randomColor();
 });
@@ -164,9 +164,9 @@ let updateElement = (selector, textPrefix, styleProperty) => {
   });
 }
 
-updateElement('.Box', 'Box', 'backgroundColor');
+updateElement('.Box', 'Box', 'backgroundColor'); // 12: Refactored
 
-updateElement('.Circle', 'Circle', 'color');
+updateElement('.Circle', 'Circle', 'color'); // 14: Refactored
 </code></pre>
 
 ------

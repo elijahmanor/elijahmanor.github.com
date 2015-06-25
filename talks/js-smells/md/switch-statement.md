@@ -72,7 +72,7 @@ getArea('Bogus');
       area = options.width * options.height;
       break;
 
-    case 'Circle':
+    case 'Circle': // 17: New Shape Type
       area = Math.PI * Math.pow(options.radius, 2);
       break;
 
@@ -161,7 +161,7 @@ getArea('Bogus');
   var area = 0;
 
   switch (shape) {
-    case 'Triangle':
+    case 'Triangle': // 5: Magic String
       area = .5 * options.width * options.height;
       break;
     /* ... more code ... */
@@ -170,7 +170,7 @@ getArea('Bogus');
   return area;
 }
 
-getArea('Triangle', { width: 100, height: 100 });
+getArea('Triangle', { width: 100, height: 100 }); // 14: Magic String
 </code></pre>
 
 ------
@@ -181,20 +181,20 @@ getArea('Triangle', { width: 100, height: 100 });
 ### Object Types
 
 <pre class="language-javascript highlight" data-line="1-3,8,15"><code data-trim>var shapeType = {
-  triangle: 'Triangle'
+  triangle: 'Triangle' // 2: Object Type
 };
 
 function getArea(shape, options) {
   var area = 0;
   switch (shape) {
-    case shapeType.triangle:
+    case shapeType.triangle: // 8: Object Type
       area = .5 * options.width * options.height;
       break;
   }
   return area;
 }
 
-getArea(shapeType.triangle, { width: 100, height: 100 });
+getArea(shapeType.triangle, { width: 100, height: 100 }); // 15: Object Type
 </code></pre>
 
 ------
@@ -205,20 +205,20 @@ getArea(shapeType.triangle, { width: 100, height: 100 });
 ### `const` & `symbols`
 
 <pre class="language-javascript highlight" data-line="1-3,8,15"><code data-trim>const shapeType = {
-  triangle: Symbol()
+  triangle: Symbol() // 2: Enum-ish
 };
 
 function getArea(shape, options) {
   var area = 0;
   switch (shape) {
-    case shapeType.triangle:
+    case shapeType.triangle: // 8: Enum-ish
       area = .5 * options.width * options.height;
       break;
   }
   return area;
 }
 
-getArea(shapeType.triangle, { width: 100, height: 100 });
+getArea(shapeType.triangle, { width: 100, height: 100 }); // 15: Enum-ish
 </code></pre>
 
 Notes:
