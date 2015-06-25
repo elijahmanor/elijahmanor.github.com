@@ -1,4 +1,4 @@
-/* http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+clike+javascript+bash+css-extras+git+markdown+jsx+ruby+scss&plugins=line-highlight+line-numbers+autolinker+file-highlight+show-language */
+/* http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+clike+javascript+apacheconf+aspnet+bash+csharp+coffeescript+css-extras+dart+git+handlebars+http+ini+lolcode+markdown+perl+powershell+jsx+ruby+scss+sql+typescript+yaml&plugins=line-highlight+line-numbers+autolinker+wpd+file-highlight+show-language+highlight-keywords */
 /**
  * okaidia theme for JavaScript, CSS and HTML
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/
@@ -209,15 +209,21 @@ pre.line-numbers > code {
 .token a {
 	color: inherit;
 }
+code[class*="language-"] a[href],
+pre[class*="language-"] a[href] {
+	cursor: help;
+	text-decoration: none;
+}
+
+code[class*="language-"] a[href]:hover,
+pre[class*="language-"] a[href]:hover {
+	cursor: help;
+	text-decoration: underline;
+}
 pre[class*='language-'] {
 	position: relative;
 }
-pre[class*='language-'] > code[data-language] {
-	overflow: auto;
-	max-height: 28em;
-	display: block;
-}
-pre[class*='language-'] > code[data-language]::before {
+pre[class*='language-'][data-language]::before {
 	content: attr(data-language);
 	color: black;
 	background-color: #CFCFCF;

@@ -107,8 +107,7 @@ Copy/paste detector for programming source code (JavaScript, TypeScript, C#, Rub
 
 Let's pull out the random color portion...
 
-<pre class="language-javascript highlight hide-language" data-line="1,6,12"><code data-trim>
-let randomColor = () => `#${(Math.random() * 0xFFFFFF << 0).toString(16)};
+<pre class="language-javascript highlight hide-language" data-line="1,6,12"><code data-trim>let randomColor = () => `#${(Math.random() * 0xFFFFFF << 0).toString(16)};
 
 let boxes = document.querySelectorAll(".Box");
 [].forEach.call(boxes, (element, index) => {
