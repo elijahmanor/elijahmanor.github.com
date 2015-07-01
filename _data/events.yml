@@ -1191,7 +1191,7 @@
   sessions:
   - name: 'Eliminating JavaScript Code Smells'
     slides: '/talks/js-smells'
-    video: ''
+    video: 'https://www.youtube.com/watch?v=JVlfj7mQZPo'
     feedback: ''
 
 - dates:
@@ -1216,5 +1216,33 @@
     type: 'keynote'
   - name: 'Eliminating JavaScript Code Smells'
     slides: '/talks/js-smells'
+    video: 'https://www.youtube.com/watch?v=JVlfj7mQZPo'
+    feedback: ''
+
+- dates:
+  - day: 26
+    month: 'Oct'
+    year: 2015
+  - day: 29
+    month: 'Oct'
+    year: 2015
+  date: '2015-10-26'
+  days: '26-29'
+  name: 'AngleBrackets'
+  type: 'conference'
+  url: 'https://anglebrackets.org/'
+  location: 'Las Vegas, NV'
+  employer: 'lampo'
+  sessions:
+  - name: 'Deodorize JavaScript Code Smells'
+    slides: '/talks/js-smells'
+    video: 'https://www.youtube.com/watch?v=JVlfj7mQZPo'
+    feedback: ''
+  - name: 'To React.js and Beyond!'
+    slides: '/talks/react-to-the-future/dist'
+    video: ''
+    feedback: ''
+  - name: 'CSS for Junior Jacob, Back-End Brian, and Mid-Level Melissa'
+    slides: '/talks/css-for-devs'
     video: ''
     feedback: ''
