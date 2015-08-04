@@ -1,5 +1,5 @@
 # Growing<br/>Developers
-<!-- .slide: data-title="" data-state="Introduction--title" data-background="./img/orange-tree.jpg" -->
+<!-- .slide: data-title="" data-state="Introduction--title" data-background="./img/orange-tree.JPG" -->
 
 ## <!-- .element: style="text-transform: lowercase;" --> by [@elijahmanor](http://twitter.com/elijahmanor)
 
@@ -10,7 +10,7 @@
 ------
 
 ## `me.json`
-<!-- .slide: data-title="" data-state="Introduction" data-background="./img/orange-tree.jpg" -->
+<!-- .slide: data-title="" data-state="Introduction" data-background="./img/orange-tree.JPG" -->
 
 <div class="Split">
   <div class="Split-column">
@@ -42,14 +42,14 @@
 ------
 
 ## Title
-<!-- .slide: data-title="" data-state="Introduction" data-background="./img/orange-tree.jpg" -->
+<!-- .slide: data-title="" data-state="Introduction" data-background="./img/orange-tree.JPG" -->
 
 Senior Front-End Developer
 
 ------
 
 ## Titles
-<!-- .slide: data-title="" data-state="Introduction" data-background="./img/orange-tree.jpg" -->
+<!-- .slide: data-title="" data-state="Introduction" data-background="./img/orange-tree.JPG" -->
 
 Junior
 
