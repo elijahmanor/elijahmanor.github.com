@@ -50,8 +50,8 @@ find and be a mentor
 
 ------
 
-## Observations
-<!-- .slide: data-title="Mid-Level Melissa" data-state="title Stage--midLevel Status--warning" -->
+## Watch
+<!-- .slide: data-title="Mid-Level Melissa" data-state="title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
 
 ![](./img/midlevel-warning.gif)
 

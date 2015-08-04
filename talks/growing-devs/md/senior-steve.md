@@ -41,8 +41,8 @@
 
 ------
 
-## Observations
-<!-- .slide: data-title="Senior Steve" data-state="title Stage--senior Status--warning" -->
+## Watch
+<!-- .slide: data-title="Senior Steve" data-state="title Stage--senior Status--warning" data-background="./img/watch.jpg" -->
 
 ![](./img/senior-warning.jpg)
 ![](./img/senior-warning.gif)

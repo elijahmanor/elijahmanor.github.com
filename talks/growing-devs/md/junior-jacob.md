@@ -43,8 +43,8 @@
 
 ------
 
-## Observations
-<!-- .slide: data-title="Junior Jacob" data-state="title Stage--junior Status--warning" -->
+## Watch
+<!-- .slide: data-title="Junior Jacob" data-state="title Stage--junior Status--warning" data-background="./img/watch.jpg" -->
 
 ![](./img/junior-warning.gif)
 
