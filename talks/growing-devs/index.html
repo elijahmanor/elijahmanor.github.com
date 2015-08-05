@@ -10,10 +10,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css" id="theme">
-		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="plugin/prism/prism.css" />
 		<link rel="stylesheet" href="css/custom.css" />
-		<!-- Printing and PDF exports -->
+		<script src="./js/prefixfree.min.js"></script>
 		<script>
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
@@ -28,28 +27,25 @@
 	<body>
 		<div class="reveal">
 			<header class="Title"></header>
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section id="Introduction" data-markdown="./md/introduction.md"></section>
 				<section id="JuniorJacob" data-markdown="./md/junior-jacob.md"></section>
 				<section id="MidLevelMelissa" data-markdown="./md/midlevel-melissa.md"></section>
 				<section id="SeniorSteve" data-markdown="./md/senior-steve.md"></section>
 				<section id="Conclusion" data-markdown="./md/conclusion.md"></section>
-				<pre style="visibility: hidden;"><code data-trim contenteditable>
-					console.log('code');
-				</code></pre>
+				<pre style="visibility: hidden;"><code data-trim contenteditable> console.log('code'); </code></pre>
 			</div>
 			<aside class="PersonaList">
 				<div class="Persona Persona--junior">
-					<img class="Persona-image" src="./img/junior-jacob-small.jpg" data-src="http://api.randomuser.me/portraits/thumb/men/73.jpg" /><!--73-->
+					<img class="Persona-image" src="./img/junior-jacob-small.jpg" />
 					<div class="Persona-name">Junior Jacob</div>
 				</div>
 				<div class="Persona Persona--midLevel">
-					<img class="Persona-image" src="./img/midlevel-melissa-small.jpg" data-src="http://api.randomuser.me/portraits/thumb/women/10.jpg" />
+					<img class="Persona-image" src="./img/midlevel-melissa-small.jpg" />
 					<div class="Persona-name">Mid-Level Melissa</div>
 				</div>
 				<div class="Persona Persona--senior">
-					<img class="Persona-image" src="./img/senior-steve-small.jpg" data-src="http://api.randomuser.me/portraits/thumb/men/31.jpg" />
+					<img class="Persona-image" src="./img/senior-steve-small.jpg" />
 					<div class="Persona-name">Back-End Brian</div>
 				</div>
 			</aside>
@@ -76,16 +72,13 @@
 				});
 			}());
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				width: 1024,
 				controls: true,
 				progress: true,
 				history: true,
 				center: true,
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
-				// Optional reveal.js plugins
+				transition: 'slide',
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
@@ -102,9 +95,15 @@
 			<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://elijahmanor.com/talks/growing-devs" data-text="Growing Developers" data-via="elijahmanor" data-size="large">Tweet</a>
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 		</div>
+		<script type="text/javascript"
+			src="https://www.google.com/jsapi?autoload={
+			 'modules':[{
+			   'name':'visualization',
+			   'version':'1',
+			   'packages':['corechart']
+			 }]
+			}"></script>
 		<script src="js/custom.js"></script>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="js/jquery.box2d.min.jsx"></script>
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

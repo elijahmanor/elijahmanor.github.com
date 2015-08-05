@@ -51,24 +51,20 @@ Senior Front-End Developer
 ## Titles
 <!-- .slide: data-title="" data-state="Introduction" data-background="./img/orange-tree.JPG" -->
 
-Junior
+<div class="DeveloperTitles">
+  <div class="DeveloperTitle">Junior</div>
+  <div class="DeveloperTitle">Mid-Level</div>
+  <div class="DeveloperTitle">Senior</div>
+</div>
 
-Mid-Level
-
-Senior
-
-<script>
-  $(document).ready(function() {  
-    $("p").box2d({'y-velocity':5});
-  });
-</script>
+<div hidden></div><!-- .element: class="fragment" -->
 
 ------
 
-## Stagnant
+## Plateau
 <!-- .slide: data-title="" data-state="Introduction" data-background="./img/plateau.jpg" -->
 
-I'm sure you've heard of the
+<div id="curve_chart" style="width: 900px; height: 500px"></div>
 
 <!--
 <a data-flickr-embed="true" href="https://www.flickr.com/photos/alanenglish/418367475/" title="Grand Canyon Plateau Point"><img src="https://farm1.staticflickr.com/152/418367475_00ee260e82_b.jpg" width="1024" height="768" alt="Grand Canyon Plateau Point"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>

@@ -14,6 +14,28 @@
 #dialog .actions button { font-size: 1rem; }
 #dialog h2 { color: black; margin: 0; }
 
+@keyframes bounce {
+  0% 	  { top: 000vh; animation-timing-function: ease-in;  }
+  37% 	{ top: 035vh; animation-timing-function: ease-out; }
+  55% 	{ top: 025vh; animation-timing-function: ease-in;  }
+  73% 	{ top: 035vh; animation-timing-function: ease-out; }
+  82% 	{ top: 030vh; animation-timing-function: ease-in;  }
+  91% 	{ top: 035vh; animation-timing-function: ease-out; }
+  96% 	{ top: 032vh; animation-timing-function: ease-in;  }
+  100%	{ top: 035vh; }
+}
+
+.DeveloperTitle { width: 10rem; display: inline-block; position: relative; }
+.DeveloperTitles--animate .DeveloperTitle:nth-child(1) {
+  animation: bounce 0.5s 0.5s forwards;
+}
+.DeveloperTitles--animate .DeveloperTitle:nth-child(2) {
+  animation: bounce 1s 0.4s forwards;
+}
+.DeveloperTitles--animate .DeveloperTitle:nth-child(3) {
+  animation: bounce 1.75s 0.6s forwards;
+}
+
 .Split {
   display: flex;
   flex-direction: row;
