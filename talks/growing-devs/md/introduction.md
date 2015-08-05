@@ -64,7 +64,7 @@ Senior Front-End Developer
 ## Plateau
 <!-- .slide: data-title="" data-state="Introduction" data-background="./img/plateau.jpg" -->
 
-<div id="curve_chart" style="width: 900px; height: 500px"></div>
+<div id="curve_chart" style="height: 550px"></div>
 
 <!--
 <a data-flickr-embed="true" href="https://www.flickr.com/photos/alanenglish/418367475/" title="Grand Canyon Plateau Point"><img src="https://farm1.staticflickr.com/152/418367475_00ee260e82_b.jpg" width="1024" height="768" alt="Grand Canyon Plateau Point"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
@@ -77,8 +77,10 @@ Senior Front-End Developer
 ## Striving
 <!-- .slide: data-title="" data-state="Introduction" data-background="./img/stars.jpg" -->
 
-If you have invested yourself to hearing this talk,
-then you have positioned yourself to walk the walk
+> If you have invested yourself<br/>
+> to hear this talk,<br/>
+> then you have positioned yourself<br/>
+> to walk the walk.<br/>
 
 Notes:
 

@@ -18,17 +18,29 @@ document.addEventListener('webkitAnimationEnd', function(e) {
 
 function drawChart() {
   var data = google.visualization.arrayToDataTable([
-    ['Year', 'Sales', 'Expenses'],
-    ['2004',  1000,      400],
-    ['2005',  1170,      460],
-    ['2006',  660,       1120],
-    ['2007',  1030,      540]
+    ['Working', 'Experience'],
+    [1, 1],
+    [2, 2],
+    [3, 3],
+    [4, 3],
+    [5, 3],
+    [6, 3],
+    [7, 3],
+    [8, 3],
+    [9, 3],
+    [10, 3]
   ]);
 
   var options = {
-    title: 'Company Performance',
+    title: 'Working vs. Experience',
     curveType: 'function',
-    legend: { position: 'bottom' }
+    legend: { position: 'bottom' },
+    hAxis: {
+      title: 'Years of Working'
+    },
+    vAxis: {
+      title: 'Years of Experience'
+    }
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
