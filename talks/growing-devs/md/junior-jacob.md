@@ -1,5 +1,11 @@
 # Junior Jacob
-<!-- .slide: data-state="" -->
+<!-- .slide: data-state="Persona-introduction" data-background="./img/computer-4.jpg" -->
+
+<img src="./img/junior-jacob-big.jpg" style="border-radius: 50%; width: 25%;" />
+
+* Fresh out of college
+* Isn't connected with other developers
+* Isn't sure what or where to go
 
 ------
 

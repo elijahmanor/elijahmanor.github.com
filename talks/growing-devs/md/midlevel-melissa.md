@@ -1,5 +1,11 @@
 # Mid-Level Melissa
-<!-- .slide: data-state="" -->
+<!-- .slide: data-state="Persona-introduction" data-background="./img/computer-3.jpg" -->
+
+<img src="./img/midlevel-melissa-big.jpg" style="border-radius: 50%; width: 25%;" />
+
+* Pretty comfortable with current set of skills
+* Can get the job done, but it can be somewhat painful
+* CSS quickly gets out of hand and hard to maintain
 
 ------
 

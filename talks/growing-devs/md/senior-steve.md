@@ -1,5 +1,12 @@
 # Senior Steve
-<!-- .slide: data-state="" -->
+<!-- .slide: data-state="Persona-introduction" data-background="./img/computer-1.jpg" -->
+
+<img src="./img/senior-steve-big.jpg" style="border-radius: 50%; width: 25%;" />
+
+* Recently moved towards Front-End Web Development
+* JavaScript and HTML make sense (mostly)
+* CSS is frustrating and seemingly unmaintainable
+* Leans towards Twitter Bootstrap or other frameworks
 
 ------
 

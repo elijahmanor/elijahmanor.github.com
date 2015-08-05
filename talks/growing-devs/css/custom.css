@@ -1,10 +1,26 @@
 .Introduction--title [data-markdown] * {
   text-align: right;
-  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-width: 5px;
   -webkit-text-stroke-color: black;
 }
 .Introduction .reveal .slide-background.present { opacity: 0.5; }
 .Introduction .reveal section img { background: none; border: none; box-shadow: initial; }
+
+.Photosynthesis-title [data-markdown].present h1 {
+  -webkit-text-stroke-width: 5px;
+  -webkit-text-stroke-color: black;
+}
+.Photosynthesis-title [data-markdown].present blockquote {
+  background: rgba(248, 247, 216, 0.7);
+  /* opacity: 0.5; */
+}
+
+.Photosynthesis .reveal .slide-background.present { opacity: 0.5; }
+
+.Persona-introduction h1 {
+  -webkit-text-stroke-width: 5px;
+  -webkit-text-stroke-color: black;
+}
 
 [data-store] { outline: 1px dashed rgba(0, 0, 0, 0.25); }
 
@@ -33,7 +49,7 @@
   animation: bounce 1s 0.4s forwards;
 }
 .DeveloperTitles--animate .DeveloperTitle:nth-child(3) {
-  animation: bounce 1.75s 0.6s forwards;
+  animation: bounce 1.5s 0.6s forwards;
 }
 
 .Split {
