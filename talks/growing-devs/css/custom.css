@@ -21,6 +21,29 @@
   -webkit-text-stroke-width: 5px;
   -webkit-text-stroke-color: black;
 }
+.Persona-introduction ul {
+  background: rgba(255,255,255,0.5);
+  padding: 1rem 1rem 1rem 4rem;
+  border-radius: 2rem;
+  color: #111;
+}
+
+.Stage-introduction h2 {
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  display: inline-block;
+  padding: 1rem;
+  width: 12rem;
+  height: 12rem;
+  line-height: 12rem;
+  border: 3px solid white;
+}
+
+blockquote {
+  background: rgba(255,255,255,0.5) !important;
+  border-radius: 2rem;
+  color: #111;
+}
 
 [data-store] { outline: 1px dashed rgba(0, 0, 0, 0.25); }
 
@@ -107,7 +130,7 @@
   max-width: none !important;
   max-height: none !important;
   border: 3px solid white !important;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.5) !important;
 }
 .Status--large { width: 10rem; height: 10rem; padding: 0.5rem !important; }
 .Status--sun .Status--sun { top: -7.5rem; }
@@ -137,6 +160,34 @@
 .Title.Title--show {
   padding: 0.5rem;
   left: 0;
+}
+
+.Pills {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none !important;
+}
+.Pill {
+  background: #fcf8e3;
+  margin: 1rem !important;
+  padding: 1rem !important;
+  border-radius: 4rem;
+  color: #111;
+  border: 3px solid #111 !important;
+}
+
+.Pills--sun .Pill {
+  background: #fcf8e3;
+}
+.Pills--soil .Pill {
+  background: #dff0d8;
+}
+.Pills--water .Pill {
+  background: #d9edf7;
+}
+.Pills--wind .Pill {
+  background: #f2dede;
 }
 
 /*

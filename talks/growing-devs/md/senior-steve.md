@@ -10,49 +10,83 @@
 
 ------
 
-## Sun
-<!-- .slide: data-title="Senior Steve" data-state="title Stage--senior Status--sun" data-background="./img/sun.jpg" -->
+##Sun
+<!-- .slide: data-title="Senior Steve" data-state="Stage-introduction title Stage--senior" data-background="./img/sun.jpg" -->
 
-* Books (continue to learn patterns, when & why to use them)
-* 3x rules
-* Specifications / Documentations
-* Social Media
-* Read Source Code
+------
+
+<!-- .slide: data-title="Senior Steve" data-state="title Stage--senior" data-background="./img/sun.jpg" -->
+
+<ul class="Pills Pills--sun">
+  <li class="Pill fragment">Books (more patterns/when & why)</div>
+  <li class="Pill fragment">Blogs</div>
+  <li class="Pill fragment">Online Training (1.5x)</div>
+  <li class="Pill fragment">Podcasts</div>
+  <li class="Pill fragment">Social Media</div>
+  <li class="Pill fragment">User Groups</div>
+  <li class="Pill fragment">Conferences</div>
+  <li class="Pill fragment">Specification</div>
+  <li class="Pill fragment">Documentation</div>
+  <li class="Pill fragment">Source Code</div>
+</ul>
 
 ------
 
 ## Soil
+<!-- .slide: data-title="Senior Steve" data-state="Stage-introduction title Stage--senior Status--soil" data-background="./img/soil.jpg" -->
+
+------
+
 <!-- .slide: data-title="Senior Steve" data-state="title Stage--senior Status--soil" data-background="./img/soil.jpg" -->
 
-* Side Projects
-* CodePen Reduced Test Cases
-
-* PR to fix issue
+<ul class="Pills Pills--sun">
+  <li class="Pill fragment">Side Projects</div>
+  <li class="Pill fragment">CodePen (reduced test case)</div>
+  <li class="Pill fragment">Pull Request to fix issue</div>
+</ul>
 
 ------
 
 ## Water
+<!-- .slide: data-title="Senior Steve" data-state="Stage-introduction title Stage--senior Status--water" data-background="./img/water.jpg" -->
+
+------
+
 <!-- .slide: data-title="Senior Steve" data-state="title Stage--senior Status--water" data-background="./img/water.jpg" -->
 
-* Mentor (be one)
-* Peers
+<ul class="Pills Pills--sun">
+  <li class="Pill fragment">Mentor (be one)</div>
+  <li class="Pill fragment">Peers</div>
+</ul>
 
 ------
 
 ## Wind
+<!-- .slide: data-title="Senior Steve" data-state="Stage-introduction title Stage--senior Status--wind" data-background="./img/wind.jpg" -->
+
+------
+
 <!-- .slide: data-title="Senior Steve" data-state="title Stage--senior Status--wind" data-background="./img/wind.jpg" -->
 
-* Conferences
-* Meetups / User Groups
-* Social Media
+<ul class="Pills Pills--sun">
+  <li class="Pill fragment">Conferences</div>
+  <li class="Pill fragment">User Groups</div>
+  <li class="Pill fragment">Social Media</div>
+</ul>
 
 ------
 
 ## Watch
+<!-- .slide: data-title="Senior Steve" data-state="Stage-introduction title Stage--senior Status--warning" data-background="./img/watch.jpg" -->
+
+------
+
 <!-- .slide: data-title="Senior Steve" data-state="title Stage--senior Status--warning" data-background="./img/watch.jpg" -->
 
 ![](./img/senior-warning.jpg)
 ![](./img/senior-warning.gif)
 
-* Ego
-* Overwhelming
+<ul class="Pills Pills--sun">
+  <li class="Pill fragment">Ego</div>
+  <li class="Pill fragment">Overwhelming</div>
+</ul>

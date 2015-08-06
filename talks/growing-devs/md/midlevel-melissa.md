@@ -10,63 +10,102 @@
 ------
 
 ## Sun
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Stage-introduction title Stage--midLevel" data-background="./img/sun.jpg" -->
+
+------
+
 <!-- .slide: data-title="Mid-Level Melissa" data-state="title Stage--midLevel Status--sun" data-background="./img/sun.jpg" -->
 
-* Books (testing/perf/patterns)
-* Online Training (1.5x)
-* Social Media (good list)
-* Meetings (some peeps)
-* Conferences
+<ul class="Pills Pills--sun">
+  <li class="Pill fragment">Books (testing/performance/patterns)</div>
+  <li class="Pill fragment">Blogs</div>
+  <li class="Pill fragment">Online Training (1.5x)</div>
+  <li class="Pill fragment">Podcasts</div>
+  <li class="Pill fragment">Social Media</div>
+  <li class="Pill fragment">User Groups</div>
+  <li class="Pill fragment">Conferences</div>
+</ul>
 
 ------
 
 ## Soil
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Stage-introduction title Stage--midLevel Status--soil" data-background="./img/soil.jpg" -->
+
+------
+
 <!-- .slide: data-title="Mid-Level Melissa" data-state="title Stage--midLevel Status--soil" data-background="./img/soil.jpg" -->
 
-* CodePen (reduced test case)
-* REPL
-* Katas / Koans
+<ul class="Pills Pills--soil">
+  <li class="Pill fragment">CodePen (reduced test case)</div>
+  <li class="Pill fragment">REPL</div>
+  <li class="Pill fragment">Katas / Koans</div>
+</ul>
 
-(understand why)
+<ul class="Pills Pills--soil">
+  <li class="Pill fragment">Blogs</div>
+  <li class="Pill fragment">GitHub Issues</div>
+  <li class="Pill fragment">Browser Bugs</div>
+  <li class="Pill fragment">StackOverflow</div>
+</ul>
 
-* Blogs
-* GitHub Issues
-* Browser Bugs
-* StackOverflow
+Notes:
+
+Understand why
 
 ------
 
 ## Water
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Stage-introduction title Stage--midLevel Status--water" data-background="./img/water.jpg" -->
+
+------
+
 <!-- .slide: data-title="Mid-Level Melissa" data-state="title Stage--midLevel Status--water" data-background="./img/water.jpg" -->
 
-* Mentor (find one and be one)
+<ul class="Pills Pills--soil">
+  <li class="Pill fragment">Mentor (find one and be one)</div>
+  <li class="Pill fragment">Peers</div>
+</ul>
 
-you know more than you know
-find and be a mentor
-
-* Peers
+<blockquote class="fragment">
+  <p>You know more than you think you know,</p>
+  <p>Don't be content with the status quo.</p>
+</blockquote>
 
 ------
 
 ## Wind
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Stage-introduction title Stage--midLevel Status--wind" data-background="./img/wind.jpg" -->
+
+------
+
 <!-- .slide: data-title="Mid-Level Melissa" data-state="title Stage--midLevel Status--wind" data-background="./img/wind.jpg" -->
 
-* Meetups / User Groups
-* Social Media
+<ul class="Pills Pills--soil">
+  <li class="Pill fragment">User Groups</div>
+  <li class="Pill fragment">Social Media</div>
+</ul>
 
 ------
 
 ## Watch
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Stage-introduction title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
+
+------
+
 <!-- .slide: data-title="Mid-Level Melissa" data-state="title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
 
 ![](./img/midlevel-warning.gif)
 
 * Imposter Syndrome
 
+------
+
 ### What is it?
 
 based on toxic shame / keep to self / think that noone else suffers
 strangely many are very influencial because it pushes them to learn
+
+------
 
 ### Ways to Counteract
 
@@ -75,3 +114,12 @@ Open to Peers
 become content
 write down accomplishments / keep a journal
 learn because you love to learn (not out of shame or to prove something)
+
+Don't give in to the pretender
+Push yourself to be a contender
+
+
+------
+
+![](./img/dunning-imposter.png)
+Sudhakar's Blog http://www.rsudhakar.in/social/2014/06/07/so-where-are-you.html

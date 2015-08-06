@@ -10,6 +10,10 @@ Reveal.addEventListener('fragmentshown', function(event) {
   document.querySelector('.present[data-markdown] .DeveloperTitles').classList.add('DeveloperTitles--animate');
 });
 
+Reveal.addEventListener('fragmenthidden', function(event) {
+  document.querySelector('.present[data-markdown] .DeveloperTitles').classList.remove('DeveloperTitles--animate');
+});
+
 document.addEventListener('webkitAnimationEnd', function(e) {
   if (e.target.closest('.Status')) {
     //document.body.parentNode.classList.remove('statusSkill--change');
