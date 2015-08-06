@@ -40,7 +40,7 @@
   <li class="Pill fragment">Sample Projects</div>
 </ul>
 
-<ul class="Pills Pills--soil">
+<ul class="Pills Pills--error">
   <li class="Pill fragment">GCP (Google Copy Paste)</div>
   <li class="Pill fragment">StackOverflow</div>
   <li class="Pill fragment">Forums</div>

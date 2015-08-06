@@ -33,9 +33,9 @@
   background: rgba(0, 0, 0, 0.7);
   display: inline-block;
   padding: 1rem;
-  width: 12rem;
-  height: 12rem;
-  line-height: 12rem;
+  width: 15rem;
+  height: 15rem;
+  line-height: 15rem;
   border: 3px solid white;
 }
 
@@ -119,6 +119,7 @@ blockquote {
 
 .StatusList { position: fixed; left: 10rem; bottom: 1rem; z-index: 1; }
 .StatusList .Status { position: absolute; }
+.StatusList--horizontal { display: inline-block; }
 .Status {
   width: 4.4rem;
   height: 4.4rem;
@@ -132,12 +133,19 @@ blockquote {
   border: 3px solid white !important;
   background: rgba(255,255,255,0.5) !important;
 }
-.Status--large { width: 10rem; height: 10rem; padding: 0.5rem !important; }
+.Status--large { width: 10rem; height: 10rem; padding: 0.5rem !important; position: relative; float: left; top: 0; }
+.Status--large:after { position: absolute; width: 100%; height: 1rem; bottom: -1.5rem; left: 0; }
+.reveal section .Status--large img { width: 100%; height: 100%; margin: auto; background: none; border: none; }
 .Status--sun .Status--sun { top: -7.5rem; }
+.Status--sun:after { content: 'Sun'; }
 .Status--soil .Status--soil { top: -7.5rem; }
+.Status--soil:after { content: 'Soil'; }
 .Status--water .Status--water { top: -7.5rem; }
+.Status--water:after { content: 'Water'; }
 .Status--wind .Status--wind { top: -7.5rem; }
+.Status--wind:after { content: 'Wind'; }
 .Status--warning .Status--warning { top: -7.5rem; }
+.Status--warning:after { content: 'Warning'; }
 
 .Title {
   position: absolute;
@@ -186,7 +194,10 @@ blockquote {
 .Pills--water .Pill {
   background: #d9edf7;
 }
-.Pills--wind .Pill {
+.Pills--wind .Pill { /* look for different color */
+  background: #f2dede;
+}
+.Pills--error .Pill {
   background: #f2dede;
 }
 
