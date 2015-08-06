@@ -8,10 +8,10 @@
 # Factors of Growth
 <!-- .slide: data-title="" data-state="Photosynthesis" data-background="./img/photosynthesis.jpg" -->
 
-<img class="Status Status--sun" src="./svg/sun.svg" />
-<img class="Status Status--soil" src="./svg/soil.svg" />
-<img class="Status Status--water"src="./svg/water.svg" />
-<img class="Status Status--wind" src="./svg/wind.svg" />
-<img class="Status Status--warning" src="./svg/warning.svg" />
+<img class="Status Status--large Status--sun fragment" src="./svg/sun.svg" />
+<img class="Status Status--large Status--soil fragment" src="./svg/soil.svg" />
+<img class="Status Status--large Status--water fragment" src="./svg/water.svg" />
+<img class="Status Status--large Status--wind fragment" src="./svg/wind.svg" />
+<img class="Status Status--large Status--warning fragment" src="./svg/warning.svg" />
 
 Notes:

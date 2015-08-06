@@ -1,6 +1,6 @@
 .Introduction--title [data-markdown] * {
   text-align: right;
-  -webkit-text-stroke-width: 5px;
+  -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: black;
 }
 .Introduction .reveal .slide-background.present { opacity: 0.5; }
@@ -10,9 +10,9 @@
   -webkit-text-stroke-width: 5px;
   -webkit-text-stroke-color: black;
 }
-.Photosynthesis-title [data-markdown].present blockquote {
-  background: rgba(248, 247, 216, 0.7);
-  /* opacity: 0.5; */
+.Photosynthesis-title [data-markdown].present {
+  background: rgba(0,0,0,0.7);
+  border-radius: 2rem;
 }
 
 .Photosynthesis .reveal .slide-background.present { opacity: 0.5; }
@@ -95,18 +95,21 @@
 }
 
 .StatusList { position: fixed; left: 10rem; bottom: 1rem; z-index: 1; }
+.StatusList .Status { position: absolute; }
 .Status {
-  width: 5rem;
-  height: 5rem;
+  width: 4.4rem;
+  height: 4.4rem;
   padding: 0.25rem !important;
+  margin: 0.25rem !important;
   border-radius: 50%;
   transition: all 1s ease-in;
-  position: absolute;
   top: 10rem;
   max-width: none !important;
   max-height: none !important;
-  background-color: yellow;
+  border: 3px solid white !important;
+  background: rgba(255,255,255,0.5);
 }
+.Status--large { width: 10rem; height: 10rem; padding: 0.5rem !important; }
 .Status--sun .Status--sun { top: -7.5rem; }
 .Status--soil .Status--soil { top: -7.5rem; }
 .Status--water .Status--water { top: -7.5rem; }
