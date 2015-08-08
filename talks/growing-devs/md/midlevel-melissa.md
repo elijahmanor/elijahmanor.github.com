@@ -1,11 +1,11 @@
 # Mid-Level Melissa
-<!-- .slide: data-state="Persona-introduction" data-background="./img/computer-3.jpg" -->
+<!-- .slide: data-state="Persona-introduction Slide-blockquote" data-background="./img/computer-3.jpg" -->
 
 <img src="./img/midlevel-melissa-big.jpg" style="border-radius: 50%; width: 25%;" />
 
-* Pretty comfortable with current set of skills
-* Can get the job done, but it can be somewhat painful
-* CSS quickly gets out of hand and hard to maintain
+> * Several years of experience
+> * Connected with peers at work
+> * Proficient worker
 
 ------
 
@@ -14,7 +14,7 @@
 
 ------
 
-<!-- .slide: data-title="Mid-Level Melissa" data-state="title Stage--midLevel Status--sun" data-background="./img/sun.jpg" -->
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background title Stage--midLevel Status--sun" data-background="./img/sun.jpg" -->
 
 <ul class="Pills Pills--sun">
   <li class="Pill fragment">Books (testing/performance/patterns)</div>
@@ -33,7 +33,7 @@
 
 ------
 
-<!-- .slide: data-title="Mid-Level Melissa" data-state="title Stage--midLevel Status--soil" data-background="./img/soil.jpg" -->
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background title Stage--midLevel Status--soil" data-background="./img/soil.jpg" -->
 
 <ul class="Pills Pills--soil">
   <li class="Pill fragment">CodePen (reduced test case)</div>
@@ -41,7 +41,7 @@
   <li class="Pill fragment">Katas / Koans</div>
 </ul>
 
-<ul class="Pills Pills--soil">
+<ul class="Pills Pills--error">
   <li class="Pill fragment">Blogs</div>
   <li class="Pill fragment">GitHub Issues</div>
   <li class="Pill fragment">Browser Bugs</div>
@@ -59,17 +59,17 @@ Understand why
 
 ------
 
-<!-- .slide: data-title="Mid-Level Melissa" data-state="title Stage--midLevel Status--water" data-background="./img/water.jpg" -->
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background title Stage--midLevel Status--water" data-background="./img/water.jpg" -->
 
-<ul class="Pills Pills--soil">
-  <li class="Pill fragment">Mentor (find one and be one)</div>
-  <li class="Pill fragment">Peers</div>
-</ul>
-
-<blockquote class="fragment">
+<blockquote class="fragmentx">
   <p>You know more than you think you know,</p>
   <p>Don't be content with the status quo.</p>
 </blockquote>
+
+<ul class="Pills Pills--water" style="margin: 0;">
+  <li class="Pill fragment">Mentor (find one and be one)</div>
+  <li class="Pill fragment">Peers</div>
+</ul>
 
 ------
 
@@ -78,12 +78,46 @@ Understand why
 
 ------
 
-<!-- .slide: data-title="Mid-Level Melissa" data-state="title Stage--midLevel Status--wind" data-background="./img/wind.jpg" -->
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background title Stage--midLevel Status--wind" data-background="./img/wind.jpg" -->
 
-<ul class="Pills Pills--soil">
+<ul class="Pills Pills--wind">
+  <li class="Pill fragment">Lunch &amp; Learn</div>
   <li class="Pill fragment">User Groups</div>
   <li class="Pill fragment">Social Media</div>
+  <li class="Pill fragment">Blogging</div>
 </ul>
+
+------
+
+## Blogging: Why
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background Slide-title Slide-blockquote title Stage--midLevel Status--wind" data-background="./img/wind.jpg" -->
+
+<blockquote>
+  <ul>
+    <li class="fragment">To document something that you've learned</li>
+    <li class="fragment">Encourages you to create a reduced test case to explain your problem</li>
+    <li class="fragment">You often learn more about the topic while you are unpacking it</li>
+    <li class="fragment">You become a resource for your future self... <code>"Google &lt;issue-from-past&gt;"</code></li>
+  </u>
+</blockquote>
+
+------
+
+## Blogging: What
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background Slide-title Slide-blockquote title Stage--midLevel Status--wind" data-background="./img/wind.jpg" -->
+
+> * What problem have you solved recently that took a day or more to figure out? <!-- .element: class="fragment" -->
+> * Have you done extensive research about something and found a good solution? <!-- .element: class="fragment" -->
+> * Do you have a success story about tools or libraries that made a big impact? <!-- .element: class="fragment" -->
+> * Have you ever made a common mistake that you hope no one else ever makes? <!-- .element: class="fragment" -->
+
+------
+
+## Blogging: How
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background Slide-title Slide-blockquote title Stage--midLevel Status--wind" data-background="./img/wind.jpg" -->
+
+> * Own your own content and use a Self-Hosted Domain <!-- .element: class="fragment" -->
+> * Jekyll (free), GitHub Pages (free), and Custom Domain (small fee) <!-- .element: class="fragment" -->
 
 ------
 
@@ -92,34 +126,94 @@ Understand why
 
 ------
 
-<!-- .slide: data-title="Mid-Level Melissa" data-state="title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
+## Imposter Syndrome
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
 
-![](./img/midlevel-warning.gif)
-
-* Imposter Syndrome
+<img src="./img/midlevel-warning.gif" style="height: 500px;" />
 
 ------
 
 ### What is it?
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background Slide-blockquote--wide title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
 
-based on toxic shame / keep to self / think that noone else suffers
-strangely many are very influencial because it pushes them to learn
+> "Impostor syndrome is a psychological phenomenon in which people are **unable to internalize their accomplishments**. Despite external evidence of their competence, those with the syndrome remain **convinced that they are frauds** and **do not deserve the success they have achieved**." --[Wikipedia](https://en.wikipedia.org/wiki/Impostor_syndrome)
+
+------
+
+### What is it (reduced)?
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background Slide-blockquote title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
+
+> * I'm not Good Enough <!-- .element: class="fragment" -->
+> * I'm a Fraud <!-- .element: class="fragment" -->
+> * I'm not Worthy of Success <!-- .element: class="fragment" -->
+
+# Fear and Shame <!-- .element: class="fragment Fire" -->
+
+------
+
+### What does it looks like?
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
+
+![](./img/no-idea-dog-1.jpg) <!-- .element: class="fragment Fire" style="height: 500px;" -->
+
+------
+
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
+
+<img src="./img/dunning-imposter.png" style="height: 500px" />
+
+<div class="credit"><a href="http://www.rsudhakar.in/social/2014/06/07/so-where-are-you.html">So, Where Are you?</a> by <a href="">Sudhakar Rayavaram</a></div>
+
+Notes:
+
+------
+
+### Are you alone?
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background Slide-blockquote title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
+
+> * Suffers tend to isolate themselves <!-- .element: class="fragment" -->
+> * Suffers think that no one else understands <!-- .element: class="fragment" -->
+> * Some of the most talented developers I know struggle with Imposter Syndrome <!-- .element: class="fragment" -->
+
+# YOU ARE NOT ALONE! <!-- .element: class="fragment" -->
+
+------
+
+### Anonymous Poll
+<!-- .slide: data-title="Mid-Level Melissa" data-state="vote Slide-background title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
+
+<iframe src="http://www.sli.do/event/cqcy4v1h/wall" style="width: 100%; height: 500px;"></iframe>
+
+------
+
+### Things to Note
+<!-- .slide: data-title="Mid-Level Melissa" data-state="vote Slide-background Slide-blockquote title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
+
+> * Many are at the edge of their knowledge <!-- .element: class="fragment" -->
+> * Just because someone says something profound doesn't mean they know all things <!-- .element: class="fragment" -->
+> * Many profound ideas are a slow revelations <!-- .element: class="fragment" -->
+> * It's easy to make the jump and think you have nothing to offer <!-- .element: class="fragment" -->
 
 ------
 
 ### Ways to Counteract
+<!-- .slide: data-title="Mid-Level Melissa" data-state="vote Slide-background Slide-blockquote title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
 
-Find a mentor
-Open to Peers
-become content
-write down accomplishments / keep a journal
-learn because you love to learn (not out of shame or to prove something)
-
-Don't give in to the pretender
-Push yourself to be a contender
-
+> * Find an experienced mentor <!-- .element: class="fragment" -->
+> * Be transparent with someone <!-- .element: class="fragment" -->
+> * List your accomplishments <!-- .element: class="fragment" -->
+> * Be content with yourself <!-- .element: class="fragment" -->
 
 ------
 
-![](./img/dunning-imposter.png)
-Sudhakar's Blog http://www.rsudhakar.in/social/2014/06/07/so-where-are-you.html
+### Thoughts
+<!-- .slide: data-title="Mid-Level Melissa" data-state="vote Slide-background Slide-blockquote Slide-blockquote--thin title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
+
+<blockquote class="fragment">
+Don't give in to the pretender <br />
+Push yourself to be a contender
+</blockquote>
+<br/>
+<blockquote class="fragment">Learn because you love to learn</blockquote>
+<br />
+<blockquote class="fragment">Your worth is not in your code</blockquote>

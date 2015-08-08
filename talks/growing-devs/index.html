@@ -27,6 +27,7 @@
 	<body>
 		<div class="reveal">
 			<header class="Title"></header>
+			<aside hidden class="vote" data-store="vote" contenteditable>TEST</aside>
 			<div class="slides">
 				<section id="Introduction" data-markdown="./md/introduction.md"></section>
 				<section id="Photosynthesis" data-markdown="./md/photosynthesis.md"></section>
@@ -79,6 +80,7 @@
 				progress: true,
 				history: true,
 				center: true,
+				slideNumber: true,
 				transition: 'slide',
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },

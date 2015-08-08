@@ -14,20 +14,42 @@
   background: rgba(0,0,0,0.7);
   border-radius: 2rem;
 }
+.Photosynthesis-title [data-markdown].present blockquote {
+  padding: 1rem;
+  background: none !important;
+  color: white !important;
+}
+
+.reveal .vote { display: none; }
+.vote .reveal .vote {
+  display: block;
+  text-align: center;
+  position: relative;
+  font-size: 25px;
+  background: rgba(0,0,0,0.5);
+  z-index: 0;
+  padding: 0.3rem;
+  top: 0;
+}
 
 .Photosynthesis .reveal .slide-background.present { opacity: 0.5; }
+.Photosynthesis .reveal [data-markdown].present h1 {
+  -webkit-text-stroke-width: 5px;
+  -webkit-text-stroke-color: black;
+}
 
 .Persona-introduction h1 {
   -webkit-text-stroke-width: 5px;
   -webkit-text-stroke-color: black;
 }
-.Persona-introduction ul {
-  background: rgba(255,255,255,0.5);
-  padding: 1rem 1rem 1rem 4rem;
-  border-radius: 2rem;
-  color: #111;
+.Persona-introduction blockquote {
+  padding: 1rem !important;
 }
 
+.Stage-introduction [data-markdown].present {
+  top: 20vh !important;
+  /* transform: translateY(50%) !important; */
+}
 .Stage-introduction h2 {
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.7);
@@ -187,19 +209,92 @@ blockquote {
 
 .Pills--sun .Pill {
   background: #fcf8e3;
+  border-color: #f89406 !important;
 }
 .Pills--soil .Pill {
   background: #dff0d8;
+  border-color: #468847 !important;
 }
 .Pills--water .Pill {
   background: #d9edf7;
+  border-color: #3a87ad !important;
 }
 .Pills--wind .Pill { /* look for different color */
-  background: #f2dede;
+  background: #bebec5;
+  border-color: #999 !important;
 }
 .Pills--error .Pill {
   background: #f2dede;
+  border-color: #b94a48 !important;
 }
+
+.Slide-title h1, .Slide-title h2 {
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
+}
+.Slide-body .Slide-body {
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 4rem;
+  width: 60vw;
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+  padding: 1rem;
+}
+.Slide-blockquote blockquote {
+  background: rgba(0, 0, 0, 0.75) !important;
+  padding: 2rem;
+  color: white;
+  display: inline-block;
+  width: auto;
+}
+.Slide-blockquote--wide blockquote a,
+.Slide-blockquote blockquote a {
+  color: black !important;
+  text-decoration: underline;
+}
+.Slide-blockquote--wide blockquote { width: 85% !important; }
+.Slide-blockquote--thin blockquote { padding: 1rem !important; }
+.Slide-background .reveal .slide-background.present { opacity: 0.5; }
+
+@keyframes Blazing {
+0%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+  0 0 10px orange,
+  0 0 0 yellow,
+  0 0 5px yellow,
+  -2px -5px 5px yellow,
+  4px -10px 10px yellow; }
+25%   { text-shadow: 0 3px 20px red, 0 0 30px red,
+  0 0 20px orange,
+  0 0 5px yellow,
+  -2px -5px 5px yellow,
+  3px -10px 10px yellow,
+  -4px -15px 20px yellow; }
+50%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+  0 -5px 10px orange,
+  -2px -5px 5px yellow,
+  3px -10px 10px yellow,
+  -4px -15px 20px yellow,
+  2px -20px 30px rgba(255,255,0,0.5); }
+75%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+  0 -5px 10px orange,
+  3px -5px 5px yellow,
+  -4px -10px 10px yellow,
+  2px -20px 30px rgba(255,255,0,0.5),
+  0px -25px 40px rgba(255,255,0,0)}
+100%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+  0 0 10px orange,
+  0 0 0 yellow,
+  0 0 5px yellow,
+  -2px -5px 5px yellow,
+  4px -10px 10px yellow; }
+}
+
+.Fire {
+  animation: 1s Blazing infinite alternate ease-in;
+}
+
+.credit { font-size: 24px !important; }
 
 /*
 .fragment--small { font-size: 1rem; }
@@ -417,38 +512,6 @@ pre.fragment.fragment--code.visible code { max-height: 750px; }
   }
 }
 
-@keyframes Blazing {
-0%   { text-shadow: 0 3px 20px red, 0 0 20px red,
-  0 0 10px orange,
-  0 0 0 yellow,
-  0 0 5px yellow,
-  -2px -5px 5px yellow,
-  4px -10px 10px yellow; }
-25%   { text-shadow: 0 3px 20px red, 0 0 30px red,
-  0 0 20px orange,
-  0 0 5px yellow,
-  -2px -5px 5px yellow,
-  3px -10px 10px yellow,
-  -4px -15px 20px yellow; }
-50%   { text-shadow: 0 3px 20px red, 0 0 20px red,
-  0 -5px 10px orange,
-  -2px -5px 5px yellow,
-  3px -10px 10px yellow,
-  -4px -15px 20px yellow,
-  2px -20px 30px rgba(255,255,0,0.5); }
-75%   { text-shadow: 0 3px 20px red, 0 0 20px red,
-  0 -5px 10px orange,
-  3px -5px 5px yellow,
-  -4px -10px 10px yellow,
-  2px -20px 30px rgba(255,255,0,0.5),
-  0px -25px 40px rgba(255,255,0,0)}
-100%   { text-shadow: 0 3px 20px red, 0 0 20px red,
-  0 0 10px orange,
-  0 0 0 yellow,
-  0 0 5px yellow,
-  -2px -5px 5px yellow,
-  4px -10px 10px yellow; }
-}
 
 
 .share-reveal a {

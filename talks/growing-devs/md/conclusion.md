@@ -1,23 +1,38 @@
 # Conclusion
-<!-- .slide: data-title="Conclusion" data-state-"title" -->
+<!-- .slide: data-state="Slide-title" data-background="./img/beach.jpg" -->
+
+------
+
+## Poll Results!
+<!-- .slide: data-title="Conclusion" data-state="Slide-background title Slide-blockquote" data-background="./img/beach.jpg" -->
+
+<iframe src="http://www.sli.do/event/cqcy4v1h/wall" style="width: 100%; height: 500px;"></iframe>
 
 ------
 
 ## So What!?!
+<!-- .slide: data-title="Conclusion" data-state="Slide-title Slide-blockquote Slide-background title" data-background="./img/beach.jpg" -->
 
-What does that really mean for me?
+> * Don't give up  <!-- .element: class="fragment" -->
+> * Don't isolate yourself  <!-- .element: class="fragment" -->
+> * Find or Be a Mentor  <!-- .element: class="fragment" -->
+> * Keep on learning  <!-- .element: class="fragment" -->
+> * Share your findings  <!-- .element: class="fragment" -->
+> * Be Kind  <!-- .element: class="fragment" -->
 
 ------
 
-# Questions?
-<!-- .slide: data-title="Conclusion" data-state-"title" -->
+# Have a Great Day!
+<!-- .slide: data-title="Conclusion" data-state="Slide-title Slide-blockquote Slide-background title" data-background="./img/beach.jpg" -->
 
+<blockquote style="width: 825px;">
 <pre style="font-size: 1.25em; box-shadow: none;">
-<a href="http://elijahmanor.com" style="margin-left: 2em;">http://elijahmanor.com</a>
-<a href="http://twitter.com/elijahmanor" style="margin-left: 5.5em;">@elijahmanor</a>
+<a href="http://elijahmanor.com" style="margin-left: 0; color: #01B7EE !important;">http://elijahmanor.com</a>
+<a href="http://twitter.com/elijahmanor" style="margin-left: 3.6em; color: #01B7EE !important">@elijahmanor</a>
 <!-- <a href="mailto:elijahmanor@gmail.com" style="position: absolute; left: 6.1em;">elijahmanor@gmail.com</a> -->
-<a href="http://bit.ly/growing-devs" style="margin-left: 2em;">http://bit.ly/growing-devs</a>
+<a href="http://bit.ly/growing-devs" style="margin-left: o; color: #01B7EE !important">http://bit.ly/growing-devs</a>
 </pre>
+</blockquote>
 
 <h3 data-store="conclusion-social" contenteditable></h3>
 

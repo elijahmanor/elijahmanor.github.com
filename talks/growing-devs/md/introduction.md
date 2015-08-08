@@ -64,7 +64,9 @@ Senior Front-End Developer
 ## Plateau
 <!-- .slide: data-title="" data-state="Introduction" data-background="./img/plateau.jpg" -->
 
-![](https://docs.google.com/spreadsheets/d/1LoKkJY-qJwJDyWQGG6-GIVMojYoA-6Q92dU0kt0eB3w/pubchart?oid=234006933&format=image)
+![](./img/experience-chart.png)
+
+<!-- ![](https://docs.google.com/spreadsheets/d/1LoKkJY-qJwJDyWQGG6-GIVMojYoA-6Q92dU0kt0eB3w/pubchart?oid=234006933&format=image) -->
 
 <!--
 <a data-flickr-embed="true" href="https://www.flickr.com/photos/alanenglish/418367475/" title="Grand Canyon Plateau Point"><img src="https://farm1.staticflickr.com/152/418367475_00ee260e82_b.jpg" width="1024" height="768" alt="Grand Canyon Plateau Point"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
