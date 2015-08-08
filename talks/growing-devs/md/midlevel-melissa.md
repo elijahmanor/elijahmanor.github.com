@@ -1,11 +1,7 @@
 # Mid-Level Melissa
 <!-- .slide: data-state="Persona-introduction Slide-blockquote" data-background="./img/computer-3.jpg" -->
 
-<img src="./img/midlevel-melissa-big.jpg" style="border-radius: 50%; width: 25%;" />
-
-> * Several years of experience
-> * Connected with peers at work
-> * Proficient worker
+<img src="./img/midlevel-melissa-big.jpg" style="border-radius: 50%; width: 35%;" />
 
 ------
 
@@ -16,14 +12,14 @@
 
 <!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background title Stage--midLevel Status--sun" data-background="./img/sun.jpg" -->
 
-<ul class="Pills Pills--sun">
-  <li class="Pill fragment">Books (testing/performance/patterns)</div>
-  <li class="Pill fragment">Blogs</div>
-  <li class="Pill fragment">Online Training (1.5x)</div>
-  <li class="Pill fragment">Podcasts</div>
-  <li class="Pill fragment">Social Media</div>
-  <li class="Pill fragment">User Groups</div>
-  <li class="Pill fragment">Conferences</div>
+<ul class="Pills Pills--sun fragment">
+  <li class="Pill">Books (testing/performance/patterns)</div>
+  <li class="Pill">Blogs</div>
+  <li class="Pill">Online Training (1.5x)</div>
+  <li class="Pill">Podcasts</div>
+  <li class="Pill">Social Media</div>
+  <li class="Pill">User Groups</div>
+  <li class="Pill">Conferences</div>
 </ul>
 
 ------
@@ -35,22 +31,23 @@
 
 <!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background title Stage--midLevel Status--soil" data-background="./img/soil.jpg" -->
 
-<ul class="Pills Pills--soil">
-  <li class="Pill fragment">CodePen (reduced test case)</div>
-  <li class="Pill fragment">REPL</div>
-  <li class="Pill fragment">Katas / Koans</div>
+<ul class="Pills Pills--soil fragment">
+  <li class="Pill">CodePen (reduced test case)</div>
+  <li class="Pill">REPL</div>
+  <li class="Pill">Katas / Koans</div>
 </ul>
 
-<ul class="Pills Pills--error">
-  <li class="Pill fragment">Blogs</div>
-  <li class="Pill fragment">GitHub Issues</div>
-  <li class="Pill fragment">Browser Bugs</div>
-  <li class="Pill fragment">StackOverflow</div>
+<ul class="Pills Pills--error fragment">
+  <li class="Pill">Blogs</div>
+  <li class="Pill">GitHub Issues</div>
+  <li class="Pill">Browser Bugs</div>
+  <li class="Pill">StackOverflow</div>
 </ul>
+
+<h1 class="fragment">Understand the <strong>WHY</strong>!</h1>
 
 Notes:
 
-Understand why
 
 ------
 
@@ -61,15 +58,27 @@ Understand why
 
 <!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background title Stage--midLevel Status--water" data-background="./img/water.jpg" -->
 
-<blockquote class="fragmentx">
+<blockquote class="fragment">
   <p>You know more than you think you know,</p>
   <p>Don't be content with the status quo.</p>
 </blockquote>
 
-<ul class="Pills Pills--water" style="margin: 0;">
-  <li class="Pill fragment">Mentor (find one and be one)</div>
-  <li class="Pill fragment">Peers</div>
+<ul class="Pills Pills--water fragment" style="margin: 0;">
+  <li class="Pill">Connect with Peers</div>
+  <li class="Pill">Find a Mentor</div>
+  <li class="Pill">!!!Be a Mentor!!!</div>
 </ul>
+
+------
+
+## What!?! Me, Be a Mentor?
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background Slide-blockquote title Stage--midLevel Status--water" data-background="./img/water.jpg" -->
+
+> * You are valuable! Don't cut yourself short <!-- .element: class="fragment" -->
+> * You know more than you did <!-- .element: class="fragment" -->
+> * You have something to share <!-- .element: class="fragment" -->
+> * It's okay to say, "I don't know" <!-- .element: class="fragment" -->
+> * You'll learn more than you did before <!-- .element: class="fragment" -->
 
 ------
 
@@ -80,12 +89,22 @@ Understand why
 
 <!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background title Stage--midLevel Status--wind" data-background="./img/wind.jpg" -->
 
-<ul class="Pills Pills--wind">
-  <li class="Pill fragment">Lunch &amp; Learn</div>
-  <li class="Pill fragment">User Groups</div>
-  <li class="Pill fragment">Social Media</div>
-  <li class="Pill fragment">Blogging</div>
+<ul class="Pills Pills--wind fragment">
+  <li class="Pill">Social Media</div>
+  <li class="Pill">Lunch &amp; Learns</div>
+  <li class="Pill">User Groups</div>
+  <li class="Pill">!!!Blogging!!!</div>
 </ul>
+
+------
+
+## Blogging: HuH?
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background Slide-title Slide-blockquote title Stage--midLevel Status--wind" data-background="./img/wind.jpg" -->
+
+<!--  ![](./img/drseuss-blogg.jpg) -->
+![](./img/blogging.png)
+
+<div class="credit"><a href="http://webonmobi.com/blogging-really-new-dj/">Blogging is not really the ‘New Dj’</a></div>
 
 ------
 
@@ -175,7 +194,7 @@ Notes:
 > * Suffers think that no one else understands <!-- .element: class="fragment" -->
 > * Some of the most talented developers I know struggle with Imposter Syndrome <!-- .element: class="fragment" -->
 
-# YOU ARE NOT ALONE! <!-- .element: class="fragment" -->
+# YOU ARE NOT ALONE! <!-- .element: class="fragment anaglyphic" -->
 
 ------
 

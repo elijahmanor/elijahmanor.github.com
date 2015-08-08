@@ -26,4 +26,38 @@
   </div>
 </div>
 
+------
+
+## Meet Our Developers
+
+<div class="Split">
+  <div class="Split-column--3 fragment">
+    <h4>Junior Jacob</h4>
+    <img src="./img/junior-jacob-big.jpg" style="border-radius: 50%; width: 50%" />
+    <ul class="personality">
+      <li>Fresh out of college</li>
+      <li>Not connected with peers</li>
+      <li>Isn't sure what or where to go</li>
+    </ul>
+  </div>
+  <div class="Split-column--3 fragment">
+    <h4>Mid-Level Melissa</h4>
+    <img src="./img/midlevel-melissa-big.jpg" style="border-radius: 50%; width: 50%;" />
+    <ul class="personality">
+      <li>Several years of experience</li>
+      <li>Connected with peers at work</li>
+      <li>Proficient worker</li>
+    </ul>
+  </div>
+  <div class="Split-column--3 fragment">
+    <h4>Senior Steve</h4>
+    <img src="./img/senior-steve-big.jpg" style="border-radius: 50%; width: 50%;" />
+    <ul class="personality">
+      <li>Many years of experience</li>
+      <li>Connected with peers worldwide</li>
+      <li>Influential and Respected</li>
+    </ul>
+  </div>
+</div>
+
 Notes:

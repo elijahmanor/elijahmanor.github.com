@@ -1,11 +1,7 @@
 # Senior Steve
 <!-- .slide: data-state="vote Persona-introduction Slide-blockquote" data-background="./img/computer-1.jpg" -->
 
-<img src="./img/senior-steve-big.jpg" style="border-radius: 50%; width: 25%;" />
-
-> * Many years of experience
-> * Connected with peers worldwide
-> * Influential and Respected
+<img src="./img/senior-steve-big.jpg" style="border-radius: 50%; width: 35%;" />
 
 ------
 
@@ -47,6 +43,8 @@
   <li class="Pill fragment">CodePen (reduced test case)</div>
   <li class="Pill fragment">Pull Request</div>
 </ul>
+
+<br /><h1 class="fragment">Understand the <strong>WHY</strong>!</h1>
 
 ------
 

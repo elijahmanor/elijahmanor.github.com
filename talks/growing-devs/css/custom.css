@@ -111,12 +111,30 @@ blockquote {
   align-self: auto;
   margin: 1rem;
 }
+.Split .Split-column--3 {
+  order: 0;
+  flex: 0 1 33%;
+  align-self: auto;
+  margin: 1rem;
+}
 .Split-column > p, .Split-column h4 {
   text-align: left;
 }
 
+.Split .personality { font-size: 30px; }
+.Split-column--3 h4 { font-size: 34px; text-align: center; }
+
 .reveal pre code { max-height: 550px; }
 .reveal pre[class*="language-"].clean { padding: 0; }
+
+.anaglyphic {
+  text-align: center !important;
+  font-family: "League-Gothic", Courier !important;
+  text-transform: uppercase !important;
+  color: rgba(0,168,255,0.5) !important;
+  text-shadow: 8px 8px 0 rgba(255,0,180,0.5) !important;
+  font-size: 90px !important;
+}
 
 .PersonaList { position: fixed; left: 1rem; bottom: 1rem; z-index: 1; }
 .PersonaList .Persona {
@@ -256,6 +274,11 @@ blockquote {
 .Slide-blockquote--wide blockquote { width: 85% !important; }
 .Slide-blockquote--thin blockquote { padding: 1rem !important; }
 .Slide-background .reveal .slide-background.present { opacity: 0.5; }
+.Slide-image [data-markdown].present img {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
 
 @keyframes Blazing {
 0%   { text-shadow: 0 3px 20px red, 0 0 20px red,
@@ -294,7 +317,7 @@ blockquote {
   animation: 1s Blazing infinite alternate ease-in;
 }
 
-.credit { font-size: 24px !important; }
+.credit { font-size: 20px !important; margin: 0 !important; }
 
 /*
 .fragment--small { font-size: 1rem; }

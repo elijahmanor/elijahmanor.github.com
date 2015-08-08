@@ -17,6 +17,7 @@
 > * Don't isolate yourself  <!-- .element: class="fragment" -->
 > * Find or Be a Mentor  <!-- .element: class="fragment" -->
 > * Keep on learning  <!-- .element: class="fragment" -->
+> * Understand the Why <!-- .element: class="fragment" -->
 > * Share your findings  <!-- .element: class="fragment" -->
 > * Be Kind  <!-- .element: class="fragment" -->
 
