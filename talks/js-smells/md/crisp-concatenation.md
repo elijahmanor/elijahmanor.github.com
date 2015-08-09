@@ -6,8 +6,8 @@
 ## Smelly Code
 <!-- .slide: data-title="Crisp Concat" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
 
-<pre class="language-javascript"><code>var build = function(id, href) {
-  return $( "&lt;div id='tab'&gt;&lt;a href='" + href + "' id='"+ id + "'&gt;&lt;/div&gt;" );
+<pre class="language-javascript"><code>var build = function(id, href, text) {
+  return $( "&lt;div id='tab'&gt;&lt;a href='" + href + "' id='"+ id + "'&gt;" + text + "&lt;/a&gt;&lt;/div&gt;" );
 }
 </code></pre>
 
@@ -36,13 +36,14 @@
   return s;
 }
 
-var build = function(id, href) {
+var build = function(id, href, text) {
   var options = {
-    id: id
-    href: href
+    id: id,
+    href: href,
+    text: text
   };
 
-  return t('&lt;div id="tab"&gt;&lt;a href="{href}" id="{id}"&gt;&lt;/div&gt;', options);
+  return t('&lt;div id="tab"&gt;&lt;a href="{href}" id="{id}"&gt;{text}&lt;/&gt;&lt;/div&gt;', options);
 }
 </code></pre>
 
@@ -53,8 +54,8 @@ var build = function(id, href) {
 
 2) ECMAScript 2015 (ES6) Template Strings
 
-<pre class="language-javascript"><code>var build = (id, href) =>
-  `&lt;div id="tab"&gt;&lt;a href="${href}" id="${id}"&gt;&lt;/div&gt;`;
+<pre class="language-javascript"><code>var build = (id, href, text) =>
+  `&lt;div id="tab"&gt;&lt;a href="${href}" id="${id}"&gt;${text}&lt;/a&gt;&lt;/div&gt;`;
 </code></pre>
 
 ------
@@ -64,9 +65,46 @@ var build = function(id, href) {
 
 3) ECMAScript 2015 (ES6) Template Strings (Multiline)
 
-<pre class="language-javascript"><code>var build = (id, href) => `&lt;div id="tab"&gt;
-  &lt;a href="${href}" id="${id}"&gt;
+<pre class="language-javascript"><code>var build = (id, href, text) => `&lt;div id="tab"&gt;
+  &lt;a href="${href}" id="${id}"&gt;${text}&lt;/a&gt;
 &lt;/div&gt;`;
+</code></pre>
+
+------
+
+## Alternatives
+<!-- .slide: data-title="Crisp Concat" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--senior" data-background="#222" -->
+
+4a) ECMAScript 2015 (ES6) Tagged Template Strings to Protect Against XSS (Cross Site Scripting)
+
+<pre class="language-javascript"><code>
+var build = (id, href, text) => SanitizeHTML`&lt;div id="tab"&gt;
+  &lt;a href="${href}" id="${id}"&gt;${text}&lt;/a&gt;
+&lt;/div&gt;`;
+</code></pre>
+
+------
+
+## Alternatives
+<!-- .slide: data-title="Crisp Concat" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--senior" data-background="#222" -->
+
+4b) ECMAScript 2015 (ES6) Tagged Template Strings
+
+<pre class="language-javascript"><code>
+function SanitizeHTML(literals, ...values) {
+  let string = '';
+
+  values.forEach((value, i) => {
+    value = String(value);
+    string += literals[i];
+    string += value.replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+  });
+  string += literals[literals.length - 1];
+
+  return string;
+}
 </code></pre>
 
 ------
