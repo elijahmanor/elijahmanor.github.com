@@ -80,6 +80,7 @@
   <li class="Pill">Lunch &amp; Learns</div>
   <li class="Pill">User Groups</div>
   <li class="Pill">Blogging</div>
+  <li class="Pill">Open Source</div>
   <li class="Pill">Conferences</div>
 </ul>
 
