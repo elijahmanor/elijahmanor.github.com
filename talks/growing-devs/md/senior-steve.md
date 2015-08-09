@@ -113,7 +113,7 @@
 
 New Technologies, Tools, and Libraries
 
-![](./img/days-without.png)
+![](./img/days-without.png) <!-- .element: style="height: 450px;" -->
 
 ------
 
