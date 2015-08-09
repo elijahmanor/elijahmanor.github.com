@@ -59,7 +59,7 @@
 ------
 
 ## Striving
-<!-- .slide: data-title="" data-state="Introduction" data-background="./img/stars.jpg" -->
+<!-- .slide: data-title="" data-state="Slide-title Slide-blockquote" data-background="./img/stars.jpg" -->
 
 > If you have invested yourself<br/>
 > to hear this talk,<br/>
