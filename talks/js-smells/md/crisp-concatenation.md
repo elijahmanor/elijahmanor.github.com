@@ -99,8 +99,8 @@ function SanitizeHTML(literals, ...values) {
     value = String(value);
     string += literals[i];
     string += value.replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;');
+      .replace(/&lt;/g, '&lt;')
+      .replace(/&gt;/g, '&gt;');
   });
   string += literals[literals.length - 1];
 
