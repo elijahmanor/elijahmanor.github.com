@@ -146,21 +146,21 @@ Notes:
 ------
 
 ## Imposter Syndrome
-<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background title Stage--midLevel Status--watch" data-background="./img/watch.jpg" -->
 
 <img src="./img/midlevel-warning.gif" style="height: 500px;" />
 
 ------
 
 ### What is it?
-<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background Slide-blockquote--wide title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background Slide-blockquote--wide title Stage--midLevel Status--watch" data-background="./img/watch.jpg" -->
 
 > "Impostor syndrome is a psychological phenomenon in which people are **unable to internalize their accomplishments**. Despite external evidence of their competence, those with the syndrome remain **convinced that they are frauds** and **do not deserve the success they have achieved**." --[Wikipedia](https://en.wikipedia.org/wiki/Impostor_syndrome)
 
 ------
 
 ### What is it (reduced)?
-<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background Slide-blockquote title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background Slide-blockquote title Stage--midLevel Status--watch" data-background="./img/watch.jpg" -->
 
 > * I'm not Good Enough <!-- .element: class="fragment" -->
 > * I'm a Fraud <!-- .element: class="fragment" -->
@@ -171,13 +171,13 @@ Notes:
 ------
 
 ### What does it looks like?
-<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background title Stage--midLevel Status--watch" data-background="./img/watch.jpg" -->
 
 ![](./img/no-idea-dog-1.jpg) <!-- .element: class="fragment Fire" style="height: 500px;" -->
 
 ------
 
-<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background title Stage--midLevel Status--watch" data-background="./img/watch.jpg" -->
 
 <img src="./img/dunning-imposter.png" style="height: 500px" />
 
@@ -188,7 +188,7 @@ Notes:
 ------
 
 ### Are you alone?
-<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background Slide-blockquote title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background Slide-blockquote title Stage--midLevel Status--watch" data-background="./img/watch.jpg" -->
 
 > * Suffers tend to isolate themselves <!-- .element: class="fragment" -->
 > * Suffers think that no one else understands <!-- .element: class="fragment" -->
@@ -199,14 +199,14 @@ Notes:
 ------
 
 ### Anonymous Poll
-<!-- .slide: data-title="Mid-Level Melissa" data-state="vote Slide-background title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
+<!-- .slide: data-title="Mid-Level Melissa" data-state="vote Slide-background title Stage--midLevel Status--watch" data-background="./img/watch.jpg" -->
 
 <iframe src="http://www.sli.do/event/cqcy4v1h/wall" style="width: 100%; height: 500px;"></iframe>
 
 ------
 
 ### Things to Note
-<!-- .slide: data-title="Mid-Level Melissa" data-state="vote Slide-background Slide-blockquote title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
+<!-- .slide: data-title="Mid-Level Melissa" data-state="vote Slide-background Slide-blockquote title Stage--midLevel Status--watch" data-background="./img/watch.jpg" -->
 
 > * Many are at the edge of their knowledge <!-- .element: class="fragment" -->
 > * Just because someone says something profound doesn't mean they know all things <!-- .element: class="fragment" -->
@@ -216,7 +216,7 @@ Notes:
 ------
 
 ### Ways to Counteract
-<!-- .slide: data-title="Mid-Level Melissa" data-state="vote Slide-background Slide-blockquote title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
+<!-- .slide: data-title="Mid-Level Melissa" data-state="vote Slide-background Slide-blockquote title Stage--midLevel Status--watch" data-background="./img/watch.jpg" -->
 
 > * Find an experienced mentor <!-- .element: class="fragment" -->
 > * Be transparent with someone <!-- .element: class="fragment" -->
@@ -226,7 +226,7 @@ Notes:
 ------
 
 ### Thoughts
-<!-- .slide: data-title="Mid-Level Melissa" data-state="vote Slide-background Slide-blockquote Slide-blockquote--thin title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
+<!-- .slide: data-title="Mid-Level Melissa" data-state="vote Slide-background Slide-blockquote Slide-blockquote--thin title Stage--midLevel Status--watch" data-background="./img/watch.jpg" -->
 
 <blockquote class="fragment">
 Don't give in to the pretender <br />

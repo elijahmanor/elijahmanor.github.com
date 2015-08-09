@@ -184,8 +184,8 @@ blockquote {
 .Status--water:after { content: 'Water'; }
 .Status--wind .Status--wind { top: -7.5rem; }
 .Status--wind:after { content: 'Wind'; }
-.Status--warning .Status--warning { top: -7.5rem; }
-.Status--warning:after { content: 'Warning'; }
+.Status--watch .Status--warning { top: -7.5rem; }
+.Status--watch:after { content: 'Watch'; }
 
 .Title {
   position: absolute;

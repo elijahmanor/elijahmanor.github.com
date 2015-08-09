@@ -91,7 +91,7 @@
 ------
 
 ## 1. Ego
-<!-- .slide: data-title="Senior Steve" data-state="vote Slide-background title Stage--senior Status--warning" data-background="./img/watch.jpg" -->
+<!-- .slide: data-title="Senior Steve" data-state="vote Slide-background title Stage--senior Status--watch" data-background="./img/watch.jpg" -->
 
 <img src="./img/senior-warning.gif" style="height: 550px" />
 
@@ -100,16 +100,16 @@
 ------
 
 ## 1. Ego: Ways to Counteract
-<!-- .slide: data-title="Senior Steve" data-state="vote Slide-background Slide-blockquote title Stage--senior Status--warning" data-background="./img/watch.jpg" -->
+<!-- .slide: data-title="Senior Steve" data-state="vote Slide-background Slide-blockquote title Stage--senior Status--watch" data-background="./img/watch.jpg" -->
 
-> * Don't forget where you can from. You used to be a junior. <!-- .element: class="fragment" -->
+> * Don't forget where you came from. You used to be a junior. <!-- .element: class="fragment" -->
 > * Give others the benefit of the doubt! <!-- .element: class="fragment" -->
 > * Teaching is disconnected. Mentorship builds a connection. <!-- .element: class="fragment" -->
 
 ------
 
 ## 2. Overwhelmed
-<!-- .slide: data-title="Senior Steve" data-state="vote Slide-background Slide-blockquote title Stage--senior Status--warning" data-background="./img/watch.jpg" -->
+<!-- .slide: data-title="Senior Steve" data-state="vote Slide-background Slide-blockquote title Stage--senior Status--watch" data-background="./img/watch.jpg" -->
 
 New Technologies, Tools, and Libraries
 
@@ -118,10 +118,10 @@ New Technologies, Tools, and Libraries
 ------
 
 ## 2. Overwhelmed: Counteract
-<!-- .slide: data-title="Senior Steve" data-state="vote Slide-background Slide-blockquote title Stage--senior Status--warning" data-background="./img/watch.jpg" -->
+<!-- .slide: data-title="Senior Steve" data-state="vote Slide-background Slide-blockquote title Stage--senior Status--watch" data-background="./img/watch.jpg" -->
 
 > * Don't Always Chase After the Shiny New Thing <!-- .element: class="fragment" -->
 > * Have a Lens to Evaluate new Technologies (JS-IQ) <!-- .element: class="fragment" -->
 >   * Active, Documentation, Community, Credible, Extensible, Integration, Modular, Quality, Tests <!-- .element: class="fragment" -->
 > * Set Goals for Areas You'd Like to Learn <!-- .element: class="fragment" -->
-> * Don't Bit Off Too Much at One Time <!-- .element: class="fragment" -->
+> * Don't Bite Off Too Much at One Time <!-- .element: class="fragment" -->

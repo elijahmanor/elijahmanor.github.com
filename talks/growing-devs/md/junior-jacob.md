@@ -120,21 +120,21 @@
 
 ------
 
-<!-- .slide: data-title="Junior Jacob" data-state="Slide-background title Stage--junior Status--warning" data-background="./img/watch.jpg" -->
+<!-- .slide: data-title="Junior Jacob" data-state="Slide-background title Stage--junior Status--watch" data-background="./img/watch.jpg" -->
 
 ![](./img/dunning-kruger-effect-wide.png)
 
 ------
 
 ## 2. Trolls
-<!-- .slide: data-title="Junior Jacob" data-state="Slide-background Slide-title Slide-image Slide-body title Stage--junior Status--warning" data-background="./img/watch.jpg" -->
+<!-- .slide: data-title="Junior Jacob" data-state="Slide-background Slide-title Slide-image Slide-body title Stage--junior Status--watch" data-background="./img/watch.jpg" -->
 
 ![](./img/TrollFaceDancing_large.gif)
 
 ------
 
 ## 2. Trolls
-<!-- .slide: data-title="Junior Jacob" data-state="Slide-background Slide-blockquote Slide-title Slide-image Slide-body title Stage--junior Status--warning" data-background="./img/watch.jpg" -->
+<!-- .slide: data-title="Junior Jacob" data-state="Slide-background Slide-blockquote Slide-title Slide-image Slide-body title Stage--junior Status--watch" data-background="./img/watch.jpg" -->
 
 &lt;PersonalStory /&gt;
 
