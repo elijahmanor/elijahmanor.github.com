@@ -18,6 +18,7 @@
   <li class="Pill">Online Training (1.5x)</div>
   <li class="Pill">Podcasts</div>
   <li class="Pill">Social Media</div>
+  <li class="Pill">Pull Requests (work)</div>
   <li class="Pill">User Groups</div>
   <li class="Pill">Conferences</div>
 </ul>

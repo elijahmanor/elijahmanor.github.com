@@ -20,6 +20,7 @@
   <li class="Pill">Online Training</div>
   <li class="Pill">Podcasts</div>
   <li class="Pill">Social Media</div>
+  <li class="Pill">Pull Requests (work)</div>
 </ul>
 
 ------
