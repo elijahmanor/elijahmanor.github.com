@@ -7,7 +7,8 @@
 <!-- .slide: data-title="Crisp Concat" data-state="title statusLint statusLint--easy statusRule statusRule--none statusSkill statusSkill--junior" data-background="#222" -->
 
 <pre class="language-javascript"><code>var build = function(id, href, text) {
-  return $( "&lt;div id='tab'&gt;&lt;a href='" + href + "' id='"+ id + "'&gt;" + text + "&lt;/a&gt;&lt;/div&gt;" );
+  return $( "&lt;div id='tab'&gt;&lt;a href='" + href + "' id='" + id + "'&gt;" +
+    text + "&lt;/a&gt;&lt;/div&gt;" );
 }
 </code></pre>
 
