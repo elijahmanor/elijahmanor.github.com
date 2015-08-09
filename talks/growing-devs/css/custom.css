@@ -86,7 +86,7 @@ blockquote {
   100%	{ top: 035vh; }
 }
 
-.DeveloperTitle { width: 10rem; display: inline-block; position: relative; }
+.DeveloperTitle { width: 10rem; display: inline-block; position: relative; font-size: 32px !important; }
 .DeveloperTitles--animate .DeveloperTitle:nth-child(1) {
   animation: bounce 0.5s 0.5s forwards;
 }

@@ -8,6 +8,8 @@
 ## Sun
 <!-- .slide: data-title="Junior Jacob" data-state="Stage-introduction title Stage--junior" data-background="./img/sun.jpg" -->
 
+<!-- Capture -->
+
 ------
 
 <!-- .slide: data-title="Junior Jacob" data-state="title Stage--junior Status--sun" data-background="./img/sun.jpg" -->
@@ -23,11 +25,13 @@
 ------
 
 ## Soil
-<!-- .slide: data-title="Junior Jacob" data-state="Stage-introduction title Stage--junior Status--soil" data-background="./img/soil.jpg" -->
+<!-- .slide: data-title="Junior Jacob" data-state="Stage-introduction title Stage--junior" data-background="./img/soil.jpg" -->
+
+<!-- Digest -->
 
 ------
 
-<!-- .slide: data-title="Junior Jacob" data-state="title Stage--junior Status--soil" data-background="./img/soil.jpg" -->
+<!-- .slide: data-title="Junior Jacob" data-state="title Slide-background Stage--junior Status--soil" data-background="./img/soil.jpg" -->
 
 ![](./img/Strips-Hello-world-600-finalenglish.jpg) <!-- .element: class="credit" -->
 
@@ -37,15 +41,11 @@
 
 <!-- .slide: data-title="Junior Jacob" data-state="Slide-background title Stage--junior Status--soil" data-background="./img/soil.jpg" -->
 
-### Play <!-- .element: class="fragment" data-fragment-index="1" -->
-
 <ul class="Pills Pills--soil fragment" data-fragment-index="1" style="margin: 0 0 1rem 0;">
   <li class="Pill">CodePen</div>
   <li class="Pill">Snippets</div>
   <li class="Pill">Sample Projects</div>
 </ul>
-
-### Debug <!-- .element: class="fragment" data-fragment-index="2" -->
 
 <ul class="Pills Pills--error fragment" data-fragment-index="2" style="margin: 0;">
   <li class="Pill">GCP (Google Copy Paste)</div>
@@ -58,7 +58,9 @@
 ------
 
 ## Water
-<!-- .slide: data-title="Junior Jacob" data-state="Stage-introduction title Stage--junior Status--water" data-background="./img/water.jpg" -->
+<!-- .slide: data-title="Junior Jacob" data-state="Stage-introduction title Stage--junior" data-background="./img/water.jpg" -->
+
+<!-- Sharpen -->
 
 ------
 
@@ -96,7 +98,9 @@
 ------
 
 ## Wind
-<!-- .slide: data-title="Junior Jacob" data-state="Stage-introduction title Stage--junior Status--wind" data-background="./img/wind.jpg" -->
+<!-- .slide: data-title="Junior Jacob" data-state="Stage-introduction title Stage--junior" data-background="./img/wind.jpg" -->
+
+<!-- Breath -->
 
 ------
 
@@ -110,7 +114,9 @@
 ------
 
 ## Watch
-<!-- .slide: data-title="Junior Jacob" data-state="Stage-introduction title Stage--junior Status--warning" data-background="./img/watch.jpg" -->
+<!-- .slide: data-title="Junior Jacob" data-state="Stage-introduction title Stage--junior" data-background="./img/watch.jpg" -->
+
+<!-- Challenges -->
 
 ------
 

@@ -25,34 +25,34 @@
 ------
 
 ## Soil
-<!-- .slide: data-title="Mid-Level Melissa" data-state="Stage-introduction title Stage--midLevel Status--soil" data-background="./img/soil.jpg" -->
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Stage-introduction title Stage--midLevel" data-background="./img/soil.jpg" -->
 
 ------
 
 <!-- .slide: data-title="Mid-Level Melissa" data-state="Slide-background title Stage--midLevel Status--soil" data-background="./img/soil.jpg" -->
 
-<ul class="Pills Pills--soil fragment">
+<ul class="Pills Pills--soil fragment" data-fragment-index="1" style="margin: 0 0 1rem 0;">
   <li class="Pill">CodePen (reduced test case)</div>
   <li class="Pill">REPL</div>
   <li class="Pill">Katas / Koans</div>
+  <li class="Pill">Sample Projects</div>
 </ul>
 
-<ul class="Pills Pills--error fragment">
+<ul class="Pills Pills--error fragment" data-fragment-index="2" style="margin: 0 0 1rem 0;">
   <li class="Pill">Blogs</div>
   <li class="Pill">GitHub Issues</div>
   <li class="Pill">Browser Bugs</div>
   <li class="Pill">StackOverflow</div>
 </ul>
 
-<h1 class="fragment">Understand the <strong>WHY</strong>!</h1>
+<h1 class="fragment" data-fragment-index="3">Understand the <strong>WHY</strong>!</h1>
 
 Notes:
-
 
 ------
 
 ## Water
-<!-- .slide: data-title="Mid-Level Melissa" data-state="Stage-introduction title Stage--midLevel Status--water" data-background="./img/water.jpg" -->
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Stage-introduction title Stage--midLevel" data-background="./img/water.jpg" -->
 
 ------
 
@@ -83,7 +83,7 @@ Notes:
 ------
 
 ## Wind
-<!-- .slide: data-title="Mid-Level Melissa" data-state="Stage-introduction title Stage--midLevel Status--wind" data-background="./img/wind.jpg" -->
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Stage-introduction title Stage--midLevel" data-background="./img/wind.jpg" -->
 
 ------
 
@@ -141,7 +141,7 @@ Notes:
 ------
 
 ## Watch
-<!-- .slide: data-title="Mid-Level Melissa" data-state="Stage-introduction title Stage--midLevel Status--warning" data-background="./img/watch.jpg" -->
+<!-- .slide: data-title="Mid-Level Melissa" data-state="Stage-introduction title Stage--midLevel" data-background="./img/watch.jpg" -->
 
 ------
 

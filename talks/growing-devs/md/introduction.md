@@ -41,30 +41,12 @@
 
 ------
 
-## Title
-<!-- .slide: data-title="" data-state="Introduction" data-background="./img/orange-tree.JPG" -->
-
-Senior Front-End Developer
-
-------
-
-## Titles
-<!-- .slide: data-title="" data-state="Introduction" data-background="./img/orange-tree.JPG" -->
-
-<div class="DeveloperTitles">
-  <div class="DeveloperTitle">Junior</div>
-  <div class="DeveloperTitle">Mid-Level</div>
-  <div class="DeveloperTitle">Senior</div>
-</div>
-
-<div hidden></div><!-- .element: class="fragment" -->
-
-------
-
 ## Plateau
 <!-- .slide: data-title="" data-state="Introduction" data-background="./img/plateau.jpg" -->
 
-![](./img/experience-chart.png)
+### 10 Years Working with 3 Years Experience
+
+![](./img/experience-chart.png) <!-- .element: style="height: 450px;" -->
 
 <!-- ![](https://docs.google.com/spreadsheets/d/1LoKkJY-qJwJDyWQGG6-GIVMojYoA-6Q92dU0kt0eB3w/pubchart?oid=234006933&format=image) -->
 

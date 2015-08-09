@@ -10,75 +10,83 @@
 
 ------
 
-<!-- .slide: data-title="Senior Steve" data-state="vote Slide-background title Stage--senior" data-background="./img/sun.jpg" -->
+<!-- .slide: data-title="Senior Steve" data-state="vote title Stage--senior Status--sun" data-background="./img/sun.jpg" -->
 
-<ul class="Pills Pills--sun">
-  <li class="Pill fragment">Books (more patterns/when & why)</div>
-  <li class="Pill fragment">Blogs (specialized)</div>
-  <li class="Pill fragment">Online Training (1.5x)</div>
-  <li class="Pill fragment">Podcasts</div>
-  <li class="Pill fragment">Social Media</div>
-  <li class="Pill fragment">User Groups</div>
-  <li class="Pill fragment">Conferences</div>
-  <li class="Pill fragment">Documentation</div>
-  <li class="Pill fragment">Source Code</div>
+<ul class="Pills Pills--sun fragment">
+  <li class="Pill">Books (more patterns/when & why)</div>
+  <li class="Pill">Blogs (specialized)</div>
+  <li class="Pill">Online Training (1.5x)</div>
+  <li class="Pill">Podcasts</div>
+  <li class="Pill">Social Media</div>
+  <li class="Pill">User Groups</div>
+  <li class="Pill">Conferences</div>
+  <li class="Pill">Documentation</div>
+  <li class="Pill">Source Code</div>
 </ul>
 
 ------
 
 ## Soil
-<!-- .slide: data-title="Senior Steve" data-state="vote Stage-introduction title Stage--senior Status--soil" data-background="./img/soil.jpg" -->
+<!-- .slide: data-title="Senior Steve" data-state="vote Stage-introduction title Stage--senior" data-background="./img/soil.jpg" -->
 
 ------
 
 <!-- .slide: data-title="Senior Steve" data-state="vote Slide-background title Stage--senior Status--soil" data-background="./img/soil.jpg" -->
 
-<ul class="Pills Pills--sun">
-  <li class="Pill fragment">Side Projects</div>
-  <li class="Pill fragment">CodePen (reduced test case)</div>
+<ul class="Pills Pills--soil fragment" data-fragment-index="1" style="margin: 0 0 1rem 0;">
+  <li class="Pill">CodePen (reduced test case)</div>
+  <li class="Pill">REPL</div>
+  <li class="Pill">Katas / Koans</div>
+  <li class="Pill">Sample Projects</div>
+  <li class="Pill">Open Source Project</div>
 </ul>
 
-<ul class="Pills Pills--error">
-  <li class="Pill fragment">Specification</div>
-  <li class="Pill fragment">CodePen (reduced test case)</div>
-  <li class="Pill fragment">Pull Request</div>
+<ul class="Pills Pills--error fragment" data-fragment-index="2" style="margin: 0 0 1rem 0;">
+  <li class="Pill">Blogs</div>
+  <li class="Pill">GitHub Issues</div>
+  <li class="Pill">Browser Bugs</div>
+  <li class="Pill">StackOverflow</div>
+  <li class="Pill">Specifications</div>
+  <li class="Pill">Pull Requests</div>
 </ul>
 
-<br /><h1 class="fragment">Understand the <strong>WHY</strong>!</h1>
+<h1 class="fragment" data-fragment-index="3">Understand the <strong>WHY</strong>!</h1>
 
 ------
 
 ## Water
-<!-- .slide: data-title="Senior Steve" data-state="vote Stage-introduction title Stage--senior Status--water" data-background="./img/water.jpg" -->
+<!-- .slide: data-title="Senior Steve" data-state="vote Stage-introduction title Stage--senior" data-background="./img/water.jpg" -->
 
 ------
 
 <!-- .slide: data-title="Senior Steve" data-state="vote Slide-background title Stage--senior Status--water" data-background="./img/water.jpg" -->
 
-<ul class="Pills Pills--sun">
-  <li class="Pill fragment">Mentor (be one)</div>
-  <li class="Pill fragment">Peers</div>
+<ul class="Pills Pills--water fragment">
+  <li class="Pill">Connect with Peers</div>
+  <li class="Pill">Be a Mentor</div>
 </ul>
 
 ------
 
 ## Wind
-<!-- .slide: data-title="Senior Steve" data-state="vote Stage-introduction title Stage--senior Status--wind" data-background="./img/wind.jpg" -->
+<!-- .slide: data-title="Senior Steve" data-state="vote Stage-introduction title Stage--senior" data-background="./img/wind.jpg" -->
 
 ------
 
-<!-- .slide: data-title="Senior Steve" data-state="vote Slide-background title Stage--senior Status--wind" data-background="./img/wind.jpg" -->
+<!-- .slide: data-title="Senior Steve" data-state="vote title Stage--senior Status--wind" data-background="./img/wind.jpg" -->
 
-<ul class="Pills Pills--sun">
-  <li class="Pill fragment">Conferences</div>
-  <li class="Pill fragment">User Groups</div>
-  <li class="Pill fragment">Social Media</div>
+<ul class="Pills Pills--wind fragment">
+  <li class="Pill">Social Media</div>
+  <li class="Pill">Lunch &amp; Learns</div>
+  <li class="Pill">User Groups</div>
+  <li class="Pill">Blogging</div>
+  <li class="Pill">Conferences</div>
 </ul>
 
 ------
 
 ## Watch
-<!-- .slide: data-title="Senior Steve" data-state="vote Stage-introduction title Stage--senior Status--warning" data-background="./img/watch.jpg" -->
+<!-- .slide: data-title="Senior Steve" data-state="vote Stage-introduction title Stage--senior" data-background="./img/watch.jpg" -->
 
 ------
 
