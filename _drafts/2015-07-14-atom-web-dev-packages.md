@@ -4,6 +4,11 @@ title: Atom Web Dev Packages
 date: '2015-07-14 05:30:00'
 ---
 
+https://atom.io/themes/nucleus-dark-ui
+https://atom.io/themes/gruvbox
+https://atom.io/themes/adventurous-syntax
+https://atom.io/themes/polaris-syntax
+
 ![](/assets/images/2014/Mar/logo_9624cbf4ef800b9827861e67259e1f5c.png) I've been using GitHub's [Atom](https://atom.io/) editor for the past couple of weeks and I've really enjoyed it. At first there weren't very many extensions/packages available, but the community has been quick to fill in that gap.
 
 You can browse the packages [online](https://atom.io/packages) or from Atom's Preferences... (⌘,)
