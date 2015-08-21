@@ -1210,10 +1210,34 @@
   employer: 'lampo'
   sessions:
   - name: 'Growing Developers'
-    slides: ''
+    slides: '/talks/growing-devs'
     video: ''
     feedback: ''
     type: 'keynote'
+  - name: 'Eliminating JavaScript Code Smells'
+    slides: '/talks/js-smells'
+    video: 'https://www.youtube.com/watch?v=JVlfj7mQZPo'
+    feedback: ''
+
+- dates:
+  - day: 29
+    month: 'Aug'
+    year: 2015
+  - day: 29
+    month: 'Aug'
+    year: 2015
+  date: '2015-08-29'
+  days: '29'
+  name: 'Music City Code'
+  type: 'conference'
+  url: 'http://www.musiccitycode.com/'
+  location: 'Nashville, TN'
+  employer: 'lampo'
+  sessions:
+  - name: 'CSS For Developers'
+    slides: '/talks/css-for-devs'
+    video: ''
+    feedback: ''
   - name: 'Eliminating JavaScript Code Smells'
     slides: '/talks/js-smells'
     video: 'https://www.youtube.com/watch?v=JVlfj7mQZPo'
