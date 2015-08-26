@@ -97,8 +97,6 @@ window.fetch('http://api.randomuser.me/').then(function(response) {
 
 Notes:
 
-Notes:
-
 http://elijahmanor.com/talks/css-for-devs/#/2/6
 
 * actually show specifishity and star wars
