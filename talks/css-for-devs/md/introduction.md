@@ -94,3 +94,59 @@ window.fetch('http://api.randomuser.me/').then(function(response) {
 * Pretty comfortable with current set of skills
 * Can get the job done, but it can be somewhat painful
 * CSS quickly gets out of hand and hard to maintain
+
+Notes:
+
+Notes:
+
+http://elijahmanor.com/talks/css-for-devs/#/2/6
+
+* actually show specifishity and star wars
+
+http://elijahmanor.com/talks/css-for-devs/#/4/1
+
+* needs explanation why it is bad
+
+http://elijahmanor.com/talks/css-for-devs/#/5/1
+
+* needs explanation why it is bad
+
+http://elijahmanor.com/talks/css-for-devs/#/5/6
+
+* is just wrong because root isn't shown (.container is)
+
+http://elijahmanor.com/talks/css-for-devs/#/5/8
+
+* embed interactive site to play around with
+
+http://elijahmanor.com/talks/css-for-devs/#/6/1
+
+* expand to layout / alignment
+* show some center pains
+
+http://elijahmanor.com/talks/css-for-devs/#/6/3
+
+* solved by flexbox
+* go into examples
+* wesbos videso
+
+http://elijahmanor.com/talks/css-for-devs/#/7/4
+
+* find a better mixin OR talk about autoprefixer real quick
+
+http://elijahmanor.com/talks/css-for-devs/#/7/9
+
+* briefly about postcss?
+
+http://elijahmanor.com/talks/css-for-devs/#/8/1
+
+* mention brad frost somewhere
+
+http://elijahmanor.com/talks/css-for-devs/#/9/7
+
+* go a bit further (current project)
+* css modules blog post
+
+http://elijahmanor.com/talks/css-for-devs/#/10/1
+
+* mention other node linter coming out!

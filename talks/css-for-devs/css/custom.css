@@ -101,6 +101,16 @@ pre[data-line] { padding: 1em; }
   align-self: auto;
   margin: 1rem;
 }
+.Split .Split-column--25 { flex: 0 1 25%; }
+.Split .Split-column--75 { flex: 0 1 75%; }
+.Split .Split-column--30 { flex: 0 1 30%; }
+.Split .Split-column--70 { flex: 0 1 70%; }
+.Split .Split-column--40 { flex: 0 1 40%; }
+.Split .Split-column--60 { flex: 0 1 60%; }
+.Split .Split-column--35 { flex: 0 1 35%; }
+.Split .Split-column--65 { flex: 0 1 65%; }
+
+
 .Split .Split-column blockquote {
   width: 100%;
   margin: 10px auto;
