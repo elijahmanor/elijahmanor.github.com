@@ -68,6 +68,7 @@
 ------
 
 ## Y U SO CRAZY!?!
+<!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob" -->
 
 ![](./imgs/css-is-painful.gif)
 
