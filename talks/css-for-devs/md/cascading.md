@@ -8,43 +8,76 @@
 ## Scenario <small>([CodePen](http://codepen.io/elijahmanor/pen/pJEyRE?editors=110))</small><!-- .element style="vertical-align: middle;" -->
 <!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob" -->
 
-### Have you ever done this?
+Have you ever done this?
 
 <div class="Split">
-  <div class="Split-column">
-    <pre class="language-markup"><code>
-&lt;h1&gt;Cascades&lt;/h1&gt;
-&lt;div class="container"&gt;
-  &lt;div class="box"&gt;Box 1&lt;/div&gt;
-  &lt;div class="box"&gt;Box 2&lt;/div&gt;
-  &lt;div class="box"&gt;Box 3&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+  <div class="Split-column Split-column--55">
+    <pre data-codemirror data-mode="text/html" data-line-numbers="false"><h1>Cascades</h1>
+<div class="container">
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+  <div class="box">Box 3</div>
+</div></pre>
   </div>
-  <div class="Split-column">
-    <pre class="language-css"><code>
-html, body { color: black; }
+  <div class="Split-column Split-column--45">
+    <pre data-codemirror data-mode="text/css" data-line-numbers="false">html, body { color: black; }
 
 h1 {
-  font-family: Verdana, Arial, Serif;
+  font-family: Times, serif;
 }
 
 .container { color: black; }
 
 .box {
-  font-family: Verdana, Arial, Serif;
+  font-family: Times, serif;
   color: white;
-  width: 100px; height: 100px;
+  width: 100px;
+  height: 100px;
   background-color: red;
-}</code></pre>
+}</pre>
   </div>
 </div>
 
 ------
 
-## Importance
+## Scenario <small>([CodePen](http://codepen.io/elijahmanor/pen/pJEyRE?editors=110))</small><!-- .element style="vertical-align: middle;" -->
 <!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob" -->
 
-### Sources
+Repetitive Properties! (non-DRY)
+
+<div class="Split">
+  <div class="Split-column Split-column--55">
+    <pre data-codemirror data-mode="text/html" data-line-numbers="false"><h1>Cascades</h1>
+<div class="container">
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+  <div class="box">Box 3</div>
+</div></pre>
+  </div>
+  <div class="Split-column Split-column--45">
+    <pre data-codemirror data-mode="text/css" data-line-numbers="false" data-lines="0,3,6,9">
+html, body { color: black; }
+
+h1 {
+  font-family: Times, serif;
+}
+
+.container { color: black; }
+
+.box {
+  font-family: Times, serif;
+  color: white;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}</pre>
+  </div>
+</div>
+
+------
+
+## Importance: Sources
+<!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob" -->
 
 1. User Agent <p>Each browser provides its own default style sheet</p>
 
@@ -56,10 +89,8 @@ Resource: [W3C: The Cascade](http://www.w3.org/TR/CSS2/cascade.html#cascade)
 
 ------
 
-## Importance
+## Importance: Priority <small>(lowest to highest)</small>
 <!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob" -->
-
-### Priority <small>(lowest to highest)</small><!-- .element style="vertical-align: middle;" -->
 
 1. User Agent's Stylesheet
 2. User's Stylesheet
@@ -76,7 +107,7 @@ Resource: [W3C: The Cascade](http://www.w3.org/TR/CSS2/cascade.html#cascade)
 
 User Agent Stylesheets vary from Browser to Browser
 
-* [Reset CSS](http://meyerweb.com/eric/tools/css/reset/): <p>Will strip pretty much all styles away and let you start from scratch. Think of something like...</p><pre class="language-css"><code>* {margin: 0; padding: 0;}</code></pre>
+* [Reset CSS](http://meyerweb.com/eric/tools/css/reset/): <p>Will strip pretty much all styles away and let you start from scratch. Think of something like...</p><pre data-codemirror data-mode="text/css" data-line-numbers="false">* {margin: 0; padding: 0;}</pre>
 * [Normalize.css](http://necolas.github.io/normalize.css/): <p>Will tear down elements to a reasonable baseline that you can build from</p>
 
 ------
@@ -120,16 +151,16 @@ User Agent Stylesheets vary from Browser to Browser
 
 <div class="Split">
   <div class="Split-column">
-    <pre class="language-markup"><code>
-&lt;h1&gt;Inherit&lt;/h1&gt;
-&lt;div class="container"&gt;
-  &lt;div class="box"&gt;Box 1&lt;/div&gt;
-  &lt;div class="box"&gt;Box 2&lt;/div&gt;
-  &lt;div class="box"&gt;Box 3&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+    <pre data-codemirror data-mode="text/html" data-line-numbers="false">
+<h1>Inherit</h1>
+<div class="container">
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+  <div class="box">Box 3</div>
+</div></pre>
   </div>
   <div class="Split-column">
-    <pre class="language-css" data-line="8"><code>.container {
+    <pre data-codemirror data-mode="text/css" data-lines="7">.container {
   padding: 1em;
   border: 1px dashed green;
 }
@@ -137,7 +168,7 @@ User Agent Stylesheets vary from Browser to Browser
 .box {
   margin: 1em;
   border: inherit;
-}</code></pre>
+}</pre>
   </div>
 </div>
 
@@ -149,27 +180,27 @@ User Agent Stylesheets vary from Browser to Browser
 <div class="Split">
   <div class="Split-column">
     <h4>Old CSS</h4>
-    <pre class="language-css"><code>
+    <pre data-codemirror data-mode="text/css" data-line-numbers="false" data-lines="0,3,6,9">
 html, body { color: black; }
 
 h1 {
-  font-family: Verdana, Arial, Serif;
+  font-family: Times, serif;
 }
 
 .container { color: black; }
 
 .box {
-  font-family: Verdana, Arial, Serif;
+  font-family: Times, serif;
   color: white;
-  width: 100px; height: 100px;
+  width: 100px;
+  height: 100px;
   background-color: red;
-}</code></pre>
+}</pre>
   </div>
   <div class="Split-column">
     <h4>New CSS</h4>
-    <pre class="language-css"><code>
-html, body {
-  font-family: Verdana, Arial, Serif;
+    <pre data-codemirror data-mode="text/css" data-line-numbers="false" data-lines="1,2">html, body {
+  font-family: Times, serif;
   color: black;
 }
 
@@ -178,7 +209,7 @@ html, body {
   width: 100px;
   height: 100px;
   background-color: red;
-}</code></pre>
+}</pre>
   </div>
 </div>
 

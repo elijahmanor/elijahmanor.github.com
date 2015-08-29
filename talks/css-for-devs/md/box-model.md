@@ -9,12 +9,12 @@
 <!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
-  <div class="Split-column">
-    <pre class="language-markup"><code>&lt;div class="crazybox"&gt;
+  <div class="Split-column Split-column--55">
+    <pre data-codemirror data-mode="text/html"><div class="crazybox">
   200 x 200
-&lt;/div&gt;
-&lt;div class="stick--200"&gt;&lt;/div&gt;</code></pre>
-    <pre class="language-css"><code>.crazybox {
+</div>
+<div class="stick--200"></div></pre>
+    <pre data-codemirror data-mode="text/css">.crazybox {
   width: 200px;
   height: 200px;
   background-color: red;
@@ -24,9 +24,9 @@
   width: 200px;
   height: 5px;
   background-color: blue;
-}</code></pre>
+}</pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--45">
     <div class="crazybox--2">200 x 200</div>
     <div class="stick--200--2"></div>
   </div>
@@ -38,12 +38,12 @@
 <!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
-  <div class="Split-column">
-    <pre class="language-markup" ><code>&lt;div class="crazybox"&gt;
+  <div class="Split-column Split-column--55">
+    <pre data-codemirror data-mode="text/html"><div class="crazybox">
   200 x 200
-&lt;/div&gt;
-&lt;div class="stick--200"&gt;&lt;/div&gt;</code></pre>
-    <pre class="language-css" data-line="5-6"><code>.crazybox {
+</div>
+<div class="stick--200"></div></pre>
+    <pre data-codemirror data-mode="text/css" data-lines="4,5">.crazybox {
   width: 200px;
   height: 200px;
   background-color: red;
@@ -55,9 +55,9 @@
   width: 200px;
   height: 5px;
   background-color: blue;
-}</code></pre>
+}</pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--45">
     <div class="crazybox--3">200 x 200</div>
     <div class="stick--200--3"></div>
     <h4 class="fragment">`box-sizing: content-box`</h4>
@@ -71,12 +71,12 @@
 <!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
-  <div class="Split-column">
-    <pre class="language-markup" ><code>&lt;div class="smartbox"&gt;
+  <div class="Split-column Split-column--55">
+    <pre data-codemirror data-mode="text/html"><div class="smartbox">
   200 x 200
-&lt;/div&gt;
-&lt;div class="stick--200"&gt;&lt;/div&gt;</code></pre>
-    <pre class="language-css" data-line="7"><code>.smartbox {
+</div>
+<div class="stick--200"></div></pre>
+    <pre data-codemirror data-mode="text/css" data-lines="6">.smartbox {
   width: 200px;
   height: 200px;
   background-color: red;
@@ -89,9 +89,9 @@
   width: 200px;
   height: 5px;
   background-color: blue;
-}</code></pre>
+}</pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--45">
     <div class="smartbox--4">200 x 200</div>
     <div class="stick--200--4"></div>
     <h4 class="fragment"><code>box-sizing: <br />border-box</code></h4>
@@ -102,36 +102,36 @@
 
 ------
 
-# THERE WAS MUCH REJOINCING!
+## THERE WAS MUCH REJOINCING!
 <!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob" -->
+
+<img src="./imgs/happy-dance.gif" style="height: 450px;" />
 
 ------
 
 # Border Box FTW!
-<!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob codeMirror--xlg" -->
 
 So, we could...
 
-<pre class="language-css"><code>* { box-sizing: border-box; }</code></pre>
+<pre data-codemirror data-line-numbers="false">* { box-sizing: border-box; }</pre>
 
-or better yet...
-
-<pre class="language-css"><code>*, *:before, *:after { box-sizing: border-box; }</code></pre>
+<div class="fragment">
+<br/>
+<p>or better yet...</p>
+<pre data-codemirror data-line-numbers="false">\*, \*:before, \*:after { box-sizing: border-box; }</pre>
+</div>
 
 > Note: don't worry about [vendor prefixes](http://caniuse.com/#feat=css3-boxsizing)
 
 ------
 
 ## Slightly Better Best Practice
-<!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Box Model" data-state="codeMirror--xlg backEndBrian juniorJacob midLevelMelissa" -->
 
-<pre class="language-css"><code>html {
-  box-sizing: border-box;
-}
+<pre data-codemirror data-mode="text/css" data-line-numbers="false">html { box-sizing: border-box; }
 
-*, *:before, *:after {
-  box-sizing: inherit;
-}</code></pre>
+*, *:before, *:after { box-sizing: inherit; }</pre>
 
 > This will give you the same result, and make it easier to change the box-sizing in plugins or other components that leverage other behavior. --Jon Neal
 

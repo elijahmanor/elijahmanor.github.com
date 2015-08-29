@@ -4,7 +4,34 @@ Reveal.addEventListener('slidechanged', function(event) {
 
   header.classList.toggle('Title--show', !!title);
   header.innerHTML = title;
+
+  initCodeMirror(event.currentSlide);
+  Reveal.getScale();
 });
+
+function initCodeMirror(slide) {
+  var nodes = slide.querySelectorAll('[data-codemirror]');
+  [].forEach.call(nodes, function(node) {
+    var editor = CodeMirror(function(elt) {
+      node.parentNode.replaceChild(elt, node);
+    }, {
+      value: (node.value || node.innerHTML).trim(),
+      lineNumbers: node.getAttribute('data-line-numbers') !== 'false',
+      readOnly: true,
+      theme: node.getAttribute('data-theme') || 'blackboard',
+      mode: node.getAttribute('data-mode') || 'text/javascript',
+      lineWrapping: true
+    });
+    window.setTimeout(function() { editor.refresh(); }, 1);
+    var lines = node.getAttribute('data-lines');
+    if (lines) {
+      lines = lines.split(',');
+      lines.forEach(function(line) {
+        editor.addLineClass(parseInt(line), 'wrap', 'CodeMirror-activeline-background');
+      });
+    }
+  });
+}
 
 var dialog = document.getElementById('dialog');
 
@@ -38,6 +65,11 @@ dialog.querySelector('#update').addEventListener('click', function() {
 		}
 	});
 	window.localStorage.modules = JSON.stringify(modules);
+
+  [].forEach.call(document.querySelectorAll('.CodeMirror'), function(editor) {
+    editor.CodeMirror.setOption('theme', document.querySelector('#selectTheme').value);
+  });
+
 	Reveal.configure({ controls: true });
 	dialog.close();
 });

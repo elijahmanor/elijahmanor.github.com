@@ -1,8 +1,18 @@
+.reveal .CodeMirror { margin-bottom: 1rem; }
+
 #dialog { z-index: 999; }
 #dialog .modules { list-style-type: none; font-size: 1.5rem; }
 #dialog h3 { color: black; }
+.Dialog-theme { font-size: 1rem !important; margin-top: 1rem !important; }
+
+.codeMirror--xlg .reveal .slides .CodeMirror { font-size: 1.7rem; }
+.codeMirror--lg  .reveal .slides .CodeMirror { font-size: 1.6rem; }
+.codeMirror--md  .reveal .slides .CodeMirror { font-size: 1.5rem; }
+.codeMirror--sm  .reveal .slides .CodeMirror { font-size: 1.4rem; }
+.codeMirror--xsm .reveal .slides .CodeMirror { font-size: 1.3rem; }
 
 #Introduction img { background: none; border: none; box-shadow: none: }
+.overflowYScroll .present[data-markdown] { height: 100vh; overflow-y: scroll; }
 
 #Introduction .CSSForDevelopers {
   border: 5px solid white;
@@ -101,14 +111,17 @@ pre[data-line] { padding: 1em; }
   align-self: auto;
   margin: 1rem;
 }
+.Split .Split-column--20 { flex: 0 1 20%; }
 .Split .Split-column--25 { flex: 0 1 25%; }
 .Split .Split-column--75 { flex: 0 1 75%; }
 .Split .Split-column--30 { flex: 0 1 30%; }
 .Split .Split-column--70 { flex: 0 1 70%; }
 .Split .Split-column--40 { flex: 0 1 40%; }
+.Split .Split-column--45 { flex: 0 1 45%; }
 .Split .Split-column--60 { flex: 0 1 60%; }
 .Split .Split-column--35 { flex: 0 1 35%; }
 .Split .Split-column--65 { flex: 0 1 65%; }
+.Split .Split-column--90 { flex: 0 1 90%; }
 
 
 .Split .Split-column blockquote {
@@ -330,13 +343,25 @@ pre[data-line] { padding: 1em; }
   left: 10px;
 }
 
+.DemoPositionStatic {
+  border: 1px solid blue !important;
+  padding: 1em !important;
+}
 .DemoPositionStatic-box {
   width: 100px;
   height: 100px;
   margin: 5px !important;
   background: red;
+  border: 1px solid white !important;
+  text-align: center;
+  line-height: 100px !important;
+  font-size: 0.75em !important;
 }
 
+.DemoPositionRelative {
+  border: 1px solid blue !important;
+  padding: 1em !important;
+}
 .DemoPositionRelative-box {
   width: 100px;
   height: 100px;
@@ -354,7 +379,7 @@ pre[data-line] { padding: 1em; }
 
 .DemoPositionAbsolute {
   border: 1px solid blue !important;
-  padding: 3em !important;
+  padding: 1em !important;
 }
 .DemoPositionAbsolute-box {
   width: 100px;
@@ -374,10 +399,10 @@ pre[data-line] { padding: 1em; }
   position: relative;
 }
 
-/* .slide--demoPositionFixed { height: 200vh; } */
+.slide--demoPositionFixed .present[data-markdown] { height: 100vh; overflow-y: scroll; }
 .DemoPositionFixed {
   border: 1px solid blue !important;
-  padding: 3em !important;
+  padding: 1em !important;
 }
 .DemoPositionFixed-box {
   width: 100px;

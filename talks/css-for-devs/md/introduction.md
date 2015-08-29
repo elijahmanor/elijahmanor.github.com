@@ -19,10 +19,11 @@ Notes:
 ------
 
 ## `me.json`
+<!-- .slide: data-state="codeMirror--xsm" -->
 
 <div class="Split">
   <div class="Split-column">
-    <pre class="language-javascript clean"><code>{
+    <pre data-codemirror data-line-numbers="false" data-theme="3024-night" data-mode="application/json">{
   "name": "Elijah Manor",
   "priorities" : [
     "Christian", "Family", "Work"
@@ -38,10 +39,10 @@ Notes:
     "Microsoft MVP",
     "IE userAgent"
   ]
-}</code></pre>
+}</pre>
   </div>
   <div class="Split-column">
-    <img src="./imgs/myfamily.jpg" />
+    <img src="./imgs/myfamily.jpg" style="margin-top: 0;" />
     <img src="./imgs/ramsey-solutions.svg" />
     <img src="./imgs/everydollar.svg" />
   </div>
@@ -50,13 +51,15 @@ Notes:
 ------
 
 # CSS Personas
+<!-- .slide: data-state="codeMirror--xlg" -->
 
-<pre class="language-javascript"><code>
-window.fetch('http://api.randomuser.me/').then(function(response) {
-  return response.json();
-}).then(function(data) {
-  copy(JSON.stringify(data, null, 2));
-});</code></pre>
+<pre data-codemirror data-line-numbers="false">window.fetch('http://api.randomuser.me/')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    copy(JSON.stringify(data, null, 2));
+  });</pre>
 
 ------
 
@@ -97,36 +100,10 @@ window.fetch('http://api.randomuser.me/').then(function(response) {
 
 Notes:
 
-http://elijahmanor.com/talks/css-for-devs/#/2/6
-
-* actually show specifishity and star wars
-
-http://elijahmanor.com/talks/css-for-devs/#/4/1
-
-* needs explanation why it is bad
-
-http://elijahmanor.com/talks/css-for-devs/#/5/1
-
-* needs explanation why it is bad
-
-http://elijahmanor.com/talks/css-for-devs/#/5/6
-
-* is just wrong because root isn't shown (.container is)
-
-http://elijahmanor.com/talks/css-for-devs/#/5/8
-
-* embed interactive site to play around with
-
-http://elijahmanor.com/talks/css-for-devs/#/6/1
-
-* expand to layout / alignment
-* show some center pains
-
 http://elijahmanor.com/talks/css-for-devs/#/6/3
 
 * solved by flexbox
 * go into examples
-* wesbos videso
 
 http://elijahmanor.com/talks/css-for-devs/#/7/4
 

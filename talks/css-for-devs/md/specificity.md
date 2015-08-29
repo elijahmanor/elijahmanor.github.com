@@ -12,36 +12,32 @@
   <div class="Split-column">
     <div class="fragment">
       <h4>Have you ever wanted to do this...</h4>
-      <pre class="language-css"><code>
-.big-html-area {
+      <pre data-codemirror data-mode="text/css" data-line-numbers="false">.big-html-area {
   width: 400px;
   height: 300px;
-}</code></pre>
+}</pre>
     </div>
     <div class="fragment">
       <h4>But it didn't work so you did this...</h4>
-      <pre class="language-css"><code>
-.big-html-area {
+      <pre data-codemirror data-mode="text/css" data-line-numbers="false">.big-html-area {
   width: 400px !important;
   height: 300px !important;
-}</code></pre>
+}</pre>
     </div>
   </div>
   <div class="Split-column">
     <div class="fragment">
       <h4>Or maybe you tried this...</h4>
-      <pre class="language-markup"><code>
-&lt;div class="big-html-area"
-  style="width: 400px; height: 300px"&gt;
-&lt;/div&gt;</code></pre>
+      <textarea data-codemirror data-mode="text/html" data-line-numbers="false"><div class="big-html-area"
+  style="width: 400px; height: 300px;">
+</div></textarea>
     </div>
     <div class="fragment">
       <h4>Or even this...</h4>
-      <pre class="language-javascript"><code>
-$(".big-html-area").css({
+      <pre data-codemirror data-mode="text/javascript" data-line-numbers="false">$(".big-html-area").css({
   width: '400px',
   height: '300px'
-});</code></pre>
+});</pre>
     </div>
   </div>
 </div>
@@ -55,25 +51,25 @@ $(".big-html-area").css({
   <div class="Split-column">
     <div class="fragment">
       <h4>1. Inline Styles</h4>
-      <pre class="language-markup"><code>&lt;div style="color: red;"&gt;&lt;/div&gt;</code></pre>
+      <pre data-codemirror data-mode="text/html" data-line-numbers="false"><div style="color: red;"></div></pre>
     </div>
     <div class="fragment">
       <h4>2. IDs</h4>
-      <pre class="language-css"><code>#updateItem {}
-#shoppingCart {}</code></pre>
+      <pre data-codemirror data-mode="text/css" data-line-numbers="false">#updateItem {}
+#shoppingCart {}</pre>
     </div>
   </div>
   <div class="Split-column">
     <div class="fragment">
       <h4>3. Classes, attributes, & pseudo-classes</h4>
-      <pre class="language-css"><code>.selected {}
+      <pre data-codemirror data-mode="text/css" data-line-numbers="false">.selected {}
 [href^='http://'] {}
-:nth-child(2n+1) {}</code></pre>
+:nth-child(2n+1) {}</pre>
     </div>
     <div class="fragment">
       <h4>4. Elements & <br /> psuedo-elements</h4>
-      <pre class="language-css"><code>table {}
-.fa:after {}</code></pre>
+      <pre data-codemirror data-mode="text/css" data-line-numbers="false">table {}
+.fa:after {}</pre>
     </div>
   </div>
 </div>
@@ -97,7 +93,7 @@ $(".big-html-area").css({
 <div class="Split">
   <div class="Split-column">
     <div class="fragment">
-      <pre class="language-css"><code>#submitButton {}</code></pre>
+      <pre data-codemirror data-mode="text/css" data-line-numbers="false">#submitButton {}</pre>
       <div class="Specificity">
         <div class="Specificity-score">
           <div class="Specificity-value Specificity-value--inline">0</div>
@@ -108,7 +104,7 @@ $(".big-html-area").css({
       </div>
     </div>
     <div class="fragment">
-      <pre class="language-css"><code>.Widget {}</code></pre>
+      <pre data-codemirror data-mode="text/css" data-line-numbers="false">.Widget {}</pre>
       <div class="Specificity">
         <div class="Specificity-score">
           <div class="Specificity-value Specificity-value--inline">0</div>
@@ -121,7 +117,7 @@ $(".big-html-area").css({
   </div>
   <div class="Split-column">
     <div class="fragment">
-      <pre class="language-css"><code>.Widget.selected > ul {}</code></pre>
+      <textarea data-codemirror data-mode="text/css" data-line-numbers="false">.Widget.selected > ul {}</textarea>
       <div class="Specificity">
         <div class="Specificity-score">
           <div class="Specificity-value Specificity-value--inline">0</div>
@@ -132,7 +128,7 @@ $(".big-html-area").css({
       </div>
     </div>
     <div class="fragment">
-      <pre class="language-css"><code>#statusBar[data-type='error'] {}</code></pre>
+      <pre data-codemirror data-mode="text/css" data-line-numbers="false">#status[data-type='error'] {}</pre>
       <div class="Specificity">
         <div class="Specificity-score">
           <div class="Specificity-value Specificity-value--inline">0</div>
@@ -173,6 +169,18 @@ $(".big-html-area").css({
 
   <button>May the odds be ever in your favor</button>
 </div>
+
+------
+
+## [CSS SpeciFISHity](http://www.standardista.com/css3/css-specificity/) by [Estelle Weyl](http://twitter.com/estellevw)
+
+![](./imgs/specifishity.png)
+
+------
+
+## [CSS Specificity Star Wars](http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html)
+
+![](./imgs/specificitywars.jpg)
 
 ------
 

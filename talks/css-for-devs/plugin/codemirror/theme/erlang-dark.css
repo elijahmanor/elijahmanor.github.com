@@ -1,0 +1,34 @@
+.reveal .slides .cm-s-erlang-dark.CodeMirror { background: #002240; color: white; }
+.reveal .slides .cm-s-erlang-dark div.CodeMirror-selected { background: #b36539; }
+.reveal .slides .cm-s-erlang-dark .CodeMirror-line::selection, .reveal .slides .cm-s-erlang-dark .CodeMirror-line > span::selection, .reveal .slides .cm-s-erlang-dark .CodeMirror-line > span > span::selection { background: rgba(179, 101, 57, .99); }
+.reveal .slides .cm-s-erlang-dark .CodeMirror-line::-moz-selection, .reveal .slides .cm-s-erlang-dark .CodeMirror-line > span::-moz-selection, .reveal .slides .cm-s-erlang-dark .CodeMirror-line > span > span::-moz-selection { background: rgba(179, 101, 57, .99); }
+.reveal .slides .cm-s-erlang-dark .CodeMirror-gutters { background: #002240; border-right: 1px solid #aaa; }
+.reveal .slides .cm-s-erlang-dark .CodeMirror-guttermarker { color: white; }
+.reveal .slides .cm-s-erlang-dark .CodeMirror-guttermarker-subtle { color: #d0d0d0; }
+.reveal .slides .cm-s-erlang-dark .CodeMirror-linenumber { color: #d0d0d0; }
+.reveal .slides .cm-s-erlang-dark .CodeMirror-cursor { border-left: 1px solid white; }
+
+.reveal .slides .cm-s-erlang-dark span.cm-quote      { color: #ccc; }
+.reveal .slides .cm-s-erlang-dark span.cm-atom       { color: #f133f1; }
+.reveal .slides .cm-s-erlang-dark span.cm-attribute  { color: #ff80e1; }
+.reveal .slides .cm-s-erlang-dark span.cm-bracket    { color: #ff9d00; }
+.reveal .slides .cm-s-erlang-dark span.cm-builtin    { color: #eaa; }
+.reveal .slides .cm-s-erlang-dark span.cm-comment    { color: #77f; }
+.reveal .slides .cm-s-erlang-dark span.cm-def        { color: #e7a; }
+.reveal .slides .cm-s-erlang-dark span.cm-keyword    { color: #ffee80; }
+.reveal .slides .cm-s-erlang-dark span.cm-meta       { color: #50fefe; }
+.reveal .slides .cm-s-erlang-dark span.cm-number     { color: #ffd0d0; }
+.reveal .slides .cm-s-erlang-dark span.cm-operator   { color: #d55; }
+.reveal .slides .cm-s-erlang-dark span.cm-property   { color: #ccc; }
+.reveal .slides .cm-s-erlang-dark span.cm-qualifier  { color: #ccc; }
+.reveal .slides .cm-s-erlang-dark span.cm-special    { color: #ffbbbb; }
+.reveal .slides .cm-s-erlang-dark span.cm-string     { color: #3ad900; }
+.reveal .slides .cm-s-erlang-dark span.cm-string-2   { color: #ccc; }
+.reveal .slides .cm-s-erlang-dark span.cm-tag        { color: #9effff; }
+.reveal .slides .cm-s-erlang-dark span.cm-variable   { color: #50fe50; }
+.reveal .slides .cm-s-erlang-dark span.cm-variable-2 { color: #e0e; }
+.reveal .slides .cm-s-erlang-dark span.cm-variable-3 { color: #ccc; }
+.reveal .slides .cm-s-erlang-dark span.cm-error      { color: #9d1e15; }
+
+.reveal .slides .cm-s-erlang-dark .CodeMirror-activeline-background { background: #013461; }
+.reveal .slides .cm-s-erlang-dark .CodeMirror-matchingbracket { outline:1px solid grey; color:white !important; }

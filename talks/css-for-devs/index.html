@@ -12,7 +12,56 @@
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css" id="theme">
 		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!--<link rel="stylesheet" href="lib/css/zenburn.css">-->
+		<link rel="stylesheet" href="plugin/codemirror/lib/codemirror.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/3024-day.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/3024-night.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/abcdef.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/ambiance.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/base16-dark.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/base16-light.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/blackboard.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/cobalt.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/colorforth.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/dracula.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/eclipse.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/elegant.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/erlang-dark.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/icecoder.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/lesser-dark.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/liquibyte.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/material.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/mbo.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/mdn-like.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/midnight.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/monokai.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/neat.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/neo.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/night.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/paraiso-dark.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/paraiso-light.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/pastel-on-dark.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/rubyblue.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/seti.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/solarized.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/the-matrix.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/tomorrow-night-bright.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/tomorrow-night-eighties.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/ttcn.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/twilight.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/vibrant-ink.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/xq-dark.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/xq-light.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/yeti.css">
+		<link rel="stylesheet" href="plugin/codemirror/theme/zenburn.css">
+		<script src="plugin/codemirror/lib/codemirror.js"></script>
+		<script src="plugin/codemirror/mode/javascript/javascript.js"></script>
+		<script src="plugin/codemirror/mode/sass/sass.js"></script>
+		<script src="plugin/codemirror/mode/css/css.js"></script>
+		<script src="plugin/codemirror/mode/xml/xml.js"></script>
+		<script src="plugin/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+		<script src="plugin/codemirror/mode/shell/shell.js"></script>
+		<script src="plugin/codemirror/mode/jsx/jsx.js"></script>
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -21,7 +70,7 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
-		<link rel="stylesheet" href="plugin/prism/prism.css" />
+		<!--<link rel="stylesheet" href="plugin/prism/prism.css" />-->
 		<link rel="stylesheet" href="plugin/caniuse/caniuse.css" />
 		<link rel="stylesheet" href="css/custom.css" />
 		<link href="http://fonts.googleapis.com/css?family=Orbitron:400,900,700,500" rel="stylesheet" type="text/css" />
@@ -45,15 +94,16 @@
 				<section id="Sass" data-markdown="./md/sass.md"></section>
 				<section id="Atomic-Design" data-markdown="./md/atomic-design.md"></section>
 				<section id="BEM" data-markdown="./md/bem.md"></section>
+				<section id="Require" data-markdown="./md/require.md"></section>
 				<section id="Linting" data-markdown="./md/linting.md"></section>
 				<section id="Sass-Docs" data-markdown="./md/sass-docs.md"></section>
 				<!--<section id="SVG" data-markdown="./md/svg.md"></section>-->
 
 				<section id="conclusion" data-markdown="./md/conclusion.md"></section>
 
-				<pre style="visibility: hidden;"><code data-trim contenteditable>
+				<pre hidden style="display: none;">
 					console.log('code');
-				</code></pre>
+				</pre>
 			</div>
 			<aside class="PersonaList">
 				<div class="Persona Persona--backEndBrian">
@@ -72,6 +122,53 @@
 			<dialog id="dialog">
 				<h3>Modules</h3>
 				<ul class="modules"></ul>
+				<div class="Dialog-theme">
+					<span>Select a theme: </span>
+					<select id="selectTheme">
+				    <option>default</option>
+				    <option>3024-day</option>
+				    <option>3024-night</option>
+				    <option>abcdef</option>
+				    <option>ambiance</option>
+				    <option>base16-dark</option>
+				    <option>base16-light</option>
+				    <option>blackboard</option>
+				    <option>cobalt</option>
+				    <option>colorforth</option>
+				    <option>dracula</option>
+				    <option>eclipse</option>
+				    <option>elegant</option>
+				    <option>erlang-dark</option>
+				    <option>icecoder</option>
+				    <option>lesser-dark</option>
+				    <option>liquibyte</option>
+				    <option>material</option>
+				    <option>mbo</option>
+				    <option>mdn-like</option>
+				    <option>midnight</option>
+				    <option>monokai</option>
+				    <option>neat</option>
+				    <option>neo</option>
+				    <option>night</option>
+				    <option>paraiso-dark</option>
+				    <option>paraiso-light</option>
+				    <option>pastel-on-dark</option>
+				    <option>rubyblue</option>
+				    <option>seti</option>
+				    <option>solarized dark</option>
+				    <option>solarized light</option>
+				    <option>the-matrix</option>
+				    <option>tomorrow-night-bright</option>
+				    <option>tomorrow-night-eighties</option>
+				    <option>ttcn</option>
+				    <option>twilight</option>
+				    <option>vibrant-ink</option>
+				    <option>xq-dark</option>
+				    <option>xq-light</option>
+				    <option>yeti</option>
+				    <option>zenburn</option>
+					</select>
+				</div>
 				<div>
 					<button id="update">Update</button>
 					<button id="cancel">Cancel</button>
@@ -105,7 +202,7 @@
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); }, callback: function() { dataStore.init(); } },
 					//{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/prism/prism.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { Prism.highlightAll(); } },
+					//{ src: 'plugin/prism/prism.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { Prism.highlightAll(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true }
 				],

@@ -1,0 +1,32 @@
+.reveal .slides .cm-s-abcdef.CodeMirror { background: #0f0f0f; color: #defdef; }
+.reveal .slides .cm-s-abcdef div.CodeMirror-selected { background: #515151; }
+.reveal .slides .cm-s-abcdef .CodeMirror-line::selection, .reveal .slides .cm-s-abcdef .CodeMirror-line > span::selection, .reveal .slides .cm-s-abcdef .CodeMirror-line > span > span::selection { background: rgba(56, 56, 56, 0.99); }
+.reveal .slides .cm-s-abcdef .CodeMirror-line::-moz-selection, .reveal .slides .cm-s-abcdef .CodeMirror-line > span::-moz-selection, .reveal .slides .cm-s-abcdef .CodeMirror-line > span > span::-moz-selection { background: rgba(56, 56, 56, 0.99); }
+.reveal .slides .cm-s-abcdef .CodeMirror-gutters { background: #555; border-right: 2px solid #314151; }
+.reveal .slides .cm-s-abcdef .CodeMirror-guttermarker { color: #222; }
+.reveal .slides .cm-s-abcdef .CodeMirror-guttermarker-subtle { color: azure; }
+.reveal .slides .cm-s-abcdef .CodeMirror-linenumber { color: #FFFFFF; }
+.reveal .slides .cm-s-abcdef .CodeMirror-cursor { border-left: 1px solid #00FF00; }
+
+.reveal .slides .cm-s-abcdef span.cm-keyword { color: darkgoldenrod; font-weight: bold; }
+.reveal .slides .cm-s-abcdef span.cm-atom { color: #77F; }
+.reveal .slides .cm-s-abcdef span.cm-number { color: violet; }
+.reveal .slides .cm-s-abcdef span.cm-def { color: #fffabc; }
+.reveal .slides .cm-s-abcdef span.cm-variable { color: #abcdef; }
+.reveal .slides .cm-s-abcdef span.cm-variable-2 { color: #cacbcc; }
+.reveal .slides .cm-s-abcdef span.cm-variable-3 { color: #def; }
+.reveal .slides .cm-s-abcdef span.cm-property { color: #fedcba; }
+.reveal .slides .cm-s-abcdef span.cm-operator { color: #ff0; }
+.reveal .slides .cm-s-abcdef span.cm-comment { color: #7a7b7c; font-style: italic;}
+.reveal .slides .cm-s-abcdef span.cm-string { color: #2b4; }
+.reveal .slides .cm-s-abcdef span.cm-meta { color: #C9F; }
+.reveal .slides .cm-s-abcdef span.cm-qualifier { color: #FFF700; }
+.reveal .slides .cm-s-abcdef span.cm-builtin { color: #30aabc; }
+.reveal .slides .cm-s-abcdef span.cm-bracket { color: #8a8a8a; }
+.reveal .slides .cm-s-abcdef span.cm-tag { color: #FFDD44; }
+.reveal .slides .cm-s-abcdef span.cm-attribute { color: #DDFF00; }
+.reveal .slides .cm-s-abcdef span.cm-error { color: #FF0000; }
+.reveal .slides .cm-s-abcdef span.cm-header { color: aquamarine; font-weight: bold; }
+.reveal .slides .cm-s-abcdef span.cm-link { color: blue; }
+
+.reveal .slides .cm-s-abcdef .CodeMirror-activeline-background { background: #314151; }

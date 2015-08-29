@@ -30,6 +30,7 @@ Notes:
 <!-- .slide: data-title="Linting" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 * [SCSS Lint](https://github.com/brigade/scss-lint)
+* [Sass Lint](https://github.com/sasstools/sass-lint) - Node-only Sass Linter!
 * [CSS Comb](css-comb)
 * [CSS Lint](http://csslint.net/)
 * [CSS Dig]()

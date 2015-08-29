@@ -14,6 +14,16 @@ Notes:
 
 ------
 
+<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob" -->
+
+<blockquote>
+<a href="https://twitter.com/addyosmani/status/634779064335794180">"When you try deleting a line of CSS..."</a> &mdash; Addy Osmani (@addyosmani)
+</blockquote>
+
+<img src="./imgs/css-jinga.gif" style="height: 450px;" />
+
+------
+
 ## Origins
 <!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob" -->
 
@@ -38,9 +48,9 @@ Source: [Origins of the BEM Methodology](https://en.bem.info/method/#origins-of-
 ------
 
 ## Examples
-<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob codeMirror--xlg" -->
 
-<pre class="language-css"><code>
+<pre data-codemirror data-mode="text/css">
 /* Block */
 .block-name {}
 
@@ -51,14 +61,14 @@ Source: [Origins of the BEM Methodology](https://en.bem.info/method/#origins-of-
 .block-name--modifier-name {}
 
 /* Element with Modifier */
-.block-name__element-name--modifier-name {}</code></pre>
+.block-name__element-name--modifier-name {}</pre>
 
 ------
 
-## Modified BEM Syntax for Usability
-<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+### Modified BEM Syntax for Usability
+<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob midLevelMelissa codeMirror--xlg" -->
 
-<pre class="language-css"><code>
+<pre data-codemirror data-mode="text/css">
 /* Block */
 .BlockName {}
 
@@ -69,7 +79,7 @@ Source: [Origins of the BEM Methodology](https://en.bem.info/method/#origins-of-
 .BlockName--modifierName {}
 
 /* Element with Modifier */
-.BlockName-elementName--modifierName {}</code></pre>
+.BlockName-elementName--modifierName {}</pre>
 
 Source: [A BEM syntax with UX in mind](http://simurai.com/blog/2013/10/24/BEM-syntax-with-ux-in-mind/)
 
@@ -78,7 +88,9 @@ Source: [A BEM syntax with UX in mind](http://simurai.com/blog/2013/10/24/BEM-sy
 ## Media Example
 <!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-<pre class="language-css"><code>
+<div class="Split">
+  <div class="Split-column">
+    <pre data-codemirror data-mode="text/css" data-line-numbers="false">
 .Media {
   display: flex;
   align-items: flex-start;
@@ -91,38 +103,50 @@ Source: [A BEM syntax with UX in mind](http://simurai.com/blog/2013/10/24/BEM-sy
 
 .Media-figure {
   margin-right: 1em;
-}
-
+}</pre>
+  </div>
+  <div class="Split-column Split-column--60">
+    <textarea data-codemirror data-mode="text/css" data-line-numbers="false">
 .Media-title {
   margin: 0 0 .5em;
 }
 
-.Media-body {
-  flex: 1;
-}</code></pre>
+.Media-body { flex: 1; }
+
+.Media--reverse > .Media-figure {
+  order: 1;
+  margin: 0 0 0 1em;
+}</textarea>
+    <textarea data-codemirror data-mode="text/html" data-line-numbers="false">
+<div
+  class="Media Media--reverse">
+  <!-- ... more ... -->
+</div></textarea>
+  </div>
+</div>
 
 ------
 
 ## Sass @at-root
 <!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-<pre class="language-css"><code>
+<textarea data-codemirror data-mode="text/css">
 .block {
   @at-root #{&}__element {}
   @at-root #{&}--modifier {}
-}</code></pre>
+}</textarea>
 
-<pre class="language-css"><code>
+<pre data-codemirror data-mode="text/css">
 .block {}
 .block__element {}
-.block--modifier {}</code></pre>
+.block--modifier {}</pre>
 
 ------
 
 ## Media Example with Sass
-<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob midLevelMelissa overflowYScroll" -->
 
-<pre class="language-css"><code>
+<textarea data-codemirror data-mode="text/css">
 .Media {
   display: flex;
   align-items: flex-start;
@@ -143,7 +167,9 @@ Source: [A BEM syntax with UX in mind](http://simurai.com/blog/2013/10/24/BEM-sy
   &-body {
     flex: 1;
   }
-}</code></pre>
+}</textarea>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
 ------
 

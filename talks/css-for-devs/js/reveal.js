@@ -757,7 +757,7 @@
 				var data = event.data;
 
 				// Make sure we're dealing with JSON
-				if( data.charAt( 0 ) === '{' && data.charAt( data.length - 1 ) === '}' ) {
+				if( data.charAt && data.charAt( 0 ) === '{' && data.charAt( data.length - 1 ) === '}' ) {
 					data = JSON.parse( data );
 
 					// Check if the requested method can be found

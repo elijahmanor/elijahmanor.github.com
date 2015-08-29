@@ -19,30 +19,30 @@
     </div>
     <div class="fragment">
       <h4>So, you tried this... and failed</h4>
-      <pre class="language-css"><code>
+      <pre data-codemirror data-mode="text/css" data-line-numbers="false">
 .box2 {
   top: -10px;
   left: 10px;
-}</code></pre>
+}</pre>
     </div>
   </div>
   <div class="Split-column">
     <div class="fragment">
       <h4>And this... and failed :(</h4>
-      <pre class="language-css"><code>
+      <pre data-codemirror data-mode="text/css" data-line-numbers="false">
 .box2 {
   top: -10px !important;
   left: 10px !important;
-}</code></pre>
+}</pre>
     </div>
     <div class="fragment">
       <h4>And this... and failed :(</h4>
-      <pre class="language-css"><code>
+      <pre data-codemirror data-mode="text/css" data-line-numbers="false">
 .box2 {
   position: absolute;
   top: -10px;
   left: 10px;
-}</code></pre>
+}</pre>
     </div>
   </div>
 </div>
@@ -110,12 +110,12 @@
 <!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
-  <div class="Split-column">
-    <pre class="language-markup"><code>
-&lt;div class="static"&gt;&lt;/div&gt;
-&lt;div class="static"&gt;&lt;/div&gt;
-&lt;div class="static"&gt;&lt;/div&gt;</code></pre>
-    <pre class="language-css"><code>
+  <div class="Split-column Split-column--70">
+    <pre data-codemirror data-mode="text/html" data-line-numbers="false">
+<div class="static box1"></div>
+<div class="static box2"></div>
+<div class="static box3"></div></pre>
+    <pre data-codemirror data-mode="text/css" data-line-numbers="false">
 .static {
   width: 100px;
   height: 100px;
@@ -123,12 +123,14 @@
   background: red;
   /\* top, right, bottom, left, z-index
      properties don't apply \*/
-}</code></pre>
+}</pre>
   </div>
-  <div class="Split-column">
-    <div class="DemoPositionStatic-box"></div>
-    <div class="DemoPositionStatic-box"></div>
-    <div class="DemoPositionStatic-box"></div>
+  <div class="Split-column Split-column--20">
+    <div class="DemoPositionStatic">
+      <div class="DemoPositionStatic-box">.box1</div>
+      <div class="DemoPositionStatic-box">.box2</div>
+      <div class="DemoPositionStatic-box">.box3</div>
+    </div>
   </div>
 </div>
 
@@ -145,12 +147,12 @@
 <!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
-  <div class="Split-column">
-    <pre class="language-markup"><code>
-&lt;div class="relative box1"&gt;&lt;/div&gt;
-&lt;div class="relative box2"&gt;&lt;/div&gt;
-&lt;div class="relative box3"&gt;&lt;/div&gt;</code></pre>
-    <pre class="language-css" data-line="5,7-9"><code>.relative {
+  <div class="Split-column Split-column--70">
+    <pre data-codemirror data-mode="text/html" data-line-numbers="false">
+<div class="relative box1"></div>
+<div class="relative box2"></div>
+<div class="relative box3"></div></pre>
+    <pre data-codemirror data-mode="text/css" data-lines="4,6,7,8">.relative {
   width: 100px; height: 100px;
   margin: 5px; background: red;
   border: 1px solid white;
@@ -158,12 +160,14 @@
 }
 .box1 { top: 25px; }
 .box2 { left: -25px; z-index: 1; }
-.box3 { top: -25px; left: 25px; }</code></pre>
+.box3 { top: -25px; left: 25px; }</pre>
   </div>
-  <div class="Split-column">
-    <div class="DemoPositionRelative-box">.box1</div>
-    <div class="DemoPositionRelative-box">.box2</div>
-    <div class="DemoPositionRelative-box">.box3</div>
+  <div class="Split-column Split-column--20">
+    <div class="DemoPositionRelative">
+      <div class="DemoPositionRelative-box">.box1</div>
+      <div class="DemoPositionRelative-box">.box2</div>
+      <div class="DemoPositionRelative-box">.box3</div>
+    </div>
   </div>
 </div>
 
@@ -180,26 +184,26 @@
 <!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
-  <div class="Split-column">
-    <pre class="language-markup"><code>
-&lt;div class="container"&gt;
-  &lt;div class="box box1"&gt;&lt;/div&gt;
-  &lt;div class="box box2"&gt;&lt;/div&gt;
-  &lt;div class="box box3"&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-    <pre class="language-css" data-line="10"><code>.container {
+  <div class="Split-column Split-column--70">
+    <pre data-codemirror data-mode="text/html" data-line-numbers="false">
+<div class="container">
+  <div class="absolute box1"></div>
+  <div class="absolute box2"></div>
+  <div class="absolute box3"></div>
+</div></pre>
+    <pre data-codemirror data-mode="text/css" data-lines="9">.container {
   border: 1px solid blue; padding: 25px;
 }
-.box {
+.absolute {
   width: 100px; height: 100px;
   margin: 5px auto; background: red;
   border: 1px solid white;
 }
 .box2 {
   position: absolute; top: 0; left: 0;
-}</code></pre>
+}</pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--20">
     <div class="DemoPositionAbsolute">
       <div class="DemoPositionAbsolute-box">.box1</div>
       <div class="DemoPositionAbsolute-box">.box2</div>
@@ -214,27 +218,27 @@
 <!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
-  <div class="Split-column">
-    <pre class="language-markup"><code>
-&lt;div class="container"&gt;
-  &lt;div class="box box1"&gt;&lt;/div&gt;
-  &lt;div class="box box2"&gt;&lt;/div&gt;
-  &lt;div class="box box3"&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-    <pre class="language-css" data-line="3"><code>.container {
+  <div class="Split-column Split-column--70">
+    <pre data-codemirror data-mode="text/html" data-line-numbers="false">
+<div class="container">
+  <div class="absolute box1"></div>
+  <div class="absolute box2"></div>
+  <div class="absolute box3"></div>
+</div></pre>
+    <pre data-codemirror data-mode="text/css" data-lines="2,10">.container {
   border: 1px solid blue; padding: 25px;
   position: relative;
 }
-.box {
+.absolute {
   width: 100px; height: 100px;
   margin: 5px auto; background: red;
   border: 1px solid white;
 }
 .box2 {
   position: absolute; top: 0; left: 0;
-}</code></pre>
+}</pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--20">
     <div class="DemoPositionAbsolute DemoPositionAbsolute--2">
       <div class="DemoPositionAbsolute-box">.box1</div>
       <div class="DemoPositionAbsolute-box">.box2</div>
@@ -256,14 +260,14 @@
 <!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob slide--demoPositionFixed" -->
 
 <div class="Split">
-  <div class="Split-column">
-    <pre class="language-markup"><code>
-&lt;div class="container"&gt;
-  &lt;div class="box box1"&gt;&lt;/div&gt;
-  &lt;div class="box box2"&gt;&lt;/div&gt;
-  &lt;div class="box box3"&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-    <pre class="language-css" data-line="11"><code>.container {
+  <div class="Split-column Split-column--70">
+    <pre data-codemirror data-mode="text/html" data-line-numbers="false">
+<div class="container">
+  <div class="box box1"></div>
+  <div class="box box2"></div>
+  <div class="box box3"></div>
+</div></pre>
+    <pre data-codemirror data-mode="text/css" data-lines="10">.container {
   border: 1px solid blue; padding: 25px;
   position: relative;
 }
@@ -274,9 +278,9 @@
 }
 .box2 {
   position: fixed; top: 0; left: 0;
-}</code></pre>
+}</pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--20">
     <div class="DemoPositionFixed">
       <div class="DemoPositionFixed-box">.box1</div>
       <div class="DemoPositionFixed-box">.box2</div>
