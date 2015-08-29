@@ -70,7 +70,7 @@
 ## Y U SO CRAZY!?!
 <!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob" -->
 
-![](./imgs/css-is-painful.gif)
+<img src="./imgs/not-supposed-to-happen.gif" style="height: 450px" />
 
 ------
 

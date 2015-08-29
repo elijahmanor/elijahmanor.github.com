@@ -6,7 +6,7 @@
 ------
 
 ## Scenario <small>([CodePen](http://codepen.io/elijahmanor/pen/GJjJRP?editors=110))</small><!-- .element style="vertical-align: middle;" -->
-<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob backgroundGif" data-background="./imgs/css-is-painful.gif" -->
 
 <div class="Split">
   <div class="Split-column">

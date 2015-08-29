@@ -172,13 +172,22 @@
 
 ------
 
+## Seriously!?!
+<!-- .slide: data-title="Specificity" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+
+<img src="./imgs/mild-shock.gif" style="height: 450px;" />
+
+------
+
 ## [CSS SpeciFISHity](http://www.standardista.com/css3/css-specificity/) by [Estelle Weyl](http://twitter.com/estellevw)
+<!-- .slide: data-title="Specificity" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 ![](./imgs/specifishity.png)
 
 ------
 
 ## [CSS Specificity Star Wars](http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html)
+<!-- .slide: data-title="Specificity" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 ![](./imgs/specificitywars.jpg)
 

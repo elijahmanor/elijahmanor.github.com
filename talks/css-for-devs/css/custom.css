@@ -11,6 +11,17 @@
 .codeMirror--sm  .reveal .slides .CodeMirror { font-size: 1.4rem; }
 .codeMirror--xsm .reveal .slides .CodeMirror { font-size: 1.3rem; }
 
+.backgroundGif h2, .backgroundGif h4 {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+.backgroundGif h2 {
+  font-size: 4rem;
+}
+.backgroundGif h4 {
+  font-size: 2.5rem;
+}
+
 #Introduction img { background: none; border: none; box-shadow: none: }
 .overflowYScroll .present[data-markdown] { height: 100vh; overflow-y: scroll; }
 
