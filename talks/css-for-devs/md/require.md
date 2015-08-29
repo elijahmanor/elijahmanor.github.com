@@ -3,14 +3,6 @@
 
 > Use Webpack to require your CSS in your JavaScript!
 
-Notes:
-
-
-## Scenario
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
-
-> TODO: Put some scenario where dev looks to see why style isn't applied...
-
 ------
 
 ## What... WHAT!?!
@@ -25,8 +17,7 @@ Notes:
 
 (Component, Styles, and Tests)
 
-<pre data-codemirror data-mode="text/shell">
-.
+<pre data-codemirror data-mode="text/shell">.
 ├── media
 │   ├── index.jsx
 │   ├── index.spec.js
@@ -40,8 +31,7 @@ Notes:
 
 styes.scss
 
-<textarea data-codemirror data-mode="text/css">
-.Media {
+<pre data-codemirror data-mode="text/css">.Media {
   display: flex;
   align-items: flex-start;
   margin-bottom: 1em;
@@ -55,7 +45,7 @@ styes.scss
   margin-right: 1em;
 }
 
-/\* ... more ... \*/</textarea>
+/* ... more ... */</pre>
 
 ------
 
@@ -64,8 +54,7 @@ styes.scss
 
 index.jsx
 
-<textarea data-codemirror data-mode="text/javascript" data-lines="2">
-let React = require('react/addons');
+<pre data-codemirror data-mode="text/javascript" data-lines="2">let React = require('react/addons');
 let classNames = require('classnames');
 require('./styles.scss');
 
@@ -83,7 +72,7 @@ let Media = React.createClass({
   }
 });
 
-module.exports = Media;</textarea>
+module.exports = Media;</pre>
 
 ------
 
@@ -108,31 +97,29 @@ module.exports = Media;</textarea>
 <div class="Split">
   <div class="Split-column Split-column--45">
     <p>BEM (media.css)</p>
-    <textarea data-codemirror data-mode="text/x-sass" data-line-numbers="false">
-.Media { /\*all styles\*/ }
+  <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">.Media { /\*all styles\*/ }
 .Media--centered { /\*some\*/ }
-.Media--reversed { /\*some\*/ }</textarea>
-    <textarea data-codemirror data-mode="text/x-sass" data-line-numbers="false">
+.Media--reversed { /\*some\*/ }</pre>
+    <pre data-codemirror data-mode="text/javascript" data-line-numbers="false">
 require('media.css');
 
 <div
   class="Media Media--reversed">
   ...more...
-</div></textarea>
+</div></pre>
   </div>
   <div class="Split-column Split-column--45 fragment">
     <p>CSS Modules (media.css)</p>
-    <textarea data-codemirror data-mode="text/x-sass" data-line-numbers="false">
-.normal {   /\*all styles\*/ }
+  <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">.normal {   /\*all styles\*/ }
 .centered { /\*all styles\*/ }
-.reversed { /\*all styles\*/ }</textarea>
-    <textarea data-codemirror data-mode="text/x-sass" data-line-numbers="false">
+.reversed { /\*all styles\*/ }</pre>
+    <pre data-codemirror data-mode="text/javascript" data-line-numbers="false">
 /\* media.js \*/
 import styles from 'media.css';
 
 media.outerHTML = \`<div class=${styles.reversed}>
   ...more...
-</div>\`;</textarea>  
+</div>\`;</pre>  
   </div>
 </div>  
 
@@ -141,53 +128,48 @@ media.outerHTML = \`<div class=${styles.reversed}>
 ## Composing Styles
 <!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-<textarea data-codemirror data-mode="text/x-sass" data-line-numbers="false">
-.common {
-  /\* all the common styles you want \*/
+<pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">.common {
+  /* all the common styles you want */
 }
 
 .normal {
   composes: common;
-  /\* anything that only applies to Normal \*/
+  /* anything that only applies to Normal */
 }
-</textarea>
+</pre>
 
 ------
 
 ## Reusable Parts
 <!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-<textarea data-codemirror data-mode="text/x-sass" data-line-numbers="false">
-.element {
+<pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">.element {
   composes: large from "./typography.css";
   composes: dark-text from "./colors.css";
   composes: padding-all-medium from "./layout.css";
   composes: subtle-shadow from "./effect.css";
-}
-</textarea>
+}</pre>
 
 ------
 
 ## Sharing Across Files
 <!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-<textarea data-codemirror data-mode="text/x-sass" data-line-numbers="false">
-/\* colors.css \*/
+<pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">/* colors.css */
 .primary {
   color: #720;
 }
 .secondary {
   color: #777;
 }
-</textarea>
+</pre>
 
-<textarea data-codemirror data-mode="text/x-sass" data-line-numbers="false">
-.common { /\* font-sizes, padding, border-radius \*/ }
+<pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">.common { /* font-sizes, padding, border-radius */ }
 .normal {
   composes: common;
   composes: primary from "../shared/colors.css";
 }
-</textarea>
+</pre>
 
 ------
 

@@ -175,7 +175,7 @@ User Agent Stylesheets vary from Browser to Browser
 ------
 
 ## Leveraging the Cascade <small>([CodePen](http://codepen.io/elijahmanor/pen/aOmNWq?editors=110))</small><!-- .element style="vertical-align: middle;" -->
-<!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 <div class="Split">
   <div class="Split-column">

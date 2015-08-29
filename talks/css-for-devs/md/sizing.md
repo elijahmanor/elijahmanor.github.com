@@ -159,9 +159,9 @@ html, body {
 }</pre>
   </div>
   <div class="Split-column">
-    <p>`.box1` will have a  `font-size` of `16px` because `1em * 16px = 16px`</p>
-    <p>`.box2` will have a  `font-size` of `32px` because `2em * 16px = 32px`</p>
-    <p>`.box2` will have a  `margin` of `8x` because `0.25em * 32px = 8px`</p>
+    <p class="fragment">`.box1` will have a  `font-size` of `16px` because `1em * 16px = 16px`</p>
+    <p class="fragment">`.box2` will have a  `font-size` of `32px` because `2em * 16px = 32px`</p>
+    <p class="fragment">`.box2` will have a  `margin` of `8x` because `0.25em * 32px = 8px`</p>
   </div>
 </div>
 
@@ -202,9 +202,9 @@ html {
 }</pre>
   </div>
   <div class="Split-column">
-    <p>`.box1` will have a  `font-size` of `16px` because `1em * 16px = 16px`</p>
-    <p>`.box2` will have a  `font-size` of `32px` because `2em * 16px = 32px`</p>
-    <p>`.box2` will have a  `margin` of `4px` because `0.25rem * 16px = 4px`</p>
+    <p class="fragment">`.box1` will have a  `font-size` of `16px` because `1em * 16px = 16px`</p>
+    <p class="fragment">`.box2` will have a  `font-size` of `32px` because `2em * 16px = 32px`</p>
+    <p class="fragment">`.box2` will have a  `margin` of `4px` because `0.25rem * 16px = 4px`</p>
   </div>
 </div>
 

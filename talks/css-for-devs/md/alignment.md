@@ -49,7 +49,7 @@ Thinking about example using floats for layout (grid system), but then trying to
 ------
 
 ## Alignment in CSS is a Pain
-<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
   <div class="Split-column">
