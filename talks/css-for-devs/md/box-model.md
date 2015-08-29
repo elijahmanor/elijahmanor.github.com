@@ -67,6 +67,12 @@
 
 ------
 
+## Y U SO CRAZY!?!
+
+![](./imgs/css-is-painful.gif)
+
+------
+
 ## Smart Box
 <!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob" -->
 
