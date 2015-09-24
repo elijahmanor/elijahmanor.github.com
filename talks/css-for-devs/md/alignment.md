@@ -169,7 +169,9 @@ Float Version
 
 <!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-<iframe src="http://the-echoplex.net/flexyboxes" class="stretch" />
+<h1><a href="http://the-echoplex.net/flexyboxes" data-preview-link>Flexbox Playground</a></h1>
+
+<!--<iframe src="http://the-echoplex.net/flexyboxes" class="stretch" />-->
 
 ------
 

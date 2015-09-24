@@ -142,28 +142,24 @@ html, body {
 ## `em` Example
 <!-- .slide: data-title="Sizing" data-state="backEndBrian juniorJacob" -->
 
-<div class="Split">
-  <div class="Split-column Split-column--30">
-  <pre data-codemirror data-mode="text/css" data-line-numbers="false">
-.container {
+<pre data-codemirror data-mode="text/html" data-line-numbers="false"><div class="container">
+  <div class="box1">
+    <div class="box2"></div>
+  </div>
+</div>
+</pre>
+<pre data-codemirror data-mode="text/css" data-line-numbers="false">.container {
   font-size: 16px;
 }
 
 .box1 {
-  font-size: 1em;
+  font-size: 1em;  /* 1em * 16px = 16px */
 }
 
 .box2 {
-  font-size: 2em;
-  margin: 0.25em;
+  font-size: 2em;  /* 2em * 16px = 32px */
+  margin: 0.25em;  /* 0.25em * 32px = 8px */
 }</pre>
-  </div>
-  <div class="Split-column">
-    <p class="fragment">`.box1` will have a  `font-size` of `16px` because `1em * 16px = 16px`</p>
-    <p class="fragment">`.box2` will have a  `font-size` of `32px` because `2em * 16px = 32px`</p>
-    <p class="fragment">`.box2` will have a  `margin` of `8x` because `0.25em * 32px = 8px`</p>
-  </div>
-</div>
 
 ------
 
@@ -179,34 +175,29 @@ html, body {
   </div>
 </div>
 
-
 ------
 
 ## `rem` Example
 <!-- .slide: data-title="Sizing" data-state="backEndBrian juniorJacob" -->
 
-<div class="Split">
-  <div class="Split-column Split-column--30">
-  <pre data-codemirror data-mode="text/css" data-line-numbers="false">
-html {
+<pre data-codemirror data-mode="text/html" data-line-numbers="false"><div class="container">
+  <div class="box1">
+    <div class="box2"></div>
+  </div>
+</div>
+</pre>
+<pre data-codemirror data-mode="text/css" data-line-numbers="false">html {
   font-size: 16px;
 }
 
 .box1 {
-  font-size: 1rem;
+  font-size: 1rem; /* 1em * 16px = 16px */
 }
 
 .box2 {
-  font-size: 2em;
-  margin: 0.25rem;
+  font-size: 2em;  /* 2em * 16px = 32px */
+  margin: 0.25rem; /* 0.25em * 16 = 4px */
 }</pre>
-  </div>
-  <div class="Split-column">
-    <p class="fragment">`.box1` will have a  `font-size` of `16px` because `1em * 16px = 16px`</p>
-    <p class="fragment">`.box2` will have a  `font-size` of `32px` because `2em * 16px = 32px`</p>
-    <p class="fragment">`.box2` will have a  `margin` of `4px` because `0.25rem * 16px = 4px`</p>
-  </div>
-</div>
 
 ------
 

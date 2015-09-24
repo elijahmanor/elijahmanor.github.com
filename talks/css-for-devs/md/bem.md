@@ -143,6 +143,20 @@ Source: [A BEM syntax with UX in mind](http://simurai.com/blog/2013/10/24/BEM-sy
 
 ------
 
+## Sass 3.3 Parent Selector
+<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+
+<textarea data-codemirror data-mode="text/css">.block {
+  &-element {}
+  &--modifier {}
+}</textarea>
+
+<pre data-codemirror data-mode="text/css">.block {}
+.block-element {}
+.block--modifier {}</pre>
+
+------
+
 ## Media Example with Sass
 <!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob midLevelMelissa overflowYScroll" -->
 

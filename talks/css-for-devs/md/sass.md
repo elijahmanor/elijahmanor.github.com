@@ -47,6 +47,38 @@ body {
 
 ------
 
+## ...but, not too deep!
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob" -->
+
+<div class="Split">
+  <div class="Split-column fragment">
+    <h3>Sass</h3>
+    <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">.widget {
+  .links {
+    li {
+      a { color: #F00; }
+    }
+  }
+}</pre>
+  </div>
+  <div class="Split-column fragment">
+    <h3>CSS</h3>
+    <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">.widget .links li a {
+  color: #F00;
+}</pre>
+    <div class="Specificity fragment">
+      <div class="Specificity-score">
+        <div class="Specificity-value Specificity-value--inline">0</div>
+        <div class="Specificity-value Specificity-value--ids">0</div>
+        <div class="Specificity-value Specificity-value--classes">2</div>
+        <div class="Specificity-value Specificity-value--elements">2</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+------
+
 ## Imports
 <!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob" -->
 
@@ -121,20 +153,81 @@ body {
 
 ------
 
+## ..but, be careful
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+
+<div class="Split">
+  <div class="Split-column fragment">
+    <h3>Sass</h3>
+    <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">.widget {
+  color: blue;
+}
+
+.widget + .widget {
+  color: red;
+}
+
+.superWidget {
+  @extend .widget;
+
+  border-color: blue;
+}</pre>
+  </div>
+  <div class="Split-column fragment">
+    <h3>CSS</h3>
+    <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">.widget, .superWidget {
+  color: blue;
+}
+
+.widget + .widget, .superWidget + .widget, .widget + .superWidget, .superWidget + .superWidget {
+  color: red;
+}
+
+.superWidget {
+  border-color: blue;
+}</pre>
+  </div>
+</div>
+
+------
+
 ## Extending Place Holders
 <!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-<pre data-codemirror data-mode="text/x-sass">%message {
-  border: 1px solid #ccc;
-  padding: 10px;
-  color: #333;
+<div class="Split">
+  <div class="Split-column fragment">
+    <h3>Sass</h3>
+    <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">%widget, .widget {
+  color: blue;
 }
 
-.success {
-  @extend %message;
+.widget + .widget {
+  color: red;
+}
 
-  border-color: green;
-}</pre>
+.superWidget {
+  @extend %widget;
+
+  border-color: blue;
+}
+</pre>
+  </div>
+  <div class="Split-column fragment">
+    <h3>CSS</h3>
+    <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">.superWidget, .widget {
+  color: blue;
+}
+
+.widget + .widget {
+  color: red;
+}
+
+.superWidget {
+  border-color: blue;
+}
+</pre>
+  </div>
+</div>
 
 ------
 
@@ -148,13 +241,32 @@ body {
 ## Scut
 <!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-<pre data-codemirror data-mode="text/x-sass">.eg-absolute-2 {
-  @include scut-absolute(n 0.5em 1em n);
+<div class="Split">
+  <div class="Split-column Split-column--75 fragment">
+    <h3>Sass</h3>
+    <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">.eg-absolute-2 {
+  @include
+    scut-absolute(n .5em 1em n);
 }
 
 .eg-margin-1 {
   @include scut-margin(1em n);
 }</pre>
+  </div>
+  <div class="Split-column fragment">
+    <h3>CSS</h3>
+    <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">.eg-absolute-2 {
+  position: absolute;
+  right: 0.5em;
+  bottom: 1em;
+}
+
+.eg-margin-1 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}</pre>
+  </div>
+</div>
 
 ------
 

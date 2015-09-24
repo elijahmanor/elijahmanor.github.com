@@ -65,7 +65,7 @@ Notes:
 
 ## Back-End Brian
 
-<img src="./imgs/back-end-brian-big.jpg" data-xsrc="http://api.randomuser.me/portraits/men/31.jpg" style="border-radius: 50%; width: 25%;" /><!-- 8, 15, 31,  -->
+<img src="./imgs/brianreese.jpg" data-xsrc="http://api.randomuser.me/portraits/men/31.jpg" style="border-radius: 50%; width: 25%;" /><!-- 8, 15, 31,  -->
 
 ### Computer science major
 
