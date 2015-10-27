@@ -8,15 +8,17 @@ const postal = require('postal');
 const channel = postal.channel('slides');
 
 let SETS = [ // TODO: Have a task that will auto-add setIndex and slideIndex and an empty slide
-  { id: 'Introduction', markdown: './md/introduction.md',  slides: [{ setIndex: 0, slideIndex: 0, content: '<h1>React to the Future</h1>' }] },
-  { id: 'WhatIsReact',  markdown: './md/what-is-react.md', slides: [{ setIndex: 1, slideIndex: 0, content: '<h1>What is React?</h1>' }] },
-  { id: 'Components',   markdown: './md/components.md',    slides: [{ setIndex: 2, slideIndex: 0, content: '<h1>Components</h1>' }] },
-  { id: 'Gotchas',      markdown: './md/gotchas.md',       slides: [{ setIndex: 3, slideIndex: 0, content: '<h1>Gotchas</h1>' }] },
-  { id: 'Flux',         markdown: './md/flux.md',          slides: [{ setIndex: 4, slideIndex: 0, content: '<h1>Flux</h1>' }] },
-  { id: 'Isomorphic',   markdown: './md/isomorphic.md',   slides: [{ setIndex: 5, slideIndex: 0, content: '<h1>Isomorphic</h1>' }] },
-  { id: 'NodeModules',  markdown: './md/node-modules.md',  slides: [{ setIndex: 6, slideIndex: 0, content: '<h1>Node Modules</h1>' }] },
-  { id: 'Conclusion',   markdown: './md/conclusion.md',    slides: [{ setIndex: 7, slideIndex: 0, content: `<h1>Conclusion</h1>` }] },
-  { id: 'Resources',    markdown: './md/resources.md',     slides: [{ setIndex: 8, slideIndex: 0, content: '<h1>Resources</h1>' }] }
+  { id: 'Introduction', markdown: require('!raw!../../md/introduction.md'),  slides: [{ setIndex: 0, slideIndex: 0, content: '<h1>React to the Future</h1>' }] },
+  { id: 'WhatIsReact',  markdown: require('!raw!../../md/what-is-react.md'), slides: [{ setIndex: 1, slideIndex: 0, content: '<h1>What is React?</h1>' }] },
+  { id: 'Components',   markdown: require('!raw!../../md/components.md'),    slides: [{ setIndex: 2, slideIndex: 0, content: '<h1>Components</h1>' }] },
+  { id: 'Gotchas',      markdown: require('!raw!../../md/gotchas.md'),       slides: [{ setIndex: 3, slideIndex: 0, content: '<h1>Gotchas</h1>' }] },
+  { id: 'Styles',       markdown: require('!raw!../../md/styles.md'),        slides: [{ setIndex: 4, slideIndex: 0, content: '<h1>Styles</h1>' }] },
+  { id: 'Flux',         markdown: require('!raw!../../md/flux.md'),          slides: [{ setIndex: 5, slideIndex: 0, content: '<h1>Flux</h1>' }] },
+  { id: 'Isomorphic',   markdown: require('!raw!../../md/isomorphic.md'),    slides: [{ setIndex: 6, slideIndex: 0, content: '<h1>Isomorphic</h1>' }] },
+  { id: 'NodeModules',  markdown: require('!raw!../../md/node-modules.md'),  slides: [{ setIndex: 7, slideIndex: 0, content: '<h1>Node Modules</h1>' }] },
+  { id: 'NpmScripts',   markdown: require('!raw!../../md/npm-scripts.md'),   slides: [{ setIndex: 7, slideIndex: 0, content: '<h1><code>npm</code> Scripts</h1>' }] },
+  { id: 'Conclusion',   markdown: require('!raw!../../md/conclusion.md'),    slides: [{ setIndex: 8, slideIndex: 0, content: `<h1>Conclusion</h1>` }] },
+  { id: 'Resources',    markdown: require('!raw!../../md/resources.md'),     slides: [{ setIndex: 9, slideIndex: 0, content: '<h1>Resources</h1>' }] }
 ];
 
 const SlideStore = Reflux.createStore({

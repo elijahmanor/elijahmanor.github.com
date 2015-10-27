@@ -18,6 +18,16 @@
 
 ---
 
+# How Do They Relate to Angular Directives?
+
+* Isolate Scoped (yield template inside)
+* Element Restricted (doesn't inherit from parent scope)
+* Transcluded Directive (an element, not an attribute)
+
+<small>OH from Ryan Florence on a Podcast</small>
+
+---
+
 # Okay, Okay
 
 > "Talk is cheap. Show me the code." --[Linus Torvalds](http://en.wikiquote.org/wiki/Linus_Torvalds#2000-04)
@@ -379,6 +389,61 @@ var HelloWorld = React.createClass({
 # [Component LifeCycle](https://facebook.github.io/react/docs/component-specs.html#lifecycle-methods)
 
 * **componentWillMount** – Fired once, before initial rendering occurs. Good place to wire-up message listeners. `this.setState` doesn't work here.
+* <div class="dim">**componentDidMount** – Fired once, after initial rendering occurs. Can use `this.getDOMNode()`.</div>
+* <div class="dim">**componentDidUpdate** - Fired after the component's updates are made to the DOM. Can use `this.getDOMNode()` for updates.</div>
+* <div class="dim">**componentWillReceiveProps** – Fired when a component is receiving new props. You might want to `this.setState` depending on the props.</div>
+* <div class="dim">**shouldComponentUpdate** - Fired before rendering when new props or state are received. `return false` if you know an update isn't needed.</div>
+* <div class="dim">**componentWillUnmount** – Fired immediately before a component is unmounted from the DOM. Good place to remove message listeners or general clean up.</div>
+
+---
+
+# [Component LifeCycle](https://facebook.github.io/react/docs/component-specs.html#lifecycle-methods)
+
+* **componentWillMount** – Fired once, before initial rendering occurs. Good place to wire-up message listeners. `this.setState` doesn't work here.
+* **componentDidMount** – Fired once, after initial rendering occurs. Can use `this.getDOMNode()`.
+* <div class="dim">**componentDidUpdate** - Fired after the component's updates are made to the DOM. Can use `this.getDOMNode()` for updates.</div>
+* <div class="dim">**componentWillReceiveProps** – Fired when a component is receiving new props. You might want to `this.setState` depending on the props.</div>
+* <div class="dim">**shouldComponentUpdate** - Fired before rendering when new props or state are received. `return false` if you know an update isn't needed.</div>
+* <div class="dim">**componentWillUnmount** – Fired immediately before a component is unmounted from the DOM. Good place to remove message listeners or general clean up.</div>
+
+---
+
+# [Component LifeCycle](https://facebook.github.io/react/docs/component-specs.html#lifecycle-methods)
+
+* **componentWillMount** – Fired once, before initial rendering occurs. Good place to wire-up message listeners. `this.setState` doesn't work here.
+* **componentDidMount** – Fired once, after initial rendering occurs. Can use `this.getDOMNode()`.
+* **componentDidUpdate** - Fired after the component's updates are made to the DOM. Can use `this.getDOMNode()` for updates.
+* <div class="dim">**componentWillReceiveProps** – Fired when a component is receiving new props. You might want to `this.setState` depending on the props.</div>
+* <div class="dim">**shouldComponentUpdate** - Fired before rendering when new props or state are received. `return false` if you know an update isn't needed.</div>
+* <div class="dim">**componentWillUnmount** – Fired immediately before a component is unmounted from the DOM. Good place to remove message listeners or general clean up.</div>
+
+---
+
+# [Component LifeCycle](https://facebook.github.io/react/docs/component-specs.html#lifecycle-methods)
+
+* **componentWillMount** – Fired once, before initial rendering occurs. Good place to wire-up message listeners. `this.setState` doesn't work here.
+* **componentDidMount** – Fired once, after initial rendering occurs. Can use `this.getDOMNode()`.
+* **componentDidUpdate** - Fired after the component's updates are made to the DOM. Can use `this.getDOMNode()` for updates.
+* **componentWillReceiveProps** – Fired when a component is receiving new props. You might want to `this.setState` depending on the props.
+* <div class="dim">**shouldComponentUpdate** - Fired before rendering when new props or state are received. `return false` if you know an update isn't needed.</div>
+* <div class="dim">**componentWillUnmount** – Fired immediately before a component is unmounted from the DOM. Good place to remove message listeners or general clean up.</div>
+
+---
+
+# [Component LifeCycle](https://facebook.github.io/react/docs/component-specs.html#lifecycle-methods)
+
+* **componentWillMount** – Fired once, before initial rendering occurs. Good place to wire-up message listeners. `this.setState` doesn't work here.
+* **componentDidMount** – Fired once, after initial rendering occurs. Can use `this.getDOMNode()`.
+* **componentDidUpdate** - Fired after the component's updates are made to the DOM. Can use `this.getDOMNode()` for updates.
+* **componentWillReceiveProps** – Fired when a component is receiving new props. You might want to `this.setState` depending on the props.
+* **shouldComponentUpdate** - Fired before rendering when new props or state are received. `return false` if you know an update isn't needed.
+* <div class="dim">**componentWillUnmount** – Fired immediately before a component is unmounted from the DOM. Good place to remove message listeners or general clean up.</div>
+
+---
+
+# [Component LifeCycle](https://facebook.github.io/react/docs/component-specs.html#lifecycle-methods)
+
+* **componentWillMount** – Fired once, before initial rendering occurs. Good place to wire-up message listeners. `this.setState` doesn't work here.
 * **componentDidMount** – Fired once, after initial rendering occurs. Can use `this.getDOMNode()`.
 * **componentDidUpdate** - Fired after the component's updates are made to the DOM. Can use `this.getDOMNode()` for updates.
 * **componentWillReceiveProps** – Fired when a component is receiving new props. You might want to `this.setState` depending on the props.
@@ -646,37 +711,129 @@ React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
 
 # More ES6
 
-Feel free to use ES6 in your JSX files.
+Feel free to use ES6 & ES7 in your JSX files.
 
 Go ahead and use Babel to convert the rest of your files.
 
 * [Learn More about ES6](http://babeljs.io/docs/learn-es6/)
 * [Try Out Babel Online](http://babeljs.io/)
 
+---
+
 <!--
+{
+  "className": "Slide--static"
+}
+-->
 
 # Mixins
+
+<div class="Split">
+  <div class="Split-column Split-column--65">
+    <pre data-line="1,12,14" class="language-jsx language--clean language--small"><code>
+var SetIntervalMixin = {
+  componentWillMount: function() { this.set = []; },
+  setInterval: function() {
+    this.set.push(setInterval.apply(null, arguments));
+  },
+  componentWillUnmount: function() {
+    this.set.forEach(clearInterval);
+  }
+};
+
+var TickTock = React.createClass({
+  mixins: [SetIntervalMixin],
+  componentDidMount: function() {
+    this.setInterval(this.tick, 1000);
+  },
+  tick: function() {
+    this.setState({seconds: this.state.seconds + 1});
+  },
+  render: function() {
+    return &lt;p&gt;
+      Running for {this.state.seconds} seconds.
+    &lt;/p&gt;;
+  }
+});
+
+ReactDOM.render(&lt;TickTock /&gt;,
+  document.getElementById('example'));</code></pre>
+  </div>
+  <div class="Split-column Split-column--25">
+    <p>1. Define the `SetIntervalMixin` Mixin</p>
+    <p>12. Reference `SetIntervalMixin` in the `mixins` array</p>
+    <p>14. Call `setInterval` from the mixin</p>
+  </div>
+</div>
 
 ---
 
-# Mixins
+# Mixins in ES6 Classes
 
-Must use `React.createClass`. Unfortuneately the ES6 `class` syntax doesn't support Mixins as of yet.
+In order to use mixins you must use `React.createClass`.
 
-# Use PureRenderMixin
+The ES6 `class` syntax doesn't support Mixins.
 
--->
+However, you can use ES7 decorators instead.
+
+* [ES7 and Beyond](https://speakerdeck.com/jfairbank/html5devconf-es7-and-beyond) slides by Jeremy Fairbank ([@elpapapollo](https://twitter.com/elpapapollo))
+
+---
 
 <!--
-
-# Angular Directive
-
-* Isolate Scoped (yield template inside)
-* Element Restricted (doesn't inherit from parent scope)
-* Transcluded Directive (an element, not an attribute)
-
-components are
-reusable
-composable
-testable
+{
+  "className": "Slide--static"
+}
 -->
+
+# ES7 Decorators
+
+<div class="Split">
+  <div class="Split-column Split-column--65">
+    <pre data-line="1,11-12,16,23" class="language-jsx language--clean language--small"><code>
+let setIntervalDecorator = (ComposedComponent) =>
+  class extends React.Component {
+  componentWillMount() { this.set = []; }
+  setInterval() {
+    this.set.push(setInterval.apply(null, arguments));
+  }
+  componentWillUnmount() {
+    this.set.forEach(clearInterval);
+  }
+  render() {
+    return &lt;ComposedComponent {...this.props}
+      onSetInterval={::this.setInterval} /&gt;;
+  }
+};
+
+@setIntervalDecorator
+class TickTock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { seconds: 0 };
+  }
+  componentDidMount() {
+    this.props.onSetInterval(::this.tick, 1000);
+  }
+  tick() {
+    this.setState({seconds: this.state.seconds + 1});
+  }
+  render() {
+    return &lt;p&gt;
+      Running for {this.state.seconds} seconds.
+    &lt;/p&gt;;
+  }
+}
+
+ReactDOM.render(&lt;TickTock /&gt;,
+  document.getElementById('example'));</code></pre>
+  </div>
+  <div class="Split-column Split-column--25">
+    <p>1. Define the `setIntervalDecorator` Decorator</p>
+    <p>11-12. Wrap the Component with a decorated version</p>
+    <p>16. Decorate your class with `setIntervalDecorator`</p>
+    <p>23. Invoke method passed in by decorated Component</p>
+  </div>
+</div>
+
+<!-- # Use PureRenderMixin -->

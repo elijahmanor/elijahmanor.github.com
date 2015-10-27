@@ -1,6 +1,5 @@
 'use strict';
 
-const reqwest = require('reqwest');
 const postal = require('postal');
 const channel = postal.channel('slides');
 const marked = require('marked');
@@ -25,11 +24,8 @@ class SlideApi {
     let slides = this.slides.filter(slide => !!slide.markdown);
 
     slides.forEach(slide => {
-      reqwest({ url: slide.markdown })
-      .then(response => {
-        let content = marked(response);
-        channel.publish('slide.updated', { id: slide.id, content });
-      });
+      let content = marked(slide.markdown);
+      channel.publish('slide.updated', { id: slide.id, content });
     });
 
     return this.slides;

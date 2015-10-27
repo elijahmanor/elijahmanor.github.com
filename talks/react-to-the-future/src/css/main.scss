@@ -251,3 +251,12 @@ pre[data-line].language--small {
   top: 50%;
   transform: translateY(-50%);
 }
+
+.dim, .dim * {
+  color: #444 !important;
+}
+
+.spancode {
+  font-family: Consolas;
+  background-color: #272822;
+}

@@ -20,29 +20,7 @@
 
 ---
 
-# What is Flux?
-
-<div class="mermaid">
-  graph LR;
-
-  classDef action fill:#65B9CA,stroke:#FFFFFF,stroke-width:4px;
-  classDef dispatcher fill:#444142,stroke:#FFFFFF,stroke-width:4px;
-  classDef store fill:#294552,stroke:#FFFFFF,stroke-width:4px;
-  classDef view fill:#5FAF6A,stroke:#FFFFFF,stroke-width:4px;
-
-  Action(Action)-->Dispatcher(Dispatcher);
-  Dispatcher-->Store(Store);
-  Store-->View(View);
-
-  class Action action;
-  class Dispatcher dispatcher;
-  class Store store;
-  class View view;
-</div>
-
----
-
-# What is Flux... Really?
+# What is Flux
 
 <div class="mermaid">
   graph LR;
@@ -63,6 +41,54 @@
   class Store store;
   class View view;
 </div>
+
+---
+
+# A Flux Story
+
+![](./img/flux-1.png)
+
+<small>[A cartoon guide to Flux](https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207#.yr9pjvwjt) by [@linclark](https://twitter.com/linclark)</small>
+
+---
+
+# A Flux Story
+
+![](./img/flux-2.png)
+
+<small>[A cartoon guide to Flux](https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207#.yr9pjvwjt) by [@linclark](https://twitter.com/linclark)</small>
+
+---
+
+# A Flux Story
+
+![](./img/flux-3.png)
+
+<small>[A cartoon guide to Flux](https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207#.yr9pjvwjt) by [@linclark](https://twitter.com/linclark)</small>
+
+---
+
+# A Flux Story
+
+![](./img/flux-4.png)
+
+<small>[A cartoon guide to Flux](https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207#.yr9pjvwjt) by [@linclark](https://twitter.com/linclark)</small>
+
+---
+
+# A Flux Story
+
+![](./img/flux-5.png)
+
+<small>[A cartoon guide to Flux](https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207#.yr9pjvwjt) by [@linclark](https://twitter.com/linclark)</small>
+
+---
+
+# A Flux Story
+
+![](./img/flux-6.png)
+
+<small>[A cartoon guide to Flux](https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207#.yr9pjvwjt) by [@linclark](https://twitter.com/linclark)</small>
 
 ---
 
@@ -97,6 +123,10 @@
 # What Do I Use?
 
 ## Reflux
+
+---
+
+# Reflux
 
 <div class="mermaid">
   graph LR;

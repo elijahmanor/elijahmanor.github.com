@@ -1,9 +1,9 @@
-const React = require('react');
-const Link = require('react-router').Link;
+let React = require('react/addons');
+let Link = require('react-router').Link;
 
 const Welcome = React.createClass({
   render() {
-    var slide = { setIndex: 0, slideIndex: 0 };
+    let slide = { setIndex: 0, slideIndex: 0 };
 
     return (
       <div className="Welcome">
@@ -13,8 +13,6 @@ const Welcome = React.createClass({
       </div>
     );
   }
-
-  // <li><Link to="list">List</Link></li>
 });
 
 module.exports = Welcome;

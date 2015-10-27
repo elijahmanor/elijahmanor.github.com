@@ -3,13 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>React to the Future</title>
-  <link rel="stylesheet" href="vendor/prism.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link href="./vendor/prism.css" rel="stylesheet">
+  {% for (var css in o.htmlWebpackPlugin.files.css) { %}
+    <link data-iframe-behavior="clone" href="{%= o.htmlWebpackPlugin.files.css[css] %}" rel="stylesheet">
+  {% } %}
 </head>
 <body>
-  <script src="vendor/mermaid.full.js"></script>
-  <script src="vendor/prism.js"></script>
-  <script src="js/index.js"></script>
+  <script src="./vendor/prism.js"></script>
+  <script src="./vendor/mermaid.full.js"></script>
+  {% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
+    <script src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry %}"></script>
+  {% } %}
   <div class="share-reveal" style="display: block; position: fixed; bottom: 0.5em; transform: translateX(-50%); left: 50%; z-index: 20;">
     <a href="https://twitter.com/elijahmanor" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @elijahmanor</a>
     <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://elijahmanor.com/talks/react-to-the-future" data-text="#ReactJS to the Future" data-via="elijahmanor" data-size="large">Tweet</a>

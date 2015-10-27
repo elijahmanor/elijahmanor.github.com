@@ -1,0 +1,10 @@
+options:
+  formatter: stylish
+files:
+  include: 'src/css/**/*.s+(a|c)ss'
+  ignore:
+    - 'sass/vendor/**/*.*'
+rules:
+  no-warn: 1
+  no-debug: 1
+  no-important: 1
