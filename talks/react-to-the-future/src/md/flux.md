@@ -102,16 +102,17 @@
       <li>[Reflux](https://github.com/spoike/refluxjs)</li>
       <li>[Alt](https://github.com/goatslacker/alt)</li>
       <li>[McFly](https://github.com/kenwheeler/mcfly)</li>
+      <li>[Flummox](https://github.com/acdlite/flummox)</li>
     </ul>
   </div>
   <div class="Split-column">
     <ul>
-    <li>[Flummox](https://github.com/acdlite/flummox)</li>
     <li>[Lux](https://github.com/LeanKit-Labs/lux.js)</li>
     <li>[Material Flux](https://github.com/azu/material-flux)</li>
     <li>[Marty.js](http://martyjs.org)</li>
     <li>[Fluxxor](http://fluxxor.com)</li>
     <li>[Delorean.js](http://deloreanjs.com)</li>
+    <li>[Redux](https://github.com/rackt/redux)</li>
     </ul>
   </div>
 </div>
