@@ -453,7 +453,10 @@ pre[data-line] { padding: 1em; }
   position: relative;
 }
 
-.slide--demoPositionFixed .present[data-markdown] { height: 100vh; overflow-y: scroll; }
+.slide--demoPositionFixed .present[data-markdown],
+.slide--scrollable .present[data-markdown] {
+  height: 100vh; overflow-y: scroll;
+}
 .DemoPositionFixed {
   border: 1px solid blue !important;
   padding: 1em !important;

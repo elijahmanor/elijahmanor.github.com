@@ -27,7 +27,7 @@ Notes:
 ## Problem
 <!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob" -->
 
-<h3 class="blazing">All CSS is Global!</h3>
+<h1 class="blazing fragment">All CSS is Global!</h1>
 
 ------
 
@@ -57,7 +57,7 @@ Source: [Origins of the BEM Methodology](https://en.bem.info/method/#origins-of-
 ## Examples
 <!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob codeMirror--xlg" -->
 
-<pre data-codemirror data-mode="text/css">
+<pre data-codemirror data-mode="text/x-sass">
 /* Block */
 .block-name {}
 
@@ -75,7 +75,7 @@ Source: [Origins of the BEM Methodology](https://en.bem.info/method/#origins-of-
 ### Modified BEM Syntax for Usability
 <!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob midLevelMelissa codeMirror--xlg" -->
 
-<pre data-codemirror data-mode="text/css">
+<pre data-codemirror data-mode="text/x-sass">
 /* Block */
 .BlockName {}
 
@@ -137,30 +137,44 @@ Source: [A BEM syntax with UX in mind](http://simurai.com/blog/2013/10/24/BEM-sy
 ## Sass @at-root
 <!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-<textarea data-codemirror data-mode="text/css">
+<div class="Split">
+  <div class="Split-column Split-column--75 fragment">
+    <h3>Sass</h3>
+    <textarea data-codemirror data-mode="text/x-sass">
 .block {
-  @at-root #{&}__element {}
+  @at-root #{&}\__element {}
   @at-root #{&}--modifier {}
 }</textarea>
-
-<pre data-codemirror data-mode="text/css">
+  </div>
+  <div class="Split-column fragment">
+    <h3>CSS</h3>
+    <pre data-codemirror data-mode="text/css">
 .block {}
 .block__element {}
 .block--modifier {}</pre>
+  </div>
+</div>
 
 ------
 
 ## Sass 3.3 Parent Selector
 <!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-<textarea data-codemirror data-mode="text/css">.block {
+<div class="Split">
+  <div class="Split-column Split-column--75 fragment">
+    <h3>Sass</h3>
+    <textarea data-codemirror data-mode="text/x-sass">.block {
   &-element {}
   &--modifier {}
 }</textarea>
-
-<pre data-codemirror data-mode="text/css">.block {}
+  </div>
+  <div class="Split-column fragment">
+    <h3>CSS</h3>
+    <pre data-codemirror data-mode="text/css">.block {}
 .block-element {}
 .block--modifier {}</pre>
+  </div>
+</div>
 
 ------
 

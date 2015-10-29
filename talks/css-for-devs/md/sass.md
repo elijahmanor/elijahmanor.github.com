@@ -176,7 +176,10 @@ body {
 ## Extend
 <!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-<pre data-codemirror data-mode="text/x-sass">.message {
+<div class="Split">
+  <div class="Split-column fragment">
+    <h3>Sass</h3>
+    <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">.message {
   border: 1px solid #ccc;
   padding: 10px;
   color: #333;
@@ -187,6 +190,21 @@ body {
 
   border-color: green;
 }</pre>
+  </div>
+  <div class="Split-column fragment">
+    <h3>CSS</h3>
+    <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">.message, .success {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  border-color: green;
+}</pre>
+  </div>
+</div>
+
 
 ------
 
@@ -313,7 +331,7 @@ body {
 * Ruby Sass
 * LibSass
 
-[Sass Compatibility Guide](https://sass-compatibility.github.io/)
+<a href="https://sass-compatibility.github.io/" data-preview-link>Sass Compatibility Guide</a>
 
 ------
 
