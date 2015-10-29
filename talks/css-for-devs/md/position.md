@@ -293,6 +293,68 @@
 
 ------
 
+## Sticky
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+
+<div class="caniuse" data-feature="css-sticky"></div>
+
+------
+
+## [Sticky: Example <sup><svg style="width: 1rem; height: 1rem;" fill="white" xmlns="http://www.w3.org/2000/svg" data-icon="external-link" viewBox="0 0 16 20"><path d="M11 0l1.78 1.78-.5.5-4 4-.687.72L9 8.406l.718-.688 4-4 .5-.5 1.78 1.78V0h-5zM0 2v14h14V8h-2v6H2V4h6V2H0z"/></svg></sup>](http://codepen.io/elijahmanor/pen/MaXavG#0)
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+
+<div class="Split">
+  <div class="Split-column Split-column--50">
+    <pre data-codemirror data-mode="text/html"><h1>Sticky</h1>
+<nav>
+  <ul>
+    <li>Home</li>
+    <li>Contact</li>
+  </ul>
+</nav>
+<p>Lorem ipsum...</p>
+</pre>
+    <pre data-codemirror data-mode="text/css" data-lines="5">nav {
+  background: blue;
+  width: 100%;
+  height: 2rem;
+  line-height: 2rem;
+  position: sticky;
+}</pre>
+  </div>
+  <div class="Split-column Split-column--50">
+    <iframe height='383' scrolling='no' src='//codepen.io/elijahmanor/embed/MaXavG/?height=383&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/MaXavG/'>MaXavG</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
+    </iframe>
+  </div>
+</div>
+
+------
+
+## Sticky Gotchas
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+
+* <!-- .element: class="fragment" data-fragment-index="1" -->Unfortunately `position: sticky;` only works in Firefox under an `about:config` preference of `layout.css.sticky.enabled` and the feature was recently removed from Chrome to be redone later
+* <!-- .element: class="fragment" data-fragment-index="2" -->Until then you can wire-up your own or use a shim/polyfill such as [fixed-sticky](https://github.com/filamentgroup/fixed-sticky) or [stickyfill](https://github.com/wilddeer/stickyfill)
+
+------
+
+## Naive Sticky Example
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+
+<textarea data-codemirror data-mode="text/javascript" data-line-numbers="false">
+var nav = document.querySelector('nav')
+var navPosition = nav.getBoundingClientRect().top;
+
+window.addEventListener('scroll', function() {
+  nav.classList.toggle('sticky',
+    window.pageYOffset >= navPosition);
+});
+</textarea>
+
+<small>Use one of the shim/polyfills instead</small>
+
+------
+
 ## Resources
 <!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
 

@@ -16,6 +16,31 @@ Reveal.addEventListener('slidechanged', function(event) {
       }
     }
     document.querySelector('#outline').innerHTML = items;
+  } else if (~state.indexOf('sticky')) {
+    // var stickyElements = document.getElementsByClassName('sticky');
+    // for (var i = stickyElements.length - 1; i >= 0; i--) {
+    //   Stickyfill.add(stickyElements[i]);
+    // }
+
+    var menu = document.querySelector('.sticky');
+    var menuPosition = menu.getBoundingClientRect();
+    var placeholder = document.createElement('div');
+    placeholder.style.width = menuPosition.width + 'px';
+    placeholder.style.height = menuPosition.height + 'px';
+    var isAdded = false;
+
+    document.querySelector('section [data-markdown].present').addEventListener('scroll', function() {
+      console.log('scroll');
+      if (this.scrollTop >= menuPosition.top && !isAdded) {
+        menu.classList.add('sticky');
+        menu.parentNode.insertBefore(placeholder, menu);
+        isAdded = true;
+      } else if (this.scrollTop < menuPosition.top && isAdded) {
+        menu.classList.remove('sticky');
+        menu.parentNode.removeChild(placeholder);
+        isAdded = false;
+      }
+    });
   }
 
   initCodeMirror(event.currentSlide);

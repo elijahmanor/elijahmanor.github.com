@@ -180,6 +180,7 @@
 ------
 
 ## Now That I Know, <br/>Where Shall I Go?
+<!-- .slide: data-title="Specificity" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 * <!-- .element: class="fragment" data-fragment-index="1" -->Try to keep your specificity score as low as possible
 * <!-- .element: class="fragment" data-fragment-index="2" -->BEM `&&` SUIT CSS help address high specificity (wait for it)

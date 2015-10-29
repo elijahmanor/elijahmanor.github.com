@@ -6,6 +6,7 @@
 ------
 
 ## Avoiding Pixels
+<!-- .slide: data-title="Sizing" data-state="backEndBrian juniorJacob" -->
 
 You've probably heard to stay away from pixels...
 
