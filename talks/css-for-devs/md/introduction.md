@@ -1,4 +1,5 @@
 # CSS for Developers
+<!-- .slide: data-state="introduction" -->
 
 <div class="CSSForDevelopers">
   <div class="CSSForDevelopers-text">CSS IS AWESOME</div>
@@ -19,7 +20,7 @@ Notes:
 ------
 
 ## `me.json`
-<!-- .slide: data-state="codeMirror--xsm" -->
+<!-- .slide: data-state="me codeMirror--xsm" -->
 
 <div class="Split">
   <div class="Split-column">
@@ -46,7 +47,7 @@ Notes:
     <img src="./imgs/ramsey-solutions.svg" />
     <img src="./imgs/everydollar.svg" />
   </div>
-</div>  
+</div>
 
 ------
 
@@ -65,7 +66,7 @@ Notes:
 
 ## Back-End Brian
 
-<img src="./imgs/brianreese.jpg" data-xsrc="http://api.randomuser.me/portraits/men/31.jpg" style="border-radius: 50%; width: 25%;" /><!-- 8, 15, 31,  -->
+<img src="./imgs/back-end-brian-big.jpg" data-xsrc="http://api.randomuser.me/portraits/men/31.jpg" style="border-radius: 50%; width: 25%;" /><!-- 8, 15, 31,  -->
 
 ### Computer science major
 
@@ -97,6 +98,13 @@ Notes:
 * Pretty comfortable with current set of skills
 * Can get the job done, but it can be somewhat painful
 * CSS quickly gets out of hand and hard to maintain
+
+------
+
+## Outline
+<!-- .slide: data-state="outline" -->
+
+<div><ul id="outline"></ul></div>
 
 Notes:
 

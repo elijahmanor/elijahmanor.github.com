@@ -154,7 +154,7 @@
       <div class="Specificity-value Specificity-value--ids">0</div>
       <div class="Specificity-value Specificity-value--classes">0</div>
       <div class="Specificity-value Specificity-value--elements">0</div>
-    </div>  
+    </div>
   </div>
 
   <div class="Specificity">
@@ -164,7 +164,7 @@
       <div class="Specificity-value Specificity-value--ids">0</div>
       <div class="Specificity-value Specificity-value--classes">0</div>
       <div class="Specificity-value Specificity-value--elements">0</div>
-    </div>  
+    </div>
   </div>
 
   <button>May the odds be ever in your favor</button>
@@ -176,6 +176,14 @@
 <!-- .slide: data-title="Specificity" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 <img src="./imgs/mild-shock.gif" style="height: 450px;" />
+
+------
+
+## Now That I Know, <br/>Where Shall I Go?
+
+* <!-- .element: class="fragment" data-fragment-index="1" -->Try to keep your specificity score as low as possible
+* <!-- .element: class="fragment" data-fragment-index="2" -->BEM `&&` SUIT CSS help address high specificity (wait for it)
+* <!-- .element: class="fragment" data-fragment-index="3" --> Lean towards `.Class`, not `#Id` selectors
 
 ------
 

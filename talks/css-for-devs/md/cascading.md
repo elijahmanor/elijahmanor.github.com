@@ -5,7 +5,7 @@
 
 ------
 
-## Scenario <small>([CodePen](http://codepen.io/elijahmanor/pen/pJEyRE?editors=110))</small><!-- .element style="vertical-align: middle;" -->
+## [Scenario <sup><svg style="width: 1rem; height: 1rem;" fill="white" xmlns="http://www.w3.org/2000/svg" data-icon="external-link" viewBox="0 0 16 20"><path d="M11 0l1.78 1.78-.5.5-4 4-.687.72L9 8.406l.718-.688 4-4 .5-.5 1.78 1.78V0h-5zM0 2v14h14V8h-2v6H2V4h6V2H0z"/></svg></sup>](http://codepen.io/elijahmanor/pen/pJEyRE?editors=110)
 <!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob" -->
 
 Have you ever done this?
@@ -40,7 +40,7 @@ h1 {
 
 ------
 
-## Scenario <small>([CodePen](http://codepen.io/elijahmanor/pen/pJEyRE?editors=110))</small><!-- .element style="vertical-align: middle;" -->
+[Scenario <sup><svg style="width: 1rem; height: 1rem;" fill="white" xmlns="http://www.w3.org/2000/svg" data-icon="external-link" viewBox="0 0 16 20"><path d="M11 0l1.78 1.78-.5.5-4 4-.687.72L9 8.406l.718-.688 4-4 .5-.5 1.78 1.78V0h-5zM0 2v14h14V8h-2v6H2V4h6V2H0z"/></svg></sup>](http://codepen.io/elijahmanor/pen/pJEyRE?editors=110)
 <!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob" -->
 
 Repetitive Properties! (non-DRY)
@@ -74,8 +74,7 @@ h1 {
   </div>
 </div>
 
-------
-
+<!--
 ## Importance: Sources
 <!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob" -->
 
@@ -86,6 +85,7 @@ h1 {
 3. Author <p>Developer specified style sheets (in document or external)</p>
 
 Resource: [W3C: The Cascade](http://www.w3.org/TR/CSS2/cascade.html#cascade)
+-->
 
 ------
 
@@ -112,7 +112,7 @@ User Agent Stylesheets vary from Browser to Browser
 
 ------
 
-## [Cascaded properties](http://www.w3.org/TR/CSS21/propidx.html)
+## [Cascaded properties <sup><svg style="width: 1rem; height: 1rem;" fill="white" xmlns="http://www.w3.org/2000/svg" data-icon="external-link" viewBox="0 0 16 20"><path d="M11 0l1.78 1.78-.5.5-4 4-.687.72L9 8.406l.718-.688 4-4 .5-.5 1.78 1.78V0h-5zM0 2v14h14V8h-2v6H2V4h6V2H0z"/></svg></sup>](http://www.w3.org/TR/CSS21/propidx.html)
 <!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
@@ -146,7 +146,7 @@ User Agent Stylesheets vary from Browser to Browser
 
 ------
 
-## Making Non-Inherited Properties Cascade <small>([CodePen](http://codepen.io/elijahmanor/pen/bdwpvE?editors=110))</small><!-- .element style="vertical-align: middle;" -->
+## [Making Non-Inherited Properties Cascade <sup><svg style="width: 1rem; height: 1rem;" fill="white" xmlns="http://www.w3.org/2000/svg" data-icon="external-link" viewBox="0 0 16 20"><path d="M11 0l1.78 1.78-.5.5-4 4-.687.72L9 8.406l.718-.688 4-4 .5-.5 1.78 1.78V0h-5zM0 2v14h14V8h-2v6H2V4h6V2H0z"/></svg></sup>](http://codepen.io/elijahmanor/pen/bdwpvE?editors=110)
 <!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 <div class="Split">
@@ -174,7 +174,7 @@ User Agent Stylesheets vary from Browser to Browser
 
 ------
 
-## Leveraging the Cascade <small>([CodePen](http://codepen.io/elijahmanor/pen/aOmNWq?editors=110))</small><!-- .element style="vertical-align: middle;" -->
+## [Leveraging the Cascade <sup><svg style="width: 1rem; height: 1rem;" fill="white" xmlns="http://www.w3.org/2000/svg" data-icon="external-link" viewBox="0 0 16 20"><path d="M11 0l1.78 1.78-.5.5-4 4-.687.72L9 8.406l.718-.688 4-4 .5-.5 1.78 1.78V0h-5zM0 2v14h14V8h-2v6H2V4h6V2H0z"/></svg></sup>](http://codepen.io/elijahmanor/pen/aOmNWq?editors=110)
 <!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 <div class="Split">

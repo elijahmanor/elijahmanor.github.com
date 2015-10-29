@@ -5,7 +5,17 @@
 
 ------
 
-## Scenario <small>([CodePen](http://codepen.io/elijahmanor/pen/VLKaVN?editors=110))</small><!-- .element style="vertical-align: middle;" -->
+## Avoiding Pixels
+
+You've probably heard to stay away from pixels...
+
+* <!-- .element: class="fragment" data-fragment-index="1" -->Historically there were issues with pixels in oldIE (6 & 7) when zooming
+* <!-- .element: class="fragment" data-fragment-index="2" -->Also pixels (fixed-sized unit) encouraged pixel-perfect representation in a world of multiple devices
+* <!-- .element: class="fragment" data-fragment-index="3" -->Relative units open up the ability to adjust fonts, margin, & padding based on breakpoints
+
+------
+
+## [Scenario <sup><svg style="width: 1rem; height: 1rem;" fill="white" xmlns="http://www.w3.org/2000/svg" data-icon="external-link" viewBox="0 0 16 20"><path d="M11 0l1.78 1.78-.5.5-4 4-.687.72L9 8.406l.718-.688 4-4 .5-.5 1.78 1.78V0h-5zM0 2v14h14V8h-2v6H2V4h6V2H0z"/></svg></sup>](http://codepen.io/elijahmanor/pen/VLKaVN?editors=110)
 <!-- .slide: data-title="Sizing" data-state="backEndBrian juniorJacob" -->
 
 Have you ever done this?
@@ -46,7 +56,7 @@ html, body {
 
 ------
 
-## Scenario <small>([CodePen](http://codepen.io/elijahmanor/pen/VLKaVN?editors=110))</small><!-- .element style="vertical-align: middle;" -->
+## [Scenario <sup><svg style="width: 1rem; height: 1rem;" fill="white" xmlns="http://www.w3.org/2000/svg" data-icon="external-link" viewBox="0 0 16 20"><path d="M11 0l1.78 1.78-.5.5-4 4-.687.72L9 8.406l.718-.688 4-4 .5-.5 1.78 1.78V0h-5zM0 2v14h14V8h-2v6H2V4h6V2H0z"/></svg></sup>](http://codepen.io/elijahmanor/pen/VLKaVN?editors=110)
 <!-- .slide: data-title="Sizing" data-state="backEndBrian juniorJacob" -->
 
 Ever Growing Fonts!
@@ -148,9 +158,7 @@ html, body {
   </div>
 </div>
 </pre>
-<pre data-codemirror data-mode="text/css" data-line-numbers="false">.container {
-  font-size: 16px;
-}
+<pre data-codemirror data-mode="text/css" data-line-numbers="false">.container { font-size: 16px; }
 
 .box1 {
   font-size: 1em;  /* 1em * 16px = 16px */
@@ -166,14 +174,7 @@ html, body {
 ## `rem`
 <!-- .slide: data-title="Sizing" data-state="backEndBrian juniorJacob" -->
 
-<div class="Split">
-  <div class="Split-column">
-    <img src="./imgs/rem.png" style="" />
-  </div>
-  <div class="Split-column">
-    <blockquote>"In the case of rem units, however, the font-size is dependent on the value of the root element (or the html element)." --<a href="https://css-tricks.com/almanac/properties/f/font-size/">CSS Almanac: font-size</a>
-  </div>
-</div>
+> "In the case of rem units, however, the font-size is dependent on the value of the root element (or the html element)." --<a href="https://css-tricks.com/almanac/properties/f/font-size/">CSS Almanac: font-size
 
 ------
 
@@ -186,9 +187,7 @@ html, body {
   </div>
 </div>
 </pre>
-<pre data-codemirror data-mode="text/css" data-line-numbers="false">html {
-  font-size: 16px;
-}
+<pre data-codemirror data-mode="text/css" data-line-numbers="false">html { font-size: 16px; }
 
 .box1 {
   font-size: 1rem; /* 1em * 16px = 16px */

@@ -100,7 +100,7 @@ Thinking about example using floats for layout (grid system), but then trying to
 ### [Centering in CSS: A Complete Guide](https://css-tricks.com/centering-css-complete-guide/)
 <!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-<iframe class="stretch" src="https://css-tricks.com/centering-css-complete-guide/" />
+<iframe style="background-color: white;" class="stretch" src="https://css-tricks.com/centering-css-complete-guide/" />
 
 ------
 

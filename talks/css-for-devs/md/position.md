@@ -5,7 +5,7 @@
 
 ------
 
-## Scenario <small>([CodePen](http://codepen.io/elijahmanor/pen/GJjJRP?editors=110))</small><!-- .element style="vertical-align: middle;" -->
+## [Scenario <sup><svg style="width: 1rem; height: 1rem;" fill="white" xmlns="http://www.w3.org/2000/svg" data-icon="external-link" viewBox="0 0 16 20"><path d="M11 0l1.78 1.78-.5.5-4 4-.687.72L9 8.406l.718-.688 4-4 .5-.5 1.78 1.78V0h-5zM0 2v14h14V8h-2v6H2V4h6V2H0z"/></svg></sup>](http://codepen.io/elijahmanor/pen/GJjJRP?editors=110)
 <!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob backgroundGif" data-background="./imgs/css-is-painful.gif" -->
 
 <div class="Split">
@@ -106,7 +106,7 @@
 
 ------
 
-## Static: Example <small>([CodePen](http://codepen.io/elijahmanor/pen/rVMVjw))</small><!-- .element style="vertical-align: middle;" -->
+## [Static: Example <sup><svg style="width: 1rem; height: 1rem;" fill="white" xmlns="http://www.w3.org/2000/svg" data-icon="external-link" viewBox="0 0 16 20"><path d="M11 0l1.78 1.78-.5.5-4 4-.687.72L9 8.406l.718-.688 4-4 .5-.5 1.78 1.78V0h-5zM0 2v14h14V8h-2v6H2V4h6V2H0z"/></svg></sup>](http://codepen.io/elijahmanor/pen/rVMVjw)
 <!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
@@ -143,7 +143,7 @@
 
 ------
 
-## Relative: Example <small>([CodePen](http://codepen.io/elijahmanor/pen/KpgpEq))</small><!-- .element style="vertical-align: middle;" -->
+## [Relative: Example <sup><svg style="width: 1rem; height: 1rem;" fill="white" xmlns="http://www.w3.org/2000/svg" data-icon="external-link" viewBox="0 0 16 20"><path d="M11 0l1.78 1.78-.5.5-4 4-.687.72L9 8.406l.718-.688 4-4 .5-.5 1.78 1.78V0h-5zM0 2v14h14V8h-2v6H2V4h6V2H0z"/></svg></sup>](http://codepen.io/elijahmanor/pen/KpgpEq)
 <!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
@@ -180,7 +180,7 @@
 
 ------
 
-## Absolute: Example 1 <small>([CodePen](http://codepen.io/elijahmanor/pen/BNLNEK?editors=110))</small><!-- .element style="vertical-align: middle;" -->
+## [Absolute: Example 1 <sup><svg style="width: 1rem; height: 1rem;" fill="white" xmlns="http://www.w3.org/2000/svg" data-icon="external-link" viewBox="0 0 16 20"><path d="M11 0l1.78 1.78-.5.5-4 4-.687.72L9 8.406l.718-.688 4-4 .5-.5 1.78 1.78V0h-5zM0 2v14h14V8h-2v6H2V4h6V2H0z"/></svg></sup>](http://codepen.io/elijahmanor/pen/BNLNEK?editors=110)
 <!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
@@ -214,7 +214,7 @@
 
 ------
 
-## Absolute: Example 2 <small>([CodePen](http://codepen.io/elijahmanor/pen/JdRdVw?editors=110))</small><!-- .element style="vertical-align: middle;" -->
+## [Absolute: Example 2 <sup><svg style="width: 1rem; height: 1rem;" fill="white" xmlns="http://www.w3.org/2000/svg" data-icon="external-link" viewBox="0 0 16 20"><path d="M11 0l1.78 1.78-.5.5-4 4-.687.72L9 8.406l.718-.688 4-4 .5-.5 1.78 1.78V0h-5zM0 2v14h14V8h-2v6H2V4h6V2H0z"/></svg></sup>](http://codepen.io/elijahmanor/pen/JdRdVw?editors=110)
 <!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
@@ -256,7 +256,7 @@
 
 ------
 
-## Fixed: Example <small>([CodePen](http://codepen.io/elijahmanor/pen/dopoLE?editors=110))</small><!-- .element style="vertical-align: middle;" -->
+## [Fixed: Example <sup><svg style="width: 1rem; height: 1rem;" fill="white" xmlns="http://www.w3.org/2000/svg" data-icon="external-link" viewBox="0 0 16 20"><path d="M11 0l1.78 1.78-.5.5-4 4-.687.72L9 8.406l.718-.688 4-4 .5-.5 1.78 1.78V0h-5zM0 2v14h14V8h-2v6H2V4h6V2H0z"/></svg></sup>](http://codepen.io/elijahmanor/pen/dopoLE?editors=110)
 <!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob slide--demoPositionFixed" -->
 
 <div class="Split">

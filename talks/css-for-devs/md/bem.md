@@ -24,6 +24,13 @@ Notes:
 
 ------
 
+## Problem
+<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob" -->
+
+<h3 class="blazing">All CSS is Global!</h3>
+
+------
+
 ## Origins
 <!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob" -->
 

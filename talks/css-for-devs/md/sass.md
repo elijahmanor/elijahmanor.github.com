@@ -91,19 +91,56 @@ body {
   background-color: #efefef;
 }</pre>
 
+<small>Note: These are not the same as CSS `@import`</small>
+
 ------
 
 ## Mixins
 <!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob" -->
 
-<pre data-codemirror data-mode="text/x-sass">@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
+<div class="Split">
+  <div class="Split-column Split-column--65 fragment">
+    <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">@mixin center ($axis: false) {
+  position: absolute;
+
+  @if not($axis) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @else if $axis == x {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @else if $axis == y {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}</pre>
+  </div>
+  <div class="Split-column Split-column--35 fragment">
+    <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">.Widget {
+  @include center;
 }
 
-.box { @include border-radius(10px); }</pre>
+.Widget--x {
+  @include center(x);
+}
+
+.Widget--y {
+  @include center(y);
+}</pre>
+  </div>
+</div>
+
+------
+
+## Mixin history
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+
+* <!-- .element: class="fragment" data-fragment-index="1" -->Lots of libraries have mixins that will add vendor prefixes (`-webkit-`, `-moz-`, `-o-`, `-ms-`)
+* <!-- .element: class="fragment" data-fragment-index="2" -->These libraries would often generically add all vendor prefixes even if not necessary
+* <!-- .element: class="fragment" data-fragment-index="3" -->These days you don't need mixins... you can use [Autoprefixer](https://github.com/postcss/autoprefixer) to code to the spec and let [Can I Use](http://caniuse.com) figure out what is needed for what
 
 ------
 
@@ -197,7 +234,7 @@ body {
 <div class="Split">
   <div class="Split-column fragment">
     <h3>Sass</h3>
-    <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">%widget, .widget {
+    <pre data-codemirror data-mode="text/x-sass" data-lines="0,9" data-line-numbers="true">%widget, .widget {
   color: blue;
 }
 
@@ -231,14 +268,14 @@ body {
 
 ------
 
-## Scut
+## [Scut <sup><svg style="width: 1rem; height: 1rem;" fill="white" xmlns="http://www.w3.org/2000/svg" data-icon="external-link" viewBox="0 0 16 20"><path d="M11 0l1.78 1.78-.5.5-4 4-.687.72L9 8.406l.718-.688 4-4 .5-.5 1.78 1.78V0h-5zM0 2v14h14V8h-2v6H2V4h6V2H0z"/></svg></sup>](https://davidtheclark.github.io/scut/index.html)
 <!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 > "You can think of the word Scut as an acronym for Sass-CSS Utitilies. Or think of it this way: Scut will help you, the frontend laborer, do your scut work." --[Scut](https://davidtheclark.github.io/scut/)
 
 ------
 
-## Scut
+## [Scut <sup><svg style="width: 1rem; height: 1rem;" fill="white" xmlns="http://www.w3.org/2000/svg" data-icon="external-link" viewBox="0 0 16 20"><path d="M11 0l1.78 1.78-.5.5-4 4-.687.72L9 8.406l.718-.688 4-4 .5-.5 1.78 1.78V0h-5zM0 2v14h14V8h-2v6H2V4h6V2H0z"/></svg></sup>](https://davidtheclark.github.io/scut/index.html)
 <!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 <div class="Split">
@@ -301,6 +338,12 @@ body {
 VAR_NAME_CHARS='A-Za-z0-9_-'
 
 find "$1" -type f -name "*.scss" -exec grep -o "\$[$VAR_NAME_CHARS]*" {} ';' | sort | uniq -u</pre>
+
+<pre data-codemirror data-mode="text/x-sh">./find_unused_variables.sh src/assets/stylesheets/
+$card-height-active
+$card-height
+$font-family-serif
+</pre>
 
 Source: [Finding unused SCSS variables](http://blog.gospodarets.com/finding_unused_scss_variables/)
 

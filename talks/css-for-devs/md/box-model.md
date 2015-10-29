@@ -28,6 +28,10 @@
   </div>
   <div class="Split-column Split-column--45">
     <div class="crazybox--2">200 x 200</div>
+    <div class="Arrow">
+      <div class="Arrow-left"></div>
+      <div class="Arrow-right"></div>
+    </div>
     <div class="stick--200--2"></div>
   </div>
 </div>
@@ -59,9 +63,15 @@
   </div>
   <div class="Split-column Split-column--45">
     <div class="crazybox--3">200 x 200</div>
+    <div class="Arrow">
+      <div class="Arrow-left"></div>
+      <div class="Arrow-right"></div>
+    </div>
     <div class="stick--200--3"></div>
-    <h4 class="fragment">`box-sizing: content-box`</h4>
-    <p class="fragment">width + padding + border = rendered width of box</p>
+    <div style="font-size: 1.5rem; text-align: left;">
+      <h4 class="fragment">`box-sizing: content-box`</h4>
+      <p class="fragment">width + padding + border =<br/>rendered width</p>
+    </div>
   </div>
 </div>
 
@@ -100,10 +110,16 @@
   </div>
   <div class="Split-column Split-column--45">
     <div class="smartbox--4">200 x 200</div>
+    <div class="Arrow">
+      <div class="Arrow-left"></div>
+      <div class="Arrow-right"></div>
+    </div>
     <div class="stick--200--4"></div>
-    <h4 class="fragment"><code>box-sizing: <br />border-box</code></h4>
-    <p class="fragment">width =<br />rendered width of box</p>
-    <p class="fragment">width includes padding & border, but not margin</p>
+    <div style="font-size: 1.5rem; text-align: left;">
+      <h4 class="fragment">`box-sizing: border-box`</h4>
+      <p class="fragment">width = rendered width</p>
+      <p class="fragment">includes padding & border,<br/> but not margin</p>
+    </div>
   </div>
 </div>
 

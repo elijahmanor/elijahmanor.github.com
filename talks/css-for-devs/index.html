@@ -90,6 +90,7 @@
 				<section id="Position" data-markdown="./md/position.md"></section>
 				<section id="Cascading" data-markdown="./md/cascading.md"></section>
 				<section id="Sizing" data-markdown="./md/sizing.md"></section>
+				<section id="Pseudo-Elements" data-markdown="./md/pseudo-elements.md"></section>
 				<section id="Alignment" data-markdown="./md/alignment.md"></section>
 
 				<section id="Sass" data-markdown="./md/sass.md"></section>
@@ -108,7 +109,7 @@
 			</div>
 			<aside class="PersonaList">
 				<div class="Persona Persona--backEndBrian">
-					<img class="Persona-image" src="./imgs/brianreese.jpg" style="height: 80px; width: 80px;" data-src="http://api.randomuser.me/portraits/thumb/men/31.jpg" />
+					<img class="Persona-image" src="./imgs/back-end-brian-small.jpg" style="height: 80px; width: 80px;" data-src="http://api.randomuser.me/portraits/thumb/men/31.jpg" />
 					<div class="Persona-name">Back-End Brian</div>
 				</div>
 				<div class="Persona Persona--juniorJacob">
@@ -224,7 +225,10 @@
 						dialog.querySelector('.modules').innerHTML = items.join('');
 						dialog.showModal(); //.show()
 					},
-					32: null // don't do anything when SPACE is pressed (i.e. disable a reveal.js default binding)
+					32: null, // don't do anything when SPACE is pressed (i.e. disable a reveal.js default binding)
+					76: function() {
+						Reveal.layout();
+					}
 				}
 			});
 		</script>

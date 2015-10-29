@@ -11,7 +11,10 @@
 .codeMirror--sm  .reveal .slides .CodeMirror { font-size: 1.4rem; }
 .codeMirror--xsm .reveal .slides .CodeMirror { font-size: 1.3rem; }
 
-.backgroundGif h2, .backgroundGif h4 {
+.backgroundGif h2,
+.backgroundGif h4,
+.backgroundGif h2 a,
+.backgroundGif h4 a {
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
 }
@@ -255,6 +258,7 @@ pre[data-line] { padding: 1em; }
   left: 0rem;
   text-align: center;
   width: 100%;
+  line-height: 0.7rem;
 }
 .Specificity-value.Specificity-value--inline { border: solid 5px #F8D400; }
 .Specificity-value.Specificity-value--inline:after {
@@ -275,9 +279,9 @@ pre[data-line] { padding: 1em; }
 
 .specificity .slide-background.present { opacity: 0.5; }
 .specificity h2 { font-family: 'Orbitron', sans-serif; }
-.specificity .Specificity { font-family: 'Orbitron', sans-serif; margin-bottom: 2rem !important; }
+.specificity .Specificity { font-family: 'Orbitron', sans-serif; margin-bottom: 4rem !important; }
 .specificity .Specificity-input { font-family: 'Orbitron', sans-serif; }
-.specificity .Specificity .Specificity-value { font-family: 'Orbitron', sans-serif; flex-direction: column; justify-content: center; }
+.specificity .Specificity .Specificity-value { font-family: "Courier New", Courier, monospace; font-weight: bold; flex-direction: column; justify-content: center; }
 .specificity .SpecificityGame button { font-family: 'Orbitron', sans-serif; font-size: 1rem; padding: 1rem; }
 .specificity .Specificity .Specificity-value:before {
   content: '';
@@ -292,6 +296,38 @@ pre[data-line] { padding: 1em; }
 }
 
 /* http://codepen.io/makan/pen/yyjRZx */
+@-webkit-keyframes Blazing {
+0%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+  0 0 10px orange,
+  0 0 0 yellow,
+  0 0 5px yellow,
+  -2px -5px 5px yellow,
+  4px -10px 10px yellow; }
+25%   { text-shadow: 0 3px 20px red, 0 0 30px red,
+  0 0 20px orange,
+  0 0 5px yellow,
+  -2px -5px 5px yellow,
+  3px -10px 10px yellow,
+  -4px -15px 20px yellow; }
+50%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+  0 -5px 10px orange,
+  -2px -5px 5px yellow,
+  3px -10px 10px yellow,
+  -4px -15px 20px yellow,
+  2px -20px 30px rgba(255,255,0,0.5); }
+75%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+  0 -5px 10px orange,
+  3px -5px 5px yellow,
+  -4px -10px 10px yellow,
+  2px -20px 30px rgba(255,255,0,0.5),
+  0px -25px 40px rgba(255,255,0,0)}
+100%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+  0 0 10px orange,
+  0 0 0 yellow,
+  0 0 5px yellow,
+  -2px -5px 5px yellow,
+  4px -10px 10px yellow; }
+}
 @keyframes Blazing {
 0%   { text-shadow: 0 3px 20px red, 0 0 20px red,
   0 0 10px orange,
@@ -323,6 +359,13 @@ pre[data-line] { padding: 1em; }
   0 0 5px yellow,
   -2px -5px 5px yellow,
   4px -10px 10px yellow; }
+}
+
+.blazing {
+  -webkit-animation: Blazing 5s infinite; /* Safari 4+ */
+  -moz-animation:    Blazing 5s infinite; /* Fx 5+ */
+  -o-animation:      Blazing 5s infinite; /* Opera 12+ */
+  animation:         Blazing 5s infinite; /* IE 10+, Fx 29+ */
 }
 
 .caniuse {
@@ -441,4 +484,141 @@ pre[data-line] { padding: 1em; }
   z-index: 1;
   width: 100vw;
   height: 100vh;
+}
+
+.Arrow {
+  position: relative;
+  width: 200px;
+  height: 1rem;
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.Arrow:before {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 1px;
+  width: 99%;
+  background-color: white;
+  top: 55%;
+}
+
+.Arrow:after {
+  content: '200px';
+  position: absolute;
+  left: 50%;
+  font-size: 1rem;
+  transform: translate(-50%, -50%);
+  height: 1.5rem;
+  border-radius: 0.5rem;
+  vertical-align: middle;
+  line-height: 1.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  color: black;
+  background-color: white;
+  top: 50%;
+}
+
+.Arrow-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent !important;
+  border-bottom: 10px solid transparent !important;
+  border-left: 10px solid white !important;
+}
+
+.Arrow-left {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent !important;
+  border-bottom: 10px solid transparent !important;
+  border-right:10px solid white !important;
+}
+
+#outline {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#outline li {
+  background-color: #ccc;
+  border-radius: 2rem;
+  line-height: 3rem;
+  height: 3rem;
+  margin: 1rem;
+  padding: 0.5rem 2rem;
+  font-size: 2rem;
+  color: #000;
+}
+
+.codepen {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0 !important;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.IconTray {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.IconTray-item {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  font-size: 0.8rem;
+  user-select: none;
+  width: 8rem;
+  margin-left: 1rem;
+}
+
+.IconTray-caption {
+  color: #ccc;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.IconTray-icon {
+  width: 2rem;
+  height: 2rem;
+  align-self: center;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.IconTray-icon:before {
+  content: '';
+  width: 2rem;
+  height: 2rem;
+  display: block;
+}
+
+.IconTray-item--emails .IconTray-icon:before {
+  background: url('https://dl.dropboxusercontent.com/u/200135/everydollar/svgs/transaction.svg');
+}
+.IconTray-item--emails .IconTray-icon:after {
+  content: attr(data-count);
+  position: absolute;
+  bottom: -0.5rem;
+  left: 1.25rem;
+  background: white;
+  color: orange;
+  border: 1px solid currentColor;
+  border-radius: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.gpu [data-markdown].present {
 }

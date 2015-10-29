@@ -1,12 +1,26 @@
 Reveal.addEventListener('slidechanged', function(event) {
   var header = document.querySelector('.Title');
   var title = event.currentSlide.dataset.title || '';
+  var state = event.currentSlide.dataset.state || '';
 
   header.classList.toggle('Title--show', !!title);
   header.innerHTML = title;
 
+  if (~state.indexOf('me') || state === 'outline') {
+    var modules = window.localStorage.modules;
+    modules = modules ? JSON.parse(modules) : getModules();
+    var items = '';
+    for (var key in modules) {
+      if (modules[key]) {
+        items += '<li>' + key +  '</li>';
+      }
+    }
+    document.querySelector('#outline').innerHTML = items;
+  }
+
   initCodeMirror(event.currentSlide);
   Reveal.getScale();
+  Reveal.layout();
 });
 
 function initCodeMirror(slide) {
