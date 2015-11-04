@@ -11,6 +11,7 @@
 <body>
   <script src="./vendor/prism.js"></script>
   <script src="./vendor/mermaid.full.js"></script>
+	<script src="./js/prefixfree.min.js"></script>
   {% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
     <script src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry %}"></script>
   {% } %}

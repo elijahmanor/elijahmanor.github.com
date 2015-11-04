@@ -11,6 +11,8 @@
 .reveal blockquote.blockquote--wide { width: 80%; padding: 2rem; text-align: left; line-height: 0; }
 .reveal blockquote.blockquote--wide p:first-child { display: block; }
 
+.reveal img { width: 100%; height: 100%; }
+
 /* moved away */
 
 .reveal pre[class*="language-"].clean { padding: 0; }
