@@ -26,6 +26,7 @@ title: Speaking
   <button type="button" class="ButtonGroup-button" data-value="appendto">appendTo</button>
   <button type="button" class="ButtonGroup-button" data-value="manorism">Manorism</button>
   <button type="button" class="ButtonGroup-button" data-value="lampo">Ramsey Solutions</button>
+	<button type="button" class="ButtonGroup-button" data-value="leankit">LeanKit</button>
 </div>
 <div id="eventType" class="ButtonGroup">
   <button type="button" class="ButtonGroup-button" data-value="usergroup">User Groups</button>
@@ -68,17 +69,3 @@ title: Speaking
 	</li>
 {% endfor %}
 </ul>
-
-<!--
-* [Prototyping and Unit Testing](/talks/prototyping-unit-testing/builder)
-* [Six Things Every jQuery Developer Should Know](/talks/six-things)
-* [Introduction to Backbone.js](/talks/intro-to-backbonejs)
-* [What is HTML5 and CSS3?](/talks/html5-and-css3)
-* [Good JavaScript Habits](/talks/good-js-practices)
-* [Fixing Common JavaScript Bugs](/talks/fixing-common-javascript-bugs)
-* [Exterminating Common jQuery Bugs](/talks/find-jquery-bugs)
-* [Angry Birds of JavaScript](/talks/angry-birds-javascript)
-* [Extending Your jQuery App with AmplifyJS](/talks/amplifyjs)
-* [Grunt-ify Your Front-End Development](/talks/gruntify-fed)
-* [How to Pick Good JavaScript Libraries](/talks/good-js-libs)
--->

@@ -1270,3 +1270,38 @@
     slides: '/talks/css-for-devs'
     video: ''
     feedback: ''
+
+- dates:
+  - day: 29
+    month: 'Sep'
+    year: 2013
+  date: '2014-09-29'
+  days: '29'
+  name: 'Away From The Keyboard'
+  title: 'Episode 20: Elijah Manor Counts Every Dollar'
+  description: 'Elijah tells us the story of how he became a part of the Dave Ramsey Team. He shares with us how employee well-being and family life are a part of the company’s core values. Cecil asks about financial tips for technical folks. Elijah explains how to take “baby steps” to get out of debt. He highlights other options such as investing and setting up an emergency fund. Richie ask how did the Every Dollar app came about. Cecil asks Elijah’s thoughts on the evolution of web development. Elijah talks about a metric he calls JS IQ. Elijah gives us a peek into his family from things like homeschooling, his daughter’s paintings and even family dates. He talks about doing the Code.org day of code. Elijah discusses making the decision to homeschool and various challenges his family faces.'
+  type: 'podcast'
+  url: 'http://awayfromthekeyboard.com/2015/09/29/elijah-manor-counts-every-dollar/'
+  employer: 'lampo'
+
+# leankit
+
+- dates:
+  - day: 14
+    month: 'Nov'
+    year: 2015
+  - day: 15
+    month: 'Nov'
+    year: 2015
+  date: '2015-11-14'
+  days: '14-15'
+  name: 'Nodevember'
+  type: 'conference'
+  url: 'http://nodevember.org'
+  location: 'Nashville, TN'
+  employer: 'leankit'
+  sessions:
+  - name: 'Eliminate Javascript Code Smells'
+    slides: '/talks/js-smells'
+    video: 'https://www.youtube.com/watch?v=JVlfj7mQZPo'
+    feedback: ''
