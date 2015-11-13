@@ -18,7 +18,7 @@
     "Christian", "Family", "Work"
   ],
   "work" : [
-    "@DaveRamsey", "@PluralSight"
+    "@LeanKit", "@PluralSight"
   ],
   "tech" : [
     "HTML", "CSS", "JavaScript",
@@ -32,8 +32,7 @@
   </div>
   <div class="Split-column">
     <img src="./img/myfamily.jpg" />
-    <img src="./img/ramsey-solutions.svg" />
-    <img src="./img/everydollar.svg" />
+    <img src="./img/leankit-wallpaper.png" />
   </div>
 </div>  
 
