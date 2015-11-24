@@ -30,7 +30,7 @@ Notes:
     "Christian", "Family", "Work"
   ],
   "work" : [
-    "@DaveRamsey", "@PluralSight"
+    "@LeanKit", "@PluralSight"
   ],
   "tech" : [
     "HTML", "CSS", "JavaScript",
@@ -44,8 +44,7 @@ Notes:
   </div>
   <div class="Split-column">
     <img src="./imgs/myfamily.jpg" style="margin-top: 0;" />
-    <img src="./imgs/ramsey-solutions.svg" />
-    <img src="./imgs/everydollar.svg" />
+    <img src="./imgs/leankit-wallpaper.png" />
   </div>
 </div>
 

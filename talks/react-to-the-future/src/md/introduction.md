@@ -31,7 +31,7 @@
     "Christian", "Family", "Work"
   ],
   "work" : [
-    "@DaveRamsey", "@PluralSight"
+    "@LeanKit", "@PluralSight"
   ],
   "tech" : [
     "HTML", "CSS", "JavaScript",
@@ -42,7 +42,6 @@
   </div>
   <div class="Split-column Split-column--wide">
     <img src="./img/myfamily.jpg" />
-    <a href="http://daveramsey.com" target="_blank"><img src="./img/ramsey-solutions.svg" /></a>
-    <a href="http://everydollar.com" target="_blank"><img src="./img/everydollar.svg" /></a>
+    <a href="http://leankit.com" target="_blank"><img src="./img/leankit-wallpaper.png" /></a>
   </div>
 </div>  
