@@ -1336,7 +1336,7 @@
   title: 'JavaScript Code Smells with Elijah Manor'
   description: ''
   type: 'podcast'
-  url: ''
+  url: 'https://devchat.tv/js-jabber'
   employer: 'lampo'
 
 #- dates:
@@ -1349,7 +1349,7 @@
 #  title: ''
 #  description: ''
 #  type: 'podcast'
-#  url: ''
+#  url: 'https://channel9.msdn.com/Search?term=elijah%20manor#ch9Search'
 #  employer: 'lampo'
 
 - dates:
