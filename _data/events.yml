@@ -1352,6 +1352,46 @@
 #  url: 'https://channel9.msdn.com/Search?term=elijah%20manor#ch9Search'
 #  employer: 'lampo'
 
+#- dates:
+#  - day: 14
+#    month: 'Jan'
+#    year: 2016
+#  - day: 16
+#    month: 'Jan'
+#    year: 2016
+#  date: '2016-01-14'
+#  days: '14-16'
+#  name: 'JS Remote Conf'
+#  type: 'conference'
+#  url: 'https://jsremoteconf.com/'
+#  location: 'Online'
+#  employer: 'leankit'
+#  sessions:
+#  - name: ''
+#    slides: ''
+#    video: ''
+#    feedback: ''
+
+#- dates:
+#  - day: 10
+#    month: 'Feb'
+#    year: 2016
+#  - day: 12
+#    month: 'Feb'
+#    year: 2016
+#  date: '2016-02-10'
+#  days: '10-12'
+#  name: 'JavaScript Summit'
+#  type: 'conference'
+#  url: 'http://environmentsforhumans.com/2015/javascript-summit/'
+#  location: 'Online'
+#  employer: 'leankit'
+#  sessions:
+#  - name: ''
+#    slides: ''
+#    video: ''
+#    feedback: ''
+
 - dates:
   - day: 16
     month: 'Apr'
