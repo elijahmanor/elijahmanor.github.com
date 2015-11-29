@@ -1307,6 +1307,19 @@
     feedback: ''
 
 - dates:
+  - day: 2
+    month: 'Dec'
+    year: 2013
+  date: '2015-12-02'
+  days: '02'
+  name: 'JavaScript Jabber'
+  title: 'JavaScript Code Smells with Elijah Manor'
+  description: ''
+  type: 'podcast'
+  url: 'https://devchat.tv/js-jabber'
+  employer: 'leankit'
+
+- dates:
   - day: 7
     month: 'Mar'
     year: 2016
@@ -1325,19 +1338,6 @@
     slides: '/talks/css-for-devs'
     video: ''
     feedback: ''
-
-- dates:
-  - day: 2
-    month: 'Dec'
-    year: 2013
-  date: '2015-12-02'
-  days: '02'
-  name: 'JavaScript Jabber'
-  title: 'JavaScript Code Smells with Elijah Manor'
-  description: ''
-  type: 'podcast'
-  url: 'https://devchat.tv/js-jabber'
-  employer: 'lampo'
 
 #- dates:
 #  - day: 2
