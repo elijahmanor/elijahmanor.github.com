@@ -1313,10 +1313,10 @@
   date: '2015-12-02'
   days: '02'
   name: 'JavaScript Jabber'
-  title: 'JavaScript Code Smells with Elijah Manor'
-  description: ''
+  title: 'JSJ JavaScript Code Smells with Elijah Manor'
+  description: 'What is a “Code Smell”?, Copy/Paste Code Error, Using ES6 to Eliminate Code Smells, Refactoring Case Statements, Juniors and Code Smells,  Isomorphic Code, Framework Code Smells, Identifying New Code Smells, When Code Smells are OK, Why use parameters?'
   type: 'podcast'
-  url: 'https://devchat.tv/js-jabber'
+  url: 'https://devchat.tv/js-jabber/188-jsj-javascript-code-smells-with-elijah-manor'
   employer: 'leankit'
 
 - dates:
@@ -1420,3 +1420,30 @@
     video: ''
     feedback: ''
 
+#- dates:
+#  - day: 24
+#    month: 'Oct'
+#    year: 2016
+#  - day: 27
+#    month: 'Oct'
+#    year: 2016
+#  date: '2016-10-24'
+#  days: '24-27'
+#  name: 'AngleBrackets'
+#  type: 'conference'
+#  url: 'https://anglebrackets.org/'
+#  location: ''
+#  employer: 'leankit'
+#  sessions:
+#  - name: ''
+#    slides: ''
+#    video: ''
+#    feedback: ''
+#  - name: ''
+#    slides: ''
+#    video: ''
+#    feedback: ''
+#  - name: ''
+#    slides: ''
+#    video: ''
+#    feedback: ''
