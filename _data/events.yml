@@ -1272,6 +1272,19 @@
     feedback: ''
 
 - dates:
+  - day: 28
+    month: 'Oct'
+    year: 2015
+  date: '2015-10-28'
+  days: '28'
+  name: 'Channel 9'
+  title: 'JavaScript Development with Elijah Manor'
+  description: 'It was great to spend some time with Elijah Manor learning about developing JavaScript applications. He first gets into React, how it works, and why he likes it. He then gets into good practices one should use when developing JavaScript applications. It is always fun for me to learn from wonderful people. Hope you enjoy it as much as I did!'
+  type: 'podcast'
+  url: 'https://channel9.msdn.com/Events/Seth-on-the-Road/DevIntersection-2015/JavaScript-Development-with-Elijah-Manor'
+  employer: 'lampo'
+
+- dates:
   - day: 29
     month: 'Sep'
     year: 2013
@@ -1318,19 +1331,6 @@
   type: 'podcast'
   url: 'https://devchat.tv/js-jabber/188-jsj-javascript-code-smells-with-elijah-manor'
   employer: 'leankit'
-
-- dates:
-  - day: 3
-    month: 'Dec'
-    year: 2015
-  date: '2015-12-03'
-  days: '03'
-  name: 'Channel 9'
-  title: 'JavaScript Development with Elijah Manor'
-  description: 'It was great to spend some time with Elijah Manor learning about developing JavaScript applications. He first gets into React, how it works, and why he likes it. He then gets into good practices one should use when developing JavaScript applications. It is always fun for me to learn from wonderful people. Hope you enjoy it as much as I did!'
-  type: 'podcast'
-  url: 'https://channel9.msdn.com/Events/Seth-on-the-Road/DevIntersection-2015/JavaScript-Development-with-Elijah-Manor'
-  employer: 'lampo'
 
 - dates:
   - day: 7
