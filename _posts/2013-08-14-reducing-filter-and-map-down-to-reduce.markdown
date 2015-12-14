@@ -29,7 +29,7 @@ So, before we proceed let's take a step back before revisiting the <code>.reduce
 <h4>
 Problem to Solve</h4>
 
-What we want to do is to take all the Doctors from year 2000 until today and change their data up just a little bit. We want to massage the data a little bit and have keys of <code>doctorNumber</code>, <code>playedBy</code>, and <code>yearsPlayed</code>. We don't want to just directly map one field to another, but for <code>doctorNumber</code> we want to prepend a <code>"#"</code> and for the <code>yearsPlayed</code> we want to want how many years the doctor played and not a range.
+What we want to do is to take all the Doctors from year 2001 until today and change their data up just a little bit. We want to massage the data a little bit and have keys of <code>doctorNumber</code>, <code>playedBy</code>, and <code>yearsPlayed</code>. We don't want to just directly map one field to another, but for <code>doctorNumber</code> we want to prepend a <code>"#"</code> and for the <code>yearsPlayed</code> we want to want how many years the doctor played and not a range.
 
 <h4>
 Desired Output</h4>
