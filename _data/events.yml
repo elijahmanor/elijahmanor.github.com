@@ -1272,19 +1272,6 @@
     feedback: ''
 
 - dates:
-  - day: 28
-    month: 'Oct'
-    year: 2015
-  date: '2015-10-28'
-  days: '28'
-  name: 'Channel 9'
-  title: 'JavaScript Development with Elijah Manor'
-  description: 'It was great to spend some time with Elijah Manor learning about developing JavaScript applications. He first gets into React, how it works, and why he likes it. He then gets into good practices one should use when developing JavaScript applications. It is always fun for me to learn from wonderful people. Hope you enjoy it as much as I did!'
-  type: 'podcast'
-  url: 'https://channel9.msdn.com/Events/Seth-on-the-Road/DevIntersection-2015/JavaScript-Development-with-Elijah-Manor'
-  employer: 'lampo'
-
-- dates:
   - day: 29
     month: 'Sep'
     year: 2013
@@ -1322,15 +1309,55 @@
 - dates:
   - day: 2
     month: 'Dec'
-    year: 2013
-  date: '2015-12-02'
+    year: 2014
+  date: '2014-12-02'
   days: '02'
   name: 'JavaScript Jabber'
   title: 'JSJ JavaScript Code Smells with Elijah Manor'
-  description: 'What is a “Code Smell”?, Copy/Paste Code Error, Using ES6 to Eliminate Code Smells, Refactoring Case Statements, Juniors and Code Smells,  Isomorphic Code, Framework Code Smells, Identifying New Code Smells, When Code Smells are OK, Why use parameters?'
+  description: ''
   type: 'podcast'
   url: 'https://devchat.tv/js-jabber/188-jsj-javascript-code-smells-with-elijah-manor'
   employer: 'leankit'
+
+- dates:
+  - day: 14
+    month: 'Jan'
+    year: 2016
+  - day: 16
+    month: 'Jan'
+    year: 2016
+  date: '2016-01-14'
+  days: '14-16'
+  name: 'JS Remote Conf'
+  type: 'conference'
+  url: 'https://allremoteconfs.com/js-2016'
+  location: 'Online'
+  employer: 'leankit'
+  sessions:
+  - name: 'Eliminate Javascript Code Smells'
+    slides: '/talks/js-smells'
+    video: 'https://www.youtube.com/watch?v=JVlfj7mQZPo'
+    feedback: ''
+
+- dates:
+  - day: 23
+    month: 'Feb'
+    year: 2016
+  - day: 25
+    month: 'Feb'
+    year: 2016
+  date: '2016-02-23'
+  days: '23-25'
+  name: 'JavaScript Summit'
+  type: 'conference'
+  url: 'http://environmentsforhumans.com/2016/javascript-summit/'
+  location: 'Online'
+  employer: 'leankit'
+  sessions:
+  - name: 'Eliminate Javascript Code Smells'
+    slides: '/talks/js-smells'
+    video: 'https://www.youtube.com/watch?v=JVlfj7mQZPo'
+    feedback: ''
 
 - dates:
   - day: 7
@@ -1351,46 +1378,6 @@
     slides: '/talks/css-for-devs'
     video: ''
     feedback: ''
-
-#- dates:
-#  - day: 14
-#    month: 'Jan'
-#    year: 2016
-#  - day: 16
-#    month: 'Jan'
-#    year: 2016
-#  date: '2016-01-14'
-#  days: '14-16'
-#  name: 'JS Remote Conf'
-#  type: 'conference'
-#  url: 'https://jsremoteconf.com/'
-#  location: 'Online'
-#  employer: 'leankit'
-#  sessions:
-#  - name: ''
-#    slides: ''
-#    video: ''
-#    feedback: ''
-
-#- dates:
-#  - day: 10
-#    month: 'Feb'
-#    year: 2016
-#  - day: 12
-#    month: 'Feb'
-#    year: 2016
-#  date: '2016-02-10'
-#  days: '10-12'
-#  name: 'JavaScript Summit'
-#  type: 'conference'
-#  url: 'http://environmentsforhumans.com/2015/javascript-summit/'
-#  location: 'Online'
-#  employer: 'leankit'
-#  sessions:
-#  - name: ''
-#    slides: ''
-#    video: ''
-#    feedback: ''
 
 - dates:
   - day: 16
@@ -1419,31 +1406,3 @@
     slides: '/talks/css-for-devs'
     video: ''
     feedback: ''
-
-#- dates:
-#  - day: 24
-#    month: 'Oct'
-#    year: 2016
-#  - day: 27
-#    month: 'Oct'
-#    year: 2016
-#  date: '2016-10-24'
-#  days: '24-27'
-#  name: 'AngleBrackets'
-#  type: 'conference'
-#  url: 'https://anglebrackets.org/'
-#  location: ''
-#  employer: 'leankit'
-#  sessions:
-#  - name: ''
-#    slides: ''
-#    video: ''
-#    feedback: ''
-#  - name: ''
-#    slides: ''
-#    video: ''
-#    feedback: ''
-#  - name: ''
-#    slides: ''
-#    video: ''
-#    feedback: ''
