@@ -1307,6 +1307,59 @@
     feedback: ''
 
 - dates:
+  - day: 2
+    month: 'Dec'
+    year: 2014
+  date: '2014-12-02'
+  days: '02'
+  name: 'JavaScript Jabber'
+  title: 'JSJ JavaScript Code Smells with Elijah Manor'
+  description: ''
+  type: 'podcast'
+  url: 'https://devchat.tv/js-jabber/188-jsj-javascript-code-smells-with-elijah-manor'
+  employer: 'leankit'
+
+- dates:
+  - day: 14
+    month: 'Jan'
+    year: 2016
+  - day: 16
+    month: 'Jan'
+    year: 2016
+  date: '2016-01-14'
+  days: '14-16'
+  name: 'JS Remote Conf'
+  type: 'conference'
+  url: 'https://allremoteconfs.com/js-2016'
+  location: 'Online'
+  employer: 'leankit'
+  sessions:
+  - name: 'Eliminate Javascript Code Smells'
+    slides: '/talks/js-smells'
+    video: 'https://www.youtube.com/watch?v=JVlfj7mQZPo'
+    feedback: ''
+
+- dates:
+  - day: 23
+    month: 'Feb'
+    year: 2016
+  - day: 25
+    month: 'Feb'
+    year: 2016
+  date: '2016-02-23'
+  days: '23-25'
+  name: 'JavaScript Summit'
+  type: 'conference'
+  url: 'http://environmentsforhumans.com/2016/javascript-summit/'
+  location: 'Online'
+  employer: 'leankit'
+  sessions:
+  - name: 'Eliminate Javascript Code Smells'
+    slides: '/talks/js-smells'
+    video: 'https://www.youtube.com/watch?v=JVlfj7mQZPo'
+    feedback: ''
+
+- dates:
   - day: 7
     month: 'Mar'
     year: 2016
@@ -1326,43 +1379,30 @@
     video: ''
     feedback: ''
 
-# - dates:
-#   - day: 29
-#     month: 'Sep'
-#     year: 2013
-#   date: '2014-09-29'
-#   days: '29'
-#   name: 'JavaScript Jabber'
-#   title: ''
-#   description: ''
-#   type: 'podcast'
-#   url: ''
-#   employer: 'lampo'
-
-# - dates:
-#   - day: 26
-#     month: 'Oct'
-#     year: 2015
-#   - day: 29
-#     month: 'Oct'
-#     year: 2015
-#   date: '2015-10-26'
-#   days: '26-29'
-#   name: 'AngleBrackets'
-#   type: 'conference'
-#   url: 'https://anglebrackets.org/'
-#   location: ''
-#   employer: 'lampo'
-#   sessions:
-#   - name: ''
-#     slides: ''
-#     video: ''
-#     feedback: ''
-#   - name: 'To React.js and Beyond!'
-#     slides: '/talks/react-to-the-future/dist'
-#     video: ''
-#     feedback: ''
-#   - name: 'CSS for Developers'
-#     slides: '/talks/css-for-devs'
-#     video: ''
-#     feedback: ''
+- dates:
+  - day: 16
+    month: 'Apr'
+    year: 2016
+  - day: 22
+    month: 'Apr'
+    year: 2016
+  date: '2016-04-16'
+  days: '16-22'
+  name: 'AngleBrackets'
+  type: 'conference'
+  url: 'https://anglebrackets.org/'
+  location: ''
+  employer: 'leankit'
+  sessions:
+  - name: 'Framework-Independent JavaScript Components'
+    slides: ''
+    video: ''
+    feedback: ''
+  - name: 'To React.js and Beyond!'
+    slides: '/talks/react-to-the-future/dist'
+    video: ''
+    feedback: ''
+  - name: 'CSS for Developers'
+    slides: '/talks/css-for-devs'
+    video: ''
+    feedback: ''
