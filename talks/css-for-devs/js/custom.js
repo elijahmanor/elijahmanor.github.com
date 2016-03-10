@@ -1,7 +1,54 @@
+document.addEventListener('DOMContentLoaded', function() {});
+var lengthOfPresentation = window.localStorage.lengthOfPresentation || 30;
+
+var dialog = document.querySelector( "#dialog" );
+if ( !dialog.showModal ) { dialog.style.display = "none"; }
+
 Reveal.addEventListener('slidechanged', function(event) {
   var header = document.querySelector('.Title');
   var title = event.currentSlide.dataset.title || '';
   var state = event.currentSlide.dataset.state || '';
+
+  if ( document.documentElement.classList.contains( "twitter" ) ) {
+    twttr.widgets.load()
+  }
+
+  var pace = document.querySelector( ".pace" );
+  if ( !pace ) {
+    document.querySelector( ".progress" ).insertAdjacentHTML( "afterend", "<div class='pace'><span></span></div>" );
+  }
+
+  if ( event.indexh === 0 && event.indexv === 0 ) {
+    window.clearInterval( window.timer );
+    window.start = null;
+    window.end = null;
+    document.querySelector( ".pace span" ).style.width = '0%';
+    document.querySelector( ".pace span" ).classList.remove( "pulse" );
+  } else if ( !Reveal.isOverview() && event.indexh === 0 && event.indexv === 1 && event.previousSlide && !!~event.previousSlide.dataset.state.indexOf("introduction") ) {
+    console.log( "Starting timer..." );
+    window.start = Date.now();
+    window.end = window.start + ( window.lengthOfPresentation * 60 * 1000 ); // moment().add( window.lengthOfPresentation, 'minutes' ).toDate().getTime();
+    window.timer = window.setInterval( function() {
+      //var pace = ( Date.now() - window.start ) * Reveal.getTotalSlides() / ( window.end - window.start );
+      var pace = (Date.now() - window.start) * 100 / (window.lengthOfPresentation * 60 * 1000);
+      console.log( 'pace', isFinite( pace ) ? pace + '%' : '0%' );
+      //console.log( Date.now(), window.start, Reveal.getTotalSlides(), window.end );
+      //console.log( window.lengthOfPresentation, Date.now() - window.start, window.end - window.start );
+      document.querySelector( ".pace span" ).style.width = isFinite( pace ) ? pace + '%' : '0%';
+      if ( Date.now() >= window.end ) {
+        window.clearInterval( window.timer );
+        window.start = null;
+        window.end = null;
+        document.querySelector( ".pace span" ).style.width = '100%';
+        setTimeout( function() {
+          document.querySelector( ".pace span" ).classList.add( "pulse" );
+          setTimeout( function() {
+            document.querySelector( ".pace span" ).style.width = '0%';
+          }, 10000 );
+        }, 1000 );
+      }
+    }, 1000 );
+  }
 
   header.classList.toggle('Title--show', !!title);
   header.innerHTML = title;
@@ -12,7 +59,7 @@ Reveal.addEventListener('slidechanged', function(event) {
     var items = '';
     for (var key in modules) {
       if (modules[key]) {
-        items += '<li>' + key +  '</li>';
+        items += '<li>' + key.replace("-", " ") +  '</li>';
       }
     }
     document.querySelector('#outline').innerHTML = items;
@@ -83,6 +130,16 @@ for (var key in modules) {
 	}
 }
 
+window.localStorage.extendedContent = window.localStorage.extendedContent || "true";
+Reveal.addEventListener( 'ready', function( event ) {
+  if ( window.localStorage.extendedContent === "false" ) {
+    var extendedSections = document.querySelectorAll( "section[data-state*='extended'" );
+    [].forEach.call( extendedSections, function( section ) {
+      section.parentNode.removeChild( section );
+    } );
+  }
+} );
+
 function getModules() {
 	var modules = {};
 	[].forEach.call(document.querySelectorAll('.slides .stack'), function(module) {
@@ -92,7 +149,7 @@ function getModules() {
 }
 dialog.querySelector('#update').addEventListener('click', function() {
 	var modules = JSON.parse(window.localStorage.modules);
-	[].forEach.call(dialog.querySelectorAll('#dialog input'), function(input) {
+	[].forEach.call(dialog.querySelectorAll("#dialog .module"), function(input) {
 		if (!input.checked) {
 			var element = document.querySelector('#' + input.name);
 			if (element) {
@@ -105,9 +162,20 @@ dialog.querySelector('#update').addEventListener('click', function() {
 	});
 	window.localStorage.modules = JSON.stringify(modules);
 
+  window.localStorage.extendedContent = document.querySelector( "#chkExtendedContent" ).checked;
+  if ( window.localStorage.extendedContent === "false" ) {
+    var extendedSections = document.querySelectorAll( "section[data-state*='extended'" );
+    [].forEach.call( extendedSections, function( section ) {
+      section.parentNode.removeChild( section );
+    } );
+  }
+
   [].forEach.call(document.querySelectorAll('.CodeMirror'), function(editor) {
     editor.CodeMirror.setOption('theme', document.querySelector('#selectTheme').value);
   });
+
+  window.lengthOfPresentation = parseInt( document.querySelector( "#txtLengthOfPresentation" ).value );
+  window.localStorage.lengthOfPresentation = window.lengthOfPresentation;
 
 	Reveal.configure({ controls: true });
 	dialog.close();

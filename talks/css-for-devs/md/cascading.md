@@ -1,5 +1,4 @@
 # Cascading
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
 > "The notion of a “cascade” is at the heart of CSS (just look at its name). It ultimately determines which properties will modify a given element. The cascade is tied to three main concepts: importance, specificity and source order." --[CSS Specificity And Inheritance](http://www.smashingmagazine.com/2010/04/07/css-specificity-and-inheritance/) by [Inayaili de Leon](https://twitter.com/yaili)
 
@@ -147,7 +146,7 @@ User Agent Stylesheets vary from Browser to Browser
 ------
 
 ## [Making Non-Inherited Properties Cascade <sup><svg style="width: 1rem; height: 1rem;" fill="white" xmlns="http://www.w3.org/2000/svg" data-icon="external-link" viewBox="0 0 16 20"><path d="M11 0l1.78 1.78-.5.5-4 4-.687.72L9 8.406l.718-.688 4-4 .5-.5 1.78 1.78V0h-5zM0 2v14h14V8h-2v6H2V4h6V2H0z"/></svg></sup>](http://codepen.io/elijahmanor/pen/bdwpvE?editors=110)
-<!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob midLevelMelissa notes" -->
 
 <div class="Split">
   <div class="Split-column">
@@ -171,6 +170,9 @@ User Agent Stylesheets vary from Browser to Browser
 }</pre>
   </div>
 </div>
+
+Notes:
+This will only display in the notes window.
 
 ------
 
@@ -217,7 +219,7 @@ h1 {
 ------
 
 ## Resources
-<!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob midLevelMelissa resources" -->
 
 * [W3C: CSS Cascading and Inheritance Level 3](http://www.w3.org/TR/css3-cascade/)
 * [W3C: Appendix F. Full property table](http://www.w3.org/TR/CSS21/propidx.html)

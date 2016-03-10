@@ -1,5 +1,4 @@
 # Sass Docs
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 > "SassDoc is to Sass what JSDoc is to JavaScript: a documentation system to build pretty and powerful docs in the blink of an eye." --[SassDoc](http://sassdoc.com/)
 
@@ -25,7 +24,7 @@ Have you ever thought one of these thoughts?
 ------
 
 ## Resources
-<!-- .slide: data-title="Sass Docs" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Sass Docs" data-state="backEndBrian juniorJacob midLevelMelissa resources" -->
 
 * [SassDoc](http://sassdoc.com/)
 

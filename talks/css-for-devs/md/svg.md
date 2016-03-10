@@ -15,7 +15,7 @@ http://www.vanseodesign.com/web-design/svg-viewport/
 ------
 
 ## Resources
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa InProgress" -->
+<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa InProgress resources" -->
 
 * [x](#)
 

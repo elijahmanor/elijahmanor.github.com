@@ -1,5 +1,4 @@
 # Sizing
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
 > "Both rem and em are relative units, px is not. Before considering rem, it’s important to understand the relationship between em, markup and inheritance." --[Confused About REM and EM?](https://j.eremy.net/confused-about-rem-and-em/) by [Jeremy Church](jeremybchurch)
 
@@ -235,7 +234,7 @@ h1   { font-size: 2.4rem; } /\* =24px \*/</pre>
 ------
 
 ## Resources
-<!-- .slide: data-title="Sizing" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Sizing" data-state="backEndBrian juniorJacob midLevelMelissa resources" -->
 
 * [Font Sizing with REM](http://snook.ca/archives/html_and_css/font-size-with-rem) by [Jonathan Snook](https://twitter.com/snookca)
 * [Confused About REM and EM?](https://j.eremy.net/confused-about-rem-and-em/) by [Jeremy Church](jeremybchurch)
@@ -245,3 +244,4 @@ h1   { font-size: 2.4rem; } /\* =24px \*/</pre>
 Notes:
 
 * [CSS Font Sizing](http://bitsofco.de/2015/css-font-sizing/) by [Ire Aderinokun](https://twitter.com/ireaderinokun)
+* http://nicolas-hoizey.com/2016/03/people-don-t-change-the-default-16px-font-size-in-their-browser.html

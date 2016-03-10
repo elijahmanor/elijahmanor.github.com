@@ -1,11 +1,10 @@
 # Alignment
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
-> "Use Flexbox... if you can" --[Me](http://twitter.com/elijahmanor)
+> "Center Me... If You Can" --[Me](http://twitter.com/elijahmanor)
 
 ------
 
-<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob Slide--up" -->
+<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob Slide--up extended" data-menu-title="Learning the Hard Way" -->
 
 <img src="./imgs/commitstrip-css-center.jpg" style="height: 550px; margin: 0;" />
 
@@ -15,7 +14,7 @@
 
 ------
 
-<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob Slide--up" -->
+<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob Slide--up" data-menu-title="One Does Not Simply Center" -->
 
 <img src="./imgs/one-does-not-simply-center.jpg" style="height: 400px;" />
 
@@ -98,14 +97,16 @@ Thinking about example using floats for layout (grid system), but then trying to
 ------
 
 ### [Centering in CSS: A Complete Guide](https://css-tricks.com/centering-css-complete-guide/)
-<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob" -->
 
 <iframe style="background-color: white;" class="stretch" src="https://css-tricks.com/centering-css-complete-guide/" />
+
+<!-- <a href="https://css-tricks.com/centering-css-complete-guide/" data-preview-link>Centering in CSS: A Complete Guide</a> -->
 
 ------
 
 ## Media Object
-<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob extended" data-menu-title="Media Object: Markup" -->
 
 <pre data-codemirror data-mode="text/html" data-line-numbers="false" data-lines=""><div class="media">
   <img class="mediaFigure" src="http://...">
@@ -119,7 +120,7 @@ Thinking about example using floats for layout (grid system), but then trying to
 ------
 
 ## Media Object
-<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob extended" data-menu-title="Media Object: Float CSS" -->
 
 Float Version
 
@@ -160,23 +161,77 @@ Float Version
 
 ------
 
-## Flex-box
-<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+## So What!?!
+<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob" -->
 
-<div class="caniuse" data-feature="flexbox"></div>
+![](imgs/i-give-up.gif)
 
 ------
 
+## Flex-box
 <!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-<h1><a href="http://the-echoplex.net/flexyboxes" data-preview-link>Flexbox Playground</a></h1>
+<div class="Split">
+  <div class="Split-column Split-column--50">
+    <div class="caniuse" data-feature="flexbox" style="width: auto;"></div>
+  </div>
+  <div class="Split-column Split-column--50" style="zoom: document;">
+    <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Globally, 92% of browsers in use support border-radius. 96% support Flexbox. Still think it’s too early to use Flexbox?</p>&mdash; Jen Simmons (@jensimmons) <a href="https://twitter.com/jensimmons/status/702624258145579008">February 24, 2016</a></blockquote>
+  </div>
+</div>
+
+------
+
+## Flex-box Cheatsheet
+<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+
+<iframe style="background-color: white;" class="stretch" src="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" />
+
+<!-- <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" data-preview-link>Flex-box Cheatsheet</a> -->
+
+------
+
+<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa extended" data-menu-title="Flexbox Playground" -->
+
+<h1><a href="http://the-echoplex.net/flexyboxes" data-preview-link>
+☟☟☟☟
+<p>☞ Flexbox ☜</p>
+<p>☞ Playground ☜</p>
+☝☝☝☝☝☝</a></h1>
 
 <!--<iframe src="http://the-echoplex.net/flexyboxes" class="stretch" />-->
 
 ------
 
-## Media Object
+## [FlexboxIn5.com](http://flexboxin5.com/)
 <!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+
+<a href="http://flexboxin5.com/)" data-preview-link><img src="imgs/flexbox-in-5.png" /></a>
+
+------
+
+## [FlexboxFroggy.com](http://flexboxfroggy.com/)
+<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+
+<a href="http://flexboxfroggy.com/" data-preview-link>
+  <div class="frog green">
+    <div class="bg animated pulse infinite"></div>
+  </div>
+</a>
+
+------
+
+## [FlexboxDefense.com](http://www.flexboxdefense.com/)
+<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+
+Stop the incoming enemies from getting past your defenses!
+
+<a href="http://www.flexboxdefense.com/" data-preview-link><img src="imgs/flexbox-defense.gif" /></a>
+
+------
+
+## Media Object
+<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa extended" data-menu-title="Media Object: Flexbox CSS" -->
 
 Flexbox Version
 
@@ -218,37 +273,32 @@ Flexbox Version
 
 ------
 
-## Flexbox: What & How?
-<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+## Resources
+<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa resources" -->
 
-* [Solved by Flexbox](http://philipwalton.github.io/solved-by-flexbox/)
+* [Centering in CSS: A Complete Guide](https://css-tricks.com/centering-css-complete-guide/)
 * [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 * [What the Flexbox?](http://flexbox.io) - Free 20 video course
-* [A Visual Guide to CSS3 Flexbox Properties](https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties)
-* [Flexbox Cheatsheet](http://jonibologna.com/flexbox-cheatsheet/)
+* [Flexbox In 5](http://flexboxin5.com/)
+* [Flexbox Froggy](http://flexboxfroggy.com/)
+* [Flexbox Defense](http://www.flexboxdefense.com/)
+* [Solved by Flexbox](http://philipwalton.github.io/solved-by-flexbox/)
 * [Flexplorer](http://bennettfeely.com/flexplorer/)
 * [Flexy Boxes](http://the-echoplex.net/flexyboxes/)
 
 Notes:
 
+* [A Visual Guide to CSS3 Flexbox Properties](https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties)
+* [Flexbox Cheatsheet](http://jonibologna.com/flexbox-cheatsheet/)
+* http://codepen.io/elijahmanor/pen/MYxRMr?editors=110
+* http://philipwalton.github.io/solved-by-flexbox/
+* http://www.sitepoint.com/solving-layout-problems-css-table-property/
+* http://www.flexboxdefense.com/
 * http://tympanus.net/codrops/css_reference/flexbox/
 * https://blog.codepen.io/2015/04/12/flexbox-fridays-by-lincoln-loop/
 
-## Quick Introduction to Flex-box
-<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" -->
-
-TODO: Quick intro to flexbox because that could be a whole talk by itself probably
-
-------
-
-## Resources
-<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" -->
-
-* [Centering in CSS: A Complete Guide](https://css-tricks.com/centering-css-complete-guide/)
-* [Solved by Flexbox](http://philipwalton.github.io/solved-by-flexbox/)
-
-Notes:
-
-http://codepen.io/elijahmanor/pen/MYxRMr?editors=110
-http://philipwalton.github.io/solved-by-flexbox/
-http://www.sitepoint.com/solving-layout-problems-css-table-property/
+* https://css-tricks.com/using-flexbox/
+* http://www.sitepoint.com/are-we-ready-to-use-flexbox/
+* https://css-tricks.com/forums/topic/flexbox-with-fallback/
+* http://designkarma.co.uk/blog/using-flexbox-now
+* http://www.planningforaliens.com/blog/2014/03/11/real-world-flexbox/

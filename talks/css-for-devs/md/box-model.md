@@ -1,12 +1,11 @@
 # Box Model
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
 > This model describes the content of the space taken by an element. Each box has four edges: the margin edge, border edge, padding edge, and content edge. --[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/box_model)
 
 ------
 
 ## Crazy Box
-<!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob" data-menu-title="Crazy Box: Part 1" -->
 
 <div class="Split">
   <div class="Split-column Split-column--55">
@@ -39,7 +38,7 @@
 ------
 
 ## Crazy Box
-<!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob" data-menu-title="Crazy Box: Part 2" -->
 
 <div class="Split">
   <div class="Split-column Split-column--55">
@@ -171,7 +170,7 @@ So, we could...
 ------
 
 # Resources
-<!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob midLevelMelissa resources" -->
 
 * [CSS Box Model](https://developer.mozilla.org/en-US/docs/Web/CSS/box_model) by MDN
 * [* { Box-sizing: Border-box } FTW]() by [Paul Irish](http://www.paulirish.com/2012/box-sizing-border-box-ftw/)

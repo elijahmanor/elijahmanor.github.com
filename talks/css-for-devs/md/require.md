@@ -1,5 +1,4 @@
 # Require
-<!-- .slide: data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 > Use Webpack to require your CSS in your JavaScript!
 
@@ -13,7 +12,7 @@
 ------
 
 ## Huge Controversy
-<!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa extended" -->
 
 <div style="width: 40%; margin: auto;">
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
@@ -21,7 +20,7 @@
  viewBox="-100 0 200 260">
 <title>Pendulum</title>
 <defs>
-	  <radialGradient id = "light" cx = "50%" cy = "50%" fx = "40%" fy = "35%" r = "65%">
+	  <radialGradient id = "light1" cx = "50%" cy = "50%" fx = "40%" fy = "35%" r = "65%">
 	    	<stop stop-color = "rgb(255,255,255)" offset = "0%"/>
 		    <stop stop-color = "rgb(190,190,190)" offset = "40%"/>
 		    <stop stop-color = "rgb(80,80,80)" offset = "100%"/>
@@ -30,29 +29,29 @@
   <g>
 	    <g transform="rotate(21 0 10)">
 		      <line x1="0" x2="0" y1="10" y2="210" style="stroke: white; stroke-width: 1; fill: none;" />
-		      <circle cx="0" cy="230" r="20" fill="url(#light)" stroke="none"/>
+		      <circle cx="0" cy="230" r="20" fill="url(#light1)" stroke="none"/>
       <rect x="-95" y="40" width="85" height="40" rx="15" ry="15" transform="rotate(-21 0 10)" style="fill: #f9f9f9; stroke: #ccc;" />
-      <text x="-80" y="55" style="font-family: Arial; font-size: 8; fill: black;"
+      <text x="-80" y="55" style="font-family: Arial; font-size: 8px; fill: black;"
             transform="rotate(-21 0 10)">Require Styles</text>
-      <text x="-75" y="70" style="font-family: Arial; font-size: 8; fill: black;"
+      <text x="-75" y="70" style="font-family: Arial; font-size: 8px; fill: black;"
             transform="rotate(-21 0 10)">Extract CSS</text>
     </g>
 	    <g transform="rotate(-21 0 10)">
 		      <line x1="0" x2="0" y1="10" y2="210" style="stroke: white; stroke-width: 1; fill: none;" />
-		      <circle cx="0" cy="230" r="20" fill="url(#light)" stroke="none"/>
+		      <circle cx="0" cy="230" r="20" fill="url(#light1)" stroke="none"/>
       <rect x="10" y="40" width="85" height="40" rx="15" ry="15" transform="rotate(21 0 10)" style="fill: #f9f9f9; stroke: #ccc;" />
-      <text x="16" y="55" style="font-family: Arial; font-size: 8; fill: black;"
+      <text x="16" y="55" style="font-family: Arial; font-size: 8px; fill: black;"
         transform="rotate(21 0 10)">Define in JavaScript</text>
-      <text x="22" y="70" style="font-family: Arial; font-size: 8; fill: black;"
+      <text x="22" y="70" style="font-family: Arial; font-size: 8px; fill: black;"
         transform="rotate(21 0 10)">Pure Inline Styles</text>
     </g>
     <g>
 		      <line x1="0" x2="0" y1="10" y2="210" style="stroke: white; stroke-width: 1; fill: none;" />
-		      <circle cx="0" cy="230" r="20" fill="url(#light)" stroke="none"/>
+		      <circle cx="0" cy="230" r="20" fill="url(#light1)" stroke="none"/>
       <rect x="-50" y="145" width="100" height="55" rx="15" ry="15" style="fill: #f9f9f9; stroke: #ccc;"/>
-      <text x="-25" y="160" style="font-family: Arial; font-size: 8; fill: black;">Require Styles</text>
-      <text x="-41" y="175" style="font-family: Arial; font-size: 8; fill: black;">Generate Class Names</text>
-      <text x="-24" y="190" style="font-family: Arial; font-size: 8; fill: black;">Extract CSS</text>
+      <text x="-25" y="160" style="font-family: Arial; font-size: 8px; fill: black;">Require Styles</text>
+      <text x="-41" y="175" style="font-family: Arial; font-size: 8px; fill: black;">Generate Class Names</text>
+      <text x="-24" y="190" style="font-family: Arial; font-size: 8px; fill: black;">Extract CSS</text>
     </g>
   </g>
 </svg>
@@ -69,7 +68,7 @@
  viewBox="-100 0 200 260">
 <title>Pendulum</title>
 <defs>
-	  <radialGradient id = "light" cx = "50%" cy = "50%" fx = "40%" fy = "35%" r = "65%">
+	  <radialGradient id = "light2" cx = "50%" cy = "50%" fx = "40%" fy = "35%" r = "65%">
 	    	<stop stop-color = "rgb(255,255,255)" offset = "0%"/>
 		    <stop stop-color = "rgb(190,190,190)" offset = "40%"/>
 		    <stop stop-color = "rgb(80,80,80)" offset = "100%"/>
@@ -78,29 +77,29 @@
   <g>
 	    <g transform="rotate(21 0 10)">
 		      <line x1="0" x2="0" y1="10" y2="210" style="stroke: white; stroke-width: 1; fill: none;" />
-		      <circle cx="0" cy="230" r="20" fill="url(#light)" stroke="none"/>
+		      <circle cx="0" cy="230" r="20" fill="url(#light2)" stroke="none"/>
       <rect x="-95" y="40" width="85" height="40" rx="15" ry="15" transform="rotate(-21 0 10)" style="fill: #49afcd; stroke: #ccc;" />
-      <text x="-80" y="55" style="font-family: Arial; font-size: 8; fill: black;"
+      <text x="-80" y="55" style="font-family: Arial; font-size: 8px; fill: black;"
             transform="rotate(-21 0 10)">Require Styles</text>
-      <text x="-75" y="70" style="font-family: Arial; font-size: 8; fill: black;"
+      <text x="-75" y="70" style="font-family: Arial; font-size: 8px; fill: black;"
             transform="rotate(-21 0 10)">Extract CSS</text>
     </g>
 	    <g transform="rotate(-21 0 10)">
 		      <line x1="0" x2="0" y1="10" y2="210" style="stroke: white; stroke-width: 1; fill: none;" />
-		      <circle cx="0" cy="230" r="20" fill="url(#light)" stroke="none"/>
+		      <circle cx="0" cy="230" r="20" fill="url(#light2)" stroke="none"/>
       <rect x="10" y="40" width="85" height="40" rx="15" ry="15" transform="rotate(21 0 10)" style="fill: #f9f9f9; stroke: #ccc;" />
-      <text x="16" y="55" style="font-family: Arial; font-size: 8; fill: black;"
+      <text x="16" y="55" style="font-family: Arial; font-size: 8px; fill: black;"
         transform="rotate(21 0 10)">Define in JavaScript</text>
-      <text x="22" y="70" style="font-family: Arial; font-size: 8; fill: black;"
+      <text x="22" y="70" style="font-family: Arial; font-size: 8px; fill: black;"
         transform="rotate(21 0 10)">Pure Inline Styles</text>
     </g>
     <g>
 		      <line x1="0" x2="0" y1="10" y2="210" style="stroke: white; stroke-width: 1; fill: none;" />
-		      <circle cx="0" cy="230" r="20" fill="url(#light)" stroke="none"/>
+		      <circle cx="0" cy="230" r="20" fill="url(#light2)" stroke="none"/>
       <rect x="-50" y="145" width="100" height="55" rx="15" ry="15" style="fill: #f9f9f9; stroke: #ccc;"/>
-      <text x="-25" y="160" style="font-family: Arial; font-size: 8; fill: black;">Require Styles</text>
-      <text x="-41" y="175" style="font-family: Arial; font-size: 8; fill: black;">Generate Class Names</text>
-      <text x="-24" y="190" style="font-family: Arial; font-size: 8; fill: black;">Extract CSS</text>
+      <text x="-25" y="160" style="font-family: Arial; font-size: 8px; fill: black;">Require Styles</text>
+      <text x="-41" y="175" style="font-family: Arial; font-size: 8px; fill: black;">Generate Class Names</text>
+      <text x="-24" y="190" style="font-family: Arial; font-size: 8px; fill: black;">Extract CSS</text>
     </g>
   </g>
 </svg>
@@ -125,7 +124,7 @@
 ## Your Styles
 <!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-styes.scss
+### styes.scss
 
 <div class="Split">
   <div class="Split-column Split-column--65">
@@ -142,23 +141,25 @@ styes.scss
 /\* ... more ... \*/</pre>
   </div>
   <div class="Split-column Split-column--25">
-    <p>Define the classes you need only for this component</p>
+    <p>Only define the classes you need for this component</p>
   </div>
 </div>
 
 ------
 
-# Your Component
+## Your Component: Require
 <!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-<textarea data-codemirror data-mode="text/javascript" data-lines="2">let React = require('react/addons');
-let classNames = require('classnames');
-require('./styles.scss');
+<div style="width: 110%; left: 50%; transform: translateX(-50%); position: relative;">
+  <textarea data-codemirror data-mode="text/javascript" data-lines="2">
+let React = require("react");
+let classNames = require("classnames");
+require(""./styles.scss");
 
 let Media = React.createClass({
   render() {
-    return <div className="{classNames('Media', this.props.className)}">
-      <img className="Media-figure" src="{this.props.imageUrl}">
+    return <div className={classNames('Media', this.props.className)}>
+      <img className="Media-figure" src={this.props.imageUrl}>
       <div className="Media-body">
         <h3 className="Media-title">{this.props.title}</h3>
         <p>{this.props.description}</p>
@@ -167,7 +168,34 @@ let Media = React.createClass({
   }
 });
 
-module.exports = Media;</textarea>
+module.exports = Media;
+</textarea>
+</div>
+
+------
+
+## Your Component: Import
+<!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa extended" -->
+
+<div style="width: 110%; left: 50%; transform: translateX(-50%); position: relative;">
+  <textarea data-codemirror data-mode="text/javascript" data-lines="2">
+import React from "react";
+import classNames = "classnames";
+import "./styles.scss";
+
+export class Media extends React.Component {
+  render() {
+    return <div className={classNames('Media', this.props.className)}>
+      <img className="Media-figure" src={this.props.imageUrl} />
+      <div className="Media-body">
+        <h3 className="Media-title">{this.props.title}</h3>
+        <p>{this.props.description}</p>
+      </div>
+    </div>;
+  }
+}
+</textarea>
+</div>
 
 ------
 
@@ -188,7 +216,7 @@ module.exports = Media;</textarea>
  viewBox="-100 0 200 260">
 <title>Pendulum</title>
 <defs>
-	  <radialGradient id = "light" cx = "50%" cy = "50%" fx = "40%" fy = "35%" r = "65%">
+	  <radialGradient id = "light3" cx = "50%" cy = "50%" fx = "40%" fy = "35%" r = "65%">
 	    	<stop stop-color = "rgb(255,255,255)" offset = "0%"/>
 		    <stop stop-color = "rgb(190,190,190)" offset = "40%"/>
 		    <stop stop-color = "rgb(80,80,80)" offset = "100%"/>
@@ -197,29 +225,29 @@ module.exports = Media;</textarea>
   <g>
 	    <g transform="rotate(21 0 10)">
 		      <line x1="0" x2="0" y1="10" y2="210" style="stroke: white; stroke-width: 1; fill: none;" />
-		      <circle cx="0" cy="230" r="20" fill="url(#light)" stroke="none"/>
+		      <circle cx="0" cy="230" r="20" fill="url(#light3)" stroke="none"/>
       <rect x="-95" y="40" width="85" height="40" rx="15" ry="15" transform="rotate(-21 0 10)" style="fill: #f9f9f9; stroke: #ccc;" />
-      <text x="-80" y="55" style="font-family: Arial; font-size: 8; fill: black;"
+      <text x="-80" y="55" style="font-family: Arial; font-size: 8px; fill: black;"
             transform="rotate(-21 0 10)">Require Styles</text>
-      <text x="-75" y="70" style="font-family: Arial; font-size: 8; fill: black;"
+      <text x="-75" y="70" style="font-family: Arial; font-size: 8px; fill: black;"
             transform="rotate(-21 0 10)">Extract CSS</text>
     </g>
 	    <g transform="rotate(-21 0 10)">
 		      <line x1="0" x2="0" y1="10" y2="210" style="stroke: white; stroke-width: 1; fill: none;" />
-		      <circle cx="0" cy="230" r="20" fill="url(#light)" stroke="none"/>
+		      <circle cx="0" cy="230" r="20" fill="url(#light3)" stroke="none"/>
       <rect x="10" y="40" width="85" height="40" rx="15" ry="15" transform="rotate(21 0 10)" style="fill: #f9f9f9; stroke: #ccc;" />
-      <text x="16" y="55" style="font-family: Arial; font-size: 8; fill: black;"
+      <text x="16" y="55" style="font-family: Arial; font-size: 8px; fill: black;"
         transform="rotate(21 0 10)">Define in JavaScript</text>
-      <text x="22" y="70" style="font-family: Arial; font-size: 8; fill: black;"
+      <text x="22" y="70" style="font-family: Arial; font-size: 8px; fill: black;"
         transform="rotate(21 0 10)">Pure Inline Styles</text>
     </g>
     <g>
 		      <line x1="0" x2="0" y1="10" y2="210" style="stroke: white; stroke-width: 1; fill: none;" />
-		      <circle cx="0" cy="230" r="20" fill="url(#light)" stroke="none"/>
+		      <circle cx="0" cy="230" r="20" fill="url(#light3)" stroke="none"/>
       <rect x="-50" y="145" width="100" height="55" rx="15" ry="15" style="fill: #49afcd; stroke: #ccc;"/>
-      <text x="-25" y="160" style="font-family: Arial; font-size: 8; fill: black;">Require Styles</text>
-      <text x="-41" y="175" style="font-family: Arial; font-size: 8; fill: black;">Generate Class Names</text>
-      <text x="-24" y="190" style="font-family: Arial; font-size: 8; fill: black;">Extract CSS</text>
+      <text x="-25" y="160" style="font-family: Arial; font-size: 8px; fill: black;">Require Styles</text>
+      <text x="-41" y="175" style="font-family: Arial; font-size: 8px; fill: black;">Generate Class Names</text>
+      <text x="-24" y="190" style="font-family: Arial; font-size: 8px; fill: black;">Extract CSS</text>
     </g>
   </g>
 </svg>
@@ -230,11 +258,11 @@ module.exports = Media;</textarea>
 ## Sass vs. CSS Modules
 <!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-<div class="Split">
+<div class="Split" style="width: 120%; left: 50%; transform: translateX(-50%); position: relative;">
   <div class="Split-column Split-column--45">
     <p>BEM (media.scss)</p>
     <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">
-.Media { /\*all styles\*/ }
+.Media           { /\*all styles\*/ }
 .Media--centered { /\*some\*/ }
 .Media--reversed { /\*some\*/ }</pre><br />
 <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">
@@ -266,42 +294,34 @@ import styles from 'media.css';
 ## Composing Styles
 <!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-<pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">
-.common {
-  /* all the common styles you want */
-}
-
-.normal {
-  composes: common;
-  /* anything that only applies to Normal */
-}
-</pre>
-
-------
-
-## Sharing Across Files
-<!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa" -->
-
-<div class="Split">
-  <div class="Split-column Split-column--30">
-<pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">
+<div class="Split" style="width: 125%; left: 50%; transform: translateX(-50%); position: relative;">
+  <div class="Split-column Split-column--35">
+<textarea data-codemirror data-mode="text/x-sass" data-line-numbers="false">
 /\* colors.css \*/
+
 .primary {
   color: #720;
 }
+
 .secondary {
   color: #777;
 }
-</pre>
+</textarea>
   </div>
-  <div class="Split-column Split-column--70">
-<pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">
-.common { /\* font-sizes, border-radius \*/ }
+  <div class="Split-column Split-column--65">
+<textarea data-codemirror data-mode="text/x-sass" data-line-numbers="false">
+/\* main.css \*/
+
+.common {
+  /\* font-sizes, border-radius \*/
+  /\* all the common styles you want \*/
+}
+
 .normal {
   composes: common;
   composes: primary from "../colors.css";
 }
-</pre>
+</textarea>
   </div>
 </div>
 
@@ -329,7 +349,7 @@ import styles from 'media.css';
  viewBox="-100 0 200 260">
 <title>Pendulum</title>
 <defs>
-	  <radialGradient id = "light" cx = "50%" cy = "50%" fx = "40%" fy = "35%" r = "65%">
+	  <radialGradient id = "light4" cx = "50%" cy = "50%" fx = "40%" fy = "35%" r = "65%">
 	    	<stop stop-color = "rgb(255,255,255)" offset = "0%"/>
 		    <stop stop-color = "rgb(190,190,190)" offset = "40%"/>
 		    <stop stop-color = "rgb(80,80,80)" offset = "100%"/>
@@ -338,29 +358,29 @@ import styles from 'media.css';
   <g>
 	    <g transform="rotate(21 0 10)">
 		      <line x1="0" x2="0" y1="10" y2="210" style="stroke: white; stroke-width: 1; fill: none;" />
-		      <circle cx="0" cy="230" r="20" fill="url(#light)" stroke="none"/>
+		      <circle cx="0" cy="230" r="20" fill="url(#light4)" stroke="none"/>
       <rect x="-95" y="40" width="85" height="40" rx="15" ry="15" transform="rotate(-21 0 10)" style="fill: #f9f9f9; stroke: #ccc;" />
-      <text x="-80" y="55" style="font-family: Arial; font-size: 8; fill: black;"
+      <text x="-80" y="55" style="font-family: Arial; font-size: 8px; fill: black;"
             transform="rotate(-21 0 10)">Require Styles</text>
-      <text x="-75" y="70" style="font-family: Arial; font-size: 8; fill: black;"
+      <text x="-75" y="70" style="font-family: Arial; font-size: 8px; fill: black;"
             transform="rotate(-21 0 10)">Extract CSS</text>
     </g>
 	    <g transform="rotate(-21 0 10)">
 		      <line x1="0" x2="0" y1="10" y2="210" style="stroke: white; stroke-width: 1; fill: none;" />
-		      <circle cx="0" cy="230" r="20" fill="url(#light)" stroke="none"/>
+		      <circle cx="0" cy="230" r="20" fill="url(#light4)" stroke="none"/>
       <rect x="10" y="40" width="85" height="40" rx="15" ry="15" transform="rotate(21 0 10)" style="fill: #49afcd; stroke: #ccc;" />
-      <text x="16" y="55" style="font-family: Arial; font-size: 8; fill: black;"
+      <text x="16" y="55" style="font-family: Arial; font-size: 8px; fill: black;"
         transform="rotate(21 0 10)">Define in JavaScript</text>
-      <text x="22" y="70" style="font-family: Arial; font-size: 8; fill: black;"
+      <text x="22" y="70" style="font-family: Arial; font-size: 8px; fill: black;"
         transform="rotate(21 0 10)">Pure Inline Styles</text>
     </g>
     <g>
 		      <line x1="0" x2="0" y1="10" y2="210" style="stroke: white; stroke-width: 1; fill: none;" />
-		      <circle cx="0" cy="230" r="20" fill="url(#light)" stroke="none"/>
+		      <circle cx="0" cy="230" r="20" fill="url(#light4)" stroke="none"/>
       <rect x="-50" y="145" width="100" height="55" rx="15" ry="15" style="fill: #f9f9f9; stroke: #ccc;"/>
-      <text x="-25" y="160" style="font-family: Arial; font-size: 8; fill: black;">Require Styles</text>
-      <text x="-41" y="175" style="font-family: Arial; font-size: 8; fill: black;">Generate Class Names</text>
-      <text x="-24" y="190" style="font-family: Arial; font-size: 8; fill: black;">Extract CSS</text>
+      <text x="-25" y="160" style="font-family: Arial; font-size: 8px; fill: black;">Require Styles</text>
+      <text x="-41" y="175" style="font-family: Arial; font-size: 8px; fill: black;">Generate Class Names</text>
+      <text x="-24" y="190" style="font-family: Arial; font-size: 8px; fill: black;">Extract CSS</text>
     </g>
   </g>
 </svg>
@@ -369,11 +389,11 @@ import styles from 'media.css';
 ------
 
 ## [Radium](http://projects.formidablelabs.com/radium/)
-<!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa" data-menu-title="Radium: Styles Object" -->
 
 <pre data-codemirror data-mode="text/javascript" data-line-numbers="false">var color = require('color');
 
-var styles = {
+const styles = {
   base: {
     color: '#fff',
     ':hover': {
@@ -391,16 +411,17 @@ var styles = {
 ------
 
 ## [Radium](http://projects.formidablelabs.com/radium/)
-<!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa" data-menu-title="Radium: JavaScript" -->
 
-<textarea data-codemirror data-mode="text/javascript" data-line-numbers="false">var Radium = require('radium');
-var React = require('react');
+<textarea data-codemirror data-mode="text/javascript" data-line-numbers="false">
+const Radium = require('radium');
+import React from "react";
 
 @Radium
 class Button extends React.Component {
   static propTypes = {
     kind: React.PropTypes
-      .oneOf(['primary', 'warning']).isRequired
+      .oneOf(["primary", "warning"]).isRequired
   };
 
   render() {
@@ -416,7 +437,7 @@ class Button extends React.Component {
 ------
 
 ## Resources
-<!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa resources" -->
 
 * [Webpack](https://webpack.github.io/)
 * [Comparison of CSS in JS Libraries for React](https://github.com/FormidableLabs/radium/blob/master/docs/comparison/README.md)

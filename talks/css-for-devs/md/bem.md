@@ -1,5 +1,4 @@
-# BEM
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
+# BEM / SUIT CSS
 
 > BEM's "...goal is to help developers better understand the relationship between the HTML and CSS in a given project." --[BEM 101](https://css-tricks.com/bem-101/) by [Joe Richardson](https://twitter.com/joericho)
 
@@ -8,13 +7,12 @@ Notes:
 * http://www.sitepoint.com/working-bem-scale-advice-top-developers/
 
 ## Scenario
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
 > TODO: Put some scenario where dev looks to see why style isn't applied...
 
 ------
 
-<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="BEM / SUIT CSS" data-state="backEndBrian juniorJacob" data-menu-title="Deleting a line of CSS..." -->
 
 <blockquote>
 <a href="https://twitter.com/addyosmani/status/634779064335794180">"When you try deleting a line of CSS..."</a> &mdash; Addy Osmani (@addyosmani)
@@ -25,14 +23,14 @@ Notes:
 ------
 
 ## Problem
-<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="BEM / SUIT CSS" data-state="backEndBrian juniorJacob" -->
 
 <h1 class="blazing fragment">All CSS is Global!</h1>
 
 ------
 
 ## Origins
-<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="BEM / SUIT CSS" data-state="backEndBrian juniorJacob extended" -->
 
 > The BEM methodology was developed at Yandex with the following goals in mind:
 
@@ -46,7 +44,7 @@ Source: [Origins of the BEM Methodology](https://en.bem.info/method/#origins-of-
 ------
 
 ## So, What is BEM?
-<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="BEM / SUIT CSS" data-state="backEndBrian juniorJacob" -->
 
 * **B**<!-- .element style="color: red" -->lock
 * **E**<!-- .element style="color: red" -->lement
@@ -55,7 +53,7 @@ Source: [Origins of the BEM Methodology](https://en.bem.info/method/#origins-of-
 ------
 
 ## Examples
-<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob codeMirror--xlg" -->
+<!-- .slide: data-title="BEM / SUIT CSS" data-state="backEndBrian juniorJacob codeMirror--xlg" -->
 
 <pre data-codemirror data-mode="text/x-sass">
 /* Block */
@@ -73,7 +71,9 @@ Source: [Origins of the BEM Methodology](https://en.bem.info/method/#origins-of-
 ------
 
 ### Modified BEM Syntax for Usability
-<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob midLevelMelissa codeMirror--xlg" -->
+<!-- .slide: data-title="BEM / SUIT CSS" data-state="backEndBrian juniorJacob midLevelMelissa codeMirror--xlg" -->
+
+[A BEM syntax with UX in mind](http://simurai.com/blog/2013/10/24/BEM-syntax-with-ux-in-mind/) is very similar to the [SUIT CSS](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md) naming convention
 
 <pre data-codemirror data-mode="text/x-sass">
 /* Block */
@@ -88,12 +88,10 @@ Source: [Origins of the BEM Methodology](https://en.bem.info/method/#origins-of-
 /* Element with Modifier */
 .BlockName-elementName--modifierName {}</pre>
 
-Source: [A BEM syntax with UX in mind](http://simurai.com/blog/2013/10/24/BEM-syntax-with-ux-in-mind/)
-
 ------
 
 ## Media Example
-<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="BEM / SUIT CSS" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 <div class="Split">
   <div class="Split-column">
@@ -135,7 +133,7 @@ Source: [A BEM syntax with UX in mind](http://simurai.com/blog/2013/10/24/BEM-sy
 ------
 
 ## Sass @at-root
-<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="BEM / SUIT CSS" data-state="backEndBrian juniorJacob midLevelMelissa extended" -->
 
 <div class="Split">
   <div class="Split-column Split-column--75 fragment">
@@ -158,7 +156,7 @@ Source: [A BEM syntax with UX in mind](http://simurai.com/blog/2013/10/24/BEM-sy
 ------
 
 ## Sass 3.3 Parent Selector
-<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="BEM / SUIT CSS" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 <div class="Split">
   <div class="Split-column Split-column--75 fragment">
@@ -179,7 +177,7 @@ Source: [A BEM syntax with UX in mind](http://simurai.com/blog/2013/10/24/BEM-sy
 ------
 
 ## Media Example with Sass
-<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob midLevelMelissa overflowYScroll" -->
+<!-- .slide: data-title="BEM / SUIT CSS" data-state="backEndBrian juniorJacob midLevelMelissa overflowYScroll extended" -->
 
 <textarea data-codemirror data-mode="text/css">
 .Media {
@@ -209,7 +207,7 @@ Source: [A BEM syntax with UX in mind](http://simurai.com/blog/2013/10/24/BEM-sy
 ------
 
 ## Resources
-<!-- .slide: data-title="BEM" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="BEM / SUIT CSS" data-state="backEndBrian juniorJacob midLevelMelissa resources" -->
 
 * [Yandex BEM](https://en.bem.info/)
 * [BEM 101](https://css-tricks.com/bem-101/) by [Joe Richardson](https://twitter.com/joericho)

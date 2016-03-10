@@ -1,5 +1,4 @@
 # Specificity
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
 > Specificity determines, which CSS rule is applied by the browsers --[CSS Specificity: Things You Should Know](http://www.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/)
 
@@ -44,7 +43,7 @@
 
 ------
 
-## Specificity Hierarchy
+## Specificity Terminology
 <!-- .slide: data-title="Specificity" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
@@ -79,11 +78,11 @@
 ## How to Measure Specificity
 <!-- .slide: data-title="Specificity" data-state="backEndBrian juniorJacob" -->
 
-1. Start at 0
-2. Add 1000 for each inline style
-3. Add 100 for each ID
-4. Add 10 for each class, attribute & pseudo-class
-5. Add 1 for each element and pseudo-element
+1. Start at 0 <!-- .element: class="fragment" -->
+2. Add 1000 for each inline style <!-- .element: class="fragment" -->
+3. Add 100 for each ID <!-- .element: class="fragment" -->
+4. Add 10 for each class, attribute & pseudo-class <!-- .element: class="fragment" -->
+5. Add 1 for each element and pseudo-element <!-- .element: class="fragment" -->
 
 ------
 
@@ -196,14 +195,14 @@
 ------
 
 ## [CSS Specificity Star Wars](http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html)
-<!-- .slide: data-title="Specificity" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Specificity" data-state="backEndBrian juniorJacob midLevelMelissa extended" -->
 
 ![](./imgs/specificitywars.jpg)
 
 ------
 
 ## Resources
-<!-- .slide: data-title="Specificity" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Specificity" data-state="backEndBrian juniorJacob midLevelMelissa resources" -->
 
 * [Specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) by MDN
 * [Specifics on CSS Specificity](https://css-tricks.com/specifics-on-css-specificity/) by [Chris Coyier](http://twitter.com/chriscoyier)

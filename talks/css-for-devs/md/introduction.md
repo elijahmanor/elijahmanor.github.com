@@ -1,5 +1,5 @@
 # CSS for Developers
-<!-- .slide: data-state="introduction" -->
+<!-- .slide: data-state="introduction no-vote" data-menu-title="Introduction" data-background="imgs/coding.jpeg" -->
 
 <div class="CSSForDevelopers">
   <div class="CSSForDevelopers-text">CSS IS AWESOME</div>
@@ -11,47 +11,19 @@
 
 <!-- <div style="font-size: .4em; opacity: 0.5; font-style: italic;">Picture: [Stray Cat](https://flic.kr/p/dQZvyD) / [Jim Bauer](https://www.flickr.com/photos/lens-cap/) / Creative Commons</div> -->
 
-Notes:
-
-## Bio
-
-> Elijah Manor is a Christian and a family man. He works at The Lampo Group (Dave Ramsey) as a front-end web developer. He is a Microsoft Regional Director, Microsoft ASP.NET MVP, ASPInsider, IE userAgent, and a Pluralsight author. He enjoys blogging at http://elijahmanor.com and tweeting (@elijahmanor) about the things he learns.
-
 ------
 
-## `me.json`
-<!-- .slide: data-state="me codeMirror--xsm" -->
+<!-- ## `me.json` -->
+<!-- .slide: data-state="me codeMirror--xsm no-vote" data-background="./imgs/56d68184e23cc641590187.gif" data-background-size="1000px" data-background-repeat="none" data-menu-title="npm install elijahmanor" -->
 
-<div class="Split">
-  <div class="Split-column">
-    <pre data-codemirror data-line-numbers="false" data-theme="3024-night" data-mode="application/json">{
-  "name": "Elijah Manor",
-  "priorities" : [
-    "Christian", "Family", "Work"
-  ],
-  "work" : [
-    "@LeanKit", "@PluralSight"
-  ],
-  "tech" : [
-    "HTML", "CSS", "JavaScript",
-    "React", "jQuery"
-  ],
-  "titles" : [
-    "Microsoft MVP",
-    "IE userAgent"
-  ]
-}</pre>
-  </div>
-  <div class="Split-column">
-    <img src="./imgs/myfamily.jpg" style="margin-top: 0;" />
-    <img src="./imgs/leankit-wallpaper.png" />
-  </div>
-</div>
+<span class="fragment npmFlag" style="position: absolute; top: 1rem; right: 10rem;">`--save`</span>
+
+<span class="fragment npmFlag" style="position: absolute; top: 10rem; right: 10rem;">`--save-dev`</span>
 
 ------
 
 # CSS Personas
-<!-- .slide: data-state="codeMirror--xlg" -->
+<!-- .slide: data-state="codeMirror--xlg no-vote extended" -->
 
 <pre data-codemirror data-line-numbers="false">window.fetch('http://api.randomuser.me/')
   .then(function(response) {
@@ -64,6 +36,7 @@ Notes:
 ------
 
 ## Back-End Brian
+<!-- .slide: data-state="no-vote" -->
 
 <img src="./imgs/back-end-brian-big.jpg" data-xsrc="http://api.randomuser.me/portraits/men/31.jpg" style="border-radius: 50%; width: 25%;" /><!-- 8, 15, 31,  -->
 
@@ -74,9 +47,12 @@ Notes:
 * CSS is frustrating and seemingly unmaintainable
 * Leans towards Twitter Bootstrap or other frameworks
 
+<img src="imgs/copying-pasting.jpg" style="position: absolute; left: 10rem; top: 3rem; transform: rotate(15deg);" class="fragment" />
+
 ------
 
 ## Junior Jacob
+<!-- .slide: data-state="no-vote" -->
 
 <img src="./imgs/junior-jacob-big.jpg" data-xsrc="http://api.randomuser.me/portraits/men/73.jpg" style="border-radius: 50%; width: 25%;" /><!-- 32, 73 -->
 
@@ -89,6 +65,7 @@ Notes:
 ------
 
 ## Mid-Level Melissa
+<!-- .slide: data-state="no-vote" -->
 
 <img src="./imgs/mid-level-melissa-big.jpg" data-xsrc="http://api.randomuser.me/portraits/women/10.jpg" style="border-radius: 50%; width: 25%;" />
 
@@ -100,8 +77,17 @@ Notes:
 
 ------
 
+## Poll
+<!-- .slide: data-state="no-vote" -->
+
+<iframe src="https://www.sli.do/event/ifcuyn2w/wall" style="width: 100%; height: 500px;"></iframe>
+
+<!-- <a href="https://www.sli.do/event/ifcuyn2w/wall" data-preview-link>Which persona do you currently identify with?</a> -->
+
+------
+
 ## Outline
-<!-- .slide: data-state="outline" -->
+<!-- .slide: data-state="outline extended" -->
 
 <div><ul id="outline"></ul></div>
 

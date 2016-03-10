@@ -1,5 +1,4 @@
 # Atomic Design
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
 > "Atomic design is methodology for creating design systems." --[Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/)
 
@@ -75,7 +74,7 @@ Pages are specific instances of templates. Placeholder content is replaced with 
 ------
 
 ## Resources
-<!-- .slide: data-title="Atomic Design" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Atomic Design" data-state="backEndBrian juniorJacob midLevelMelissa resources" -->
 
 * [Video: Brad Frost – Atomic Design](http://vimeo.com/67476280) by [Brad Frost](https://twitter.com/brad_frost)
 * [Slides: Atomic Design](http://www.slideshare.net/bradfrostweb/atomic-design?ref=http://bradfrost.com/blog/post/atomic-web-design/) by [Brad Frost](https://twitter.com/brad_frost)

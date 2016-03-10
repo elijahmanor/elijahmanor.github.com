@@ -1794,7 +1794,7 @@
 	 */
 	function enterFullscreen() {
 
-		var element = document.body;
+		var element = document.documentElement; // ETM
 
 		// Check which implementation is available
 		var requestMethod = element.requestFullScreen ||
@@ -2329,24 +2329,132 @@
 
 	}
 
+	// /**
+	//  * Updates the slide number div to reflect the current slide.
+	//  */
+	// function updateSlideNumber() {
+	//
+	// 	// Update slide number if enabled
+	// 	if( config.slideNumber && dom.slideNumber) {
+	//
+	// 		// Display the number of the page using 'indexh - indexv' format
+	// 		var indexString = indexh;
+	// 		if( indexv > 0 ) {
+	// 			indexString += ' - ' + indexv;
+	// 		}
+	//
+	// 		dom.slideNumber.innerHTML = indexString;
+	// 	}
+	//
+	// }
+
+	// BEGIN ETM
+
 	/**
 	 * Updates the slide number div to reflect the current slide.
+	 *
+	 * The following slide number formats are available:
+	 *  "h.v": 	horizontal . vertical slide number (default)
+	 *  "h/v": 	horizontal / vertical slide number
+	 *    "c": 	flattened slide number
+	 *  "c/t": 	flattened slide number / total slides
 	 */
 	function updateSlideNumber() {
 
 		// Update slide number if enabled
-		if( config.slideNumber && dom.slideNumber) {
+		if( config.slideNumber && dom.slideNumber ) {
 
-			// Display the number of the page using 'indexh - indexv' format
-			var indexString = indexh;
-			if( indexv > 0 ) {
-				indexString += ' - ' + indexv;
+			var value = [];
+			var format = 'h.v';
+
+			// Check if a custom number format is available
+			if( typeof config.slideNumber === 'string' ) {
+				format = config.slideNumber;
 			}
 
-			dom.slideNumber.innerHTML = indexString;
+			switch( format ) {
+				case 'c':
+					value.push( getSlidePastCount() + 1 );
+					break;
+				case 'c/t':
+					value.push( getSlidePastCount() + 1, '/', getTotalSlides() );
+					break;
+				case 'h/v':
+					value.push( indexh + 1 );
+					if( isVerticalSlide() ) value.push( '/', indexv + 1 );
+					break;
+				default:
+					value.push( indexh + 1 );
+					if( isVerticalSlide() ) value.push( '.', indexv + 1 );
+			}
+
+			dom.slideNumber.innerHTML = formatSlideNumber( value[0], value[1], value[2] );
 		}
 
 	}
+
+	/**
+	 * Applies HTML formatting to a slide number before it's
+	 * written to the DOM.
+	 */
+	function formatSlideNumber( a, delimiter, b ) {
+
+		if( typeof b === 'number' && !isNaN( b ) ) {
+			return  '<span class="slide-number-a">'+ a +'</span>' +
+					'<span class="slide-number-delimiter">'+ delimiter +'</span>' +
+					'<span class="slide-number-b">'+ b +'</span>';
+		}
+		else {
+			return '<span class="slide-number-a">'+ a +'</span>';
+		}
+
+	}
+
+	/**
+	 * Returns the number of past slides. This can be used as a global
+	 * flattened index for slides.
+	 */
+	function getSlidePastCount() {
+
+		var horizontalSlides = toArray( dom.wrapper.querySelectorAll( HORIZONTAL_SLIDES_SELECTOR ) );
+
+		// The number of past slides
+		var pastCount = 0;
+
+		// Step through all slides and count the past ones
+		mainLoop: for( var i = 0; i < horizontalSlides.length; i++ ) {
+
+			var horizontalSlide = horizontalSlides[i];
+			var verticalSlides = toArray( horizontalSlide.querySelectorAll( 'section' ) );
+
+			for( var j = 0; j < verticalSlides.length; j++ ) {
+
+				// Stop as soon as we arrive at the present
+				if( verticalSlides[j].classList.contains( 'present' ) ) {
+					break mainLoop;
+				}
+
+				pastCount++;
+
+			}
+
+			// Stop as soon as we arrive at the present
+			if( horizontalSlide.classList.contains( 'present' ) ) {
+				break;
+			}
+
+			// Don't count the wrapping section for vertical slides
+			if( horizontalSlide.classList.contains( 'stack' ) === false ) {
+				pastCount++;
+			}
+
+		}
+
+		return pastCount;
+
+	}
+
+	//END ETM
 
 	/**
 	 * Updates the state of all control/navigation arrows.

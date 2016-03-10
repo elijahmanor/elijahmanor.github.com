@@ -1,42 +1,50 @@
 # Sass
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
 > "CSS with superpowers" --[Sass](http://sass-lang.com/)
 
-<!--
-
-## Scenario
-
-TODO: show some nasty code with colors everywhere some crazy selectors, yada yada
-
--->
+Notes:
 
 ------
 
 ## Variables
 <!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob" -->
 
-<pre data-codemirror data-mode="text/x-sass">$font-stack: Helvetica, sans-serif;
+<div class="Split">
+  <div class="Split-column  Split-column--50 fragment">
+    <h3>Sass</h3>
+    <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">$font-stack: Helvetica;
 $primary-color: #333;
 
 body {
   font: 100% $font-stack;
   color: $primary-color;
 }</pre>
+  </div>
+  <div class="Split-column  Split-column--50 fragment">
+    <h3>CSS</h3>
+    <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">body {
+  font: 100% Helvetica;
+  color: #333;
+}</pre>
+  </div>
+</div>
 
 ------
 
 ## Nesting
 <!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob" -->
 
-<pre data-codemirror data-mode="text/x-sass">nav {
+<div class="Split">
+  <div class="Split-column Split-column--50 fragment">
+    <h3>Sass</h3>
+    <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">nav {
   ul {
     margin: 0;
     padding: 0;
     list-style: none;
   }
 
-  li { display: inline-block; }
+  li { float: left; }
 
   a {
     display: block;
@@ -44,6 +52,26 @@ body {
     text-decoration: none;
   }
 }</pre>
+  </div>
+  <div class="Split-column Split-column--50 fragment">
+    <h3>CSS</h3>
+    <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  float: left;
+}
+
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}</pre>
+  </div>
+</div>
 
 ------
 
@@ -82,14 +110,31 @@ body {
 ## Imports
 <!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob" -->
 
-<pre data-codemirror data-mode="text/x-sass">/* base.scss */
+<div class="Split">
+  <div class="Split-column Split-column--50 fragment">
+    <h3>Sass</h3>
+    <textarea data-codemirror data-mode="text/x-sass" data-line-numbers="false">// base.scss
 
-@import 'reset';
+@import "normalize-scss";
 
 body {
-  font: 100% Helvetica, sans-serif;
-  background-color: #efefef;
-}</pre>
+  font: 100% Helvetica;
+  color: #efefef;
+}</textarea>
+  </div>
+  <div class="Split-column Split-column--50 fragment">
+    <h3>CSS</h3>
+    <textarea data-codemirror data-mode="text/x-sass" data-line-numbers="false">/\* normalize-scss 3.0.3+normalize.3.0.3 | MIT/GPLv2 License | bit.ly/normalize-scss \*/
+
+/\* ... more ... \*/
+
+body {
+  font: 100% Helvetica;
+  color: #efefef;
+}
+</textarea>
+  </div>
+</div>
 
 <small>Note: These are not the same as CSS `@import`</small>
 
@@ -99,14 +144,14 @@ body {
 <!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
-  <div class="Split-column Split-column--65 fragment">
+  <div class="Split-column Split-column--60 fragment">
     <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">@mixin center ($axis: false) {
   position: absolute;
 
   @if not($axis) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 50%; left: 50%;
+    transform:
+      translate(-50%, -50%);
   }
   @else if $axis == x {
     left: 50%;
@@ -118,7 +163,7 @@ body {
   }
 }</pre>
   </div>
-  <div class="Split-column Split-column--35 fragment">
+  <div class="Split-column Split-column--40 fragment">
     <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">.Widget {
   @include center;
 }
@@ -136,7 +181,7 @@ body {
 ------
 
 ## Mixin history
-<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob" -->
 
 * <!-- .element: class="fragment" data-fragment-index="1" -->Lots of libraries have mixins that will add vendor prefixes (`-webkit-`, `-moz-`, `-o-`, `-ms-`)
 * <!-- .element: class="fragment" data-fragment-index="2" -->These libraries would often generically add all vendor prefixes even if not necessary
@@ -205,10 +250,9 @@ body {
   </div>
 </div>
 
-
 ------
 
-## ..but, be careful
+## ...but, be careful
 <!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 <div class="Split">
@@ -287,14 +331,14 @@ body {
 ------
 
 ## [Scut <sup><svg style="width: 1rem; height: 1rem;" fill="white" xmlns="http://www.w3.org/2000/svg" data-icon="external-link" viewBox="0 0 16 20"><path d="M11 0l1.78 1.78-.5.5-4 4-.687.72L9 8.406l.718-.688 4-4 .5-.5 1.78 1.78V0h-5zM0 2v14h14V8h-2v6H2V4h6V2H0z"/></svg></sup>](https://davidtheclark.github.io/scut/index.html)
-<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa extended" -->
 
 > "You can think of the word Scut as an acronym for Sass-CSS Utitilies. Or think of it this way: Scut will help you, the frontend laborer, do your scut work." --[Scut](https://davidtheclark.github.io/scut/)
 
 ------
 
 ## [Scut <sup><svg style="width: 1rem; height: 1rem;" fill="white" xmlns="http://www.w3.org/2000/svg" data-icon="external-link" viewBox="0 0 16 20"><path d="M11 0l1.78 1.78-.5.5-4 4-.687.72L9 8.406l.718-.688 4-4 .5-.5 1.78 1.78V0h-5zM0 2v14h14V8h-2v6H2V4h6V2H0z"/></svg></sup>](https://davidtheclark.github.io/scut/index.html)
-<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa extended" -->
 
 <div class="Split">
   <div class="Split-column Split-column--75 fragment">
@@ -326,7 +370,7 @@ body {
 ------
 
 ## LibSass
-<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa extended" -->
 
 * Ruby Sass
 * LibSass
@@ -336,7 +380,7 @@ body {
 ------
 
 ## Style Guidelines
-<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa extended" -->
 
 * [CSS Tricks: Sass Style Guide](https://css-tricks.com/sass-style-guide/
 )
@@ -345,7 +389,7 @@ body {
 ------
 
 ## Finding Unused Sass variables
-<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa extended" -->
 
 <pre data-codemirror data-mode="text/x-sh">#!/usr/bin/env bash
 # HOW TO USE
@@ -363,12 +407,12 @@ $card-height
 $font-family-serif
 </pre>
 
-Source: [Finding unused SCSS variables](http://blog.gospodarets.com/finding_unused_scss_variables/)
+<small>Source: [Finding unused SCSS variables](http://blog.gospodarets.com/finding_unused_scss_variables/)</small>
 
 ------
 
 ## Resources
-<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa resources" -->
 
 * [Sass Compatibility Guide](https://sass-compatibility.github.io/)
 * [CSS Tricks: Sass Style Guide](https://css-tricks.com/sass-style-guide/
@@ -376,6 +420,7 @@ Source: [Finding unused SCSS variables](http://blog.gospodarets.com/finding_unus
 * [Sass Guidelines](http://sass-guidelin.es/)
 * [Scut](https://davidtheclark.github.io/scut/)
 * [Autoprefixer](https://github.com/postcss/autoprefixer)
+* [Finding unused SCSS variables](http://blog.gospodarets.com/finding_unused_scss_variables/)
 
 Notes:
 

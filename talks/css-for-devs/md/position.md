@@ -1,14 +1,13 @@
 # Position
-<!-- .slide: data-state="backEndBrian juniorJacob" -->
 
 > "The position CSS property chooses alternative rules for positioning elements, designed to be useful for scripted animation effects." --[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
 
 ------
 
 ## [Scenario <sup><svg style="width: 1rem; height: 1rem;" fill="white" xmlns="http://www.w3.org/2000/svg" data-icon="external-link" viewBox="0 0 16 20"><path d="M11 0l1.78 1.78-.5.5-4 4-.687.72L9 8.406l.718-.688 4-4 .5-.5 1.78 1.78V0h-5zM0 2v14h14V8h-2v6H2V4h6V2H0z"/></svg></sup>](http://codepen.io/elijahmanor/pen/GJjJRP?editors=110)
-<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob backgroundGif" data-background="./imgs/css-is-painful.gif" -->
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob backgroundGif" data-background="./imgs/css-is-painful.gif" data-background-size="1000px" data-background-repeat="none" -->
 
-<div class="Split">
+<div class="Split" style="width: 110%;">
   <div class="Split-column">
     <div class="fragment">
       <h4>Have you ever wanted to do something like...</h4>
@@ -100,7 +99,7 @@
 ------
 
 ## Static
-<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob extended" -->
 
 > "This keyword lets the element use the normal behavior, that is it is laid out in its current position in the flow.  The top, right, bottom, left and z-index properties do not apply." --[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
 
@@ -137,7 +136,7 @@
 ------
 
 ## Relative
-<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob extended" -->
 
 > "This keyword lays out all elements as though the element were not positioned, and then adjust the element's position, without changing layout (and thus leaving a gap for the element where it would have been had it not been positioned)." --[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
 
@@ -174,7 +173,7 @@
 ------
 
 ## Absolute
-<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob extended" -->
 
 > "Do not leave space for the element. Instead, position it at a specified position relative to its closest positioned ancestor or to the containing block." --[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
 
@@ -250,7 +249,7 @@
 ------
 
 ## Fixed
-<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob extended" -->
 
 > "Do not leave space for the element. Instead, position it at a specified position relative to the screen's viewport and don't move it when scrolled." --[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
 
@@ -333,15 +332,17 @@
 ## Sticky Gotchas
 <!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-* <!-- .element: class="fragment" data-fragment-index="1" -->Unfortunately `position: sticky;` only works in Firefox under an `about:config` preference of `layout.css.sticky.enabled` and the feature was recently removed from Chrome to be redone later
+* <!-- .element: class="fragment" data-fragment-index="1" -->Unfortunately `position: sticky;` only works in Firefox under an `about:config` preference of `layout.css.sticky.enabled` and the feature was removed from Chrome to be redone and is currently [`in development`](https://bugs.chromium.org/p/chromium/issues/detail?id=231752)
 * <!-- .element: class="fragment" data-fragment-index="2" -->Until then you can wire-up your own or use a shim/polyfill such as [fixed-sticky](https://github.com/filamentgroup/fixed-sticky) or [stickyfill](https://github.com/wilddeer/stickyfill)
 
 ------
 
 ## Naive Sticky Example
-<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob midLevelMelissa extended" -->
 
-<textarea data-codemirror data-mode="text/javascript" data-line-numbers="false">
+<div class="Split" style="width: 120%; left: 50%; transform: translateX(-50%); position: relative;">
+  <div class="Split-column Split-column--70">
+    <textarea data-codemirror data-mode="text/javascript" data-line-numbers="false">
 var nav = document.querySelector('nav')
 var navPosition = nav.getBoundingClientRect().top;
 
@@ -350,16 +351,28 @@ window.addEventListener('scroll', function() {
     window.pageYOffset >= navPosition);
 });
 </textarea>
+  </div>
+  <div class="Split-column Split-column--30">
+    <textarea data-codemirror data-mode="text/x-sass" data-line-numbers="false">
+.sticky {
+  position: fixed;
+  top: 0;
+}
+</textarea>
+  </div>
+</div>
 
 <small>Use one of the shim/polyfills instead</small>
 
 ------
 
 ## Resources
-<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob resources" -->
 
 * [CSS Position](https://developer.mozilla.org/en-US/docs/Web/CSS/position) by MDN
 * [Codecademy CSS Positioning](http://www.codecademy.com/courses/web-beginner-en-6merh/0/1)
+* [fixed-sticky](https://github.com/filamentgroup/fixed-sticky)
+* [stickyfill](https://github.com/wilddeer/stickyfill)
 
 Notes:
 
