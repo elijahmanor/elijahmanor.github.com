@@ -108,7 +108,7 @@ nav a {
 ------
 
 ## Imports
-<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob" -->
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob extended" -->
 
 <div class="Split">
   <div class="Split-column Split-column--50 fragment">
@@ -219,7 +219,7 @@ body {
 ------
 
 ## Extend
-<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa extended" -->
 
 <div class="Split">
   <div class="Split-column fragment">
@@ -253,7 +253,7 @@ body {
 ------
 
 ## ...but, be careful
-<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa extended" -->
 
 <div class="Split">
   <div class="Split-column fragment">
@@ -291,7 +291,7 @@ body {
 ------
 
 ## Extending Place Holders
-<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Sass" data-state="backEndBrian juniorJacob midLevelMelissa extended" -->
 
 <div class="Split">
   <div class="Split-column fragment">

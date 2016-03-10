@@ -267,8 +267,8 @@
   <div class="box box3"></div>
 </div></pre>
     <pre data-codemirror data-mode="text/css" data-lines="10">.container {
-  border: 1px solid blue; padding: 25px;
-  position: relative;
+  border: 1px solid blue;
+  padding: 25px;
 }
 .box {
   width: 100px; height: 100px;
@@ -296,6 +296,8 @@
 <!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 <div class="caniuse" data-feature="css-sticky"></div>
+
+<small>shim/polyfill such as [fixed-sticky](https://github.com/filamentgroup/fixed-sticky) or [stickyfill](https://github.com/wilddeer/stickyfill)</small>
 
 ------
 
@@ -330,7 +332,7 @@
 ------
 
 ## Sticky Gotchas
-<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Position" data-state="backEndBrian juniorJacob midLevelMelissa extended" -->
 
 * <!-- .element: class="fragment" data-fragment-index="1" -->Unfortunately `position: sticky;` only works in Firefox under an `about:config` preference of `layout.css.sticky.enabled` and the feature was removed from Chrome to be redone and is currently [`in development`](https://bugs.chromium.org/p/chromium/issues/detail?id=231752)
 * <!-- .element: class="fragment" data-fragment-index="2" -->Until then you can wire-up your own or use a shim/polyfill such as [fixed-sticky](https://github.com/filamentgroup/fixed-sticky) or [stickyfill](https://github.com/wilddeer/stickyfill)

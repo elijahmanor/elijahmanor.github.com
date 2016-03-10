@@ -10,7 +10,7 @@ Notes:
 
 ------
 
-## SCSS-Lint
+## [SCSS Lint](https://github.com/brigade/scss-lint) or [Sass Lint](https://github.com/sasstools/sass-lint)
 <!-- .slide: data-title="Linting" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 > "Configurable tool for writing clean and consistent SCSS" --[SCSS-Lint](https://github.com/brigade/scss-lint)

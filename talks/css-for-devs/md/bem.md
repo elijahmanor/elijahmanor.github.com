@@ -53,7 +53,7 @@ Source: [Origins of the BEM Methodology](https://en.bem.info/method/#origins-of-
 ------
 
 ## Examples
-<!-- .slide: data-title="BEM / SUIT CSS" data-state="backEndBrian juniorJacob codeMirror--xlg" -->
+<!-- .slide: data-title="BEM / SUIT CSS" data-state="backEndBrian juniorJacob codeMirror--xlg extended" -->
 
 <pre data-codemirror data-mode="text/x-sass">
 /* Block */

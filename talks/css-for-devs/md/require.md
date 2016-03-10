@@ -122,7 +122,7 @@
 ------
 
 ## Your Styles
-<!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa extended" -->
 
 ### styes.scss
 
@@ -154,7 +154,7 @@
   <textarea data-codemirror data-mode="text/javascript" data-lines="2">
 let React = require("react");
 let classNames = require("classnames");
-require(""./styles.scss");
+require("./styles.scss");
 
 let Media = React.createClass({
   render() {
@@ -294,41 +294,38 @@ import styles from 'media.css';
 ## Composing Styles
 <!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-<div class="Split" style="width: 125%; left: 50%; transform: translateX(-50%); position: relative;">
-  <div class="Split-column Split-column--35">
+<div class="Split" style="width: 130%; left: 50%; transform: translateX(-50%); position: relative;">
+  <div class="Split-column Split-column--40">
+    <p>Composing Locally</p>
 <textarea data-codemirror data-mode="text/x-sass" data-line-numbers="false">
-/\* colors.css \*/
-
-.primary {
-  color: #720;
-}
-
-.secondary {
-  color: #777;
-}
-</textarea>
-  </div>
-  <div class="Split-column Split-column--65">
-<textarea data-codemirror data-mode="text/x-sass" data-line-numbers="false">
-/\* main.css \*/
-
 .common {
-  /\* font-sizes, border-radius \*/
-  /\* all the common styles you want \*/
+  background-color: #ccc;
+  border: 1px solid black;
 }
 
 .normal {
   composes: common;
-  composes: primary from "../colors.css";
+
+  padding: 1rem;
 }
 </textarea>
   </div>
+  <div class="Split-column Split-column--60">
+    <p>Composing Externally</p>
+    <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">
+.element {
+  composes: large from "./typography.css";
+  composes: dark-text from "./colors.css";
+  composes: padding-all from "./layout.css";
+  composes: subtle-shadow from "./effect.css";
+}</pre>
+  </div>
 </div>
 
-------
-
-## Self Describing
+<!-- ## Self Describing -->
 <!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+
+Notes:
 
 <pre data-codemirror data-mode="text/x-sass" data-line-numbers="false">
 .element {
@@ -414,7 +411,7 @@ const styles = {
 <!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa" data-menu-title="Radium: JavaScript" -->
 
 <textarea data-codemirror data-mode="text/javascript" data-line-numbers="false">
-const Radium = require('radium');
+import Radium from "radium";
 import React from "react";
 
 @Radium

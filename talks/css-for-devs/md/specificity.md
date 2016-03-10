@@ -49,44 +49,32 @@
 <div class="Split">
   <div class="Split-column">
     <div class="fragment">
-      <h4>1. Start with `0`</h4>
+      <h4>1. Start with <code style="color: #D8FA3C;">0</code></h4>
+    </div>
+    <div class="fragment">
+      <h4>2. Inline Styles: <br/>Add <code style="color: #D8FA3C;">1000</code></h4>
       <pre data-codemirror data-mode="text/html" data-line-numbers="false"><div style="color: red;"></div></pre>
     </div>
     <div class="fragment">
-      <h4>2. Inline Styles: Add `1000`</h4>
-      <pre data-codemirror data-mode="text/html" data-line-numbers="false"><div style="color: red;"></div></pre>
-    </div>
-    <div class="fragment">
-      <h4>3. IDs: Add `100`</h4>
+      <h4>3. IDs: <br/>Add <code style="color: #D8FA3C;">100</code></h4>
       <pre data-codemirror data-mode="text/css" data-line-numbers="false">#updateItem {}
 #shoppingCart {}</pre>
     </div>
   </div>
   <div class="Split-column">
     <div class="fragment">
-      <h4>4. Classes, attributes, & pseudo-classes: Add `10`</h4>
+      <h4>4. Classes, attributes, & pseudo-classes: <br/>Add <code style="color: #D8FA3C;">10</code></h4>
       <pre data-codemirror data-mode="text/css" data-line-numbers="false">.selected {}
 [href^='http://'] {}
 :nth-child(2n+1) {}</pre>
     </div>
     <div class="fragment">
-      <h4>5. Elements & <br /> psuedo-elements: Add `1`</h4>
+      <h4>5. Elements & <br /> psuedo-elements: <br/>Add <code style="color: #D8FA3C;">1</code></h4>
       <pre data-codemirror data-mode="text/css" data-line-numbers="false">table {}
 .fa:after {}</pre>
     </div>
   </div>
 </div>
-
-Notes:
-
-<!-- ## How to Measure Specificity -->
-<!-- .slide: data-title="Specificity" data-state="backEndBrian juniorJacob" -->
-
-1. Start at 0 <!-- .element: class="fragment" -->
-2. Add 1000 for each inline style <!-- .element: class="fragment" -->
-3. Add 100 for each ID <!-- .element: class="fragment" -->
-4. Add 10 for each class, attribute & pseudo-class <!-- .element: class="fragment" -->
-5. Add 1 for each element and pseudo-element <!-- .element: class="fragment" -->
 
 ------
 
@@ -186,7 +174,7 @@ Notes:
 <!-- .slide: data-title="Specificity" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 * <!-- .element: class="fragment" data-fragment-index="1" -->Try to keep your specificity score as low as possible
-* <!-- .element: class="fragment" data-fragment-index="2" -->BEM `&&` SUIT CSS help address high specificity (wait for it)
+* <!-- .element: class="fragment" data-fragment-index="2" -->BEM `&&` SUIT CSS naming conventions can help address high specificity (wait for it)
 * <!-- .element: class="fragment" data-fragment-index="3" --> Lean towards `.Class`, not `#Id` selectors
 
 ------

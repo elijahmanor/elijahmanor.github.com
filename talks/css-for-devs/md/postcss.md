@@ -301,7 +301,7 @@ nav {
 
 ------
 
-<!-- .slide: data-title="PostCSS" data-state="backEndBrian juniorJacob midLevelMelissa" data-menu-title="postcss-partial-import & postcss-extend" -->
+<!-- .slide: data-title="PostCSS" data-state="backEndBrian juniorJacob midLevelMelissa extended" data-menu-title="postcss-partial-import & postcss-extend" -->
 
 <div class="Split">
   <div class="Split-column">
@@ -469,7 +469,7 @@ require('postcss-mixins')({
 ------
 
 ## [cssnext](https://github.com/MoOx/postcss-cssnext)
-<!-- .slide: data-title="PostCSS" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+<!-- .slide: data-title="PostCSS" data-state="backEndBrian juniorJacob midLevelMelissa extended" -->
 
 <div class="Split" style="width: 130%; left: 50%; transform: translateX(-50%); position: relative;">
   <div class="Split-column Split-column--50">
@@ -536,8 +536,8 @@ assets({
     <h4>Input</h4>
     <textarea data-codemirror data-mode="text/x-sass" data-line-numbers="false">
 body {
-  background: resolve('foobar.jpg');
-  background: resolve('icons/baz.png');
+  background: resolve('hero.jpg');
+  background: resolve('icons/close.png');
 }
 </textarea>
 
@@ -545,9 +545,9 @@ body {
     <textarea data-codemirror data-mode="text/x-sass" data-line-numbers="false" class="fragment">
 body {
   background:
-    url('/media/patterns/foobar.jpg');
+    url('/media/patterns/hero.jpg');
   background:
-    url('/images/icons/baz.png');
+    url('/images/icons/close.png');
 }
 </textarea>
   </div>

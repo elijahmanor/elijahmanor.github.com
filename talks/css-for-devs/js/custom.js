@@ -24,6 +24,7 @@ Reveal.addEventListener('slidechanged', function(event) {
     window.end = null;
     document.querySelector( ".pace span" ).style.width = '0%';
     document.querySelector( ".pace span" ).classList.remove( "pulse" );
+    document.querySelector( ".pace span" ).classList.remove( "complete" );
   } else if ( !Reveal.isOverview() && event.indexh === 0 && event.indexv === 1 && event.previousSlide && !!~event.previousSlide.dataset.state.indexOf("introduction") ) {
     console.log( "Starting timer..." );
     window.start = Date.now();
@@ -42,9 +43,10 @@ Reveal.addEventListener('slidechanged', function(event) {
         document.querySelector( ".pace span" ).style.width = '100%';
         setTimeout( function() {
           document.querySelector( ".pace span" ).classList.add( "pulse" );
+          document.querySelector( ".pace span" ).classList.add( "complete" );
           setTimeout( function() {
             document.querySelector( ".pace span" ).style.width = '0%';
-          }, 10000 );
+          }, 60000 );
         }, 1000 );
       }
     }, 1000 );
