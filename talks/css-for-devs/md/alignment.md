@@ -213,11 +213,13 @@ Float Version
 ## [FlexboxFroggy.com](http://flexboxfroggy.com/)
 <!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-<a href="http://flexboxfroggy.com/" data-preview-link>
-  <div class="frog green">
-    <div class="bg animated pulse infinite"></div>
-  </div>
-</a>
+Guide Froggy and friends to the lilypads!
+
+<a href="http://flexboxfroggy.com/" data-preview-link><img src="imgs/flexbox-froggy.gif" /></a>
+
+<!-- <div class="frog green" style="position: absolute; bottom: 0; right: 0;">
+  <div class="bg animated pulse infinite"></div>
+</div> -->
 
 ------
 
@@ -226,7 +228,7 @@ Float Version
 
 Stop the incoming enemies from getting past your defenses!
 
-<a href="http://www.flexboxdefense.com/" data-preview-link><img src="imgs/flexbox-defense.gif" /></a>
+<a href="http://www.flexboxdefense.com/" data-preview-link><img src="imgs/flexbox-defense-wide.gif" /></a>
 
 ------
 

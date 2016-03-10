@@ -43,39 +43,43 @@
 
 ------
 
-## Specificity Terminology
+## How to Score Specificity
 <!-- .slide: data-title="Specificity" data-state="backEndBrian juniorJacob" -->
 
 <div class="Split">
   <div class="Split-column">
     <div class="fragment">
-      <h4>1. Inline Styles</h4>
+      <h4>1. Start with `0`</h4>
       <pre data-codemirror data-mode="text/html" data-line-numbers="false"><div style="color: red;"></div></pre>
     </div>
     <div class="fragment">
-      <h4>2. IDs</h4>
+      <h4>2. Inline Styles: Add `1000`</h4>
+      <pre data-codemirror data-mode="text/html" data-line-numbers="false"><div style="color: red;"></div></pre>
+    </div>
+    <div class="fragment">
+      <h4>3. IDs: Add `100`</h4>
       <pre data-codemirror data-mode="text/css" data-line-numbers="false">#updateItem {}
 #shoppingCart {}</pre>
     </div>
   </div>
   <div class="Split-column">
     <div class="fragment">
-      <h4>3. Classes, attributes, & pseudo-classes</h4>
+      <h4>4. Classes, attributes, & pseudo-classes: Add `10`</h4>
       <pre data-codemirror data-mode="text/css" data-line-numbers="false">.selected {}
 [href^='http://'] {}
 :nth-child(2n+1) {}</pre>
     </div>
     <div class="fragment">
-      <h4>4. Elements & <br /> psuedo-elements</h4>
+      <h4>5. Elements & <br /> psuedo-elements: Add `1`</h4>
       <pre data-codemirror data-mode="text/css" data-line-numbers="false">table {}
 .fa:after {}</pre>
     </div>
   </div>
 </div>
 
-------
+Notes:
 
-## How to Measure Specificity
+<!-- ## How to Measure Specificity -->
 <!-- .slide: data-title="Specificity" data-state="backEndBrian juniorJacob" -->
 
 1. Start at 0 <!-- .element: class="fragment" -->
