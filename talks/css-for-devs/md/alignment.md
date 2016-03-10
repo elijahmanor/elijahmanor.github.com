@@ -96,12 +96,12 @@ Thinking about example using floats for layout (grid system), but then trying to
 
 ------
 
-### [Centering in CSS: A Complete Guide](https://css-tricks.com/centering-css-complete-guide/)
+### Centering in CSS: A Complete Guide
 <!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob" -->
 
-<iframe style="background-color: white;" class="stretch" src="https://css-tricks.com/centering-css-complete-guide/" />
+<!-- <iframe style="background-color: white;" class="stretch" src="https://css-tricks.com/centering-css-complete-guide/" /> -->
 
-<!-- <a href="https://css-tricks.com/centering-css-complete-guide/" data-preview-link>Centering in CSS: A Complete Guide</a> -->
+<a href="https://css-tricks.com/centering-css-complete-guide/" data-preview-link>Preview</a>
 
 ------
 
@@ -185,9 +185,9 @@ Float Version
 ## Flex-box Cheatsheet
 <!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-<iframe style="background-color: white;" class="stretch" src="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" />
+<!-- <iframe style="background-color: white;" class="stretch" src="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" /> -->
 
-<!-- <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" data-preview-link>Flex-box Cheatsheet</a> -->
+<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" data-preview-link>Preview</a>
 
 ------
 

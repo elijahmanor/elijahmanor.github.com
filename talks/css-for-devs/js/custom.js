@@ -163,9 +163,9 @@ dialog.querySelector('#update').addEventListener('click', function() {
     } );
   }
 
-  [].forEach.call(document.querySelectorAll('.CodeMirror'), function(editor) {
-    editor.CodeMirror.setOption('theme', document.querySelector('#selectTheme').value);
-  });
+  // [].forEach.call(document.querySelectorAll('.CodeMirror'), function(editor) {
+  //   editor.CodeMirror.setOption('theme', document.querySelector('#selectTheme').value);
+  // });
 
   window.lengthOfPresentation = parseInt( document.querySelector( "#txtLengthOfPresentation" ).value );
   window.localStorage.lengthOfPresentation = window.lengthOfPresentation;

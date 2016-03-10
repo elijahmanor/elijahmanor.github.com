@@ -996,3 +996,7 @@ aside.notes:after {
 .cssnext-feature {
   flex: 0 1 50%;
 }
+
+.overlay.overlay-preview.visible iframe {
+  background: white;
+}
