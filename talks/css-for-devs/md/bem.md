@@ -212,5 +212,6 @@ Source: [Origins of the BEM Methodology](https://en.bem.info/method/#origins-of-
 * [Yandex BEM](https://en.bem.info/)
 * [BEM 101](https://css-tricks.com/bem-101/) by [Joe Richardson](https://twitter.com/joericho)
 * [A BEM syntax with UX in mind](http://simurai.com/blog/2013/10/24/BEM-syntax-with-ux-in-mind/)
+* [SUIT CSS](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md)
 
 Notes:

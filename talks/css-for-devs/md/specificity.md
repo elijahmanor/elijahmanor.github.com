@@ -174,7 +174,7 @@
 ## Seriously!?!
 <!-- .slide: data-title="Specificity" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-<img src="./imgs/mild-shock.gif" style="height: 450px;" />
+<img src="imgs/mild-shock.gif" style="height: 450px;" />
 
 ------
 

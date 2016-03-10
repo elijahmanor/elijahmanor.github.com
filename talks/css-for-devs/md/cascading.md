@@ -146,7 +146,7 @@ User Agent Stylesheets vary from Browser to Browser
 ------
 
 ## [Making Non-Inherited Properties Cascade <sup><svg style="width: 1rem; height: 1rem;" fill="white" xmlns="http://www.w3.org/2000/svg" data-icon="external-link" viewBox="0 0 16 20"><path d="M11 0l1.78 1.78-.5.5-4 4-.687.72L9 8.406l.718-.688 4-4 .5-.5 1.78 1.78V0h-5zM0 2v14h14V8h-2v6H2V4h6V2H0z"/></svg></sup>](http://codepen.io/elijahmanor/pen/bdwpvE?editors=110)
-<!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob midLevelMelissa notes" -->
+<!-- .slide: data-title="Cascading" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 <div class="Split">
   <div class="Split-column">

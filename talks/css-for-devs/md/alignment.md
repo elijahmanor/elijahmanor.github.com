@@ -164,7 +164,7 @@ Float Version
 ## So What!?!
 <!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob" -->
 
-![](imgs/i-give-up.gif)
+<img src="imgs/i-give-up.gif" />
 
 ------
 
