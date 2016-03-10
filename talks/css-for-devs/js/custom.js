@@ -30,24 +30,15 @@ Reveal.addEventListener('slidechanged', function(event) {
     window.start = Date.now();
     window.end = window.start + ( window.lengthOfPresentation * 60 * 1000 ); // moment().add( window.lengthOfPresentation, 'minutes' ).toDate().getTime();
     window.timer = window.setInterval( function() {
-      //var pace = ( Date.now() - window.start ) * Reveal.getTotalSlides() / ( window.end - window.start );
       var pace = (Date.now() - window.start) * 100 / (window.lengthOfPresentation * 60 * 1000);
       console.log( 'pace', isFinite( pace ) ? pace + '%' : '0%' );
-      //console.log( Date.now(), window.start, Reveal.getTotalSlides(), window.end );
-      //console.log( window.lengthOfPresentation, Date.now() - window.start, window.end - window.start );
       document.querySelector( ".pace span" ).style.width = isFinite( pace ) ? pace + '%' : '0%';
       if ( Date.now() >= window.end ) {
         window.clearInterval( window.timer );
         window.start = null;
         window.end = null;
         document.querySelector( ".pace span" ).style.width = '100%';
-        setTimeout( function() {
-          document.querySelector( ".pace span" ).classList.add( "pulse" );
-          document.querySelector( ".pace span" ).classList.add( "complete" );
-          setTimeout( function() {
-            document.querySelector( ".pace span" ).style.width = '0%';
-          }, 60000 );
-        }, 1000 );
+        document.querySelector( ".pace span" ).classList.add( "complete" );
       }
     }, 1000 );
   }
