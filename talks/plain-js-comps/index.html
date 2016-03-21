@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="css/solarized-dark.css">
+
+		<style>
+			.line { display: block; }
+			.line.focus { background: yellow; }
+		  .reveal .slides section .fragment.current-only {
+		    opacity: 1;
+		    visibility: visible;
+		    display: none;
+		  }
+		  .reveal .slides section .fragment.current-only.current-fragment {
+		    display: block;
+		  }
+		</style>
+
+		<link rel="stylesheet" href="plugin/caniuse/caniuse.css" data-noprefix />
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<script src="./js/prefixfree.min.js"></script>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<header class="Title"></header>
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section id="Introduction" data-markdown="./md/introduction.md"></section>
+				<section id="Conclusion" data-markdown="./md/conclusion.md"></section>
+
+				<section>
+					<h2>Pretty Code</h2>
+					<pre><code class="javascript" data-trim contenteditable>
+function linkify( selector ) {
+  if( supports3DTransforms ) {
+
+    var nodes = document.querySelectorAll( selector );
+
+    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+      var node = nodes[i];
+
+      if( !node.className ) {
+        node.className += ' roll';
+      }
+    }
+  }
+}
+					</code></pre>
+					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+          ### Usage
+
+          ```html
+          <section>
+            <pre><code>
+            // Useless comment.
+            alert('hi');
+            </pre></code>
+            <p class="fragment" data-code-focus="1">
+              This focuses on the comment.
+            </p>
+            <p class="fragment" data-code-focus="1-2">
+              Another fragment.
+            </p>
+          </section>
+          ```
+          <span class="fragment current-only" data-code-focus="1-12">This section is a slide.</span>
+          <span class="fragment current-only" data-code-focus="2-5">This will be highlighted by `highlight.js`.</span>
+          <span class="fragment current-only" data-code-focus="6-8">This fragment focuses on the first line.</span>
+          <span class="fragment current-only" data-code-focus="9-11">This fragment focuses on lines 1 and 2.</span>
+          <span class="fragment current-only" data-code-focus="1-12">See the next slide for a demo with the contents of this code block.</span>
+        	</script>
+				</section>
+
+        <section data-markdown><script type="text/template">
+          ### Demo
+
+          ```js
+          // Useless comment.
+          alert('hi');
+          ```
+          <p class="fragment" data-code-focus="1">This focuses on the comment.</p>
+          <p class="fragment" data-code-focus="1-2">Another fragment.</p>
+        </script></section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			(function initializeMarkdownSections() {
+				var markdown = document.querySelectorAll('[data-markdown]');
+				[].forEach.call(markdown, function(element) {
+					element.setAttribute('data-separator', '^\n---\n$');
+					element.setAttribute('data-separator-vertical', '^\n------\n$');
+					element.setAttribute('data-separator-notes', '^Notes:');
+					element.setAttribute('data-charset', 'utf-8');
+				});
+			}());
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/menu/menu.js' },
+					{ src: 'js/highlight.min.js' },
+					{ src: 'node_modules/reveal-code-focus/reveal-code-focus.js', async: true, callback: function() { RevealCodeFocus(); } },
+					{ src: 'plugin/modules/modules.js', async: true, callback: function() { window.modules.init(); } },
+					{ src: 'plugin/data-store/data-store.js', async: true, callback: function() { window.dataStore.init(); } }
+				],
+				menu: {
+		        // Specifies which side of the presentation the menu will
+		        // be shown. Use 'left' or 'right'.
+		        side: 'left',
+		        // Add slide numbers to the titles in the slide list.
+		        // Use 'true' or format string (same as reveal.js slide numbers)
+		        numbers: true,
+		        // Hide slides from the menu that do not have a title.
+		        // Set to 'true' to only list slides with titles.
+		        hideMissingTitles: false,
+		        // Add markers to the slide titles to indicate the
+		        // progress through the presentation
+		        markers: true,
+		        // Specify custom panels to be included in the menu, by
+		        // providing an array of objects with 'title', 'icon'
+		        // properties, and either a 'src' or 'content' property.
+		        custom: true,
+		        // Specifies the themes that will be available in the themes
+		        // menu panel. Set to 'false' to hide themes panel.
+		        themes: [
+		            { name: 'Black', theme: 'css/theme/black.css' },
+		            { name: 'White', theme: 'css/theme/white.css' },
+		            { name: 'League', theme: 'css/theme/league.css' },
+		            { name: 'Sky', theme: 'css/theme/sky.css' },
+		            { name: 'Beige', theme: 'css/theme/beige.css' },
+		            { name: 'Simple', theme: 'css/theme/simple.css' },
+		            { name: 'Serif', theme: 'css/theme/serif.css' },
+		            { name: 'Blood', theme: 'css/theme/blood.css' },
+		            { name: 'Night', theme: 'css/theme/night.css' },
+		            { name: 'Moon', theme: 'css/theme/moon.css' },
+		            { name: 'Solarized', theme: 'css/theme/solarized.css' }
+		        ],
+		        // Specifies if the transitions menu panel will be shown.
+		        transitions: false,
+		        // Adds a menu button to the slides to open the menu panel.
+		        // Set to 'false' to hide the button.
+		        openButton: true,
+		        // If 'true' allows the slide number in the presentation to
+		        // open the menu panel. The reveal.js slideNumber option must
+		        // be displayed for this to take effect
+		        openSlideNumber: false,
+		        // If true allows the user to open and navigate the menu using
+		        // the keyboard. Standard keyboard interaction with reveal
+		        // will be disabled while the menu is open.
+		        keyboard: true,
+						custom: [
+		            { title: 'About', icon: '<i class="fa fa-info">', src: 'html/about.html' },
+		            { title: 'Links', icon: '<i class="fa fa-external-link">', content: '' }
+		        ],
+						onOpen: function() {
+							var linkHTML = "";
+							var resources = document.querySelectorAll( "section [data-state*='resources']" );
+							[].forEach.call( resources, function( resource ) {
+								linkHTML += "<h2>" + resource.dataset.title + "</h2>";
+								linkHTML += resource.innerHTML.replace( /(<h\d>Resources<\/h\d>)/, "" ).trim();
+							} );
+							var links = document.querySelector( ".slide-menu-custom-panel[data-panel='Custom1']" );
+							links.innerHTML = "<div style='padding: 1rem 1rem 5rem 1rem;'>" + linkHTML + "</div>";
+						}
+
+		    }
+			});
+
+		</script>
+		<script src="js/custom.js"></script>
+		<script src="plugin/caniuse/caniuse.min.js"></script>
+
+	</body>
+</html>
