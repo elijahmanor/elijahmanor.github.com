@@ -2,7 +2,6 @@ name: Front-End Manorisms
 description: Tips, Tricks, and Tools
 meta_description: "Front-End Manorisms: Tips, Tricks, and Tools"
 
-markdown: redcarpet
 highlighter: rouge
 logo: false
 paginate: 15
