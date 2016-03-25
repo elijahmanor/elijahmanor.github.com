@@ -1,0 +1,88 @@
+{
+  "_args": [
+    [
+      "reveal-code-focus",
+      "/Users/elijahm/github/elijahmanor.github.com/talks/plain-js-comps"
+    ]
+  ],
+  "_from": "reveal-code-focus@latest",
+  "_id": "reveal-code-focus@0.2.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/reveal-code-focus",
+  "_nodeVersion": "4.2.6",
+  "_npmOperationalInternal": {
+    "host": "packages-13-west.internal.npmjs.com",
+    "tmp": "tmp/reveal-code-focus-0.2.0.tgz_1456996887612_0.3153237416408956"
+  },
+  "_npmUser": {
+    "email": "demoneaux@gmail.com",
+    "name": "d10"
+  },
+  "_npmVersion": "2.14.12",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "reveal-code-focus",
+    "raw": "reveal-code-focus",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://puppet.leankit.com:4873/reveal-code-focus/-/reveal-code-focus-0.2.0.tgz",
+  "_shasum": "b00d79450d78bb7e6a7b8944ce52085a1137cf53",
+  "_shrinkwrap": null,
+  "_spec": "reveal-code-focus",
+  "_where": "/Users/elijahm/github/elijahmanor.github.com/talks/plain-js-comps",
+  "author": {
+    "name": "Benjamin Tan",
+    "url": "https://demoneaux.github.io/"
+  },
+  "bugs": {
+    "url": "https://github.com/demoneaux/reveal-code-focus/issues"
+  },
+  "dependencies": {},
+  "description": "A Reveal.js plugin that allows focusing on specific lines of code blocks.",
+  "devDependencies": {
+    "@alrra/travis-scripts": "^1.1.1",
+    "reveal.js": "^3.2.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "b00d79450d78bb7e6a7b8944ce52085a1137cf53",
+    "tarball": "https://puppet.leankit.com:4873/reveal-code-focus/-/reveal-code-focus-0.2.0.tgz"
+  },
+  "files": [
+    "LICENSE",
+    "reveal-code-focus.js"
+  ],
+  "gitHead": "3767d097ea5166bc15ecf3db9fbd3c0dcdf6f587",
+  "homepage": "https://demoneaux.github.io/reveal-code-focus/",
+  "keywords": [
+    "Reveal.js",
+    "code",
+    "focus"
+  ],
+  "license": "MIT",
+  "main": "reveal-code-focus.js",
+  "maintainers": [
+    {
+      "email": "demoneaux@gmail.com",
+      "name": "d10"
+    }
+  ],
+  "name": "reveal-code-focus",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/demoneaux/reveal-code-focus.git"
+  },
+  "scripts": {
+    "test": "true"
+  },
+  "version": "0.2.0"
+}
