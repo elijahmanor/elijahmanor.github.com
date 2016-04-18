@@ -313,7 +313,7 @@ Maybe show the image from the previous slide somehow for a visualization of what
 ## [Scenario <sup><svg style="width: 1rem; height: 1rem;" fill="white" xmlns="http://www.w3.org/2000/svg" data-icon="external-link" viewBox="0 0 16 20"><path d="M11 0l1.78 1.78-.5.5-4 4-.687.72L9 8.406l.718-.688 4-4 .5-.5 1.78 1.78V0h-5zM0 2v14h14V8h-2v6H2V4h6V2H0z"/></svg></sup>](http://codepen.io/elijahmanor/pen/MaGLRO?editors=110)
 <!-- .slide: data-title="Pseudo Elements" data-state="backEndBrian juniorJacob midLevelMelissa" data-menu-title="Scenario: Demo" -->
 
-<div class="Split" style="width: 125%; left: 50%; transform: translateX(-50%); position: relative;">
+<div class="Split" style="width: 120%; left: 50%; transform: translateX(-50%); position: relative;">
   <div class="Split-column Split-column--40">
     <iframe height='268' scrolling='no' src='//codepen.io/elijahmanor/embed/MaGLRO/?height=268&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/MaGLRO/'>MaGLRO</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
     </iframe>

@@ -208,8 +208,8 @@ postcss( [ plugin1, plugin2 ] )
 ## What does a Plugin Look Like?
 <!-- .slide: data-title="PostCSS" data-state="backEndBrian juniorJacob midLevelMelissa notes" -->
 
-<div class="Split" style="width: 125%; left: 50%; transform: translateX(-50%); position: relative;">
-  <div class="Split-column Split-column--65">
+<div class="Split" style="width: 120%; left: 50%; transform: translateX(-50%); position: relative;">
+  <div class="Split-column Split-column--70">
 <textarea data-codemirror data-mode="text/javascript" data-line-numbers="false">
 import randomColor from "randomcolor";
 
@@ -231,7 +231,7 @@ postcss.plugin('randomcolor', () => {
 });
 </textarea>
   </div>
-  <div class="Split-column Split-column--35">
+  <div class="Split-column Split-column--30">
     <h4>Input</h4>
     <textarea data-codemirror data-mode="text/x-sass" data-line-numbers="false">
 .randomColor {
@@ -518,10 +518,11 @@ a:any-link {
 ## [postcss-assets](https://github.com/assetsjs/postcss-assets)
 <!-- .slide: data-title="PostCSS" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-<div class="Split" style="width: 130%; left: 50%; transform: translateX(-50%); position: relative;">
+<div class="Split" style="width: 120%; left: 50%; transform: translateX(-50%); position: relative;">
   <div class="Split-column Split-column--50">
     <textarea data-codemirror data-mode="text/javascript" data-line-numbers="false">
-var assets = require('postcss-assets');
+var assets =
+  require('postcss-assets');
 
 assets({
   loadPaths: [
@@ -537,7 +538,7 @@ assets({
     <textarea data-codemirror data-mode="text/x-sass" data-line-numbers="false">
 body {
   background: resolve('hero.jpg');
-  background: resolve('icons/close.png');
+  background: resolve('close.png');
 }
 </textarea>
 

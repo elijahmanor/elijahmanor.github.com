@@ -124,7 +124,7 @@
 
 ------
 
-## THERE WAS MUCH REJOINCING!
+## THERE WAS MUCH REJOICING!
 <!-- .slide: data-title="Box Model" data-state="backEndBrian juniorJacob" -->
 
 <img src="./imgs/happy-dance.gif" style="height: 450px;" />

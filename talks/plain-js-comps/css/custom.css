@@ -2,6 +2,19 @@
   opacity: 0.5;
 }
 
+/* BEGIN - Code focus */
+.line { display: block; }
+.line.focus { background: #fdfd96; }
+.reveal .slides section .fragment.current-only {
+  opacity: 1;
+  visibility: visible;
+  display: none;
+}
+.reveal .slides section .fragment.current-only.current-fragment {
+  display: block;
+}
+/* END - Code focus */
+
 .reveal .progress {
   height: 4px;
 }

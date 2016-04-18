@@ -133,6 +133,7 @@
 
     var lines = fragment.getAttribute('data-code-focus');
     if (lines) {
+	  var scroll = currentSlide.querySelector('pre code');
       var code = currentSlide.querySelectorAll('pre code .line');
       forEach(lines.split(','), function(line) {
         lines = line.split('-');
@@ -144,6 +145,9 @@
             code[i - 1] && code[i - 1].classList.add('focus');
           }
         }
+		jQuery( scroll ).animate( {
+		   scrollTop: code[lines[0] - 1].offsetTop
+	    }, 500);
       });
     }
   }

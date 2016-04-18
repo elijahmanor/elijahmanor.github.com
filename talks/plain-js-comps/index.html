@@ -10,21 +10,10 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
-		<link rel="stylesheet" href="css/solarized-dark.css">
-		<style>
-			.line { display: block; }
-			.line.focus { background: yellow; }
-			.reveal .slides section .fragment.current-only {
-				opacity: 1;
-				visibility: visible;
-				display: none;
-			}
-			.reveal .slides section .fragment.current-only.current-fragment {
-				display: block;
-			}
-		</style>
+		<link rel="stylesheet" href="css/reveal.css" data-noprefix>
+		<link rel="stylesheet" href="css/theme/black.css" id="theme" data-noprefix>
+		<!-- <link rel="stylesheet" href="css/highlight/solarized-dark.css" data-noprefix> -->
+		<link rel="stylesheet" href="css/highlight/vs.css" data-noprefix>
 		<link rel="stylesheet" href="plugin/caniuse/caniuse.css" data-noprefix />
 		<link rel="stylesheet" href="css/custom.css">
 
@@ -41,6 +30,7 @@
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
 		<script src="./js/prefixfree.min.js"></script>
+		<script src="./lib/js/jquery-2.2.3.min.js"></script>
 	</head>
 
 	<body>

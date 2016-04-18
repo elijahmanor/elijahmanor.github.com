@@ -294,7 +294,7 @@ import styles from 'media.css';
 ## Composing Styles
 <!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
-<div class="Split" style="width: 130%; left: 50%; transform: translateX(-50%); position: relative;">
+<div class="Split" style="width: 120%; left: 50%; transform: translateX(-50%); position: relative;">
   <div class="Split-column Split-column--40">
     <p>Composing Locally</p>
 <textarea data-codemirror data-mode="text/x-sass" data-line-numbers="false">
@@ -317,7 +317,7 @@ import styles from 'media.css';
   composes: large from "./typography.css";
   composes: dark-text from "./colors.css";
   composes: padding-all from "./layout.css";
-  composes: subtle-shadow from "./effect.css";
+  composes: big-shadow from "./effect.css";
 }</pre>
   </div>
 </div>
