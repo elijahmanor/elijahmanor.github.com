@@ -65,13 +65,14 @@ function linkify( selector ) {
   </p>
 </section>
 ```
+<!-- .element: class="stretch" -->
 
-<span class="fragment current-only" data-code-focus="1-12">This section is a slide.</span>
-<span class="fragment current-only" data-code-focus="2-5">This will be highlighted by `highlight.js`.</span>
-<span class="fragment current-only" data-code-focus="6-8">This fragment focuses on the first line.</span>
-<span class="fragment current-only" data-code-focus="9-11">This fragment focuses on lines 1 and 2.</span>
-<span class="fragment current-only" data-code-focus="1-12">See the next slide for a demo with the contents of this code block.</span>
-<span class="fragment current-only" data-code-focus="20-22">Did it scroll?</span>
+<span class="fragment current-only focus-text" data-code-focus="1-12">This section is a slide.</span>
+<span class="fragment current-only focus-text" data-code-focus="2-5">This will be highlighted by `highlight.js`.</span>
+<span class="fragment current-only focus-text" data-code-focus="6-8">This fragment focuses on the first line.</span>
+<span class="fragment current-only focus-text" data-code-focus="9-11">This fragment focuses on lines 1 and 2.</span>
+<span class="fragment current-only focus-text" data-code-focus="1-12">See the next slide for a demo with the contents of this code block.</span>
+<span class="fragment current-only focus-text" data-code-focus="20-22">Did it scroll?</span>
 
 ------
 
