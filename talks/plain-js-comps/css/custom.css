@@ -18,11 +18,15 @@
 	position: absolute;
 	left: 50%;
 	transform: translateX( -50% );
-	bottom: 1rem;
 	background: black;
 	border-radius: 0.5rem;
 	padding: 1rem;
 	border: 1px solid white;
+	min-width: 75%;
+}
+
+.reveal .slides .focus-text--scroll {
+	bottom: 1rem;
 }
 /* END - Code focus */
 
