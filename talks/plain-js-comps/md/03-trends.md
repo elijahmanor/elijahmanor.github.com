@@ -84,9 +84,9 @@
 <!-- TODO: Landscape picture? -->
 
 <ul style="display: flex; list-style: none; justify-content: space-around;">
-	<li>Angular This</li>
-	<li>Ember That</li>
-	<li>React The Other</li>
+	<li class="fragment highlight-current-blazing">Angular This</li>
+	<li class="fragment highlight-current-blazing">Ember That</li>
+	<li class="fragment highlight-current-blazing">React The Other</li>
 </ul>
 
 ![](./img/angular-ember-react.jpg)
@@ -128,5 +128,7 @@
 
 <!-- .slide: data-title="Trends" data-state="somestate" -->
 
+> "It all comes down to composability and portability." --[Why I Write Plain JavaScript Modules](https://ponyfoo.com/articles/why-i-write-plain-javascript-modules) by Nicolás Bevacqua ([@nzgb](http://twitter.com/nzgb))
+
 ## Framework Independent JavaScript Components
-<!-- .element: class="fragment blazing" -->
+<!-- .element: class="fragment fade-in" style="background: white; border: 1px solid black; color: black; border-radius: 1rem; padding: 1rem 0;" -->

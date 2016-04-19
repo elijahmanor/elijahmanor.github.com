@@ -111,7 +111,8 @@
       modules = modules ? JSON.parse(modules) : this.getModules();
       for (var key in modules) {
         var module = modules[key];
-        items.push('<li><input name="' + key + '" type="checkbox" ' + (module ? 'checked="checked" ' : '') + '" /> ' + key + '</li>');
+		var moduleName = _.startCase(key);
+        items.push('<li><input name="' + key + '" type="checkbox" ' + (module ? 'checked="checked" ' : '') + '" /> ' + moduleName + '</li>');
       }
       window.localStorage.modules = JSON.stringify(modules);
 

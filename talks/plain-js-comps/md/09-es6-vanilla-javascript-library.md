@@ -1,4 +1,13 @@
-# Vanilla JavaScript Library
+# ES6-ified Vanilla JavaScript Library
+
+Notes:
+
+## ES6 Vanilla JavaScript Library
+
+* Good opportunity to learn and experiment with the new features of JavaScript
+* Babel
+* Templated Strings, Shortcut Objects, Fat Arrow, etc...
+* UMD Wrapper (AMD, CommmonJS, ES6 Modules)
 
 ------
 

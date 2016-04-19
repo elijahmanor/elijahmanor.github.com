@@ -1,9 +1,27 @@
-## Refactored jQuery Plugin
+# Vanilla JavaScript Library
 
-<img src="./img/refactor.gif" class="fragment stretch" style="height: 500px;" />
+Notes:
+
+## Vanilla JavaScript Library
+
+jQuery-free JavaScript
+drop jQuery dependency
+Use Lo-Dash for some helpers methods
+adapter for ajax
+
+Introduce patterns (default options, overrides, adapter for Ajax, etc)
+
+Note: Look up GoF design patterns
+
+Patterns
+
+* adapter
+* Extensible
+* Inject Ajax
+* Templated
+* Modules
 
 ------
-
 
 ## Pretty Code
 

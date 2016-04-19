@@ -2,6 +2,24 @@
   opacity: 0.5;
 }
 
+.SlideKeyboardNavigation .reveal .slides code,
+.SlideKeyboardNavigation .reveal .slides em {
+	color: #448FBB;
+}
+
+.reveal .slides section .fragment.highlight-current-blazing {
+	opacity: 1;
+	visibility: visible;
+}
+.reveal .slides section .fragment.highlight-current-blazing.current-fragment {
+	-webkit-animation: Blazing 5s infinite; /* Safari 4+ */
+	-moz-animation:    Blazing 5s infinite; /* Fx 5+ */
+	-o-animation:      Blazing 5s infinite; /* Opera 12+ */
+	animation:         Blazing 5s infinite; /* IE 10+, Fx 29+ */
+}
+
+
+
 /* BEGIN - Code focus */
 .line { display: block; }
 .line.focus { background: #fdfd96; }

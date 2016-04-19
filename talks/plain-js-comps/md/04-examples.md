@@ -80,12 +80,65 @@ email.addEventListener( "blur", function() {
 
 ------
 
-## Dragula
+## `npm install dragula --save`
 
-<!-- .slide: data-title="Good Examples" data-state="somestate" -->
+<!-- .slide: data-title="Good Examples" data-state="somestate" data-menu-title="Dragula" -->
 
+> "Drag and drop so simple it hurts http://bevacqua.github.io/dragula/
+> Browser support includes every sane browser and IE7+"
+
+------
+
+## Demo
+
+<!-- .slide: data-title="Good Examples" data-state="somestate" data-menu-title="Dragula - Demo" -->
+
+<iframe data-src="http://bevacqua.github.io/dragula/" class="stretch"></iframe>
+
+------
+
+## Vanilla JavaScript Usage
+
+<!-- .slide: data-title="Good Examples" data-state="somestate" data-menu-title="Dragula - Vanilla JavaScript Usage" -->
+
+```js
+dragula( containers, {
+  isContainer: function( el ) { return false; },
+  moves: function( el, source, handle, sibling ) { return true; },
+  accepts: function(el, target, source, sibling ) { return true; },
+  invalid: function( el, handle ) { return false; },
+  direction: 'vertical',
+  copy: false,
+  copySortSource: false,
+  revertOnSpill: true,
+  removeOnSpill: true,
+  mirrorContainer: document.body,
+  ignoreInputTextSelection: true
+});
 ```
-```
+
+<span class="fragment current-only focus-text" data-code-focus="1">Call the `dragula` function and pass the draggable containers to be used</span>
+<span class="fragment current-only focus-text" data-code-focus="2">You can specify any sort of logic that defines what is a container</span>
+<span class="fragment current-only focus-text" data-code-focus="3">Triggered whenever an element is clicked. Reject drag by returning `false`</span>
+<span class="fragment current-only focus-text" data-code-focus="4">Make sure that `el`, that came from `container`, can be dropped on `target`</span>
+<span class="fragment current-only focus-text" data-code-focus="5">This method should return true for elements that shouldn't trigger a drag</span>
+<span class="fragment current-only focus-text" data-code-focus="6">Y axis when determining dropped element</span>
+<span class="fragment current-only focus-text" data-code-focus="7">Elements are moved by default, not copied</span>
+<span class="fragment current-only focus-text" data-code-focus="8">Reorder elements in source containers</span>
+<span class="fragment current-only focus-text" data-code-focus="9">Spilling will put the element back</span>
+<span class="fragment current-only focus-text" data-code-focus="10">Spilling will `.remove` the element</span>
+<span class="fragment current-only focus-text" data-code-focus="11">DOM element where the mirror element displayed while dragging will be appended to</span>
+<span class="fragment current-only focus-text" data-code-focus="12">Allows users to select input text</span>
+
+------
+
+## Adapters
+
+<!-- .slide: data-title="Good Examples" data-state="somestate" data-menu-title="Dragula - Adapters" -->
+
+* Official [Angular 1.x Adapter](https://github.com/bevacqua/angular-dragula) for `dragula` ([demo](http://bevacqua.github.io/angular-dragula/))
+* Official [Angular 2.x Adapter](https://github.com/valor-software/ng2-dragula) for `dragula` ([demo](http://valor-software.com/ng2-dragula/index.html))
+* Official [React Adapter](https://github.com/bevacqua/react-dragula) for `dragula` ([demo](http://bevacqua.github.io/react-dragula/))
 
 ------
 
@@ -93,5 +146,5 @@ email.addEventListener( "blur", function() {
 
 <!-- .slide: data-title="Good Examples" data-state="resources" -->
 
-* [`mailcheck.js`](https://github.com/mailcheck/mailcheck)
-* [Dragula]()
+* [mailcheck.js](https://github.com/mailcheck/mailcheck)
+* [Dragula](https://github.com/bevacqua/dragula)
