@@ -7,7 +7,7 @@
 <a href="http://bit.ly/css-for-devs" style="margin-left: 2em;">http://bit.ly/css-for-devs</a>
 </pre>
 
-<a href="https://www.sli.do/event/ifcuyn2w/wall" data-preview-link>Poll Results</a>
+<!-- <a href="https://www.sli.do/event/mbp4e4yo/wall" data-preview-link>Poll Results</a> -->
 
 <h3 data-store="conclusion-social" contenteditable></h3>
 

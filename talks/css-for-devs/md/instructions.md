@@ -1,6 +1,6 @@
 ## Slide Keyboard Navigation
 
-<!-- .slide: data-state="SlideKeyboardNavigation" -->
+<!-- .slide: data-state="SlideKeyboardNavigation no-vote" -->
 
 <div style="text-align: left;">
 	<p><strong><code>n</code></strong> key to go to the <em>next</em> slide</p>
