@@ -2,98 +2,70 @@
 
 ------
 
-## Pretty Code
-
-<!-- .slide: data-title="Example" data-state="somestate" -->
-
-https://github.com/Giphy/GiphyAPI
-
-```js
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-```
-
-------
-
-<!-- .slide: data-title="Example" data-state="somestate" data-menu-title="Usage" -->
+<!-- .slide: data-title="jQuery Adapter" data-state="somestate" data-menu-title="Usage" -->
 
 ```html
-<section>
-  <pre><code>
-  // Useless comment.
-  alert('hi');
-  </pre></code>
-  <p class="fragment" data-code-focus="1">
-    This focuses on the comment.
-  </p>
-  <p class="fragment" data-code-focus="1-2">
-    Another fragment.
-  </p>
-</section>
-<section>
-  <pre><code>
-  // Useless comment 2.
-  alert('hi');
-  </pre></code>
-  <p class="fragment" data-code-focus="1">
-    This focuses on the comment.
-  </p>
-  <p class="fragment" data-code-focus="1-2">
-    Another fragment.
-  </p>
-</section>
-<section>
-  <pre><code>
-  // Useless comment 3.
-  alert('hi');
-  </pre></code>
-  <p class="fragment" data-code-focus="1">
-    This focuses on the comment.
-  </p>
-  <p class="fragment" data-code-focus="1-2">
-    Another fragment.
-  </p>
-</section>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Giphy</title>
+  <link href="./Giphy.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <h1>Giphy jQuery Plugin</h1>
+
+  <input type="search" />
+
+  <script src="./Giphy.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <script src="./jquery.giphy.js"></script>
+  <script>
+  ( function() {
+    $( "input" ).giphy( { ajax: { rating: "pg" } } );
+  }() );
+  </script>
+</body>
+</html>
 ```
 <!-- .element: class="stretch" -->
 
-<span class="fragment current-only focus-text" data-code-focus="1-12">This section is a slide.</span>
-<span class="fragment current-only focus-text" data-code-focus="2-5">This will be highlighted by `highlight.js`.</span>
-<span class="fragment current-only focus-text" data-code-focus="6-8">This fragment focuses on the first line.</span>
-<span class="fragment current-only focus-text" data-code-focus="9-11">This fragment focuses on lines 1 and 2.</span>
-<span class="fragment current-only focus-text" data-code-focus="1-12">See the next slide for a demo with the contents of this code block.</span>
-<span class="fragment current-only focus-text" data-code-focus="20-22">Did it scroll?</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="5">Link in the CSS for the Giphy library</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="12">Include the Giphy library</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="13">Include the jQuery library</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="14">Include the Giphy jQuery Plugin Adapter</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="17">Select the `input` and invoke the `giphy` jQuery Plugin Adapter</span>
 
 ------
 
-## Demo
+## Adapter
 
-<!-- .slide: data-title="Example" data-state="somestate" -->
+<!-- .slide: data-title="jQuery Adapter" data-state="somestate" -->
 
 ```js
-// Useless comment.
-alert('hi');
+( function( $, window, document, undefined ) {
+	var pluginName = "giphy";
+
+	$.fn[ pluginName ] = function( options ) {
+		return this.each( function() {
+			var $this = $( this );
+			if ( !$this.data( pluginName) ) {
+				$this.data( pluginName, new Giphy( this, options ) );
+			}
+		} );
+	};
+} ( jQuery, window, document ) );
 ```
 
-<p class="fragment" data-code-focus="1">This focuses on the comment.</p>
-<p class="fragment" data-code-focus="1-2">Another fragment.</p>
+<div class="stretch">
+	<p class="fragment current-only focus-text" data-code-focus="4">Define the jQuery Plugin</p>
+	<p class="fragment current-only focus-text" data-code-focus="5-10">Iterate over the matched element and return to support chaining</p>
+	<p class="fragment current-only focus-text" data-code-focus="6-9">Create an instance of the Plugin object and attach to the element with `$.data()`</p>
+</div>
 
 ------
 
 ## Resources
 
-<!-- .slide: data-title="Example" data-state="resources" -->
+<!-- .slide: data-title="jQuery Adapter" data-state="resources" -->
 
-* [Example Resource](http://elijahmanor.com)
+* [Source Code](https://github.com/elijahmanor/framework-independent-javascript-components/tree/master/src/5-jquery-adapter)

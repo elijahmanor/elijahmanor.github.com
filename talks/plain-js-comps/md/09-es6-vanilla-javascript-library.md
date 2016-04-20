@@ -20,6 +20,12 @@ Notes:
 
 <!-- .slide: data-title="ES6-ified Vanilla JS Lib" data-state="somestate" -->
 
+
+```
+npm install babel-cli --save-dev
+npm install babel-preset-es2015 --save-dev
+```
+
 ```js
 // package.json
 {
@@ -236,9 +242,14 @@ Giphy.defaults = {
 
 ------
 
-## Easy UMD
+## Generated Universal Module Definition (UMD)
 
 <!-- .slide: data-title="ES6-ified Vanilla JS Lib" data-state="somestate" -->
+
+```
+npm install babel-plugin-add-module-exports --save-dev
+npm install babel-plugin-transform-es2015-modules-umd --save-dev
+```
 
 ```js
 // package.json
@@ -258,6 +269,36 @@ Giphy.defaults = {
 		"transform-es2015-modules-umd"
 	]
 }
+```
+
+------
+
+## UMD Output
+
+<!-- .slide: data-title="ES6-ified Vanilla JS Lib" data-state="somestate" -->
+
+```js
+( function( global, factory ) {
+	if ( typeof define === "function" && define.amd ) {
+		define( [ "module", "exports" ], factory );
+	} else if ( typeof exports !== "undefined" ) {
+		factory( module, exports );
+	} else {
+		var mod = {
+			exports: {}
+		};
+		factory( mod, mod.exports );
+		global.Giphy = mod.exports;
+	}
+} )( this, function( module, exports ) {
+	"use strict";
+
+	var Giphy = function () { /* ... */ }();
+
+	exports.default = Giphy;
+
+	module.exports = exports[ "default" ];
+} );
 ```
 
 ------
