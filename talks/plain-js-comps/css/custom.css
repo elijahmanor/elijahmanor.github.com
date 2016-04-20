@@ -7,6 +7,14 @@
 	color: #448FBB;
 }
 
+.reveal .slides section .fragment.highlight-current-strikethrough {
+	opacity: 1;
+	visibility: visible;
+}
+.reveal .slides section .fragment.highlight-current-strikethrough.current-fragment {
+	text-decoration: line-through;
+}
+
 .reveal .slides section .fragment.highlight-current-blazing {
 	opacity: 1;
 	visibility: visible;
@@ -17,7 +25,6 @@
 	-o-animation:      Blazing 5s infinite; /* Opera 12+ */
 	animation:         Blazing 5s infinite; /* IE 10+, Fx 29+ */
 }
-
 
 
 /* BEGIN - Code focus */

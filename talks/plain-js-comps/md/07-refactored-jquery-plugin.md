@@ -2,12 +2,9 @@
 
 Notes:
 
-* add default options
-* add extensibility points
-
 ------
 
-## Refactored jQuery Plugin
+## <span class="fragment highlight-current-strikethrough">Refactored</span> jQuery Plugin
 
 <!-- .slide: data-title="Refactored Code" data-state="somestate" -->
 
@@ -21,6 +18,21 @@ Notes:
 
 > "...ten minutes is the difference between refactoring and redesign. Anything that takes longer than ten minutes is not refactoring. That is a redesign."
 > <p>--[dzone.com](https://dzone.com/articles/difference-between-refactoring) by Peter Verhas ([@verhas](https://twitter.com/verhas))</p>
+
+------
+
+## So, What Should We Change?
+
+<!-- .slide: data-title="Redesigned Code" data-state="somestate" -->
+
+<ul>
+	<li class="fragment">Remove the dependency on the [jQuery](http://jquery.com) library</li>
+	<li class="fragment">Leverage native [DOM (Document Object Model)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) APIs
+	<li class="fragment">Add default options that can be overridden</li>
+	<li class="fragment">Add extensibility points to abstract data transfer</li>
+	<li class="fragment">Write the code so that it's testable</li>
+	<li class="fragment">Use Custom Events to separate Actions from DOM manipulation</li>
+</ul>
 
 ------
 
@@ -184,20 +196,46 @@ Notes:
 
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="2">Define plugin name</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="4-9">Constructor function</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="5-6">Save off properties that reference the current element</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="7">Merge the default options with passed in options</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="8">Invoke basic initialization</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="11-19">`init` method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="12-16">Build DOM elements necessary for library</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="18">Call `wireEventHandlers` to add event handlers to necessary DOM element</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="21-29">`wireEventHandlers` method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="22-28">Notice we are using `.bind(this)` to keep context to the library when events are triggered</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="31-36">`handleControlKey` method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="32-35">Detect the left and right arrow keys and navigate accordingly</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="38-44">`handleSearchClick` method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="39-43">Either search or reset depending on the state of the library</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="46-54">`handleListUpdated` method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="47-53">When a new data list comes from the server then update the state and User Interface</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="56-60">`handleItemUpdated` method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="57-59">When a new item is needed then udpate the User Interface accordingly</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="62-66">`reset` method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="63-65">Update the User Interface to a reset state</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="68-73">`handleEnter` method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="69-72">Detect the enter key and kick off a search</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="75-80">`handleResponse` method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="76-77">Decode the response from the server</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="78-79">Trigger custom events that there is new data from the server</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="82-89">`preload` method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="83-88">Preload image list from response to speed up navigation load</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="91-101">`navigate` method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="92-98">Determine the new index that is needed for navigation.</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="100">Trigger event to update the User Interface</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="103-112">`search` method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="104-111">Call jQuery's ajax method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="105,107-108">Use `url`, `apiKey`, and `rating` from `options.ajax.url`</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="106-110">Use the `options.encoder` to format the outgoing data</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="114-121">`$.fn[ pluginName ]`</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="115-120">Iterate over the matched element and return to support chaining</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="116-119">Create an instance of the Plugin object and attach to the element with `$.data()`</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="123-150">default options</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="124-128">Pull out the templates into the options</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="129-133">Pull out the AJAX parameters into the options</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="134-140">Map the data from the library to what the API request expects</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="141-149">Map the data from the API response to what the library expects</span>
 
 ------
 
@@ -656,4 +694,5 @@ describe( "Redesigned jQuery Plugin", function() {
 
 <!-- .slide: data-title="Redesigned Code" data-state="somestate" data-state="resources" -->
 
+* [Jasmine](http://jasmine.github.io/)
 * [Source Code](https://github.com/elijahmanor/framework-independent-javascript-components/tree/master/src/2-jquery-testable)
