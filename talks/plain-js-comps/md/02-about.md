@@ -3,7 +3,7 @@
 <!-- .slide: data-state="somestate" -->
 
 <div class="Split">
-  <div class="Split-column Split-column--55">
+  <div class="Split-column Split-column--60">
     <pre><code style="max-height: 450px;">{
   "name": "Elijah Manor",
   "priorities" : [
@@ -22,7 +22,7 @@
   ]
 }</code></pre>
   </div>
-  <div class="Split-column Split-column--45">
+  <div class="Split-column Split-column--40">
     <img src="./img/myfamily.jpg" />
     <img src="./img/leankit-wallpaper.png" />
   </div>

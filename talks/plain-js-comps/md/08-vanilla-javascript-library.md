@@ -280,34 +280,33 @@ Patterns
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="136-182">Continue to provide a default set of options</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="162-169">Provide a `params` implementation similar to [`URLSearchParams`](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="170-181">Create a `fetch` bridge which wraps the native `window.fetch` in a custom Promise</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="170-181">`window.fetch` and ES6 `Promise` are not in all browsers, so you may need to use polyfills or option overrides.</span>
 
-Notes:
+------
 
 ## Why a Fetch Bridge?
 
 <!-- .slide: data-title="Vanilla JavaScript Library" data-state="somestate" -->
 
-```js
-( function() {
-  var search = document.querySelector( "input" );
-  var giphy = new Giphy( search, {
-	fetch: jQuery.get
-  } );
-}() );
-```
+Depending on your browser support or JavaScript library choices you may need to adjust your data retrieval mechanism
+
+------
+
+## XMLHttpRequest Fetch Bridge
+
+<!-- .slide: data-title="Vanilla JavaScript Library" data-state="somestate" -->
 
 ```js
-( function() {
-  var search = document.querySelector( "input" );
-  var giphy = new Giphy( search, {
+var search = document.querySelector( "input" );
+var giphy = new Giphy( search, {
 	fetch: function( url, data ) {
 		return new Promise( function( resolve, reject ) {
 			var request = new XMLHttpRequest();
-			url += this.options.params( data );
+			url += this.params( data );
 			request.open( "GET", url );
 			request.onload = function() {
 				if ( request.status === 200 ) {
-					resolve( request.response );
+					resolve( JSON.parse( request.response ) );
 				} else {
 					reject( new Error( request.statusText ) );
 				}
@@ -318,32 +317,39 @@ Notes:
 			request.send();
 		}.bind( this ) );
 	}
-  } );
-}() );
-
+} );
 ```
 
+------
+
+## [Reqwest](https://github.com/ded/reqwest) Fetch Bridge
+
+<!-- .slide: data-title="Vanilla JavaScript Library" data-state="somestate" -->
+
 ```js
-( function() {
-  var search = document.querySelector( "input" );
-  var giphy = new Giphy( search, {
+var search = document.querySelector( "input" );
+var giphy = new Giphy( search, {
 	fetch: function( url, data ) {
 		return reqwest( {
 			url: url,
 			method: 'get',
 			data: data
 		} );
-	},
-	decoder: function( response ) {
-		var list = ( response && response.data ) || [];
-		return list.map( function( item ) {
-			return {
-				url: item.images.downsized.url
-			};
-		} );
 	}
-  } );
-}() );
+} );
+```
+
+------
+
+## jQuery Fetch Bridge
+
+<!-- .slide: data-title="Vanilla JavaScript Library" data-state="somestate" -->
+
+```js
+var search = document.querySelector( "input" );
+var giphy = new Giphy( search, {
+	fetch: jQuery.get
+} );
 ```
 
 ------
@@ -980,4 +986,5 @@ require( [ "giphy" ], function( Giphy ) {
 <!-- .slide: data-title="Vanilla JavaScript Library" data-state="resources" -->
 
 * [UMD: JavaScript modules that run anywhere](http://bob.yexley.net/umd-javascript-that-runs-anywhere/)
+* [reqwest](https://github.com/ded/reqwest)
 * [Source Code](https://github.com/elijahmanor/framework-independent-javascript-components/tree/master/src/3-vanilla)

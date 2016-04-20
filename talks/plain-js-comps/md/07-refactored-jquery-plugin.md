@@ -224,7 +224,7 @@ Notes:
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="100">Trigger event to update the User Interface</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="103-112">`search` method</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="104-111">Call jQuery's ajax method</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="105,107-108">Use `url`, `apiKey`, and `rating` from `options.ajax.url`</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="105,108-109">Use `url`, `apiKey`, and `rating` from `options.ajax.url`</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="106-110">Use the `options.encoder` to format the outgoing data</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="114-121">`$.fn[ pluginName ]`</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="115-120">Iterate over the matched element and return to support chaining</span>
@@ -234,6 +234,62 @@ Notes:
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="129-133">Pull out the AJAX parameters into the options</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="134-140">Map the data from the library to what the API request expects</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="141-149">Map the data from the API response to what the library expects</span>
+
+------
+
+## Why Encoder and Decoder?
+
+<!-- .slide: data-title="Redesigned Code" data-state="somestate" -->
+
+* The library understands what has been decoded and the API understands the data that has been encoded<!-- .element: class="fragment" -->
+* The data contract going to and from an API can change over time and an encoder/decoder insulates the library from changes.<!-- .element: class="fragment" -->
+* Providing an encoder/decoder enables you to switch to other API gif search engines<!-- .element: class="fragment" -->
+
+------
+
+## Overriding Encoder/Decoder
+
+<!-- .slide: data-title="Redesigned Code" data-state="somestate" -->
+
+```js
+$( "input" ).giphy( {
+	ajax: {
+	  url: "http://thecatapi.com/api/images/get"
+	},
+	encoder: function( data ) {
+	  return {
+		format: "xml",
+		results_per_page: 20
+	  };
+	},
+	decoder: function( response ) {
+	  var list = ( response && response.querySelectorAll( "url" ) ) || [];
+	  return [].map.call( list, function( item ) {
+		return {
+		  url: item.innerHTML
+		};
+	  } );
+	}
+} );
+```
+<!-- .element: class="stretch" -->
+
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="3">Change to a new Image API</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="5-10">API needs `format` and `results_per_page`</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="11-18">API returns XML, so `querySelectorAll` to find nodes and map get into correct format</span>
+
+------
+
+<!-- .slide: data-title="Redesigned Code" data-state="somestate" data-menu-title="The Cat API" -->
+
+![](./img/funny-cat-new-api.gif)
+<!-- .element: style="height: 400px;" -->
+
+### [thecatapi.com](http://thecatapi.com/)
+
+```
+http://thecatapi.com/api/images/get?format=xml&results_per_page=20
+```
 
 ------
 
