@@ -135,7 +135,8 @@ Reveal.addEventListener( 'ready', function( event ) {
 
 function getModules() {
 	var modules = {};
-	[].forEach.call(document.querySelectorAll('.slides .stack'), function(module) {
+	// [].forEach.call(document.querySelectorAll('.slides .stack'), function(module) {
+	[].forEach.call(document.querySelectorAll('.slides > section'), function(module) {
 		modules[module.id] = true;
 	});
 	return modules;

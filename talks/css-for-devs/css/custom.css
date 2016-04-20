@@ -4,6 +4,11 @@
   opacity: 0.5;
 }
 
+.SlideKeyboardNavigation .reveal .slides code,
+.SlideKeyboardNavigation .reveal .slides em {
+	color: #448FBB;
+}
+
 .frog {
   position: absolute;
   left: 50%;
@@ -139,7 +144,7 @@
 #Introduction img { background: none; border: none; box-shadow: none; }
 .overflowYScroll .present[data-markdown] { height: 100vh; overflow-y: scroll; }
 
-#Introduction .CSSForDevelopers {
+.introduction .CSSForDevelopers {
   border: 5px solid white;
   height: 250px;
   width: 250px;
@@ -147,7 +152,7 @@
   transform: perspective(500px);
   animation: CSSForDevelopers-animation 3s ease-in 6s infinite alternate;
 }
-#Introduction .CSSForDevelopers-text {
+.introduction .CSSForDevelopers-text {
   font-size: 2em;
   text-align: left;
   width: 100px;
