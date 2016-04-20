@@ -145,7 +145,7 @@ export class GiphyComponent {
 
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="4">Declare Giphy since it is global</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="6-20">Angular Giphy Component Adapter</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="6-10">Define the `selector` and `template`</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="6-10">Define the `selector`, `template`, and `inputs`</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="12">Create a private property representing the underlying element</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="14-19">On `ngOnInit` grab the `nativeElement` and create an instance of `Giphy`</span>
 

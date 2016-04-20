@@ -319,6 +319,13 @@ var giphy = new Giphy( search, {
 	}
 } );
 ```
+<!-- .element: class="stretch" -->
+
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="3-20">Override the `fetch` method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="4">Return a new `Promise`</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="5">Create a `XMLHttpRequest`</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="8-14">If status 200 then resolve the parsed JSON else reject the promise</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="15-17">Reject promise if `onerror` was triggered</span>
 
 ------
 
@@ -339,6 +346,10 @@ var giphy = new Giphy( search, {
 } );
 ```
 
+<span class="fragment current-only focus-text" data-code-focus="3-9">Override the `fetch` method</span>
+<span class="fragment current-only focus-text" data-code-focus="4-8">Return `reqwest`, which is `Promise`</span>
+<span class="fragment current-only focus-text" data-code-focus="7">`reqwest` parameterizes the data</span>
+
 ------
 
 ## jQuery Fetch Bridge
@@ -351,6 +362,10 @@ var giphy = new Giphy( search, {
 	fetch: jQuery.get
 } );
 ```
+
+<span class="fragment current-only focus-text" data-code-focus="3">Override the `fetch` method</span>
+<span class="fragment current-only focus-text" data-code-focus="3">`jQuery.get` returns a `Promise` interface</span>
+<span class="fragment current-only focus-text" data-code-focus="3">`jQuery` parameterizes the data</span>
 
 ------
 
@@ -893,8 +908,6 @@ describe( "Vanilla JavaScript Library", function() {
 } );
 ```
 <!-- .element: class="stretch" -->
-
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="2-4">Module global variables and Test Data</span>
 
 ------
 
