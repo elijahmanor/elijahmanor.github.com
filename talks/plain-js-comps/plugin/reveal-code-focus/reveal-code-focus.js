@@ -13,7 +13,7 @@
   function forEach(array, callback) {
     var i = -1, length = array ? array.length : 0;
     while (++i < length) {
-      callback(array[i]);
+      callback(array[i], i);
     }
   }
 
@@ -135,7 +135,7 @@
     if (lines) {
 	  var scroll = currentSlide.querySelector('pre code');
       var code = currentSlide.querySelectorAll('pre code .line');
-      forEach(lines.split(','), function(line) {
+      forEach(lines.split(','), function(line, index) {
         lines = line.split('-');
         if (lines.length == 1) {
           code[lines[0] - 1] && code[lines[0] - 1].classList.add('focus');
@@ -145,9 +145,11 @@
             code[i - 1] && code[i - 1].classList.add('focus');
           }
         }
-		jQuery( scroll ).animate( {
-		   scrollTop: code[lines[0] - 1].offsetTop
-	    }, 500);
+		if (index === 0) {
+			jQuery( scroll ).animate( {
+			   scrollTop: code[lines[0] - 1].offsetTop
+		    }, 500);
+		}
       });
     }
   }

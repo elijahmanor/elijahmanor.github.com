@@ -48,6 +48,7 @@
 	padding: 1rem;
 	border: 1px solid white;
 	min-width: 75%;
+	z-index: 1;
 }
 
 .reveal .slides .focus-text--scroll {

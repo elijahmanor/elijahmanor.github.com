@@ -26,8 +26,6 @@ Notes:
 <!-- .slide: data-title="Redesigned Code" data-state="somestate" -->
 
 <ul>
-	<li class="fragment">Remove the dependency on the [jQuery](http://jquery.com) library</li>
-	<li class="fragment">Leverage native [DOM (Document Object Model)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) APIs
 	<li class="fragment">Add default options that can be overridden</li>
 	<li class="fragment">Add extensibility points to abstract data transfer</li>
 	<li class="fragment">Write the code so that it's testable</li>
@@ -240,6 +238,8 @@ Notes:
 ------
 
 ## Let's Add Unit tests
+
+<!-- .slide: data-title="Redesigned Code" data-state="somestate" -->
 
 * Tests encourage a better overall API (extensibility, loosely coupled, etc)<!-- .element: class="fragment" -->
 * Tests affirms that things work as you intended<!-- .element: class="fragment" -->
@@ -674,7 +674,36 @@ describe( "Redesigned jQuery Plugin", function() {
 ```
 <!-- .element: class="stretch" -->
 
-<span class="fragment current-only focus-text" data-code-focus=""></span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="2-4">Module global variables and Test Data</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="6-11">Setup test DOM fixture for each test and initialize the plugin and extract the object instance</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="13-47">Make sure it's a valid jQuery plugin and has default options</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="49-82">Test that the encoder and decoder methods work as expected</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="84-418">Test the object instance</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="85-97">Test the constructor function</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="99-417">Test the methods</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="100-118">Test the `init` method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="120-148">Test the `wireEventHandlers` method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="150-169">Test the `handleControlKey` method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="171-192">Test the `handleSearchClick` method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="194-228">Test the `handleListUpdated` method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="230-252">Test the `handleItemUpdated` method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="254-276">Test the `reset` method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="278-303">Test the `handleEnter` method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="305-332">Test the `handleResponse` method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="334-340">Test the `preload` method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="342-381">Test the `navigate` method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="383-416">Test the `search` method</span>
+
+------
+
+## Unit Test Coverage
+
+<!-- .slide: data-title="Redesigned Code" data-state="somestate" -->
+
+![](./img/unit-test-coverage.png)
+<!-- .element: style="height: 400px;" -->
+
+<small>Used [karma-coverage](http://npm.im/karma-coverage) to detect unit test coverage</small>
 
 ------
 
@@ -695,4 +724,10 @@ describe( "Redesigned jQuery Plugin", function() {
 <!-- .slide: data-title="Redesigned Code" data-state="somestate" data-state="resources" -->
 
 * [Jasmine](http://jasmine.github.io/)
+* [karma](http://npm.im/karma)
+* [karma-chrome-launcher](http://npm.im/karma-chrome-launcher)
+* [karma-coverage](http://npm.im/karma-coverage)
+* [karma-jasmine](http://npm.im/karma-jasmine)
+* [karma-phantomjs-launcher](http://npm.im/karma-phantomjs-launcher)
+* [karma-spec-reporter](http://npm.im/karma-spec-reporter)
 * [Source Code](https://github.com/elijahmanor/framework-independent-javascript-components/tree/master/src/2-jquery-testable)
