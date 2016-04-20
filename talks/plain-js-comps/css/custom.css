@@ -30,7 +30,7 @@
 /* BEGIN - Code focus */
 .line { display: block; }
 .line.focus {
-	background: #fdfd96;
+	background: #fbfb41;
 	font-weight: bolder;
 	border-left: 3px solid #eea236;
 	border-right: 3px solid #eea236;
