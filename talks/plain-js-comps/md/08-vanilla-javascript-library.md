@@ -64,7 +64,7 @@ Patterns
 
 ## You Might Not Need jQuery
 
-<!-- .slide: data-title="Vanilla JavaScript Library" data-state="resources" -->
+<!-- .slide: data-title="Vanilla JavaScript Library" -->
 
 <iframe data-src="http://youmightnotneedjquery.com/" class="stretch" />
 
@@ -72,7 +72,7 @@ Patterns
 
 ## Vanilla JavaScript Library
 
-<!-- .slide: data-title="Vanilla JavaScript Library" data-state="resources" -->
+<!-- .slide: data-title="Vanilla JavaScript Library" -->
 
 ```js
 (function ( _, window, document, undefined ) {
