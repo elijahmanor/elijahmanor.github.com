@@ -14,7 +14,7 @@
 <body ng-controller="MainCtrl">
   <div ng-app="myApp">
     <h3>Giphy Angular 1.x Directive</h3>
-    <my-giphy></my-giphy>
+    <my-giphy rating="pg"></my-giphy>
   </div>
 
   <script src="./src/Giphy.js"></script>
@@ -70,7 +70,9 @@ angular.module( "giphy", [] )
 			replace: "true",
 			template: "<input />",
 			link: function( scope, el, atts ) {
-				this.giphy = new Giphy( el[ 0 ], {} );
+				this.giphy = new Giphy( el[ 0 ], {
+					ajax: { rating: atts.rating }
+				} );
 			}
 		};
 	} );
@@ -79,7 +81,7 @@ angular.module( "giphy", [] )
 <span class="fragment current-only focus-text" data-code-focus="2">This is its own `giphy` module</span>
 <span class="fragment current-only focus-text" data-code-focus="3">The `giphy` module has a `myGiphy` directive</span>
 <span class="fragment current-only focus-text" data-code-focus="4-11">Directive is an `input` <strong>E</strong>lement without a wrapper element</span>
-<span class="fragment current-only focus-text" data-code-focus="9">Create a `Giphy` object passing in the element and options<span>
+<span class="fragment current-only focus-text" data-code-focus="9-11">Create a `Giphy` object passing in the element and options<span>
 
 Notes:
 

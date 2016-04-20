@@ -62,7 +62,7 @@ System.config( {
 });
 ```
 
-<span class="fragment current-only focus-text" data-code-focus="2-16">Give SystemJS some confirmation for the app</span>
+<span class="fragment current-only focus-text" data-code-focus="2-16">Give SystemJS some config for the app</span>
 <span class="fragment current-only focus-text" data-code-focus="3-6">Use TypeScript</span>
 <span class="fragment current-only focus-text" data-code-focus="7-9">The application is located at `./src`</span>
 <span class="fragment current-only focus-text" data-code-focus="10-15">The application starts at `./main.ts`</span>
@@ -100,7 +100,7 @@ import { GiphyComponent } from "./giphy.component";
   template: `
     <div>
       <h3>Hello</h3>
-      <my-giphy></my-giphy>
+      <my-giphy rating="pg"></my-giphy>
     </div>
   `
 })
@@ -127,24 +127,27 @@ declare var Giphy: any;
 
 @Component( {
 	selector: "my-giphy",
-	template: "<input />"
+	template: "<input />",
+	inputs: [ "rating" ]
 } )
 export class GiphyComponent {
 	constructor( private el:ElementRef ) {}
 
 	ngOnInit():any {
 		const input = this.el.nativeElement.querySelector( "input" );
-		this.giphy = new Giphy( input, {} );
+		this.giphy = new Giphy( input, {
+			ajax: { rating: this.rating }
+		} );
 	}
 }
 ```
 <!-- .element: class="stretch" -->
 
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="4">Declare Giphy since it is global</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="6-17">Angular Giphy Component Adapter</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="6-9">Define the `selector` and `template`</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="11">Create a private property representing the underlying element</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="13-16">On `ngOnInit` grab the `nativeElement` and create an instance of `Giphy`</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="6-20">Angular Giphy Component Adapter</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="6-10">Define the `selector` and `template`</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="12">Create a private property representing the underlying element</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="14-19">On `ngOnInit` grab the `nativeElement` and create an instance of `Giphy`</span>
 
 ------
 
