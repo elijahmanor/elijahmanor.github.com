@@ -284,11 +284,13 @@ Patterns
 
 ------
 
-## Why a Fetch Bridge?
+## Why a Bridge?
 
 <!-- .slide: data-title="Vanilla JavaScript Library" data-state="somestate" -->
 
-Depending on your browser support or JavaScript library choices you may need to adjust your data retrieval mechanism
+<img src="./img/bridge.gif" style="height: 350px" />
+
+<p>Depending on browser support or JavaScript library choices you may need to adjust your data retrieval mechanism</p>
 
 ------
 
