@@ -36,6 +36,8 @@
   </div>
 </div>
 
+<small>Additional Learning: [How to Use npm as a Build Tool](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/)</small>
+
 ---
 
 # `Shortcut Scripts`
@@ -85,7 +87,7 @@
   </div>
   <div class="Split-column Split-column--35">
     <p>`npm test` will run...
-    <ol>
+    <ol style="display: block;">
       <li>`pretest`</li>
       <li>`test`</li>
       <li>`posttest`</li>
@@ -139,12 +141,12 @@
 </code></pre>
   </div>
   <div class="Split-column Split-column--35">
-    <p>`npm run lint` will run...
-    <ol>
+    <p>`npm run lint` will run...</p>
+    <ol style="display: block;">
       <li>`eslint`</li>
       <li>`sass-lint`</li>
     </ol>
-    </p>
+		<p>Exciting Side Note: <a href="http://eslint.org/blog/2016/04/welcoming-jscs-to-eslint">The JSCS team has joined ESLint!</a></p>
   </div>
 </div>
 
@@ -173,7 +175,7 @@
   </div>
   <div class="Split-column Split-column--35">
     <p>`git commit -am "WIP"` will run...
-    <ol>
+    <ol style="display: block;">
       <li>`precommit`</li>
       <li>`lint`</li>
     </ol>
@@ -199,9 +201,3 @@
   },
   "pre-commit": [ "precommit", "lint" ]
 }</code></pre>
-
----
-
-# Resources
-
-* [How to Use npm as a Build Tool](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/)

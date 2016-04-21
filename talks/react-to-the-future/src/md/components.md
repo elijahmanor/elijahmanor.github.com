@@ -20,11 +20,33 @@
 
 # How Do They Relate to Angular Directives?
 
-* Isolate Scoped (yield template inside)
-* Element Restricted (doesn't inherit from parent scope)
-* Transcluded Directive (an element, not an attribute)
-
-<small>OH from Ryan Florence on a Podcast</small>
+<div class="Split">
+	<div class="Split-column Split-column--65">
+		<pre class="language-javascript language--clean language--small"><code>
+var module = angular.module('directiveModule');
+module.directive('fakeReactComponent', function () {
+	return {
+		restrict: 'E',    // Element Restricted
+		scope: {},        // Isolate Scope
+		transclude: true, // Transcluded
+		template: '&lt;div class="ReactComponent"&gt;' +
+			'&lt;ng-transclude&gt;&lt;/ng-transclude&gt;' +
+		'&lt;/div&gt;'
+	};
+});</code></pre>
+	</div>
+  <div class="Split-column Split-column--35">
+		<pre class="language-markup language--clean language--small"><code>
+&lt;fake-react-component&gt;
+Hello World!
+&lt;/fake-react-component&gt;</code></pre>
+		<ul>
+			<li>Element Restricted (element, not attribute)</li>
+			<li>Isolate Scoped<br/> (no inherit parent scope)</li>
+			<li>Transcluded Directive (yield template inside)</li>
+		</ul>
+	</div>
+</div>
 
 ---
 
@@ -730,7 +752,7 @@ Go ahead and use Babel to convert the rest of your files.
 
 <div class="Split">
   <div class="Split-column Split-column--70">
-    <pre data-line="1,12,14" class="language-jsx language--clean language--small"><code>
+    <pre data-line="1,12,15" class="language-jsx language--clean language--small"><code>
 var SetIntervalMixin = {
   componentWillMount: function() { this.set = []; },
   setInterval: function() {
@@ -743,6 +765,7 @@ var SetIntervalMixin = {
 
 var TickTock = React.createClass({
   mixins: [SetIntervalMixin],
+  getInitialState: function() { return { seconds: 0 } },
   componentDidMount: function() {
     this.setInterval(this.tick, 1000);
   },
@@ -762,7 +785,7 @@ ReactDOM.render(&lt;TickTock /&gt;,
   <div class="Split-column Split-column--30">
     <p>1. Define the `SetIntervalMixin` Mixin</p>
     <p>12. Reference `SetIntervalMixin` in the `mixins` array</p>
-    <p>14. Call `setInterval` from the mixin</p>
+    <p>15. Call `setInterval` from the mixin</p>
   </div>
 </div>
 

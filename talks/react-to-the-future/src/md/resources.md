@@ -8,18 +8,18 @@
 
 ---
 
-# Resources
+# General Resources
 
-* https://github.com/facebook/react-devtools
-* http://ricostacruz.com/cheatsheets/react.html
-* https://github.com/mikechau/react-primer-draft
-* https://github.com/enaqx/awesome-react
-* http://buildwithreact.com/
-* https://facebook.github.io/react/jsx-compiler.html
+* [React DevTools Extension](https://github.com/facebook/react-devtools)
+* [Egghead.io React & Redux Cheatsheets](https://egghead.io/react-redux-cheatsheets)
+* [Huge List of React Resources](https://github.com/enaqx/awesome-react)
+* [Performance Tooling](https://facebook.github.io/react/docs/perf.html)
 
 <!--
 # Resources
 
+* http://www.smashingmagazine.com/2015/04/21/react-to-the-future-with-isomorphic-apps/
+* http://blog.risingstack.com/from-angularjs-to-react-the-isomorphic-way/
 * https://github.com/iam4x/isomorphic-flux-boilerplate
 * https://github.com/newtriks/generator-react-webpack
 * https://github.com/randylien/generator-react-gulp-browserify

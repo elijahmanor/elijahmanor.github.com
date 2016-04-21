@@ -163,7 +163,7 @@
 
 # What Do I Use?
 
-## Reflux
+## Reflux, Lux, and learning Redux (all the rave)
 
 ---
 
@@ -261,7 +261,6 @@ const React = require('react');
 const App = require('./components/App.jsx');
 const SlideManager = require('./components/SlideManager.jsx');
 const SlideList = require('./components/SlideList.jsx');
-const Welcome = require('./components/Welcome.jsx');
 const Router = require('react-router');
 const DefaultRoute = Router.DefaultRoute;
 const Route = Router.Route;
@@ -271,7 +270,7 @@ const routes = (
   <Route name="app" path="/" handler={App}>
     <Route name="slide" path="slide/:setIndex/:slideIndex" handler={SlideManager}/>
     <Route name="list" path="list" handler={SlideList}/>
-    <DefaultRoute handler={Welcome}/>
+    <DefaultRoute handler={SlideManager}/>
   </Route>
 );
 
@@ -307,7 +306,7 @@ const SlideManager = React.createClass({
     SlideStore.setRouter(this.context.router);
   },
   render() {
-    let { setIndex, slideIndex } = this.props.params;
+    let { setIndex = 0, slideIndex = 0 } = this.props.params;
     let slide = SlideStore.gotoSlide(setIndex, slideIndex);
 
     return (

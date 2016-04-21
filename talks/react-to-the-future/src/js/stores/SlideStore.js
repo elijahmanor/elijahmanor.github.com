@@ -17,8 +17,8 @@ let SETS = [ // TODO: Have a task that will auto-add setIndex and slideIndex and
   { id: 'Isomorphic',   markdown: require('!raw!../../md/isomorphic.md'),    slides: [{ setIndex: 6, slideIndex: 0, content: '<h1>Isomorphic</h1>' }] },
   { id: 'NodeModules',  markdown: require('!raw!../../md/node-modules.md'),  slides: [{ setIndex: 7, slideIndex: 0, content: '<h1>Node Modules</h1>' }] },
   { id: 'NpmScripts',   markdown: require('!raw!../../md/npm-scripts.md'),   slides: [{ setIndex: 7, slideIndex: 0, content: '<h1><code>npm</code> Scripts</h1>' }] },
-  { id: 'Conclusion',   markdown: require('!raw!../../md/conclusion.md'),    slides: [{ setIndex: 8, slideIndex: 0, content: `<h1>Conclusion</h1>` }] },
-  { id: 'Resources',    markdown: require('!raw!../../md/resources.md'),     slides: [{ setIndex: 9, slideIndex: 0, content: '<h1>Resources</h1>' }] }
+  { id: 'Resources',    markdown: require('!raw!../../md/resources.md'),     slides: [{ setIndex: 8, slideIndex: 0, content: '<h1>Resources</h1>' }] },
+  { id: 'Conclusion',   markdown: require('!raw!../../md/conclusion.md'),    slides: [{ setIndex: 9, slideIndex: 0, content: `<h1>Conclusion</h1>` }] }
 ];
 
 const SlideStore = Reflux.createStore({

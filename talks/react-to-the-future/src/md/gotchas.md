@@ -145,3 +145,32 @@ var HelloWorld = React.createClass({
     <p>9. Within JSX you can use multi-line comment syntax inside a JavaScript expression.</p>
   </div>
 </div>
+
+---
+
+# `isMounted()` before calling `setState`
+
+<div class="Split">
+  <div class="Split-column Split-column--40">
+		<p>Try to avoid code like this...</p>
+    <pre data-line="1" class="language-jsx language--clean language--small"><code>
+if (this.isMounted()) {
+  this.setState({ ... });
+}</code></pre>
+		<p>1. Try to **avoid** `isMounted()`</p>
+		<p>7. Unsubscribe to change events when component is unmounted (<a href="https://facebook.github.io/react/blog/2015/12/16/ismounted-antipattern.html">source</a>)</p>
+	</div>
+  <div class="Split-column Split-column--60">
+		<p>Instead there are ways to get around...</p>
+		<pre data-line="7" class="language-jsx language--clean language--small"><code>
+class MyComponent extends React.Component {
+	componentDidMount() {
+		mydatastore.subscribe(this);
+	}
+	render() { /\* ... \*/ }
+	componentWillUnmount() {
+		mydatastore.unsubscribe(this);
+	}
+}</code></pre>
+	</div>
+</div>

@@ -4,15 +4,15 @@
 }
 -->
 
-# Isomorphic
+# Isomorphic JavaScript / Universal JavaScript
 
 ---
 
-# Isomorphic
+# What Does that Mean Exactly?
 
-* Don't Break the Web (isometric)
-* Shared Code
-* Progressive Enhancment
+* Don't Break the Web
+* Shared Code across Client and Server
+* Progressive Enhancement
 
 ---
 
