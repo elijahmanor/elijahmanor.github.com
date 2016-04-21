@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <title>React to the Future</title>
   <link href="./vendor/prism.css" rel="stylesheet">
+	<link href="./vendor/mermaid-0.5.8.css" rel="stylesheet">
   {% for (var css in o.htmlWebpackPlugin.files.css) { %}
     <link data-iframe-behavior="clone" href="{%= o.htmlWebpackPlugin.files.css[css] %}" rel="stylesheet">
   {% } %}
 </head>
 <body>
   <script src="./vendor/prism.js"></script>
-  <script src="./vendor/mermaid.full.js"></script>
+  <!-- <script src="./vendor/mermaid.full.js"></script> -->
+  <script src="./vendor/mermaid-0.5.8.min.js"></script>
 	<script src="./js/prefixfree.min.js"></script>
   {% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
     <script src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry %}"></script>

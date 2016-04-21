@@ -25,12 +25,12 @@
     "eslint": "latest"
   },
   "scripts": {
-    "lint": "eslint --cache --ext .js --ext .jsx src",
+    "lint": "eslint --cache --ext .js --ext .jsx src"
   }
 }
 </code></pre>
   </div>
-  <div class="Split-column Split-column--25">
+  <div class="Split-column Split-column--35">
     <p>`npm run-script lint`</p>
     <p>`npm run lint`</p>
   </div>
@@ -41,7 +41,7 @@
 # `Shortcut Scripts`
 
 <div class="Split">
-  <div class="Split-column Split-column--65">
+  <div class="Split-column Split-column--75">
 <pre class="language-javascript language--clean language--small"><code>{
   "name": "myproject",
   "devDependencies": {
@@ -77,14 +77,13 @@
   "scripts": {
     "lint": "eslint --cache --ext .js --ext .jsx src",
     "test": "karma start --log-leve=error karma.config.js --single-run=true",
-
     "pretest": "npm run lint",
     "posttest": "echo 'Finished running tests'"
   }
 }
 </code></pre>
   </div>
-  <div class="Split-column Split-column--25">
+  <div class="Split-column Split-column--35">
     <p>`npm test` will run...
     <ol>
       <li>`pretest`</li>
@@ -113,7 +112,7 @@
 }
 </code></pre>
   </div>
-  <div class="Split-column Split-column--25">
+  <div class="Split-column Split-column--35">
     <p>`npm run test-nyan` will run <span class="spancode">karma start --log-leve=error karma.config.js --single-run=true --reporters nyan</span>
     </p>
   </div>
@@ -139,7 +138,7 @@
 }
 </code></pre>
   </div>
-  <div class="Split-column Split-column--25">
+  <div class="Split-column Split-column--35">
     <p>`npm run lint` will run...
     <ol>
       <li>`eslint`</li>
@@ -172,7 +171,7 @@
 }
 </code></pre>
   </div>
-  <div class="Split-column Split-column--25">
+  <div class="Split-column Split-column--35">
     <p>`git commit -am "WIP"` will run...
     <ol>
       <li>`precommit`</li>

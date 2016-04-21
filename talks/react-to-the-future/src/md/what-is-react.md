@@ -74,7 +74,7 @@ Add your own entry to [Facebook's Sites Using React Wiki](https://github.com/fac
 # Declarative & Composable
 
 <div class="Split">
-  <div class="Split-column Split-column--narrow">
+  <div class="Split-column">
     <p>Imperative Code</p>
     <pre class="language-javascript language--clean language--small"><code>
 $('form').on('submit', function(e) {
@@ -90,7 +90,7 @@ $('form').on('submit', function(e) {
   });
 });</code></pre>
   </div>
-  <div class="Split-column Split-column--narrow">
+  <div class="Split-column">
     <p>Declarative Code</p>
     <pre class="language-jsx language--clean language--small"><code>
 var NoteBox = React.createClass({

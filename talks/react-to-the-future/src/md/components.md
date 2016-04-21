@@ -37,7 +37,7 @@
 # Hello World Component
 
 <div class="Split">
-  <div class="Split-column">
+  <div class="Split-column Split-column--65">
     <pre class="language-jsx language--clean language--small"><code>
 var HelloWorld = React.createClass({
   render: function() {
@@ -51,7 +51,7 @@ var HelloWorld = React.createClass({
 
 React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--35">
     <iframe height='268' scrolling='no' src='//codepen.io/elijahmanor/embed/MweXEv/?height=268&theme-id=0&default-tab=result' data-online='//codepen.io/elijahmanor/embed/MweXEv/?height=268&theme-id=0&default-tab=result' data-offline='./pens/codepen_MweXEv/index.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/MweXEv/'>MweXEv</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
     </iframe>
   </div>
@@ -62,7 +62,7 @@ React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
 # React.createClass
 
 <div class="Split">
-  <div class="Split-column Split-column--75">
+  <div class="Split-column Split-column--65">
     <pre data-line="1" class="language-jsx language--clean language--small"><code>
 var HelloWorld = React.createClass({
   render: function() {
@@ -76,7 +76,7 @@ var HelloWorld = React.createClass({
 
 React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--35">
     <p>1. <code>React.createClass</code> is how you define a component in React.</p>
   </div>
 </div>
@@ -86,7 +86,7 @@ React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
 # Component's Render Method
 
 <div class="Split">
-  <div class="Split-column Split-column--75">
+  <div class="Split-column Split-column--65">
     <pre data-line="2,3-7" class="language-jsx language--clean language--small"><code>
 var HelloWorld = React.createClass({
   render: function() {
@@ -100,7 +100,7 @@ var HelloWorld = React.createClass({
 
 React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--35">
     <p>2. The <code>render</code> method is required. You can think of this as your template.</p>
     <p>3-7. It returns a tree of React components that will eventually render to HTML.</p>
   </div>
@@ -111,7 +111,7 @@ React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
 # React's Render Method
 
 <div class="Split">
-  <div class="Split-column Split-column--75">
+  <div class="Split-column Split-column--65">
     <pre data-line="11" class="language-jsx language--clean language--small"><code>
 var HelloWorld = React.createClass({
   render: function() {
@@ -125,7 +125,7 @@ var HelloWorld = React.createClass({
 
 React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--35">
     <p>11. <code>React.render</code> creates the component, starts the framework, and injects HTML into a DOM node.</p>
   </div>
 </div>
@@ -170,7 +170,7 @@ React.render(React.createElement(HelloWorld, null), document.body);
 <!-- getDefaultProps - Allows you to set default props for your component. -->
 
 <div class="Split">
-  <div class="Split-column">
+  <div class="Split-column Split-column--65">
     <pre class="language-jsx language--clean language--small"><code>
 var HelloWorld = React.createClass({
   propTypes: {
@@ -188,7 +188,7 @@ React.render(
   document.getElementById('widget')
 );</code></pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--35">
     <iframe height='268' scrolling='no' src='//codepen.io/elijahmanor/embed/xGOmXg/?height=268&theme-id=0&default-tab=result' data-online='//codepen.io/elijahmanor/embed/xGOmXg/?height=268&theme-id=0&default-tab=result' data-offline='./pens/codepen_xGOmXg/index.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/xGOmXg/'>xGOmXg</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
     </iframe>
   </div>
@@ -199,7 +199,7 @@ React.render(
 # Props
 
 <div class="Split">
-  <div class="Split-column Split-column--75">
+  <div class="Split-column Split-column--65">
     <pre data-line="7,13" class="language-jsx language--clean language--small"><code>
 var HelloWorld = React.createClass({
   propTypes: {
@@ -217,7 +217,7 @@ React.render(
   document.getElementById('widget')
 );</code></pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--35">
     <p>13. You can pass read-only properties to a React component via its attributes.</p>
     <p>7. You can access this data with the `this.props` object inside of a JavaScript Expression `{}`.</p>
   </div>
@@ -228,7 +228,7 @@ React.render(
 # Prop Types
 
 <div class="Split">
-  <div class="Split-column Split-column--75">
+  <div class="Split-column Split-column--65">
     <pre data-line="2-4" class="language-jsx language--clean language--small"><code>
 var HelloWorld = React.createClass({
   propTypes: {
@@ -246,7 +246,7 @@ React.render(
   document.getElementById('widget')
 );</code></pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--35">
     <p>2-4. Check the types of the `props` during development with `propTypes`.</p>
     <pre class="language-jsx language--clean language--small"><code>
 array, bool, func, number, object,
@@ -264,7 +264,7 @@ customProp: function(props, name, _) {}</code></pre>
 # Let's Look at State
 
 <div class="Split">
-  <div class="Split-column Split-column--75">
+  <div class="Split-column Split-column--70">
     <pre class="language-jsx language--clean language--small"><code>
 var HelloWorld = React.createClass({
   getInitialState() {
@@ -281,7 +281,7 @@ var HelloWorld = React.createClass({
   }
 });</code></pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--30">
     <iframe height='268' scrolling='no' src='//codepen.io/elijahmanor/embed/aOZXQa/?height=268&theme-id=0&default-tab=result' data-online='//codepen.io/elijahmanor/embed/aOZXQa/?height=268&theme-id=0&default-tab=result' data-offline='./pens/codepen_aOZXQa/index.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/aOZXQa/'>aOZXQa</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
     </iframe>
   </div>
@@ -292,7 +292,7 @@ var HelloWorld = React.createClass({
 # Default State and Expression
 
 <div class="Split">
-  <div class="Split-column Split-column--75">
+  <div class="Split-column Split-column--70">
     <pre data-line="2-4,10" class="language-jsx language--clean language--small"><code>
 var HelloWorld = React.createClass({
   getInitialState() {
@@ -309,7 +309,7 @@ var HelloWorld = React.createClass({
   }
 });</code></pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--30">
     <p>2-4. Provide default `state` by returning object from `getInitialState`.</p>
     <p>10. Access component state via the `this.state` object.</p>
   </div>
@@ -320,7 +320,7 @@ var HelloWorld = React.createClass({
 # Updating State
 
 <div class="Split">
-  <div class="Split-column Split-column--75">
+  <div class="Split-column Split-column--70">
     <pre data-line="5-7,11" class="language-jsx language--clean language--small"><code>
 var HelloWorld = React.createClass({
   getInitialState() {
@@ -337,7 +337,7 @@ var HelloWorld = React.createClass({
   }
 });</code></pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--30">
     <p>11. Declaratively wire-up _delegated_ Event Handlers via attributes.</p>
     <p>5-7. Update the state by calling `this.setState` passing in the difference.</p>
   </div>
@@ -354,7 +354,7 @@ var HelloWorld = React.createClass({
 # Overloaded setState
 
 <div class="Split">
-  <div class="Split-column Split-column--75">
+  <div class="Split-column Split-column--70">
     <pre data-line="6-8" class="language-jsx language--clean language--small"><code>
 var HelloWorld = React.createClass({
   getInitialState() {
@@ -373,7 +373,7 @@ var HelloWorld = React.createClass({
   }
 });</code></pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--30">
     <p>6-8. As of React v0.13 you can pass a callback function to `this.setState`. React will pass the current `state` & `props` and you return the new `state`.</p>
   </div>
 </div>
@@ -455,7 +455,7 @@ var HelloWorld = React.createClass({
 # References
 
 <div class="Split">
-  <div class="Split-column Split-column--75">
+  <div class="Split-column Split-column--70">
     <pre class="language-jsx language--clean language--small"><code>
 var HelloWorld = React.createClass({
   getInitialState() { return { count: 0 }; },
@@ -471,7 +471,7 @@ var HelloWorld = React.createClass({
   }
 });</code></pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--30">
     <iframe height='268' scrolling='no' src='//codepen.io/elijahmanor/embed/waWOQy/?height=268&theme-id=0&default-tab=result' data-online='//codepen.io/elijahmanor/embed/waWOQy/?height=268&theme-id=0&default-tab=result' data-offline='./pens/codepen_waWOQy/index.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/waWOQy/'>waWOQy</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
     </iframe>
   </div>
@@ -482,7 +482,7 @@ var HelloWorld = React.createClass({
 # References
 
 <div class="Split">
-  <div class="Split-column Split-column--75">
+  <div class="Split-column Split-column--70">
     <pre data-line="4,9" class="language-jsx language--clean language--small"><code>
 var HelloWorld = React.createClass({
   getInitialState() { return { count: 0 }; },
@@ -498,7 +498,7 @@ var HelloWorld = React.createClass({
   }
 });</code></pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--30">
     <p>9. Add `ref` attributes in the JSX.</p>
     <p>4. You have access to the DOM in the `componentDidMount` life-cycle method. Call `getDOMNode()` to get the raw DOM node.</p>
   </div>
@@ -515,7 +515,7 @@ var HelloWorld = React.createClass({
 # Dealing with Lists
 
 <div class="Split">
-  <div class="Split-column Split-column--65">
+  <div class="Split-column Split-column--70">
     <pre class="language-jsx language--clean language--small"><code>
 var speakers = ['Scott Hanselman', 'John Papa', 'Scott Guthrie', 'Michele Bustamante', 'Dan Wahlin', 'Debora Kurata', 'Zoiner Tejada', 'Scott Allen', 'Elijah Manor', 'Ward Bell', 'Todd Anglin', 'Saron Yitbare', 'Scott Hunter'];
 
@@ -550,7 +550,7 @@ React.render(
   document.body
 );</code></pre>
   </div>
-  <div class="Split-column Split-column--25">
+  <div class="Split-column Split-column--30">
     <iframe height='468' scrolling='no' src='//codepen.io/elijahmanor/embed/RPRdmg/?height=468&theme-id=0&default-tab=result' data-online='//codepen.io/elijahmanor/embed/RPRdmg/?height=468&theme-id=0&default-tab=result' data-offline='./pens/codepen_RPRdmg/index.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/RPRdmg/'>RPRdmg</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
     </iframe>
   </div>
@@ -573,7 +573,7 @@ React.render(
 # React v0.13.0 Supports ES6 Classes
 
 <div class="Split">
-  <div class="Split-column Split-column--65">
+  <div class="Split-column Split-column--70">
     <pre class="language-jsx language--clean language--small"><code>
 class HelloWorld extends React.Component {
   constructor(props) {
@@ -604,7 +604,7 @@ HelloWorld.defaultProps = {
 
 React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
   </div>
-  <div class="Split-column Split-column--25">
+  <div class="Split-column Split-column--30">
     <iframe height='268' scrolling='no' src='//codepen.io/elijahmanor/embed/KpMYMY/?height=268&theme-id=0&default-tab=result' data-online='//codepen.io/elijahmanor/embed/KpMYMY/?height=268&theme-id=0&default-tab=result' data-offline='./pens/codepen_KpMYMY/index.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/KpMYMY/'>KpMYMY</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
     </iframe>
   </div>
@@ -652,7 +652,7 @@ HelloWorld.defaultProps = {
 
 React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
   </div>
-  <div class="Split-column Split-column--25">
+  <div class="Split-column Split-column--35">
     <p>12. Use `class` instead of `React.createClass` to define a component</p>
     <p>2-5. Use the `constructor` to set the initial state instead of `getInitialState`</p>
   </div>
@@ -700,7 +700,7 @@ HelloWorld.defaultProps = {
 
 React.render(&lt;HelloWorld /&gt;, document.body);</code></pre>
   </div>
-  <div class="Split-column Split-column--25">
+  <div class="Split-column Split-column--35">
     <p>12. You must bind Event Handlers to `this`</p>
     <p>19-22. `propTypes` are defined off of the Constructor</p>
     <p>23-26. `defaultProps` are defined off the Constructor</p>
@@ -729,7 +729,7 @@ Go ahead and use Babel to convert the rest of your files.
 # Mixins
 
 <div class="Split">
-  <div class="Split-column Split-column--65">
+  <div class="Split-column Split-column--70">
     <pre data-line="1,12,14" class="language-jsx language--clean language--small"><code>
 var SetIntervalMixin = {
   componentWillMount: function() { this.set = []; },
@@ -759,7 +759,7 @@ var TickTock = React.createClass({
 ReactDOM.render(&lt;TickTock /&gt;,
   document.getElementById('example'));</code></pre>
   </div>
-  <div class="Split-column Split-column--25">
+  <div class="Split-column Split-column--30">
     <p>1. Define the `SetIntervalMixin` Mixin</p>
     <p>12. Reference `SetIntervalMixin` in the `mixins` array</p>
     <p>14. Call `setInterval` from the mixin</p>
@@ -828,7 +828,7 @@ class TickTock extends React.Component {
 ReactDOM.render(&lt;TickTock /&gt;,
   document.getElementById('example'));</code></pre>
   </div>
-  <div class="Split-column Split-column--25">
+  <div class="Split-column Split-column--35">
     <p>1. Define the `setIntervalDecorator` Decorator</p>
     <p>11-12. Wrap the Component with a decorated version</p>
     <p>16. Decorate your class with `setIntervalDecorator`</p>

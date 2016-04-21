@@ -14,7 +14,7 @@ const SlideManager = React.createClass({
     SlideStore.setRouter(this.context.router);
   },
   render() {
-    let { setIndex, slideIndex } = this.props.params;
+    let { setIndex = 0, slideIndex = 0 } = this.props.params;
     let slide = SlideStore.gotoSlide(setIndex, slideIndex);
 
     return (

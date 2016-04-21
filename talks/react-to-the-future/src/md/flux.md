@@ -46,7 +46,14 @@
 
 # A Flux Story
 
-![](./img/flux-1.png)
+<div class="FluxStory FluxStory--1">
+	<div class="FluxStory-actor FluxStory--actionCreator">The action creator</div>
+	<div class="FluxStory-actor FluxStory--dispatcher">The dispatcher</div>
+	<div class="FluxStory-actor FluxStory--store">The store</div>
+	<div class="FluxStory-actor FluxStory--controllerView">The controller view</div>
+	<div class="FluxStory-actor FluxStory--view">The view</div>
+</div>
+
 
 <small>[A cartoon guide to Flux](https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207#.yr9pjvwjt) by [@linclark](https://twitter.com/linclark)</small>
 
@@ -54,7 +61,14 @@
 
 # A Flux Story
 
-![](./img/flux-2.png)
+<div class="FluxStory FluxStory--2">
+	<div class="FluxStory-actor FluxStory--actionCreator">The action creator</div>
+	<div class="FluxStory-actor FluxStory--dispatcher">The dispatcher</div>
+	<div class="FluxStory-actor FluxStory--store">The store</div>
+	<div class="FluxStory-actor FluxStory--controllerView">The controller view</div>
+	<div class="FluxStory-actor FluxStory--view">The view</div>
+</div>
+
 
 <small>[A cartoon guide to Flux](https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207#.yr9pjvwjt) by [@linclark](https://twitter.com/linclark)</small>
 
@@ -62,7 +76,14 @@
 
 # A Flux Story
 
-![](./img/flux-3.png)
+<div class="FluxStory FluxStory--3">
+	<div class="FluxStory-actor FluxStory--actionCreator">The action creator</div>
+	<div class="FluxStory-actor FluxStory--dispatcher">The dispatcher</div>
+	<div class="FluxStory-actor FluxStory--store">The store</div>
+	<div class="FluxStory-actor FluxStory--controllerView">The controller view</div>
+	<div class="FluxStory-actor FluxStory--view">The view</div>
+</div>
+
 
 <small>[A cartoon guide to Flux](https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207#.yr9pjvwjt) by [@linclark](https://twitter.com/linclark)</small>
 
@@ -70,7 +91,14 @@
 
 # A Flux Story
 
-![](./img/flux-4.png)
+<div class="FluxStory FluxStory--4">
+	<div class="FluxStory-actor FluxStory--actionCreator">The action creator</div>
+	<div class="FluxStory-actor FluxStory--dispatcher">The dispatcher</div>
+	<div class="FluxStory-actor FluxStory--store">The store</div>
+	<div class="FluxStory-actor FluxStory--controllerView">The controller view</div>
+	<div class="FluxStory-actor FluxStory--view">The view</div>
+</div>
+
 
 <small>[A cartoon guide to Flux](https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207#.yr9pjvwjt) by [@linclark](https://twitter.com/linclark)</small>
 
@@ -78,7 +106,13 @@
 
 # A Flux Story
 
-![](./img/flux-5.png)
+<div class="FluxStory FluxStory--5">
+	<div class="FluxStory-actor FluxStory--actionCreator">The action creator</div>
+	<div class="FluxStory-actor FluxStory--dispatcher">The dispatcher</div>
+	<div class="FluxStory-actor FluxStory--store">The store</div>
+	<div class="FluxStory-actor FluxStory--controllerView">The controller view</div>
+	<div class="FluxStory-actor FluxStory--view">The view</div>
+</div>
 
 <small>[A cartoon guide to Flux](https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207#.yr9pjvwjt) by [@linclark](https://twitter.com/linclark)</small>
 
@@ -86,7 +120,13 @@
 
 # A Flux Story
 
-![](./img/flux-6.png)
+<div class="FluxStory FluxStory--6">
+	<div class="FluxStory-actor FluxStory--actionCreator">The action creator</div>
+	<div class="FluxStory-actor FluxStory--dispatcher">The dispatcher</div>
+	<div class="FluxStory-actor FluxStory--store">The store</div>
+	<div class="FluxStory-actor FluxStory--controllerView">The controller view</div>
+	<div class="FluxStory-actor FluxStory--view">The view</div>
+</div>
 
 <small>[A cartoon guide to Flux](https://code-cartoons.com/a-cartoon-guide-to-flux-6157355ab207#.yr9pjvwjt) by [@linclark](https://twitter.com/linclark)</small>
 

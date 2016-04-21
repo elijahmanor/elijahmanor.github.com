@@ -2,6 +2,8 @@
 @import 'node_modules/scut/dist/_scut.scss';
 @import '_reset.scss';
 
+*, *:before, *:after { box-sizing: border-box; }
+
 $primary-text-color: #ffffff;
 $secondary-text-color: #484848;
 $primary-color: #61dafb;
@@ -108,7 +110,7 @@ pre[data-line].language--small {
   top: 50%;
   position: relative;
   transform: translateY(-50%);
-  padding: 2em;
+  padding: 1em;
   text-align: center;
 }
 
@@ -150,39 +152,74 @@ pre[data-line].language--small {
 }
 
 .Split {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-content: center;
-  align-items: flex-start;
+  // display: flex;
+  // flex-direction: row;
+  // flex-wrap: nowrap;
+  // justify-content: center;
+  // align-content: center;
+  // align-items: flex-start;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-content: stretch;
+	align-items: flex-start;
 }
 
 .Split .Split-column {
-  order: 0;
+	order: 0;
+	// flex: 0 0 auto;
+	align-self: auto;
+	min-width: 0;
+  // order: 0;
   flex: 0 1 50%;
-  align-self: auto;
-  margin: 1rem;
+  // align-self: auto;
+  padding: 0.5rem;
 }
 
-.Split .Split-column--narrow {
-  @include scut-margin(n 0.5rem);
-}
+// .Split .Split-column--narrow {
+//   @include scut-margin(n 0.5rem);
+// }
 
-.Split .Split-column--wide {
-  @include scut-margin(n 2.5rem);
-}
+// .Split .Split-column--wide {
+//   @include scut-margin(n 2.5rem);
+// }
 
 .Split .Split-column--25 {
   flex: 0 1 25%;
+}
+
+.Split .Split-column--30 {
+  flex: 0 1 30%;
+}
+
+.Split .Split-column--35 {
+  flex: 0 1 35%;
+}
+
+.Split .Split-column--40 {
+  flex: 0 1 40%;
 }
 
 .Split .Split-column--45 {
   flex: 0 1 45%;
 }
 
+.Split .Split-column--55 {
+  flex: 0 1 55%;
+}
+
+.Split .Split-column--60 {
+  flex: 0 1 60%;
+}
+
 .Split .Split-column--65 {
   flex: 0 1 65%;
+}
+
+.Split .Split-column--70 {
+  flex: 0 1 70%;
 }
 
 .Split .Split-column--75 {
@@ -243,6 +280,10 @@ pre[data-line].language--small {
 
   background-color: $tertiary-color;
   //color: $secondary-text-color;
+
+	.label {
+		color: white;
+	}
 }
 
 .Welcome {
@@ -260,3 +301,44 @@ pre[data-line].language--small {
   font-family: Consolas;
   background-color: #272822;
 }
+
+/*
+<div class="FluxStory">
+	<div class="FluxStory-actionCreator">The action creator</div>
+	<div class="FluxStory-dispatcher">The dispatcher</div>
+	<div class="FluxStory-store">The store</div>
+	<div class="FluxStory-controllerView">The controller view</div>
+	<div class="FluxStory-view">The view</div>
+</div>
+*/
+
+.FluxStory {
+	color: #0C71C8;
+	position: relative;
+	width: 800px;
+	height: 470px;
+	margin: 1rem;
+	left: 50%;
+	transform:
+	translateX(-50%);
+	font-size: .5rem;
+}
+.FluxStory--1 { background-image: url("../img/flux-1.png"); }
+.FluxStory--2 { background-image: url("../img/flux-2.png"); }
+.FluxStory--3 { background-image: url("../img/flux-3.png"); }
+.FluxStory--4 { background-image: url("../img/flux-4.png"); }
+.FluxStory--5 { background-image: url("../img/flux-5.png"); }
+.FluxStory--6 { background-image: url("../img/flux-6.png"); }
+.FluxStory-actor {
+	position: absolute;
+	background: white;
+	padding: .25rem;
+	border: 1px solid #0C71C8;
+	border-radius: .5rem;
+	text-transform: capitalize;
+}
+.FluxStory--actionCreator { top: 430px; left: 380px; }
+.FluxStory--dispatcher { top: 430px; left: 15px; }
+.FluxStory--store { top: 160px; left: 200px; }
+.FluxStory--controllerView { top: 250px; left: 440px; }
+.FluxStory--view { top: 310px; left: 590px; }

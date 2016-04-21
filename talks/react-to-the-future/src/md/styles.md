@@ -139,7 +139,7 @@ styes.scss
 
 /* ... more ... */</code></pre>
   </div>
-  <div class="Split-column Split-column--25">
+  <div class="Split-column Split-column--35">
     <p>Define the classes you need only for this component</p>
   </div>
 </div>
@@ -175,7 +175,7 @@ let Media = React.createClass({
 
 module.exports = Media;</code></pre>
   </div>
-  <div class="Split-column Split-column--25 fragment">
+  <div class="Split-column Split-column--35 fragment">
     <p>3. Require the Sass file that is needed for this component</p>
   </div>
 </div>
@@ -245,7 +245,7 @@ module.exports = Media;</code></pre>
 # Sass vs. CSS Modules
 
 <div class="Split">
-  <div class="Split-column Split-column--45">
+  <div class="Split-column">
     <p>BEM (media.scss)</p>
     <pre class="language-scss language--clean language--small"><code>
 .Media           { /\*all styles\*/ }
@@ -258,7 +258,7 @@ require('media.scss');
   ...more...
 &lt;/div&gt;</code></pre>
   </div>
-  <div class="Split-column Split-column--45 fragment">
+  <div class="Split-column fragment">
     <p>CSS Modules (media.css)</p>
     <pre class="language-css language--clean language--small"><code>
 .normal   { /\*all styles\*/ }
@@ -294,7 +294,7 @@ import styles from 'media.css';
 # Sharing Across Files
 
 <div class="Split">
-  <div class="Split-column Split-column--50">
+  <div class="Split-column Split-column--30">
 <pre class="language-css language--clean language--small"><code>
 /\* colors.css \*/
 .primary {
@@ -305,7 +305,7 @@ import styles from 'media.css';
 }
 </code></pre>
   </div>
-  <div class="Split-column Split-column--50">
+  <div class="Split-column Split-column--70">
 <pre class="language-css language--clean language--small"><code>
 .common { /\* font-sizes, border-radius \*/ }
 .normal {
@@ -386,51 +386,51 @@ import styles from 'media.css';
 # [Radium](http://projects.formidablelabs.com/radium/)
 
 <div class="Split">
-  <div class="Split-column">
-    <pre class="language-jsx language--clean language--small"><code>
+  <div class="Split-column Split-column--45">
+	<pre class="language-jsx language--clean language--small"><code>
+var styles = {
+	base: {
+		color: '#fff',
+		':hover': {
+			background:
+				color('#0074d9')
+					.lighten(0.2)
+					.hexString()
+		}
+	},
+	primary: {
+		background: '#0074D9'
+	},
+	warning: {
+		background: '#FF4136'
+	}
+};</code></pre>
+  </div>
+  <div class="Split-column Split-column--55">
+	<pre class="language-jsx language--clean language--small"><code>
 var Radium = require('radium');
 var React = require('react');
 var color = require('color');
 
 @Radium
 class Button extends React.Component {
-  static propTypes = {
-    kind: React.PropTypes
-      .oneOf(['primary', 'warning']).isRequired
-  };
+	static propTypes = {
+		kind: React.PropTypes
+			.oneOf(['primary', 'warning']).isRequired
+	};
 
-  render() {
-    return (
-      &lt;button
-        style={[
-          styles.base,
-          styles[this.props.kind]
-        ]}&gt;
-        {this.props.children}
-      &lt;/button&gt;
-    );
-  }
+	render() {
+		return (
+			&lt;button
+				style={[
+					styles.base,
+					styles[this.props.kind]
+				]}&gt;
+				{this.props.children}
+			&lt;/button&gt;
+		);
+	}
 }</code></pre>
-  </div>
-  <div class="Split-column">
-    <pre class="language-jsx language--clean language--small"><code>
-var styles = {
-  base: {
-    color: '#fff',
-    ':hover': {
-      background:
-        color('#0074d9')
-          .lighten(0.2)
-          .hexString()
-    }
-  },
-  primary: {
-    background: '#0074D9'
-  },
-  warning: {
-    background: '#FF4136'
-  }
-};</code></pre>
   </div>
 </div>
 

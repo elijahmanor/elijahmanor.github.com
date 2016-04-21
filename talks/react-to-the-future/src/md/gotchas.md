@@ -36,7 +36,7 @@ return (
 # JSX Tree from Render
 
 <div class="Split">
-  <div class="Split-column">
+  <div class="Split-column Split-column--35">
     <p>JSX</p>
     <pre class="language-jsx language--clean language--small"><code>
 return (
@@ -46,7 +46,7 @@ return (
   &lt;/div&gt;
 );</code></pre>
   </div>
-  <div class="Split-column Split-column--75">
+  <div class="Split-column Split-column--65">
     <p>JavaScript</p>
     <pre class="language-javascript language--clean language--small"><code>
 return (
@@ -64,7 +64,7 @@ return (
 # Attribute Names
 
 <div class="Split">
-  <div class="Split-column Split-column--45">
+  <div class="Split-column">
     <p>HTML</p>
     <pre class="language-markup language--clean language--small"><code>
 &lt;div class="Media"&gt;
@@ -75,7 +75,7 @@ return (
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
   </div>
-  <div class="Split-column Split-column--45">
+  <div class="Split-column">
     <p>JSX</p>
     <pre class="language-jsx language--clean language--small"><code>
 return (
@@ -96,7 +96,7 @@ return (
 # Passing Arguments to Event Handlers
 
 <div class="Split">
-  <div class="Split-column Split-column--65">
+  <div class="Split-column Split-column--70">
     <pre class="language-jsx language--clean language--small"><code>
 var speakers = ['Scott Hanselman', 'John Papa', 'Scott Guthrie', 'Michele Bustamante', 'Dan Wahlin', 'Debora Kurata', 'Zoiner Tejada', 'Scott Allen', 'Elijah Manor', 'Ward Bell', 'Todd Anglin', 'Saron Yitbare', 'Scott Hunter'];
 
@@ -113,7 +113,7 @@ var HelloWorld = React.createClass({
   }
 });</code></pre>
   </div>
-  <div class="Split-column Split-column--25">
+  <div class="Split-column Split-column--30">
     <iframe height='377' scrolling='no' src='//codepen.io/elijahmanor/embed/doXLQd/?height=377&theme-id=0&default-tab=result' data-online='//codepen.io/elijahmanor/embed/doXLQd/?height=377&theme-id=0&default-tab=result' data-offline='./pens/codepen_doXLQd/index.html' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/elijahmanor/pen/doXLQd/'>doXLQd</a> by Elijah Manor (<a href='http://codepen.io/elijahmanor'>@elijahmanor</a>) on <a href='http://codepen.io'>CodePen</a>.
     </iframe>
   </div>
@@ -124,7 +124,7 @@ var HelloWorld = React.createClass({
 # Adding Comments
 
 <div class="Split">
-  <div class="Split-column">
+  <div class="Split-column Split-column--60">
     <pre data-line="2-3,9" class="language-jsx language--clean language--small"><code>
 var HelloWorld = React.createClass({
   // Single-line comment
@@ -140,7 +140,7 @@ var HelloWorld = React.createClass({
   }
 });</code></pre>
   </div>
-  <div class="Split-column">
+  <div class="Split-column Split-column--40">
     <p>2-3. Within the JavaScript you can write comments using normal single-line or multi-line syntax.</p>
     <p>9. Within JSX you can use multi-line comment syntax inside a JavaScript expression.</p>
   </div>
