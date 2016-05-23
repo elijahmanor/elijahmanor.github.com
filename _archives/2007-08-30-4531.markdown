@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-08-30 12:09:00'
----
-
-"We try to solve the problem by rushing through the design process so that enough time is left at the end of the project to uncover the errors that were made because we rushed through the design process." --Glenford J. Myers <br>

@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2008-02-14 14:41:00'
----
-
-"That's the beauty of our profession, we can make things look like something they're not!" --Head First Design Patterns: The Adapter and Facade Patterns<br>

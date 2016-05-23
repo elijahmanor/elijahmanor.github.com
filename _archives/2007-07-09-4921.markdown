@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-07-09 13:17:00'
----
-
-"If engineers built buildings the way programmers wrote programs, the first woodpecker to come along would destroy civilization." --Unknown<br>

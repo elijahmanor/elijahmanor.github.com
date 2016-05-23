@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-07-31 13:02:00'
----
-
-"Given enough eyeballs, all bugs are shallow." --Linus's Law<br>

@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2008-02-08 15:09:00'
----
-
-"Real Programmers don't believe in schedules. Planners make up schedules. Managers "firm up" schedules. Frightened coders strive to meet schedules. Real Programmers ignore schedules." --Unknown

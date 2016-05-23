@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-11-28 15:10:00'
----
-
-"How does a project get to be a year late? One day at a time." --Frederick P. Brooks

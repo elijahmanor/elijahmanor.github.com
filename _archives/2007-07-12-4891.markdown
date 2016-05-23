@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-07-12 12:20:00'
----
-
-Some people, when confronted with a problem, think "I know, I'll use  regular expressions." Now they have two problems. --Jamie Zawinski

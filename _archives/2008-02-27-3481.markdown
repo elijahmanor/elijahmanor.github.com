@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2008-02-27 14:11:00'
----
-
-"With you as my Proxy, I'll be able to triple the amount of lunch money I can extract from friends!" --Head First Design Patterns: The Proxy Pattern

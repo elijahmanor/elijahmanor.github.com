@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2008-02-29 13:46:00'
----
-
-<p>"What's the story? First you tell us One Class, One Responsibility, and now you are giving us a pattern with two responsibilities in one class. The Composite Pattern manages a hierarchy AND it performs operations related to Menus." --Head First Design Patterns<br></p>

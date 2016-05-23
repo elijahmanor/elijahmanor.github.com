@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-07-23 12:20:00'
----
-
-"You can't manage what you can't control, and you can't control what you don't measure."  -Tom DeMarco<br>

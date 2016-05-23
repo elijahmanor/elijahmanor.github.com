@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-05-08 13:08:00'
----
-
-"Copy and paste is a design error." --David Parnas

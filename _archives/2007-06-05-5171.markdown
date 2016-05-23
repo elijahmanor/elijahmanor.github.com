@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-06-05 12:10:00'
----
-
-<p>"Beware of bugs in the above code; I have only proved it correct, not tried it." --Donald Knuth</p>

@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-09-27 12:35:00'
----
-
-"At the source of every error which is blamed on the computer, you will find at least two human errors, including the error of blaming it on the computer." --Unknown

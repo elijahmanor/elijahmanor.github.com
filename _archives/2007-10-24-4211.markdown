@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-10-24 13:40:00'
----
-
-"You'll get no argument from me on the fundamental value of unit testing. Even the most trivially basic unit test, as shown in the code sample above, is a huge step up from the testing most developers perform-- which is to say, most developers don't test at all! They key in a few values at random and click a few buttons. If they don't get any unhandled exceptions, that code is ready for QA!" --Jeff Atwood <br>

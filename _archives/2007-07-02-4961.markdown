@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-07-02 12:01:00'
----
-
-"If it's worth asking the user, it's worth the program remembering." -Alan Cooper

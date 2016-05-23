@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2008-01-16 14:24:00'
----
-
-"The computer programmer is a creator of universes for which he alone is responsible. Universes of virtually unlimited complexity can be created in the form of computer programs." --Joseph Weizenbaum<br><br>

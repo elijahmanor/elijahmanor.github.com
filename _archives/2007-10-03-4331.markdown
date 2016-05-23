@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-10-03 13:17:00'
----
-
-McConnell Week: "In software, the chain isn't as strong as its weakest link; it's as weak as all the weak links multiplied together." --Steve McConnell<br>

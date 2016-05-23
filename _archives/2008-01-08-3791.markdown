@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2008-01-08 14:14:00'
----
-
-"SQL, Lisp, and Haskell are the only programming languages that I've seen where one spends more time thinking than typing." --Philip Greenspun

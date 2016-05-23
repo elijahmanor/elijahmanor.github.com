@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-09-24 13:04:00'
----
-
-"Computer geek: an asocial, malodorous, pasty-faced monomaniac with all the personality of a cheese-grater." --Jargon Files

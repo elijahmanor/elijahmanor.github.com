@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-11-14 13:59:00'
----
-
-"Just because the standard provides a cliff in front of you, you are not necessarily required to jump off it." --Norman Diamond

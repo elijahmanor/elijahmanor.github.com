@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2008-02-12 15:01:00'
----
-
-"Real Programmers don't draw flowcharts. Flowcharts are the illiterate's form of documentation. Cavemen drew flowcharts; look at how much good it did for them." --Unknown

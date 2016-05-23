@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-05-09 13:08:00'
----
-
-"You start coding. I'll go find out what they want." --Computer analyst to programmer

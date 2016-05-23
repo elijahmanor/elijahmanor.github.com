@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-11-08 13:28:00'
----
-
-"Computers are good at following instructions, but not at reading your mind." --Donald Knuth

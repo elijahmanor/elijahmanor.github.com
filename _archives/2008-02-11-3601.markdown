@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2008-02-11 14:06:00'
----
-
-"Real Programmers don't do documentation. Documentation is for simps who can't figure out the listing." --Unknown

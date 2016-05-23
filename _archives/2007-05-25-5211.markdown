@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-05-25 13:02:00'
----
-
-"My software never has bugs. It just develops random features." --Any Developer<br>

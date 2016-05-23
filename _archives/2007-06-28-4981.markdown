@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-06-28 11:49:00'
----
-
-"No amount of elegant programming or technology will solve a problem if it is improperly specified or understood to begin with." -Milt Bryce

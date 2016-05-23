@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-06-06 13:41:00'
----
-
-"A program is a device used to convert data into error messages." --Unknown

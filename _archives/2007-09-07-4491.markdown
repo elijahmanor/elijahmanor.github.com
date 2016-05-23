@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-09-07 12:49:00'
----
-
-"Much of the Web is like an anthill built by ants on LSD." --Jakob Nielsen

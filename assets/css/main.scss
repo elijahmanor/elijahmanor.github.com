@@ -3,19 +3,7 @@
 # Change this file for any custom CSS.
 ---
 
-@media only screen and (max-width: 500px) {
-	.post-excerpt img,
-	.post-content img {
-		min-width: 100%;
-		float: none !important;
-	}
-}
-
-.post--wide {
-	max-width: none;
-}
-
-/* We need to add display:inline in order to align the '>>' of the 'read more' link */
+/* We need to add display:inline in order to align the >> of the read more link */
 .post-excerpt p {
 	display: inline;
 }
@@ -25,47 +13,24 @@
 	"syntax"
 ;
 
-.post > aside {
+.flex-container {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+}
+
+.flex-item {
+	-webkit-flex: 1 auto;
+	flex: 1 auto;
+}
+
+.post > .social {
 	float: right;
 }
 
 .twitter-follow-button, .twitter-share-button {
 	margin: 2rem 0 2rem 1rem;
-}
-
-.post-content .full-img {
-  width: 555px;
-  min-width: 100%;
-  margin: 0;
-}
-
-.flex-container {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
-}
-
-.flex-item {
-  -webkit-flex: 1 auto;
-  flex: 1 auto;
-}
-
-.videoWrapper {
-	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
-	padding-top: 25px;
-	height: 0;
-	margin-bottom: 1em;
-}
-
-.videoWrapper iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	margin: 0;
 }
 
 .Events {
@@ -79,14 +44,14 @@
 
 .Event {
 	background-color: #eee;
-  border: 1px solid #CCC;
-  border-radius: 1rem;
-  flex: 1 auto;
-  margin: 1rem;
-  padding: 2rem;
-  max-width: 27rem;
-  position: relative;
-  min-width: 10rem;
+	border: 1px solid #CCC;
+	border-radius: 1rem;
+	flex: 1 auto;
+	margin: 1rem;
+	padding: 2rem;
+	max-width: 27rem;
+	position: relative;
+	min-width: 10rem;
 
 	&--upcoming {
 		&:before {
@@ -107,55 +72,55 @@
 		}
 	}
 
-  &-date {
-    margin-bottom: 2rem;
-  }
+	&-date {
+		margin-bottom: 2rem;
+	}
 
-  &-name {
-    font-size: 2.5rem;
-    line-height: 2.5rem;
-    margin-bottom: 1.5rem;
-    font-weight: bold;
-    a { color: black; }
-  }
+	&-name {
+		font-size: 2.5rem;
+		line-height: 2.5rem;
+		margin-bottom: 1.5rem;
+		font-weight: bold;
+		a { color: black; }
+	}
 
 	&-title { font-weight: bold; font-size: 2rem; margin-bottom: 1rem; }
 
 	&-description { font-size: 1.5rem; }
 
-  &-location {
+	&-location {
 		font-style: italic;
-    color: #555;
-    margin-bottom: 3rem;
-  }
+		color: #555;
+		margin-bottom: 3rem;
+	}
 }
 
 .Date {
-  display: flex;
+	display: flex;
 	flex-flow: row wrap;
-  color: #777;
+	color: #777;
 	justifiy-content: center;
 	align-items: center;
 
-  &-day {
-    font-size: 4rem;
-    margin-right: 2rem;
-    font-weight: bold;
-  }
-  &-summary {
+	&-day {
+		font-size: 4rem;
+		margin-right: 2rem;
+		font-weight: bold;
+	}
+	&-summary {
 		display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    font-size: 1.5rem;
-    line-height: 2rem;
-    text-transform: uppercase;
-  }
-  &-month {
-    flex: 1 auto;
-  }
-  &-year {
-	  flex: 1 auto;
-  }
+		flex-flow: column wrap;
+		align-items: center;
+		font-size: 1.5rem;
+		line-height: 2rem;
+		text-transform: uppercase;
+	}
+	&-month {
+		flex: 1 auto;
+	}
+	&-year {
+		flex: 1 auto;
+	}
 }
 
 .Sessions {
@@ -163,28 +128,28 @@
 }
 
 .Session {
-  margin-bottom: 2rem;
+	margin-bottom: 2rem;
 
-  &:last-of-type { margin-bottom: 0; }
-  &-name { font-weight: bold; font-size: 2rem; }
-  &-links {
-    display: flex;
-    flex-flow: row wrap;
-    list-style: none;
-    padding: 0;
-    font-size: 1.5rem;
-  }
-  &-link {
-    margin-right: 1.5rem;
-    a { color: black; }
-  }
+	&:last-of-type { margin-bottom: 0; }
+	&-name { font-weight: bold; font-size: 2rem; }
+	&-links {
+		display: flex;
+		flex-flow: row wrap;
+		list-style: none;
+		padding: 0;
+		font-size: 1.5rem;
+	}
+	&-link {
+		margin-right: 1.5rem;
+		a { color: black; }
+	}
 	&-link--unavailable {
-    a {
+    	a {
 			color: #ccc;
 			pointer-events: none;
 			cursor: default;
 		}
-  }
+	}
 }
 
 
@@ -258,5 +223,3 @@
 		max-width: 100%;
 	}
 }
-
-.disqus { margin-top: 10rem; }

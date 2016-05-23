@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-08-06 12:20:00'
----
-
-"Software programs are like humans. The difference is that when program stops responding you can always kill it with no regrets."  -Rustam M. Bunyadov<br>

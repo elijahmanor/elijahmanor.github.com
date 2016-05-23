@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-11-27 20:06:00'
----
-
-"Be mock'd and wonder'd at." --William Shakespeare

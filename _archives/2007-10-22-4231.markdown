@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-10-22 12:16:00'
----
-
-"The software isn't finished until the last user is dead." --Unknown<br>

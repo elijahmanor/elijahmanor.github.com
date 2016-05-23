@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-10-09 12:25:00'
----
-
-Real Programmer Week: "Real Programmers never work 9 to 5. If they are around at 9 AM, it's because they were up all night." --Unknown

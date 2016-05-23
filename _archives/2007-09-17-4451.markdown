@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-09-17 19:05:00'
----
-
-"Imitating paper on a computer screen is like tearing the wings off a 747 and using it as a bus on the highway." --Ted Nelson

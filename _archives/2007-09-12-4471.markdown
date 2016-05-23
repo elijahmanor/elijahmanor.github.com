@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-09-12 13:06:00'
----
-
-"Design adds value faster than it adds cost." --Joel Spolsky

@@ -1395,7 +1395,7 @@
   employer: 'leankit'
   sessions:
   - name: 'Framework-Independent JavaScript Components'
-    slides: ''
+    slides: '/talks/plain-js-comps'
     video: ''
     feedback: ''
   - name: 'To React.js and Beyond!'
@@ -1406,3 +1406,69 @@
     slides: '/talks/css-for-devs'
     video: ''
     feedback: ''
+
+- dates:
+  - day: 27
+    month: 'July'
+    year: 2016
+  date: '2016-07-27'
+  days: '27'
+  name: 'Srijan Technologies Webinar'
+  type: 'conference'
+  url: 'http://environmentsforhumans.com/2016/javascript-summit/'
+  location: 'Online'
+  employer: 'leankit'
+  sessions:
+  - name: 'Eliminate Javascript Code Smells'
+    slides: '/talks/js-smells'
+    video: 'https://www.youtube.com/watch?v=JVlfj7mQZPo'
+    feedback: ''
+
+- dates:
+  - day: 18
+    month: 'Aug'
+    year: 2016
+  - day: 20
+    month: 'Aug'
+    year: 2016
+  date: '2016-08-18'
+  days: '18-20'
+  name: 'Music City Code'
+  type: 'conference'
+  url: 'http://www.musiccitycode.com'
+  location: ''
+  employer: 'leankit'
+  sessions:
+  - name: 'CSS for Developers'
+    slides: '/talks/css-for-devs'
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 24
+    month: 'Oct'
+    year: 2016
+  - day: 28
+    month: 'Oct'
+    year: 2016
+  date: '2016-10-24'
+  days: '24-28'
+  name: 'AngleBrackets'
+  type: 'conference'
+  url: 'https://anglebrackets.org/'
+  location: ''
+  employer: 'leankit'
+  sessions:
+  - name: 'Framework-Independent JavaScript Components'
+    slides: '/talks/plain-js-comps'
+    video: ''
+    feedback: ''
+  - name: 'To React.js and Beyond!'
+    slides: '/talks/react-to-the-future/dist'
+    video: ''
+    feedback: ''
+  - name: 'CSS for Developers'
+    slides: '/talks/css-for-devs'
+    video: ''
+    feedback: ''
+ 

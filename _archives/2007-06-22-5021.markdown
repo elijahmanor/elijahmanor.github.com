@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-06-22 13:18:00'
----
-
-"When I am working on a problem, I never think about beauty. I think only of how to solve the problem. But when I have finished, if the solution is not beautiful, I know it is wrong." --R Buckminster Fuller

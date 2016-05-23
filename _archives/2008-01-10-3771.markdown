@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2008-01-10 14:43:00'
----
-
-<a name="7834">"No matter what the problem is, it's always a people problem." -<i>-Gerald M. Weinberg</i></a>

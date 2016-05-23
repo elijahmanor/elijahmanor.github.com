@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-12-20 14:27:00'
----
-
-"A most important, but also most elusive, aspect of any tool is its influence on the habits of those who train themselves in its use. If the tool is a programming language this influence is, whether we like it or not, an influence on our thinking habits." --Edsger Dijkstra

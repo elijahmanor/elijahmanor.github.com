@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-10-02 13:07:00'
----
-
-McConnell Week: "It's better to wait for a productive programmer to become available than it is to wait for the first available programmer to become productive." --Steve McConnell<br>

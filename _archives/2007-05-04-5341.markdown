@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-05-04 13:09:00'
----
-
-"Computer programmers never die... they just byte the dust." --Unknown

@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-12-11 19:29:00'
----
-
-"Your most unhappy customers are your greatest source of learning." --Bill Gates

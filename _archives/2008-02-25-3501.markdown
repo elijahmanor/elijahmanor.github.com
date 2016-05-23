@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2008-02-25 13:00:00'
----
-
-"At a party, the Real Programmers are the ones in the corner talking about operating system security and how to get around it." --Unknown

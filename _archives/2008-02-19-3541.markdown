@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2008-02-19 13:00:00'
----
-
-"A Real Programmer might or might not know his wife's name. He does, however, know the entire ASCII (or EBCDIC) code table." --Unknown

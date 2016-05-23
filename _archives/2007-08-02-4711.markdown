@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-08-02 14:13:00'
----
-
-"Any piece of software reflects the organizational structure that produced it." --Conway's Law<br>

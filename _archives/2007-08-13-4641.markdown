@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-08-13 12:23:00'
----
-
-"If your project doesn't work, look for the part that you didn't think was important." --Arthur Bloch<br>

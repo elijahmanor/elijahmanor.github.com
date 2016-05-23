@@ -1,6 +1,6 @@
 ---
 layout: default
-disqus: true
+disqus: false
 archive: false
 post_class: post-template
 ---
@@ -15,11 +15,6 @@ post_class: post-template
 <main class="content" role="main">
 
     <article class="post">
-        <aside style="float: right;">
-          <a href="https://twitter.com/elijahmanor" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @elijahmanor</a>
-          <a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ page.title }}" data-url="{{ post.url }}" data-via="elijahmanor" data-size="large">Tweet</a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-        </aside>
 
         <header class="post-header">
             <h1 class="post-title">{{ page.title }}</h1>
@@ -31,8 +26,13 @@ post_class: post-template
             </section>
         </header>
 
-        <!--
-        <header class="post-header">
+        <!-- <aside class="social">
+          <a href="https://twitter.com/elijahmanor" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @elijahmanor</a>
+          <a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ page.title }}" data-url="{{ post.url }}" data-via="elijahmanor" data-size="large">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </aside> -->
+
+<!--         <header class="post-header">
             <a id="blog-logo" href="{{site.url}}">
                 {% if site.logo %}
                     <img src="{{site.logo}}" alt="{{ site.name }}" />
@@ -40,23 +40,21 @@ post_class: post-template
                     <span class="blog-title">{{ site.name }}</span>
                 {%endif%}
             </a>
-        </header>
-        -->
+        </header> -->
 
-        <!--
-        <span class="post-meta">
+        <!-- <span class="post-meta">
             <time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
             {% if page.categories.size > 0 %}
                 {{ page.categories | array_to_sentence_string | prepend: 'on ' }}
             {% endif %}
-        </span>
-        -->
+        </span> -->
 
         <!-- <h1 class="post-title">{{ page.title }}</h1> -->
 
         <section class="post-content">
             {{content}}
         </section>
+
         {% if page.archive %}
         <section class="archive">
             <h5>Archive</h5>
@@ -67,6 +65,7 @@ post_class: post-template
             </ul>
         </section>
         {% endif %}
+
         <footer class="post-footer">
             <!-- If we want to display author's name and bio -->
             {% if site.author %}
@@ -78,7 +77,7 @@ post_class: post-template
                     <!-- Author Name -->
                     <h4> {{ site.author }} </h4>
                     <!-- Author Bio -->
-                    <p>{ priorities: ['Christian', 'Family', 'Work'], work: ['@DaveRamsey', '@PluralSight'], tech: ['JavaScript', 'jQuery', 'HTML5'], titles: ['MS RD', 'MS MVP', '#IEuserAgents'] }</p>
+					<p>{ priorities: ['Christian', 'Family', 'Work'], work: ['@LeanKit', '@PluralSight'], tech: ['JavaScript', 'React', 'jQuery', 'HTML5'], titles: ['MS MVP', '#IEuserAgents'] }</p>
                 </section>
             {% endif %}
 
@@ -89,6 +88,9 @@ post_class: post-template
             {% if page.disqus %}
                 {% include disqus.html %}
             {% endif %}
+
         </footer>
+
     </article>
+
 </main>

@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-08-09 12:34:00'
----
-
-"Ninety percent of everything is crud." --Sturgeon's Revelation<br>

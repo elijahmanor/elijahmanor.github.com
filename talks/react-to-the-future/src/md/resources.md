@@ -14,6 +14,7 @@
 * [Egghead.io React & Redux Cheatsheets](https://egghead.io/react-redux-cheatsheets)
 * [Huge List of React Resources](https://github.com/enaqx/awesome-react)
 * [Performance Tooling](https://facebook.github.io/react/docs/perf.html)
+* [Webpack: The Confusing Parks](https://medium.com/@rajaraodv/webpack-the-confusing-parts-58712f8fcad9#.2catsdhne)
 
 <!--
 # Resources
@@ -44,4 +45,6 @@
 * http://slidedeck.io/brianium/grdevday-react-slides
 * https://github.com/kirjs/react-presentation
 * https://github.com/echenley/react-news
+
+* https://www.npmjs.com/package/react-perf-tool
 -->

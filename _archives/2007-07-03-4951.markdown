@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-07-03 12:03:00'
----
-
-"Controlling complexity is the essence of computer programming." -Brian W. Kernighan

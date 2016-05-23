@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-12-21 19:43:00'
----
-
-"The quality of programmers is a decreasing function of the density of go to statements in the programs they produce." --Edsger W. Dijkstra

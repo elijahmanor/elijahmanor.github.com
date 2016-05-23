@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-07-27 11:58:00'
----
-
-"First, solve the problem. Then, write the code." --John Johnson<br>

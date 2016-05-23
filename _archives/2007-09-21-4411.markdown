@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-09-21 12:33:00'
----
-
-"...the cost of adding a feature isn't just the time it takes to code it. The cost also includes the addition of an obstacle to future expansion. … The trick is to pick the features that don't fight each other."  --John Carmack

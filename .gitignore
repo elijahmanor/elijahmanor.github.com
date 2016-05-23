@@ -43,3 +43,5 @@ build/buildinfo.properties
 build/config/buildinfo.properties
 _site
 .sass-cache
+
+node_modules

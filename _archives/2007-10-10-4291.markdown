@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-10-10 13:10:00'
----
-
-Real Programmer Week: "Real Programmers don't write specs—users should consider themselves lucky to get any programs at all, and take what they get." --Unknown<br>

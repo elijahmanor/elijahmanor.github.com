@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-08-10 12:28:00'
----
-
-"That's the thing about people who think they hate computers. What they really hate is lousy programmers." --Larry Niven and Jerry Pournelle<br>

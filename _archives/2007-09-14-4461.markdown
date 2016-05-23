@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-09-14 12:16:00'
----
-
-"A common mistake that people make when trying to design something completely foolproof was to underestimate the ingenuity of complete fools." --Douglas Adams

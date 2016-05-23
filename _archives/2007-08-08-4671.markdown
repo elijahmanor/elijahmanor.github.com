@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-08-08 12:24:00'
----
-
-"There are 10 kinds of people in this world....Those who understand binary and those who don't." --Unknown

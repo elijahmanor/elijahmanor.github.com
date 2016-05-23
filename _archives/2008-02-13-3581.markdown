@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2008-02-13 14:43:00'
----
-
-"Real Programmers don't read manuals. Reliance on a reference manual is the hallmark of the novice and the coward." --Unknown

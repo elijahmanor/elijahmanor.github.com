@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-11-21 15:35:00'
----
-
-"To err is human, but to really screw things up requires a computer." --Unknown

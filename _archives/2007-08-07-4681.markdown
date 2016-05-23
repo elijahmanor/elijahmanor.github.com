@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-08-07 12:53:00'
----
-
-"Unreproducible bugs are the biggest pests." --Elijah Manor

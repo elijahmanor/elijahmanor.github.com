@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-08-23 12:17:00'
----
-
-"Caching hides many sins". -Steven Smith<br>

@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-08-21 17:28:00'
----
-
-"Rules of Optimization: Rule 1: Don't do it. Rule 2 (for experts only): Don't do it yet." --M.A. Jackson

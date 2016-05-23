@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-06-19 12:35:00'
----
-
-"If debugging is the process of removing bugs, then programming must be the process of putting them in?" --Unknown<br>

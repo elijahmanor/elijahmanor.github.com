@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2008-01-15 15:56:00'
----
-
-"You bet I keep my collections well encapsulated!" --Head First Design Patterns

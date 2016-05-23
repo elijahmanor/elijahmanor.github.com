@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-09-19 13:30:00'
----
-
-"bug, n: An elusive creature living in a program that makes it incorrect. The activity of "debugging", or removing bugs from a program, ends when people get tired of doing it, not when the bugs are removed." --Datamation

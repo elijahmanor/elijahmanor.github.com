@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-10-26 12:11:00'
----
-
-"Computer Science: solving today's problems tomorrow." --Unknown<br>

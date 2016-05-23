@@ -1,7 +1,0 @@
----
-layout: post
-title: "(no title)"
-date: '2007-11-05 16:25:00'
----
-
-"If cars evolved at the same rate as computers, they'd cost a quarter, run for a year on a half-gallon of gas, and crash once a day, killing everyone inside." --Unknown
