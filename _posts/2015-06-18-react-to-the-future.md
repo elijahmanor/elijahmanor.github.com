@@ -10,49 +10,35 @@ date: '2015-06-18 05:30:00'
 
 ## Topics Covered
 
+{::options parse_block_html="true" /}
 <div class="flex-container">
-  <ul class="flex-item">
-    <li>What is React & Who Uses It?</li>
-    <li>Why is it Compelling?
-      <ul>
-        <li>Declarative & Composable</li>
-        <li>Virtual DOM</li>
-        <li>One-Way Data Flow</li>
-      </ul>
-    </li>
-    <li>Components
-      <ul>
-        <li>State Machines</li>
-        <li>createClass, ES6 Class</li>
-        <li>JSX</li>
-        <li>Props/State/Refs</li>
-        <li>Lifecycle Methods</li>
-        <li>Gotchas</li>
-      </ul>
-    </li>
-  </ul>
-  <ul class="flex-item">
-    <li>Flux
-      <ul>
-        <li>What is Flux?</li>
-        <li>Flux Comparison</li>
-      </ul>
-    </li>
-    <li>Isomorphic
-      <ul>
-        <li>Don't Break the Web (isometric)</li>
-        <li>Shared Code</li>
-        <li>Progressive Enhancment</li>
-      </ul>
-    </li>
-    <li>Additional Node Modules
-      <ul>
-        <li>React Router
-        <li>React Intl</li>
-        <li>reqwest</li>
-      </ul>
-    </li>
-  </ul>
+
+* What is React & Who Uses It?
+* Why is it Compelling?
+	* Declarative & Composable
+	* Virtual DOM
+	* One-Way Data Flow
+* Components
+	* State Machines
+	* createClass, ES6 Class
+	* JSX
+	* Props/State/Refs
+	* Lifecycle Methods
+	* Gotchas
+{: .flex-item }
+* Flux
+	* What is Flux?
+	* Flux Comparison
+* Isomorphic
+	* Don't Break the Web (isometric)
+	* Shared Code
+	* Progressive Enhancment
+* Additional Node Modules
+	* React Router
+	* React Intl
+	* reqwest
+{: .flex-item}
+
 </div>
 
 ## Slides
