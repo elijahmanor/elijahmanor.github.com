@@ -8,15 +8,11 @@ date: '2013-06-04 14:42:00'
 <h2>
 Introduction</h2>
 
-<blockquote>
-“Standalone test spies, stubs and mocks for JavaScript. No dependencies, works with any unit testing framework.”</blockquote>
+> “Standalone test spies, stubs and mocks for JavaScript. No dependencies, works with any unit testing framework.”
 
 <a href="http://sinonjs.org/" target="_blank">Sinon.js</a> is a really helpful library when you want to unit test your code. It supports spies, stubs, and mocks. The library has cross browser support and also can run on the server using Node.js.
 
-<h2>
-Spies<div class="separator" style="clear: both; text-align: center;">
-<a href="http://4.bp.blogspot.com/-pxBTNF_ArMs/Ua13WoDSCtI/AAAAAAAAdKg/J6rQ271fM4Y/s1600/spy-vs-spy-courtesy-of-Mad-Magazine.jpg" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" height="245" src="http://4.bp.blogspot.com/-pxBTNF_ArMs/Ua13WoDSCtI/AAAAAAAAdKg/J6rQ271fM4Y/s400/spy-vs-spy-courtesy-of-Mad-Magazine.jpg" width="400" /></a></div>
-</h2>
+<h2>Spies<div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-pxBTNF_ArMs/Ua13WoDSCtI/AAAAAAAAdKg/J6rQ271fM4Y/s1600/spy-vs-spy-courtesy-of-Mad-Magazine.jpg" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" height="245" src="http://4.bp.blogspot.com/-pxBTNF_ArMs/Ua13WoDSCtI/AAAAAAAAdKg/J6rQ271fM4Y/s400/spy-vs-spy-courtesy-of-Mad-Magazine.jpg" width="400" /></a></div></h2>
 
 <blockquote style="width: 175px;">
 “A test spy is a function that records arguments, return value, the value of this and exception thrown (if any) for all its calls. A test spy can be an anonymous function or it can wrap an existing function.”</blockquote>
@@ -35,7 +31,7 @@ Mission Impossible: Spy</h4>
 
 <div class="separator" style="clear: both; text-align: center;">
 <a href="http://4.bp.blogspot.com/-uFVBU4kWWns/Ua18n6OTpAI/AAAAAAAAdLA/sVm7Vs2Sykg/s1600/e4m1_cruise_impossible.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="214" src="http://4.bp.blogspot.com/-uFVBU4kWWns/Ua18n6OTpAI/AAAAAAAAdLA/sVm7Vs2Sykg/s320/e4m1_cruise_impossible.jpg" width="320" /></a></div>
-In the following simple code example we are creating a new <code>ethanHunt</code> spy and passing it to the <code>missionImpossible.start</code> method. 
+In the following simple code example we are creating a new <code>ethanHunt</code> spy and passing it to the <code>missionImpossible.start</code> method.
 
 As you can see the <code>start</code> method takes the agent that was passed in and immediately invokes it.
 
@@ -72,7 +68,7 @@ Mission Impossible: Stub</h4>
 <a href="http://1.bp.blogspot.com/-28CwTjLsyZw/Ua14ph6u-II/AAAAAAAAdKs/2zbYJUkLBHg/s1600/mission_impossible_sml.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="147" src="http://1.bp.blogspot.com/-28CwTjLsyZw/Ua14ph6u-II/AAAAAAAAdKs/2zbYJUkLBHg/s320/mission_impossible_sml.jpg" width="320" /></a></div>
 In this next mission, if you choose to accept it... we are stubbing out a <code>tape</code> function that will be passed into an assignment method.
 
-The tape will either be passed the string <code>"accept"</code> or <code>"reject"</code> and depending on the answer we want a different result. 
+The tape will either be passed the string <code>"accept"</code> or <code>"reject"</code> and depending on the answer we want a different result.
 
 With a sinon stub, that is no problem. We can just say <code>tape.withArgs("accept"). returns(new Mission())</code> and if we wanted to throw a <code>Disintegrate</code> exception if the tape was rejected then we just follow the same pattern... <code>tape.withArgs("reject"). throws("Disintegrate")</code>.
 
@@ -85,14 +81,14 @@ Once we've set up our stub, we can exercise our code as we would normally and th
 <h4>
 Stubbed Unit Test</h4>
 
-Let’s take an example Twitter unit test and show how we can use a stub to simulate a response from jQuery’s <code>ajax</code> method. 
+Let’s take an example Twitter unit test and show how we can use a stub to simulate a response from jQuery’s <code>ajax</code> method.
 
 <script src="https://gist.github.com/elijahmanor/5703645.js?file=stub-unit-test.js"></script>
 In the before hook we will ask Sinon.js to create us a new stub based off of jQuery’s <code>ajax</code> method and we want to <code>yieldTo</code> (or invoke) the success function from the object that is passed to it. And while we are at it we want to pass our fake twitter data along with the <code>success</code> function.
 
 With that one line of code we have stubbed out the jQuery <code>ajax</code> method and provide fake test data that we can use in our unit test.
 
-Again, it is important to clean up after ourselves so in the after hook at the bottom here we are taking the <code>jQuery.ajax</code> method and calling restore which removes all of the stub behavior from the function, 
+Again, it is important to clean up after ourselves so in the after hook at the bottom here we are taking the <code>jQuery.ajax</code> method and calling restore which removes all of the stub behavior from the function,
 
 <h3>
 Mocks<div class="separator" style="clear: both; text-align: center;">
@@ -144,7 +140,7 @@ We first start by asking Sinon.js to <code>useFakeTimers()</code> and save off t
 <script src="https://gist.github.com/elijahmanor/5703645.js?file=fake-timer.js"></script>
 <div class="separator" style="clear: both; text-align: center;">
 <a href="http://1.bp.blogspot.com/-5sKF-uFzCEU/Ua3u1s0errI/AAAAAAAAdMA/x0L7gu9zg-k/s1600/881-the-tardis_2239_detail.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="200" src="http://1.bp.blogspot.com/-5sKF-uFzCEU/Ua3u1s0errI/AAAAAAAAdMA/x0L7gu9zg-k/s200/881-the-tardis_2239_detail.jpg" width="200" /></a></div>
-Normally if we wanted to test if this element showed up on the screen we'd either need to provide a callback when the animation is finished or tap into the promise created from the deferred and wait for that to resolve. 
+Normally if we wanted to test if this element showed up on the screen we'd either need to provide a callback when the animation is finished or tap into the promise created from the deferred and wait for that to resolve.
 
 However, much like a time lord we can take sinon’s TARDIS, errr... I mean fake timer and tell the clock that we are now 650 milliseconds in the future! And then we can immediately assert that the element is visible without waiting. And of course we will need to restore the clock back to normal when we are done.
 
@@ -161,7 +157,7 @@ Another neat feature that Sinon.js has is a fake server. This is a high level ab
 <h4>
 Example</h4>
 
-We can create a fake server from Sinon.js, and we can define that for a GET to the /twitter/api/user.json resource we want to respond with a status code of 200 and the following JSON data. 
+We can create a fake server from Sinon.js, and we can define that for a GET to the /twitter/api/user.json resource we want to respond with a status code of 200 and the following JSON data.
 
 <script src="https://gist.github.com/elijahmanor/5703645.js?file=fake-server.js"></script>
 Then if we called jQuery’s <code>get</code> method with the same URL then we'd get back the data we stubbed out. A key to remember is that you do need to tell the server to respond as we did immediately after we called the get method. And finally we need to restore the server when we are done.
@@ -172,7 +168,7 @@ Fake Server Unit Test</h4>
 Let’s take this technique and add it to our twitter unit test.
 
 <script src="https://gist.github.com/elijahmanor/5703645.js?file=fake-server-unit-test.js"></script>
-In our <code>before</code> hook we create the server and match the resource that our twitter app will be calling and pass back the data we want to stub out. Then we unit test out the <code>getTweets</code> method as we did before, but things don't work out as we expect! Why is that? Well, it is because we are using JSONP as our jQuery ajax datatype. The way JSONP works is that it isn't actually using <code>XMLHttpRequest</code> as a typical Ajax call does. Instead JSONP uses some trickery of injecting a dynamic script tag on your page and a bunch of other things that jQuery tries to hide from you for simplicities sake. 
+In our <code>before</code> hook we create the server and match the resource that our twitter app will be calling and pass back the data we want to stub out. Then we unit test out the <code>getTweets</code> method as we did before, but things don't work out as we expect! Why is that? Well, it is because we are using JSONP as our jQuery ajax datatype. The way JSONP works is that it isn't actually using <code>XMLHttpRequest</code> as a typical Ajax call does. Instead JSONP uses some trickery of injecting a dynamic script tag on your page and a bunch of other things that jQuery tries to hide from you for simplicities sake.
 
 So, in this case using the fake server won't help us. It would be better if we used a stub like we did in the last example.
 
@@ -181,4 +177,4 @@ Conclusion</h3>
 
 Hopefully you can see that <a href="http://sinonjs.org/" target="_blank">Sinon.js</a> is a great utility library to help make unit testing a much more effective and terse experience. You'll probably more often than not find yourself making spies and stubs much more often than mocks, but that is really up to how you approach unit testing.
 
-If you enjoyed this content you can get more from my recent Pluralsight course entitled: <a href="http://bit.ly/etm-ps-testing" target="_blank">Front-End First: Testing and Prototyping JavaScript Apps</a> where I cover an introduction to Unit Testing, look at various examples of hard to test code and introduce the following libraries and tools... Mocha, Grunt, Mockjax, amplify.request, mockJSON, etc... 
+If you enjoyed this content you can get more from my recent Pluralsight course entitled: <a href="http://bit.ly/etm-ps-testing" target="_blank">Front-End First: Testing and Prototyping JavaScript Apps</a> where I cover an introduction to Unit Testing, look at various examples of hard to test code and introduce the following libraries and tools... Mocha, Grunt, Mockjax, amplify.request, mockJSON, etc...

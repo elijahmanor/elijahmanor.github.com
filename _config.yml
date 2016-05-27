@@ -3,9 +3,6 @@ description: Tips, Tricks, and Tools.
 meta_description: "Tips, Tricks, and Tools"
 
 markdown: kramdown
-kramdown:
-    parse_block_html: true
-    parse_span_html: true
 highlighter: pygments
 logo: false
 paginate: 15
