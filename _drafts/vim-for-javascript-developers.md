@@ -41,3 +41,7 @@ https://gist.github.com/v-yarotsky/2157908
 https://gist.github.com/andreyvit/2921703
 https://gist.github.com/MohamedAlaa/2961058
 
+## StackOverflow
+
+http://stackoverflow.com/questions/9812000/specify-pane-percentage-in-tmuxinator-project
+
