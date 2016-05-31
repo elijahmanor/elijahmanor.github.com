@@ -14,7 +14,7 @@ Introduction</h2>
 
 <h2>Spies<div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-pxBTNF_ArMs/Ua13WoDSCtI/AAAAAAAAdKg/J6rQ271fM4Y/s1600/spy-vs-spy-courtesy-of-Mad-Magazine.jpg" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" height="245" src="http://4.bp.blogspot.com/-pxBTNF_ArMs/Ua13WoDSCtI/AAAAAAAAdKg/J6rQ271fM4Y/s400/spy-vs-spy-courtesy-of-Mad-Magazine.jpg" width="400" /></a></div></h2>
 
-<blockquote style="width: 175px;">
+<blockquote>
 “A test spy is a function that records arguments, return value, the value of this and exception thrown (if any) for all its calls. A test spy can be an anonymous function or it can wrap an existing function.”</blockquote>
 
 <h4>
@@ -46,7 +46,7 @@ Stubs<div class="separator" style="clear: both; text-align: center;">
 <a href="http://2.bp.blogspot.com/-hHSd9oZ3mHk/Ua173s076CI/AAAAAAAAdK4/kk-GHBdN6Ls/s1600/Faker_by_Jackademus.jpg" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" height="266" src="http://2.bp.blogspot.com/-hHSd9oZ3mHk/Ua173s076CI/AAAAAAAAdK4/kk-GHBdN6Ls/s320/Faker_by_Jackademus.jpg" width="320" /></a></div>
 </h3>
 
-<blockquote style="width: 255px;">
+<blockquote>
 “Test stubs are functions (spies) with pre-programmed behavior. They support the full test spy API in addition to methods which can be used to alter the stub's behavior.”</blockquote>
 
 A stub in Sinon.js is also a spy as we've just seen, but it is also a function that has some predefined behavior. A stub is used when we want to fake some functionality so that our system thinks everything is performing normally.
@@ -95,7 +95,7 @@ Mocks<div class="separator" style="clear: both; text-align: center;">
 <a href="http://1.bp.blogspot.com/--2X6ifXwlB4/Ua1_aE6czkI/AAAAAAAAdLQ/0Zn8HR_F5eo/s1600/4190127-833481-verified-rubber-stamp.jpg" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" height="148" src="http://1.bp.blogspot.com/--2X6ifXwlB4/Ua1_aE6czkI/AAAAAAAAdLQ/0Zn8HR_F5eo/s320/4190127-833481-verified-rubber-stamp.jpg" width="320" /></a></div>
 </h3>
 
-<blockquote style="width: 255px;">
+<blockquote>
 “Mocks (and mock expectations) are fake methods (like spies) with pre-programmed behavior (like stubs) as well as pre-programmed expectations. A mock will fail your test if it is not used as expected.”</blockquote>
 
 Now we finally get to mocks. Mocks are a lot like a stub and a spy, but with a slight twist. With a mock you define up front all of the things you want to expect ( or happen ) then when you are all done with your tests you assert that all those things happened as planned. So, it’s a slightly different way to think than if using a spy or stub by themselves.
@@ -127,7 +127,7 @@ Fake Timers<div class="separator" style="clear: both; text-align: center;">
 <a href="http://1.bp.blogspot.com/-B0A8bWz6lhM/Ua2AHTowpnI/AAAAAAAAdLY/Xe3UsW59AGA/s1600/SpyNet_Multi-Media_Video_Watch.jpg" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" src="http://1.bp.blogspot.com/-B0A8bWz6lhM/Ua2AHTowpnI/AAAAAAAAdLY/Xe3UsW59AGA/s1600/SpyNet_Multi-Media_Video_Watch.jpg" /></a></div>
 </h3>
 
-<blockquote style="width: 300px;">
+<blockquote>
 “Fake timers is a synchronous implementation of setTimeout and friends that Sinon.JS can overwrite the global functions with to allow you to more easily test code using them.“</blockquote>
 
 Another handy feature of Sinon.s is that you can fake timers! At first this might seem strange, but it turns out it is really powerful and clever.
@@ -149,7 +149,7 @@ Fake Server</h3>
 <div class="separator" style="clear: both; text-align: center;">
 <a href="http://4.bp.blogspot.com/-EBT-yADE9wQ/Ua2Be0r0sXI/AAAAAAAAdLw/JmAS9qQHiac/s1600/google-server-room5.jpg" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" height="213" src="http://4.bp.blogspot.com/-EBT-yADE9wQ/Ua2Be0r0sXI/AAAAAAAAdLw/JmAS9qQHiac/s320/google-server-room5.jpg" width="320" /></a></div>
 
-<blockquote style="width: 250px;">
+<blockquote>
 “High-level API to manipulate FakeXMLHttpRequest instances.”</blockquote>
 
 Another neat feature that Sinon.js has is a fake server. This is a high level abstraction over the <code>FakeXMLHttpRequest</code> that Sinon.js also provides if you need more granular support.
