@@ -116,7 +116,7 @@ Mocked Unit Test</h4>
 Let’s take another look at the Twitter <code>getTweets</code> unit tests again, but this time use a mock instead of a stub.
 
 <script src="https://gist.github.com/elijahmanor/5703645.js?file=mock-unit-test.js"></script>
-In the before hook I’m creating a mock of the jQuery object and I’m expecting that the ajax method will only be called one and that it should invoke the <code>success</code> method of the object I pass in with some <code>fakeData</code> I've provided.
+In the before hook I’m creating a mock of the jQuery object and I’m expecting that the ajax method will only be called once and that it should invoke the <code>success</code> method of the object I pass in with some <code>fakeData</code> I've provided.
 
 Inside my unit test I run the code I want to tests, which is the <code>getTweets</code> method, and then on the callback I call the <code>verify</code> method off of the mock to make sure my expectations have been met.
 
