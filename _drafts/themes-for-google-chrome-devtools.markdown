@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Themes for Google Chrome DevTools
+title: Chrome DevTools Dark Theme
 ---
 
-https://github.com/mauricecruz/chrome-devtools-zerodarkmatrix-theme
 
-http://devthemez.com/themes/chrome-developer-tools?sort=views
+
+https://developers.google.com/web/updates/2016/02/devtools-digest-devtools-go-dark#a-dark-theme-for-devtools
+
