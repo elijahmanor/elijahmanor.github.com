@@ -1309,8 +1309,8 @@
 - dates:
   - day: 2
     month: 'Dec'
-    year: 2014
-  date: '2014-12-02'
+    year: 2015
+  date: '2015-12-02'
   days: '02'
   name: 'JavaScript Jabber'
   title: 'JSJ JavaScript Code Smells with Elijah Manor'
@@ -1471,4 +1471,3 @@
     slides: '/talks/css-for-devs'
     video: ''
     feedback: ''
- 
