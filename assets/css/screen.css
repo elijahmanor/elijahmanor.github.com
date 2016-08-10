@@ -892,6 +892,14 @@ body:not(.post-template) .post-title {
     padding: 0.6em 0;
 }
 
+.post-content .full-img {
+	width: auto;
+	width: calc(100% + 32px);
+	margin: 0 -16px;
+	min-width: 0;
+	max-width: 112%;
+}
+
 /* The author credit area after the post */
 .post-footer {
     position: relative;
@@ -1621,13 +1629,15 @@ body:not(.post-template) .post-title {
         padding: 0;
     }
 
+	/*
     .post-content .full-img {
         width: auto;
-        width: calc(100% + 32px); /* expand with to image + margins */
-        margin: 0 -16px; /* get rid of margins */
+        width: calc(100% + 32px);
+        margin: 0 -16px;
         min-width: 0;
-        max-width: 112%; /* fallback when calc doesn't work */
+        max-width: 112%;
     }
+	*/
 
     .post-meta {
         font-size: 1.3rem;

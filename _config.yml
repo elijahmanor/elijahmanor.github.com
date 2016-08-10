@@ -3,7 +3,7 @@ description: Tips, Tricks, and Tools.
 meta_description: "Tips, Tricks, and Tools"
 
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 logo: false
 paginate: 15
 baseurl: /

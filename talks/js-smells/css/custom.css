@@ -1,3 +1,5 @@
+html { background-color: inherit; }
+
 #dialog { z-index: 999; padding: 2rem; }
 #dialog .modules, #dialog .options { list-style-type: none; font-size: 1.5rem; }
 #dialog .actions { text-align: center; }

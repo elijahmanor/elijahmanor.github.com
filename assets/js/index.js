@@ -3,6 +3,7 @@
  */
 
 /* globals jQuery, document */
+/*
 (function ($, sr, undefined) {
     "use strict";
 
@@ -96,6 +97,7 @@
 
     };
 })(jQuery, 'smartresize');
+*/
 
 (function($) {
   var $events = $('.Events .Event');
@@ -211,4 +213,3 @@
 
   readUrlAndUpdate(true);
 }(jQuery));
-
