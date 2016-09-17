@@ -29,8 +29,57 @@
 	float: right;
 }
 
-.twitter-follow-button, .twitter-share-button {
-	margin: 2rem 0 2rem 1rem;
+.Social {
+	.twitter-follow-button, .twitter-share-button {
+		display: inline-block !important;
+		background: #1b95e0;
+		border-radius: 0.2em;
+		padding: 0.2em 0.8em;
+		font-size: 0.7em;
+		line-height: 1.7em;
+		font-weight: bold;
+		margin-bottom: 0.8em;
+	}
+
+	.twitter-follow-button-rendered, twitter-share-button-rendered {
+		padding: 0;
+	}
+}
+
+.Social {
+	text-align: center;
+}
+
+.Promoted {
+	margin: 0 auto 0.75em auto;
+	display: none;
+
+	blockquote {
+		font-size: 0.7em;
+		background: white;
+		border-radius: 0.3em;
+		color: black;
+		border-left: none;
+		padding: 1.5em 3em 1.5em 1.5em;
+	}
+
+	a {
+		color: #268bd2;
+	}
+}
+
+@media (min-width: 48em) {
+	.Promoted {
+		display: block;
+	}
+}
+
+.Copyright {
+	text-align: center;
+}
+
+.speaking .content {
+	max-width: none;
 }
 
 .Events {
@@ -39,7 +88,7 @@
 	list-style: none;
 	padding: 0;
 	font-family: 'Open Sans', sans-serif;
-	margin-top: 2rem;
+	margin-top: 1rem;
 }
 
 .Event {
@@ -47,11 +96,11 @@
 	border: 1px solid #CCC;
 	border-radius: 1rem;
 	flex: 1 auto;
-	margin: 1rem;
-	padding: 2rem;
-	max-width: 27rem;
+	margin: 0.5rem;
+	padding: 0.5rem;
+	max-width: 12rem;
 	position: relative;
-	min-width: 10rem;
+	min-width: 12rem;
 
 	&--upcoming {
 		&:before {
@@ -61,37 +110,36 @@
 			background-color: #D9EDF7;
 			right: 0;
 			bottom: 0;
-			width: 10rem;
-			height: 2.25rem;
+			width: 5rem;
 			text-align: center;
-			font-size: 1.25rem;
-			line-height: 2.25rem;
-			BORDER-RADIUS: 1rem 0rem;
+			font-size: 0.5rem;
+			line-height: 1.3rem;
+			BORDER-RADIUS: 0.5rem 0rem;
 			border-top: 1px solid #CCC;
 			border-left: 1px solid #CCC;
 		}
 	}
 
 	&-date {
-		margin-bottom: 2rem;
+		margin-bottom: 0.5rem;
 	}
 
 	&-name {
-		font-size: 2.5rem;
-		line-height: 2.5rem;
-		margin-bottom: 1.5rem;
+		font-size: 1rem;
+		line-height: 1rem;
+		margin-bottom: 0.5rem;
 		font-weight: bold;
 		a { color: black; }
 	}
 
-	&-title { font-weight: bold; font-size: 2rem; margin-bottom: 1rem; }
+	&-title { font-weight: bold; font-size: 0.8rem; margin-bottom: 0.25rem; }
 
-	&-description { font-size: 1.5rem; }
+	&-description { font-size: 0.75rem; }
 
 	&-location {
 		font-style: italic;
 		color: #555;
-		margin-bottom: 3rem;
+		margin-bottom: 0.75rem;
 	}
 }
 
@@ -103,16 +151,16 @@
 	align-items: center;
 
 	&-day {
-		font-size: 4rem;
-		margin-right: 2rem;
+		font-size: 2rem;
+		margin-right: 1rem;
 		font-weight: bold;
 	}
 	&-summary {
 		display: flex;
 		flex-flow: column wrap;
 		align-items: center;
-		font-size: 1.5rem;
-		line-height: 2rem;
+		font-size: 1rem;
+		line-height: 1rem;
 		text-transform: uppercase;
 	}
 	&-month {
@@ -124,23 +172,23 @@
 }
 
 .Sessions {
-	padding-left: 2rem;
+	padding-left: 1rem;
 }
 
 .Session {
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 
 	&:last-of-type { margin-bottom: 0; }
-	&-name { font-weight: bold; font-size: 2rem; }
+	&-name { font-weight: bold; font-size: 1rem; }
 	&-links {
 		display: flex;
 		flex-flow: row wrap;
 		list-style: none;
 		padding: 0;
-		font-size: 1.5rem;
+		font-size: 0.5rem;
 	}
 	&-link {
-		margin-right: 1.5rem;
+		margin-right: 0.5rem;
 		a { color: black; }
 	}
 	&-link--unavailable {
@@ -152,7 +200,6 @@
 	}
 }
 
-
 /*
 <div class="ButtonGroup" role="group" aria-label="...">
   <button type="button" class="ButtonGroup-button">Left</button>
@@ -160,6 +207,10 @@
   <button type="button" class="ButtonGroup-button">Right</button>
 </div>
 */
+.ButtonGroups {
+	display: none;
+}
+
 .ButtonGroup {
 	display: inline-block;
 
@@ -192,19 +243,19 @@
 
 .Badges {
 	position: absolute;
-	right: 1rem;
-	top: 0.5rem;
-	font-size: 1.5rem;
+	right: -0.5rem;
+	top: -0.5rem;
+	font-size: 0.5rem;
 	text-align: right;
 	display: flex;
 	align-items: flex-end;
 	flex-direction: column;
 
 	&-badge {
-		border-radius: 2rem;
-		line-height: 2rem;
-		padding: 0.25rem 1rem;
-		margin-bottom: .5rem;
+		border-radius: 0.3rem;
+		line-height: 0.5rem;
+		padding: 0.25rem .25rem;
+		margin-bottom: .25rem;
 		border: 1px solid #ccc;
 		outline: none;
 	}
@@ -221,5 +272,12 @@
 @media only screen and (max-width: 900px) {
 	.Event {
 		max-width: 100%;
+	}
+}
+
+.archive .posts {
+	time {
+		width: 4rem;
+		display: inline-block;
 	}
 }

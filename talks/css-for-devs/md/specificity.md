@@ -187,7 +187,7 @@
 ------
 
 ## [CSS Specificity Star Wars](http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html)
-<!-- .slide: data-title="Specificity" data-state="backEndBrian juniorJacob midLevelMelissa extended" -->
+<!-- .slide: data-title="Specificity" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
 ![](./imgs/specificitywars.jpg)
 

@@ -1,0 +1,20 @@
+{
+  "name": "hyde",
+  "version": "1.0.0",
+  "description": "Hyde is a brazen two-column [Jekyll](http://jekyllrb.com) theme that pairs a prominent sidebar with uncomplicated content. It's based on [Poole](http://getpoole.com), the Jekyll butler.",
+  "main": "index.js",
+  "scripts": {
+    "start": "bundle exec jekyll serve --incremental"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elijahmanor/hyde.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elijahmanor/hyde/issues"
+  },
+  "homepage": "https://github.com/elijahmanor/hyde#readme"
+}

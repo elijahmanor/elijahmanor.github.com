@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Archive
+class: archive
 ---
 
 <section class="page-content wc-container">
@@ -12,7 +13,7 @@ title: Archive
 <ul class="posts">
       {% capture year %}{{currentyear}}{% endcapture %}
     {% endif %}
-<li><time>{{ post.date | date:"%d %b" }}</time><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+<li><time>{{ post.date | date:"%d %b" }}</time><a href="{{ post.url }}">{{ post.title }}</a></li>
     {% if forloop.last %}
 </ul>
     {% endif %}

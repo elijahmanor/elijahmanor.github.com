@@ -25,7 +25,7 @@ Reveal.addEventListener('slidechanged', function(event) {
     document.querySelector( ".pace span" ).style.width = '0%';
     document.querySelector( ".pace span" ).classList.remove( "pulse" );
     document.querySelector( ".pace span" ).classList.remove( "complete" );
-  } else if ( !Reveal.isOverview() && event.indexh === 0 && event.indexv === 1 && event.previousSlide && !!~event.previousSlide.dataset.state.indexOf("introduction") ) {
+  } else if ( !Reveal.isOverview() && event.indexh === 1 && event.indexv === 0 && event.previousSlide && !!~event.previousSlide.dataset.state.indexOf("introduction") ) {
     console.log( "Starting timer..." );
     window.start = Date.now();
     window.end = window.start + ( window.lengthOfPresentation * 60 * 1000 ); // moment().add( window.lengthOfPresentation, 'minutes' ).toDate().getTime();

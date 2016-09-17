@@ -1,18 +1,27 @@
-name: Front-End Manorisms
-description: Tips, Tricks, and Tools.
-meta_description: "Tips, Tricks, and Tools"
-
+# Dependencies
 markdown: kramdown
 highlighter: rouge
-logo: false
-paginate: 15
-baseurl: /
-domain_name: 'http://elijahmanor.com'
-google_analytics: 'UA-21163683-1'
-gems: [jekyll-paginate]
-repository: elijahmanor/elijahmanor.github.com
+
+# Permalinks
+# permalink:        pretty
+# relative_permalinks: true
 permalink: /:categories/:title/
 
-# Details for the RSS feed generator
-url: 'http://elijahmanor.com'
-author: 'Elijah Manor'
+# Setup
+title:            Elijah Manor
+tagline:          'Front-End Dev Tips, Tricks, and Tools'
+descriptions:     'Front-End Dev Tips, Tricks, and Tools'
+url:              http://elijahmanor.com
+baseurl:          /
+
+author:
+  name:           'Elijah Manor'
+  url:            https://twitter.com/elijahmanor
+
+paginate:         5
+
+# Custom vars
+version:          2.1.0
+
+github:
+  repo:           https://github.com/elijahmanor/elijahmanor.github.com

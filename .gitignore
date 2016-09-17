@@ -1,3 +1,8 @@
+# Ignore docs files
+_gh_pages
+_site
+.ruby-version
+
 # Numerous always-ignore extensions
 *.diff
 *.err
@@ -6,42 +11,31 @@
 *.rej
 *.swo
 *.swp
+*.zip
 *.vi
 *~
-*.pyc
 
 # OS or Editor folders
 .DS_Store
+._*
+Thumbs.db
 .cache
 .project
 .settings
+.tmproj
+*.esproj
 nbproject
-thumbs.db
 *.sublime-project
-
-# Dreamweaver added files
-_notes
-dwsync.xml
+*.sublime-workspace
+.idea
 
 # Komodo
 *.komodoproject
 .komodotools
 
+# grunt-html-validation
+validation-status.json
+validation-report.json
+
 # Folders to ignore
-.hg
-.svn
-publish
-.idea
-docs/api
-docs/parser
-docs/generator
-docs/yuidoc/bin
-docs/yuidoc/bin/**
-
-# build script local files
-build/buildinfo.properties
-build/config/buildinfo.properties
-_site
-.sass-cache
-
 node_modules

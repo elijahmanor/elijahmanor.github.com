@@ -1445,29 +1445,21 @@
     feedback: ''
 
 - dates:
-  - day: 24
-    month: 'Oct'
+  - day: 20
+    month: 'Nov'
     year: 2016
-  - day: 28
-    month: 'Oct'
+  - day: 21
+    month: 'Nov'
     year: 2016
-  date: '2016-10-24'
-  days: '24-28'
-  name: 'AngleBrackets'
+  date: '2016-11-20'
+  days: '20-21'
+  name: 'Nodevember'
   type: 'conference'
-  url: 'https://anglebrackets.org/'
+  url: 'http://nodevember.org/'
   location: ''
   employer: 'leankit'
   sessions:
   - name: 'Framework-Independent JavaScript Components'
     slides: '/talks/plain-js-comps'
-    video: ''
-    feedback: ''
-  - name: 'To React.js and Beyond!'
-    slides: '/talks/react-to-the-future/dist'
-    video: ''
-    feedback: ''
-  - name: 'CSS for Developers'
-    slides: '/talks/css-for-devs'
     video: ''
     feedback: ''
