@@ -6,7 +6,7 @@ highlighter: rouge
 # permalink:        pretty
 # relative_permalinks: true
 permalink: /:categories/:title/
-
+exclude: [ 'node_modules' ]
 # Setup
 title:            Elijah Manor
 tagline:          'Front-End Dev Tips, Tricks, and Tools'
