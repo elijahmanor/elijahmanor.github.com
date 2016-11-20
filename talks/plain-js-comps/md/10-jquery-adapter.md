@@ -43,9 +43,7 @@
 
 ```js
 ( function( $, window, document, undefined ) {
-	var pluginName = "giphy";
-
-	$.fn[ pluginName ] = function( options ) {
+	$.fn.giphy = function( options ) {
 		return this.each( function() {
 			var $this = $( this );
 			if ( !$this.data( pluginName) ) {
@@ -57,9 +55,9 @@
 ```
 
 <div class="stretch">
-	<p class="fragment current-only focus-text" data-code-focus="4">Define the jQuery Plugin</p>
-	<p class="fragment current-only focus-text" data-code-focus="5-10">Iterate over the matched element and return to support chaining</p>
-	<p class="fragment current-only focus-text" data-code-focus="6-9">Create an instance of the Plugin object and attach to the element with `$.data()`</p>
+	<p class="fragment current-only focus-text" data-code-focus="2">Define the jQuery Plugin</p>
+	<p class="fragment current-only focus-text" data-code-focus="3-8">Iterate over the matched element and return to support chaining</p>
+	<p class="fragment current-only focus-text" data-code-focus="6">Create an instance of the Plugin object and attach to the element with `$.data()`</p>
 </div>
 
 ------

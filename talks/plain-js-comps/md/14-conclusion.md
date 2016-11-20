@@ -31,3 +31,8 @@
 * Encourages Modularity and Loose Coupling of components<!-- .element: class="fragment" -->
 * Shields the component from getting stale when a library for framework is abandoned<!-- .element: class="fragment" -->
 * Enables the ability to write an adapter when a new library or framework comes around<!-- .element: class="fragment" -->
+
+## Downsides of Framework-Independent JavaScript Components
+
+* May be hard to know how to abstract your component. Future needs are not known.
+* You could loose some of the benefits of writing it based on a framework (performance, etc)

@@ -136,11 +136,11 @@ Giphy.defaultProps = {
 
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="4">Import the Giphy Library</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="6">Export the Giphy React Component Adapter</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="15-17">Render an `input` element, which is needed for the Giphy Library</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="7-14">`componentDidMount` lifecycle hook fires immediately after initial rendering occurs</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="8">Get the raw DOM node for the React Component</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="9">Use ES6 Destructuring to pull out `props`</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="10-13">Create a Giphy object passing in the current DOM node and options from the `props`</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="15-17">Render an `input` element, which is needed for the Giphy Library</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="20-27">`propTypes` describing the types of props passed to component</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="29-36">`defaultProps` that define the default set of properties for a component</span>
 
