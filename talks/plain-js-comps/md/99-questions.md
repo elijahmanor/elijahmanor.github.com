@@ -1,4 +1,4 @@
-# Questions?
+# Thank You
 <!-- .slide: data-state="no-vote" -->
 
 <pre style="font-size: 1.25em; box-shadow: none;">
