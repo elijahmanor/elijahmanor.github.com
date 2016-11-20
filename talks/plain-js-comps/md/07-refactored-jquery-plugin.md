@@ -206,6 +206,8 @@ Notes:
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="38-44">Either search or reset depending on the state of the library</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="68-73">Detect the enter key and kick off a search</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="103-112">Call jQuery's ajax method</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="105,108-109">Use `url`, `apiKey`, and `rating` from `options.ajax.url`</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="106-110">Use the `options.encoder` to format the outgoing data</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="75-80">`handleResponse` method</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="76-77">Decode the response from the server</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="78-79">Trigger custom events that there is new data from the server</span>
@@ -216,8 +218,6 @@ Notes:
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="100">Trigger event to update the User Interface</span>
 <span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="62-66">Update the User Interface to a reset state</span>
 <span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="82-89">Preload image list from response to speed up navigation load</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="105,108-109">Use `url`, `apiKey`, and `rating` from `options.ajax.url`</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="106-110">Use the `options.encoder` to format the outgoing data</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="114-121">`$.fn[ pluginName ]`</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="115-120">Iterate over the matched element and return to support chaining</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="116-119">Create an instance of the Plugin object and attach to the element with `$.data()`</span>
