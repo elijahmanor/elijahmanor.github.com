@@ -36,5 +36,5 @@
 
 ## Downsides of Framework-Independent JavaScript Components
 
-* May be hard to know how to abstract your component. Future needs are not known.
-* You could loose some of the benefits of writing it based on a framework (performance, etc)
+* May be hard to know how to abstract your component. Future needs are not known.<!-- .element: class="fragment" -->
+* You could loose some of the benefits of writing it based on a framework (performance, etc)<!-- .element: class="fragment" -->
