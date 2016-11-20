@@ -2087,7 +2087,6 @@
 	 * @param {int} o Optional origin for use in multimaster environments
 	 */
 	function slide( h, v, f, o ) {
-
 		// Remember where we were at before
 		previousSlide = currentSlide;
 

@@ -1,5 +1,23 @@
+.introduction h1 {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
 .introduction .backgrounds .slide-background.present {
   opacity: 0.5;
+}
+
+.reveal [data-store="introduction-social"] {
+  text-transform: none;
+}
+
+#aboutContent {
+  font-size: 1.7em;
+  color: white;
+}
+
+.twitter-follow-button {
+  transform: translateZ(0);
 }
 
 .SlideKeyboardNavigation .reveal .slides code,
@@ -89,7 +107,8 @@
 }
 
 #dialog { z-index: 999; width: 60%; }
-#dialog .modules {
+#dialog .modules,
+#dialog .options {
   list-style-type: none;
   font-size: 1.5rem;
   width: 100%;
@@ -97,7 +116,8 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
-#dialog .modules li { min-width: 15rem; }
+#dialog .modules li,
+#dialog .options li { min-width: 15rem; }
 #dialog h3 { color: black; }
 .Dialog-theme { font-size: 1rem !important; margin-top: 1rem !important; }
 .durationOfPresentation, .extendedContent { font-size: 1rem !important; margin-top: 1rem !important; }

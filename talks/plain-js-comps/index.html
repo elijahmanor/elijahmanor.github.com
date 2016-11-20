@@ -42,15 +42,15 @@
 				<section id="About" data-markdown="./md/02-about.md"></section>
 				<section id="Trends" data-markdown="./md/03-trends.md"></section>
 				<section id="Examples" data-markdown="./md/04-examples.md"></section>
-				<section id="PluginLifecycle" data-markdown="./md/05-plugin-lifecycle.md"></section>
-				<section id="NaiveJquery" data-markdown="./md/06-naive-jquery-plugin.md"></section>
-				<section id="RefactoredJquery" data-markdown="./md/07-refactored-jquery-plugin.md"></section>
-				<section id="JqueryfreeLib" data-markdown="./md/08-vanilla-javascript-library.md"></section>
-				<section id="BabelJqueryfreeLib" data-markdown="./md/09-es6-vanilla-javascript-library.md"></section>
-				<section id="JqueryAdapter" data-markdown="./md/10-jquery-adapter.md"></section>
-				<section id="ReactAdapter" data-markdown="./md/11-react-adapter.md"></section>
-				<section id="Angular1Adapter" data-markdown="./md/12-angular-1x-adapter.md"></section>
-				<section id="Angular2Adapter" data-markdown="./md/13-angular-2x-adapter.md"></section>
+				<section id="Plugin_Lifecycle" data-markdown="./md/05-plugin-lifecycle.md"></section>
+				<section id="Naive_jQuery" data-markdown="./md/06-naive-jquery-plugin.md"></section>
+				<section id="Refactored_jQuery" data-markdown="./md/07-refactored-jquery-plugin.md"></section>
+				<section id="jQueryfree_Lib" data-markdown="./md/08-vanilla-javascript-library.md"></section>
+				<section id="Babel_jQueryfree_Lib" data-markdown="./md/09-es6-vanilla-javascript-library.md"></section>
+				<section id="jQuery_Adapter" data-markdown="./md/10-jquery-adapter.md"></section>
+				<section id="React_Adapter" data-markdown="./md/11-react-adapter.md"></section>
+				<section id="Angular1_Adapter" data-markdown="./md/12-angular-1x-adapter.md"></section>
+				<section id="Angular2_Adapter" data-markdown="./md/13-angular-2x-adapter.md"></section>
 				<section id="Conclusion" data-markdown="./md/14-conclusion.md"></section>
 				<section id="Questions" data-markdown="./md/99-questions.md"></section>
 			</div>
@@ -76,6 +76,7 @@
 				history: true,
 				center: true,
 				transition: 'slide',
+				keyboard: true,
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
@@ -94,19 +95,7 @@
 						hideMissingTitles: false,
 						markers: true,
 						custom: true,
-						themes: [
-								{ name: 'Black', theme: 'css/theme/black.css' },
-								{ name: 'White', theme: 'css/theme/white.css' },
-								{ name: 'League', theme: 'css/theme/league.css' },
-								{ name: 'Sky', theme: 'css/theme/sky.css' },
-								{ name: 'Beige', theme: 'css/theme/beige.css' },
-								{ name: 'Simple', theme: 'css/theme/simple.css' },
-								{ name: 'Serif', theme: 'css/theme/serif.css' },
-								{ name: 'Blood', theme: 'css/theme/blood.css' },
-								{ name: 'Night', theme: 'css/theme/night.css' },
-								{ name: 'Moon', theme: 'css/theme/moon.css' },
-								{ name: 'Solarized', theme: 'css/theme/solarized.css' }
-						],
+						themes: false,
 						transitions: false,
 						openButton: true,
 						openSlideNumber: false,

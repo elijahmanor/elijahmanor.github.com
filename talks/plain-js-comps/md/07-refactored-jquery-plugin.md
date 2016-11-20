@@ -192,38 +192,30 @@ Notes:
 ```
 <!-- .element: class="stretch" -->
 
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="2">Define plugin name</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="2">Define plugin name</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="4-9">Constructor function</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="5-6">Save off properties that reference the current element</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="5-6">Save off properties that reference the current element</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="7">Merge the default options with passed in options</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="8">Invoke basic initialization</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="8">Invoke basic initialization</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="11-19">`init` method</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="12-16">Build DOM elements necessary for library</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="18">Call `wireEventHandlers` to add event handlers to necessary DOM element</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="12-16">Build DOM elements necessary for library</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="18">Call `wireEventHandlers` to add event handlers to necessary DOM element</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="21-29">`wireEventHandlers` method</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="22-28">Notice we are using `.bind(this)` to keep context to the library when events are triggered</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="31-36">`handleControlKey` method</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="32-35">Detect the left and right arrow keys and navigate accordingly</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="38-44">`handleSearchClick` method</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="39-43">Either search or reset depending on the state of the library</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="46-54">`handleListUpdated` method</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="47-53">When a new data list comes from the server then update the state and User Interface</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="56-60">`handleItemUpdated` method</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="57-59">When a new item is needed then udpate the User Interface accordingly</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="62-66">`reset` method</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="63-65">Update the User Interface to a reset state</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="68-73">`handleEnter` method</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="69-72">Detect the enter key and kick off a search</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="22-28">Notice we are using `.bind(this)` to keep context to the library when events are triggered</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="31-36">Detect the left and right arrow keys and navigate accordingly</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="38-44">Either search or reset depending on the state of the library</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="68-73">Detect the enter key and kick off a search</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="103-112">Call jQuery's ajax method</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="75-80">`handleResponse` method</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="76-77">Decode the response from the server</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="78-79">Trigger custom events that there is new data from the server</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="82-89">`preload` method</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="83-88">Preload image list from response to speed up navigation load</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="46-54">When a new data list comes from the server then update the state and User Interface</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="56-60">When a new item is needed then udpate the User Interface accordingly</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="91-101">`navigate` method</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="92-98">Determine the new index that is needed for navigation.</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="100">Trigger event to update the User Interface</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="103-112">`search` method</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="104-111">Call jQuery's ajax method</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="62-66">Update the User Interface to a reset state</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="82-89">Preload image list from response to speed up navigation load</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="105,108-109">Use `url`, `apiKey`, and `rating` from `options.ajax.url`</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="106-110">Use the `options.encoder` to format the outgoing data</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="114-121">`$.fn[ pluginName ]`</span>
@@ -730,25 +722,25 @@ describe( "Redesigned jQuery Plugin", function() {
 ```
 <!-- .element: class="stretch" -->
 
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="2-4">Module global variables and Test Data</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="6-11">Setup test DOM fixture for each test and initialize the plugin and extract the object instance</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="13-47">Make sure it's a valid jQuery plugin and has default options</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="49-82">Test that the encoder and decoder methods work as expected</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="84-418">Test the object instance</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="85-97">Test the constructor function</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="99-417">Test the methods</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="100-118">Test the `init` method</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="120-148">Test the `wireEventHandlers` method</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="150-169">Test the `handleControlKey` method</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="171-192">Test the `handleSearchClick` method</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="194-228">Test the `handleListUpdated` method</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="230-252">Test the `handleItemUpdated` method</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="254-276">Test the `reset` method</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="278-303">Test the `handleEnter` method</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="305-332">Test the `handleResponse` method</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="334-340">Test the `preload` method</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="342-381">Test the `navigate` method</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="383-416">Test the `search` method</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="2-4">Module global variables and Test Data</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="6-11">Setup test DOM fixture for each test and initialize the plugin and extract the object instance</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="13-47">Make sure it's a valid jQuery plugin and has default options</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="49-82">Test that the encoder and decoder methods work as expected</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="84-418">Test the object instance</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="85-97">Test the constructor function</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="99-417">Test the methods</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="100-118">Test the `init` method</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="120-148">Test the `wireEventHandlers` method</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="150-169">Test the `handleControlKey` method</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="171-192">Test the `handleSearchClick` method</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="194-228">Test the `handleListUpdated` method</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="230-252">Test the `handleItemUpdated` method</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="254-276">Test the `reset` method</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="278-303">Test the `handleEnter` method</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="305-332">Test the `handleResponse` method</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="334-340">Test the `preload` method</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="342-381">Test the `navigate` method</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="383-416">Test the `search` method</span>
 
 ------
 

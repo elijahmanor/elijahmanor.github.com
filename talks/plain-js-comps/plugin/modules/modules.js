@@ -1,17 +1,34 @@
 (function(modules) {
   modules.init = function() {
-    console.log('init modules');
-
     this.removeModules();
     this.updateDemos();
+    this.updateExtendedContent();
 
     this.dialog = this.buildDialog();
     this.dialog.querySelector('#update').addEventListener('click', this.update.bind(this));
     this.dialog.querySelector('#cancel').addEventListener('click', this.cancel.bind(this));
 
     Reveal.configure({
-      keyboard: { 87: this.keypress.bind(this) } // 'w'
+      keyboard: {
+        87: this.keypress.bind( this ), // 'w'
+        71: function() { // 'g'
+            var lastViewedSlide = window.localStorage.lastViewedSlide ?
+              JSON.parse( window.localStorage.lastViewedSlide ) : {
+              indexh: 0,
+              indexv: 0
+            };
+            Reveal.slide( lastViewedSlide.indexh, lastViewedSlide.indexv );
+        }
+      }
     });
+
+    Reveal.addEventListener( 'slidechanged', function( event ) {
+      var lastViewedSlide = {
+        indexh: event.indexh,
+        indexv: event.indexv
+      };
+      window.localStorage.lastViewedSlide = JSON.stringify( lastViewedSlide ); 
+    } );
   };
 
   modules.updateDemos = function() {
@@ -24,6 +41,16 @@
     } else {
       [].forEach.call(document.querySelectorAll('iframe[data-offline]'), function(iframe) {
         iframe.src = iframe.dataset.online;
+      });
+    }
+  };
+
+  modules.updateExtendedContent = function() {
+    var extendedContent = window.localStorage.extendedContent === 'true';
+
+    if (!extendedContent) {
+      [].forEach.call(document.querySelectorAll("section[data-state*='extended'], .fragment[data-extended]"), function(extended) {
+        extended.parentNode.removeChild(extended);
       });
     }
   };
@@ -73,17 +100,22 @@
     });
     window.localStorage.modules = JSON.stringify(modules);
 
-    if (enabledModule) {
+    var areDemosOffline = this.dialog.querySelector('#chkOfflineDemos').checked;
+    window.localStorage.areDemosOffline = areDemosOffline;
+    this.updateDemos(areDemosOffline);
+
+    var extendedContent = this.dialog.querySelector('#chkExtendedContent').checked;
+    var reenabledExtendedContent = window.localStorage.extendedContent !== extendedContent.toString();
+    window.localStorage.extendedContent = extendedContent;
+    this.updateExtendedContent( extendedContent );
+
+    this.dialog.close();
+
+    if (enabledModule || reenabledExtendedContent) {
       setTimeout(function() {
         document.location.reload();
       }, 1000);
     }
-
-    var areDemosOffline = this.dialog.querySelector('.options input').checked;
-    window.localStorage.areDemosOffline = areDemosOffline;
-    this.updateDemos(areDemosOffline);
-
-    this.dialog.close();
   };
 
   modules.cancel = function() {
@@ -93,7 +125,9 @@
   modules.buildDialog = function() {
     var dialog = document.createElement('dialog');
     var areDemosOffline = window.localStorage.areDemosOffline === 'true' ? 'checked="checked"' : '';
-    var template = '<h2>Modules</h2><ul class="modules"></ul><h2>Options</h2><ul class="options"><li><input name="offline-demos" ' + areDemosOffline + ' type="checkbox" /> Offline Demos</li></ul><div class="actions"><button id="update">Update</button> <button id="cancel">Cancel</button></div>';
+    window.localStorage.extendedContent = window.localStorage.extendedContent || 'true';
+    var hasExtendedContent = window.localStorage.extendedContent === 'true' ? 'checked="checked"' : '';
+    var template = '<h2>Modules</h2><ul class="modules"></ul><h2>Options</h2><ul class="options"><li><label><input id="chkExtendedContent" type="checkbox" ' + hasExtendedContent + '> Extended Content</label></li><li><label><input id="chkOfflineDemos" ' + areDemosOffline + ' type="checkbox" /> Offline Demos</label></li></ul><div class="actions"><button id="update">Update</button> <button id="cancel">Cancel</button></div>';
 
     dialog.id = 'dialog';
     dialog.innerHTML = template;
@@ -111,7 +145,7 @@
       modules = modules ? JSON.parse(modules) : this.getModules();
       for (var key in modules) {
         var module = modules[key];
-		var moduleName = _.startCase(key);
+        var moduleName = _.startCase(key).replace( 'J Query', 'jQuery' );
         items.push('<li><input name="' + key + '" type="checkbox" ' + (module ? 'checked="checked" ' : '') + '" /> ' + moduleName + '</li>');
       }
       window.localStorage.modules = JSON.stringify(modules);

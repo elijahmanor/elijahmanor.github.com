@@ -57,13 +57,14 @@
 ```
 <!-- .element: class="stretch" -->
 
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="2">Create the allTheThings jQuery Plugin</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="3">Iterate over all the matched elements and return for chaining</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="4">Set a transition for a nice animation</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="5-9">On mouseenter rotate the element and mouseleave revert rotation</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="13">Wait for the DOM to be ready</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="14">Prompt the user for a selector</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="15-17">Use the selector to jQuery allTheThings</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="2">Create the allTheThings jQuery Plugin</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="3">Iterate over all the matched elements and return for chaining</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="4">Set a transition for a nice animation</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="5-9">On mouseenter rotate the element and mouseleave revert rotation</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="13">Wait for the DOM to be ready</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="14">Prompt the user for a selector</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="15-17">Use the selector to jQuery allTheThings</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="19"><a href="javascript:(function()%7Bfunction%20callback()%7B(function(%24)%7Bvar%20jQuery%3D%24%3B(%20function(%20%24%20)%20%7B%24.fn.allTheThings%20%3D%20function()%20%7Breturn%20this.each(%20function()%20%7B%24(%20this%20).css(%20%22transition%22%2C%20%22all%201s%20ease-out%22%20).hover(%20function()%20%7B%24(%20this%20).css(%20%22transform%22%2C%20%22rotate(180deg)%22%20)%3B%7D%2C%20function()%20%7B%24(%20this%20).css(%20%22transform%22%2C%20%22%22%20)%3B%7D%20)%3B%7D%20)%3B%7D%3B%24(%20document%20).ready(%20function()%20%7Bvar%20selector%20%3D%20window.prompt(%20%22Selector%3F%22%2C%20%22img%22%20)%3Bif%20(%20selector%20)%20%7B%24(%20selector%20).allTheThings()%3B%7D%7D%20)%3B%7D(%20jQuery%20)%20)%7D)(jQuery.noConflict(true))%7Dvar%20s%3Ddocument.createElement(%22script%22)%3Bs.src%3D%22https%3A%2F%2Fajax.googleapis.com%2Fajax%2Flibs%2Fjquery%2F1.7.1%2Fjquery.min.js%22%3Bif(s.addEventListener)%7Bs.addEventListener(%22load%22%2Ccallback%2Cfalse)%7Delse%20if(s.readyState)%7Bs.onreadystatechange%3Dcallback%7Ddocument.body.appendChild(s)%3B%7D)()">DO ALL THE THINGS!</a></span>
 
 ------
 
@@ -104,7 +105,7 @@
 
 ### Abandoned Frameworks and Libraries
 
-<!-- .slide: data-title="Trends" data-state="somestate" -->
+<!-- .slide: data-title="Trends" data-state="somestate extended" -->
 
 ![](./img/javascript-train-schedule.png)
 <!-- .element: style="height: 450px;" -->

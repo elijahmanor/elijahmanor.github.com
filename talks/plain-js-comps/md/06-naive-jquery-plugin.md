@@ -33,7 +33,7 @@ http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmz
 
   <input type="search" />
 
-  <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
   <script src="./jquery.giphy.js"></script>
   <script>
   ( function( $ ) {
@@ -42,7 +42,7 @@ http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmz
     } );
   }( jQuery ) );
   </script>
-</body>
+  </body>
 </html>
 ```
 <!-- .element: class="stretch" -->
@@ -97,7 +97,7 @@ http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmz
     return this.each( function() {
       var $input = $( this );
       var $giphy = $input.wrap( "<div class='Giphy'></div>" ).closest( ".Giphy" );
-      var $search = $( "<div class='Giphy-toggle'></div>" ).appendTo( $giphy );
+      var $toggle = $( "<div class='Giphy-toggle'></div>" ).appendTo( $giphy );
       $controls = $( "<div class='Giphy-controls' tabindex='0'><span class='Giphy-prev'></span><span class='Giphy-next'></span></div>" ).hide().appendTo( $giphy );
       var $prev = $controls.find( ".Giphy-prev" );
       var $next = $controls.find( ".Giphy-next" );
@@ -118,7 +118,7 @@ http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmz
         navigate( +1 );
       } );
 
-      $search.on( "click", function() {
+      $toggle.on( "click", function() {
         $controls.hide();
         $gif.remove();
         $giphy.removeClass( "Giphy--search" );
@@ -156,19 +156,19 @@ http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmz
 <!-- .element: class="stretch" -->
 
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="2">Define the jQuery Plugin off of `$.fn` a.k.a. `jQuery.prototype`</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="3-7">Module global variables used throughout the plugin</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="9-14">preload</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="3-7">Module global variables used throughout the plugin</span>
+<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="9-14">Preload images returned from Giphy for faster navigation</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="16-25">Navigation logic</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="27">Iterate over each element matched and return to support chaining</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="28">Save off and wrap the raw DOM Element with jQuery</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="28">Save off and wrap the raw DOM Element with jQuery</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="29-33">Build up the markup needed for the plugin</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="35-41">Support keyboard arrow for navigation</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="43-49">Support clicking next and previous buttons for navigation</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="51-55">Support clicking next and previous buttons for navigation</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="51-55">Close the giphy picker and reset</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="57-58">Listen for the enter key in the input to trigger search</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="59-66">Search request to Giphy API</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="66-71">Handle response data from Giphy API</span>
-<span class="fragment current-only focus-text focus-text--scroll" data-code-focus="73">Preload images returned from Giphy for faster navigation</span>
+<span data-extended class="fragment current-only focus-text focus-text--scroll" data-code-focus="73">Call the preload function</span>
 <span class="fragment current-only focus-text focus-text--scroll" data-code-focus="75-78">Update the user interface to indicate search mode</span>
 
 ------
@@ -177,7 +177,7 @@ http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmz
 
 <!-- .slide: data-title="Naive jQuery Plugin" data-state="somestate" -->
 
-![](./img/batman-vs-superman.gif)
+![](./img/tent-trip.gif)
 <!-- .element: style="height: 400px;" -->
 
 ### but it could be better

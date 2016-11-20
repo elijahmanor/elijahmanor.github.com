@@ -152,8 +152,9 @@ Notes:
 ## Resources
 
 <!-- .slide: data-title="React Adapter" data-state="resources" -->
-<!--
-https://www.fullstackreact.com/articles/how-to-write-a-google-maps-react-component/
--->
 
 * [Source Code](https://github.com/elijahmanor/framework-independent-javascript-components/tree/master/src/6-react-adapter)
+
+Notes:
+
+https://www.fullstackreact.com/articles/how-to-write-a-google-maps-react-component/

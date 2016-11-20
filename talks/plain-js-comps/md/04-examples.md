@@ -117,18 +117,18 @@ dragula( containers, {
 });
 ```
 
-<span class="fragment current-only focus-text" data-code-focus="1">Call the `dragula` function and pass the draggable containers to be used</span>
-<span class="fragment current-only focus-text" data-code-focus="2">You can specify any sort of logic that defines what is a container</span>
-<span class="fragment current-only focus-text" data-code-focus="3">Triggered whenever an element is clicked. Reject drag by returning `false`</span>
-<span class="fragment current-only focus-text" data-code-focus="4">Make sure that `el`, that came from `container`, can be dropped on `target`</span>
-<span class="fragment current-only focus-text" data-code-focus="5">This method should return true for elements that shouldn't trigger a drag</span>
-<span class="fragment current-only focus-text" data-code-focus="6">Y axis when determining dropped element</span>
-<span class="fragment current-only focus-text" data-code-focus="7">Elements are moved by default, not copied</span>
-<span class="fragment current-only focus-text" data-code-focus="8">Reorder elements in source containers</span>
-<span class="fragment current-only focus-text" data-code-focus="9">Spilling will put the element back</span>
-<span class="fragment current-only focus-text" data-code-focus="10">Spilling will `.remove` the element</span>
-<span class="fragment current-only focus-text" data-code-focus="11">DOM element where the mirror element displayed while dragging will be appended to</span>
-<span class="fragment current-only focus-text" data-code-focus="12">Allows users to select input text</span>
+<span data-extended class="fragment current-only focus-text" data-code-focus="1">Call the `dragula` function and pass the draggable containers to be used</span>
+<span data-extended class="fragment current-only focus-text" data-code-focus="2">You can specify any sort of logic that defines what is a container</span>
+<span data-extended class="fragment current-only focus-text" data-code-focus="3">Triggered whenever an element is clicked. Reject drag by returning `false`</span>
+<span data-extended class="fragment current-only focus-text" data-code-focus="4">Make sure that `el`, that came from `container`, can be dropped on `target`</span>
+<span data-extended class="fragment current-only focus-text" data-code-focus="5">This method should return true for elements that shouldn't trigger a drag</span>
+<span data-extended class="fragment current-only focus-text" data-code-focus="6">Y axis when determining dropped element</span>
+<span data-extended class="fragment current-only focus-text" data-code-focus="7">Elements are moved by default, not copied</span>
+<span data-extended class="fragment current-only focus-text" data-code-focus="8">Reorder elements in source containers</span>
+<span data-extended class="fragment current-only focus-text" data-code-focus="9">Spilling will put the element back</span>
+<span data-extended class="fragment current-only focus-text" data-code-focus="10">Spilling will `.remove` the element</span>
+<span data-extended class="fragment current-only focus-text" data-code-focus="11">DOM element where the mirror element displayed while dragging will be appended to</span>
+<span data-extended class="fragment current-only focus-text" data-code-focus="12">Allows users to select input text</span>
 
 ------
 
