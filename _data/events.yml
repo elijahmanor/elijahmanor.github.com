@@ -431,8 +431,8 @@
   employer: 'appendto'
   sessions:
   - name: 'Good JavaScript Habits for C# Developers'
-    slides: ''
-    video: ''
+    slides: '/talks/good-js-habits-for-csharp'
+    video: 'https://channel9.msdn.com/Events/MIX/MIX11/OPN08'
     feedback: ''
 
 - dates:
@@ -465,8 +465,8 @@
   employer: 'appendto'
   sessions:
   - name: 'Good JavaScript Habits for C# Developers'
-    slides: ''
-    video: ''
+    slides: '/talks/good-js-habits-for-csharp'
+    video: 'https://channel9.msdn.com/Events/MIX/MIX11/OPN08'
     feedback: ''
 
 - dates:
@@ -529,8 +529,8 @@
   employer: 'appendto'
   sessions:
   - name: 'Good JavaScript Habits'
-    slides: ''
-    video: ''
+    slides: '/talks/good-js-habits-for-csharp'
+    video: 'https://channel9.msdn.com/Events/MIX/MIX11/OPN08'
     feedback: ''
   - name: 'What is HTML5 and CSS3 and how can I use it today?'
     slides: ''
@@ -554,8 +554,8 @@
   employer: 'appendto'
   sessions:
   - name: 'Good JavaScript Habits'
-    slides: ''
-    video: ''
+    slides: '/talks/good-js-habits-for-csharp'
+    video: 'https://channel9.msdn.com/Events/MIX/MIX11/OPN08'
     feedback: ''
 
 - dates:
