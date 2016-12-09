@@ -36,6 +36,7 @@ require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
 
 import CodeSlide from "spectacle-code-slide";
+import Terminal from "./Terminal/Terminal";
 
 const images = {
   city: require("../assets/city.jpg"),
@@ -165,6 +166,7 @@ You can write inline images, [Markdown Links](http://commonmark.org), paragraph 
               Made with love in Seattle by
             </Heading>
             <Link href="http://www.formidablelabs.com"><Image width="100%" src={images.logo}/></Link>
+            <Text>http://aresluna.org/add-chrome/</Text>
           </Slide>
           <CodeSlide
             transition={[]}
@@ -179,6 +181,29 @@ You can write inline images, [Markdown Links](http://commonmark.org), paragraph 
               { loc: [8, 10] }
             ] }
           />
+          <Slide transition={["spin", "slide"]} bgColor="primary">
+            <Heading size={2} caps fit textColor="tertiary">
+              Terminal
+            </Heading>
+            <Terminal title="1. elijahm@elijahm: ~(zsh)" output={[
+              "npm test",
+              <div style={{ color: "#33B969"}}>TOTAL: 174 SUCCESS</div>,
+              <div>
+                <div>=============================== Coverage summary ===============================</div>
+                <div style={{ color: "#DEC612"}}>Statements   : 51.29% ( 278/542 )</div>
+                <div style={{ color: "#EE5057"}}>Branches     : 38.78% ( 95/245 )</div>
+                <div style={{ color: "#EE5057"}}>Functions    : 46.21% ( 61/132 )</div>
+                <div style={{ color: "#DEC612"}}>Lines        : 52.69% ( 274/520 )</div>
+                <div>================================================================================</div>
+              </div>]}
+            />
+          </Slide>
+          <Slide transition={["slide"]} bgColor="primary">
+            <Heading size={1} caps fit textColor="tertiary">
+              Your presentations are interactive
+            </Heading>
+            <Interactive/>
+          </Slide>
         </Deck>
       </Spectacle>
     );
