@@ -36,7 +36,7 @@ require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
 
 import CodeSlide from "spectacle-code-slide";
-import Terminal from "./Terminal/Terminal";
+import Terminal from "spectacle-terminal";
 
 const images = {
   city: require("../assets/city.jpg"),
@@ -182,9 +182,7 @@ You can write inline images, [Markdown Links](http://commonmark.org), paragraph 
             ] }
           />
           <Slide transition={["spin", "slide"]} bgColor="primary">
-            <Heading size={2} caps fit textColor="tertiary">
-              Terminal
-            </Heading>
+            <Heading size={2} caps fit textColor="tertiary">Terminal</Heading>
             <Terminal title="1. elijahm@elijahm: ~(zsh)" output={[
               "npm test",
               <div style={{ color: "#33B969"}}>TOTAL: 174 SUCCESS</div>,

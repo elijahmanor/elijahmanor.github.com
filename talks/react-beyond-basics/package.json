@@ -18,7 +18,8 @@
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
     "spectacle": "^1.0.0",
-    "spectacle-code-slide": "^0.3.1"
+    "spectacle-code-slide": "^0.3.1",
+    "spectacle-terminal": "^0.2.1"
   },
   "devDependencies": {
     "autoprefixer-core": "^6.0.1",

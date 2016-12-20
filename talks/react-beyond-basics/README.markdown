@@ -27,9 +27,15 @@ Getting started with React doesn't take too long, but there are a whole lot of o
 
 * Flux Architecture
 * Applying High Order Components
+* Function as Children
 * Assessing performance concerns
 * Integrating immutability
 * Using Flow
 * Webpack
 * Leveraging helpful unit testing libraries
 * Creating your own component pattern library.
+
+<!--
+https://github.com/bendiuguid/long-live-graphql
+https://github.com/yonibot/mobx-spectacle
+-->
