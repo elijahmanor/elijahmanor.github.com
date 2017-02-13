@@ -37,6 +37,17 @@ require("spectacle/lib/themes/default/index.css");
 
 import CodeSlide from "spectacle-code-slide";
 import Terminal from "spectacle-terminal";
+import Typist from "react-typist";
+import Loading from "react-loading";
+import Spinner from "react-spinkit";
+
+const cursor = {
+  show: false,
+  blink: true,
+  element: "|",
+  hideWhenDone: false,
+  hideWhenDoneDelay: 1000
+};
 
 const images = {
   city: require("../assets/city.jpg"),
@@ -182,8 +193,8 @@ You can write inline images, [Markdown Links](http://commonmark.org), paragraph 
             ] }
           />
           <Slide transition={["spin", "slide"]} bgColor="primary">
-            <Heading size={2} caps fit textColor="tertiary">Terminal</Heading>
-            <Terminal title="1. elijahm@elijahm: ~(zsh)" output={[
+            <Heading size={2} caps fit textColor="tertiary">Terminal 1</Heading>
+            <Terminal showFirstEntry={ true } title="1. elijahm@elijahm: ~(zsh)" output={[
               "npm test",
               <div style={{ color: "#33B969"}}>TOTAL: 174 SUCCESS</div>,
               <div>
@@ -193,7 +204,59 @@ You can write inline images, [Markdown Links](http://commonmark.org), paragraph 
                 <div style={{ color: "#EE5057"}}>Functions    : 46.21% ( 61/132 )</div>
                 <div style={{ color: "#DEC612"}}>Lines        : 52.69% ( 274/520 )</div>
                 <div>================================================================================</div>
-              </div>]}
+              </div>]} { ...this.props } { ...this.context } testing="123"
+            />
+          </Slide>
+          <Slide transition={["spin", "slide"]} bgColor="primary">
+            <Heading size={2} caps fit textColor="tertiary"><code>spectacle-terminal</code></Heading>
+            <Terminal title="1. elijahm@elijahm: ~(zsh)" output={ [
+              <Typist cursor={ cursor }>npm test</Typist>,
+              <div style={{ color: "#33B969"}}>TOTAL: 174 SUCCESS</div>,
+              <div>
+                <div>=============================== Coverage summary ===============================</div>
+                <div style={{ color: "#DEC612"}}>Statements   : 51.29% ( 278/542 )</div>
+                <div style={{ color: "#EE5057"}}>Branches     : 38.78% ( 95/245 )</div>
+                <div style={{ color: "#EE5057"}}>Functions    : 46.21% ( 61/132 )</div>
+                <div style={{ color: "#DEC612"}}>Lines        : 52.69% ( 274/520 )</div>
+                <div>================================================================================</div>
+              </div>,
+              <Typist cursor={ cursor }>rm -rf node_modules && npm install && say "done"</Typist>,
+              [
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <Loading type="bars" color="#fff" height="30" width="30" />
+                  <span style={{ marginLeft: "1rem" }}>Installing dependencies...</span>
+                </div>,
+                <div style={{ color: "#33B969"}}>⚡️ Dependencies installed!</div>
+              ],
+              <Typist cursor={ cursor }>npm i elijahmanor</Typist>,
+              <div>
+                <div>&gt; elijahmanor@1.1.0 postinstall /Users/elijahm/github/devtools-frontend/node_modules/elijahmanor</div>
+                <div>&gt; cat me.json; say 'Elijah Manor says Hello'</div>
+              </div>,
+              <div> { `
+{
+  "name": "Elijah Manor",
+  "priorities": [
+    "Christian", "Family", "Work"
+  ],
+  "work": [
+    "@leankit", "@eggheadio", "@pluralsight"
+  ],
+  "twitter": "@elijahmanor",
+  "tech": [
+    "HTML", "CSS", "JavaScript",
+    "React", "jQuery"
+  ],
+  "titles": [
+    "Microsoft MVP"
+  ]
+}`
+              } </div>,
+              <div> { `
+myproject@ /Users/elijahm/github/react-slides
+└── elijahmanor@1.1.0 
+              ` } </div>
+              ] }
             />
           </Slide>
           <Slide transition={["slide"]} bgColor="primary">

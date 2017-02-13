@@ -17,9 +17,13 @@
     "normalize.css": "3.0.3",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
+    "react-loading": "0.0.9",
+    "react-spinkit": "^2.0.0",
+    "react-transform": "0.0.3",
+    "react-typist": "^1.0.3",
     "spectacle": "^1.0.0",
     "spectacle-code-slide": "^0.3.1",
-    "spectacle-terminal": "^0.2.1"
+    "spectacle-terminal": "0.3.0"
   },
   "devDependencies": {
     "autoprefixer-core": "^6.0.1",
@@ -45,6 +49,7 @@
     "markdown-loader": "^0.1.7",
     "node-libs-browser": "^0.5.3",
     "raw-loader": "^0.5.1",
+    "react-transform": "0.0.3",
     "react-transform-hmr": "^1.0.4",
     "rimraf": "^2.4.4",
     "style-loader": "^0.13.0",
