@@ -1,0 +1,7 @@
+Perf.start()
+
+/* ... interact with react application ... */
+
+Perf.stop()
+
+Perf.printWasted(Perf.getLastMeasurements())

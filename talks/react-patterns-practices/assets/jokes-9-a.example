@@ -1,0 +1,15 @@
+import React from 'react';
+import { render } from 'react-dom';
+import Hello from './Hello';
+import JokesContainer from './JokesContainer';
+import Perf from 'react-addons-perf';
+
+window.Perf = Perf;
+
+class App extends React.Component {
+  render() {
+    return <JokesContainer />;
+  }
+}
+
+render(<App />, document.getElementById('root'));

@@ -1,0 +1,21 @@
+import React from 'react';
+import FlipCard from 'react-flipcard';
+import './Jokes.css';
+
+export default class Jokes extends React.PureComponent {
+  render() {
+    const { jokes = [], index } = this.props;
+    const joke = jokes[index];
+
+    return (
+      joke &&
+      <FlipCard>
+        <div>
+          <div>{joke.question}</div>
+          <footer>{index + 1} of {jokes.length}</footer>
+        </div>
+        <div>{joke.answer}</div>
+      </FlipCard>
+    );
+  }
+}
