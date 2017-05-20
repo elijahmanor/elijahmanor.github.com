@@ -64,7 +64,7 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Deck transition={["slide"]} transitionDuration={500} theme={theme}>
-        <Slide bgColor="primary" bgImage={`./${images.react.replace("/", "")}`} bgDarken={0.8}>
+        <Slide bgColor="primary" bgImage={`${images.react}`} bgDarken={0.8}>
           <Heading size={1} fit caps lineHeight={1} textColor="primary">
             React
           </Heading>
