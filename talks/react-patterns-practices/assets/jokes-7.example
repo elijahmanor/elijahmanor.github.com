@@ -1,0 +1,39 @@
+export function renderJoke( joke ) {
+  return (
+    <FlipCard>
+      <div>{joke.question}</div>
+      <div>{joke.answer}</div>
+    </FlipCard>
+  );
+}  
+  
+export default function Jokes( { jokes } ) {
+  return (
+    <div className="Jokes">
+      {jokes.map(joke => renderJoke(joke))}
+    </div>
+  );
+}
+
+const fetchResource = get => WrappedComponent => class extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { jokes: [] };
+  }
+  componentDidMount() {
+    get(this.props).then(jokes => this.setState({ jokes }));
+  }
+  render() {
+    console.log(this.state);
+    return <WrappedComponent {...this.props} {...this.state} />;
+  }
+};
+
+const fetchJokes = fetchResource(props =>
+  fetch('https://rawgit.com/.../jokes.json')
+    .then(response => response.json()),
+);
+
+const JokesContainer = fetchJokes(Jokes);
+
+const App = () => <JokesContainer />;

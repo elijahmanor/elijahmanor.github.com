@@ -1,0 +1,35 @@
+export function renderJoke( joke ) {
+  return (
+    <FlipCard>
+      <div>{joke.question}</div>
+      <div>{joke.answer}</div>
+    </FlipCard>
+  );
+}  
+  
+export default function Jokes( { jokes } ) {
+  return (
+    <div className="Jokes">
+      {jokes.map(joke => renderJoke(joke))}
+    </div>
+  );
+}
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { jokes: [] };
+  }
+  componentDidMount() {
+    fetch('https://rawgit.com/.../jokes.json')
+      .then(response => response.json())
+      .then(jokes => this.setState({ jokes }));
+  }
+  render() {
+    const { jokes } = this.state;
+
+  	return (
+      	<Jokes jokes={ jokes } />
+    );    
+  }
+}

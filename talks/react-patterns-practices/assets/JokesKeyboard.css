@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+.JokesKeyboard .ReactFlipCard {
+  font-family: "Comic Sans MS", "Courier New", sans-serif;
+  margin: 25px;
+  font-size: 2.5rem;
+  color: #222;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.JokesKeyboard .ReactFlipCard,
+.JokesKeyboard .ReactFlipCard__Front,
+.JokesKeyboard .ReactFlipCard__Back {
+  width: 50vw;
+  height: 50vh;
+}
+
+.JokesKeyboard .ReactFlipCard__Front,
+.JokesKeyboard .ReactFlipCard__Back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: 0.25rem solid white;
+  padding: 2rem;
+}
+
+.JokesKeyboard .ReactFlipCard__Front {
+  background-color: #FFD399;
+  /* background-color: #eee; */
+}
+
+.JokesKeyboard .ReactFlipCard__Front footer {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 1.5rem;
+  color: #777;
+}
+
+.JokesKeyboard .ReactFlipCard__Back {
+  background-color: #6BAFE1;
+  color: white;
+}
