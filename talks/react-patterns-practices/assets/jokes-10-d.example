@@ -16,11 +16,37 @@ class Jokes extends React.PureComponent {
   }
 }
 
+class AddJoke extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleSubmit() {
+    const { question: { value: q }, answer: { value: a } } = this;
+    this.props.onCreate({ question: q, answer: a });
+    this.question.value = '';
+    this.answer.value = '';
+  }
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <fieldset>
+          <legend>New Joke</legend>
+          <input placeholder="Question" ref={c => (this.question = c)} />
+          <input placeholder="Answer" ref={c => (this.answer = c)} />
+          <input type="submit" value="Create" />
+        </fieldset>
+      </form>
+    );
+  }
+}
+
 class JokesContainer extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = { jokes: [], index: 0 };
     this.keyDownHandler = this.handleKeyDown.bind(this);
+    this.boundAddJoke = this.handleAddJoke.bind(this);
   }
   componentDidMount() {
     document.addEventListener('keydown', this.keyDownHandler;
@@ -50,9 +76,22 @@ class JokesContainer extends React.PureComponent {
       index: index > 0 ? index - 1 : 0,
     }));
   }
+  handleAddJoke(joke) {
+    this.setState(({ jokes }) => {
+      jokes = [...jokes, joke];
+      // or 
+      // jokes = jokes.concat(joke);
+      return { jokes };
+    });
+  }
   render() {
     const { jokes, index } = this.state;
 
-    return <Jokes jokes={jokes} index={index} />;
+    return (
+      <section>
+        <Jokes jokes={jokes} index={index} />
+        <AddJoke onCreate={this.boundAddJoke} />
+      </section>
+    );
   }
 }

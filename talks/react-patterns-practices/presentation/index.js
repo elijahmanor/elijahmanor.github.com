@@ -58,13 +58,14 @@ import CodeSlide from "spectacle-code-slide";
 import FlipCard from "react-flipcard";
 import Jokes from "../assets/Jokes.js";
 import JokesKeyboard from "../assets/JokesKeyboard.js";
+import JokesAddBroken from "../assets/JokesAddBroken.js";
 import slidesMarkdown from "raw-loader!../assets/markdown.md";
 
 export default class Presentation extends React.Component {
   render() {
     return (
       <Deck transition={["slide"]} transitionDuration={500} theme={theme}>
-        <Slide bgColor="primary" bgImage={`${images.react}`} bgDarken={0.8}>
+        <Slide bgColor="primary" bgImage={images.react} bgDarken={0.8}>
           <Heading size={1} fit caps lineHeight={1} textColor="primary">
             React
           </Heading>
@@ -94,14 +95,14 @@ export default class Presentation extends React.Component {
             <Appear><ListItem>Container &amp; Presentational Components</ListItem></Appear>
             <Appear><ListItem>Stateless Functional Components</ListItem></Appear>
             <Appear><ListItem>Higher Order Components</ListItem></Appear>
-            <Appear><ListItem>Accessing Performance Bottlenecks</ListItem></Appear>
+            <Appear><ListItem>Assessing Performance Bottlenecks</ListItem></Appear>
             <Appear><ListItem>Introducting Immutability</ListItem></Appear>
-            <Appear><ListItem>Adding `redux`</ListItem></Appear>
+            <Appear><ListItem>Adding `redux` &amp; `redux-devtools`</ListItem></Appear>
             <Appear><ListItem>Adding `react-router`</ListItem></Appear>
             <Appear><ListItem>Adding `recompose`</ListItem></Appear>
           </List>
         </Slide>
-        <Slide>
+        { /*<Slide>
           <Markdown>
             {`
   ![Markdown Logo](${images.markdown.replace("/", "")})
@@ -111,8 +112,8 @@ export default class Presentation extends React.Component {
   * And let's not forget **bold**
             `}
           </Markdown>
-        </Slide>
-        {
+        </Slide> */ }
+        { /*
           MarkdownSlides`
 #### Create Multiple Slides in Markdown
 All the same tags and elements supported in <Markdown /> are supported in MarkdownSlides.
@@ -120,7 +121,7 @@ All the same tags and elements supported in <Markdown /> are supported in Markdo
 Slides are separated with **three dashes** and can be used _anywhere_ in the deck. The markdown can either be:
 * A Tagged Template Literal
 * Imported Markdown from another file
-          `
+          ` */
         }
         { /*<SlideSet>
           <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
@@ -268,6 +269,95 @@ Slides are separated with **three dashes** and can be used _anywhere_ in the dec
           transition={[]}
           lang="js"
           code={require("raw-loader!../assets/jokes-9-a.example")}
+          ranges={[
+            { loc: [0, 270], title: "Walking through some code" },
+            { loc: [0, 1], title: "The Beginning" },
+            { loc: [1, 2] },
+            { loc: [1, 2], note: "Heres a note!" },
+            { loc: [2, 3] },
+            { loc: [8, 10] },
+            ]} />
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/jokes-9-b.example")}
+          ranges={[
+            { loc: [0, 270], title: "Walking through some code" },
+            { loc: [0, 1], title: "The Beginning" },
+            { loc: [1, 2] },
+            { loc: [1, 2], note: "Heres a note!" },
+            { loc: [2, 3] },
+            { loc: [8, 10] },
+            ]} />
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/jokes-9-c.example")}
+          ranges={[
+            { loc: [0, 270], title: "Walking through some code" },
+            { loc: [0, 1], title: "The Beginning" },
+            { loc: [1, 2] },
+            { loc: [1, 2], note: "Heres a note!" },
+            { loc: [2, 3] },
+            { loc: [8, 10] },
+            ]} />
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/jokes-10-a.example")}
+          ranges={[
+            { loc: [0, 270], title: "Walking through some code" },
+            { loc: [0, 1], title: "The Beginning" },
+            { loc: [1, 2] },
+            { loc: [1, 2], note: "Heres a note!" },
+            { loc: [2, 3] },
+            { loc: [8, 10] },
+            ]} />
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/jokes-10-b.example")}
+          ranges={[
+            { loc: [0, 270], title: "Walking through some code" },
+            { loc: [0, 1], title: "The Beginning" },
+            { loc: [1, 2] },
+            { loc: [1, 2], note: "Heres a note!" },
+            { loc: [2, 3] },
+            { loc: [8, 10] },
+            ]} />
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/jokes-10-c.example")}
+          ranges={[
+            { loc: [0, 270], title: "Walking through some code" },
+            { loc: [0, 1], title: "The Beginning" },
+            { loc: [1, 2] },
+            { loc: [1, 2], note: "Heres a note!" },
+            { loc: [2, 3] },
+            { loc: [8, 10] },
+            ]} />
+        <Slide maxHeight="100vh" maxWidth="90vw">
+          <div>
+            <a href="https://codesandbox.io/s/32853L56M">
+              <img alt="Edit Jokes 9" src="https://codesandbox.io/static/img/play-codesandbox.svg" />
+            </a>
+          </div>
+          <JokesAddBroken />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="black">
+          <Headers></Headers>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="black">
+          <BlockQuote>
+            <Quote>Immutable data cannot be changed once created, leading to much simpler application development.</Quote>
+            <Cite><Link href="https://twitter.com/ryanflorence/status/577685415919898625">Immutable.js</Link></Cite>
+          </BlockQuote>
+        </Slide>
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/jokes-10-d.example")}
           ranges={[
             { loc: [0, 270], title: "Walking through some code" },
             { loc: [0, 1], title: "The Beginning" },

@@ -1,8 +1,4 @@
-import React from 'react';
-import FlipCard from 'react-flipcard';
-import './Jokes.css';
-
-export default class Jokes extends React.Component {
+class Jokes extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {
     return (
       nextProps.index !== this.props.index ||
@@ -23,5 +19,52 @@ export default class Jokes extends React.Component {
         <div>{joke.answer}</div>
       </FlipCard>
     );
+  }
+}
+
+class JokesContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { jokes: [], index: 0 };
+    this.keyDownHandler = this.handleKeyDown.bind(this);
+  }
+  shouldComponentUpdate(nextProps, nextState) {
+    return (
+      nextState.index !== this.state.index ||
+      nextState.jokes !== this.state.jokes
+    );
+  }
+  componentDidMount() {
+    document.addEventListener('keydown', this.keyDownHandler;
+
+    fetch('https://rawgit.com/.../jokes.json')
+      .then(response => response.json())
+      .then((jokes) => this.setState({ jokes }));
+  }
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.keyDownHandler);
+  }
+  handleKeyDown(e) {
+    if (e.which === 37) {
+      this.decrement();
+    } else if (e.which === 39) {
+      this.increment();
+    }
+  }
+  increment() {
+    const length = this.state.jokes.length - 1;
+    this.setState(({ index }) => ({
+      index: index < length ? index + 1 : length,
+    }));
+  }
+  decrement() {
+    this.setState(({ index }) => ({
+      index: index > 0 ? index - 1 : 0,
+    }));
+  }
+  render() {
+    const { jokes, index } = this.state;
+
+    return <Jokes jokes={jokes} index={index} />;
   }
 }
