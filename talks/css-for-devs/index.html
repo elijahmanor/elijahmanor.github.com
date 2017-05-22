@@ -1,27 +1,28 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-		<title>CSS for Developers by @elijahmanor</title>
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-		<link rel="stylesheet" href="css/reveal.css" data-noprefix>
-		<link rel="stylesheet" href="css/theme/black.css" id="theme" data-noprefix>
-		<!-- Code syntax highlighting -->
-		<!--<link rel="stylesheet" href="lib/css/zenburn.css">-->
-		<link rel="stylesheet" href="plugin/codemirror/lib/codemirror.css" data-noprefix>
-		<!-- <link rel="stylesheet" href="plugin/codemirror/theme/3024-day.css" data-noprefix>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>CSS for Developers by @elijahmanor</title>
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Hakim El Hattab">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<link rel="stylesheet" href="css/reveal.css" data-noprefix>
+	<link rel="stylesheet" href="css/theme/black.css" id="theme" data-noprefix>
+	<!-- Code syntax highlighting -->
+	<!--<link rel="stylesheet" href="lib/css/zenburn.css">-->
+	<link rel="stylesheet" href="plugin/codemirror/lib/codemirror.css" data-noprefix>
+	<!-- <link rel="stylesheet" href="plugin/codemirror/theme/3024-day.css" data-noprefix>
 		<link rel="stylesheet" href="plugin/codemirror/theme/3024-night.css" data-noprefix>
 		<link rel="stylesheet" href="plugin/codemirror/theme/abcdef.css" data-noprefix>
 		<link rel="stylesheet" href="plugin/codemirror/theme/ambiance.css" data-noprefix>
 		<link rel="stylesheet" href="plugin/codemirror/theme/base16-dark.css" data-noprefix>
 		<link rel="stylesheet" href="plugin/codemirror/theme/base16-light.css" data-noprefix> -->
-		<link rel="stylesheet" href="plugin/codemirror/theme/blackboard.css" data-noprefix>
-		<!-- <link rel="stylesheet" href="plugin/codemirror/theme/cobalt.css" data-noprefix>
+	<link rel="stylesheet" href="plugin/codemirror/theme/blackboard.css" data-noprefix>
+	<!-- <link rel="stylesheet" href="plugin/codemirror/theme/cobalt.css" data-noprefix>
 		<link rel="stylesheet" href="plugin/codemirror/theme/colorforth.css" data-noprefix>
 		<link rel="stylesheet" href="plugin/codemirror/theme/dracula.css" data-noprefix>
 		<link rel="stylesheet" href="plugin/codemirror/theme/eclipse.css" data-noprefix>
@@ -54,85 +55,93 @@
 		<link rel="stylesheet" href="plugin/codemirror/theme/xq-light.css" data-noprefix>
 		<link rel="stylesheet" href="plugin/codemirror/theme/yeti.css" data-noprefix>
 		<link rel="stylesheet" href="plugin/codemirror/theme/zenburn.css" data-noprefix> -->
-		<script src="plugin/codemirror/lib/codemirror.js"></script>
-		<script src="plugin/codemirror/mode/javascript/javascript.js"></script>
-		<script src="plugin/codemirror/mode/sass/sass.js"></script>
-		<script src="plugin/codemirror/mode/css/css.js"></script>
-		<script src="plugin/codemirror/mode/xml/xml.js"></script>
-		<script src="plugin/codemirror/mode/htmlmixed/htmlmixed.js"></script>
-		<script src="plugin/codemirror/mode/shell/shell.js"></script>
-		<script src="plugin/codemirror/mode/jsx/jsx.js"></script>
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel 	= 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-		<!--<link rel="stylesheet" href="plugin/prism/prism.css" />-->
-		<link rel="stylesheet" href="plugin/caniuse/caniuse.css" data-noprefix />
-		<link rel="stylesheet" href="css/custom.css" />
-		<link href="http://fonts.googleapis.com/css?family=Orbitron:400,900,700,500" rel="stylesheet" type="text/css" data-noprefix />
-		<!--[if lt IE 9]>
+	<script src="plugin/codemirror/lib/codemirror.js"></script>
+	<script src="plugin/codemirror/mode/javascript/javascript.js"></script>
+	<script src="plugin/codemirror/mode/sass/sass.js"></script>
+	<script src="plugin/codemirror/mode/css/css.js"></script>
+	<script src="plugin/codemirror/mode/xml/xml.js"></script>
+	<script src="plugin/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+	<script src="plugin/codemirror/mode/shell/shell.js"></script>
+	<script src="plugin/codemirror/mode/jsx/jsx.js"></script>
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+	<!--<link rel="stylesheet" href="plugin/prism/prism.css" />-->
+	<link rel="stylesheet" href="plugin/caniuse/caniuse.css" data-noprefix />
+	<link rel="stylesheet" href="css/custom.css" />
+	<link href="http://fonts.googleapis.com/css?family=Orbitron:400,900,700,500" rel="stylesheet" type="text/css" data-noprefix
+	/>
+	<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
-		<script src="./js/prefixfree.min.js"></script>
-    <!-- <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> -->
-	</head>
-	<body>
-		<div class="reveal">
-			<aside hidden class="vote" data-store="vote" contenteditable></aside><!-- Vote slido.com #8547 -->
-			<header class="Title"></header>
-			<div class="slides">
-				<section id="Title" data-markdown="./md/title.md"></section>
-				<section id="Instructions" data-markdown="./md/instructions.md"></section>
-				<section id="About" data-markdown="./md/about.md"></section>
-				<section id="Personas" data-markdown="./md/personas.md"></section>
+	<script src="./js/prefixfree.min.js"></script>
+	<!-- <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+</head>
 
-				<section id="Box-Model" data-markdown="./md/box-model.md"></section>
-				<!-- <section data-markdown="./md/poll-results.md"></section> -->
-				<section id="Specificity" data-markdown="./md/specificity.md"></section>
-				<section id="Position" data-markdown="./md/position.md"></section>
-				<section id="Cascading" data-markdown="./md/cascading.md"></section>
-				<section id="Sizing" data-markdown="./md/sizing.md"></section>
-				<section id="Pseudo-Elements" data-markdown="./md/pseudo-elements.md"></section>
-				<section id="Alignment" data-markdown="./md/alignment.md"></section>
+<body>
+	<div class="reveal">
+		<aside hidden class="vote" data-store="vote" contenteditable></aside>
+		<!-- Vote slido.com #8547 -->
+		<header class="Title"></header>
+		<div class="slides">
+			<section id="Title" data-markdown="./md/title.md"></section>
+			<section id="Instructions" data-markdown="./md/instructions.md"></section>
+			<section id="About" data-markdown="./md/about.md"></section>
+			<section id="Personas" data-markdown="./md/personas.md"></section>
 
-				<section id="Sass" data-markdown="./md/sass.md"></section>
-				<section id="PostCSS" data-markdown="./md/postcss.md"></section>
-				<section id="Atomic-Design" data-markdown="./md/atomic-design.md"></section>
-				<section id="BEM" data-markdown="./md/bem.md"></section>
-				<section id="Require" data-markdown="./md/require.md"></section>
-				<section id="Linting" data-markdown="./md/linting.md"></section>
-				<section id="Sass-Docs" data-markdown="./md/sass-docs.md"></section>
-				<!--<section id="SVG" data-markdown="./md/svg.md"></section>-->
+			<section id="Box-Model" data-markdown="./md/box-model.md"></section>
+			<!-- <section data-markdown="./md/poll-results.md"></section> -->
+			<section id="Specificity" data-markdown="./md/specificity.md"></section>
+			<section id="Declaration" data-markdown="./md/declaration.md"></section>
+			<section id="Position" data-markdown="./md/position.md"></section>
+			<section id="Cascading" data-markdown="./md/cascading.md"></section>
+			<section id="Sizing" data-markdown="./md/sizing.md"></section>
+			<section id="Pseudo-Elements" data-markdown="./md/pseudo-elements.md"></section>
+			<section id="Alignment" data-markdown="./md/alignment.md"></section>
 
-				<section data-markdown="./md/poll-results.md"></section>
-				<section id="Conclusion" data-markdown="./md/conclusion.md"></section>
+			<section id="Sass" data-markdown="./md/sass.md"></section>
+			<section id="PostCSS" data-markdown="./md/postcss.md"></section>
+			<section id="Atomic-Design" data-markdown="./md/atomic-design.md"></section>
+			<section id="BEM" data-markdown="./md/bem.md"></section>
+			<section id="Require" data-markdown="./md/require.md"></section>
+			<section id="Linting" data-markdown="./md/linting.md"></section>
+			<section id="Sass-Docs" data-markdown="./md/sass-docs.md"></section>
+			<!--<section id="SVG" data-markdown="./md/svg.md"></section>-->
 
-				<pre hidden style="display: none;">
+			<section data-markdown="./md/poll-results.md"></section>
+			<section id="Conclusion" data-markdown="./md/conclusion.md"></section>
+
+			<pre hidden style="display: none;">
 					console.log('code');
 				</pre>
+		</div>
+		<aside class="PersonaList">
+			<div class="Persona Persona--backEndBrian">
+				<img class="Persona-image" src="./imgs/back-end-brian-small.jpg" style="height: 80px; width: 80px;" data-src="http://api.randomuser.me/portraits/thumb/men/31.jpg"
+				/>
+				<div class="Persona-name">Back-End Brian</div>
 			</div>
-			<aside class="PersonaList">
-				<div class="Persona Persona--backEndBrian">
-					<img class="Persona-image" src="./imgs/back-end-brian-small.jpg" style="height: 80px; width: 80px;" data-src="http://api.randomuser.me/portraits/thumb/men/31.jpg" />
-					<div class="Persona-name">Back-End Brian</div>
-				</div>
-				<div class="Persona Persona--juniorJacob">
-					<img class="Persona-image" src="./imgs/junior-jacob-small.jpg" data-src="http://api.randomuser.me/portraits/thumb/men/73.jpg" /><!--73-->
-					<div class="Persona-name">Junior Jacob</div>
-				</div>
-				<div class="Persona Persona--midLevelMelissa">
-					<img class="Persona-image" src="./imgs/mid-level-melissa-small.jpg" data-src="http://api.randomuser.me/portraits/thumb/women/10.jpg" />
-					<div class="Persona-name">Mid-Level Melissa</div>
-				</div>
-			</aside>
-			<dialog id="dialog">
-				<h3>Modules</h3>
-				<ul class="modules"></ul>
-				<!-- <div class="Dialog-theme">
+			<div class="Persona Persona--juniorJacob">
+				<img class="Persona-image" src="./imgs/junior-jacob-small.jpg" data-src="http://api.randomuser.me/portraits/thumb/men/73.jpg"
+				/>
+				<!--73-->
+				<div class="Persona-name">Junior Jacob</div>
+			</div>
+			<div class="Persona Persona--midLevelMelissa">
+				<img class="Persona-image" src="./imgs/mid-level-melissa-small.jpg" data-src="http://api.randomuser.me/portraits/thumb/women/10.jpg"
+				/>
+				<div class="Persona-name">Mid-Level Melissa</div>
+			</div>
+		</aside>
+		<dialog id="dialog">
+			<h3>Modules</h3>
+			<ul class="modules"></ul>
+			<!-- <div class="Dialog-theme">
 					<span>Select a theme: </span>
 					<select id="selectTheme">
 				    <option>default</option>
@@ -179,27 +188,27 @@
 				    <option>zenburn</option>
 					</select>
 				</div> -->
-				<div class="durationOfPresentation">
-					<span>Duration of Presentation (mins): </span>
-					<input id="txtLengthOfPresentation" type="number" />
-				</div>
-				<div class="extendedContent">
-					<span>Extended Content</span>
-					<input id="chkExtendedContent" type="checkbox" checked="checked" />
-				</div>
-				<div>
-					<button id="update">Update</button>
-					<button id="cancel">Cancel</button>
-				</div>
-			</dialog>
-		</div>
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-		<script src="plugin/data-store/data-store.js"></script>
-		<script>
+			<div class="durationOfPresentation">
+				<span>Duration of Presentation (mins): </span>
+				<input id="txtLengthOfPresentation" type="number" />
+			</div>
+			<div class="extendedContent">
+				<span>Extended Content</span>
+				<input id="chkExtendedContent" type="checkbox" checked="checked" />
+			</div>
+			<div>
+				<button id="update">Update</button>
+				<button id="cancel">Cancel</button>
+			</div>
+		</dialog>
+	</div>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+	<script src="plugin/data-store/data-store.js"></script>
+	<script>
 			(function initializeMarkdownSections() {
 				var markdown = document.querySelectorAll('[data-markdown]');
-				[].forEach.call(markdown, function(element) {
+				[].forEach.call(markdown, function (element) {
 					element.setAttribute('data-separator', '^\n---\n$');
 					element.setAttribute('data-separator-vertical', '^\n------\n$');
 					element.setAttribute('data-separator-notes', '^Notes:');
@@ -210,109 +219,109 @@
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				// Display controls in the bottom right corner
-		    controls: true,
+				controls: true,
 
-		    // Display a presentation progress bar
-		    progress: true,
+				// Display a presentation progress bar
+				progress: true,
 
-		    // Display the page number of the current slide
+				// Display the page number of the current slide
 				//  "h.v":  horizontal . vertical slide number (default)
 				//  "h/v":  horizontal / vertical slide number
 				//    "c":  flattened slide number
 				//  "c/t":  flattened slide number / total slides
-		    slideNumber: true,
+				slideNumber: true,
 
-		    // Push each slide change to the browser history
-		    history: true,
+				// Push each slide change to the browser history
+				history: true,
 
-		    // Enable keyboard shortcuts for navigation
-		    keyboard: true,
+				// Enable keyboard shortcuts for navigation
+				keyboard: true,
 
-		    // Enable the slide overview mode
-		    overview: true,
+				// Enable the slide overview mode
+				overview: true,
 
-		    // Vertical centering of slides
-		    center: true,
+				// Vertical centering of slides
+				center: true,
 
-		    // Enables touch navigation on devices with touch input
-		    touch: true,
+				// Enables touch navigation on devices with touch input
+				touch: true,
 
-		    // Loop the presentation
-		    loop: false,
+				// Loop the presentation
+				loop: false,
 
-		    // Change the presentation direction to be RTL
-		    rtl: false,
+				// Change the presentation direction to be RTL
+				rtl: false,
 
-		    // Turns fragments on and off globally
-		    fragments: true,
+				// Turns fragments on and off globally
+				fragments: true,
 
-		    // Flags if the presentation is running in an embedded mode,
-		    // i.e. contained within a limited portion of the screen
-		    embedded: false,
+				// Flags if the presentation is running in an embedded mode,
+				// i.e. contained within a limited portion of the screen
+				embedded: false,
 
-		    // Flags if we should show a help overlay when the questionmark
-		    // key is pressed
-		    help: true,
+				// Flags if we should show a help overlay when the questionmark
+				// key is pressed
+				help: true,
 
-		    // Flags if speaker notes should be visible to all viewers
-		    showNotes: false,
+				// Flags if speaker notes should be visible to all viewers
+				showNotes: false,
 
-		    // Number of milliseconds between automatically proceeding to the
-		    // next slide, disabled when set to 0, this value can be overwritten
-		    // by using a data-autoslide attribute on your slides
-		    autoSlide: 0,
+				// Number of milliseconds between automatically proceeding to the
+				// next slide, disabled when set to 0, this value can be overwritten
+				// by using a data-autoslide attribute on your slides
+				autoSlide: 0,
 
-		    // Stop auto-sliding after user input
-		    autoSlideStoppable: true,
+				// Stop auto-sliding after user input
+				autoSlideStoppable: true,
 
-		    // Enable slide navigation via mouse wheel
-		    mouseWheel: false,
+				// Enable slide navigation via mouse wheel
+				mouseWheel: false,
 
-		    // Hides the address bar on mobile devices
-		    hideAddressBar: true,
+				// Hides the address bar on mobile devices
+				hideAddressBar: true,
 
-		    // Opens links in an iframe preview overlay
-		    previewLinks: false,
+				// Opens links in an iframe preview overlay
+				previewLinks: false,
 
-		    // Transition style
-		    transition: 'slide', // none/fade/slide/convex/concave/zoom
+				// Transition style
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-		    // Transition speed
-		    transitionSpeed: 'default', // default/fast/slow
+				// Transition speed
+				transitionSpeed: 'default', // default/fast/slow
 
-		    // Transition style for full page slide backgrounds
-		    backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+				// Transition style for full page slide backgrounds
+				backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
 
-		    // Number of slides away from the current that are visible
-		    viewDistance: 3,
+				// Number of slides away from the current that are visible
+				viewDistance: 3,
 
-		    // Parallax background image
-		    parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+				// Parallax background image
+				parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
 
-		    // Parallax background size
-		    parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+				// Parallax background size
+				parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
 
-		    // Number of pixels to move the parallax background per slide
-		    // - Calculated automatically unless specified
-		    // - Set to 0 to disable movement along an axis
-		    parallaxBackgroundHorizontal: null,
-		    parallaxBackgroundVertical: null,
+				// Number of pixels to move the parallax background per slide
+				// - Calculated automatically unless specified
+				// - Set to 0 to disable movement along an axis
+				parallaxBackgroundHorizontal: null,
+				parallaxBackgroundVertical: null,
 
 				// Optional reveal.js plugins
 				dependencies: [
 					// { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); }, callback: function() { dataStore.init(); } },
+					{ src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); }, callback: function () { dataStore.init(); } },
 					//{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
 					//{ src: 'plugin/prism/prism.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { Prism.highlightAll(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/reveal.js-menu/menu.js' },
-			    { src: 'plugin/chartjs/Chart.min.js'},
-			    { src: 'plugin/chartjs/charted.js'}
+					{ src: 'plugin/chartjs/Chart.min.js' },
+					{ src: 'plugin/chartjs/charted.js' }
 				],
 				keyboard: {
-					87: function() { // key pressed `w` to choose modules
+					87: function () { // key pressed `w` to choose modules
 						var items = [];
 						var modules = window.localStorage.modules;
 
@@ -323,158 +332,168 @@
 						};
 						window.localStorage.modules = JSON.stringify(modules);
 						var lengthOfPresentation = window.localStorage.lengthOfPresentation || 30;
-						document.querySelector( "#txtLengthOfPresentation" ).value = lengthOfPresentation;
+						document.querySelector("#txtLengthOfPresentation").value = lengthOfPresentation;
 						window.localStorage.lengthOfPresentation = lengthOfPresentation;
-						document.querySelector( "#chkExtendedContent" ).checked = window.localStorage.extendedContent === "true" ? true : false;
+						document.querySelector("#chkExtendedContent").checked = window.localStorage.extendedContent === "true" ? true : false;
 						var dialog = document.getElementById('dialog');
 						dialog.querySelector('.modules').innerHTML = items.join('');
 						dialog.showModal(); //.show()
 					},
-					66: function() { // b
+					66: function () { // b
 						Reveal.togglePause();
-						if ( Reveal.isPaused() ) {
-							window.clearInterval( window.timer );
+						if (Reveal.isPaused()) {
+							window.clearInterval(window.timer);
 							window.start = null;
 							window.end = null;
-							document.querySelector( ".pace span" ).style.width = '0%';
-							document.querySelector( ".pace span" ).classList.remove( "complete" );
+							document.querySelector(".pace span").style.width = '0%';
+							document.querySelector(".pace span").classList.remove("complete");
 						}
 					},
-					76: function() { // l
+					76: function () { // l
 						Reveal.getScale();
 						Reveal.layout();
 					}
 				},
 				menu: {
-		        // Specifies which side of the presentation the menu will
-		        // be shown. Use 'left' or 'right'.
-		        side: 'left',
+					// Specifies which side of the presentation the menu will
+					// be shown. Use 'left' or 'right'.
+					side: 'left',
 
-		        // Add slide numbers to the titles in the slide list.
-		        // Use 'true' or format string (same as reveal.js slide numbers)
-		        numbers: true,
+					// Add slide numbers to the titles in the slide list.
+					// Use 'true' or format string (same as reveal.js slide numbers)
+					numbers: true,
 
-		        // Hide slides from the menu that do not have a title.
-		        // Set to 'true' to only list slides with titles.
-		        hideMissingTitles: false,
+					// Hide slides from the menu that do not have a title.
+					// Set to 'true' to only list slides with titles.
+					hideMissingTitles: false,
 
-		        // Add markers to the slide titles to indicate the
-		        // progress through the presentation
-		        markers: true,
+					// Add markers to the slide titles to indicate the
+					// progress through the presentation
+					markers: true,
 
-		        // Specify custom panels to be included in the menu, by
-		        // providing an array of objects with 'title', 'icon'
-		        // properties, and either a 'src' or 'content' property.
-		        custom: true,
+					// Specify custom panels to be included in the menu, by
+					// providing an array of objects with 'title', 'icon'
+					// properties, and either a 'src' or 'content' property.
+					custom: true,
 
-		        // Specifies the themes that will be available in the themes
-		        // menu panel. Set to 'false' to hide themes panel.
-						themes: [
-		            { name: 'Black', theme: 'css/theme/black.css' },
-		            { name: 'White', theme: 'css/theme/white.css' },
-		            { name: 'League', theme: 'css/theme/league.css' },
-		            { name: 'Sky', theme: 'css/theme/sky.css' },
-		            { name: 'Beige', theme: 'css/theme/beige.css' },
-		            { name: 'Simple', theme: 'css/theme/simple.css' },
-		            { name: 'Serif', theme: 'css/theme/serif.css' },
-		            { name: 'Blood', theme: 'css/theme/blood.css' },
-		            { name: 'Night', theme: 'css/theme/night.css' },
-		            { name: 'Moon', theme: 'css/theme/moon.css' },
-		            { name: 'Solarized', theme: 'css/theme/solarized.css' }
-		        ],
+					// Specifies the themes that will be available in the themes
+					// menu panel. Set to 'false' to hide themes panel.
+					themes: [
+						{ name: 'Black', theme: 'css/theme/black.css' },
+						{ name: 'White', theme: 'css/theme/white.css' },
+						{ name: 'League', theme: 'css/theme/league.css' },
+						{ name: 'Sky', theme: 'css/theme/sky.css' },
+						{ name: 'Beige', theme: 'css/theme/beige.css' },
+						{ name: 'Simple', theme: 'css/theme/simple.css' },
+						{ name: 'Serif', theme: 'css/theme/serif.css' },
+						{ name: 'Blood', theme: 'css/theme/blood.css' },
+						{ name: 'Night', theme: 'css/theme/night.css' },
+						{ name: 'Moon', theme: 'css/theme/moon.css' },
+						{ name: 'Solarized', theme: 'css/theme/solarized.css' }
+					],
 
-		        // Specifies if the transitions menu panel will be shown.
-		        transitions: false,
+					// Specifies if the transitions menu panel will be shown.
+					transitions: false,
 
-		        // Adds a menu button to the slides to open the menu panel.
-		        // Set to 'false' to hide the button.
-		        openButton: true,
+					// Adds a menu button to the slides to open the menu panel.
+					// Set to 'false' to hide the button.
+					openButton: true,
 
-		        // If 'true' allows the slide number in the presentation to
-		        // open the menu panel. The reveal.js slideNumber option must
-		        // be displayed for this to take effect
-		        openSlideNumber: false,
+					// If 'true' allows the slide number in the presentation to
+					// open the menu panel. The reveal.js slideNumber option must
+					// be displayed for this to take effect
+					openSlideNumber: false,
 
-		        // If true allows the user to open and navigate the menu using
-		        // the keyboard. Standard keyboard interaction with reveal
-		        // will be disabled while the menu is open.
-		        keyboard: true,
+					// If true allows the user to open and navigate the menu using
+					// the keyboard. Standard keyboard interaction with reveal
+					// will be disabled while the menu is open.
+					keyboard: true,
 
-						custom: [
-		            { title: 'About', icon: '<i class="fa fa-info">', src: 'html/about.html' },
-		            { title: 'Links', icon: '<i class="fa fa-external-link">', content: '' }
-		        ],
+					custom: [
+						{ title: 'About', icon: '<i class="fa fa-info">', src: 'html/about.html' },
+						{ title: 'Links', icon: '<i class="fa fa-external-link">', content: '' }
+					],
 
-						onOpen: function() {
-							var linkHTML = "";
-							var resources = document.querySelectorAll( "section [data-state*='resources']" );
-							[].forEach.call( resources, function( resource ) {
-								linkHTML += "<h2>" + resource.dataset.title + "</h2>";
-								linkHTML += resource.innerHTML.replace( /(<h\d>Resources<\/h\d>)/, "" ).trim();
-							} );
-							var links = document.querySelector( ".slide-menu-custom-panel[data-panel='Custom1']" );
-							links.innerHTML = "<div style='padding: 1rem 1rem 5rem 1rem;'>" + linkHTML + "</div>";
-						}
-		    },
-				chart : {
-			    items : [
-			      {
-			        selector : "#postcss-performance",
-			        type : "line",
-			        data : {
-			          labels: ["PostCSS", "Rework", "libsass", "Less", "Stylus", "Stylecow", "Ruby Sass"],
-			          datasets: [
-			            {
-			              label: "Performance",
-			              fillColor: "rgba(220,220,220,0.2)",
-			              strokeColor: "rgba(220,220,220,1)",
-			              pointColor: "rgba(220,220,220,1)",
-			              pointStrokeColor: "#fff",
-			              pointHighlightFill: "#fff",
-			              pointHighlightStroke: "rgba(220,220,220,1)",
-			              data: [40, 75, 76, 147, 166, 258, 1042]
-			            }
-			          ]
-			        },
-			        options : {
+					onOpen: function () {
+						var linkHTML = "";
+						var resources = document.querySelectorAll("section [data-state*='resources']");
+						[].forEach.call(resources, function (resource) {
+							linkHTML += "<h2>" + resource.dataset.title + "</h2>";
+							linkHTML += resource.innerHTML.replace(/(<h\d>Resources<\/h\d>)/, "").trim();
+						});
+						var links = document.querySelector(".slide-menu-custom-panel[data-panel='Custom1']");
+						links.innerHTML = "<div style='padding: 1rem 1rem 5rem 1rem;'>" + linkHTML + "</div>";
+					}
+				},
+				chart: {
+					items: [
+						{
+							selector: "#postcss-performance",
+							type: "line",
+							data: {
+								labels: ["PostCSS", "Rework", "libsass", "Less", "Stylus", "Stylecow", "Ruby Sass"],
+								datasets: [
+									{
+										label: "Performance",
+										fillColor: "rgba(220,220,220,0.2)",
+										strokeColor: "rgba(220,220,220,1)",
+										pointColor: "rgba(220,220,220,1)",
+										pointStrokeColor: "#fff",
+										pointHighlightFill: "#fff",
+										pointHighlightStroke: "rgba(220,220,220,1)",
+										data: [40, 75, 76, 147, 166, 258, 1042]
+									}
+								]
+							},
+							options: {
 								// Boolean - If we want to override with a hard coded scale
-						    scaleOverride: true,
-						    // ** Required if scaleOverride is true **
-						    // Number - The number of steps in a hard coded scale
-						    scaleSteps: 11,
-						    // Number - The value jump in the hard coded scale
-						    scaleStepWidth: 100,
-						    // Number - The scale starting value
-						    scaleStartValue: 0,
+								scaleOverride: true,
+								// ** Required if scaleOverride is true **
+								// Number - The number of steps in a hard coded scale
+								scaleSteps: 11,
+								// Number - The value jump in the hard coded scale
+								scaleStepWidth: 100,
+								// Number - The scale starting value
+								scaleStartValue: 0,
 								scaleFontColor: "white",
-			          responsive:true
-			        }
-			      }
-			    ]
-			  }
+								responsive: true
+							}
+						}
+					]
+				}
 			});
-		</script>
-		<script src="js/specificity.js"></script>
-		<script src="js/stickyfill.min.js"></script>
-		<script src="plugin/caniuse/caniuse.min.js"></script>
-		<script src="js/moment.min.js"></script>
-		<script src="js/custom.js"></script>
-		<div class="share-reveal" style="display: block; position: absolute; bottom: 16px; left: 50%; margin-left: -139px; z-index: 20;">
-			<a href="https://twitter.com/elijahmanor" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @elijahmanor</a>
-			<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://elijahmanor.com/talks/css-for-devs" data-text="CSS for Developers" data-via="elijahmanor" data-size="large">Tweet</a>
-			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-		</div>
+	</script>
+	<script src="js/specificity.js"></script>
+	<script src="js/stickyfill.min.js"></script>
+	<script src="plugin/caniuse/caniuse.min.js"></script>
+	<script src="js/moment.min.js"></script>
+	<script src="js/custom.js"></script>
+	<div class="share-reveal" style="display: block; position: absolute; bottom: 16px; left: 50%; margin-left: -139px; z-index: 20;">
+		<a href="https://twitter.com/elijahmanor" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @elijahmanor</a>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://elijahmanor.com/talks/css-for-devs" data-text="CSS for Developers"
+		 data-via="elijahmanor" data-size="large">Tweet</a>
 		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');
+		</script>
+	</div>
+	<script>
+			(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date(); a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 			ga('create', 'UA-62341839-1', 'auto');
 			ga('send', 'pageview');
-		</script>
-		<!-- Clicky -->
-		<script src="//static.getclicky.com/js" type="text/javascript"></script>
-		<script type="text/javascript">try{ clicky.init(116099); }catch(e){}</script>
-		<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/116099ns.gif" /></p></noscript>
-	</body>
+	</script>
+	<!-- Clicky -->
+	<script src="//static.getclicky.com/js" type="text/javascript"></script>
+	<script type="text/javascript">
+			try { clicky.init(116099); } catch (e) { }
+	</script>
+	<noscript>
+		<p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/116099ns.gif" /></p>
+	</noscript>
+</body>
+
 </html>

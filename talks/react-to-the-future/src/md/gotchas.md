@@ -12,7 +12,7 @@
 
 <div class="Split">
   <div class="Split-column">
-    <p>Bad</p>
+    <p>Bad (Not Bad in React v16+)</p>
     <pre class="language-jsx language--clean"><code>
 return (
   &lt;div&gt;Test 1&lt;/div&gt;

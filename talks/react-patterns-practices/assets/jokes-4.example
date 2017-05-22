@@ -1,4 +1,4 @@
-export function renderJoke( joke ) {
+function renderJoke( joke ) {
   return (
     <FlipCard>
       <div>{joke.question}</div>
@@ -7,7 +7,7 @@ export function renderJoke( joke ) {
   );
 }  
   
-export default function Jokes( { jokes } ) {
+function Jokes( { jokes } ) {
   return (
     <div className="Jokes">
       {jokes.map(joke => renderJoke(joke))}
@@ -27,9 +27,6 @@ class App extends React.Component {
   }
   render() {
     const { jokes } = this.state;
-
-  	return (
-      	<Jokes jokes={ jokes } />
-    );    
+  	return <Jokes jokes={ jokes } />;
   }
 }

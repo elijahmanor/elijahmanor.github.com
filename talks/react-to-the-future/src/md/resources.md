@@ -15,6 +15,8 @@
 * [Huge List of React Resources](https://github.com/enaqx/awesome-react)
 * [Performance Tooling](https://facebook.github.io/react/docs/perf.html)
 * [Webpack: The Confusing Parks](https://medium.com/@rajaraodv/webpack-the-confusing-parts-58712f8fcad9#.2catsdhne)
+* [Redux Cartoons](https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6)
+* [How to Use npm scripts As Your Build Tool](https://egghead.io/courses/how-to-use-npm-scripts-as-your-build-tool)
 
 <!--
 # Resources

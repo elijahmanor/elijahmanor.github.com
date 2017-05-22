@@ -29,9 +29,6 @@ class App extends React.Component {
   }
   render() {
     const { jokes } = this.state;
-
-  	return (
-      	<Jokes jokes={ jokes } />
-    );    
+  	return <Jokes jokes={ jokes } />;
   }
 }

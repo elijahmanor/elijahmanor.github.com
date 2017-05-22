@@ -36,7 +36,7 @@
   </div>
 </div>
 
-<small>Additional Learning: [How to Use npm as a Build Tool](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/)</small>
+<small>Free egghead video course: [How to Use npm scripts As Your Build Tool](https://egghead.io/courses/how-to-use-npm-scripts-as-your-build-tool)</small>
 
 ---
 

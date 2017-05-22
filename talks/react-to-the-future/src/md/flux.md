@@ -163,43 +163,34 @@
 
 # What Do I Use?
 
-## Reflux, Lux, and learning Redux (all the rave)
+## Reflux, Lux.js, and Redux
 
 ---
 
-# Reflux
+# Redux
 
 <div class="mermaid">
   graph LR;
 
   classDef action fill:#65B9CA,stroke:#FFFFFF,stroke-width:4px;
-  classDef store fill:#294552,stroke:#FFFFFF,stroke-width:4px;
+  classDef store fill:#2E4551,stroke:#FFFFFF,stroke-width:4px;
   classDef view fill:#5FAF6A,stroke:#FFFFFF,stroke-width:4px;
+  classDef reducers fill:#444242,stroke:#FFFFFF,stroke-width:4px;
 
-  Action(Action)-->Store(Store);
-  Store-->View(View);
-  View-->Action;
+  Action(Action)-->Reducers("Reducer(s)");
+  Reducers-- updates -->Store(Store);
+  Store-- subscribes -->View(View);
+  View-- dispatches -->Action;
 
   class Action action;
+  class Reducers reducers;
   class Store store;
   class View view;
 </div>
 
 ---
 
-# Actions (`SlideActions.js`)
-
-```
-var Reflux = require('reflux');
-
-var SlideActions = Reflux.createActions(
-  ['previous', 'next', 'list', 'offline']
-);
-
-module.exports = SlideActions;
-```
-
----
+# Index (`Index.js`)
 
 <!--
 {
@@ -207,119 +198,276 @@ module.exports = SlideActions;
 }
 -->
 
-# Store (`SlideStore.js`)
-
 ```
-const Reflux = require('reflux');
-const SlideActions = require('../actions/SlideActions');
-const SlideApi = require('../utils/SlideApi');
-const postal = require('postal');
-const channel = postal.channel('slides');
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './store';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Slides from './Slides';
 
-let SETS =
-  { id: 'Introduction', markdown: './md/introduction.md' },
-  { id: 'WhatIsReact',  markdown: './md/what-is-react.md' },
-  // ... more code ...
-  { id: 'Conclusion',   markdown: './md/conclusion.md' }
-];
+const App = () => <Slides />;
 
-const SlideStore = Reflux.createStore({
-  listenables: [SlideActions],
-  init: function() {
-    channel.subscribe('slide.updated', data => {
-      // ... more code ...
-      this.trigger({ slides: this.slides });
-    });
-
-    this.slideApi = new SlideApi(SETS);
-    this.slideApi.enhance();
-  },
-  getInitialState() {
-    return { slides: SETS };
-  },
-  onNext() {},
-  onPrevious() {},
-  onList() {},
-  onOffline() {}
-});
-
-module.exports = SlideStore;
-```
-
----
-
-<!--
-{
-  "className": "Slide--static"
-}
--->
-
-# View (`index.jsx`)
-
-```
-const React = require('react');
-const App = require('./components/App.jsx');
-const SlideManager = require('./components/SlideManager.jsx');
-const SlideList = require('./components/SlideList.jsx');
-const Router = require('react-router');
-const DefaultRoute = Router.DefaultRoute;
-const Route = Router.Route;
-const RouteHandler = Router.RouteHandler;
-
-const routes = (
-  <Route name="app" path="/" handler={App}>
-    <Route name="slide" path="slide/:setIndex/:slideIndex" handler={SlideManager}/>
-    <Route name="list" path="list" handler={SlideList}/>
-    <DefaultRoute handler={SlideManager}/>
-  </Route>
-);
-
-Router.run(routes, (Handler) => {
-  React.render(<Handler />, document.body);
-});
-```
-
----
-
-<!--
-{
-  "className": "Slide--static"
-}
--->
-
-# View (`SlideManager.js`)
-
-```
-const React = require('react');
-const Reflux = require('reflux');
-const SlideStore = require('../stores/SlideStore');
-const Slide = require('./Slide.jsx');
-const SlideControls = require('./SlideControls.jsx');
-const SlideFooter = require('./SlideFooter.jsx');
-
-const SlideManager = React.createClass({
-  contextTypes: {
-    router: React.PropTypes.func
-  },
-  mixins: [Reflux.connect(SlideStore)],
-  componentWillMount() {
-    SlideStore.setRouter(this.context.router);
-  },
-  render() {
-    let { setIndex = 0, slideIndex = 0 } = this.props.params;
-    let slide = SlideStore.gotoSlide(setIndex, slideIndex);
-
-    return (
-      <div className="SlideManager">
-        <Slide slide={slide} />
-        <SlideControls {...this.props.params} />
-        <SlideFooter {...this.props.params} />
+render(
+  <Provider store={store}>
+    <Router>
+      <div>
+        <Route exact path="/" component={App} />
+        <Route path="/:index" component={App} />
       </div>
+    </Router>
+  </Provider>,
+  document.getElementById('root'),
+);
+```
+
+---
+
+<!--
+{
+  "className": "Slide--static"
+}
+-->
+
+# Slides (`Slides.js`)
+
+```
+import React from 'react';
+import Slide from './Slide';
+import { connect } from 'react-redux';
+import { getSlide, getCount } from './reducers';
+import * as actions from './actions';
+import { Redirect, withRouter } from 'react-router';
+
+class Slides extends React.Component {
+  constructor() {
+    super();
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+  }
+  componentWillMount() {
+    this.props.fetchSlides();
+  }
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleKeyDown);
+  }
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeyDown);
+  }
+  handleKeyDown(e) {
+    const { decrement, increment, history } = this.props;
+    if (e.which === 37) {
+      decrement(history);
+    } else if (e.which === 39) {
+      increment(history);
+    }
+  }
+  render() {
+    const { slide = {}, index = 0, count = 0 } = this.props;
+    return (
+      <section>
+        <Slide slide={slide} index={index} count={count} />
+      </section>
     );
   }
-});
+}
 
-module.exports = SlideManager;
+const mapStateToProps = (state, { match }) => {
+  const { index = 0 } = match.params;
+  return {
+    slide: getSlide(state, index),
+    count: getCount(state),
+    index: parseInt(index),
+  };
+};
+
+Slides = withRouter(connect(mapStateToProps, actions)(Slides));
+
+export default Slides;
+```
+
+---
+
+<!--
+{
+  "className": "Slide--static"
+}
+-->
+
+# Slide (`Slide.js`)
+
+```
+import React from 'react';
+
+import './Slide.css';
+
+export default function Slide({ slide, count, index }) {
+  return (
+    slide &&
+    <div className="Slide">
+      <div dangerouslySetInnerHTML={{ __html: slide }} />
+      <footer>{index + 1} of {count}</footer>
+    </div>
+  );
+}
+```
+
+---
+
+<!--
+{
+  "className": "Slide--static"
+}
+-->
+
+# Actions (`actions/index.js`)
+
+```
+import getSlides from '../api/slidesApi';
+
+export const fetchSlides = () => (dispatch, getState) => {
+  dispatch({
+    type: 'FETCH_SLIDES_PENDING',
+  });
+
+  return getSlides().then(
+    (slides) => {
+      dispatch({
+        type: 'FETCH_SLIDES_FULFILLED',
+        response: slides,
+      });
+    },
+    (error) => {
+      dispatch({
+        type: 'FETCH_SLIDES_REJECTED',
+        response: [],
+      });
+    },
+  );
+};
+
+export const decrement = history => (dispatch, getState) => {
+  dispatch({
+    type: 'SLIDE_DECREMENT',
+  });
+  const { slides } = getState();
+  history.push(`/${slides.index}`);
+};
+
+export const increment = history => (dispatch, getState) => {
+  dispatch({
+    type: 'SLIDE_INCREMENT',
+  });
+  const { slides } = getState();
+  history.push(`/${slides.index}`);
+};
+```
+
+---
+
+<!--
+{
+  "className": "Slide--static"
+}
+-->
+
+# Example Markdown (`what-is-react.js`)
+
+```
+export default \`
+# What is React?
+
+It's a library for building dynamic web applications.
+
+---
+
+## Why should you learn React?
+
+1. Declarative & Composable
+2. Virtual DOM
+3. One-Way Data Flow
+\`;
+```
+
+---
+
+<!--
+{
+  "className": "Slide--static"
+}
+-->
+
+# API (`api/slidesApi.js`)
+
+```
+import MarkdownIt from 'markdown-it';
+
+import introduction from '../markdown/introduction.js';
+import whatIsReact from '../markdown/what-is-react.js';
+import conclusion from '../markdown/conclusion.js';
+
+const md = new MarkdownIt();
+
+const SETS = [introduction, whatIsReact, conclusion];
+
+export default function getSlides() {
+  return Promise.resolve(
+    SETS.reduce((memo, markdown) => {
+      const markup = md.render(markdown);
+      return memo.concat(markup.split('<hr>'));
+    }, []),
+  );
+}
+```
+
+---
+
+<!--
+{
+  "className": "Slide--static"
+}
+-->
+
+# Slides Reducer (`slidesReducers.js`)
+
+```
+export default (
+  state = {
+    fetching: false,
+    list: [],
+    index: 0,
+    error: null,
+  },
+  action,
+) => {
+  switch (action.type) {
+    case 'FETCH_SLIDES_PENDING': {
+      return { ...state, fetching: true };
+    }
+    case 'FETCH_SLIDES_REJECTED': {
+      return { ...state, fetching: false, error: action.payload };
+    }
+    case 'FETCH_SLIDES_FULFILLED': {
+      return { ...state, fetching: false, list: action.response };
+    }
+    case 'SLIDE_DECREMENT': {
+      let { index } = state;
+      index = index > 0 ? index - 1 : 0;
+      return { ...state, index };
+    }
+    case 'SLIDE_INCREMENT': {
+      let { index } = state;
+      const length = state.list.length - 1;
+      index = index < length ? index + 1 : length;
+      return { ...state, index };
+    }
+    default: {
+      return state;
+    }
+  }
+};
+
+export const getSlide = (state, index) => state.list[index];
+export const getCount = state => state.list.length;
 ```
 
 <!--

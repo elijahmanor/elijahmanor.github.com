@@ -14,12 +14,22 @@ const Slide = React.createClass({
   componentDidUpdate() { // TODO: Think of a better way?
     window.Prism.highlightAll();
     window.mermaid.init();
+    let metadata = this.props.slide.metadata || {};
 
     let iframe = this.refs.slide.getDOMNode().querySelector('iframe');
     if (iframe) {
       let src = this.props.slide.isOffline ?
         iframe.getAttribute('data-offline') : iframe.getAttribute('data-online');
       iframe.setAttribute('src', src);
+      if ( metadata && metadata.className.includes('Slide--reload') ) {
+        console.log( "attempt to reload iframe" );
+        iframe.contentWindow.location.reload(true);
+        iframe.src = iframe.src;
+      }
+    }
+
+    if ( metadata && metadata.className.includes('Slide--static') ) {
+      document.body.scrollTop = 0;
     }
   },
   render() {
