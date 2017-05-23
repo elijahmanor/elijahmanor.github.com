@@ -260,7 +260,13 @@ pre[data-line] { padding: 1em; }
 .Split .Split-column--90 { flex: 0 1 90%; }
 .Split .Split-column--80 { flex: 0 1 80%; }
 .Split .Split-column--85 { flex: 0 1 85%; }
-
+.Split .Split-box {
+  border: 1px solid #ccc;
+  background-color: #0C1021;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.75);
+  font-weight: bold;
+  /*text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);*/
+}
 
 .Split .Split-column blockquote {
   width: 100%;

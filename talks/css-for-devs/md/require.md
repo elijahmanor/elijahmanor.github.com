@@ -337,6 +337,112 @@ Notes:
 
 ------
 
+## [Styled Components](https://styled-components.com/)
+<!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+
+<div style="width: 40%; margin: auto;">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ viewBox="-100 0 200 260">
+<title>Pendulum</title>
+<defs>
+    <radialGradient id = "light" cx = "50%" cy = "50%" fx = "40%" fy = "35%" r = "65%">
+        <stop stop-color = "rgb(255,255,255)" offset = "0%"/>
+        <stop stop-color = "rgb(190,190,190)" offset = "40%"/>
+        <stop stop-color = "rgb(80,80,80)" offset = "100%"/>
+    </radialGradient>
+</defs>
+  <g>
+      <g transform="rotate(21 0 10)">
+          <line x1="0" x2="0" y1="10" y2="210" style="stroke: white; stroke-width: 1; fill: none;" />
+          <circle cx="0" cy="230" r="20" fill="url(#light)" stroke="none"/>
+      <rect x="-95" y="40" width="85" height="40" rx="15" ry="15" transform="rotate(-21 0 10)" style="fill: #f9f9f9; stroke: #ccc;" />
+      <text x="-80" y="55" style="font-family: Arial; font-size: 8; fill: black;"
+            transform="rotate(-21 0 10)">Require Styles</text>
+      <text x="-75" y="70" style="font-family: Arial; font-size: 8; fill: black;"
+            transform="rotate(-21 0 10)">Extract CSS</text>
+    </g>
+      <g transform="rotate(-21 0 10)">
+          <line x1="0" x2="0" y1="10" y2="210" style="stroke: white; stroke-width: 1; fill: none;" />
+          <circle cx="0" cy="230" r="20" fill="url(#light)" stroke="none"/>
+      <rect x="10" y="40" width="85" height="40" rx="15" ry="15" transform="rotate(21 0 10)" style="fill: #f9f9f9; stroke: #ccc;" />
+      <text x="16" y="55" style="font-family: Arial; font-size: 8; fill: black;"
+        transform="rotate(21 0 10)">Define in JavaScript</text>
+      <text x="22" y="70" style="font-family: Arial; font-size: 8; fill: black;"
+        transform="rotate(21 0 10)">Pure Inline Styles</text>
+    </g>
+    <g>
+          <line x1="0" x2="0" y1="10" y2="210" style="stroke: white; stroke-width: 1; fill: none;" />
+          <circle cx="0" cy="230" r="20" fill="url(#light)" stroke="none"/>
+      <rect x="-50" y="145" width="100" height="55" rx="15" ry="15" style="fill: #49afcd; stroke: #ccc;"/>
+      <text x="-30" y="160" style="font-family: Arial; font-size: 8; fill: black;">Use Components</text>
+      <text x="-25" y="175" style="font-family: Arial; font-size: 8; fill: black;">CSS-like Syntax</text>
+      <text x="-35" y="190" style="font-family: Arial; font-size: 8; fill: black;">React &amp; React Native</text>
+    </g>
+  </g>
+</svg>
+</div>
+
+------
+
+## Styled Components
+<!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+
+<div style="width: 125%; left: 50%; transform: translateX(-50%); position: relative;">
+<textarea data-codemirror data-mode="text/javascript">
+import styled from 'styled-components';
+import Color from 'color';
+
+const Button = styled.button\`
+  min-width: 6em;
+  /&ast; ... more code ... &ast;/
+  background-color: ${p => (p.primary ? '#95c83e' : '#F0F0F0')};
+  color: ${p => (p.primary ? '#FFF' : '#7F7F7F')};
+  border-bottom: ${p => \`0.25em solid ${p.primary ? '#5D7C2D' : '#D7D7D7'}\`};
+  cursor: ${props => (p.disabled ? 'not-allowed' : 'inherit')};
+  opacity: ${props => (p.disabled ? '.5' : '1')};
+  /&ast; ... more code ... &ast;/
+\`;
+
+const darkenColor = color => amount => Color(color).darken(amount).toString();
+const darkenTomato = darkenColor('#FF6347');
+const TomatoButton = styled(Button)\`
+  color: white;
+  background-color: #ff6347;
+  border-bottom: 0.25em solid ${darkenTomato(0.3)};
+\`;
+</textarea>
+</div>
+
+------
+
+## Styled Components
+<!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+
+<textarea data-codemirror data-mode="text/html">
+const App = () => (
+  &lt;main style={{ display: 'flex', flexDirection: 'column' }}&gt;
+    &lt;Button primary&gt;Primary&lt;/Button&gt;
+    &lt;Button&gt;Secondary&lt;/Button&gt;
+    &lt;Button primary disabled&gt;
+      Primary Disabled
+    &lt;/Button&gt;
+    &lt;TomatoButton&gt;Composed&lt;/TomatoButton&gt;
+  &lt;/main>
+);
+
+render(&lt;App />, document.getElementById('root'));
+</textarea>
+
+------
+
+## Styled Components
+<!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa" -->
+
+![](./imgs/styled-components.gif)
+
+------
+
 ## Pure Inline Styles
 <!-- .slide: data-title="Require" data-state="backEndBrian juniorJacob midLevelMelissa" -->
 
@@ -440,5 +546,6 @@ class Button extends React.Component {
 * [Comparison of CSS in JS Libraries for React](https://github.com/FormidableLabs/radium/blob/master/docs/comparison/README.md)
 * [React: CSS in JS techniques comparison](https://github.com/MicheleBertoli/css-in-js)
 * [CSS Modules](http://glenmaddern.com/articles/css-modules)
+* [Styled Components](https://github.com/styled-components/styled-components)
 * [Radium](http://projects.formidablelabs.com/radium/)
 * [Inline Styles: themes, media queries, contexts, & when it's best to use CSS](https://www.youtube.com/watch?v=ERB1TJBn32c) video by Michael Chan

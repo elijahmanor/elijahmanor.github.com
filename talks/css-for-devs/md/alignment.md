@@ -275,6 +275,107 @@ Flexbox Version
 
 ------
 
+## CSS Grid
+<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" data-menu-title="Media Object: Flexbox CSS" -->
+
+<div class="Split">
+  <div class="Split-column Split-column--50">
+    <div class="caniuse" data-feature="css-grid" style="width: auto;"></div>
+  </div>
+  <div class="Split-column Split-column--50" style="zoom: document;">
+    <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Want to learn about CSS Grid? I made a list of the best resources: <a href="https://t.co/epIs2yFL76">https://t.co/epIs2yFL76</a></p>&mdash; Jen Simmons (@jensimmons) <a href="https://twitter.com/jensimmons/status/836336727878950912">February 27, 2017</a></blockquote>
+  </div>
+</div>
+
+------
+
+## CSS Grid Example
+<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" data-menu-title="Media Object: Flexbox CSS" -->
+
+<div class="Split" style="position: relative;">
+  <div class="Split-column Split-column--45">
+    <textarea data-codemirror data-mode="text/html" data-line-numbers="false">
+<div class="wrapper">
+  <div class="one">1</div>
+  <div class="two">2</div>
+  <div class="three">3</div>
+  <div class="four">4</div>
+  <div class="five">5</div>
+  <div class="six">6</div>
+</div>
+</textarea>
+    <small>Source: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout">MDN: CSS Grid Layout</a></small>
+  </div>
+  <div class="Split-column Split-column--55">
+    <textarea data-codemirror data-mode="text/css" data-line-numbers="false">
+.wrapper {
+  display: grid;
+  grid-template-columns:
+    repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows:
+    minmax(100px, auto);
+}
+.one {
+  grid-column: 1 / 3;
+  grid-row: 1;
+}
+.two { 
+  grid-column: 2 / 4;
+  grid-row: 1 / 3;
+}
+.three {
+  grid-row: 2 / 5;
+  grid-column: 1;
+}
+.four {
+  grid-column: 3;
+  grid-row: 3;
+}
+.five {
+  grid-column: 2;
+  grid-row: 4;
+}
+.six {
+  grid-column: 3;
+  grid-row: 4;
+}
+</textarea>
+  </div>
+  <img src="../imgs/css-grid-layout.png" class="fragment" style="position: absolute; top: 0; left: 0; z-index: 2; width: 600px; left: 50%; transform: translateX(-50%);" />
+</div>
+
+------
+
+## [CSSGridGarden.com](https://cssgridgarden.com/)
+<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" data-menu-title="Media Object: Flexbox CSS" -->
+
+<a href="https://cssgridgarden.com/" data-preview-link><img src="../imgs/grid-garden.gif" /></a>
+
+------
+
+## Awesome Firefox Dev Tools
+<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" data-menu-title="Media Object: Flexbox CSS" -->
+
+![](../imgs/firefox-css-grid-tool.gif)
+
+------
+
+## Do I use Flexbox or Grids?!?!
+<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" data-menu-title="Media Object: Flexbox CSS" -->
+
+![](../imgs/confused.gif)
+
+------
+
+## Do I use Flexbox for Grids?
+<!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa" data-menu-title="Media Object: Flexbox CSS" -->
+
+> Flexbox is for one-dimensional layouts - anything that needs to be laid out in a straight line (or in a broken line... 
+> Grid is for two-dimensional layouts. It can be used as a low-powered flexbox substitute... but that’s not using its full power. --[Tab Atkins](http://lists.w3.org/Archives/Public/www-style/2013May/0114.html) 
+
+------
+
 ## Resources
 <!-- .slide: data-title="Alignment" data-state="backEndBrian juniorJacob midLevelMelissa resources" -->
 
@@ -287,6 +388,7 @@ Flexbox Version
 * [Solved by Flexbox](http://philipwalton.github.io/solved-by-flexbox/)
 * [Flexplorer](http://bennettfeely.com/flexplorer/)
 * [Flexy Boxes](http://the-echoplex.net/flexyboxes/)
+* [Grid By Example](http://gridbyexample.com/) by [Rachel Andrew](https://twitter.com/rachelandrew)
 
 Notes:
 

@@ -212,7 +212,6 @@ h1 {
   </div>
 </div>
 
-
 ------
 
 ## Resources

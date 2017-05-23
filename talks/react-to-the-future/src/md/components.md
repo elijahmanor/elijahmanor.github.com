@@ -714,7 +714,7 @@ class HelloWorld extends React.Component {
 </code></pre>
   </div>
   <div class="Split-column Split-column--30">
-    <p>3. Use the experimental (stage 2) Property Initializer Syntax</p>
+    <p>3. Use the experimental (stage 2) [Property Initializer Syntax](https://babeljs.io/docs/plugins/transform-class-properties/)</p>
     <p>9. Reference the prebinded event handler</p>
   </div>
 </div>
