@@ -18,16 +18,20 @@
 
 # React Render Component To String
 
+<pre class="language-jsx language--clean language--small"><code>
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+
+renderToString(&lt;HelloWorld name="JavaScript" /&gt;);
+</code></pre>
 <br />
-<pre class="language-jsx language--clean"><code>
-React.renderComponentToString(&lt;HelloWorld name="JavaScript" /&gt;);</code></pre>
-<br />
-<pre class="language-markup language--clean"><code>
-&lt;div data-reactid=".1" data-react-checksum="582455604"&gt;
-  &lt;span data-reactid=".1.0"&gt;Hello &lt;/span&gt;
-  &lt;span data-reactid=".1.1"&gt;JavaScript&lt;/span&gt;
-  &lt;span data-reactid=".1.2"&gt;!&lt;/span&gt;
-&lt;/div&gt;</code></pre>
+<pre class="language-markup language--clean language--small"><code>
+&lt;h1 data-reactroot="" data-reactid="1" data-react-checksum="764753906"&gt;
+  &lt;!-- react-text: 2 --&gt;Hello, &lt;!-- /react-text --&gt;
+  &lt;!-- react-text: 3 --&gt;JavaScript&lt;!-- /react-text --&gt;
+  &lt;!-- react-text: 4 --&gt;!&lt;!-- /react-text --&gt;
+&lt;/h1&gt;
+</code></pre>
 
 ---
 

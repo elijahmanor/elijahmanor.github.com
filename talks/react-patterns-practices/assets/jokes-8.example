@@ -1,12 +1,15 @@
-function Jokes({ jokes, index }) {
-  const joke = jokes.length ? jokes[index] : null;
+function Jokes({jokes, index}) {
+  const joke = jokes.length ?
+    jokes[index] : null;
 
   return (
     joke &&
     <FlipCard>
       <div>
         <div>{joke.question}</div>
-        <footer>{index + 1} of {jokes.length}</footer>
+        <footer>
+          {index + 1} of {jokes.length}
+        </footer>
       </div>
       <div>{joke.answer}</div>
     </FlipCard>
@@ -14,42 +17,41 @@ function Jokes({ jokes, index }) {
 }
 
 class JokesContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { jokes: [], index: 0 };
-    this.keyDownHandler = this.handleKeyDown.bind(this);
-  }
+  state = {jokes: [], index: 0};
   componentDidMount() {
-    document.addEventListener('keydown', this.keyDownHandler;
-
+    document.addEventListener(
+      'keydown', this.handleKeyDown
+    );
     fetch('https://rawgit.com/.../jokes.json')
       .then(response => response.json())
-      .then((jokes) => this.setState({ jokes }));
+      .then((jokes) =>
+        this.setState({jokes}));
   }
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.keyDownHandler);
+    document.removeEventListener(
+      'keydown', this.handleKeyDown
+    );
   }
-  handleKeyDown(e) {
+  handleKeyDown: (e) => {
     if (e.which === 38) {
       this.decrement();
     } else if (e.which === 40) {
       this.increment();
     }
   }
-  increment() {
-    const length = this.state.jokes.length - 1;
-    this.setState(({ index }) => ({
-      index: index < length ? index + 1 : length,
-    }));
-  }
   decrement() {
-    this.setState(({ index }) => ({
+    this.setState(({index}) => ({
       index: index > 0 ? index - 1 : 0,
     }));
   }
+  increment() {
+    let {jokes, index} = this.state;
+    const length = jokes.length - 1;
+    index = index < length ? ++index : length;
+    this.setState({index});
+  }
   render() {
-    const { jokes, index } = this.state;
-    return <Jokes jokes={jokes} index={index} />;
+    return <Jokes {...this.state} />;
   }
 }
 

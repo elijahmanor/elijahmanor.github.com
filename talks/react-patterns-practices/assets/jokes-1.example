@@ -1,12 +1,12 @@
 class Jokes extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { jokes: [] };
+    this.state = {jokes: []};
   }
   componentDidMount() {
     fetch("https://rawgit.com/.../jokes.json")
       .then(response => response.json())
-      .then(jokes => this.setState({ jokes }));
+      .then(jokes => this.setState({jokes}));
   }
   render() {
     return (

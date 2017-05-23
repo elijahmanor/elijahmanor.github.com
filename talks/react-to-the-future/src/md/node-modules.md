@@ -25,6 +25,7 @@
        <li>[lodash-node]()</li>
        <li>[machina]()</li>
        <li>[mailcheck]()</li>
+       <li>[lux.js]()</li>
     </ul>
   </div>
   <div class="Split-column">
@@ -36,11 +37,12 @@
        <li>[react-onclickoutside]()</li>
        <li>[react-router](https://github.com/rackt/react-router)</li>
        <li>[react-sticky]()</li>
-       <li>[reflux]()</li>
+       <li>[redux]()</li>
        <li>[reqwest](https://github.com/ded/reqwest)</li>
        <li>[sass-loader]()</li>
        <li>[scut]()</li>
        <li>[webpack]()</li>
+       <li>[react-helmet]()</li>
      </ul>
   </div>
 </div>

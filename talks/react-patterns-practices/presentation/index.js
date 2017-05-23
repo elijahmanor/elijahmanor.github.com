@@ -39,7 +39,8 @@ const images = {
   kat: require("../assets/kat.png"),
   logo: require("../assets/formidable-logo.svg"),
   markdown: require("../assets/markdown.png"),
-  react: require("../assets/react.jpg")
+  react: require("../assets/react.jpg"),
+  dealWithIt: require("../assets/deal-with-it.gif")
 };
 
 preloader(images);
@@ -70,7 +71,12 @@ import patternLibrary from "../slides/PatternLibrary.js";
 import conclusion from "../slides/Conclusion.js";
 
 export default class Presentation extends React.Component {
+  constructor(props) {
+    super(props);
+    localStorage.clear();
+  }
   render() {
+    console.log({ props: this.props, state: this.state });
     return (
       <Deck transition={["slide"]} transitionDuration={500} theme={theme}>
         {introduction(theme, images)}

@@ -5,7 +5,7 @@
 .JokesKeyboard .ReactFlipCard {
   font-family: "Comic Sans MS", "Courier New", sans-serif;
   margin: 25px;
-  font-size: 2.5rem;
+  font-size: 2.75vw; /* 1.75rem; */
   color: #222;
   font-family: Verdana, Geneva, sans-serif;
 }
@@ -13,8 +13,8 @@
 .JokesKeyboard .ReactFlipCard,
 .JokesKeyboard .ReactFlipCard__Front,
 .JokesKeyboard .ReactFlipCard__Back {
-  width: 50vw;
-  height: 50vh;
+  width: 40vw;
+  height: 40vh;
 }
 
 .JokesKeyboard .ReactFlipCard__Front,
@@ -36,7 +36,7 @@
   position: absolute;
   bottom: 5px;
   right: 5px;
-  font-size: 1.5rem;
+  font-size: 1.75vw; /* 1.25rem; */
   color: #777;
 }
 

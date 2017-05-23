@@ -1,4 +1,4 @@
-function renderJoke( joke ) {
+function renderJoke(joke) {
   return (
     <FlipCard>
       <div>{joke.question}</div>
@@ -7,7 +7,7 @@ function renderJoke( joke ) {
   );
 }  
   
-function Jokes( { jokes } ) {
+function Jokes({jokes}) {
   return (
     <div className="Jokes">
       {jokes.map(joke => renderJoke(joke))}
@@ -17,18 +17,17 @@ function Jokes( { jokes } ) {
 
 const fetchJokes = WrappedComponent =>
   class extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = { jokes: [] };
-    }
+    state = {jokes: []};
     componentDidMount() {
-      fetch('https://rawgit.com/.../jokes.json')
+      fetch('https://rawgit.../jokes.json')
         .then(response => response.json())
-        .then((jokes) => this.setState({ jokes }));
+        .then(jokes =>
+          this.setState({jokes})
+        );
     }
     render() {
-      const { jokes } = this.state;
-      return <WrappedComponent {...this.props} {...this.state} />;
+      return <WrappedComponent
+        {...this.props} {...this.state} />;
     }
   };
 

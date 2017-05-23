@@ -8,10 +8,10 @@ class Jokes extends React.Component {
     );
   }
   render() {
-    const { jokes } = this.props;
+    const {jokes} = this.props;
     return (
       <div className="Jokes">
-        {jokes.map(joke => this.renderJoke(joke))}
+        {jokes.map(j => this.renderJoke(j))}
       </div>
     );
   }
@@ -28,7 +28,7 @@ class App extends React.Component {
       .then(jokes => this.setState({ jokes }));
   }
   render() {
-    const { jokes } = this.state;
-  	return <Jokes jokes={ jokes } />;
+    const {jokes} = this.state;
+  	return <Jokes jokes={jokes} />;
   }
 }

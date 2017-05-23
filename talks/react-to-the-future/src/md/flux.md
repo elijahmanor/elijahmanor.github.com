@@ -190,6 +190,13 @@
 
 ---
 
+[Redux Dev Tools](https://github.com/gaearon/redux-devtools)
+
+
+<img src="../img/redux-devtools.gif" style="height: 600px;" />
+
+---
+
 # Index (`Index.js`)
 
 <!--

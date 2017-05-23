@@ -1,7 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
 import JokesContainer from './JokesContainer';
-import { whyDidYouUpdate } from 'why-did-you-update';
+import { whyDidYouUpdate }
+  from 'why-did-you-update';
 
 whyDidYouUpdate(React);
 
@@ -11,4 +12,6 @@ class App extends React.Component {
   }
 }
 
-render(<App />, document.getElementById('root'));
+render(
+  <App />, document.getElementById('root')
+);

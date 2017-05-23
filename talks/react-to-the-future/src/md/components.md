@@ -52,7 +52,17 @@ Hello World!
 
 # Okay, Okay
 
-> "Talk is cheap. Show me the code." --[Linus Torvalds](http://en.wikiquote.org/wiki/Linus_Torvalds#2000-04)
+<div class="Split">
+  <div class="Split-column Split-column--50">
+    <blockquote>
+      <p>"Talk is cheap. Show me the code."</p>
+      --<a href="http://en.wikiquote.org/wiki/Linus_Torvalds#2000-04">Linus Torvalds</a>
+    </blockquote>
+  </div>
+  <div class="Split-column Split-column--50">
+![](../img/show-me-the-code-now.gif)
+  </div>
+</div>
 
 ---
 
@@ -202,17 +212,33 @@ ReactDOM.render(
 
 # Markup in my JavaScript... WHAT!?!
 
-[![](./img/iamdeveloper-jsx.png)](https://twitter.com/iamdevloper/status/598435575662813184)
+<div class="Split">
+  <div class="Split-column Split-column--50">
+    [![](./img/iamdeveloper-jsx.png)](https://twitter.com/iamdevloper/status/598435575662813184)
+  </div>
+  <div class="Split-column Split-column--50">
+    <img src="./img/oh-no-yes.gif" style="min-width: 100%;" />
+  </div>
+</div>
 
 ---
 
 # But Seriously
 
-> React component is "...a highly cohesive building block for UIs loosely coupled with other components." --[Pete Hunt](http://www.slideshare.net/floydophone/react-preso-v2)
-
-* Templates separate technologies, not concerns
-* Allows you to focus on building components, not templates
-* Combining Markup and JavaScript reduces context switching
+<div class="Split">
+  <div class="Split-column Split-column--55">
+    <blockquote>
+      React component is "...a highly cohesive building block for UIs loosely coupled with other components."
+      --<a href="http://www.slideshare.net/floydophone/react-preso-v2">Pete Hunt</a>
+    </blockquote>
+  </div>
+  <div class="Split-column Split-column--45">
+    <ul>
+    <li>Templates separate technologies, not concerns</li>
+    <li>Allows you to focus on building components, not templates</li>
+    <li>Combining Markup and JavaScript reduces context switching</li>
+  </div>
+</div>
 
 ---
 
@@ -254,7 +280,7 @@ const HelloWorld = (props) => {
   return &lt;div&gt;Hello {props.name}!&lt;/div&gt;;
 };
 HelloWorld.propTypes = {
-  name: React.PropTypes.string.isRequired
+  name: PropTypes.string.isRequired
 };
 
 ReactDOM.render(
@@ -280,7 +306,7 @@ const HelloWorld = (props) => {
   return &lt;div&gt;Hello {props.name}!&lt;/div&gt;;
 };
 HelloWorld.propTypes = {
-  name: React.PropTypes.string.isRequired
+  name: PropTypes.string.isRequired
 };
 
 ReactDOM.render(
@@ -306,7 +332,7 @@ const HelloWorld = ({ name }) => {
   return &lt;div&gt;Hello {name}!&lt;/div&gt;;
 };
 HelloWorld.propTypes = {
-  name: React.PropTypes.string.isRequired
+  name: PropTypes.string.isRequired
 };
 
 ReactDOM.render(
@@ -335,7 +361,7 @@ class HelloWorld extends React.Component {
   }
 };
 HelloWorld.propTypes = {
-  name: React.PropTypes.string.isRequired
+  name: PropTypes.string.isRequired
 };
 
 ReactDOM.render(
@@ -353,11 +379,18 @@ ReactDOM.render(
 
 ---
 
+<!--
+{
+  "className": "Slide--static"
+}
+-->
+
 # Prop Types
 
 <div class="Split">
   <div class="Split-column Split-column--65">
-    <pre data-line="8-10" class="language-jsx language--clean language--small"><code>
+    <pre data-line="1,9-11" class="language-jsx language--clean language--small"><code>
+import PropTypes from "prop-types";
 class HelloWorld extends React.Component {
   render() {
     return (
@@ -366,7 +399,7 @@ class HelloWorld extends React.Component {
   }
 };
 HelloWorld.propTypes = {
-  name: React.PropTypes.string.isRequired
+  name: PropTypes.string.isRequired
 };
 
 ReactDOM.render(
@@ -376,15 +409,12 @@ ReactDOM.render(
 </code></pre>
   </div>
   <div class="Split-column Split-column--35">
+    <p>1. In React 15.5+, import `prop-types` instead of `React.PropTypes` (migration [codemod](https://github.com/reactjs/react-codemod#react-proptypes-to-prop-types))</p>
     <p>8-10. Check the types of the `props` during development with `propTypes`.</p>
     <pre class="language-jsx language--clean language--small"><code>
-array, bool, func, number, object,
-string, node, element, any,
-instanceOf(Message),
-oneOf(['News', 'Photos']),
-oneOfType([]), arrayOf(number),
-objectOf(number), shape({}),
-customProp: function(props, name, _) {}</code></pre>
+array, bool, func, number,
+object, string, node,
+element, etc...</code></pre>
   </div>
 </div>
 
@@ -1207,7 +1237,14 @@ class SpeakerList extends React.Component {
 
 # It's Just JavaScript
 
-[![](./img/ryanflorence-javascript.png)](https://twitter.com/ryanflorence/status/577685415919898625)
+<div class="Split">
+  <div class="Split-column Split-column--50">
+    [![](./img/ryanflorence-javascript.png)](https://twitter.com/ryanflorence/status/577685415919898625)
+  </div>
+  <div class="Split-column Split-column--50">
+    <img src="./img/fast-typing.gif" style="width: 500px;" />
+  </div>
+</div>
 
 ---
 

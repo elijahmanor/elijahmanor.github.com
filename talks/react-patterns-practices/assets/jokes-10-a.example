@@ -1,5 +1,5 @@
 class Jokes extends React.Component {
-  shouldComponentUpdate(nextProps, nextState) {
+  shouldComponentUpdate(nextProps) {
     return (
       nextProps.index !== this.props.index ||
       nextProps.jokes !== this.props.jokes
@@ -28,7 +28,7 @@ class JokesContainer extends React.Component {
     this.state = { jokes: [], index: 0 };
     this.keyDownHandler = this.handleKeyDown.bind(this);
   }
-  shouldComponentUpdate(nextProps, nextState) {
+  shouldComponentUpdate(_, nextState) {
     return (
       nextState.index !== this.state.index ||
       nextState.jokes !== this.state.jokes

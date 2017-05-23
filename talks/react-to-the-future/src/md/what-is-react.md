@@ -148,6 +148,14 @@ var NoteBox = React.createClass({
 * Learning React? **Easy**
 * Learning the Rest? **Intermediate**
 
+---
+
+# Getting Started
+
+Once you know the basics (we'll cover those in this talk), then you can get started building locally with the [create-react-app](https://github.com/facebookincubator/create-react-app) command-line utility.
+
+Or, if you just want to tinker online then [codesandbox.io](https://codesandbox.io) is a great option!
+
 <!--
 
 ---
