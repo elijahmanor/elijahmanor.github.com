@@ -1431,7 +1431,7 @@
   - day: 20
     month: 'Aug'
     year: 2016
-  date: '2016-08-18'
+  date: '2016-08-16'
   days: '18-20'
   name: 'Music City Code'
   type: 'conference'
@@ -1461,5 +1461,33 @@
   sessions:
   - name: 'Framework-Independent JavaScript Components'
     slides: '/talks/plain-js-comps'
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 21
+    month: 'May'
+    year: 2016
+  - day: 24
+    month: 'May'
+    year: 2017
+  date: '2017-05-21'
+  days: '21-24'
+  name: 'AngleBrackets'
+  type: 'conference'
+  url: 'https://anglebrackets.org/'
+  location: ''
+  employer: 'leankit'
+  sessions:
+  - name: 'An Introduction to React'
+    slides: '/talks/react-to-the-future/dist'
+    video: ''
+    feedback: ''
+  - name: 'Beyond the Basics with React'
+    slides: '/talks/react-patterns-practices'
+    video: ''
+    feedback: ''
+  - name: 'CSS for Developers'
+    slides: '/talks/css-for-devs'
     video: ''
     feedback: ''
