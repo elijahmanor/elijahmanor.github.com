@@ -1,0 +1,43 @@
+function renderJoke(joke) {
+  return (
+    <FlipCard>
+      <div>{joke.question}</div>
+      <div>{joke.answer}</div>
+    </FlipCard>
+  );
+}  
+  
+function Jokes({jokes}) {
+  return (
+    <div className="Jokes">
+      {jokes.map(joke => renderJoke(joke))}
+    </div>
+  );
+}
+
+const fetchResource = get =>
+  WrappedComponent =>
+    class extends React.Component {
+      state = {jokes: []};
+      componentDidMount() {
+        get(this.props)
+          .then(jokes =>
+            this.setState({jokes}));
+      }
+      render() {
+        return <WrappedComponent
+          {...this.props} {...this.state} />;
+      }
+    };
+
+const fetchJokes = fetchResource(props =>
+  fetch(
+    '.../kevinchandler/.../CatJokes.json',
+  )
+    .then(response => response.text())
+    .then(response => eval(response)),
+);
+
+const JokesContainer = fetchJokes(Jokes);
+
+const App = () => <JokesContainer />;
