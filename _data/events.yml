@@ -1491,3 +1491,47 @@
     slides: '/talks/css-for-devs'
     video: ''
     feedback: ''
+
+- dates:
+  - day: 1
+    month: 'Jun'
+    year: 2017
+  - day: 3
+    month: 'Jun'
+    year: 2017
+  date: '2017-06-1'
+  days: '01-03'
+  name: 'Music City Code'
+  type: 'conference'
+  url: 'http://www.musiccitycode.com'
+  location: ''
+  employer: 'leankit'
+  sessions:
+  - name: 'Beyond the Basics with React'
+    slides: '/talks/react-patterns-practices'
+    video: ''
+    feedback: ''
+  - name: 'CSS for Developers'
+    slides: '/talks/css-for-devs'
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 20
+    month: 'Jun'
+    year: 2017
+  - day: 22
+    month: 'Jun'
+    year: 2017
+  date: '2017-06-20'
+  days: '20-22'
+  name: 'FluentConf'
+  type: 'conference'
+  url: 'https://conferences.oreilly.com/fluent/fl-ca'
+  location: 'San Jose, CA'
+  employer: 'leankit'
+  sessions:
+  - name: 'Using npm scripts as your build tool'
+    slides: ''
+    video: ''
+    feedback: ''
