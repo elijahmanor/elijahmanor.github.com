@@ -4,13 +4,13 @@
 }
 -->
 
-# Questions?
+# Thank You for Your Time
 
 <pre style="font-size: 1.75em;">
-<a href="http://elijahmanor.com">http://elijahmanor.com</a>
-<a href="http://twitter.com/elijahmanor" style="margin-left: 1.3em;">@elijahmanor</a>
+<a href="http://twitter.com/elijahmanor">@elijahmanor</a>
+<a href="http://elijahmanor.com" style="margin-left: 3em;">elijahmanor.com</a>
 
-<a href="http://elijahmanor.com/talks/react-to-the-future" style="margin-left: 2em;">http://bit.ly/react-to-the-future</a>
+<a href="http://elijahmanor.com/talks/react-to-the-future" style="margin-left: 2em;">bit.ly/react-future</a>
 </pre>
 
 <!--
