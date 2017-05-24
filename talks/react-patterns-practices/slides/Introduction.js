@@ -52,6 +52,26 @@ export default (theme, images) => [
       </Fill>
     </Layout>
   </Slide>,
+  <Slide
+    id="navigation"
+    transition={["slide"]}
+    bgColor="black"
+    notes="You can even put notes on your slide. How awesome is that?"
+  >
+    <Heading textColor="quartenary" caps fit>Navigation</Heading>
+    <Heading textAlign="left" size={6} caps textColor="tertiary" width="50%">
+      ➡️ to go to the next slide
+    </Heading>
+    <Heading textAlign="left" size={6} caps textColor="tertiary" width="50%">
+      ⬅️ to go to the previous slide
+    </Heading>
+    <Heading textAlign="left" size={6} caps textColor="tertiary" width="50%">
+      ⬇️ to go down in a code slide
+    </Heading>
+    <Heading textAlign="left" size={6} caps textColor="tertiary" width="50%">
+      ⬆️ to go down in a code slide
+    </Heading>
+  </Slide>,
   // <Slide transition={["fade"]} bgColor="secondary" textColor="quartenary">
   //   <Heading size={2} caps textColor="primary">
   //     Agenda
