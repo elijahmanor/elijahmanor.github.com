@@ -531,6 +531,16 @@ export default (theme, images) => [
       Redux
     </Heading>
   </Slide>,
+  <Slide
+    transition={["slide"]}
+    bgColor="black"
+    notes="You can even put notes on your slide. How awesome is that?"
+  >
+    <Heading size={6} caps textColor="quartenary" margin={10}>
+      Redux Flow
+    </Heading>
+    <Image src={images.reduxFlow} height="500px" />
+  </Slide>,
   <CodeSlide
     transition={[]}
     lang="js"

@@ -50,7 +50,8 @@ const images = {
   butWillItBlend: require("../assets/but-will-it-blend.gif"),
   printWasted: require("../assets/print-wasted.png"),
   whyDidYouUpdate: require("../assets/why-did-you-update.gif"),
-  reduxDevTools: require("../assets/redux-devtools.gif")
+  reduxDevTools: require("../assets/redux-devtools.gif"),
+  reduxFlow: require("../assets/ReduxFlow.png")
 };
 
 preloader(images);
