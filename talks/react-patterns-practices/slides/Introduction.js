@@ -69,7 +69,7 @@ export default (theme, images) => [
       ⬇️ to go down in a code slide
     </Heading>
     <Heading textAlign="left" size={6} caps textColor="tertiary" width="50%">
-      ⬆️ to go down in a code slide
+      ⬆️ to go up in a code slide
     </Heading>
   </Slide>,
   // <Slide transition={["fade"]} bgColor="secondary" textColor="quartenary">
