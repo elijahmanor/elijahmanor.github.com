@@ -13,23 +13,33 @@ export default (
       break;
     }
     case 'FETCH_JOKES_REJECTED': {
-      return { ...state, fetching: false, error: action.payload };
+      return {
+        ...state,
+        fetching: false,
+        error: action.payload
+      };
       break;
     }
     case 'FETCH_JOKES_FULFILLED': {
-      return { ...state, fetching: false, list: action.response };
+      return {
+        ...state,
+        fetching: false,
+        list: action.response
+      };
       break;
     }
     case 'JOKE_DECREMENT': {
       const currentIndex = state.index;
-      const newIndex = state.index > 0 ? state.index - 1 : 0;
+      const newIndex = state.index > 0 ?
+        state.index - 1 : 0;
       return { ...state, index: newIndex };
       break;
     }
     case 'JOKE_INCREMENT': {
       console.log('JOKE_INCEMENT', state);
       const length = state.list.length - 1;
-      const newIndex = state.index < length ? state.index + 1 : length;
+      const newIndex = state.index < length ?
+        state.index + 1 : length;
       return { ...state, index: newIndex };
       break;
     }

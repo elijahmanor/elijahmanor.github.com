@@ -47,7 +47,10 @@ const images = {
   egghead: require("../assets/logo-egghead.png"),
   leankit: require("../assets/logo-leankit.png"),
   mvp: require("../assets/logo-mvp.png"),
-  butWillItBlend: require("../assets/but-will-it-blend.gif")
+  butWillItBlend: require("../assets/but-will-it-blend.gif"),
+  printWasted: require("../assets/print-wasted.png"),
+  whyDidYouUpdate: require("../assets/why-did-you-update.gif"),
+  reduxDevTools: require("../assets/redux-devtools.gif")
 };
 
 preloader(images);
@@ -72,7 +75,7 @@ import FlipCard from "react-flipcard";
 import Jokes from "../assets/Jokes.js";
 import JokesKeyboard from "../assets/JokesKeyboard.js";
 import JokesAddBroken from "../assets/JokesAddBroken.js";
-import slidesMarkdown from "raw-loader!../assets/markdown.md";
+// import slidesMarkdown from "raw-loader!../assets/markdown.md";
 import introduction from "../slides/Introduction.js";
 import refactoring from "../slides/Refactoring.js";
 import unitTesting from "../slides/UnitTesting.js";

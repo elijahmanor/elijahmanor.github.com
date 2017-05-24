@@ -18,7 +18,7 @@ import {
   Appear
 } from "spectacle";
 import CodeSlide from "spectacle-code-slide";
-import slidesMarkdown from "raw-loader!../assets/markdown.md";
+// import slidesMarkdown from "raw-loader!../assets/markdown.md";
 import Tweet from "../assets/Tweet.js";
 
 export default (theme, images) => [

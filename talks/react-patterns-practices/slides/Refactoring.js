@@ -1,6 +1,20 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import { BlockQuote, Cite, Heading, Quote, Slide, Link, Image } from "spectacle";
+import {
+  BlockQuote,
+  Cite,
+  Heading,
+  Quote,
+  Slide,
+  Link,
+  Image,
+  Layout,
+  Fill,
+  Text,
+  Appear,
+  List,
+  ListItem
+} from "spectacle";
 import CodeSlide from "spectacle-code-slide";
 import Jokes from "../assets/Jokes.js";
 import CatJokes from "../assets/CatJokes.js";
@@ -56,8 +70,35 @@ export default (theme, images) => [
       { loc: [14, 20], note: "return a FlipCard with joke content" }
     ]}
   />,
-  // TODO: That is nice... but props and state are combined
-  // Container Components and Presentational Components, a.k.a. "smart" and "dumb"
+  <Slide transition={["zoom", "fade"]} bgColor="secondary">
+    <Heading caps fit textColor="quartenary">refactor alert</Heading>
+    <Text textColor="primary" fit>The component is doing too many things!</Text>
+  </Slide>,
+  <Slide transition={["zoom", "fade"]} bgColor="secondary" size={6} textColor="quartenary">
+    <Heading caps fit textColor="tertiary">Terminology</Heading>
+    <Layout>
+      <Fill>
+        <Heading size={6} caps textColor="secondary" bgColor="primary" margin={10} width="50%">
+          Presentational
+        </Heading>
+        <List>
+          <Appear><ListItem textSize="30px">How Things Look</ListItem></Appear>
+          <Appear><ListItem textSize="30px">Property Driven</ListItem></Appear>
+          <Appear><ListItem textSize="30px">Functional Components</ListItem></Appear>
+        </List>
+      </Fill>
+      <Fill>
+        <Heading size={6} caps textColor="secondary" bgColor="primary" margin={10} width="50%">
+          Container
+        </Heading>
+        <List>
+          <Appear><ListItem textSize="30px">How Things Work</ListItem></Appear>
+          <Appear><ListItem textSize="30px">Stateful Driven</ListItem></Appear>
+          <Appear><ListItem textSize="30px">Call Flux Actions</ListItem></Appear>
+        </List>
+      </Fill>
+    </Layout>
+  </Slide>,
   <CodeSlide
     transition={[]}
     lang="js"
@@ -94,7 +135,7 @@ export default (theme, images) => [
       { loc: [9, 16], note: "Use Jokes function instead of a Class" },
       {
         loc: [9, 10],
-        note: "You can destrucure the `jokes` property` off of passed props parameter"
+        note: "You can destrucure the `jokes` property off of passed props parameter"
       },
       { loc: [0, 8], note: "renderJoke becomes a simple function as well" }
     ]}
@@ -281,7 +322,29 @@ export default (theme, images) => [
       }
     ]}
   />,
-  // NOTE: Talk about performance...
+  <Slide transition={["zoom", "fade"]} bgColor="secondary" size={6} textColor="quartenary">
+    <Heading caps fit textColor="tertiary">Performance</Heading>
+    <Layout>
+      <Fill>
+        <Heading size={6} caps textColor="secondary" bgColor="primary" margin={10}>
+          Identify
+        </Heading>
+      </Fill>
+      <Fill>
+        <Heading size={6} caps textColor="secondary" bgColor="primary" margin={10}>
+          Isolate
+        </Heading>
+      </Fill>
+      <Fill>
+        <Heading size={6} caps textColor="secondary" bgColor="primary" margin={10}>
+          Resolve
+        </Heading>
+      </Fill>
+    </Layout>
+    <Text fit margin="20px 0 0 0" textColor="quartenary">
+      VirtualDOM is fast, but sometimes React needs our help.
+    </Text>
+  </Slide>,
   <CodeSlide
     transition={[]}
     lang="js"
@@ -308,7 +371,16 @@ export default (theme, images) => [
       }
     ]}
   />,
-  // Image or Gif of using Perf.start, stop, printWasted
+  <Slide
+    transition={["slide"]}
+    bgColor="black"
+    notes="You can even put notes on your slide. How awesome is that?"
+  >
+    <Heading size={6} caps textColor="quartenary" margin={10}>
+      Perf.printWasted
+    </Heading>
+    <Image src={images.printWasted} height="650px" />
+  </Slide>,
   <CodeSlide
     transition={[]}
     lang="js"
@@ -327,7 +399,16 @@ export default (theme, images) => [
       }
     ]}
   />,
-  // TODO: Add image or gif of using why-did-you-update
+  <Slide
+    transition={["slide"]}
+    bgColor="black"
+    notes="You can even put notes on your slide. How awesome is that?"
+  >
+    <Heading size={6} caps textColor="quartenary" margin={10}>
+      why-did-you-update
+    </Heading>
+    <Image src={images.whyDidYouUpdate} height="650px" />
+  </Slide>,
   <CodeSlide
     transition={[]}
     lang="js"
@@ -408,7 +489,6 @@ export default (theme, images) => [
       Immutability
     </Heading>
   </Slide>,
-  // https://egghead.io/lessons/javascript-immutable-js-introduction-easing-the-pains-of-mutability
   <Slide transition={["fade"]} bgColor="black">
     <BlockQuote>
       <Quote>
@@ -456,10 +536,15 @@ export default (theme, images) => [
     lang="js"
     code={require("raw-loader!../assets/jokes-11-redux-index.example")}
     ranges={[
-      { loc: [0, 270], title: "" },
-      { loc: [95, 101], note: "" },
-      { loc: [95, 101], note: "" },
-      { loc: [95, 101], note: "" }
+      { loc: [0, 270], title: "Redux Index" },
+      {
+        loc: [3, 5],
+        note: "You need to import the react-redux Provider and the store you created (we'll look at that next)"
+      },
+      {
+        loc: [9, 10],
+        note: "Now you wrap your app with the Provider and supply your store as a prop"
+      }
     ]}
   />,
   <CodeSlide
@@ -467,10 +552,10 @@ export default (theme, images) => [
     lang="js"
     code={require("raw-loader!../assets/jokes-11-redux-store.example")}
     ranges={[
-      { loc: [0, 270], title: "" },
-      { loc: [95, 101], note: "" },
-      { loc: [95, 101], note: "" },
-      { loc: [95, 101], note: "" }
+      { loc: [0, 270], title: "Redux Store" },
+      { loc: [3, 4], note: "Import all of your reducers (we only have one)" },
+      { loc: [4, 12], note: "Build your middleware (there are many to choose from)" },
+      { loc: [13, 16], note: "Create a store passing your reducers and middleware" }
     ]}
   />,
   <CodeSlide
@@ -478,10 +563,10 @@ export default (theme, images) => [
     lang="js"
     code={require("raw-loader!../assets/jokes-11-redux-reducers.example")}
     ranges={[
-      { loc: [0, 270], title: "" },
-      { loc: [95, 101], note: "" },
-      { loc: [95, 101], note: "" },
-      { loc: [95, 101], note: "" }
+      { loc: [0, 270], title: "Redux Reducers" },
+      { loc: [2, 4], note: "Import default jokes reducer and exported selectors" },
+      { loc: [5, 8], note: "Combine all the reducers you have (we only have one)" },
+      { loc: [9, 13], note: "Export top level selectors to access the store" }
     ]}
   />,
   <CodeSlide
@@ -489,21 +574,20 @@ export default (theme, images) => [
     lang="js"
     code={require("raw-loader!../assets/jokes-11-redux-jokesReducer.example")}
     ranges={[
-      { loc: [0, 270], title: "" },
-      { loc: [95, 101], note: "" },
-      { loc: [95, 101], note: "" },
-      { loc: [95, 101], note: "" }
-    ]}
-  />,
-  <CodeSlide
-    transition={[]}
-    lang="js"
-    code={require("raw-loader!../assets/jokes-11-redux-jokesContainer.example")}
-    ranges={[
-      { loc: [0, 270], title: "" },
-      { loc: [95, 101], note: "" },
-      { loc: [95, 101], note: "" },
-      { loc: [95, 101], note: "" }
+      { loc: [0, 270], title: "Redux jokesReducer" },
+      {
+        loc: [9, 14],
+        note: "Typically a big switch statement responding to whatever actions it needs"
+      },
+      {
+        loc: [30, 37],
+        note: "Listens to actions that are dispatched and update the store accordingly"
+      },
+      {
+        loc: [30, 37],
+        note: "NOTE: Each update should return a new object/array not update an existing one"
+      },
+      { loc: [49, 51], note: "Provide selectors that the top level reducer can export" }
     ]}
   />,
   <CodeSlide
@@ -511,16 +595,66 @@ export default (theme, images) => [
     lang="js"
     code={require("raw-loader!../assets/jokes-11-redux-actions.example")}
     ranges={[
-      { loc: [0, 270], title: "" },
-      { loc: [95, 101], note: "" },
-      { loc: [95, 101], note: "" },
-      { loc: [95, 101], note: "" }
+      { loc: [0, 270], title: "Redux Actions" },
+      {
+        loc: [0, 270],
+        note: "Export action functions that you app will need. The reducers will respond accordingly."
+      },
+      { loc: [0, 19], note: "fetchJokes dispatches messages since it's async" },
+      { loc: [28, 35], note: "decrement & increment are more straightforward" }
+    ]}
+  />,
+  <CodeSlide
+    transition={[]}
+    lang="js"
+    code={require("raw-loader!../assets/jokes-11-redux-jokesContainer.example")}
+    ranges={[
+      { loc: [0, 270], title: "Redux JokesContainer" },
+      { loc: [2, 3], note: "Import react-redux connect HOC that'll wrap presentational component" },
+      { loc: [3, 4], note: "Import selectors to retrieve values from the store" },
+      { loc: [4, 5], note: "Import actions that you want available for component" },
+      { loc: [38, 42], note: "Define a method to convert state to props" },
+      {
+        loc: [43, 46],
+        note: "Use the redux HOC to connect presentational component with mapStateToProps and imported actions"
+      },
+      {
+        loc: [12, 15],
+        note: "componentWillMount has access to the fetchJokes action to be invoked"
+      },
+      {
+        loc: [26, 33],
+        note: "When handleKeyDown is called, invoke one of the actions (decrement or increment)"
+      },
+      {
+        loc: [26, 33],
+        note: "Notice we aren't using state anywhere in our JokesContainer anymore... it probably should be renamed 😂"
+      }
     ]}
   />,
   <Slide transition={["fade"]} bgColor="black">
-    <Heading size={1} fit caps lineHeight={1} textColor="primary">
-      Redux Dev Tools{" "}
+    <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
+      Redux
     </Heading>
+    <Heading size={1} fit caps lineHeight={1} textColor="primary">
+      Dev Tools
+    </Heading>
+  </Slide>,
+  <Slide
+    transition={["slide"]}
+    bgColor="black"
+    notes="You can even put notes on your slide. How awesome is that?"
+  >
+    <Link
+      href="https://github.com/gaearon/redux-devtools"
+      size={6}
+      caps
+      textColor="quartenary"
+      margin={10}
+    >
+      Redux Dev Tools
+    </Link>
+    <Image src={images.reduxDevTools} width="100%" />
   </Slide>,
   <Slide transition={["fade"]} bgColor="black">
     <Heading size={1} fit caps lineHeight={1} textColor="primary">
@@ -532,10 +666,13 @@ export default (theme, images) => [
     lang="js"
     code={require("raw-loader!../assets/jokes-12-router-index.example")}
     ranges={[
-      { loc: [0, 270], title: "" },
-      { loc: [95, 101], note: "" },
-      { loc: [95, 101], note: "" },
-      { loc: [95, 101], note: "" }
+      { loc: [0, 270], title: "Router Index" },
+      { loc: [5, 7], note: "Import Router and Route from react-router-dom" },
+      { loc: [11, 21], note: "Add the Router and Routes inside the Redux Provider" },
+      {
+        loc: [14, 18],
+        note: "Define the routes that the app needs. In this case, the index of the joke"
+      }
     ]}
   />,
   <CodeSlide
@@ -543,10 +680,16 @@ export default (theme, images) => [
     lang="js"
     code={require("raw-loader!../assets/jokes-12-router-actions.example")}
     ranges={[
-      { loc: [0, 270], title: "" },
-      { loc: [95, 101], note: "" },
-      { loc: [95, 101], note: "" },
-      { loc: [95, 101], note: "" }
+      { loc: [0, 270], title: "Router Actions" },
+      { loc: [28, 45], note: "decrement and increment used to be simple, but not anymore" },
+      {
+        loc: [28, 36],
+        note: "using the react-thunk middleware, our action creator can returns a function to perform an asynchronous dispatch"
+      },
+      {
+        loc: [28, 36],
+        note: "decrement initially dispatches 'JOKE_DECREMENT', then gets the resulting state, and updates the router history"
+      }
     ]}
   />,
   <CodeSlide
@@ -554,12 +697,29 @@ export default (theme, images) => [
     lang="js"
     code={require("raw-loader!../assets/jokes-12-router-jokesContainer.example")}
     ranges={[
-      { loc: [0, 270], title: "" },
-      { loc: [95, 101], note: "" },
-      { loc: [95, 101], note: "" },
-      { loc: [95, 101], note: "" }
+      { loc: [0, 270], title: "Router JokesContainer" },
+      { loc: [5, 6], note: "Import the withRouter HOC from react-router" },
+      { loc: [54, 59], note: "Wrap the redux connect call with withRouter HOC" },
+      { loc: [45, 53], note: "In mapStateToProps grab the index from the current route" },
+      { loc: [45, 53], note: "PROFIT 💰" }
     ]}
   />,
+  <Slide transition={["fade"]} bgColor="black">
+    <Heading size={3} lineHeight={1} textColor="white">
+      React Router
+    </Heading>
+    <iframe
+      src="https://codesandbox.io/embed/E9nqolNRg?view=preview"
+      style={{
+        width: "100%",
+        height: "500px",
+        border: "0",
+        bordeRadius: "4px",
+        overflow: "hidden"
+      }}
+      sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+    />
+  </Slide>,
   <Slide transition={["fade"]} bgColor="black">
     <Heading size={1} fit caps lineHeight={1} textColor="primary">
       Recompose
@@ -570,10 +730,14 @@ export default (theme, images) => [
     lang="js"
     code={require("raw-loader!../assets/jokes-13-recompose-jokesContainer.example")}
     ranges={[
-      { loc: [0, 270], title: "" },
-      { loc: [95, 101], note: "" },
-      { loc: [95, 101], note: "" },
-      { loc: [95, 101], note: "" }
+      { loc: [0, 270], title: "Recompose" },
+      { loc: [6, 8], note: "Import compose, lifecycle, and withHandlers from `recompose`" },
+      { loc: [18, 33], note: "compose takes a list of HOCs that all work together" },
+      {
+        loc: [18, 33],
+        note: "Most of the code we had before moves into the withHandlers or lifecycle HOCs"
+      },
+      { loc: [18, 33], note: "There are a lot of other HOCs you can use. This was just a sample." }
     ]}
   />
 ];

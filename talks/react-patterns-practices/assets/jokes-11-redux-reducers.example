@@ -1,10 +1,13 @@
 import { combineReducers } from 'redux';
 
-import jokes, * as fromJokes from './jokesReducer';
+import jokes, * as fromJokes
+  from './jokesReducer';
 
 export default combineReducers({
   jokes,
 });
 
-export const getJokes = state => fromJokes.getJokes(state.jokes);
-export const getIndex = state => fromJokes.getIndex(state.jokes);
+export const getJokes = state =>
+  fromJokes.getJokes(state.jokes);
+export const getIndex = state =>
+  fromJokes.getIndex(state.jokes);

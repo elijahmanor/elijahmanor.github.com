@@ -1,22 +1,30 @@
 import React from 'react';
 import Jokes from './Jokes';
-import { connect } from 'react-redux';
-import { getJokes, getIndex } from './reducers';
+import {connect} from 'react-redux';
+import {getJokes, getIndex} from './reducers';
 import * as actions from './actions';
 
 class JokesContainer extends React.Component {
+  constructor() {
+    super();
+    this.keyDownHandler =
+      this.handleKeyDown.bind(this);
+  }
   componentWillMount() {
     this.props.fetchJokes();
   }
   componentDidMount() {
-    this.keyDownHandler = this.handleKeyDown.bind(this);
-    document.addEventListener('keydown', this.keyDownHandler);
+    document.addEventListener(
+      'keydown', this.keyDownHandler
+    );
   }
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.keyDownHandler);
+    document.removeEventListener(
+      'keydown', this.keyDownHandler
+    );
   }
   handleKeyDown(e) {
-    const { decrement, increment } = this.props;
+    const {decrement, increment} = this.props;
     if (e.which === 37) {
       decrement();
     } else if (e.which === 39) {
@@ -24,9 +32,7 @@ class JokesContainer extends React.Component {
     }
   }
   render() {
-    const { jokes = [], index = 0 } = this.props;
-
-    return <Jokes jokes={jokes} index={index} />;
+    return <Jokes {...this.props} />;
   }
 }
 
@@ -35,6 +41,8 @@ const mapStateToProps = state => ({
   index: getIndex(state),
 });
 
-JokesContainer = connect(mapStateToProps, actions)(JokesContainer);
+JokesContainer = connect(
+  mapStateToProps, actions
+)(JokesContainer);
 
 export default JokesContainer;

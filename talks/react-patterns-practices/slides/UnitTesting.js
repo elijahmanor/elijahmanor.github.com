@@ -18,7 +18,6 @@ import {
   Appear
 } from "spectacle";
 import CodeSlide from "spectacle-code-slide";
-import slidesMarkdown from "raw-loader!../assets/markdown.md";
+// import slidesMarkdown from "raw-loader!../assets/markdown.md";
 
-export default (theme, images) => ([
-]);
+export default (theme, images) => [];

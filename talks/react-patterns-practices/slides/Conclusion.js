@@ -18,7 +18,7 @@ import {
   Appear
 } from "spectacle";
 import CodeSlide from "spectacle-code-slide";
-import slidesMarkdown from "raw-loader!../assets/markdown.md";
+// import slidesMarkdown from "raw-loader!../assets/markdown.md";
 
 export default (theme, images) => [
   <Slide bgColor="primary" bgImage={images.react} bgDarken={0.8}>

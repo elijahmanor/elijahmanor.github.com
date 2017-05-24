@@ -12,8 +12,10 @@ render(
   <Provider store={store}>
     <Router>
       <div>
-        <Route exact path="/" component={App} />
-        <Route path="/:index" component={App} />
+        <Route exact path="/"
+          component={App} />
+        <Route path="/:index"
+          component={App} />
       </div>
     </Router>
   </Provider>,
