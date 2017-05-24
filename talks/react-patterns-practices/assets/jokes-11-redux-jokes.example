@@ -1,0 +1,18 @@
+import React from 'react';
+import FlipCard from 'react-flipcard';
+import './Jokes.css';
+
+export default function Jokes({ jokes, index }) {
+  const joke = jokes.length ? jokes[index] : null;
+
+  return (
+    joke &&
+    <FlipCard>
+      <div>
+        <div>{joke.question}</div>
+        <footer>{index + 1} of {jokes.length}</footer>
+      </div>
+      <div>{joke.answer}</div>
+    </FlipCard>
+  );
+}

@@ -40,7 +40,14 @@ const images = {
   logo: require("../assets/formidable-logo.svg"),
   markdown: require("../assets/markdown.png"),
   react: require("../assets/react.jpg"),
-  dealWithIt: require("../assets/deal-with-it.gif")
+  dealWithIt: require("../assets/deal-with-it.gif"),
+  youveGotToBeKittenMe: require("../assets/youve-got-to-be-kitten-me.gif"),
+  theManorFamily: require("../assets/the-manor-family.jpg"),
+  cross: require("../assets/logo-cross.png"),
+  egghead: require("../assets/logo-egghead.png"),
+  leankit: require("../assets/logo-leankit.png"),
+  mvp: require("../assets/logo-mvp.png"),
+  butWillItBlend: require("../assets/but-will-it-blend.gif")
 };
 
 preloader(images);
@@ -50,11 +57,13 @@ const theme = createTheme(
     primary: "#ff4081",
     secondary: "#1F2022",
     tertiary: "#AAAFBA",
-    quartenary: "white"
+    quartenary: "white",
+    comic: "white"
   },
   {
     primary: "Montserrat",
-    secondary: "Helvetica"
+    secondary: "Helvetica",
+    comic: "Comic Sans MS"
   }
 );
 

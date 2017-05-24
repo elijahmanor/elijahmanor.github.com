@@ -1,7 +1,7 @@
 import React from "react";
 import FlipCard from "react-flipcard";
 
-import './JokesAddBroken.css';
+import "./JokesAddBroken.css";
 
 function Jokes({ jokes, index }) {
   const joke = jokes.length ? jokes[index] : null;
@@ -27,16 +27,16 @@ class AddJoke extends React.PureComponent {
     e.preventDefault();
     const { question: { value: q }, answer: { value: a } } = this;
     this.props.onCreate({ question: q, answer: a });
-    this.question.value = '';
-    this.answer.value = '';
+    this.question.value = "";
+    this.answer.value = "";
   }
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
         <fieldset>
           <legend>New Joke</legend>
-          <input type="text" placeholder="Question" ref={c => (this.question = c)} />
-          <input type="text" placeholder="Answer" ref={c => (this.answer = c)} />
+          <input type="text" placeholder="Question" ref={(c) => this.question = c} />
+          <input type="text" placeholder="Answer" ref={(c) => this.answer = c} />
           <input type="submit" value="Create" />
         </fieldset>
       </form>
@@ -52,17 +52,17 @@ export default class JokesContainer extends React.PureComponent {
     this.handleCreate = this.handleCreate.bind(this);
   }
   componentDidMount() {
-    document.addEventListener('keydown', this.handleKeyDown);
+    document.addEventListener("keydown", this.handleKeyDown);
 
-    fetch('https://rawgit.com/elijahmanor/cyberpun/master/jokes.json')
-      .then(response => response.json())
+    fetch("https://rawgit.com/elijahmanor/cyberpun/master/jokes.json")
+      .then((response) => response.json())
       .then((jokes) => {
-        jokes = jokes.filter(j => j.question);
+        jokes = jokes.filter((j) => j.question);
         this.setState({ jokes });
       });
   }
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleKeyDown);
+    document.removeEventListener("keydown", this.handleKeyDown);
   }
   handleKeyDown(e) {
     if (e.which === 38) {
@@ -74,12 +74,12 @@ export default class JokesContainer extends React.PureComponent {
   increment() {
     const length = this.state.jokes.length - 1;
     this.setState(({ index }) => ({
-      index: index < length ? index + 1 : length,
+      index: index < length ? index + 1 : length
     }));
   }
   decrement() {
     this.setState(({ index }) => ({
-      index: index > 0 ? index - 1 : 0,
+      index: index > 0 ? index - 1 : 0
     }));
   }
   handleCreate(joke) {
@@ -94,7 +94,7 @@ export default class JokesContainer extends React.PureComponent {
     return (
       <div className="JokesAddBroken">
         <Jokes jokes={jokes} index={index} />
-        <AddJoke onCreate={ this.handleCreate } />
+        <AddJoke onCreate={this.handleCreate} />
       </div>
     );
   }

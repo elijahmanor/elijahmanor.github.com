@@ -1,4 +1,6 @@
-class Jokes extends React.PureComponent {
+import React, { PureComponent } from "react";
+
+class Jokes extends PureComponent {
   render() {
     const { jokes = [], index } = this.props;
     const joke = jokes[index];
@@ -16,7 +18,7 @@ class Jokes extends React.PureComponent {
   }
 }
 
-class JokesContainer extends React.PureComponent {
+class JokesContainer extends PureComponent {
   constructor(props) {
     super(props);
     this.state = { jokes: [], index: 0 };

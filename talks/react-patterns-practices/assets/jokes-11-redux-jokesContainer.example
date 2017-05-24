@@ -1,0 +1,40 @@
+import React from 'react';
+import Jokes from './Jokes';
+import { connect } from 'react-redux';
+import { getJokes, getIndex } from './reducers';
+import * as actions from './actions';
+
+class JokesContainer extends React.Component {
+  componentWillMount() {
+    this.props.fetchJokes();
+  }
+  componentDidMount() {
+    this.keyDownHandler = this.handleKeyDown.bind(this);
+    document.addEventListener('keydown', this.keyDownHandler);
+  }
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.keyDownHandler);
+  }
+  handleKeyDown(e) {
+    const { decrement, increment } = this.props;
+    if (e.which === 37) {
+      decrement();
+    } else if (e.which === 39) {
+      increment();
+    }
+  }
+  render() {
+    const { jokes = [], index = 0 } = this.props;
+
+    return <Jokes jokes={jokes} index={index} />;
+  }
+}
+
+const mapStateToProps = state => ({
+  jokes: getJokes(state),
+  index: getIndex(state),
+});
+
+JokesContainer = connect(mapStateToProps, actions)(JokesContainer);
+
+export default JokesContainer;

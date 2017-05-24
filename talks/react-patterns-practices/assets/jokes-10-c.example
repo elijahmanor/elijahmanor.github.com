@@ -1,6 +1,8 @@
-class Jokes extends React.PureComponent {
+import React, { PureComponent } from "react";
+
+class Jokes extends PureComponent {
   render() {
-    const { jokes = [], index } = this.props;
+    const {jokes = [], index} = this.props;
     const joke = jokes[index];
 
     return (
@@ -8,7 +10,9 @@ class Jokes extends React.PureComponent {
       <FlipCard>
         <div>
           <div>{joke.question}</div>
-          <footer>{index + 1} of {jokes.length}</footer>
+          <footer>
+            {index + 1} of {jokes.length}
+          </footer>
         </div>
         <div>{joke.answer}</div>
       </FlipCard>
@@ -19,11 +23,18 @@ class Jokes extends React.PureComponent {
 class AddJoke extends React.Component {
   constructor(props) {
     super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmit =
+      this.handleSubmit.bind(this);
   }
   handleSubmit() {
-    const { question: { value: q }, answer: { value: a } } = this;
-    this.props.onCreate({ question: q, answer: a });
+    const {
+      question: {value: q},
+      answer: {value: a}
+    } = this;
+    this.props.onCreate({
+      question: q,
+      answer: a
+    });
     this.question.value = '';
     this.answer.value = '';
   }
@@ -32,8 +43,10 @@ class AddJoke extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <fieldset>
           <legend>New Joke</legend>
-          <input placeholder="Question" ref={c => (this.question = c)} />
-          <input placeholder="Answer" ref={c => (this.answer = c)} />
+          <input placeholder="Question"
+            ref={c => (this.question = c)} />
+          <input placeholder="Answer"
+            ref={c => (this.answer = c)} />
           <input type="submit" value="Create" />
         </fieldset>
       </form>
@@ -41,22 +54,28 @@ class AddJoke extends React.Component {
   }
 }
 
-class JokesContainer extends React.PureComponent {
+class JokesContainer extends PureComponent {
   constructor(props) {
     super(props);
-    this.state = { jokes: [], index: 0 };
-    this.keyDownHandler = this.handleKeyDown.bind(this);
-    this.boundAddJoke = this.handleAddJoke.bind(this);
+    this.state = {jokes: [], index: 0};
+    this.keyDownHandler =
+      this.handleKeyDown.bind(this);
+    this.boundAddJoke =
+      this.handleAddJoke.bind(this);
   }
   componentDidMount() {
-    document.addEventListener('keydown', this.keyDownHandler;
+    document.addEventListener(
+      'keydown', this.keyDownHandler
+    );
 
     fetch('https://rawgit.com/.../jokes.json')
       .then(response => response.json())
       .then((jokes) => this.setState({ jokes }));
   }
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.keyDownHandler);
+    document.removeEventListener(
+      'keydown', this.keyDownHandler
+    );
   }
   handleKeyDown(e) {
     if (e.which === 37) {
@@ -66,30 +85,27 @@ class JokesContainer extends React.PureComponent {
     }
   }
   increment() {
-    const length = this.state.jokes.length - 1;
-    this.setState(({ index }) => ({
-      index: index < length ? index + 1 : length,
+    const {jokes} = this.state;
+    const len = jokes.length - 1;
+    this.setState(({index}) => ({
+      index: index < len ? index + 1 : len,
     }));
   }
   decrement() {
-    this.setState(({ index }) => ({
+    this.setState(({index}) => ({
       index: index > 0 ? index - 1 : 0,
     }));
   }
   handleAddJoke(joke) {
-    this.setState(({ jokes }) => {
+    this.setState(({jokes}) => {
       jokes.push(joke);
-      return { jokes };
+      return {jokes};
     });
   }
   render() {
-    const { jokes, index } = this.state;
-
-    return (
-      <section>
-        <Jokes jokes={jokes} index={index} />
-        <AddJoke onCreate={this.boundAddJoke} />
-      </section>
-    );
+    return <section>
+      <Jokes {...this.state} />
+      <AddJoke onCreate={this.boundAddJoke} />
+    </section>;
   }
 }

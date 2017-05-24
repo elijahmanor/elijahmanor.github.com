@@ -1,0 +1,32 @@
+export const fetchJokes = () => (dispatch, getState) => {
+  dispatch({
+    type: 'FETCH_JOKES_PENDING',
+  });
+
+  return window
+    .fetch('https://rawgit.com/elijahmanor/cyberpun/master/jokes.json')
+    .then(response => response.json())
+    .then(
+      (jokes) => {
+        jokes = jokes.filter(j => j.question);
+        dispatch({
+          type: 'FETCH_JOKES_FULFILLED',
+          response: jokes,
+        });
+      },
+      (error) => {
+        dispatch({
+          type: 'FETCH_JOKES_REJECTED',
+          response: jokes,
+        });
+      },
+    );
+};
+
+export const decrement = () => ({
+  type: 'JOKE_DECREMENT',
+});
+
+export const increment = () => ({
+  type: 'JOKE_INCREMENT',
+});

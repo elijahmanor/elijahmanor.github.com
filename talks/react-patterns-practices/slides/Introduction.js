@@ -15,7 +15,8 @@ import {
   MarkdownSlides,
   Link,
   Markdown,
-  Appear
+  Appear,
+  Image
 } from "spectacle";
 import CodeSlide from "spectacle-code-slide";
 import slidesMarkdown from "raw-loader!../assets/markdown.md";
@@ -32,13 +33,24 @@ export default (theme, images) => [
       by @elijahmanor
     </Text>
   </Slide>,
-  <Slide bgColor="primary" bgImage={images.react} bgDarken={0.8}>
-    <Heading size={1} fit caps lineHeight={1} textColor="primary">
-      WHO AM I?
-    </Heading>
-    <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
-      BIO
-    </Heading>
+  <Slide
+    id="aboutme"
+    transition={["slide"]}
+    bgColor="black"
+    notes="You can even put notes on your slide. How awesome is that?"
+  >
+    <Heading caps fit>Elijah Manor</Heading>
+    <Layout>
+      <Fill>
+        <Image src={images.cross} width="50%" margin="0" />
+        <Image src={images.leankit} width="50%" margin="0" />
+        <Image src={images.mvp} width="50%" margin="-8px 0 0 0" />
+        <Image src={images.egghead} width="50%" margin="-8px 0 0 0" />
+      </Fill>
+      <Fill>
+        <Image src={images.theManorFamily} width="100%" margin="0" />
+      </Fill>
+    </Layout>
   </Slide>,
   <Slide transition={["fade"]} bgColor="secondary" textColor="quartenary">
     <Heading size={2} caps textColor="primary">

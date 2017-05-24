@@ -14,7 +14,9 @@ class Jokes extends React.Component {
       <FlipCard>
         <div>
           <div>{joke.question}</div>
-          <footer>{index + 1} of {jokes.length}</footer>
+          <footer>
+            {index + 1} of {jokes.length}
+          </footer>
         </div>
         <div>{joke.answer}</div>
       </FlipCard>
@@ -26,7 +28,8 @@ class JokesContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = { jokes: [], index: 0 };
-    this.keyDownHandler = this.handleKeyDown.bind(this);
+    this.keyDownHandler =
+      this.handleKeyDown.bind(this);
   }
   shouldComponentUpdate(_, nextState) {
     return (
@@ -35,14 +38,18 @@ class JokesContainer extends React.Component {
     );
   }
   componentDidMount() {
-    document.addEventListener('keydown', this.keyDownHandler;
+    document.addEventListener(
+      'keydown', this.keyDownHandler
+    );
 
     fetch('https://rawgit.com/.../jokes.json')
       .then(response => response.json())
-      .then((jokes) => this.setState({ jokes }));
+      .then((jokes) => this.setState({jokes}));
   }
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.keyDownHandler);
+    document.removeEventListener(
+      'keydown', this.keyDownHandler
+    );
   }
   handleKeyDown(e) {
     if (e.which === 37) {
@@ -52,9 +59,10 @@ class JokesContainer extends React.Component {
     }
   }
   increment() {
-    const length = this.state.jokes.length - 1;
+    const { jokes } = this.state;
+    const len = jokes.length - 1;
     this.setState(({ index }) => ({
-      index: index < length ? index + 1 : length,
+      index: index < len ? index + 1 : len,
     }));
   }
   decrement() {
@@ -63,8 +71,6 @@ class JokesContainer extends React.Component {
     }));
   }
   render() {
-    const { jokes, index } = this.state;
-
-    return <Jokes jokes={jokes} index={index} />;
+    return <Jokes {...this.state} />;
   }
 }

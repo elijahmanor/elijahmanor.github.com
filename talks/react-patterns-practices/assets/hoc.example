@@ -1,0 +1,23 @@
+const SimpleComponent = () =>
+  <h1>Simple Component</h1>;
+
+const higherOrderComponent =
+  (BaseComponent) =>
+    class WrapperComponent
+      extends React.Component {
+      /* ... more stuff ... */
+      render() {
+        <BaseComponent
+          {...this.props}
+          {...this.state}
+        />;
+      }
+    }; 
+
+const EnhancedComponent =
+  higherOrderComponent(SimpleComponent);
+
+render(
+  <EnhancedComponent />,
+  document.getElementById('root')
+);

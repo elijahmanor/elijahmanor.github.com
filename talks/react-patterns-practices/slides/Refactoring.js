@@ -1,10 +1,15 @@
-import React from "react";
-import { BlockQuote, Cite, Heading, Quote, Slide, Link } from "spectacle";
+import React, { Component } from "react";
+import { render } from "react-dom";
+import { BlockQuote, Cite, Heading, Quote, Slide, Link, Image } from "spectacle";
 import CodeSlide from "spectacle-code-slide";
 import Jokes from "../assets/Jokes.js";
 import CatJokes from "../assets/CatJokes.js";
 import JokesKeyboard from "../assets/JokesKeyboard.js";
 import JokesAddBroken from "../assets/JokesAddBroken.js";
+import JokesAddFixed from "../assets/JokesAddFixed.js";
+import Playground from "component-playground";
+import { defaultCode } from "../assets/hoc-interactive.example";
+import "../assets/playground.css";
 
 export default (theme, images) => [
   <Slide bgColor="secondary">
@@ -20,6 +25,17 @@ export default (theme, images) => [
       <img alt="Edit Jokes 1" src="https://codesandbox.io/static/img/play-codesandbox.svg" />
     </a>
     <Jokes />
+  </Slide>,
+  <Slide
+    id="comic-sans"
+    transition={["slide"]}
+    bgColor="black"
+    notes="You can even put notes on your slide. How awesome is that?"
+  >
+    <Heading size={1} fit caps lineHeight={1} textColor="primary" textFont="comic">
+      Did I Just Use "Comic Sans"?
+    </Heading>
+    <Image src={images.dealWithIt} height="650px" />
   </Slide>,
   <CodeSlide
     maxHeight="100vh"
@@ -40,6 +56,8 @@ export default (theme, images) => [
       { loc: [14, 20], note: "return a FlipCard with joke content" }
     ]}
   />,
+  // TODO: That is nice... but props and state are combined
+  // Container Components and Presentational Components, a.k.a. "smart" and "dumb"
   <CodeSlide
     transition={[]}
     lang="js"
@@ -87,8 +105,11 @@ export default (theme, images) => [
     code={require("raw-loader!../assets/jokes-5.example")}
     ranges={[
       { loc: [0, 270], title: "Container Component" },
-      { loc: [17, 32], note: "Stateful JokesContainer" },
-      { loc: [33, 34], note: "Simplify the App Component" }
+      {
+        loc: [17, 32],
+        note: "Introduce a stateful JokesContainer to keep the App component simple"
+      },
+      { loc: [33, 34], note: "Now the App Component isn't up to funny business!" }
     ]}
   />,
   <Slide bgColor="secondary">
@@ -99,8 +120,55 @@ export default (theme, images) => [
       Higher Order Components
     </Heading>
   </Slide>,
-  // QUOTE
-  // High Level Example
+  <Slide bgColor="secondary">
+    <BlockQuote>
+      <Quote>
+        a higher-order component is a function that takes a component and returns a new component
+      </Quote>
+      <Cite>
+        <Link
+          href="https://facebook.github.io/react/docs/higher-order-components.html"
+          textColor="quartenary"
+        >
+          Andrew Clark
+        </Link>
+      </Cite>
+    </BlockQuote>
+  </Slide>,
+  <CodeSlide
+    transition={[]}
+    lang="js"
+    code={require("raw-loader!../assets/hoc.example")}
+    ranges={[
+      { loc: [0, 270], title: "Simple HOC" },
+      {
+        loc: [16, 18],
+        note: "A Higher Order Function is a function that accepts a base component and returns a new wrapped component"
+      },
+      { loc: [0, 2], note: "Our simple component is just a header (it can be anything)" },
+      {
+        loc: [3, 15],
+        note: "Our HOC is a simple wrapper class around the base passing both props and state"
+      },
+      { loc: [19, 23], note: "The returned wrapped component can be used like a normal component" }
+    ]}
+  />,
+  <Slide maxHeight="100vh" maxWidth="90vw" bgColor="secondary">
+    <div
+      style={{
+        backgroundColor: "white",
+        borderRadius: "0 0 6px 6px",
+        height: "100%",
+        width: "100%"
+      }}
+    >
+      <Playground
+        codeText={defaultCode.trim()}
+        scope={{ React, Component, render }}
+        noRender={false}
+      />
+    </div>
+  </Slide>,
   <CodeSlide
     transition={[]}
     lang="js"
@@ -109,7 +177,8 @@ export default (theme, images) => [
       { loc: [0, 270], title: "fetchJokes HOC" },
       { loc: [17, 33], note: "Function takes a component & returns a component" },
       { loc: [28, 30], note: "returns WrappedComponent spreading props and state" },
-      { loc: [33, 34], note: "Use the HOC function to wrap the Jokes component" }
+      { loc: [33, 34], note: "Use the HOC function to wrap the Jokes component" },
+      { loc: [35, 36], note: "Use the wrapped JokesContainer!" }
     ]}
   />,
   <CodeSlide
@@ -130,7 +199,8 @@ export default (theme, images) => [
       {
         loc: [37, 38],
         note: "Finally pass in the presentational component that'll be wrapped in the HOC!"
-      }
+      },
+      { loc: [39, 40], note: "And again... use the wrapped JokesContainer!" }
     ]}
   />,
   <CodeSlide
@@ -142,6 +212,14 @@ export default (theme, images) => [
       { loc: [32, 39], note: "Provide fetchResource with purrfect 😹 jokes!" }
     ]}
   />,
+  <Slide
+    id="wait-what"
+    transition={["slide"]}
+    bgColor="black"
+    notes="You can even put notes on your slide. How awesome is that?"
+  >
+    <Image src={images.youveGotToBeKittenMe} height="650px" />
+  </Slide>,
   <Slide maxHeight="100vh" maxWidth="90vw">
     <div>
       <a href="https://codesandbox.io/s/YE3GrJ0BY">
@@ -255,11 +333,24 @@ export default (theme, images) => [
     lang="js"
     code={require("raw-loader!../assets/jokes-10-a.example")}
     ranges={[
-      { loc: [0, 270], title: "First Wave of Improvements" },
-      { loc: [0, 1], note: "The Beginning" },
-      { loc: [1, 2], note: "" },
-      { loc: [1, 2], note: "Heres a note!" },
-      { loc: [2, 3], note: "" }
+      { loc: [0, 270], title: "shouldComponentUpdate" },
+      {
+        loc: [0, 1],
+        note: "why-did-you-update told us we had issues with Jokes props when at the beginning or end of the deck"
+      },
+      {
+        loc: [1, 7],
+        note: "So, we'll add a shouldComponentUpdate and if props are the same, then return false"
+      },
+      {
+        loc: [26, 27],
+        note: "Likewise, why-did-you-update said we had issues in JokesContainer when dealing with state"
+      },
+      {
+        loc: [33, 39],
+        note: "So, we'll also add a shouldComponentUpdate and if the state hasn't changed return false"
+      },
+      { loc: [72, 75], note: "Now, if we run our app... it should be much more performant!" }
     ]}
   />,
   <CodeSlide
@@ -267,12 +358,17 @@ export default (theme, images) => [
     lang="js"
     code={require("raw-loader!../assets/jokes-10-b.example")}
     ranges={[
-      { loc: [0, 270], title: "Walking through some code" },
-      { loc: [0, 1], title: "The Beginning" },
-      { loc: [1, 2] },
-      { loc: [1, 2], note: "Heres a note!" },
-      { loc: [2, 3] },
-      { loc: [8, 10] }
+      { loc: [0, 270], title: "PureCompnent" },
+      { loc: [0, 3], note: "Extend Jokes with PureComponent instead of Component" },
+      {
+        loc: [0, 3],
+        note: "React will implement shouldComponentUpdate() with a shallow props and state comparison"
+      },
+      { loc: [20, 21], note: "Likewise, extend JokesContainer with PureComponent" },
+      {
+        loc: [20, 21],
+        note: "NOTE: Shallow compare only. Complex structures may produce false-negatives"
+      }
     ]}
   />,
   <CodeSlide
@@ -280,14 +376,25 @@ export default (theme, images) => [
     lang="js"
     code={require("raw-loader!../assets/jokes-10-c.example")}
     ranges={[
-      { loc: [0, 270], title: "Walking through some code" },
-      { loc: [0, 1], title: "The Beginning" },
-      { loc: [1, 2] },
-      { loc: [1, 2], note: "Heres a note!" },
-      { loc: [2, 3] },
-      { loc: [8, 10] }
+      { loc: [0, 270], title: "Enhance with New Jokes" },
+      { loc: [22, 23], note: "New AddJoke Component" },
+      { loc: [104, 110], note: "Add to JokeContainer's render method" },
+      { loc: [107, 108], note: "Wire-up the AddJoke's onCreate to this.boundAddJoke" },
+      {
+        loc: [98, 104],
+        note: "Take the joke parameter, update jokes array, and return to setState"
+      },
+      { loc: [98, 104], note: "...but, will it blend!?!" }
     ]}
   />,
+  <Slide
+    id="but-will-it-blend"
+    transition={["slide"]}
+    bgColor="black"
+    notes="You can even put notes on your slide. How awesome is that?"
+  >
+    <Image src={images.butWillItBlend} width="100%" />
+  </Slide>,
   <Slide maxHeight="100vh" maxWidth="90vw">
     <div>
       <a href="https://codesandbox.io/s/32853L56M">
@@ -319,13 +426,154 @@ export default (theme, images) => [
     lang="js"
     code={require("raw-loader!../assets/jokes-10-d.example")}
     ranges={[
-      { loc: [0, 270], title: "Walking through some code" },
-      { loc: [0, 1], title: "The Beginning" },
-      { loc: [1, 2] },
-      { loc: [1, 2], note: "Heres a note!" },
-      { loc: [2, 3] },
-      { loc: [8, 10] }
+      { loc: [0, 270], title: "Add Simple Immutability" },
+      {
+        loc: [95, 101],
+        note: "Instead of pushing to an existing array, call the concat method, which returns a new array!"
+      },
+      {
+        loc: [95, 101],
+        note: "Alternately, could have used ECMAScript 2015 (ES6) `jokes = [...jokes, joke];`"
+      },
+      { loc: [95, 101], note: "...but, will it blend!?!" }
+    ]}
+  />,
+  <Slide maxHeight="100vh" maxWidth="90vw">
+    <div>
+      <a href="https://codesandbox.io/s/32853L56M">
+        <img alt="Edit Jokes 9" src="https://codesandbox.io/static/img/play-codesandbox.svg" />
+      </a>
+    </div>
+    <JokesAddFixed />
+  </Slide>,
+  <Slide transition={["fade"]} bgColor="black">
+    <Heading size={1} fit caps lineHeight={1} textColor="primary">
+      Redux
+    </Heading>
+  </Slide>,
+  <CodeSlide
+    transition={[]}
+    lang="js"
+    code={require("raw-loader!../assets/jokes-11-redux-index.example")}
+    ranges={[
+      { loc: [0, 270], title: "" },
+      { loc: [95, 101], note: "" },
+      { loc: [95, 101], note: "" },
+      { loc: [95, 101], note: "" }
+    ]}
+  />,
+  <CodeSlide
+    transition={[]}
+    lang="js"
+    code={require("raw-loader!../assets/jokes-11-redux-store.example")}
+    ranges={[
+      { loc: [0, 270], title: "" },
+      { loc: [95, 101], note: "" },
+      { loc: [95, 101], note: "" },
+      { loc: [95, 101], note: "" }
+    ]}
+  />,
+  <CodeSlide
+    transition={[]}
+    lang="js"
+    code={require("raw-loader!../assets/jokes-11-redux-reducers.example")}
+    ranges={[
+      { loc: [0, 270], title: "" },
+      { loc: [95, 101], note: "" },
+      { loc: [95, 101], note: "" },
+      { loc: [95, 101], note: "" }
+    ]}
+  />,
+  <CodeSlide
+    transition={[]}
+    lang="js"
+    code={require("raw-loader!../assets/jokes-11-redux-jokesReducer.example")}
+    ranges={[
+      { loc: [0, 270], title: "" },
+      { loc: [95, 101], note: "" },
+      { loc: [95, 101], note: "" },
+      { loc: [95, 101], note: "" }
+    ]}
+  />,
+  <CodeSlide
+    transition={[]}
+    lang="js"
+    code={require("raw-loader!../assets/jokes-11-redux-jokesContainer.example")}
+    ranges={[
+      { loc: [0, 270], title: "" },
+      { loc: [95, 101], note: "" },
+      { loc: [95, 101], note: "" },
+      { loc: [95, 101], note: "" }
+    ]}
+  />,
+  <CodeSlide
+    transition={[]}
+    lang="js"
+    code={require("raw-loader!../assets/jokes-11-redux-actions.example")}
+    ranges={[
+      { loc: [0, 270], title: "" },
+      { loc: [95, 101], note: "" },
+      { loc: [95, 101], note: "" },
+      { loc: [95, 101], note: "" }
+    ]}
+  />,
+  <Slide transition={["fade"]} bgColor="black">
+    <Heading size={1} fit caps lineHeight={1} textColor="primary">
+      Redux Dev Tools{" "}
+    </Heading>
+  </Slide>,
+  <Slide transition={["fade"]} bgColor="black">
+    <Heading size={1} fit caps lineHeight={1} textColor="primary">
+      React Router
+    </Heading>
+  </Slide>,
+  <CodeSlide
+    transition={[]}
+    lang="js"
+    code={require("raw-loader!../assets/jokes-12-router-index.example")}
+    ranges={[
+      { loc: [0, 270], title: "" },
+      { loc: [95, 101], note: "" },
+      { loc: [95, 101], note: "" },
+      { loc: [95, 101], note: "" }
+    ]}
+  />,
+  <CodeSlide
+    transition={[]}
+    lang="js"
+    code={require("raw-loader!../assets/jokes-12-router-actions.example")}
+    ranges={[
+      { loc: [0, 270], title: "" },
+      { loc: [95, 101], note: "" },
+      { loc: [95, 101], note: "" },
+      { loc: [95, 101], note: "" }
+    ]}
+  />,
+  <CodeSlide
+    transition={[]}
+    lang="js"
+    code={require("raw-loader!../assets/jokes-12-router-jokesContainer.example")}
+    ranges={[
+      { loc: [0, 270], title: "" },
+      { loc: [95, 101], note: "" },
+      { loc: [95, 101], note: "" },
+      { loc: [95, 101], note: "" }
+    ]}
+  />,
+  <Slide transition={["fade"]} bgColor="black">
+    <Heading size={1} fit caps lineHeight={1} textColor="primary">
+      Recompose
+    </Heading>
+  </Slide>,
+  <CodeSlide
+    transition={[]}
+    lang="js"
+    code={require("raw-loader!../assets/jokes-13-recompose-jokesContainer.example")}
+    ranges={[
+      { loc: [0, 270], title: "" },
+      { loc: [95, 101], note: "" },
+      { loc: [95, 101], note: "" },
+      { loc: [95, 101], note: "" }
     ]}
   />
-  // https://egghead.io/courses/higher-order-components-with-functional-patterns-using-recompose?utm_source=drip&utm_medium=email&utm_content=react-recompose
 ];

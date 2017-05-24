@@ -1,0 +1,42 @@
+import React from 'react';
+import Joke from './Joke';
+import { connect } from 'react-redux';
+import { getJoke, getCount, getIndex } from './reducers';
+import * as actions from './actions';
+import { withRouter, pushState } from 'react-router';
+import { compose, lifecycle, withHandlers } from 'recompose';
+
+const mapStateToProps = (state, { match }) => {
+  const index = match.params.index || 0;
+  return {
+    joke: getJoke(state, index),
+    count: getCount(state),
+    index: parseInt(index),
+  };
+};
+
+export default compose(
+  withRouter,
+  connect(mapStateToProps, { ...actions, pushState }),
+  withHandlers({
+    handleKeyDown: props => (e) => {
+      const { decrement, increment, history } = props;
+      if (e.which === 37) {
+        decrement(history);
+      } else if (e.which === 39) {
+        increment(history);
+      }
+    },
+  }),
+  lifecycle({
+    componentWillMount() {
+      this.props.fetchJokes();
+    },
+    componentDidMount() {
+      document.addEventListener('keydown', this.props.handleKeyDown);
+    },
+    componentWillUnmount() {
+      document.removeEventListener('keydown', this.props.handleKeyDown);
+    },
+  }),
+)(Joke);
