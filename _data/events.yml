@@ -1532,6 +1532,6 @@
   employer: 'leankit'
   sessions:
   - name: 'Using npm scripts as your build tool'
-    slides: ''
+    slides: '/talks/npm-scripts'
     video: ''
     feedback: ''

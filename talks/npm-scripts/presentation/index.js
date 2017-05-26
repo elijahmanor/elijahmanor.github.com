@@ -36,6 +36,8 @@ const theme = createTheme(
   }
 );
 
+// http://bit.ly/npm-scripts
+
 export default class Presentation extends React.Component {
   render() {
     return (
