@@ -2,13 +2,28 @@
 import React from "react";
 
 // Import Spectacle Core tags
-import { BlockQuote, Cite, Deck, Heading, ListItem, List, Quote, Slide, Text } from "spectacle";
+import {
+  BlockQuote,
+  Cite,
+  Deck,
+  Heading,
+  ListItem,
+  List,
+  Quote,
+  Slide,
+  Text,
+  SlideSet,
+  Appear,
+  Link
+} from "spectacle";
 
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
 
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
+
+import Terminal from "spectacle-terminal";
 
 // Require CSS
 require("normalize.css");
@@ -36,6 +51,25 @@ const theme = createTheme(
   }
 );
 
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
+import { defaultCode } from "../assets/jokes.examples.js";
+import LiveEdit from "../assets/LiveEdit.js";
+import FlipCard from "react-flipcard";
+import "../assets/Jokes.css";
+import Typist from "react-typist";
+import Loading from "react-loading";
+const cursor = {
+  show: false,
+  blink: true,
+  element: "|",
+  hideWhenDone: false,
+  hideWhenDoneDelay: 1000
+};
+// import "../assets/react-live.css";
+
+/*
+Elijah Manor explains how to use npm scripts to handle your various build needs, covering running scripts in series or parallel, using lifecycle hooks, passing arguments, piping data, using environment variables, running scripts on file change or when Git hooks are triggered, and organizing our scripts in external files—as well as how to modify your scripts to run across Mac, Linux, and Windows.
+*/
 // http://bit.ly/npm-scripts
 
 export default class Presentation extends React.Component {
@@ -77,6 +111,95 @@ export default class Presentation extends React.Component {
             <Cite>Author</Cite>
           </BlockQuote>
         </Slide>
+        <SlideSet>
+          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+            <List>
+              <Appear><ListItem>Inline style based theme system</ListItem></Appear>
+              <Appear><ListItem>Autofit text</ListItem></Appear>
+              <Appear><ListItem>Flexbox layout system</ListItem></Appear>
+              <Appear><ListItem>PDF export</ListItem></Appear>
+              <Appear><ListItem>And...</ListItem></Appear>
+            </List>
+          </Slide>
+          <Slide transition={["spin", "slide"]} bgColor="primary">
+            <Heading size={2} caps fit textColor="tertiary">Terminal</Heading>
+            <Terminal
+              title="1. elijahm@elijahm: ~(zsh)"
+              output={[
+                "npm test",
+                <div style={{ color: "#33B969" }}>TOTAL: 174 SUCCESS</div>,
+                <div>
+                  <div>
+                    =============================== Coverage summary ===============================
+                  </div>
+                  <div style={{ color: "#DEC612" }}>Statements   : 51.29% ( 278/542 )</div>
+                  <div style={{ color: "#EE5057" }}>Branches     : 38.78% ( 95/245 )</div>
+                  <div style={{ color: "#EE5057" }}>Functions    : 46.21% ( 61/132 )</div>
+                  <div style={{ color: "#DEC612" }}>Lines        : 52.69% ( 274/520 )</div>
+                  <div>
+                    ================================================================================
+                  </div>
+                </div>
+              ]}
+            />
+          </Slide>
+          <Slide transition={["spin", "slide"]} bgColor="primary">
+            <Heading size={2} caps fit textColor="tertiary"><code>Advanced Demo</code></Heading>
+            <Terminal
+              title="1. elijahm@elijahm: ~(zsh)"
+              output={[
+                <Typist cursor={cursor}>npm test</Typist>,
+                <div style={{ color: "#33B969" }}>TOTAL: 174 SUCCESS</div>,
+                <Typist cursor={cursor}>rm -rf node_modules && npm install && say "done"</Typist>,
+                [
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <Loading type="bars" color="#fff" height="30" width="30" />
+                    <span style={{ marginLeft: "1rem" }}>Installing dependencies...</span>
+                  </div>,
+                  <div style={{ color: "#33B969" }}>⚡️ Dependencies installed!</div>
+                ]
+              ]}
+            />
+          </Slide>
+          <Slide transition={["slide"]} bgColor="primary">
+            <Heading size={1} caps fit textColor="tertiary">
+              Your presentations are interactive
+            </Heading>
+            <LiveEdit code={defaultCode} scope={{ FlipCard }} />
+          </Slide>
+          <Slide transition={["slide"]} bgColor="primary">
+            <Heading size={1} caps fit textColor="tertiary">
+              Your presentations are interactive
+            </Heading>
+            <LiveProvider code="<strong>Hello World!</strong>">
+              <LiveEditor />
+              <LiveError />
+              <LivePreview />
+            </LiveProvider>
+          </Slide>
+          <Slide bgColor="secondary" bgImage={images.react} bgDarken={0.8}>
+            <Heading size={1} fit caps lineHeight={1} textColor="primary">
+              Thank You!
+            </Heading>
+            <Heading size={1} fit lineHeight={1}>
+              <Link href="http://bit.ly/npm-scripts" textColor="quartenary">
+                http://bit.ly/npm-scripts
+              </Link>
+            </Heading>
+            <pre style={{ textAlign: "left", fontSize: "4rem" }}>
+              <Link textColor="tertiary" href="http://elijahmanor.com" style={{ display: "block" }}>
+                http://elijahmanor.com
+              </Link>
+              <Link
+                textColor="tertiary"
+                href="http://twitter.com/elijahmanor"
+                style={{ display: "block", left: "14.5rem", position: "relative" }}
+              >
+                @elijahmanor
+              </Link>
+            </pre>
+          </Slide>
+        </SlideSet>
       </Deck>
     );
   }
