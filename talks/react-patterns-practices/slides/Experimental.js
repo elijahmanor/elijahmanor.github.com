@@ -15,11 +15,15 @@ import {
   MarkdownSlides,
   Link,
   Markdown,
-  Appear
+  Appear,
+  SlideSet
 } from "spectacle";
 import CodeSlide from "spectacle-code-slide";
 // import slidesMarkdown from "raw-loader!../assets/markdown.md";
 import Tweet from "../assets/Tweet.js";
+import Interactive from "../assets/interactive.js";
+import FlipCard from "react-flipcard";
+import { defaultCode } from "../assets/jokes-1.example.js";
 
 export default (theme, images) => [
   <Slide>
@@ -76,11 +80,7 @@ Slides are separated with **three dashes** and can be used _anywhere_ in the dec
     </Slide>
   </SlideSet>,
   <Slide maxHeight="100vh" maxWidth="90vw">
-    <ComponentPlayground
-      theme="dark"
-      scope={{ FlipCard }}
-      code={require("raw-loader!../assets/jokes-1.example")}
-    />
+    <ComponentPlayground theme="dark" scope={{ FlipCard }} code={defaultCode} />
   </Slide>,
   <Slide transition={["fade"]} bgColor="secondary">
     <Heading size={6} textColor="primary" caps>Typography</Heading>

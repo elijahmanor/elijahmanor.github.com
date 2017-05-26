@@ -78,6 +78,7 @@ import JokesKeyboard from "../assets/JokesKeyboard.js";
 import JokesAddBroken from "../assets/JokesAddBroken.js";
 // import slidesMarkdown from "raw-loader!../assets/markdown.md";
 import introduction from "../slides/Introduction.js";
+import experimental from "../slides/Experimental.js";
 import refactoring from "../slides/Refactoring.js";
 import unitTesting from "../slides/UnitTesting.js";
 import patternLibrary from "../slides/PatternLibrary.js";
@@ -93,6 +94,7 @@ export default class Presentation extends React.Component {
     return (
       <Deck transition={["slide"]} transitionDuration={500} theme={theme}>
         {introduction(theme, images)}
+        {/*{experimental(theme, images)}*/}
         {refactoring(theme, images)}
         {unitTesting(theme, images)}
         {patternLibrary(theme, images)}
