@@ -1507,7 +1507,7 @@
   location: ''
   employer: 'leankit'
   sessions:
-  - name: 'Beyond the Basics with React'
+  - name: 'React Patterns and Practices'
     slides: '/talks/react-patterns-practices'
     video: ''
     feedback: ''
