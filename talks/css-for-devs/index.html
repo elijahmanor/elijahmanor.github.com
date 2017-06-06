@@ -352,6 +352,11 @@
 				76: function () { // l
 					Reveal.getScale();
 					Reveal.layout();
+				},
+				82: function() { // r
+					var currentSlide = document.querySelector("section.present:not(.stack)");
+					var iframe = currentSlide.querySelector("iframe");
+					iframe.src = iframe.src;
 				}
 			},
 			menu: {
