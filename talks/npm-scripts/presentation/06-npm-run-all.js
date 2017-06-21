@@ -86,6 +86,7 @@ removed 81 packages and updated 1 package in 1.059s`}</div>,
         {
           isSolo: true,
           isAutoScroll: false,
+          scrollTo: 110,
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -108,7 +109,8 @@ removed 81 packages and updated 1 package in 1.059s`}</div>,
               <span>{`
     "eslint": "eslint --cache --fix ./",
     "stylelint": "stylelint '**/*.scss' --syntax scss",
-    "stylelint:fix": "stylefmt -R src/"
+    "stylelint:fix": "stylefmt -R src/",
+    "mocha": "mocha spec/ --require babel-register"
   },
   "bin": {
     "react-file-size": "./index.js"
@@ -174,6 +176,7 @@ removed 81 packages and updated 1 package in 1.059s`}</div>,
         {
           isSolo: true,
           isAutoScroll: false,
+          scrollTo: 110,
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -191,7 +194,8 @@ removed 81 packages and updated 1 package in 1.059s`}</div>,
               <span>{`
     "eslint": "eslint --cache --fix ./",
     "stylelint": "stylelint '**/*.scss' --syntax scss",
-    "stylelint:fix": "stylefmt -R src/"
+    "stylelint:fix": "stylefmt -R src/",
+    "mocha": "mocha spec/ --require babel-register"
   },
   "bin": {
     "react-file-size": "./index.js"
@@ -256,6 +260,7 @@ removed 81 packages and updated 1 package in 1.059s`}</div>,
         {
           isSolo: true,
           isAutoScroll: false,
+          scrollTo: 110,
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -273,7 +278,8 @@ removed 81 packages and updated 1 package in 1.059s`}</div>,
               <span>{` eslint stylelint mocha",
     "eslint": "eslint --cache --fix ./",
     "stylelint": "stylelint '**/*.scss' --syntax scss",
-    "stylelint:fix": "stylefmt -R src/"
+    "stylelint:fix": "stylefmt -R src/",
+    "mocha": "mocha spec/ --require babel-register"
   },
   "bin": {
     "react-file-size": "./index.js"

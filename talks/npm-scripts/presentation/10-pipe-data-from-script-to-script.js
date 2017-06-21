@@ -74,9 +74,9 @@ export default (theme, images) => [
         {
           isSolo: true,
           isAutoScroll: false,
-          scrollTo: 310,
+          scrollTo: 410,
           output: (
-            <div style={{ whiteSpace: "pre-wrap" }}>
+            <div style={{ whiteSpace: "pre" }}>
               <span>{`{
   "name": "react-file-size",
   "scripts": {
@@ -164,9 +164,9 @@ export default (theme, images) => [
         {
           isSolo: true,
           isAutoScroll: false,
-          scrollTo: 310,
+          scrollTo: 410,
           output: (
-            <div style={{ whiteSpace: "pre-wrap" }}>
+            <div style={{ whiteSpace: "pre" }}>
               <span>{`{
   "name": "react-file-size",
   "scripts": {
@@ -180,7 +180,7 @@ export default (theme, images) => [
     "lint:js": "eslint --cache --fix ./",
     "lint:css": "stylelint '**/*.scss' --syntax scss",
     "lint:css:fix": "stylefmt -R src/",
-    "watch:test": "npm t -- --watch"
+    "watch:test": "npm t -- --watch",
     `}</span>
               <Changed>
                 {`"build:html": "pug --obj data.json src/index.pug --out public/",

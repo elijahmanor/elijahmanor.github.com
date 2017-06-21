@@ -93,7 +93,8 @@ export default (theme, images) => [
     `}</span>
               <Highlight>{"\"stylelint\""}</Highlight>
               <span>{`: "stylelint '**/*.scss' --syntax scss",
-    "stylelint:fix": "stylefmt -R src/"
+    "stylelint:fix": "stylefmt -R src/",
+    "mocha": "mocha spec/ --require babel-register"
   },
   "bin": { "react-file-size": "./index.js" },
   "author": "Elijah Manor",
@@ -175,7 +176,8 @@ export default (theme, images) => [
     `}</span>
               <Changed>{"\"lint:css\""}</Changed>
               <span>{`: "stylelint '**/*.scss' --syntax scss",
-    "stylelint:fix": "stylefmt -R src/"
+    "stylelint:fix": "stylefmt -R src/",
+    "mocha": "mocha spec/ --require babel-register"
   },
   "bin": { "react-file-size": "./index.js" },
   "author": "Elijah Manor",
@@ -259,7 +261,8 @@ export default (theme, images) => [
               <span>{`: "stylelint '**/*.scss' --syntax scss",
     `}</span>
               <Highlight>{"\"stylelint:fix\""}</Highlight>
-              <span>{`: "stylefmt -R src/"
+              <span>{`: "stylefmt -R src/",
+    "mocha": "mocha spec/ --require babel-register"
   },
   "bin": { "react-file-size": "./index.js" },
   "author": "Elijah Manor",
@@ -343,7 +346,8 @@ export default (theme, images) => [
               <span>{`: "stylelint '**/*.scss' --syntax scss",
     `}</span>
               <Changed>{"\"lint:css:fix\""}</Changed>
-              <span>{`: "stylefmt -R src/"
+              <span>{`: "stylefmt -R src/",
+    "mocha": "mocha spec/ --require babel-register"
   },
   "bin": { "react-file-size": "./index.js" },
   "author": "Elijah Manor",
@@ -427,7 +431,8 @@ export default (theme, images) => [
               <span>{`"lint:css": "stylelint '**/*.scss' --syntax scss",
     `}</span>
               <span>{"\"lint:css:fix\""}</span>
-              <span>{`: "stylefmt -R src/"
+              <span>{`: "stylefmt -R src/",
+    "mocha": "mocha spec/ --require babel-register"
   },
   "bin": { "react-file-size": "./index.js" },
   "author": "Elijah Manor",

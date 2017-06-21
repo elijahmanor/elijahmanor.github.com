@@ -71,7 +71,7 @@ export default (theme, images) => [
         {
           isSolo: true,
           isAutoScroll: false,
-          scrollTo: 550,
+          scrollTo: 1000,
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -265,7 +265,7 @@ husky - pre-commit hook failed (add --no-verify to bypass)
         {
           isSolo: true,
           isAutoScroll: false,
-          scrollTo: 550,
+          scrollTo: 1000,
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{

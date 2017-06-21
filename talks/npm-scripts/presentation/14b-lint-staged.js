@@ -71,7 +71,7 @@ export default (theme, images) => [
         {
           isSolo: true,
           isAutoScroll: false,
-          scrollTo: 800,
+          scrollTo: 1000,
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
