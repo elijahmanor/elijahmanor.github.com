@@ -86,6 +86,24 @@ export default (theme, images) => [
     </Heading>
   </Slide>,
   <Slide
+    id="egghead"
+    transition={["slide"]}
+    bgColor="black"
+    notes="You can even put notes on your slide. How awesome is that?"
+  >
+    <Heading textColor="quartenary" caps fit>
+      <Link
+        href="https://egghead.io/courses/how-to-use-npm-scripts-as-your-build-tool"
+        textColor="quartenary"
+      >
+        Free egghead.io Course
+      </Link>
+    </Heading>
+    <Link href="https://egghead.io/courses/how-to-use-npm-scripts-as-your-build-tool">
+      <Image src={images.course} width="50%" margin="0" style={{ marginTop: "5rem" }} />
+    </Link>
+  </Slide>,
+  <Slide
     transition={["slide"]}
     bgColor="black"
     notes="You can even put notes on your slide. How awesome is that?"

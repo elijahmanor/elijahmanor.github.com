@@ -32,7 +32,8 @@ const images = {
   cross: require("../assets/logo-cross.png"),
   egghead: require("../assets/logo-egghead.png"),
   leankit: require("../assets/logo-leankit.png"),
-  mvp: require("../assets/logo-mvp.png")
+  mvp: require("../assets/logo-mvp.png"),
+  course: require("../assets/egghead-course.png")
 };
 preloader(images);
 
