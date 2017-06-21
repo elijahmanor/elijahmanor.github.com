@@ -129,16 +129,6 @@ export default (theme, images) => [
   "license": "MIT"
 }`}</div>,
         <div>
-          <Prompt path="react-file-size" /><span>exit</span>
-        </div>
-      ]}
-    />
-  </Slide>,
-  <Slide transition={["spin", "slide"]} bgColor="primary">
-    <Terminal
-      title="1. elijahm@elijahm: ~(zsh)"
-      output={[
-        <div>
           <Prompt path="react-file-size" />
           <Typist cursor={cursor}><div><Success>rm</Success> package.json</div></Typist>
         </div>,

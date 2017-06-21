@@ -64,5 +64,19 @@ export default (theme, images) => [
         <Image src={images.theManorFamily} width="100%" margin="0" />
       </Fill>
     </Layout>
+  </Slide>,
+  <Slide
+    transition={["slide"]}
+    bgColor="black"
+    notes="You can even put notes on your slide. How awesome is that?"
+  >
+    <Heading caps fit>react-file-size</Heading>
+    <iframe
+      src="http://elijahmanor.com/react-file-size/"
+      frameBorder="0"
+      style={{ overflow: "hidden", height: "75vh", width: "100%" }}
+      height="100%"
+      width="100%"
+    />
   </Slide>
 ];
