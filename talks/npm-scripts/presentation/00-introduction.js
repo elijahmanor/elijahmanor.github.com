@@ -66,11 +66,35 @@ export default (theme, images) => [
     </Layout>
   </Slide>,
   <Slide
+    id="navigation"
     transition={["slide"]}
     bgColor="black"
     notes="You can even put notes on your slide. How awesome is that?"
   >
-    <Heading caps fit>react-file-size</Heading>
+    <Heading textColor="quartenary" caps fit>Navigation</Heading>
+    <Heading textAlign="left" size={6} caps textColor="tertiary" width="50%">
+      ➡️ goto next slide
+    </Heading>
+    <Heading textAlign="left" size={6} caps textColor="tertiary" width="50%">
+      ⬅️ goto previous slide
+    </Heading>
+    <Heading textAlign="left" size={6} caps textColor="tertiary" width="50%">
+      ⬇️ goto next terminal command
+    </Heading>
+    <Heading textAlign="left" size={6} caps textColor="tertiary" width="50%">
+      ⬆️ goto previous terminal command
+    </Heading>
+  </Slide>,
+  <Slide
+    transition={["slide"]}
+    bgColor="black"
+    notes="You can even put notes on your slide. How awesome is that?"
+  >
+    <Heading caps fit>
+      <Link href="http://elijahmanor.com/react-file-size/" textColor="quartenary">
+        react-file-size
+      </Link>
+    </Heading>
     <iframe
       src="http://elijahmanor.com/react-file-size/"
       frameBorder="0"

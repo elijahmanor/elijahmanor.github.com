@@ -75,11 +75,13 @@ import onChange from "./11-onchange";
 import usePackageVars from "./12-use-package-vars";
 import customConfigSettings from "./13-custom-config-settings";
 import gitHooks from "./14-git-hooks";
+import lintStaged from "./14b-lint-staged";
 import consoleLogLevel from "./15-console-log-level";
 import crossEnvironment from "./16-cross-environment";
 import listAvailableScripts from "./17-list-available-scripts";
 import bashScripts from "./20-bash-scripts";
 import nodeScripts from "./21-node-scripts";
+import npmCheck from "./22-npm-check";
 import conclusion from "./99-conclusion";
 
 export default class Presentation extends React.Component {
@@ -110,11 +112,13 @@ export default class Presentation extends React.Component {
         {usePackageVars(theme, images)}
         {customConfigSettings(theme, images)}
         {gitHooks(theme, images)}
+        {lintStaged(theme, images)}
         {consoleLogLevel(theme, images)}
         {crossEnvironment(theme, images)}
         {listAvailableScripts(theme, images)}
         {bashScripts(theme, images)}
         {nodeScripts(theme, images)}
+        {npmCheck(theme, images)}
         {conclusion(theme, images)}
       </Deck>
     );
