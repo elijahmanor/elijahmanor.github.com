@@ -1,0 +1,1102 @@
+{
+  "duration": 58.647142,
+  "title": null,
+  "version": 1,
+  "height": 24,
+  "stdout": [
+    [
+      0.660768,
+      "\u001b]0;osboxes@osboxes: ~\u0007\u001b[01;32mosboxes@osboxes\u001b[00m:\u001b[01;34m~\u001b[00m$ "
+    ],
+    [
+      2.849803,
+      "l"
+    ],
+    [
+      0.07866,
+      "s"
+    ],
+    [
+      0.1027,
+      "\r\n\u001b[0m\u001b[01;34mDesktop\u001b[0m    \u001b[01;34mDownloads\u001b[0m         \u001b[01;34mMusic\u001b[0m     \u001b[01;34mPublic\u001b[0m     test.asciicast.json\r\n\u001b[01;34mDocuments\u001b[0m  examples.desktop  \u001b[01;34mPictures\u001b[0m  \u001b[01;34mTemplates\u001b[0m  \u001b[01;34mVideos\u001b[0m\r\n"
+    ],
+    [
+      0.000214,
+      "\u001b]0;osboxes@osboxes: ~\u0007\u001b[01;32mosboxes@osboxes\u001b[00m:\u001b[01;34m~\u001b[00m$ "
+    ],
+    [
+      3.75587,
+      "v"
+    ],
+    [
+      0.056118,
+      "i"
+    ],
+    [
+      0.056152,
+      "m"
+    ],
+    [
+      0.078513,
+      " "
+    ],
+    [
+      0.259341,
+      "e"
+    ],
+    [
+      0.179568,
+      "x"
+    ],
+    [
+      0.276972,
+      "amples.desktop "
+    ],
+    [
+      1.118748,
+      "\r\n"
+    ],
+    [
+      0.175527,
+      "The program 'vim' can be found in the following packages:"
+    ],
+    [
+      9.1e-05,
+      "\r\n"
+    ],
+    [
+      6.1e-05,
+      " * vim"
+    ],
+    [
+      3.1e-05,
+      "\r\n"
+    ],
+    [
+      4.1e-05,
+      " * vim-gtk3"
+    ],
+    [
+      2.6e-05,
+      "\r\n"
+    ],
+    [
+      3.6e-05,
+      " * vim-tiny"
+    ],
+    [
+      2.3e-05,
+      "\r\n"
+    ],
+    [
+      3.5e-05,
+      " * neovim"
+    ],
+    [
+      2.3e-05,
+      "\r\n"
+    ],
+    [
+      3.3e-05,
+      " * vim-athena"
+    ],
+    [
+      2.3e-05,
+      "\r\n"
+    ],
+    [
+      3.2e-05,
+      " * vim-gtk"
+    ],
+    [
+      2.3e-05,
+      "\r\n"
+    ],
+    [
+      3.2e-05,
+      " * vim-nox"
+    ],
+    [
+      2.8e-05,
+      "\r\n"
+    ],
+    [
+      4.2e-05,
+      "Try: sudo apt install <selected package>"
+    ],
+    [
+      2.3e-05,
+      "\r\n"
+    ],
+    [
+      0.012822,
+      "\u001b]0;osboxes@osboxes: ~\u0007\u001b[01;32mosboxes@osboxes\u001b[00m:\u001b[01;34m~\u001b[00m$ "
+    ],
+    [
+      9.846178,
+      "s"
+    ],
+    [
+      0.155504,
+      "u"
+    ],
+    [
+      0.575576,
+      "d"
+    ],
+    [
+      0.089942,
+      "o"
+    ],
+    [
+      0.101049,
+      " "
+    ],
+    [
+      0.214281,
+      "a"
+    ],
+    [
+      0.157127,
+      "p"
+    ],
+    [
+      0.29271,
+      "t"
+    ],
+    [
+      0.123785,
+      " "
+    ],
+    [
+      0.438697,
+      "i"
+    ],
+    [
+      0.234975,
+      "n"
+    ],
+    [
+      0.091751,
+      "s"
+    ],
+    [
+      0.101438,
+      "t"
+    ],
+    [
+      0.089756,
+      "a"
+    ],
+    [
+      0.078365,
+      "l"
+    ],
+    [
+      0.13499,
+      "l"
+    ],
+    [
+      0.461691,
+      " "
+    ],
+    [
+      0.348619,
+      "v"
+    ],
+    [
+      0.078848,
+      "i"
+    ],
+    [
+      0.044418,
+      "m"
+    ],
+    [
+      1.700012,
+      "\r\n"
+    ],
+    [
+      0.009576,
+      "[sudo] password for osboxes: "
+    ],
+    [
+      4.355218,
+      "\r\n"
+    ],
+    [
+      0.073218,
+      "\rReading package lists... 0%\r"
+    ],
+    [
+      0.024034,
+      "\rReading package lists... 100%\r"
+    ],
+    [
+      7.9e-05,
+      "\rReading package lists... Done\r"
+    ],
+    [
+      4.2e-05,
+      "\r\n"
+    ],
+    [
+      0.009276,
+      "\rBuilding dependency tree... 0%\r"
+    ],
+    [
+      6e-05,
+      "\rBuilding dependency tree... 0%\r"
+    ],
+    [
+      0.041719,
+      "\rBuilding dependency tree... 50%\r"
+    ],
+    [
+      7.9e-05,
+      "\rBuilding dependency tree... 50%\r"
+    ],
+    [
+      0.217841,
+      "\rBuilding dependency tree       \r"
+    ],
+    [
+      0.000101,
+      "\r\n"
+    ],
+    [
+      4.7e-05,
+      "\rReading state information... 0%\r"
+    ],
+    [
+      7.5e-05,
+      "\rReading state information... 0%\r"
+    ],
+    [
+      0.002444,
+      "\rReading state information... Done\r"
+    ],
+    [
+      4.9e-05,
+      "\r\n"
+    ],
+    [
+      0.247918,
+      "The following additional packages will be installed:"
+    ],
+    [
+      6.7e-05,
+      "\r\n"
+    ],
+    [
+      8.3e-05,
+      "  vim-runtime"
+    ],
+    [
+      2.8e-05,
+      "\r\n"
+    ],
+    [
+      0.001291,
+      "Suggested packages:"
+    ],
+    [
+      2.8e-05,
+      "\r\n"
+    ],
+    [
+      2.5e-05,
+      "  ctags vim-doc vim-scripts"
+    ],
+    [
+      2.1e-05,
+      "\r\n"
+    ],
+    [
+      0.034192,
+      "The following NEW packages will be installed:"
+    ],
+    [
+      7.9e-05,
+      "\r\n"
+    ],
+    [
+      0.000104,
+      "  vim vim-runtime"
+    ],
+    [
+      3.5e-05,
+      "\r\n"
+    ],
+    [
+      0.009769,
+      "0 upgraded, 2 newly installed, 0 to remove and 117 not upgraded."
+    ],
+    [
+      7.7e-05,
+      "\r\n"
+    ],
+    [
+      8.9e-05,
+      "Need to get 6,371 kB of archives."
+    ],
+    [
+      4.1e-05,
+      "\r\n"
+    ],
+    [
+      5.2e-05,
+      "After this operation, 30.8 MB of additional disk space will be used."
+    ],
+    [
+      4.4e-05,
+      "\r\n"
+    ],
+    [
+      6.1e-05,
+      "Do you want to continue?"
+    ],
+    [
+      0.000118,
+      " [Y/n] "
+    ],
+    [
+      5.513859,
+      "\r\n"
+    ],
+    [
+      0.000599,
+      "\u001b[33m\r0% [Working]"
+    ],
+    [
+      0.000201,
+      "\u001b[0m"
+    ],
+    [
+      0.18704,
+      "\r            \r"
+    ],
+    [
+      0.000335,
+      "Get:1 http://us.archive.ubuntu.com/ubuntu zesty/main amd64 vim-runtime all 2:8.0.0095-1ubuntu3 [5,299 kB]"
+    ],
+    [
+      0.000213,
+      "\r\n"
+    ],
+    [
+      0.000212,
+      "\u001b[33m\r0% [1 vim-runtime 0 B/5,299 kB 0%]"
+    ],
+    [
+      6e-05,
+      "\u001b[0m"
+    ],
+    [
+      0.500854,
+      "\u001b[33m\r39% [1 vim-runtime 3,139 kB/5,299 kB 59%]"
+    ],
+    [
+      0.0001,
+      "\u001b[0m"
+    ],
+    [
+      0.156523,
+      "\u001b[33m\r                                         \r"
+    ],
+    [
+      3.2e-05,
+      "77% [Working]"
+    ],
+    [
+      3.1e-05,
+      "\u001b[0m"
+    ],
+    [
+      0.047234,
+      "\r             \r"
+    ],
+    [
+      0.000143,
+      "Get:2 http://us.archive.ubuntu.com/ubuntu zesty/main amd64 vim amd64 2:8.0.0095-1ubuntu3 [1,072 kB]"
+    ],
+    [
+      4e-05,
+      "\r\n"
+    ],
+    [
+      9.9e-05,
+      "\u001b[33m\r77% [2 vim 0 B/1,072 kB 0%]"
+    ],
+    [
+      8.7e-05,
+      "\u001b[0m"
+    ],
+    [
+      0.073065,
+      "\u001b[33m\r                           \r"
+    ],
+    [
+      0.000211,
+      "100% [Working]"
+    ],
+    [
+      5.7e-05,
+      "\u001b[0m"
+    ],
+    [
+      3.7e-05,
+      "\r              \r"
+    ],
+    [
+      5.9e-05,
+      "Fetched 6,371 kB in 0s (6,591 kB/s)"
+    ],
+    [
+      5.6e-05,
+      "\r\n"
+    ],
+    [
+      0.625206,
+      "\n"
+    ],
+    [
+      0.000108,
+      "\u001b7\u001b[0;23r\u001b8\u001b[1A"
+    ],
+    [
+      0.047318,
+      "Selecting previously unselected package vim-runtime."
+    ],
+    [
+      8.2e-05,
+      "\r\n"
+    ],
+    [
+      5.8e-05,
+      "(Reading database ... \r"
+    ],
+    [
+      0.024424,
+      "(Reading database ... 5%\r"
+    ],
+    [
+      8.1e-05,
+      "(Reading database ... 10%\r"
+    ],
+    [
+      5.3e-05,
+      "(Reading database ... 15%\r"
+    ],
+    [
+      5.2e-05,
+      "(Reading database ... 20%\r"
+    ],
+    [
+      9.9e-05,
+      "(Reading database ... 25%\r"
+    ],
+    [
+      5.2e-05,
+      "(Reading database ... 30%\r"
+    ],
+    [
+      5e-05,
+      "(Reading database ... 35%\r"
+    ],
+    [
+      4.8e-05,
+      "(Reading database ... 40%\r"
+    ],
+    [
+      4.8e-05,
+      "(Reading database ... 45%\r"
+    ],
+    [
+      4.9e-05,
+      "(Reading database ... 50%\r"
+    ],
+    [
+      0.029527,
+      "(Reading database ... 55%\r"
+    ],
+    [
+      0.043671,
+      "(Reading database ... 60%\r"
+    ],
+    [
+      0.047825,
+      "(Reading database ... 65%\r"
+    ],
+    [
+      0.044891,
+      "(Reading database ... 70%\r"
+    ],
+    [
+      0.063085,
+      "(Reading database ... 75%\r"
+    ],
+    [
+      0.043316,
+      "(Reading database ... 80%\r"
+    ],
+    [
+      0.056616,
+      "(Reading database ... 85%\r"
+    ],
+    [
+      0.033919,
+      "(Reading database ... 90%\r"
+    ],
+    [
+      0.028655,
+      "(Reading database ... 95%\r"
+    ],
+    [
+      0.035346,
+      "(Reading database ... 100%\r"
+    ],
+    [
+      8e-05,
+      "(Reading database ... "
+    ],
+    [
+      4.6e-05,
+      "168934 files and directories currently installed.)"
+    ],
+    [
+      3.4e-05,
+      "\r\n"
+    ],
+    [
+      0.00628,
+      "Preparing to unpack .../vim-runtime_2%3a8.0.0095-1ubuntu3_all.deb ..."
+    ],
+    [
+      7.2e-05,
+      "\r\n"
+    ],
+    [
+      0.000189,
+      "\u001b7\u001b[24;0f\u001b[42m\u001b[30mProgress: [  0%]\u001b[49m\u001b[39m [..........................................................] \u001b8"
+    ],
+    [
+      0.000107,
+      "\u001b7\u001b[24;0f\u001b[42m\u001b[30mProgress: [  9%]\u001b[49m\u001b[39m [#####.....................................................] \u001b8"
+    ],
+    [
+      0.047356,
+      "Adding 'diversion of /usr/share/vim/vim80/doc/help.txt to /usr/share/vim/vim80/doc/help.txt.vim-tiny by vim-runtime'"
+    ],
+    [
+      9.8e-05,
+      "\r\n"
+    ],
+    [
+      0.034406,
+      "Adding 'diversion of /usr/share/vim/vim80/doc/tags to /usr/share/vim/vim80/doc/tags.vim-tiny by vim-runtime'"
+    ],
+    [
+      0.003947,
+      "\r\n"
+    ],
+    [
+      0.013402,
+      "Unpacking vim-runtime (2:8.0.0095-1ubuntu3) ..."
+    ],
+    [
+      0.000134,
+      "\r\n"
+    ],
+    [
+      0.73205,
+      "\u001b7\u001b[24;0f\u001b[42m\u001b[30mProgress: [ 18%]\u001b[49m\u001b[39m [##########................................................] \u001b8"
+    ],
+    [
+      0.002129,
+      "\u001b7\u001b[24;0f\u001b[42m\u001b[30mProgress: [ 27%]\u001b[49m\u001b[39m [###############...........................................] \u001b8"
+    ],
+    [
+      0.033409,
+      "Selecting previously unselected package vim."
+    ],
+    [
+      8.4e-05,
+      "\r\n"
+    ],
+    [
+      0.010683,
+      "Preparing to unpack .../vim_2%3a8.0.0095-1ubuntu3_amd64.deb ..."
+    ],
+    [
+      7.4e-05,
+      "\r\n"
+    ],
+    [
+      0.000182,
+      "\u001b7\u001b[24;0f\u001b[42m\u001b[30mProgress: [ 36%]\u001b[49m\u001b[39m [#####################.....................................] \u001b8"
+    ],
+    [
+      0.001285,
+      "Unpacking vim (2:8.0.0095-1ubuntu3) ..."
+    ],
+    [
+      4.2e-05,
+      "\r\n"
+    ],
+    [
+      0.129955,
+      "\u001b7\u001b[24;0f\u001b[42m\u001b[30mProgress: [ 45%]\u001b[49m\u001b[39m [##########################................................] \u001b8"
+    ],
+    [
+      0.000985,
+      "\u001b7\u001b[24;0f\u001b[42m\u001b[30mProgress: [ 54%]\u001b[49m\u001b[39m [###############################...........................] \u001b8"
+    ],
+    [
+      0.054466,
+      "Processing triggers for man-db (2.7.6.1-2) ..."
+    ],
+    [
+      7.7e-05,
+      "\r\n"
+    ],
+    [
+      0.427375,
+      "Setting up vim-runtime (2:8.0.0095-1ubuntu3) ..."
+    ],
+    [
+      9.1e-05,
+      "\r\n"
+    ],
+    [
+      0.000942,
+      "\u001b7\u001b[24;0f\u001b[42m\u001b[30mProgress: [ 63%]\u001b[49m\u001b[39m [####################################......................] \u001b8"
+    ],
+    [
+      0.229054,
+      "\u001b7\u001b[24;0f\u001b[42m\u001b[30mProgress: [ 72%]\u001b[49m\u001b[39m [##########################################................] \u001b8"
+    ],
+    [
+      0.001426,
+      "Setting up vim (2:8.0.0095-1ubuntu3) ..."
+    ],
+    [
+      0.000103,
+      "\r\n"
+    ],
+    [
+      0.000953,
+      "\u001b7\u001b[24;0f\u001b[42m\u001b[30mProgress: [ 81%]\u001b[49m\u001b[39m [###############################################...........] \u001b8"
+    ],
+    [
+      0.044621,
+      "update-alternatives: "
+    ],
+    [
+      0.000101,
+      "using /usr/bin/vim.basic to provide /usr/bin/vim (vim) in auto mode"
+    ],
+    [
+      5.2e-05,
+      "\r\n"
+    ],
+    [
+      0.018623,
+      "update-alternatives: "
+    ],
+    [
+      0.000933,
+      "using /usr/bin/vim.basic to provide /usr/bin/vimdiff (vimdiff) in auto mode"
+    ],
+    [
+      9.7e-05,
+      "\r\n"
+    ],
+    [
+      0.012404,
+      "update-alternatives: "
+    ],
+    [
+      9.6e-05,
+      "using /usr/bin/vim.basic to provide /usr/bin/rvim (rvim) in auto mode"
+    ],
+    [
+      5.3e-05,
+      "\r\n"
+    ],
+    [
+      0.002952,
+      "update-alternatives: "
+    ],
+    [
+      8.1e-05,
+      "using /usr/bin/vim.basic to provide /usr/bin/rview (rview) in auto mode"
+    ],
+    [
+      4.9e-05,
+      "\r\n"
+    ],
+    [
+      0.0032,
+      "update-alternatives: "
+    ],
+    [
+      8.6e-05,
+      "using /usr/bin/vim.basic to provide /usr/bin/vi (vi) in auto mode"
+    ],
+    [
+      4.3e-05,
+      "\r\n"
+    ],
+    [
+      0.002957,
+      "update-alternatives: "
+    ],
+    [
+      8e-05,
+      "using /usr/bin/vim.basic to provide /usr/bin/view (view) in auto mode"
+    ],
+    [
+      4e-05,
+      "\r\n"
+    ],
+    [
+      0.002519,
+      "update-alternatives: "
+    ],
+    [
+      7.4e-05,
+      "using /usr/bin/vim.basic to provide /usr/bin/ex (ex) in auto mode"
+    ],
+    [
+      4.3e-05,
+      "\r\n"
+    ],
+    [
+      0.008704,
+      "\u001b7\u001b[24;0f\u001b[42m\u001b[30mProgress: [ 90%]\u001b[49m\u001b[39m [####################################################......] \u001b8"
+    ],
+    [
+      0.291798,
+      "\r\n"
+    ],
+    [
+      6.9e-05,
+      "\u001b7\u001b[0;24r\u001b8\u001b[1A"
+    ],
+    [
+      2.8e-05,
+      "\u001b[J"
+    ],
+    [
+      1.443825,
+      "\u001b]0;osboxes@osboxes: ~\u0007\u001b[01;32mosboxes@osboxes\u001b[00m:\u001b[01;34m~\u001b[00m$ "
+    ],
+    [
+      1.631562,
+      "l"
+    ],
+    [
+      0.089928,
+      "s"
+    ],
+    [
+      0.10159,
+      "\r\n"
+    ],
+    [
+      0.000644,
+      "\u001b[0m\u001b[01;34mDesktop\u001b[0m    \u001b[01;34mDownloads\u001b[0m         \u001b[01;34mMusic\u001b[0m     \u001b[01;34mPublic\u001b[0m     test.asciicast.json"
+    ],
+    [
+      8.4e-05,
+      "\r\n"
+    ],
+    [
+      2.3e-05,
+      "\u001b[01;34mDocuments\u001b[0m  examples.desktop  \u001b[01;34mPictures\u001b[0m  \u001b[01;34mTemplates\u001b[0m  \u001b[01;34mVideos\u001b[0m"
+    ],
+    [
+      1.3e-05,
+      "\r\n"
+    ],
+    [
+      0.000231,
+      "\u001b]0;osboxes@osboxes: ~\u0007\u001b[01;32mosboxes@osboxes\u001b[00m:\u001b[01;34m~\u001b[00m$ "
+    ],
+    [
+      0.49204,
+      "v"
+    ],
+    [
+      0.057277,
+      "i"
+    ],
+    [
+      0.067673,
+      "m"
+    ],
+    [
+      0.044918,
+      " "
+    ],
+    [
+      0.292994,
+      "e"
+    ],
+    [
+      0.133273,
+      "x"
+    ],
+    [
+      0.347491,
+      "amples.desktop "
+    ],
+    [
+      0.736029,
+      "\r\n"
+    ],
+    [
+      0.050833,
+      "\u001b[?1049h\u001b[?1h\u001b="
+    ],
+    [
+      0.000109,
+      "\u001b[2;1H▽\u001b[6n"
+    ],
+    [
+      4.7e-05,
+      "\u001b[2;1H  \u001b[1;1H"
+    ],
+    [
+      0.001084,
+      "\u001b]11;?\u0007"
+    ],
+    [
+      0.002959,
+      "\u001b[1;24r\u001b[?12;25h\u001b[?12l\u001b[?25h\u001b[27m\u001b[23m\u001b[m\u001b[H\u001b[2J\u001b[?25l\u001b[24;1H\"examples.desktop\""
+    ],
+    [
+      0.000475,
+      " 240L, 8980C"
+    ],
+    [
+      0.001752,
+      "\u001b[>c"
+    ],
+    [
+      0.006613,
+      "\u001b[1;1H\u001b[35m\u001b[106m[\u001b[m\u001b[35mDesktop Entry\u001b[m\u001b[35m\u001b[106m]\u001b[m\r\n\u001b[32mVersion\u001b[m=1.0\r\n\u001b[32mType\u001b[m\u001b[31m=Link\u001b[m\r\n\u001b[32mName\u001b[m\u001b[31m=\u001b[mExamples\r\n\u001b[32mName\u001b[m\u001b[36m[aa]\u001b[m\u001b[31m=\u001b[mCeelallo\r\n\u001b[32mName\u001b[m\u001b[36m[ace]\u001b[m\u001b[31m=\u001b[mContoh\r\n\u001b[32mName\u001b[m\u001b[36m[af]\u001b[m\u001b[31m=\u001b[mVoorbeelde\r\n\u001b[32mName\u001b[m\u001b[36m[am]\u001b[m\u001b[31m=\u001b[mምሳሌዎች\r\n\u001b[32mName\u001b[m\u001b[36m[an]\u001b[m\u001b[31m=\u001b[mExemplos\r\n\u001b[32mName\u001b[m\u001b[36m[ar]\u001b[m\u001b[31m=\u001b[mﺄﻤﺜﻟﺓ\r\n\u001b[32mName\u001b[m\u001b[36m[ast]\u001b[m\u001b[31m=\u001b[mExemplos\r\n\u001b[32mName\u001b[m\u001b[36m[az]\u001b[m\u001b[31m=\u001b[mNü\u001b[12;12Hmunələr\r\n\u001b[32mName\u001b[m\u001b[36m[be]\u001b[m\u001b[31m=\u001b[mП\u001b[13;11Hр\u001b[13;12Hы\u001b[13;13Hк\u001b[13;14Hл\u001b[13;15Hа\u001b[13;16Hд\u001b[13;17Hы\u001b[14;1H\u001b[32mName\u001b[m\u001b[36m[bg]\u001b[m\u001b[31m=\u001b[mП\u001b[14;11Hр\u001b[14;12Hи\u001b[14;13Hм\u001b[14;14Hе\u001b[14;15Hр\u001b[14;16Hи\u001b[15;1H\u001b[32mName\u001b[m\u001b[36m[bn]\u001b[m\u001b[31m=\u001b[mউদাহরণ\r\n\u001b[32mName\u001b[m\u001b[36m[br]\u001b[m\u001b[31m=\u001b[mSkouerioù\u001b[17;1H\u001b[32mName\u001b[m\u001b[36m[bs]\u001b[m\u001b[31m=\u001b[mPrimjeri\r\n\u001b[32mName\u001b[m\u001b[36m[ca]\u001b[m\u001b[31m=\u001b[mExemples\r\n\u001b[32mName\u001b[m\u001b[36m[ca@valencia]\u001b[m\u001b[31m=\u001b[mExemples\r\n\u001b[32mName\u001b[m\u001b[36m[ckb]\u001b[m\u001b[31m=\u001b[mﻦﻣﻮﻨﻫ\u001b[34m<200c"
+    ],
+    [
+      3.3e-05,
+      ">\u001b[mﻛﺎﻧ\r\n\u001b[32mName\u001b[m\u001b[36m[cs]\u001b[m\u001b[31m=\u001b[mUká\u001b[21;13Hzky\r\n\u001b[32mName\u001b[m\u001b[36m[csb]\u001b[m\u001b[31m=\u001b[mPrzëmiôrë\r\n\u001b[32mName\u001b[m\u001b[36m[cy]\u001b[m\u001b[31m=\u001b[mEnghreifftiau\u001b[24;63H1,1\u001b[11CTop\u001b[1;1H\u001b[?12l\u001b[?25h"
+    ],
+    [
+      0.00098,
+      "\u001b[27m\u001b[23m\u001b[m\u001b[H\u001b[2J\u001b[?25l\u001b[1;1H\u001b[38;5;224m\u001b[46m[\u001b[m\u001b[38;5;224mDesktop Entry\u001b[m\u001b[38;5;224m\u001b[46m]\u001b[m\r\n\u001b[38;5;121mVersion\u001b[m=1.0\r\n\u001b[38;5;121mType\u001b[m\u001b[95m=Link\u001b[m\r\n\u001b[38;5;121mName\u001b[m\u001b[95m=\u001b[mExamples\r\n\u001b[38;5;121mName\u001b[m\u001b[1m\u001b[96m[aa]\u001b[m\u001b[95m=\u001b[mCeelallo\r\n\u001b[38;5;121mName\u001b[m\u001b[1m\u001b[96m[ace]\u001b[m\u001b[95m=\u001b[mContoh\r\n\u001b[38;5;121mName\u001b[m\u001b[1m\u001b[96m[af]\u001b[m\u001b[95m=\u001b[mVoorbeelde\r\n\u001b[38;5;121mName\u001b[m\u001b[1m\u001b[96m[am]\u001b[m\u001b[95m=\u001b[mምሳሌዎች\r\n\u001b[38;5;121mName\u001b[m\u001b[1m\u001b[96m[an]\u001b[m\u001b[95m=\u001b[mExemplos\r\n\u001b[38;5;121mName\u001b[m\u001b[1m\u001b[96m[ar]\u001b[m\u001b[95m=\u001b[mﺄﻤﺜﻟﺓ\r\n\u001b[38;5;121mName\u001b[m\u001b[1m\u001b[96m[ast]\u001b[m\u001b[95m=\u001b[mExemplos\r\n\u001b[38;5;121mName\u001b[m\u001b[1m\u001b[96m[az]\u001b[m\u001b[95m=\u001b[mNü\u001b[12;12Hmunələr\r\n\u001b[38;5;121mName\u001b[m\u001b[1m\u001b[96m[be]\u001b[m\u001b[95m=\u001b[mП\u001b[13;11Hр\u001b[13;12Hы\u001b[13;13Hк\u001b[13;14Hл\u001b[13;15Hа\u001b[13;16Hд\u001b[13;17Hы\u001b[14;1H\u001b[38;5;121mName\u001b[m\u001b[1m\u001b[96m[bg]\u001b[m\u001b[95m=\u001b[mП\u001b[14;11Hр\u001b[14;12Hи\u001b[14;13Hм\u001b[14;14Hе\u001b[14;15Hр\u001b[14;16Hи\u001b[15;1H\u001b[38;5;121mName\u001b[m\u001b[1m\u001b[96m[bn]\u001b[m\u001b[95m=\u001b[mউদাহরণ\r\n\u001b[38;5;121mName\u001b[m\u001b[1m\u001b[96m[br]\u001b[m\u001b[95m=\u001b[mSkouerioù\u001b[17;1H\u001b[38;5;121mName\u001b["
+    ],
+    [
+      1.5e-05,
+      "m\u001b[1m\u001b[96m[bs]\u001b[m\u001b[95m=\u001b[mPrimjeri\r\n\u001b[38;5;121mName\u001b[m\u001b[1m\u001b[96m[ca]\u001b[m\u001b[95m=\u001b[mExemples\r\n\u001b[38;5;121mName\u001b[m\u001b[1m\u001b[96m[ca@valencia]\u001b[m\u001b[95m=\u001b[mExemples\r\n\u001b[38;5;121mName\u001b[m\u001b[1m\u001b[96m[ckb]\u001b[m\u001b[95m=\u001b[mﻦﻣﻮﻨﻫ\u001b[38;5;81m<200c>\u001b[mﻛﺎﻧ\r\n\u001b[38;5;121mName\u001b[m\u001b[1m\u001b[96m[cs]\u001b[m\u001b[95m=\u001b[mUká\u001b[21;13Hzky\r\n\u001b[38;5;121mName\u001b[m\u001b[1m\u001b[96m[csb]\u001b[m\u001b[95m=\u001b[mPrzëmiôrë\r\n\u001b[38;5;121mName\u001b[m\u001b[1m\u001b[96m[cy]\u001b[m\u001b[95m=\u001b[mEnghreifftiau\u001b[24;63H1,1\u001b[11CTop\r\"examples.desktop\" 240L, 8980C\u001b[1;1H\u001bP+q436f\u001b\\\u001bP+q6b75\u001b\\\u001bP+q6b64\u001b\\\u001bP+q6b72\u001b\\\u001bP+q6b6c\u001b\\\u001bP+q2332\u001b\\\u001bP+q2334\u001b\\\u001bP+q2569\u001b\\\u001bP+q2a37\u001b\\\u001bP+q6b31\u001b\\"
+    ],
+    [
+      6e-05,
+      "\u001b[?12l\u001b[?25h"
+    ],
+    [
+      1.048427,
+      "\u001b[?25l\u001b[24;53Hj\u001b[1;1H"
+    ],
+    [
+      0.000363,
+      "\u001b[24;53H \u001b[2;1H\u001b[1;1H\u001b[38;5;224m[\u001b[13C]\u001b[m\u001b[24;63H2\u001b[2;1H\u001b[?12l\u001b[?25h"
+    ],
+    [
+      0.501489,
+      "\u001b[?25l\u001b[24;53Hj\u001b[2;1H\u001b[24;53H \u001b[3;1H\u001b[24;63H3\u001b[3;1H\u001b[?12l\u001b[?25h"
+    ],
+    [
+      0.033643,
+      "\u001b[?25l\u001b[24;53Hj\u001b[3;1H"
+    ],
+    [
+      0.000265,
+      "\u001b[24;53H \u001b[4;1H\u001b[24;63H4\u001b[4;1H\u001b[?12l\u001b[?25h"
+    ],
+    [
+      0.033181,
+      "\u001b[?25l\u001b[24;53Hj\u001b[4;1H"
+    ],
+    [
+      0.000237,
+      "\u001b[24;53H \u001b[5;1H\u001b[24;63H5\u001b[5;1H\u001b[?12l\u001b[?25h"
+    ],
+    [
+      0.033211,
+      "\u001b[?25l\u001b[24;53Hj\u001b[5;1H"
+    ],
+    [
+      0.000215,
+      "\u001b[24;53H \u001b[6;1H\u001b[24;63H6\u001b[6;1H\u001b[?12l\u001b[?25h"
+    ],
+    [
+      0.03301,
+      "\u001b[?25l\u001b[24;53Hj\u001b[6;1H"
+    ],
+    [
+      0.000217,
+      "\u001b[24;53H \u001b[7;1H\u001b[24;63H7\u001b[7;1H\u001b[?12l\u001b[?25h"
+    ],
+    [
+      0.032902,
+      "\u001b[?25l\u001b[24;53Hj\u001b[7;1H"
+    ],
+    [
+      0.000216,
+      "\u001b[24;53H \u001b[8;1H\u001b[24;63H8\u001b[8;1H\u001b[?12l\u001b[?25h"
+    ],
+    [
+      0.032871,
+      "\u001b[?25l\u001b[24;53Hj\u001b[8;1H"
+    ],
+    [
+      0.000232,
+      "\u001b[24;53H \u001b[9;1H\u001b[24;63H9\u001b[9;1H\u001b[?12l\u001b[?25h"
+    ],
+    [
+      0.033271,
+      "\u001b[?25l\u001b[24;53Hj\u001b[9;1H"
+    ],
+    [
+      0.000264,
+      "\u001b[24;53H \u001b[10;1H\u001b[24;63H10,1\u001b[10;1H\u001b[?12l\u001b[?25h"
+    ],
+    [
+      0.0337,
+      "\u001b[?25l\u001b[24;53Hj\u001b[10;1H"
+    ],
+    [
+      0.000249,
+      "\u001b[24;53H \u001b[11;1H\u001b[24;64H1\u001b[11;1H\u001b[?12l\u001b[?25h"
+    ],
+    [
+      0.032098,
+      "\u001b[?25l\u001b[24;53Hj\u001b[11;1H"
+    ],
+    [
+      0.0003,
+      "\u001b[24;53H \u001b[12;1H\u001b[24;64H2\u001b[12;1H\u001b[?12l\u001b[?25h"
+    ],
+    [
+      0.033023,
+      "\u001b[?25l\u001b[24;53Hj\u001b[12;1H"
+    ],
+    [
+      0.000249,
+      "\u001b[24;53H \u001b[13;1H\u001b[24;64H3\u001b[13;1H\u001b[?12l\u001b[?25h"
+    ],
+    [
+      0.032724,
+      "\u001b[?25l\u001b[24;53Hj\u001b[13;1H"
+    ],
+    [
+      0.000536,
+      "\u001b[24;53H \u001b[14;1H\u001b[24;64H4\u001b[14;1H\u001b[?12l\u001b[?25h"
+    ],
+    [
+      0.030561,
+      "\u001b[?25l\u001b[24;53Hj\u001b[14;1H"
+    ],
+    [
+      0.000266,
+      "\u001b[24;53H \u001b[15;1H\u001b[24;64H5\u001b[15;1H\u001b[?12l\u001b[?25h"
+    ],
+    [
+      0.029304,
+      "\u001b[?25l\u001b[24;53Hj\u001b[15;1H"
+    ],
+    [
+      0.000674,
+      "\u001b[24;53H \u001b[16;1H\u001b[24;64H6\u001b[16;1H\u001b[?12l\u001b[?25h"
+    ],
+    [
+      0.033299,
+      "\u001b[?25l\u001b[24;53Hj\u001b[16;1H"
+    ],
+    [
+      0.000409,
+      "\u001b[24;53H \u001b[17;1H\u001b[24;64H7\u001b[17;1H\u001b[?12l\u001b[?25h"
+    ],
+    [
+      0.030307,
+      "\u001b[?25l\u001b[24;53Hj\u001b[17;1H"
+    ],
+    [
+      0.00024,
+      "\u001b[24;53H \u001b[18;1H\u001b[24;64H8\u001b[18;1H\u001b[?12l\u001b[?25h"
+    ],
+    [
+      2.099436,
+      "\u001b[?25l\u001b[24;53H^[\u001b[18;1H"
+    ],
+    [
+      0.102136,
+      "\u001b[24;53H  \u001b[18;1H\u001b[24;53H^[\u001b[18;1H\u0007\u001b[24;53H  \u001b[18;1H\u001b[?12l\u001b[?25h"
+    ],
+    [
+      0.439373,
+      "\u001b[?25l\u001b[24;53H:\u001b[18;1H\u001b[24;1H\u001b[K\u001b[24;1H:"
+    ],
+    [
+      0.000103,
+      "\u001b[?12l\u001b[?25h"
+    ],
+    [
+      0.842631,
+      "q\u001b[?25l\u001b[?12l\u001b[?25h"
+    ],
+    [
+      0.384068,
+      "!\u001b[?25l\u001b[?12l\u001b[?25h"
+    ],
+    [
+      1.291665,
+      "\r"
+    ],
+    [
+      0.004186,
+      "\u001b[?25l\u001b[24;1H\u001b[K\u001b[24;1H\u001b[?1l\u001b>\u001b[?12l\u001b[?25h\u001b[?1049l"
+    ],
+    [
+      0.001592,
+      "\u001b]0;osboxes@osboxes: ~\u0007\u001b[01;32mosboxes@osboxes\u001b[00m:\u001b[01;34m~\u001b[00m$ "
+    ],
+    [
+      5.50463,
+      "e"
+    ],
+    [
+      0.203832,
+      "x"
+    ],
+    [
+      0.124031,
+      "i"
+    ],
+    [
+      0.157788,
+      "t"
+    ],
+    [
+      0.16793,
+      "\r\nexit\r\n"
+    ]
+  ],
+  "env": {
+    "TERM": "xterm-256color",
+    "SHELL": "/bin/bash"
+  },
+  "width": 80,
+  "command": null
+}

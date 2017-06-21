@@ -1,0 +1,24 @@
+.Typist,
+.u-inlineBlock {
+    display: inline-block;
+}
+
+.u-success {
+    color: #9DCA6A;
+}
+
+.u-ntlSelection {
+    color: #68B1E9;
+}
+
+.u-error {
+    color: #F96361;
+}
+.u-muted,
+.u-should {
+    color: #627D89;
+}
+.u-selected {
+    background-color: #ECEFF1;
+    color: #586267;
+}

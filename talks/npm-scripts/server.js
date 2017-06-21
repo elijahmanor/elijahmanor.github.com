@@ -17,6 +17,14 @@ app.use(require("webpack-dev-middleware")(compiler, {
 
 app.use(require("webpack-hot-middleware")(compiler));
 
+app.get("/dist/asciinema-player.js", (req, res) => {
+  res.sendFile(path.join(__dirname, "/dist/asciinema-player.js"));
+});
+
+app.get("/dist/asciinema-player.css", function(req, res) {
+  res.sendFile(path.join(__dirname, "/dist/asciinema-player.css"));
+});
+
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "index.html"));
 });

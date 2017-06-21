@@ -1,0 +1,70 @@
+:root {
+    --monospace: 'Menlo', 'Andale Mono', 'DejaVu Sans Mono', 'Droid Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;
+    --background-color: #efefef;
+    --prompt-color: #444;
+    --message-color: #999;
+    --cursor-color: #333;
+    --cursor-text-color: #eee;
+}
+
+div.react-console-container {
+	font-size: 0.85em;
+	font-family: var(--monospace);
+	width: 60em;
+	max-width: 100%;
+	box-sizing: border-box;
+	height: 20em;
+	background: var(--background-color);
+	padding: 0.5em;
+	overflow: auto;
+	white-space: pre;
+    text-align: left;
+}
+
+div.react-console-prompt-box {
+	color: var(--prompt-color);
+}
+
+span.react-console-prompt-label {
+	font-weight: bold;
+}
+
+div.react-console-focus span.react-console-cursor {
+	background: var(--cursor-color);
+	color: var(--cursor-text-color);
+}
+
+div.react-console-nofocus span.react-console-cursor {
+	background: none;
+	color: var(--prompt-color);
+	outline: 0.1em solid var(--cursor-color);
+	outline-offset: -0.1em;
+}
+
+div.react-console-focus span.react-console-cursor-idle {
+	animation: react-console-cursor-animation 1s infinite;
+}
+
+@keyframes react-console-cursor-animation {
+	0% {
+		background: var(--cursor-color);
+		color: var(--cursor-text-color);
+	}
+	50% {
+		background: var(--cursor-color);
+		color: var(--cursor-text-color);
+	}
+	51% {
+		background: none;
+		color: var(--prompt-color);
+	}
+	100% {
+		background: none;
+		color: var(--prompt-color);
+	}
+}
+
+div.react-console-message {
+	color: var(--message-color);
+	padding: 0.1em;
+}
