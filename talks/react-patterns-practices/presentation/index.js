@@ -90,7 +90,6 @@ export default class Presentation extends React.Component {
     localStorage.clear();
   }
   render() {
-    console.log({ props: this.props, state: this.state });
     return (
       <Deck transition={["slide"]} transitionDuration={500} theme={theme}>
         {introduction(theme, images)}
