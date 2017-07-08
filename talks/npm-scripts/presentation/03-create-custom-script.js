@@ -65,7 +65,8 @@ export default (theme, images) => [
   </Slide>,
   <Slide transition={["spin", "slide"]} bgColor="primary">
     <Terminal
-      title="1. elijahm@elijahm: ~(zsh)"
+      isMaximized
+      title="create custom scripts"
       output={[
         <div>
           <Prompt path="react-file-size" />
@@ -74,6 +75,15 @@ export default (theme, images) => [
         {
           isSolo: true,
           isAutoScroll: false,
+          note: (
+            <span>
+              There is no need to reference your
+              {" "}
+              <code>./node_modules/.bin</code>
+              {" "}
+              folder to access locally installed modules
+            </span>
+          ),
           output: (
             <div>
               <span>{`{
@@ -150,6 +160,15 @@ export default (theme, images) => [
         {
           isSolo: true,
           isAutoScroll: false,
+          note: (
+            <span>
+              Likewise, even though
+              {" "}
+              <code>$(npm bind)</code>
+              {" "}
+              is a great shortcut to your local bin directory, it's not needed either
+            </span>
+          ),
           output: (
             <div>
               <span>{`{
@@ -226,9 +245,20 @@ export default (theme, images) => [
         <div>
           <Prompt path="react-file-size" /><span>npm run env</span>
         </div>,
-        <div
-          style={{ whiteSpace: "pre-wrap" }}
-        >{`> react-file-size@0.1.0 env /Users/elijahm/egghead/react-file-size
+        {
+          note: (
+            <span>
+              As you can see by looking at the
+              {" "}
+              <code>npm run env</code>
+              {" "}
+              output, you have access to many environment variables while running your scripts
+            </span>
+          ),
+          output: (
+            <div
+              style={{ whiteSpace: "pre-wrap" }}
+            >{`> react-file-size@0.1.0 env /Users/elijahm/egghead/react-file-size
 > env
 
 npm_config_save_dev=
@@ -453,21 +483,46 @@ npm_node_execpath=/Users/elijahm/.nvm/versions/node/v6.3.1/bin/node
 npm_config_prefix=/Users/elijahm/.nvm/versions/node/v6.3.1
 npm_config_link=
 npm_package_devDependencies_onchange=^2.0.0
-npm_package_scripts_env=env`}</div>,
+npm_package_scripts_env=env`}</div>
+          )
+        },
         <div>
           <Prompt path="react-file-size" /><span>npm run env | grep "^PATH"</span>
         </div>,
-        <div style={{ whiteSpace: "pre-wrap" }}>
-          <span style={{ whiteSpace: "pre-wrap" }}>
-            {"PATH=/Users/elijahm/.nvm/versions/node/v6.3.1/lib/node_modules/npm/bin/node-gyp-bin:"}
-          </span>
-          <Highlight>{"/Users/elijahm/egghead/react-file-size/node_modules/.bin"}</Highlight>
-          <span style={{ whiteSpace: "pre-wrap" }}>
-            {
-              ":/Users/elijahm/.nvm/versions/node/v6.3.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-            }
-          </span>
-        </div>,
+        {
+          note: (
+            <span>
+              If we search for just the
+              {" "}
+              <code>PATH</code>
+              {" "}
+              environment variable, you'll see that
+              {" "}
+              <code>npm</code>
+              {" "}
+              updates it to include your local
+              {" "}
+              <code>node_modules/.bin</code>
+              {" "}
+              folder.
+            </span>
+          ),
+          output: (
+            <div style={{ whiteSpace: "pre-wrap" }}>
+              <span style={{ whiteSpace: "pre-wrap" }}>
+                {
+                  "PATH=/Users/elijahm/.nvm/versions/node/v6.3.1/lib/node_modules/npm/bin/node-gyp-bin:"
+                }
+              </span>
+              <Highlight>{"/Users/elijahm/egghead/react-file-size/node_modules/.bin"}</Highlight>
+              <span style={{ whiteSpace: "pre-wrap" }}>
+                {
+                  ":/Users/elijahm/.nvm/versions/node/v6.3.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+                }
+              </span>
+            </div>
+          )
+        },
         <div>
           <Prompt path="react-file-size" />
           <Success>vim</Success>{" "}<span>package.json</span>
@@ -475,6 +530,15 @@ npm_package_scripts_env=env`}</div>,
         {
           isSolo: true,
           isAutoScroll: false,
+          note: (
+            <span>
+              Which means that all we need to do is reference
+              {" "}
+              <code>eslint</code>
+              {" "}
+              and it'll find our locally installed module!
+            </span>
+          ),
           output: (
             <div>
               <span>{`{

@@ -60,12 +60,13 @@ export default (theme, images) => [
       run npm scripts
     </Heading>
     <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
-      in series
+      in parallel
     </Heading>
   </Slide>,
   <Slide transition={["spin", "slide"]} bgColor="primary">
     <Terminal
-      title="1. elijahm@elijahm: ~(zsh)"
+      isMaximized
+      title="run scripts in parallel"
       output={[
         <div>
           <Prompt path="react-file-size" />
@@ -573,11 +574,13 @@ Utils
             </div>
           )
         },
-        <div>
-          <Prompt path="react-file-size" />
-          <span>cowsay "Now things are udderly better :)"</span>
-          <pre style={{ whiteSpace: "pre-wrap" }}>
-            {` _________________________________ 
+        {
+          output: (
+            <div>
+              <Prompt path="react-file-size" />
+              <span>cowsay "Now things are udderly better :)"</span>
+              <pre style={{ whiteSpace: "pre-wrap" }}>
+                {` _________________________________ 
 < Now things are udderly better :) >
  --------------------------------- 
         \\   ^__^                    
@@ -585,8 +588,22 @@ Utils
             (__)\\       )\\/\\        
                 ||----w |           
                 ||     ||           `}
-          </pre>
-        </div>,
+              </pre>
+            </div>
+          ),
+          note: (
+            <pre style={{ whiteSpace: "pre-wrap" }}>
+              {` _________________________________ 
+< Now things are udderly better :) >
+ --------------------------------- 
+        \\   ^__^                    
+         \\  (oo)\\_______            
+            (__)\\       )\\/\\        
+                ||----w |           
+                ||     ||           `}
+            </pre>
+          )
+        },
         <div>
           <Prompt path="react-file-size" /><span>exit</span>
         </div>

@@ -14,11 +14,20 @@
 .u-error {
     color: #F96361;
 }
+
 .u-muted,
 .u-should {
     color: #627D89;
 }
+
 .u-selected {
     background-color: #ECEFF1;
     color: #586267;
+}
+
+code {
+    background-color: #303539;
+    color: white;
+    padding: .1rem 0.5rem;
+    border-radius: 0.5rem;
 }

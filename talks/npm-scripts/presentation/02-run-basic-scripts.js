@@ -65,7 +65,8 @@ export default (theme, images) => [
   </Slide>,
   <Slide transition={["spin", "slide"]} bgColor="primary">
     <Terminal
-      title="1. elijahm@elijahm: ~(zsh)"
+      isMaximized
+      title="run basic scripts"
       output={[
         <div>
           <Prompt path="react-file-size" />
@@ -150,6 +151,7 @@ export default (theme, images) => [
         {
           isSolo: true,
           isAutoScroll: false,
+          note: "Replace with your test framework of choice...",
           output: (
             <div>
               <span>{`{
@@ -289,6 +291,7 @@ export default (theme, images) => [
         {
           isSolo: true,
           isAutoScroll: false,
+          note: <span>Add a <code>start</code> script to kick off your application</span>,
           output: (
             <div>
               <span>{`{

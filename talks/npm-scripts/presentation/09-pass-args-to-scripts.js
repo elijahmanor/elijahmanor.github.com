@@ -65,7 +65,8 @@ export default (theme, images) => [
   </Slide>,
   <Slide transition={["spin", "slide"]} bgColor="primary">
     <Terminal
-      title="1. elijahm@elijahm: ~(zsh)"
+      isMaximized
+      title="pass arguments to scripts"
       output={[
         <div>
           <Prompt path="react-file-size" />

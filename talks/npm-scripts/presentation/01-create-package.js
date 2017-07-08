@@ -54,7 +54,8 @@ export default (theme, images) => [
   <Slide transition={["spin", "slide"]} bgColor="primary">
     {/*<Heading size={2} caps fit textColor="tertiary">Terminal</Heading>*/}
     <Terminal
-      title="1. elijahm@elijahm: ~(zsh)"
+      isMaximized
+      title="create package"
       output={[
         <div>
           <Prompt path="react-file-size" />
@@ -133,10 +134,23 @@ export default (theme, images) => [
           <Typist cursor={cursor}><div><Success>rm</Success> package.json</div></Typist>
         </div>,
         [
-          <div className={uniqueId("cls")}>
-            <Prompt path="react-file-size" />
-            <Typist cursor={cursor}><Success>npm</Success> init --force</Typist>
-          </div>,
+          {
+            note: (
+              <span>
+                Instead of answering questions, <code>npm init</code> can auto-generate a
+                {" "}
+                <code>package.json</code>
+                {" "}
+                file based on defaults without prompting you for answers.
+              </span>
+            ),
+            output: (
+              <div className={uniqueId("cls")}>
+                <Prompt path="react-file-size" />
+                <Typist cursor={cursor}><Success>npm</Success> init --force</Typist>
+              </div>
+            )
+          },
           <div className={uniqueId("cls")}>
             <Prompt path="react-file-size" />
             <span><Success>npm</Success> init --yes</span>

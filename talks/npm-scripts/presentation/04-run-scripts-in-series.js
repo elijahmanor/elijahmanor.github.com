@@ -65,7 +65,8 @@ export default (theme, images) => [
   </Slide>,
   <Slide transition={["spin", "slide"]} bgColor="primary">
     <Terminal
-      title="1. elijahm@elijahm: ~(zsh)"
+      isMaximized
+      title="run scripts in series"
       output={[
         <div>
           <Prompt path="react-file-size" />
@@ -74,6 +75,7 @@ export default (theme, images) => [
         {
           isSolo: true,
           isAutoScroll: false,
+          note: <span>If you wanted to run linting before your tests you could...</span>,
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -159,6 +161,19 @@ export default (theme, images) => [
         {
           isSolo: true,
           isAutoScroll: false,
+          note: (
+            <span>
+              ...string together
+              {" "}
+              <code>npm run</code>
+              {" "}
+              commands together with
+              {" "}
+              <code>&&</code>
+              {" "}
+              to make your commands execute in series
+            </span>
+          ),
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
