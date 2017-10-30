@@ -1,36 +1,87 @@
-'use strict';
+"use strict";
 
-const Reflux = require('reflux');
-const SlideActions = require('../actions/SlideActions');
-const _findIndex = require('lodash-node/modern/array/findIndex');
-const SlideApi = require('../utils/SlideApi');
-const postal = require('postal');
-const channel = postal.channel('slides');
+const Reflux = require("reflux");
+const SlideActions = require("../actions/SlideActions");
+const _findIndex = require("lodash-node/modern/array/findIndex");
+const SlideApi = require("../utils/SlideApi");
+const postal = require("postal");
+const channel = postal.channel("slides");
 
-let SETS = [ // TODO: Have a task that will auto-add setIndex and slideIndex and an empty slide
-  { id: 'Introduction', markdown: require('!raw!../../md/introduction.md'),  slides: [{ setIndex: 0, slideIndex: 0, content: '<h1>React to the Future</h1>' }] },
-  { id: 'WhatIsReact',  markdown: require('!raw!../../md/what-is-react.md'), slides: [{ setIndex: 1, slideIndex: 0, content: '<h1>What is React?</h1>' }] },
-  { id: 'Components',   markdown: require('!raw!../../md/components.md'),    slides: [{ setIndex: 2, slideIndex: 0, content: '<h1>Components</h1>' }] },
-  { id: 'Gotchas',      markdown: require('!raw!../../md/gotchas.md'),       slides: [{ setIndex: 3, slideIndex: 0, content: '<h1>Gotchas</h1>' }] },
-  { id: 'Styles',       markdown: require('!raw!../../md/styles.md'),        slides: [{ setIndex: 4, slideIndex: 0, content: '<h1>Styles</h1>' }] },
-  { id: 'Flux',         markdown: require('!raw!../../md/flux.md'),          slides: [{ setIndex: 5, slideIndex: 0, content: '<h1>Flux</h1>' }] },
-  { id: 'Isomorphic',   markdown: require('!raw!../../md/isomorphic.md'),    slides: [{ setIndex: 6, slideIndex: 0, content: '<h1>Isomorphic</h1>' }] },
-  { id: 'NodeModules',  markdown: require('!raw!../../md/node-modules.md'),  slides: [{ setIndex: 7, slideIndex: 0, content: '<h1>Node Modules</h1>' }] },
-  { id: 'NpmScripts',   markdown: require('!raw!../../md/npm-scripts.md'),   slides: [{ setIndex: 7, slideIndex: 0, content: '<h1><code>npm</code> Scripts</h1>' }] },
-  { id: 'Resources',    markdown: require('!raw!../../md/resources.md'),     slides: [{ setIndex: 8, slideIndex: 0, content: '<h1>Resources</h1>' }] },
-  { id: 'Conclusion',   markdown: require('!raw!../../md/conclusion.md'),    slides: [{ setIndex: 9, slideIndex: 0, content: `<h1>Conclusion</h1>` }] }
+let SETS = [
+  // TODO: Have a task that will auto-add setIndex and slideIndex and an empty slide
+  {
+    id: "Introduction",
+    markdown: require("!raw!../../md/introduction.md"),
+    slides: [{ setIndex: 0, slideIndex: 0, content: "<h1>React to the Future</h1>" }]
+  },
+  {
+    id: "WhatIsReact",
+    markdown: require("!raw!../../md/what-is-react.md"),
+    slides: [{ setIndex: 1, slideIndex: 0, content: "<h1>What is React?</h1>" }]
+  },
+  {
+    id: "Components",
+    markdown: require("!raw!../../md/components.md"),
+    slides: [{ setIndex: 2, slideIndex: 0, content: "<h1>Components</h1>" }]
+  },
+  {
+    id: "Gotchas",
+    markdown: require("!raw!../../md/gotchas.md"),
+    slides: [{ setIndex: 3, slideIndex: 0, content: "<h1>Gotchas</h1>" }]
+  },
+  {
+    id: "WhatIsNew",
+    markdown: require("!raw!../../md/what-is-new.md"),
+    slides: [{ setIndex: 4, slideIndex: 0, content: "<h1>What is New?</h1>" }]
+  },
+  {
+    id: "Styles",
+    markdown: require("!raw!../../md/styles.md"),
+    slides: [{ setIndex: 5, slideIndex: 0, content: "<h1>Styles</h1>" }]
+  },
+  {
+    id: "Flux",
+    markdown: require("!raw!../../md/flux.md"),
+    slides: [{ setIndex: 6, slideIndex: 0, content: "<h1>Flux</h1>" }]
+  },
+  {
+    id: "Isomorphic",
+    markdown: require("!raw!../../md/isomorphic.md"),
+    slides: [{ setIndex: 7, slideIndex: 0, content: "<h1>Isomorphic</h1>" }]
+  },
+  {
+    id: "NodeModules",
+    markdown: require("!raw!../../md/node-modules.md"),
+    slides: [{ setIndex: 8, slideIndex: 0, content: "<h1>Node Modules</h1>" }]
+  },
+  {
+    id: "NpmScripts",
+    markdown: require("!raw!../../md/npm-scripts.md"),
+    slides: [{ setIndex: 9, slideIndex: 0, content: "<h1><code>npm</code> Scripts</h1>" }]
+  },
+  {
+    id: "Resources",
+    markdown: require("!raw!../../md/resources.md"),
+    slides: [{ setIndex: 10, slideIndex: 0, content: "<h1>Resources</h1>" }]
+  },
+  {
+    id: "Conclusion",
+    markdown: require("!raw!../../md/conclusion.md"),
+    slides: [{ setIndex: 11, slideIndex: 0, content: `<h1>Conclusion</h1>` }]
+  }
 ];
 
 const SlideStore = Reflux.createStore({
   listenables: [SlideActions],
   init: function() {
-    channel.subscribe('slide.updated', data => { // TODO: This should be moved out somewhere...
+    channel.subscribe("slide.updated", data => {
+      // TODO: This should be moved out somewhere...
       let setIndex = _findIndex(this.slides, set => set.id === data.id);
       let set = this.slides[setIndex];
       let slides = [];
 
-      if (~data.content.indexOf('<hr>')) {
-        slides = data.content.split('<hr>');
+      if (~data.content.indexOf("<hr>")) {
+        slides = data.content.split("<hr>");
         slides = slides.map((slide, slideIndex) => {
           let title = slide.match(/<h\d.*?>(.*)<\/h\d>/);
           let metadata = slide.match(/<!--\s?({(.|\s)*?})\s?-->/);
@@ -39,7 +90,7 @@ const SlideStore = Reflux.createStore({
             slideIndex,
             content: slide,
             metadata: metadata && metadata.length === 3 ? JSON.parse(metadata[1]) : {},
-            title: title && title.length === 2 ? title[1] : ''
+            title: title && title.length === 2 ? title[1] : ""
           };
         });
       } else {
@@ -50,7 +101,7 @@ const SlideStore = Reflux.createStore({
           slideIndex: 0,
           content: data.content,
           metadata: metadata && metadata.length === 3 ? JSON.parse(metadata[1]) : {},
-          title: title && title.length === 2 ? title[1] : ''
+          title: title && title.length === 2 ? title[1] : ""
         });
       }
 
@@ -78,7 +129,7 @@ const SlideStore = Reflux.createStore({
 
     return this.getSlide();
   },
-  getSlide(setIndex=this.setIndex, slideIndex=this.slideIndex) {
+  getSlide(setIndex = this.setIndex, slideIndex = this.slideIndex) {
     slideIndex = slideIndex <= this.slides[setIndex].slides.length - 1 ? slideIndex : 0;
 
     let slide = this.slides[setIndex].slides[slideIndex];
@@ -92,7 +143,7 @@ const SlideStore = Reflux.createStore({
     this.setIndex = slide.setIndex;
     this.slideIndex = slide.slideIndex;
 
-    this.router.transitionTo('slide', slide);
+    this.router.transitionTo("slide", slide);
   },
   onPrevious() {
     let slide = this.getPrevious();
@@ -100,34 +151,37 @@ const SlideStore = Reflux.createStore({
     this.setIndex = slide.setIndex;
     this.slideIndex = slide.slideIndex;
 
-    this.router.transitionTo('slide', slide);
+    this.router.transitionTo("slide", slide);
   },
   onList() {
-    this.router.transitionTo('list');
+    this.router.transitionTo("list");
   },
   onOffline() {
     this.isOffline = !this.isOffline;
 
     this.trigger({ slides: this.slides });
   },
-  getNext() { // TODO: This seems somewhat complex
+  getNext() {
+    // TODO: This seems somewhat complex
     let hasNextSetIndex = this.setIndex < this.slides.length - 1;
     let hasNextSlideIndex = this.slideIndex < this.slides[this.setIndex].slides.length - 1;
 
-    let nextSetIndex = !hasNextSlideIndex && hasNextSetIndex ?
-      this.setIndex + 1 : this.setIndex;
-    let nextSlideIndex = hasNextSlideIndex ? this.slideIndex + 1 :
-      hasNextSetIndex ? 0 : this.slideIndex;
+    let nextSetIndex = !hasNextSlideIndex && hasNextSetIndex ? this.setIndex + 1 : this.setIndex;
+    let nextSlideIndex = hasNextSlideIndex
+      ? this.slideIndex + 1
+      : hasNextSetIndex ? 0 : this.slideIndex;
 
     return this.getSlide(nextSetIndex, nextSlideIndex);
   },
-  getPrevious() { // TODO: This seems somewhat more complex
+  getPrevious() {
+    // TODO: This seems somewhat more complex
     let hasPrevSetIndex = this.setIndex > 0;
     let hasPrevSlideIndex = this.slideIndex > 0;
 
     let prevSetIndex = !hasPrevSlideIndex && hasPrevSetIndex ? this.setIndex - 1 : this.setIndex;
-    let prevSlideIndex = hasPrevSlideIndex ? this.slideIndex - 1 :
-      hasPrevSetIndex ? this.slides[prevSetIndex].slides.length - 1 : 0;
+    let prevSlideIndex = hasPrevSlideIndex
+      ? this.slideIndex - 1
+      : hasPrevSetIndex ? this.slides[prevSetIndex].slides.length - 1 : 0;
 
     return this.getSlide(prevSetIndex, prevSlideIndex);
   },

@@ -1365,6 +1365,7 @@ NOTE: The ES6 `class` syntax does not support Mixins
 
 * Higher Order Components (HOC)
 * Decorators (which end up being HOCs)
+* Render Props (not discussed in this talk)
 
 ---
 
@@ -1452,7 +1453,7 @@ ReactDOM.render(
 }
 -->
 
-# Mixin Alternative: Decorator
+# Mixin Alternative: Decorator (basically a HOC)
 
 <div class="Split">
   <div class="Split-column Split-column--65">
