@@ -17,7 +17,9 @@
   </div>
 </div>
 
-<div id="Introduction-twitter">by <a href="http://twitter.com/elijahmanor">@elijahmanor</a></div>
+<div id="Introduction-twitter">
+  <a href="http://elijahmanor.com/talks/react-to-the-future" style="margin-left: 2em;">bit.ly/react-future</a> by <a href="http://twitter.com/elijahmanor">@elijahmanor</a>
+</div>
 
 ---
 
