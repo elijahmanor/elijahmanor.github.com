@@ -197,6 +197,12 @@
 
 ---
 
+# These Slides are React & Redux!
+
+<img src="./img/dog-fooding.gif" style="height: 600px;" />
+
+---
+
 # Index (`Index.js`)
 
 <!--

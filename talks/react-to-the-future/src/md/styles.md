@@ -385,42 +385,38 @@ import styles from 'media.css';
 
 # Styled Components
 
-<div class="Split">
-  <div class="Split-column Split-column--55">
   <pre class="language-jsx language--clean language--small"><code>
 import styled from 'styled-components';
 import Color from 'color';
 
-const Button = styled.button\`
+const Button = styled.button`
   min-width: 6em;
-  /&ast; ... more code ... &ast;/
-  background-color: ${props => (props.primary ? '#95c83e' : '#F0F0F0')};
-  color: ${props => (props.primary ? '#FFF' : '#7F7F7F')};
-  border-bottom: ${props => \`0.25em solid ${props.primary ? '#5D7C2D' : '#D7D7D7'}\`};
-  cursor: ${props => (props.disabled ? 'not-allowed' : 'inherit')};
   opacity: ${props => (props.disabled ? '.5' : '1')};
   &:hover, &:focus {
       background-color: ${props => (props.primary ? '#80AC3E' : '#E6E6E6')};
-      border-bottom: ${props => \`0.25em solid ${props.primary ? '#5D7C2D' : '#B8B8B8'}\`};
   }
-  &:active {
-      background-color: ${props => (props.primary ? '#6a9029' : '#CCCCCC')};
-      border-bottom: none;
-      color: ${props => (props.primary ? '#FFF' : '#4D4D4D')};
-  }
-\`;
+`; // above is just a snippet
 
 const darkenColor = color => amount => Color(color).darken(amount).toString();
 const darkenTomato = darkenColor('#FF6347');
-const TomatoButton = styled(Button)\`
+const TomatoButton = styled(Button)`
   color: white;
   background-color: #ff6347;
   border-bottom: 0.25em solid ${darkenTomato(0.3)};
-\`;
+`;
 </code></pre>
-  </div>
-  <div class="Split-column Split-column--45">
-    <pre class="language-jsx language--clean language--small"><code>
+
+---
+
+<!--
+{
+  "className": "Slide--static"
+}
+-->
+
+# Styled Components
+
+<pre class="language-jsx language--clean language--small"><code>
 const App = () => (
   &lt;main style={{ display: 'flex', flexDirection: 'column' }}&gt;
     &lt;Button primary&gt;Primary&lt;/Button&gt;
@@ -434,8 +430,6 @@ const App = () => (
 
 render(&lt;App />, document.getElementById('root'));
 </code></pre>
-  </div>
-</div>
 
 ---
 
@@ -558,4 +552,4 @@ class Button extends React.Component {
 * [React: CSS in JS techniques comparison](https://github.com/MicheleBertoli/css-in-js)
 * [CSS Modules](http://glenmaddern.com/articles/css-modules)
 * [Radium](http://projects.formidablelabs.com/radium/)
-* [Inline Styles: themes, media queries, contexts, & when it's best to use CSS](https://www.youtube.com/watch?v=ERB1TJBn32c) video by Michael Chan
+* [Inline Styles](https://www.youtube.com/watch?v=ERB1TJBn32c) video by Michael Chan
