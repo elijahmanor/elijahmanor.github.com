@@ -83,7 +83,7 @@ import listAvailableScripts from "./17-list-available-scripts";
 import bashScripts from "./20-bash-scripts";
 import nodeScripts from "./21-node-scripts";
 import npmCheck from "./22-npm-check";
-import placeholder from "./77-placeholder";
+import npx from "./23-npx";
 import conclusion from "./99-conclusion";
 
 export default class Presentation extends React.Component {
@@ -121,7 +121,7 @@ export default class Presentation extends React.Component {
         {bashScripts(theme, images)}
         {nodeScripts(theme, images)}
         {npmCheck(theme, images)}
-        {placeholder(theme, images)}
+        {npx(theme, images)}
         {conclusion(theme, images)}
       </Deck>
     );
