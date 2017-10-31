@@ -1,0 +1,36 @@
+import React from "react";
+import Jokes from "./Jokes";
+
+class JokeResource extends React.Component {
+  state = { jokes: [] };
+  componentDidMount() {
+    window
+      .fetch(this.props.url)
+      .then(this.props.parser)
+      .then(jokes => this.setState({jokes}));
+  }
+  render() {
+    return this.props.children(
+      this.state.jokes
+    );
+  }
+}
+JokeResource.defaultProps = {
+  parser: r => r.json()
+};
+
+class JokesContainer extends React.Component {
+  render() {
+    const url =
+      "//.../kevinchandler/.../CatJokes.json";
+    const parser =
+      r => r.text().then(r => eval(r));
+    return (
+      <JokeResource url={url} parser={parser}>
+        {jokes => <Jokes jokes={jokes} />}
+      </JokeResource>
+    );
+  }
+}
+
+const App = () => <JokesContainer />;

@@ -47,6 +47,9 @@ const images = {
   egghead: require("../assets/logo-egghead.png"),
   leankit: require("../assets/logo-leankit.png"),
   mvp: require("../assets/logo-mvp.png"),
+  cool: require("../assets/cool-cool-cool.gif"),
+  what: require("../assets/wait-what.gif"),
+  catTyping: require("../assets/cat-typing.gif"),
   butWillItBlend: require("../assets/but-will-it-blend.gif"),
   printWasted: require("../assets/print-wasted.png"),
   whyDidYouUpdate: require("../assets/why-did-you-update.gif"),
@@ -90,8 +93,9 @@ export default class Presentation extends React.Component {
     localStorage.clear();
   }
   render() {
+    // progress - pacman, bar, number or none
     return (
-      <Deck transition={["slide"]} transitionDuration={500} theme={theme}>
+      <Deck transition={["slide"]} transitionDuration={500} theme={theme} progress="bar">
         {introduction(theme, images)}
         {/*{experimental(theme, images)}*/}
         {refactoring(theme, images)}

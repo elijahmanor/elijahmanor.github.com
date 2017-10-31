@@ -39,7 +39,9 @@ export default (theme, images) => [
       </Fill>
       <Fill>
         <Heading size={1} fit lineHeight={1}>
-          <Link href="http://bit.ly/react-pnp" margin="0 0 0 10px" textColor="quartenary">bit.ly/react-pnp</Link>
+          <Link href="http://bit.ly/react-pnp" margin="0 0 0 10px" textColor="quartenary">
+            bit.ly/react-pnp
+          </Link>
         </Heading>
       </Fill>
     </Layout>
@@ -50,7 +52,9 @@ export default (theme, images) => [
     bgColor="black"
     notes="You can even put notes on your slide. How awesome is that?"
   >
-    <Heading caps fit>Elijah Manor</Heading>
+    <Heading caps fit>
+      Elijah Manor
+    </Heading>
     <Layout>
       <Fill>
         <Image src={images.cross} width="50%" margin="0" />
@@ -69,7 +73,9 @@ export default (theme, images) => [
     bgColor="black"
     notes="You can even put notes on your slide. How awesome is that?"
   >
-    <Heading textColor="quartenary" caps fit>Navigation</Heading>
+    <Heading textColor="quartenary" caps fit>
+      Navigation
+    </Heading>
     <Heading textAlign="left" size={6} caps textColor="tertiary" width="50%">
       ➡️ to go to the next slide
     </Heading>
@@ -113,14 +119,36 @@ export default (theme, images) => [
       Agenda
     </Heading>
     <List>
-      <Appear><ListItem>Container & Presentational Components</ListItem></Appear>
-      <Appear><ListItem>Stateless Functional Components</ListItem></Appear>
-      <Appear><ListItem>Higher Order Components</ListItem></Appear>
-      <Appear><ListItem>Assessing Performance Bottlenecks</ListItem></Appear>
-      <Appear><ListItem>Introducing Immutability</ListItem></Appear>
-      <Appear><ListItem>Adding <code>redux</code> & <code>redux-devtools</code></ListItem></Appear>
-      <Appear><ListItem>Adding <code>react-router</code></ListItem></Appear>
-      <Appear><ListItem>Adding <code>recompose</code></ListItem></Appear>
+      <Appear>
+        <ListItem>Container & Presentational Components</ListItem>
+      </Appear>
+      <Appear>
+        <ListItem>Stateless Functional Components</ListItem>
+      </Appear>
+      <Appear>
+        <ListItem>HOCs & Render Props</ListItem>
+      </Appear>
+      <Appear>
+        <ListItem>Assessing Performance Bottlenecks</ListItem>
+      </Appear>
+      <Appear>
+        <ListItem>Introducing Immutability</ListItem>
+      </Appear>
+      <Appear>
+        <ListItem>
+          Adding <code>redux</code> & <code>redux-devtools</code>
+        </ListItem>
+      </Appear>
+      <Appear>
+        <ListItem>
+          Adding <code>react-router</code>
+        </ListItem>
+      </Appear>
+      <Appear>
+        <ListItem>
+          Adding <code>recompose</code>
+        </ListItem>
+      </Appear>
     </List>
   </Slide>
 ];

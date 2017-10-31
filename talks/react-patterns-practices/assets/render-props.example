@@ -1,0 +1,13 @@
+const NameComponent = ({ children }) =>
+  children("John", "Smith");
+
+const App = () => <NameComponent>
+  {(firstName, lastName) => (
+    <h1>Hi, {`${firstName} ${lastName}`}</h1>
+  )}
+</MyComponent>;
+
+render(
+  <App />,
+  document.getElementById("root")
+);

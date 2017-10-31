@@ -10,19 +10,28 @@ import {
   Image,
   Layout,
   Fill,
+  Fit,
   Text,
   Appear,
   List,
-  ListItem
+  ListItem,
+  Code,
+  CodePane,
+  MarkdownSlides
 } from "spectacle";
 import CodeSlide from "spectacle-code-slide";
 import Jokes from "../assets/Jokes.js";
 import CatJokes from "../assets/CatJokes.js";
+import RenderPropsJokes from "../assets/RenderPropsJokes.js";
+import RenderPropsCatJokes from "../assets/RenderPropsCatJokes.js";
 import JokesKeyboard from "../assets/JokesKeyboard.js";
 import JokesAddBroken from "../assets/JokesAddBroken.js";
 import JokesAddFixed from "../assets/JokesAddFixed.js";
 import Playground from "component-playground";
-import { defaultCode } from "../assets/hoc-interactive.example";
+import { defaultCode as hocInteractive } from "../assets/hoc-interactive.example";
+import { defaultCode as renderPropsInteractive } from "../assets/render-props-interactive.example";
+import faker from "faker";
+import _ from "lodash";
 import "../assets/playground.css";
 
 export default (theme, images) => [
@@ -71,20 +80,32 @@ export default (theme, images) => [
     ]}
   />,
   <Slide transition={["zoom", "fade"]} bgColor="secondary">
-    <Heading caps fit textColor="quartenary">refactor alert</Heading>
-    <Text textColor="primary" fit>The component is doing too many things!</Text>
+    <Heading caps fit textColor="quartenary">
+      refactor alert
+    </Heading>
+    <Text textColor="primary" fit>
+      The component is doing too many things!
+    </Text>
   </Slide>,
   <Slide transition={["zoom", "fade"]} bgColor="secondary" size={6} textColor="quartenary">
-    <Heading caps fit textColor="tertiary">Terminology</Heading>
+    <Heading caps fit textColor="tertiary">
+      Terminology
+    </Heading>
     <Layout>
       <Fill>
         <Heading size={6} caps textColor="secondary" bgColor="primary" margin={10} width="50%">
           Presentational
         </Heading>
         <List>
-          <Appear><ListItem textSize="30px">How Things Look</ListItem></Appear>
-          <Appear><ListItem textSize="30px">Property Driven</ListItem></Appear>
-          <Appear><ListItem textSize="30px">Functional Components</ListItem></Appear>
+          <Appear>
+            <ListItem textSize="30px">How Things Look</ListItem>
+          </Appear>
+          <Appear>
+            <ListItem textSize="30px">Property Driven</ListItem>
+          </Appear>
+          <Appear>
+            <ListItem textSize="30px">Functional Components</ListItem>
+          </Appear>
         </List>
       </Fill>
       <Fill>
@@ -92,9 +113,15 @@ export default (theme, images) => [
           Container
         </Heading>
         <List>
-          <Appear><ListItem textSize="30px">How Things Work</ListItem></Appear>
-          <Appear><ListItem textSize="30px">Stateful Driven</ListItem></Appear>
-          <Appear><ListItem textSize="30px">Call Flux Actions</ListItem></Appear>
+          <Appear>
+            <ListItem textSize="30px">How Things Work</ListItem>
+          </Appear>
+          <Appear>
+            <ListItem textSize="30px">Stateful Driven</ListItem>
+          </Appear>
+          <Appear>
+            <ListItem textSize="30px">Call Flux Actions</ListItem>
+          </Appear>
         </List>
       </Fill>
     </Layout>
@@ -184,7 +211,8 @@ export default (theme, images) => [
       { loc: [0, 270], title: "Simple HOC" },
       {
         loc: [16, 18],
-        note: "A Higher Order Function is a function that accepts a base component and returns a new wrapped component"
+        note:
+          "A Higher Order Function is a function that accepts a base component and returns a new wrapped component"
       },
       { loc: [0, 2], note: "Our simple component is just a header (it can be anything)" },
       {
@@ -204,7 +232,7 @@ export default (theme, images) => [
       }}
     >
       <Playground
-        codeText={defaultCode.trim()}
+        codeText={hocInteractive.trim()}
         scope={{ React, Component, render }}
         noRender={false}
       />
@@ -269,10 +297,199 @@ export default (theme, images) => [
     </div>
     <CatJokes />
   </Slide>,
+  <Slide bgColor="secondary">
+    <Heading size={1} fit caps lineHeight={1} textColor="primary">
+      Render Props
+    </Heading>
+    <Heading size={5} lineHeight={1} textColor="tertiary">
+      Function as Child Components
+    </Heading>
+    <Heading size={5} lineHeight={1} textColor="tertiary">
+      Children as a Function
+    </Heading>
+  </Slide>,
+  <Slide bgColor="secondary">
+    <BlockQuote>
+      <Quote>A render prop is a function prop that a component uses to know what to render.</Quote>
+      <Cite>
+        <Link
+          href="https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce"
+          textColor="quartenary"
+        >
+          Michael Jackson
+        </Link>
+      </Cite>
+    </BlockQuote>
+  </Slide>,
+  <Slide bgColor="secondary">
+    <Heading size={1} fit caps lineHeight={1} textColor="primary">
+      Cool, cool, cool
+    </Heading>
+    <Layout>
+      <Fill>
+        <Image src={images.cool} width="100%" margin="0" />
+      </Fill>
+    </Layout>
+  </Slide>,
+  <Slide bgColor="secondary">
+    <Heading size={1} fit caps lineHeight={1} textColor="primary">
+      Wait... What!?!
+    </Heading>
+    <Layout>
+      <Fill>
+        <Image src={images.what} width="100%" margin="0" />
+      </Fill>
+    </Layout>
+  </Slide>,
+  <CodeSlide
+    transition={[]}
+    lang="js"
+    code={require("raw-loader!../assets/render-props.example")}
+    ranges={[
+      { loc: [0, 999], title: "Simple Render Props" },
+      {
+        loc: [0, 2],
+        note: "NameComponent accepts props and invokes the children prop passing a name."
+      },
+      { loc: [3, 8], note: "When we use NameComponent we provide a function as it's child." },
+      {
+        loc: [4, 7],
+        note:
+          "NameComponent invokes the children prop and passes name arguments that are used to determine what to render."
+      }
+    ]}
+  />,
+  <Slide id="render-props-interactive" maxHeight="100vh" maxWidth="90vw" bgColor="secondary">
+    <div
+      style={{
+        backgroundColor: "white",
+        borderRadius: "0 0 6px 6px",
+        height: "100%",
+        width: "100%"
+      }}
+    >
+      <Playground
+        codeText={renderPropsInteractive.trim()}
+        scope={{ React, Component, render, faker, _ }}
+        noRender={false}
+      />
+    </div>
+  </Slide>,
+  <Slide transition={["fade"]} bgColor="secondary" textColor="quartenary">
+    <Heading size={1} caps fit textColor="primary">
+      Why Render Props?
+    </Heading>
+    <List>
+      <ListItem>Dynamic Composition</ListItem>
+      <ListItem>No Magical Props</ListItem>
+      <ListItem>No Worry of Naming Collisions</ListItem>
+      <ListItem>More Flexible</ListItem>
+    </List>
+    <div>
+      <a href="https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce">
+        Use a Render Prop!
+      </a>{" "}
+      by <a href="https://twitter.com/mjackson">@mjackson</a>
+    </div>
+  </Slide>,
+  <CodeSlide
+    transition={[]}
+    lang="js"
+    code={require("raw-loader!../assets/jokes-render-prop.example")}
+    ranges={[
+      { loc: [0, 270], title: "JokeResource Render Prop" },
+      {
+        loc: [3, 15],
+        note:
+          "JokeResource uses `url` and `parser` props to fetch jokes and invoke the children function prop."
+      },
+      {
+        loc: [5, 11],
+        note: "`componentDidMount` calls `window.fetch` and updates state with resulting jokes."
+      },
+      { loc: [11, 16], note: "`render` invokes the children prop with jokes from state." },
+      {
+        loc: [25, 28],
+        note: "Using JokeResoure is easy, just pass a `url` and provide a function as it's child"
+      },
+      {
+        loc: [26, 27],
+        note: "Whatever is returned from the child function is what is rendered in `JokeResource`"
+      }
+    ]}
+  />,
+  <Slide bgColor="secondary">
+    <Heading size={1} fit caps lineHeight={1} textColor="primary">
+      and it still works! and that's no joke!
+    </Heading>
+    <Layout>
+      <Fill>
+        <RenderPropsJokes />
+      </Fill>
+    </Layout>
+  </Slide>,
+  <Slide transition={["fade"]} bgColor="secondary">
+    <Heading size={1} fit caps lineHeight={1} textColor="primary" margin="0 0 2rem 0">
+      well, maybe a small one?
+    </Heading>
+    <Text textColor="quartenary" margin="0 0 2rem 0">
+      q. Why did the React Higher Order Component give up?
+    </Text>
+    <Appear>
+      <Text textColor="quartenary" margin="0 0 2rem 0">
+        a. Because it sur-<u>rendered to the prop</u>-aganda!
+      </Text>
+    </Appear>
+  </Slide>,
+  <Slide bgColor="secondary">
+    <Layout>
+      <Fill>
+        <Heading size={1} fit caps lineHeight={1} textColor="primary" margin="0 1rem 0 0">
+          yes
+        </Heading>
+        <Heading size={3} caps lineHeight={1} textColor="quartenary" margin="0 1rem 0 0">
+          supports cat jokes
+        </Heading>
+      </Fill>
+      <Fill>
+        <Image src={images.catTyping} width="90%" margin="0" />
+      </Fill>
+    </Layout>
+  </Slide>,
+  <CodeSlide
+    transition={[]}
+    lang="js"
+    code={require("raw-loader!../assets/jokes-render-prop-cats.example")}
+    ranges={[
+      { loc: [0, 270], title: "JokeResource: Cat Edition!" },
+      { loc: [17, 20], note: "Previous code worked because default `parser` handled valid JSON" },
+      {
+        loc: [23, 29],
+        note:
+          "Update `url` and provide custom `parser` that understands a text resource and pass it to `JokeResource`."
+      }
+    ]}
+  />,
+  <Slide bgColor="secondary">
+    <Heading size={1} fit caps lineHeight={1} textColor="primary">
+      Show and tail
+    </Heading>
+    <Heading size={1} fit caps lineHeight={1} textColor="quartenary">
+      A sight fur sore eyes
+    </Heading>
+    <Layout>
+      <Fill>
+        <RenderPropsCatJokes />
+      </Fill>
+    </Layout>
+  </Slide>,
+  // https://codesandbox.io/s/nwjoj04rkl
+  // END - Render Props
   <Slide transition={["fade"]} bgColor="black">
     <BlockQuote>
       <Quote>
-        My favorite part of React is what I loved about MooTools: to use it effectively you learn JavaScript... useful your whole career.
+        My favorite part of React is what I loved about MooTools: to use it effectively you learn
+        JavaScript... useful your whole career.
       </Quote>
       <Cite>
         <Link
@@ -303,7 +520,8 @@ export default (theme, images) => [
       { loc: [19, 20], note: "State starts with an empty jokes array and an index of 0" },
       {
         loc: [21, 24],
-        note: "When the comoponent is mounted start listening to the keydown event to navigate through jokes"
+        note:
+          "When the comoponent is mounted start listening to the keydown event to navigate through jokes"
       },
       {
         loc: [24, 28],
@@ -312,18 +530,22 @@ export default (theme, images) => [
       { loc: [29, 34], note: "Unsubscribe to keydown event when component is unmounted" },
       {
         loc: [34, 41],
-        note: "When the up key (38) is pressed it should decrement the index and it should increment when down (40) is pressed"
+        note:
+          "When the up key (38) is pressed it should decrement the index and it should increment when down (40) is pressed"
       },
       { loc: [41, 46], note: "Decrement reduces the index unless it's already at the beginning" },
       { loc: [46, 52], note: "Increment increases the index unless it's already at the end" },
       {
         loc: [52, 55],
-        note: "render spreads the contents of `state` (containing jokes and index) onto the Jokes component"
+        note:
+          "render spreads the contents of `state` (containing jokes and index) onto the Jokes component"
       }
     ]}
   />,
   <Slide transition={["zoom", "fade"]} bgColor="secondary" size={6} textColor="quartenary">
-    <Heading caps fit textColor="tertiary">Performance</Heading>
+    <Heading caps fit textColor="tertiary">
+      Performance
+    </Heading>
     <Layout>
       <Fill>
         <Heading size={6} caps textColor="secondary" bgColor="primary" margin={10}>
@@ -417,7 +639,8 @@ export default (theme, images) => [
       { loc: [0, 270], title: "shouldComponentUpdate" },
       {
         loc: [0, 1],
-        note: "why-did-you-update told us we had issues with Jokes props when at the beginning or end of the deck"
+        note:
+          "why-did-you-update told us we had issues with Jokes props when at the beginning or end of the deck"
       },
       {
         loc: [1, 7],
@@ -425,11 +648,13 @@ export default (theme, images) => [
       },
       {
         loc: [26, 27],
-        note: "Likewise, why-did-you-update said we had issues in JokesContainer when dealing with state"
+        note:
+          "Likewise, why-did-you-update said we had issues in JokesContainer when dealing with state"
       },
       {
         loc: [33, 39],
-        note: "So, we'll also add a shouldComponentUpdate and if the state hasn't changed return false"
+        note:
+          "So, we'll also add a shouldComponentUpdate and if the state hasn't changed return false"
       },
       { loc: [72, 75], note: "Now, if we run our app... it should be much more performant!" }
     ]}
@@ -443,7 +668,8 @@ export default (theme, images) => [
       { loc: [0, 3], note: "Extend Jokes with PureComponent instead of Component" },
       {
         loc: [0, 3],
-        note: "React will implement shouldComponentUpdate() with a shallow props and state comparison"
+        note:
+          "React will implement shouldComponentUpdate() with a shallow props and state comparison"
       },
       { loc: [20, 21], note: "Likewise, extend JokesContainer with PureComponent" },
       {
@@ -492,12 +718,11 @@ export default (theme, images) => [
   <Slide transition={["fade"]} bgColor="black">
     <BlockQuote>
       <Quote>
-        Immutable data cannot be changed once created, leading to much simpler application development.
+        Immutable data cannot be changed once created, leading to much simpler application
+        development.
       </Quote>
       <Cite>
-        <Link href="https://twitter.com/ryanflorence/status/577685415919898625">
-          Immutable.js
-        </Link>
+        <Link href="https://twitter.com/ryanflorence/status/577685415919898625">Immutable.js</Link>
       </Cite>
     </BlockQuote>
   </Slide>,
@@ -509,7 +734,8 @@ export default (theme, images) => [
       { loc: [0, 270], title: "Add Simple Immutability" },
       {
         loc: [95, 101],
-        note: "Instead of pushing to an existing array, call the concat method, which returns a new array!"
+        note:
+          "Instead of pushing to an existing array, call the concat method, which returns a new array!"
       },
       {
         loc: [95, 101],
@@ -549,7 +775,8 @@ export default (theme, images) => [
       { loc: [0, 270], title: "Redux Index" },
       {
         loc: [3, 5],
-        note: "You need to import the react-redux Provider and the store you created (we'll look at that next)"
+        note:
+          "You need to import the react-redux Provider and the store you created (we'll look at that next)"
       },
       {
         loc: [9, 10],
@@ -608,7 +835,8 @@ export default (theme, images) => [
       { loc: [0, 270], title: "Redux Actions" },
       {
         loc: [0, 270],
-        note: "Export action functions that you app will need. The reducers will respond accordingly."
+        note:
+          "Export action functions that you app will need. The reducers will respond accordingly."
       },
       { loc: [0, 19], note: "fetchJokes dispatches messages since it's async" },
       { loc: [28, 35], note: "decrement & increment are more straightforward" }
@@ -626,7 +854,8 @@ export default (theme, images) => [
       { loc: [38, 42], note: "Define a method to convert state to props" },
       {
         loc: [43, 46],
-        note: "Use the redux HOC to connect presentational component with mapStateToProps and imported actions"
+        note:
+          "Use the redux HOC to connect presentational component with mapStateToProps and imported actions"
       },
       {
         loc: [12, 15],
@@ -638,7 +867,8 @@ export default (theme, images) => [
       },
       {
         loc: [26, 33],
-        note: "Notice we aren't using state anywhere in our JokesContainer anymore... it probably should be renamed 😂"
+        note:
+          "Notice we aren't using state anywhere in our JokesContainer anymore... it probably should be renamed 😂"
       }
     ]}
   />,
@@ -694,11 +924,13 @@ export default (theme, images) => [
       { loc: [28, 45], note: "decrement and increment used to be simple, but not anymore" },
       {
         loc: [28, 36],
-        note: "using the react-thunk middleware, our action creator can returns a function to perform an asynchronous dispatch"
+        note:
+          "using the react-thunk middleware, our action creator can returns a function to perform an asynchronous dispatch"
       },
       {
         loc: [28, 36],
-        note: "decrement initially dispatches 'JOKE_DECREMENT', then gets the resulting state, and updates the router history"
+        note:
+          "decrement initially dispatches 'JOKE_DECREMENT', then gets the resulting state, and updates the router history"
       }
     ]}
   />,

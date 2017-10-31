@@ -85,6 +85,7 @@ hydrate(
   <div class="Split-column Split-column--40" style="text-align: left;">
 <p>`render()` is deprecated and you should start using `hydrate()` instead.</p>
 <p>`render()` will no longer work in React v17 to hydrate server-rendered content.</p>
+<p><a href="https://hackernoon.com/whats-new-with-server-side-rendering-in-react-16-9b0d78585d67">What’s New With Server-Side Rendering in React 16</a> by <a href="https://twitter.com/xander76">@xander76</a></p>
   </div>
 </div>
 
