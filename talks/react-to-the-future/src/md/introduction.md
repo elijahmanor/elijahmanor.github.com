@@ -31,11 +31,12 @@
     "Christian", "Family", "Work"
   ],
   "work" : [
-    "@LeanKit", "@PluralSight"
+    "@LeanKit",
+    "@PluralSight",
+    "@eggheadio"
   ],
   "tech" : [
-    "HTML", "CSS", "JavaScript",
-    "React", "jQuery"
+    "HTML/CSS/JS", "React", "jQuery"
   ],
   "titles" : [ "Microsoft MVP" ]
 }</code></pre>

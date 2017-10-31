@@ -483,6 +483,9 @@ export default (theme, images) => [
       </Fill>
     </Layout>
   </Slide>,
+  // more thoughts
+  // https://medium.com/merrickchristensen/function-as-child-components-5f3920a9ace9
+  // https://reactrocket.com/post/turn-your-hocs-into-render-prop-components/
   // https://codesandbox.io/s/nwjoj04rkl
   // END - Render Props
   <Slide transition={["fade"]} bgColor="black">

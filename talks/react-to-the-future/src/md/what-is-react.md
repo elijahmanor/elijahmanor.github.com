@@ -75,7 +75,7 @@ Add your own entry to [Facebook's Sites Using React Wiki](https://github.com/fac
 
 <div class="Split">
   <div class="Split-column">
-    <p>Imperative Code</p>
+    <p>Imperative Code: How</p>
     <pre class="language-javascript language--clean language--small"><code>
 $('form').on('submit', function(e) {
   e.preventDefault();
@@ -91,7 +91,7 @@ $('form').on('submit', function(e) {
 });</code></pre>
   </div>
   <div class="Split-column">
-    <p>Declarative Code</p>
+    <p>Declarative Code: What</p>
     <pre class="language-jsx language--clean language--small"><code>
 var NoteBox = React.createClass({
   // ... more code ...
@@ -119,17 +119,69 @@ var NoteBox = React.createClass({
 
 # Virtual DOM
 
-* Re-rendering the whole app on every update is not efficient
-* The Virtual DOM will only update what is necessary
-* It works much like a Gaming Engine
+<div class="Split">
+  <div class="Split-column">
+  <ul>
+<li> Re-rendering the whole app on every update is not efficient
+<li> The Virtual DOM will only update what is necessary
+</ul>
+<blockquote> "I tend to think of React as Version Control for the DOM" —AdonisSMU</blockquote>
 
-> "I tend to think of React as Version Control for the DOM" —AdonisSMU
+  </div>
+  <div class="Split-column">
+  <ul>
+
+<li> It works much like a Gaming Engine
+</ul>
+<img src="./img/mario-sprite.png" />
+
+
+  </div>
+</div>
 
 ---
 
-# One-Way Data Flow
+# React Uses a One-Way Data Flow
 
-> "...you can set the directionality of it to be 2-Way Data Binding. That actually seems to be a good idea until you have a large scale application and then it turns out you have no idea whats going on... and turns out to be an anti-pattern for large apps." --[Misko Hevery](https://www.youtube.com/watch?v=uD6Okha_Yj0#t=1785)
+<div class="mermaid">
+  graph LR;
+
+  classDef action fill:#65B9CA,stroke:#FFFFFF,stroke-width:4px;
+  classDef dispatcher fill:#444142,stroke:#FFFFFF,stroke-width:4px;
+  classDef store fill:#294552,stroke:#FFFFFF,stroke-width:4px;
+  classDef view fill:#5FAF6A,stroke:#FFFFFF,stroke-width:4px;
+
+  Action1(Action)-->Dispatcher(Dispatcher);
+  Dispatcher-->Store(Store);
+  Store-->View(View);
+  View-->Action2(Action);
+  Action2-->Dispatcher;
+
+  class Action1,Action2 action;
+  class Dispatcher dispatcher;
+  class Store store;
+  class View view;
+</div>
+
+<small>We will upack this later in the presentation</small>
+
+---
+
+# Dangers of a Two-Way Data Flow
+
+<div class="Split">
+  <div class="Split-column">
+<blockquote>"...you can set the directionality of it to be 2-Way Data Binding. That actually seems to be a good idea until you have a large scale application and then it turns out you have no idea whats going on... and turns out to be an anti-pattern for large apps." --<a href="https://www.youtube.com/watch?v=uD6Okha_Yj0#t=1785">Misko Hevery</a></blockquote>
+
+  </div>
+  <div class="Split-column">
+  <ul>
+
+<img src="./img/2-way-binding.png" />
+<small style="text-align: center; display: block;">Image from <a href="https://medium.com/@davidsouther/song-flux-e1f9786579f6">David Souther</a></small>
+
+  </div>
+</div>
 
 ---
 
@@ -150,11 +202,33 @@ var NoteBox = React.createClass({
 
 ---
 
+<!--
+{
+  "className": "Slide--reload"
+}
+-->
+
 # Getting Started
 
-Once you know the basics (we'll cover those in this talk), then you can get started building locally with the [create-react-app](https://github.com/facebookincubator/create-react-app) command-line utility.
+<div class="Split">
+  <div class="Split-column">
 
-Or, if you just want to tinker online then [codesandbox.io](https://codesandbox.io) is a great option!
+<p>Once you know the basics (we'll cover those in this talk), then you can get started building locally with the [create-react-app](https://github.com/facebookincubator/create-react-app) command-line utility.</p>
+
+<p>Or, if you just want to tinker online then [codesandbox.io](https://codesandbox.io) is a great option!</p>
+
+  </div>
+  <div class="Split-column">
+
+
+<iframe src="https://codesandbox.io/embed/92yzpkw2xw?autoresize=1&codemirror=1" 
+data-online="https://codesandbox.io/embed/92yzpkw2xw?autoresize=1&codemirror=1"
+data-offline="https://codesandbox.io/embed/92yzpkw2xw?autoresize=1&codemirror=1"
+style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+  </div>
+</div>
+
+
 
 <!--
 
