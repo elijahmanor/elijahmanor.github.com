@@ -97,7 +97,7 @@ export default class Presentation extends React.Component {
     return (
       <Deck transition={["slide"]} transitionDuration={500} theme={theme} progress="bar">
         {introduction(theme, images)}
-        {/*{experimental(theme, images)}*/}
+        {/* {experimental(theme, images)} */}
         {refactoring(theme, images)}
         {unitTesting(theme, images)}
         {patternLibrary(theme, images)}

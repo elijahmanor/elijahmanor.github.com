@@ -93,25 +93,14 @@ export default (theme, images) => [
     </Heading>
     <Layout>
       <Fill>
-        <Heading size={6} caps textColor="secondary" bgColor="primary" margin={10} width="50%">
-          Presentational
-        </Heading>
-        <List>
-          <Appear>
-            <ListItem textSize="30px">How Things Look</ListItem>
-          </Appear>
-          <Appear>
-            <ListItem textSize="30px">Property Driven</ListItem>
-          </Appear>
-          <Appear>
-            <ListItem textSize="30px">Functional Components</ListItem>
-          </Appear>
-        </List>
-      </Fill>
-      <Fill>
-        <Heading size={6} caps textColor="secondary" bgColor="primary" margin={10} width="50%">
+        <Heading size={6} caps textColor="primary" margin={15} width="50%">
           Container
         </Heading>
+        <Appear>
+          <svg width="50%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+            <rect height="296" width="296" y="2" x="2" strokeWidth="2" stroke="#000" fill="#fff" />
+          </svg>
+        </Appear>
         <List>
           <Appear>
             <ListItem textSize="30px">How Things Work</ListItem>
@@ -121,6 +110,35 @@ export default (theme, images) => [
           </Appear>
           <Appear>
             <ListItem textSize="30px">Call Flux Actions</ListItem>
+          </Appear>
+        </List>
+      </Fill>
+      <Fill>
+        <Heading size={6} caps textColor="primary" margin={15} width="50%">
+          Presentational
+        </Heading>
+        <Appear>
+          <svg width="50%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+            <ellipse
+              stroke="#000"
+              ry="149"
+              rx="149"
+              cy="150"
+              cx="150"
+              strokeWidth="2"
+              fill="#fff"
+            />
+          </svg>
+        </Appear>
+        <List>
+          <Appear>
+            <ListItem textSize="30px">How Things Look</ListItem>
+          </Appear>
+          <Appear>
+            <ListItem textSize="30px">Property Driven</ListItem>
+          </Appear>
+          <Appear>
+            <ListItem textSize="30px">Functional Components</ListItem>
           </Appear>
         </List>
       </Fill>
@@ -180,6 +198,19 @@ export default (theme, images) => [
       { loc: [33, 34], note: "Now the App Component isn't up to funny business!" }
     ]}
   />,
+  <Slide bgColor="secondary" textColor="quartenary">
+    <Heading caps size={2} textColor="primary" margin="0 0 1rem 0">
+      Container Component
+    </Heading>
+    <Layout>
+      <Fill>
+        <svg width="50%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <rect height="296" width="296" y="2" x="2" strokeWidth="2" stroke="#000" fill="#fff" />
+          <ellipse stroke="#000" ry="125" rx="125" cy="150" cx="150" strokeWidth="2" fill="#fff" />
+        </svg>
+      </Fill>
+    </Layout>
+  </Slide>,
   <Slide bgColor="secondary">
     <Heading size={1} fit caps lineHeight={1} textColor="primary">
       HOC
@@ -202,6 +233,35 @@ export default (theme, images) => [
         </Link>
       </Cite>
     </BlockQuote>
+  </Slide>,
+  <Slide bgColor="secondary" textColor="quartenary">
+    <Heading caps size={1} textColor="primary" margin="0 0 1rem 0">
+      HOC
+    </Heading>
+    <Layout>
+      <Fill>
+        <svg style={{ margin: "1rem" }} viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <ellipse stroke="#000" ry="149" rx="149" cy="150" cx="150" strokeWidth="2" fill="#fff" />
+        </svg>
+      </Fill>
+      <Fill>
+        <svg style={{ margin: "1rem" }} viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <polygon
+            strokeWidth="2"
+            stroke="#000"
+            fill="#FFF"
+            points="2,2 2,298 298,150"
+            class="triangle"
+          />
+        </svg>
+      </Fill>
+      <Fill>
+        <svg style={{ margin: "1rem" }} viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <rect height="296" width="296" y="2" x="2" strokeWidth="2" stroke="#000" fill="#fff" />
+          <ellipse stroke="#000" ry="125" rx="125" cy="150" cx="150" strokeWidth="2" fill="#fff" />
+        </svg>
+      </Fill>
+    </Layout>
   </Slide>,
   <CodeSlide
     transition={[]}
@@ -338,6 +398,26 @@ export default (theme, images) => [
     <Layout>
       <Fill>
         <Image src={images.what} width="100%" margin="0" />
+      </Fill>
+    </Layout>
+  </Slide>,
+  <Slide bgColor="secondary" textColor="quartenary">
+    <Heading caps size={2} textColor="primary" margin="0 0 1rem 0">
+      Render Props
+    </Heading>
+    <Layout>
+      <Fill>
+        <svg width="50%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <rect height="296" width="296" y="2" x="2" strokeWidth="2" stroke="#000" fill="#fff" />
+          <polygon
+            strokeWidth="2"
+            stroke="#000"
+            fill="transparent"
+            points="25,25 25,275 275,150"
+            class="triangle"
+          />
+          <ellipse stroke="#000" ry="50" rx="50" cy="150" cx="100" strokeWidth="2" fill="#fff" />
+        </svg>
       </Fill>
     </Layout>
   </Slide>,
