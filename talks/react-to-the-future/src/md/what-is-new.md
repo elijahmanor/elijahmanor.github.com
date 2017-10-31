@@ -14,7 +14,7 @@
     <h2>Now With Fiber</h2>
   </div>
   <div class="Split-column Split-column--50">
-    <img style="height: 75vh; max-width: none;" src="../img/fiber-one-nutty.jpeg" />
+    <img style="height: 75vh; max-width: none;" src="./img/fiber-one-nutty.jpeg" />
   </div>
 </div>
 
@@ -37,7 +37,7 @@
 ## Stack Reconciliation Algorithm (<= v15)
 
 <div>
-  <img style="height: 50vh; max-width: none;" src="../img/react-stack-reconciliation.png" />
+  <img style="height: 50vh; max-width: none;" src="./img/react-stack-reconciliation.png" />
   <small style="display: block"><a href="https://www.youtube.com/watch?v=ZCuYPiUIONs">Lin Clark - A Cartoon Intro to Fiber</a></small>
 </div>
 
@@ -48,7 +48,7 @@ Blocks the main thread as it calculates the tree
 ## Fiber Reconciliation Algorithm (>= v16)
 
 <div>
-  <img style="height: 50vh; max-width: none;" src="../img/react-fiber-reconciliation.png" />
+  <img style="height: 50vh; max-width: none;" src="./img/react-fiber-reconciliation.png" />
   <small style="display: block"><a href="https://www.youtube.com/watch?v=ZCuYPiUIONs">Lin Clark - A Cartoon Intro to Fiber</a></small>
 </div>
 
@@ -59,7 +59,7 @@ Calculates part of tree & pauses (`window.requestIdleCallback`) to check for upd
 ## Prioritize Updates by Importance
 
 <div>
-  <img style="height: 50vh; max-width: none;" src="../img/react-fiber-priorities.png" />
+  <img style="height: 50vh; max-width: none;" src="./img/react-fiber-priorities.png" />
   <small style="display: block"><a href="https://www.youtube.com/watch?v=ZCuYPiUIONs">Lin Clark - A Cartoon Intro to Fiber</a></small>
 </div>
 
