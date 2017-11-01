@@ -81,7 +81,10 @@ export default (theme, images) => [
   />,
   <Slide transition={["zoom", "fade"]} bgColor="secondary">
     <Heading caps fit textColor="quartenary">
-      refactor alert
+      refactor
+    </Heading>
+    <Heading caps fit textColor="quartenary">
+      alert
     </Heading>
     <Text textColor="primary" fit>
       The component is doing too many things!
@@ -93,54 +96,82 @@ export default (theme, images) => [
     </Heading>
     <Layout>
       <Fill>
-        <Heading size={6} caps textColor="primary" margin={15} width="50%">
-          Container
-        </Heading>
-        <Appear>
-          <svg width="50%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+        <div style={{ margin: "0 0.5rem 0 0" }}>
+          <Heading size={6} caps textColor="primary" margin={15} width="33%">
+            Statefull
+          </Heading>
+          <svg width="75%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
             <rect height="296" width="296" y="2" x="2" strokeWidth="2" stroke="#000" fill="#fff" />
           </svg>
-        </Appear>
-        <List>
-          <Appear>
-            <ListItem textSize="30px">How Things Work</ListItem>
-          </Appear>
-          <Appear>
-            <ListItem textSize="30px">Stateful Driven</ListItem>
-          </Appear>
-          <Appear>
-            <ListItem textSize="30px">Call Flux Actions</ListItem>
-          </Appear>
-        </List>
+          <List>
+            <ListItem textSize="22px">How Things Work</ListItem>
+            <ListItem textSize="22px">Stateful Driven</ListItem>
+            <ListItem textSize="22px">Call Flux Actions</ListItem>
+          </List>
+        </div>
       </Fill>
       <Fill>
-        <Heading size={6} caps textColor="primary" margin={15} width="50%">
-          Presentational
-        </Heading>
         <Appear>
-          <svg width="50%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-            <ellipse
-              stroke="#000"
-              ry="149"
-              rx="149"
-              cy="150"
-              cx="150"
-              strokeWidth="2"
-              fill="#fff"
-            />
-          </svg>
+          <div>
+            <div style={{ margin: "0 0.5rem 0 0.5rem" }}>
+              <Heading size={6} caps textColor="primary" margin={15} width="33%">
+                Stateless
+              </Heading>
+              <svg width="75%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                <ellipse
+                  stroke="#000"
+                  ry="149"
+                  rx="149"
+                  cy="150"
+                  cx="150"
+                  strokeWidth="2"
+                  fill="#fff"
+                />
+              </svg>
+              <List>
+                <ListItem textSize="22px">How Things Look</ListItem>
+                <ListItem textSize="22px">Props Driven</ListItem>
+                <ListItem textSize="22px">Functional Comp</ListItem>
+              </List>
+            </div>
+          </div>
         </Appear>
-        <List>
-          <Appear>
-            <ListItem textSize="30px">How Things Look</ListItem>
-          </Appear>
-          <Appear>
-            <ListItem textSize="30px">Property Driven</ListItem>
-          </Appear>
-          <Appear>
-            <ListItem textSize="30px">Functional Components</ListItem>
-          </Appear>
-        </List>
+      </Fill>
+      <Fill>
+        <Appear>
+          <div>
+            <div style={{ margin: "0 0 0 0.5rem" }}>
+              <Heading size={6} caps textColor="primary" margin={15} width="33%">
+                Container
+              </Heading>
+              <svg width="75%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                <rect
+                  height="296"
+                  width="296"
+                  y="2"
+                  x="2"
+                  strokeWidth="2"
+                  stroke="#000"
+                  fill="#fff"
+                />
+                <ellipse
+                  stroke="#000"
+                  ry="125"
+                  rx="125"
+                  cy="150"
+                  cx="150"
+                  strokeWidth="2"
+                  fill="#fff"
+                />
+              </svg>
+              <List>
+                <ListItem textSize="22px">How Things Compose</ListItem>
+                <ListItem textSize="22px">Statefull manages State</ListItem>
+                <ListItem textSize="22px">Passes props to Stateless</ListItem>
+              </List>
+            </div>
+          </div>
+        </Appear>
       </Fill>
     </Layout>
   </Slide>,
@@ -198,19 +229,6 @@ export default (theme, images) => [
       { loc: [33, 34], note: "Now the App Component isn't up to funny business!" }
     ]}
   />,
-  <Slide bgColor="secondary" textColor="quartenary">
-    <Heading caps size={2} textColor="primary" margin="0 0 1rem 0">
-      Container Component
-    </Heading>
-    <Layout>
-      <Fill>
-        <svg width="50%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-          <rect height="296" width="296" y="2" x="2" strokeWidth="2" stroke="#000" fill="#fff" />
-          <ellipse stroke="#000" ry="125" rx="125" cy="150" cx="150" strokeWidth="2" fill="#fff" />
-        </svg>
-      </Fill>
-    </Layout>
-  </Slide>,
   <Slide bgColor="secondary">
     <Heading size={1} fit caps lineHeight={1} textColor="primary">
       HOC
@@ -921,7 +939,14 @@ export default (theme, images) => [
         note:
           "Export action functions that you app will need. The reducers will respond accordingly."
       },
-      { loc: [0, 19], note: "fetchJokes dispatches messages since it's async" },
+      {
+        loc: [0, 19],
+        note: "fetchJokes handles getting jokes & letting redux know what's happening"
+      },
+      { loc: [2, 5], note: "dispatch pending action" },
+      { loc: [6, 9], note: "actually fetch and parse jokes" },
+      { loc: [10, 19], note: "on success: filter questions & dispath success action" },
+      { loc: [19, 25], note: "on failure: dispath rejected action" },
       { loc: [28, 35], note: "decrement & increment are more straightforward" }
     ]}
   />,
