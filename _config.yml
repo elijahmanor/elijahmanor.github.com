@@ -12,7 +12,7 @@ title:            Elijah Manor
 tagline:          'Front-End Dev Tips, Tricks, and Tools'
 descriptions:     'Front-End Dev Tips, Tricks, and Tools'
 url:              http://elijahmanor.com
-baseurl:          "/"
+baseurl:          ""
 
 author:
   name:           'Elijah Manor'
