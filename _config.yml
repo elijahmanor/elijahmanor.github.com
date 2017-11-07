@@ -6,7 +6,7 @@ highlighter: rouge
 # permalink:        pretty
 # relative_permalinks: true
 permalink: /:categories/:title/
-exclude: [ 'node_modules' ]
+exclude: [ 'node_modules', 'talks' ]
 # Setup
 title:            Elijah Manor
 tagline:          'Front-End Dev Tips, Tricks, and Tools'
@@ -18,10 +18,9 @@ author:
   name:           'Elijah Manor'
   url:            https://twitter.com/elijahmanor
 
-paginate:         5
+paginate: 5
 
 # Custom vars
 version:          2.1.0
-
 github:
   repo:           https://github.com/elijahmanor/elijahmanor.github.com
