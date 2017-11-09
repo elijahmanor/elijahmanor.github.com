@@ -1535,3 +1535,63 @@
     slides: '/talks/npm-scripts'
     video: ''
     feedback: ''
+
+- dates:
+  - day: 31
+    month: 'Oct'
+    year: 2017
+  - day: 2
+    month: 'Nov'
+    year: 2017
+  date: '2017-10-31'
+  days: '31-02'
+  name: 'AngleBrackets'
+  type: 'conference'
+  url: 'https://anglebrackets.org/'
+  location: ''
+  employer: 'leankit'
+  sessions:
+  - name: 'An Introduction to React'
+    slides: '/talks/react-to-the-future/dist'
+    video: ''
+    feedback: ''
+  - name: 'React Patterns & Practices'
+    slides: '/talks/react-patterns-practices'
+    video: ''
+    feedback: ''
+  - name: 'Using npm scripts as your build tool'
+    slides: '/talks/npm-scripts'
+    video: ''
+    feedback: ''
+  - name: 'React Fundamentals Workshop'
+    slides: 'https://github.com/elijahmanor/react-fundamentals-workshop'
+    video: ''
+    feedback: ''
+
+- dates:
+  - day: 25
+    month: 'Mar'
+    year: 2018
+  - day: 28
+    month: 'Mar'
+    year: 2018
+  date: '2018-03-25'
+  days: '25-28'
+  name: 'AngleBrackets'
+  type: 'conference'
+  url: 'https://anglebrackets.org/'
+  location: ''
+  employer: 'leankit'
+  sessions:
+  - name: 'An Introduction to React'
+    slides: '/talks/react-to-the-future/dist'
+    video: ''
+    feedback: ''
+  - name: 'React Patterns & Practices'
+    slides: '/talks/react-patterns-practices'
+    video: ''
+    feedback: ''
+  - name: 'React Fundamentals Workshop'
+    slides: 'https://github.com/elijahmanor/react-fundamentals-workshop'
+    video: ''
+    feedback: ''
