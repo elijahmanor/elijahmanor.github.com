@@ -1595,3 +1595,23 @@
     slides: 'https://github.com/elijahmanor/react-fundamentals-workshop'
     video: ''
     feedback: ''
+
+- dates:
+  - day: 22
+    month: 'Nov'
+    year: 2017
+  - day: 23
+    month: 'Nov'
+    year: 2017
+  date: '2017-11-22'
+  days: '22-23'
+  name: 'Nodevember'
+  type: 'conference'
+  url: 'http://nodevember.org/'
+  location: 'Nashville, TN'
+  employer: 'leankit'
+  sessions:
+  - name: 'Using npm scripts as your build tool'
+    slides: '/talks/npm-scripts'
+    video: ''
+    feedback: ''
