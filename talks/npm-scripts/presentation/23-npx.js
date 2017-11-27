@@ -79,7 +79,7 @@ export default (theme, images) => <SlideSet>
       title="npx: npm package runner"
       output={[
         <div>
-          <Prompt path="git" />
+          <Prompt path="react-file-size" />
           <span>npm -v</span>
         </div>,
         {
@@ -96,7 +96,7 @@ export default (theme, images) => <SlideSet>
           ),
           output: (
             <div>
-              <Prompt path="git" />
+              <Prompt path="react-file-size" />
               <span>npm i npm -g</span>
           </div>
           )
@@ -107,7 +107,7 @@ export default (theme, images) => <SlideSet>
           ),
           output: (
             <div>
-              <Prompt path="git" />
+              <Prompt path="react-file-size" />
               <span>npx eslint --cache --fix ./</span>
           </div>
           )
@@ -118,7 +118,7 @@ export default (theme, images) => <SlideSet>
           ),
           output: (
             <div>
-              <Prompt path="git" />
+              <Prompt path="react-file-size" />
               <span>npx cowsay "This has opened up so many possibilities\!"</span>
         <pre style={{ whiteSpace: "pre-wrap" }}>
         {`  ____________________________
@@ -140,7 +140,7 @@ export default (theme, images) => <SlideSet>
           ),
           output: (
             <div>
-              <Prompt path="git" />
+              <Prompt path="react-file-size" />
               <span>npx create-react-app my-cool-new-app</span>
             </div>
           )
@@ -218,7 +218,7 @@ Happy hacking!
         </pre>
         </div>,
         <div>
-          <Prompt path="git" />
+          <Prompt path="react-file-size" />
           <span>exit</span>
         </div>
       ]}
