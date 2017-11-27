@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  SlideSet,
   BlockQuote,
   Cite,
   Heading,
@@ -14,7 +15,7 @@ import {
   List,
   ListItem
 } from "spectacle";
-import CodeSlide from "spectacle-code-slide";
+
 import Typist from "react-typist";
 import Loading from "react-loading";
 const cursor = {
@@ -54,15 +55,15 @@ const Changed = ({ children }) => {
   return <Typist cursor={cursor}><Element>{children}</Element></Typist>;
 };
 
-export default (theme, images) => [
-  <Slide bgColor="secondary">
+export default (theme, images) => <SlideSet>
+  <Slide id="run-basic-scripts" bgColor="secondary">
     <Heading size={1} fit caps lineHeight={1} textColor="primary">
       Run Basic
     </Heading>
     <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
       npm scripts
     </Heading>
-  </Slide>,
+  </Slide>
   <Slide transition={["spin", "slide"]} bgColor="primary">
     <Terminal
       isMaximized
@@ -374,10 +375,9 @@ export default (theme, images) => [
             <Loading
               type="bars"
               color="#fff"
-              height="30"
-              width="30"
-              delay="0"
-              className="u-inlineBlock"
+              height={30}
+              width={30}
+              delay={0}
             />
             <span style={{ marginLeft: "1rem" }}>
               {"Getting list of available react versions from cdnjs.com..."}
@@ -387,23 +387,21 @@ export default (theme, images) => [
             <Loading
               type="bars"
               color="#fff"
-              height="30"
-              width="30"
-              delay="0"
-              className="u-inlineBlock"
+              height={30}
+              width={30}
+              delay={0}
             />
             <span style={{ marginLeft: "1rem" }}>
-              {"indicator Getting statistics for react..."}
+              {"Getting statistics for react..."}
             </span>
           </div>,
           <div style={{ display: "flex", alignItems: "center" }}>
             <Loading
               type="bars"
               color="#fff"
-              height="30"
-              width="30"
-              delay="0"
-              className="u-inlineBlock"
+              height={30}
+              width={30}
+              delay={0}
             />
             <span style={{ marginLeft: "1rem" }}>{"react-dom.js v15.5.4"}</span>
           </div>,
@@ -411,10 +409,9 @@ export default (theme, images) => [
             <Loading
               type="bars"
               color="#fff"
-              height="30"
-              width="30"
-              delay="0"
-              className="u-inlineBlock"
+              height={30}
+              width={30}
+              delay={0}
             />
             <span style={{ marginLeft: "1rem" }}>{"react.min.js v15.4.0"}</span>
           </div>,
@@ -942,4 +939,4 @@ data.json    node_modules public       src`}
       ]}
     />
   </Slide>
-];
+</SlideSet>;

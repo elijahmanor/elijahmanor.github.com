@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  SlideSet,
   BlockQuote,
   Cite,
   Heading,
@@ -16,12 +17,16 @@ import {
   Link,
   Markdown,
   Appear,
-  Image
+  Image,
+  GoToAction
 } from "spectacle";
 import styled from "styled-components";
+import LocalStorage from "./LocalStorage";
 
-export default (theme, images) => [
-  <Slide bgColor="primary" bgImage={images.react} bgDarken={0.8}>
+const groupsToSkip = [ "introduction", "conclusion" ];
+
+export default (theme, images, agenda) => <SlideSet>
+  <Slide id="introduction" bgColor="primary" bgImage={images.react} bgDarken={0.8}>
     <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
       npm scripts
     </Heading>
@@ -44,8 +49,10 @@ export default (theme, images) => [
         </Heading>
       </Fill>
     </Layout>
-  </Slide>,
-  // ⌥ Option + m || Alt + m (maximize / minimize terminal)
+    <Heading size={5} textColor="tertiary" margin="20px 0 0 0">
+      <LocalStorage id="contenteditable.introduction" />
+    </Heading>
+  </Slide>
   <Slide
     id="aboutme"
     transition={["slide"]}
@@ -55,16 +62,16 @@ export default (theme, images) => [
     <Heading caps fit>Elijah Manor</Heading>
     <Layout>
       <Fill>
-        <Image src={images.cross} width="50%" margin="0" />
-        <Image src={images.leankit} width="50%" margin="0" />
-        <Image src={images.mvp} width="50%" margin="-8px 0 0 0" />
-        <Image src={images.egghead} width="50%" margin="-8px 0 0 0" />
+        <Image src={images.cross} width="50%" margin="0" display="initial" />
+        <Image src={images.leankit} width="50%" margin="0" display="initial" />
+        <Image src={images.mvp} width="50%" margin="-8px 0 0 0" display="initial" />
+        <Image src={images.egghead} width="50%" margin="-8px 0 0 0" display="initial" />
       </Fill>
       <Fill>
         <Image src={images.theManorFamily} width="100%" margin="0" />
       </Fill>
     </Layout>
-  </Slide>,
+  </Slide>
   <Slide
     id="navigation"
     transition={["slide"]}
@@ -76,15 +83,49 @@ export default (theme, images) => [
       ➡️ goto next slide
     </Heading>
     <Heading textAlign="left" size={6} caps textColor="tertiary" width="50%">
-      ⬅️ goto previous slide
+      ⬅️ goto prev slide
     </Heading>
     <Heading textAlign="left" size={6} caps textColor="tertiary" width="50%">
       ⬇️ goto next terminal command
     </Heading>
     <Heading textAlign="left" size={6} caps textColor="tertiary" width="50%">
-      ⬆️ goto previous terminal command
+      ⬆️ goto prev terminal command
     </Heading>
-  </Slide>,
+  </Slide>
+  <Slide
+    id="agenda"
+    transition={["slide"]}
+    bgColor="black"
+    notes="You can even put notes on your slide. How awesome is that?"
+    onActive={() => {
+      const content = document.querySelector(".spectacle-content");
+      content.classList.toggle( "spectacle-content--full" );
+    }}
+  >
+    <Heading size={3} textColor="quartenary" caps>Agenda</Heading>
+    <div
+      style={ {
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gridColumnGap: "0.5rem",
+        // fontSize: "3.5vh",
+        fontSize: "1.55rem",
+        color: "black",
+        margin: "0 0 1rem 0"
+      } }>
+      { agenda.reduce( ( memo, group, index ) => {
+          if ( !groupsToSkip.includes( group.id ) ) {
+            memo.push( <GoToAction style={ {
+              textAlign: "left",
+              fontFamily: "monospace",          
+              } } slide={ group.id }>
+              { `${index.toString().padStart(2, "0")}: ${group.name}` }
+            </GoToAction> );    
+          }
+          return memo;
+        }, [] ) }
+    </div>
+  </Slide>
   <Slide
     id="egghead"
     transition={["slide"]}
@@ -100,9 +141,9 @@ export default (theme, images) => [
       </Link>
     </Heading>
     <Link href="https://egghead.io/courses/how-to-use-npm-scripts-as-your-build-tool">
-      <Image src={images.course} width="50%" margin="0" style={{ marginTop: "5rem" }} />
+      <Image src={images.course} width="50%" style={{ marginTop: "5rem" }} />
     </Link>
-  </Slide>,
+  </Slide>
   <Slide
     transition={["slide"]}
     bgColor="black"
@@ -121,4 +162,4 @@ export default (theme, images) => [
       width="100%"
     />
   </Slide>
-];
+</SlideSet>;

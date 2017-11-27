@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  SlideSet,
   BlockQuote,
   Cite,
   Heading,
@@ -14,7 +15,7 @@ import {
   List,
   ListItem
 } from "spectacle";
-import CodeSlide from "spectacle-code-slide";
+
 import Typist from "react-typist";
 import Loading from "react-loading";
 const cursor = {
@@ -54,15 +55,15 @@ const Changed = ({ children }) => {
   return <Typist cursor={cursor}><Element>{children}</Element></Typist>;
 };
 
-export default (theme, images) => [
-  <Slide bgColor="secondary">
+export default (theme, images) => <SlideSet>
+  <Slide id="run-scripts-in-parallel" bgColor="secondary">
     <Heading size={1} fit caps lineHeight={1} textColor="primary">
       run npm scripts
     </Heading>
     <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
       in parallel
     </Heading>
-  </Slide>,
+  </Slide>
   <Slide transition={["spin", "slide"]} bgColor="primary">
     <Terminal
       isMaximized
@@ -162,6 +163,9 @@ export default (theme, images) => [
         {
           isSolo: true,
           isAutoScroll: false,
+          note: (
+            <span><code>&&</code> indicates running in series.</span>
+          ),
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -247,6 +251,9 @@ export default (theme, images) => [
         {
           isSolo: true,
           isAutoScroll: false,
+          note: (
+            <span>Switch to <code>&</code> to run in parallel!</span>
+          ),
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -399,6 +406,9 @@ Utils
         {
           isSolo: true,
           isAutoScroll: false,
+          note: (
+            <span>Let's add a watch script in the middle of the parallel tasks...</span>
+          ),
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -478,23 +488,35 @@ Utils
             </div>
           )
         },
-        <div>
-          <Prompt path="react-file-size" />
-          <Typist cursor={cursor}>cowsay "But wait, we have a problem"</Typist>
-        </div>,
-        <pre style={{ whiteSpace: "pre-wrap" }}>
-          {` _____________________________ 
-< But wait, we have a problem >
- ----------------------------- 
+        {
+          note: (
+            <span>
+              If you try to <code>ctrl-c</code> from the watch task the process will still be running in the background!
+            </span>
+            ),
+            output: (
+              <div>
+              <Prompt path="react-file-size" />
+              <span>cowsay "But <strong><u>hay</u></strong>, we have en<strong><u>cow</u></strong>ntered a problem"</span>
+              <pre style={{ whiteSpace: "pre-wrap" }}>
+              {`  _______________________________________ 
+< But hay, we have encowntered a problem >
+  --------------------------------------- 
         \\   ^__^                    
          \\  (oo)\\_______            
             (__)\\       )\\/\\        
                 ||----w |           
                 ||     ||           `}
-        </pre>,
+              </pre>
+            </div>
+            )
+        },
         {
           isSolo: true,
           isAutoScroll: false,
+          note: (
+            <span>To solve this you could append <code>& wait</code> to the end of your parallel scripts!</span>
+          ),
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -578,11 +600,11 @@ Utils
           output: (
             <div>
               <Prompt path="react-file-size" />
-              <span>cowsay "Now things are udderly better :)"</span>
+              <span>cowsay "Whew, now things are <strong><u>udder</u></strong>ly better!"</span>
               <pre style={{ whiteSpace: "pre-wrap" }}>
-                {` _________________________________ 
-< Now things are udderly better :) >
- --------------------------------- 
+                {` _____________________________________ 
+< Whew, now things are udderly better! >
+ ------------------------------------- 
         \\   ^__^                    
          \\  (oo)\\_______            
             (__)\\       )\\/\\        
@@ -590,18 +612,6 @@ Utils
                 ||     ||           `}
               </pre>
             </div>
-          ),
-          note: (
-            <pre style={{ whiteSpace: "pre-wrap" }}>
-              {` _________________________________ 
-< Now things are udderly better :) >
- --------------------------------- 
-        \\   ^__^                    
-         \\  (oo)\\_______            
-            (__)\\       )\\/\\        
-                ||----w |           
-                ||     ||           `}
-            </pre>
           )
         },
         <div>
@@ -610,4 +620,4 @@ Utils
       ]}
     />
   </Slide>
-];
+</SlideSet>;

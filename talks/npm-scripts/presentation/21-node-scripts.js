@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  SlideSet,
   BlockQuote,
   Cite,
   Heading,
@@ -14,7 +15,7 @@ import {
   List,
   ListItem
 } from "spectacle";
-import CodeSlide from "spectacle-code-slide";
+
 import Typist from "react-typist";
 import Loading from "react-loading";
 const cursor = {
@@ -61,17 +62,49 @@ const Changed = ({ children }) => {
   return <Element>{children}</Element>;
 };
 
-export default (theme, images) => [
-  <Slide bgColor="secondary">
+export default (theme, images) => <SlideSet>
+  <Slide id="node-scripts" bgColor="secondary">
     <Heading size={1} fit caps lineHeight={1} textColor="primary">
       node scripts
     </Heading>
-  </Slide>,
+  </Slide>
   <Slide transition={["spin", "slide"]} bgColor="primary">
     <Terminal
       isMaximized
       title="node scripts"
       output={[
+        {
+          isSolo: true,
+          isAutoScroll: false,
+          scrollTo: 0,
+          output: (        
+                <div>
+                  <Prompt path="react-file-size" />
+                  <span>
+                  cowsay -f stegosaurus "I dino, tons of npm scripts make me a nervous rex"
+                  </span>
+                  <pre style={{ whiteSpace: "pre-wrap" }}>
+                    {`  _______________________________________
+ / I dino, tons of npm scripts make me a \\
+ \\ nervous rex                           /
+  ---------------------------------------
+ \\                             .       .
+  \\                           / \`.   .' "
+   \\                  .---.  <    > <    >  .---.
+    \\                 |    \\  \\ - ~ ~ - /  /    |
+          _____          ..-~             ~-..-~
+         |     |   \\~~~\\.'                    \`./~~~/
+        ---------   \\__/                        \\__/
+       .'  O    \\     /               /       \\  "
+      (_____,    \`._.'               |         }  \\/~~~/
+       \`----.          /       }     |        /    \\__/
+             \`-.      |       /      |       /      \`. ,~~|
+                 ~-.__|      /_ - ~ ^|      /- _      \`..-'
+                      |     /        |     /     ~-.     \`-. _  _  _
+                      |_____|        |_____|         ~ - . _ _ _ _ _>`}
+                  </pre>
+                </div>)
+        },
         <div>
           <Prompt path="react-file-size" />
           <Success>vim</Success>{" "}<span>package.json</span>
@@ -80,6 +113,9 @@ export default (theme, images) => [
           isSolo: true,
           isAutoScroll: false,
           scrollTo: 275,
+          note: (
+            <span>So, let's pull out the <code>test</code>, <code>build</code>, and <code>server</code> scripts into their own JavaScript files.</span> 
+          ),
           output: (
             <div style={{ whiteSpace: "pre" }}>
               <span>{`{
@@ -258,4 +294,4 @@ exec(\`opn http://localhost:\${port}\`);
       ]}
     />
   </Slide>
-];
+</SlideSet>;

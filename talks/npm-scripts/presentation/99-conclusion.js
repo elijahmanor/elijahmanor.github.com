@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  SlideSet,
   BlockQuote,
   Cite,
   Heading,
@@ -19,11 +20,15 @@ import {
   Image
 } from "spectacle";
 import styled from "styled-components";
+import LocalStorage from "./LocalStorage";
 
-export default (theme, images) => [
-  <Slide bgColor="secondary" bgImage={images.react} bgDarken={0.8}>
+export default (theme, images) =>
+  <Slide id="conclusion" bgColor="secondary" bgImage={images.react} bgDarken={0.8}>
     <Heading size={1} fit caps lineHeight={1} textColor="primary">
       Thank You!
+    </Heading>
+    <Heading size={3} caps fit textColor="tertiary" margin="0 0 40px 0">
+      No ASCII Animals were harmed in the making of this talk
     </Heading>
     <Heading size={1} fit lineHeight={1}>
       <Link href="http://bit.ly/npm-scripts" textColor="quartenary">
@@ -42,5 +47,7 @@ export default (theme, images) => [
         @elijahmanor
       </Link>
     </pre>
-  </Slide>
-];
+    <Heading size={5} textColor="primary" margin="20px 0 0 0">
+      <LocalStorage id="contenteditable.conclusion" />
+    </Heading>
+  </Slide>;

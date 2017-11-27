@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  SlideSet,
   BlockQuote,
   Cite,
   Heading,
@@ -14,7 +15,7 @@ import {
   List,
   ListItem
 } from "spectacle";
-import CodeSlide from "spectacle-code-slide";
+
 import Typist from "react-typist";
 import Loading from "react-loading";
 const cursor = {
@@ -61,15 +62,15 @@ const Changed = ({ children }) => {
   return <Element>{children}</Element>;
 };
 
-export default (theme, images) => [
-  <Slide bgColor="secondary">
+export default (theme, images) => <SlideSet>
+  <Slide id="list-available-scripts" bgColor="secondary">
     <Heading size={1} fit caps lineHeight={1} textColor="primary">
       list available
     </Heading>
     <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
       npm scripts
     </Heading>
-  </Slide>,
+  </Slide>
   <Slide transition={["spin", "slide"]} bgColor="primary">
     <Terminal
       isMaximized
@@ -77,7 +78,7 @@ export default (theme, images) => [
       output={[
         <div>
           <Prompt path="react-file-size" />
-          <span>npm run</span>
+          <span>npm run <span className="u-muted"># lists all available scripts</span></span>
         </div>,
         <div>{`
 Lifecycle scripts included in react-file-size:
@@ -132,14 +133,24 @@ available via 'npm run-script':
   prepush
     npm run lint
 `}</div>,
-        <div>
-          <Prompt path="react-file-size" />
-          <span>npm run | less</span>
-        </div>,
+        {
+          note: (
+            <span>That might seem overwhelming, so you could pipe it through <code>less</code></span>
+          ),
+          output: (
+            <div>
+            <Prompt path="react-file-size" />
+            <span>npm run | less</span>
+          </div>
+          )
+        },
         {
           isSolo: true,
           isAutoScroll: false,
           scrollTo: 0,
+          note: (
+            <span>But really, that isn't much better... is it?</span>
+          ),
           output: (
             <div>{`
 Lifecycle scripts included in react-file-size:
@@ -159,12 +170,19 @@ available via 'npm run-script':
           )
         },
         [
-          <div>
-            <Prompt path="react-file-size" />
-            <span>
-              npm completion &gt;&gt; ~/.bashrc
-            </span>
-          </div>,
+          {
+            note: (
+              <span>So, let's install npm tab-completion instead.</span>
+            ),
+            output: (
+              <div>
+              <Prompt path="react-file-size" />
+              <span>
+                npm completion &gt;&gt; ~/.bashrc
+              </span>
+            </div>
+            )
+          },
           <div>
             <Prompt path="react-file-size" />
             <span>
@@ -178,23 +196,37 @@ available via 'npm run-script':
             source ~/.zshrc
           </span>
         </div>,
-        <div>
-          <Prompt path="react-file-size" />
-          <span>
-            npm run <span className="u-muted">&lt;tab&gt;</span>
-          </span>
-        </div>,
+        {
+          note: (
+            <span>Now, if you type <code>npm run</code> and then the <code>tab</code> key...</span>
+          ),
+          output: (
+            <div>
+            <Prompt path="react-file-size" />
+            <span>
+              npm run <span className="u-muted">&lt;tab&gt;</span>
+            </span>
+          </div>
+          )
+        },
         [
-          <div>
-            {Parser(
-              `build          lint           prebuild       start        
+          {
+            note: (
+              <span>You'll see a list of available tasks that you can tab through or use your arrow keys</span>
+            ),
+            output: (
+              <div>
+              {Parser(
+                `build          lint           prebuild       start        
 build:css      lint:css       prepush        test         
 build:html     lint:css:fix   pretest        watch        
 build:js       lint:js        server         watch:lint   
 cover          postcover      server:create  watch:test   
 cover:open     poststart      server:launch            `
-            )}
-          </div>,
+              )}
+            </div>
+            )
+          },
           <div>
             {Parser(
               `<span className="u-selected">build</span>          lint           prebuild       start        
@@ -236,16 +268,30 @@ cover:open     poststart      server:launch            `
             )}
           </div>
         ],
-        <div>
-          <Prompt path="react-file-size" />
-          <span>
-            npm run build<span className="u-muted">&lt;tab&gt;</span>
-          </span>
-        </div>,
+        {
+          note: (
+            <span>Or, if you start typing a script name and press the <code>tab</code> key...</span>
+          ),
+          output: (
+            <div>
+            <Prompt path="react-file-size" />
+            <span>
+              npm run build<span className="u-muted">&lt;tab&gt;</span>
+            </span>
+          </div>
+          )
+        },
         [
-          <div>
-            {Parser("build       build:css   build:html  build:js ")}
-          </div>,
+          {
+            note: (
+              <span>Then it'll only list scripts that match that pattern!</span>
+            ),
+            output: (
+              <div>
+                {Parser("build       build:css   build:html  build:js ")}
+              </div>
+            )
+          },
           <div>
             {Parser(
               "<span className=\"u-selected\">build</span>       build:css   build:html  build:js "
@@ -257,12 +303,19 @@ cover:open     poststart      server:launch            `
             )}
           </div>
         ],
-        <div>
-          <Prompt path="react-file-size" />
-          <span>
-            npm i ntl -g
-          </span>
-        </div>,
+        {
+          note: (
+            <span>Another approach is to install the <code>ntl</code> (npm task list) package</span>
+          ),
+          output: (
+            <div>
+            <Prompt path="react-file-size" />
+            <span>
+              npm i ntl -g
+            </span>
+          </div>
+          )
+        },
         <div>{`
 /Users/elijahm/.nvm/versions/node/v6.3.1/bin/ntl -> /Users/elijahm/.nvm/versions/node/v6.3.1/lib/node_modules/ntl/cli.js
 + ntl@1.2.0
@@ -274,6 +327,11 @@ added 31 packages in 2.368s`}</div>,
           </span>
         </div>,
         [
+          {
+            note: (
+              <span>It'll list out your available tasks in a nice interactive dropdown list</span>
+            ),
+            output: (
           <div>
             {Parser(
               `
@@ -288,7 +346,9 @@ Npm Task List - v1.2.0
   lint:css 
 <span className="u-muted">(Move up and down to reveal more choices)</span>`
             )}
-          </div>,
+          </div>
+            )
+          },
           <div>
             {Parser(
               `
@@ -360,4 +420,4 @@ Npm Task List - v1.2.0
       ]}
     />
   </Slide>
-];
+</SlideSet>;

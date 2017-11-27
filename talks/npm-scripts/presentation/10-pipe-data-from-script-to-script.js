@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  SlideSet,
   BlockQuote,
   Cite,
   Heading,
@@ -14,7 +15,7 @@ import {
   List,
   ListItem
 } from "spectacle";
-import CodeSlide from "spectacle-code-slide";
+
 import Typist from "react-typist";
 import Loading from "react-loading";
 const cursor = {
@@ -54,15 +55,15 @@ const Changed = ({ children }) => {
   return <Typist cursor={cursor}><Element>{children}</Element></Typist>;
 };
 
-export default (theme, images) => [
-  <Slide bgColor="secondary">
+export default (theme, images) => <SlideSet>
+  <Slide id="pipe-script-data" bgColor="secondary">
     <Heading size={1} fit caps lineHeight={1} textColor="primary">
       pipe data from
     </Heading>
     <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
       script to script
     </Heading>
-  </Slide>,
+  </Slide>
   <Slide transition={["spin", "slide"]} bgColor="primary">
     <Terminal
       isMaximized
@@ -166,6 +167,9 @@ export default (theme, images) => [
           isSolo: true,
           isAutoScroll: false,
           scrollTo: 410,
+          note: (
+            <span>Either pipe or redirect data using the <code>|</code> or <code>&gt;</code> command.</span>
+          ),
           output: (
             <div style={{ whiteSpace: "pre" }}>
               <span>{`{
@@ -261,4 +265,4 @@ export default (theme, images) => [
       ]}
     />
   </Slide>
-];
+</SlideSet>;

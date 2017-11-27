@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  SlideSet,
   BlockQuote,
   Cite,
   Heading,
@@ -14,7 +15,7 @@ import {
   List,
   ListItem
 } from "spectacle";
-import CodeSlide from "spectacle-code-slide";
+
 import Typist from "react-typist";
 import Loading from "react-loading";
 const cursor = {
@@ -58,15 +59,15 @@ const Changed = ({ children }) => {
   );
 };
 
-export default (theme, images) => [
-  <Slide bgColor="secondary">
+export default (theme, images) => <SlideSet>
+  <Slide id="custom-config-settings" bgColor="secondary">
     <Heading size={1} fit caps lineHeight={1} textColor="primary">
       custom config
     </Heading>
     <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
       settings
     </Heading>
-  </Slide>,
+  </Slide>
   <Slide transition={["spin", "slide"]} bgColor="primary">
     <Terminal
       isMaximized
@@ -80,6 +81,9 @@ export default (theme, images) => [
           isSolo: true,
           isAutoScroll: false,
           scrollTo: 0,
+          note: (
+            <span>There is a special <code>config</code> section in your <code>package.json</code> where you can add special information.</span>
+          ),
           output: (
             <div>
               <span>{`{
@@ -173,13 +177,27 @@ export default (theme, images) => [
         <div>
           <Prompt path="react-file-size" /><span>npm run env | grep "config_port"</span>
         </div>,
-        <div>{`
+        {
+          note: (
+            <span>This information is available to you via environment variables.</span>
+          ),
+          output: (
+            <div>{`
 npm_package_config_port = 1337;
-`}</div>,
-        <div>
-          <Prompt path="react-file-size" />
-          <span>npm i http-server -D</span>
-        </div>,
+            `}</div>
+          )
+        },
+        {
+          note: (
+            <span>We'll install <code>http-server</code> to kick off a web server for our website.</span>
+          ),
+          output: (
+            <div>
+              <Prompt path="react-file-size" />
+              <span>npm i http-server -D</span>
+            </div>
+          )
+        },
         <div>{`
 + http-server@0.10.0
 added 13 packages, removed 1154 packages and updated 10 packages in 13.134s
@@ -188,6 +206,9 @@ added 13 packages, removed 1154 packages and updated 10 packages in 13.134s
           isSolo: true,
           isAutoScroll: false,
           scrollTo: 0,
+          note: (
+            <span>Now we can use the <code>$npm_package_config_port</code> environment variable as a custom port when launching our server.</span>
+          ),
           output: (
             <div>
               <span>{`{
@@ -284,21 +305,42 @@ added 13 packages, removed 1154 packages and updated 10 packages in 13.134s
             </div>
           )
         },
-        <div>
-          <Prompt path="react-file-size" />
-          <span>npm config set react-file-size:port 1138</span>
-        </div>,
-        <div>
-          <Prompt path="react-file-size" />
-          <span>npm config list | grep "react"</span>
-        </div>,
+        {
+          note: (
+            <span>You can override the <code>config</code> values with <code>npm config set</code></span>
+          ),
+          output: (
+            <div>
+              <Prompt path="react-file-size" />
+              <span>npm config set react-file-size:port 1138</span>
+            </div>
+          )
+        },
+        {
+          note: (
+            <span>You can verify what <code>config</code> values are set with <code>npm config list</code></span>
+          ),
+          output: (
+            <div>
+              <Prompt path="react-file-size" />
+              <span>npm config list | grep "react"</span>
+            </div>
+          )
+        },
         <div>{`
 react-file-size:port = "1138"
 ; cwd = /Users/elijahm/egghead/react-file-size`}</div>,
-        <div>
-          <Prompt path="react-file-size" />
-          <span>npm config delete react-file-size:port</span>
-        </div>,
+        {
+          note: (
+            <span>You can also delete those overrides with <code>npm config delete</code></span>
+          ),
+          output: (
+            <div>
+              <Prompt path="react-file-size" />
+              <span>npm config delete react-file-size:port</span>
+            </div>
+          )
+        },
         <div>
           <Prompt path="react-file-size" />
           <span>npm config list | grep "react"</span>
@@ -311,4 +353,4 @@ react-file-size:port = "1138"
       ]}
     />
   </Slide>
-];
+</SlideSet>;

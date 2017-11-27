@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  SlideSet,
   BlockQuote,
   Cite,
   Heading,
@@ -14,7 +15,7 @@ import {
   List,
   ListItem
 } from "spectacle";
-import CodeSlide from "spectacle-code-slide";
+
 import Typist from "react-typist";
 import Loading from "react-loading";
 const cursor = {
@@ -61,12 +62,12 @@ const Changed = ({ children }) => {
   return <Element>{children}</Element>;
 };
 
-export default (theme, images) => [
-  <Slide bgColor="secondary">
+export default (theme, images) => <SlideSet>
+  <Slide id="npm-check" bgColor="secondary">
     <Heading size={1} fit caps lineHeight={1} textColor="primary">
       npm check
     </Heading>
-  </Slide>,
+  </Slide>
   <Slide transition={["spin", "slide"]} bgColor="primary">
     <Terminal
       isMaximized
@@ -76,10 +77,17 @@ export default (theme, images) => [
           <Prompt path="react-file-size" />
           <Success>npm</Success>{" "}<span>i npm-check -g</span>
         </div>,
-        <div>
-          <Prompt path="react-file-size" />
-          <span>npm-check -u</span>
-        </div>,
+        {
+          note: (
+            <span>Packages regularly get outdated. <code>npm-check</code> to the rescue!</span>
+          ),
+          output: (
+            <div>
+              <Prompt path="react-file-size" />
+              <span>npm-check -u</span>
+            </div>
+          )
+        },
         <div>{`
 + npm-check@5.4.4
 updated 1 package in 5.065s`}</div>,
@@ -87,6 +95,9 @@ updated 1 package in 5.065s`}</div>,
           isSolo: true,
           isAutoScroll: false,
           scrollTo: 0,
+          note: (
+            <span>It'll give you a nice interactive UI to help you determine which packages need to be updated!</span>
+          ),
           output: (
             <div>
               {Parser(
@@ -225,26 +236,43 @@ added 16 packages and updated 1 package in 4.425s
             </div>
           )
         },
+        {
+          isSolo: true,
+          isAutoScroll: false,
+          scrollTo: 0,
+          output: (        
+
         <div>
           <Prompt path="react-file-size" />
           <span>
-            cowsay "That is mooosic to my hears"
+          cowsay -f turtle "That tool is turtley awesome dude\!"
           </span>
           <pre style={{ whiteSpace: "pre" }}>
-            {` ____________________________ 
-< That is mooosic to my ears >
- ----------------------------
-        \\   ^__^                    
-         \\  (oo)\\_______            
-            (__)\\       )\\/\\        
-                ||----w |           
-                ||     ||           `}
+            {`  ____________________________________
+ < That tool is turtley awesome dude! >
+  ------------------------------------
+     \\                                  ___-------___
+      \\                             _-~~             ~~-_
+       \\                         _-~                    /~-_
+              /^\\__/^\\         /~  \\                   /    \\
+            /|  O|| O|        /      \\_______________/        \\
+           | |___||__|      /       /                \\          \\
+           |          \    /      /                    \\          \\
+           |   (_______) /______/                        \\_________ \\
+           |         / /         \\                      /            \\
+            \\         \\^\\\\         \\                  /               \\     /
+              \\         ||           \\______________/      _-_       //\\__//
+                \\       ||------_-~~-_ ------------- \\ --/~   ~\\    || __/
+                  ~-----||====/~     |==================|       |/~~~~~
+                   (_(__/  ./     /                    \\_\\      \\.
+                          (_(___/                         \\_____)_)`}
           </pre>
-        </div>,
+                   </div>)
+        },
         <div>
           <Prompt path="react-file-size" /><span>exit</span>
         </div>
       ]}
     />
   </Slide>
-];
+</SlideSet>;

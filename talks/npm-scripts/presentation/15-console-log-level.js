@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  SlideSet,
   BlockQuote,
   Cite,
   Heading,
@@ -14,7 +15,7 @@ import {
   List,
   ListItem
 } from "spectacle";
-import CodeSlide from "spectacle-code-slide";
+
 import Typist from "react-typist";
 import Loading from "react-loading";
 const cursor = {
@@ -54,15 +55,15 @@ const Changed = ({ children }) => {
   return <Typist cursor={cursor}><Element>{children}</Element></Typist>;
 };
 
-export default (theme, images) => [
-  <Slide bgColor="secondary">
+export default (theme, images) => <SlideSet>
+  <Slide id="console-log-level" bgColor="secondary">
     <Heading size={1} fit caps lineHeight={1} textColor="primary">
       console
     </Heading>
     <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
       log level
     </Heading>
-  </Slide>,
+  </Slide>
   <Slide transition={["spin", "slide"]} bgColor="primary">
     <Terminal
       isMaximized
@@ -314,26 +315,44 @@ Available on:
   http://169.254.86.70:1337
 Hit CTRL-C to stop the server
 `}</div>,
+{
+  isSolo: true,
+  isAutoScroll: false,
+  scrollTo: 0,
+  output: (
+
         <div>
           <Prompt path="react-file-size" />
           <span>
-            cowsay "That's 13 lines compared to 200 lines"
+            cowsay -f dragon-and-cow "That's 13 lines compared to 200 lines"
           </span>
           <pre style={{ whiteSpace: "pre-wrap" }}>
-            {` ______________________________________ 
-< That's 13 lines compared to 200 lines >
- -------------------------------------- 
-        \\   ^__^                    
-         \\  (oo)\\_______            
-            (__)\\       )\\/\\        
-                ||----w |           
-                ||     ||           `}
+            {`  _______________________________________
+ < That's 13 lines compared to 200 lines >
+  ---------------------------------------
+                        \\                    ^    /^
+                         \\                  / \\  // \\
+                          \\   |\\___/|      /   \\//  .\\
+                           \\  /O  O  \\__  /    //  | \\ \\           *----*
+                             /     /  \\/_/    //   |  \\  \\          \\   |
+                             @___@\`    \\/_   //    |   \\   \\         \\/\\ \\
+                            0/0/|       \\/_ //     |    \\    \\         \\  \\
+                        0/0/0/0/|        \\///      |     \\     \\       |  |
+                     0/0/0/0/0/_|_ /   (  //       |      \\     _\\     |  /
+                  0/0/0/0/0/0/\`/,_ _ _/  ) ; -.    |    _ _\.-~       /   /
+                              ,-}        _      *-.|.-~-.           .~    ~
+             \\     \\__/        \`/\\      /                 ~-. _ .-~      /
+              \\____(oo)           *.   }            {                   /
+              (    (--)          .----~-.\\        \\-\`                 .~
+              //__\\\\  \\__ Ack!   ///.----..<        \\             _ -~
+             //    \\\\               ///-._ _ _ _ _ _ _{^ - - - - ~`}
           </pre>
-        </div>,
+        </div>)
+              },
         <div>
           <Prompt path="react-file-size" /><span>exit</span>
         </div>
       ]}
     />
   </Slide>
-];
+</SlideSet>;

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  SlideSet,
   BlockQuote,
   Cite,
   Heading,
@@ -14,7 +15,7 @@ import {
   List,
   ListItem
 } from "spectacle";
-import CodeSlide from "spectacle-code-slide";
+
 import Typist from "react-typist";
 import Loading from "react-loading";
 const cursor = {
@@ -54,15 +55,15 @@ const Changed = ({ children }) => {
   return <Typist cursor={cursor}><Element>{children}</Element></Typist>;
 };
 
-export default (theme, images) => [
-  <Slide bgColor="secondary">
+export default (theme, images) => <SlideSet>
+  <Slide id="npm-run-all" bgColor="secondary">
     <Heading size={1} fit caps lineHeight={1} textColor="primary">
       npm-run-all
     </Heading>
     <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
       shorthand syntax
     </Heading>
-  </Slide>,
+  </Slide>
   <Slide transition={["spin", "slide"]} bgColor="primary">
     <Terminal
       isMaximized
@@ -88,6 +89,9 @@ removed 81 packages and updated 1 package in 1.059s`}</div>,
           isSolo: true,
           isAutoScroll: false,
           scrollTo: 110,
+          note: (
+            <span>Instead of using long-hand form to link together scripts...</span>
+          ),
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -178,6 +182,9 @@ removed 81 packages and updated 1 package in 1.059s`}</div>,
           isSolo: true,
           isAutoScroll: false,
           scrollTo: 110,
+          note: (
+            <span>...we can use <code>npm-run-all</code> syntax wire them together.</span>
+          ),
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -262,6 +269,9 @@ removed 81 packages and updated 1 package in 1.059s`}</div>,
           isSolo: true,
           isAutoScroll: false,
           scrollTo: 110,
+          note: (
+            <span>And to support parallel, it's as easy as adding the <code>--parallel</code> flag!</span>
+          ),
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -342,21 +352,25 @@ removed 81 packages and updated 1 package in 1.059s`}</div>,
             </div>
           )
         },
-        <div>
+        <div style={{ whiteSpace: "pre" }}>
           <Prompt path="react-file-size" />
-          <Typist cursor={cursor}>
-            cowsay "Don't worry... npm-run-all handles 'wait' for you"
-          </Typist>
+          <span>
+            cowsay -f bud-frogs "npm-run-all handles 'wait' for you, which is toadally awesome"
+          </span>
         </div>,
         <pre style={{ whiteSpace: "pre-wrap" }}>
-          {` __________________________________________________ 
-< Don't worry... npm-run-all handles 'wait' for you >
- -------------------------------------------------- 
-        \\   ^__^                    
-         \\  (oo)\\_______            
-            (__)\\       )\\/\\        
-                ||----w |           
-                ||     ||           `}
+          {` _____________________________________
+/ npm-run-all handles 'wait' for you, \\
+\\ which is toadally awesome           /
+ -------------------------------------
+     \\
+      \\
+          oO)-.                       .-(Oo
+         /__  _\\                     /_  __\\
+         \\  \\(  |     ()~()         |  )/  /
+          \\__|\\ |    (-___-)        | /|__/
+          '  '--'    ==\`-'==        '--'  '
+`}
         </pre>,
         <div>
           <Prompt path="react-file-size" /><span>exit</span>
@@ -364,4 +378,4 @@ removed 81 packages and updated 1 package in 1.059s`}</div>,
       ]}
     />
   </Slide>
-];
+</SlideSet>;

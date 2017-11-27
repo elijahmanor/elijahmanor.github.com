@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  SlideSet,
   BlockQuote,
   Cite,
   Heading,
@@ -14,7 +15,7 @@ import {
   List,
   ListItem
 } from "spectacle";
-import CodeSlide from "spectacle-code-slide";
+
 import Typist from "react-typist";
 import Loading from "react-loading";
 const cursor = {
@@ -54,15 +55,15 @@ const Changed = ({ children }) => {
   return <Typist cursor={cursor}><Element>{children}</Element></Typist>;
 };
 
-export default (theme, images) => [
-  <Slide bgColor="secondary">
+export default (theme, images) => <SlideSet>
+  <Slide id="pre-post-hooks" bgColor="secondary">
     <Heading size={1} fit caps lineHeight={1} textColor="primary">
       pre & post{" "}
     </Heading>
     <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
       lifecycle hooks
     </Heading>
-  </Slide>,
+  </Slide>
   <Slide transition={["spin", "slide"]} bgColor="primary">
     <Terminal
       isMaximized
@@ -75,6 +76,7 @@ export default (theme, images) => [
         {
           isSolo: true,
           isAutoScroll: false,
+          note: "Instead of running a script before another in series...",
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -154,6 +156,9 @@ export default (theme, images) => [
         {
           isSolo: true,
           isAutoScroll: false,
+          note: (
+            <span>...you could instead use a <code>pre</code> lifecycle hook!</span>
+          ),
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -235,6 +240,9 @@ export default (theme, images) => [
         {
           isSolo: true,
           isAutoScroll: false,
+          note: (
+            <span>Likewise, <code>post</code> lifecycle hooks are also available.</span>
+          ),
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -315,10 +323,40 @@ export default (theme, images) => [
             </div>
           )
         },
+
+        {
+          isSolo: true,
+          isAutoScroll: false,
+          scrollTo: 0,
+          output: (
+            <div style={{ whiteSpace: "pre" }}>
+              <Prompt path="react-file-size" />
+              <span>
+                cowsay -f moofasa "Pre and Post exist together in a delicate balance. We are all connected in the great npm Circle of Life"
+              </span>
+              <pre style={{ whiteSpace: "pre-wrap" }}>
+        {` ________________________________________
+ / Pre and Post exist together in a       \\
+ | delicate balance. We are all connected |
+ \\ in the great npm Circle of Life        /
+  ----------------------------------------
+        \\    ____
+         \\  /    \\
+           | ^__^ |
+           | (oo) |______
+           | (__) |      )\\/\\
+            \\____/|----w |
+                 ||     ||
+ 
+            Moofasa
+`}
+              </pre>
+            </div> )
+        },
         <div>
           <Prompt path="react-file-size" /><span>exit</span>
         </div>
       ]}
     />
   </Slide>
-];
+</SlideSet>;

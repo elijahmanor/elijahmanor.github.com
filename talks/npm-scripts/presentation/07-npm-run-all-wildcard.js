@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  SlideSet,
   BlockQuote,
   Cite,
   Heading,
@@ -14,7 +15,7 @@ import {
   List,
   ListItem
 } from "spectacle";
-import CodeSlide from "spectacle-code-slide";
+
 import Typist from "react-typist";
 import Loading from "react-loading";
 const cursor = {
@@ -54,15 +55,15 @@ const Changed = ({ children }) => {
   return <Typist cursor={cursor}><Element>{children}</Element></Typist>;
 };
 
-export default (theme, images) => [
-  <Slide bgColor="secondary">
+export default (theme, images) => <SlideSet>
+  <Slide id="npm-run-all-wildcard" bgColor="secondary">
     <Heading size={1} fit caps lineHeight={1} textColor="primary">
       npm-run-all
     </Heading>
     <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
       shorthand syntax
     </Heading>
-  </Slide>,
+  </Slide>
   <Slide transition={["spin", "slide"]} bgColor="primary">
     <Terminal
       isMaximized
@@ -158,6 +159,9 @@ export default (theme, images) => [
         {
           isSolo: true,
           isAutoScroll: false,
+          note: (
+            <span>If you follow the <code>task:subtask</code> naming convention, then you can use <code>npm-run-all task:*</code> to run a dynamic list of tasks.</span>
+          ),
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -326,6 +330,9 @@ export default (theme, images) => [
         {
           isSolo: true,
           isAutoScroll: false,
+          note: (
+            <span>You can also nest subtasks (<code>task:subtask:subtask</code>) and match those with <code>npm-run-all task:**</code>.</span>
+          ),
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -411,6 +418,9 @@ export default (theme, images) => [
         {
           isSolo: true,
           isAutoScroll: false,
+          note: (
+            <span>I tend to like to have a top level script that runs the wildcard scripts.</span>
+          ),
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -512,10 +522,42 @@ export default (theme, images) => [
 > react-file-size@0.1.0 lint:css:fix /Users/elijahm/egghead/react-file-size
 > stylefmt -R src/
 `}</div>,
+
+        {
+          isSolo: true,
+          isAutoScroll: false,
+          scrollTo: 0,
+          output: (
+            <div style={{ whiteSpace: "pre" }}>
+            <Prompt path="react-file-size" />
+            <span>
+              cowsay -f elephant "Ivory now and then, wildcards come in handy"
+            </span>
+            <pre style={{ whiteSpace: "pre-wrap" }}>
+              {`
+   _______________________________________
+  / Ivory now and then, wildcards come in \\
+  \\ handy                                 /
+   ---------------------------------------
+    \\     /\\  ___  /\\
+     \\   // \\/   \\/ \\\\
+        ((    O O    ))
+         \\\\ /     \\ //
+          \\/  | |  \\/
+           |  | |  |
+           |  | |  |
+           |   o   |
+           | |   | |
+           |m|   |m| 
+              `}
+            </pre>
+          </div>
+          )
+        },
         <div>
           <Prompt path="react-file-size" /><span>exit</span>
         </div>
       ]}
     />
   </Slide>
-];
+</SlideSet>;

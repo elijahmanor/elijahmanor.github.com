@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  SlideSet,
   BlockQuote,
   Cite,
   Heading,
@@ -14,7 +15,6 @@ import {
   List,
   ListItem
 } from "spectacle";
-import CodeSlide from "spectacle-code-slide";
 import Typist from "react-typist";
 import Loading from "react-loading";
 const cursor = {
@@ -42,15 +42,15 @@ const Success = styled.span`
   color: #4CAF50;
 `;
 
-export default (theme, images) => [
-  <Slide bgColor="secondary">
+export default (theme, images) => <SlideSet>
+  <Slide id="create-package" bgColor="secondary">
     <Heading size={1} fit caps lineHeight={1} textColor="primary">
       Create
     </Heading>
     <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
       Package
     </Heading>
-  </Slide>,
+  </Slide>
   <Slide transition={["spin", "slide"]} bgColor="primary">
     {/*<Heading size={2} caps fit textColor="tertiary">Terminal</Heading>*/}
     <Terminal
@@ -61,21 +61,28 @@ export default (theme, images) => [
           <Prompt path="react-file-size" />
           <Typist cursor={cursor}><Success>npm</Success>{" "}<span>init</span></Typist>
         </div>,
-        <div style={{ whiteSpace: "pre-wrap" }}>
-          <div>This utility will walk you through creating a package.json file.</div>
-          <div>It only covers the most common items, and tries to guess sensible defaults.</div>
-          <br />
-          <div>
-            See `npm help json` for definitive documentation on these fields and exactly what they do.
-          </div>
-          <br />
-          <div>
-            Use `npm install &lt;pkg&gt;` afterwards to install a package and save it as a dependency in the package.json file.
-          </div>
-          <br />
-          <div>Press ^C at any time to quit.</div>
-          <div>package name: (react-file-size)</div>
-        </div>,
+        {
+          note: (
+            <span><code>npm</code> will walk you through a series of questions to build your <code>package.json</code> file</span>
+          ),
+          output: (
+            <div style={{ whiteSpace: "pre-wrap" }}>
+              <div>This utility will walk you through creating a package.json file.</div>
+              <div>It only covers the most common items, and tries to guess sensible defaults.</div>
+              <br />
+              <div>
+                See `npm help json` for definitive documentation on these fields and exactly what they do.
+              </div>
+              <br />
+              <div>
+                Use `npm install &lt;pkg&gt;` afterwards to install a package and save it as a dependency in the package.json file.
+              </div>
+              <br />
+              <div>Press ^C at any time to quit.</div>
+              <div>package name: (react-file-size)</div>
+            </div>
+          )
+        },
         <div>
           <span>version: (1.0.0)</span>
           {" "}
@@ -137,7 +144,7 @@ export default (theme, images) => [
           {
             note: (
               <span>
-                Instead of answering questions, <code>npm init</code> can auto-generate a
+                Instead of answering questions, <code>npm init --force</code> can auto-generate a
                 {" "}
                 <code>package.json</code>
                 {" "}
@@ -200,4 +207,4 @@ Error: no test specified`,
       ]}
     />
   </Slide>
-];
+</SlideSet>;

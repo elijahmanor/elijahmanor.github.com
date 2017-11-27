@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  SlideSet,
   BlockQuote,
   Cite,
   Heading,
@@ -14,7 +15,7 @@ import {
   List,
   ListItem
 } from "spectacle";
-import CodeSlide from "spectacle-code-slide";
+
 import Typist from "react-typist";
 import Loading from "react-loading";
 const cursor = {
@@ -63,15 +64,15 @@ const Changed = ({ children }) => {
   return <Element>{children}</Element>;
 };
 
-export default (theme, images) => [
-  <Slide bgColor="secondary">
+export default (theme, images) => <SlideSet>
+  <Slide id="npx" bgColor="secondary">
     <Heading size={1} fit caps lineHeight={1} textColor="primary">
       npx
     </Heading>
     <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
       npm package runner
     </Heading>
-  </Slide>,
+  </Slide>
   <Slide transition={["spin", "slide"]} bgColor="primary">
     <Terminal
       isMaximized
@@ -81,34 +82,69 @@ export default (theme, images) => [
           <Prompt path="git" />
           <span>npm -v</span>
         </div>,
-        <div>{`3.10.3`}</div>,
-        <div>
-          <Prompt path="git" />
-          <span>echo "npx is included with npm@5.2.0"</span>
-        </div>,
-        <div>{`npx is included with npm@5.2.0`}</div>,
-        <div>
-          <Prompt path="git" />
-          <span>npm i npm -g</span>
-        </div>,
-        <div>
-          <Prompt path="git" />
-          <span>npx cowsay I herd the tool is unbelievabull</span>
-        </div>,
-        <div>{`
-    __________________________________
-  < I herd the tool is unbelievabull >
-    ----------------------------------
-           \\   ^__^
-            \\  (oo)\\_______
-               (__)\\       )\\/\\
-                  ||----w |
-                  ||     ||
-        `}</div>,
-        <div>
-          <Prompt path="git" />
-          <span>npx create-react-app my-cool-new-app</span>
-        </div>,
+        {
+          note: (
+            <span><code>npx</code> is only included with npm@5.2.0 and above</span>
+          ),
+          output: (
+            <div>{`3.10.3`}</div>
+          )
+        },
+        {
+          note: (
+            <span>So, either upgrade <code>npm</code> or manually install <code>npm i npx -g</code></span>
+          ),
+          output: (
+            <div>
+              <Prompt path="git" />
+              <span>npm i npm -g</span>
+          </div>
+          )
+        },
+        {
+          note: (
+            <span>You can run locally installed dependencies outside of npm scripts!</span>
+          ),
+          output: (
+            <div>
+              <Prompt path="git" />
+              <span>npx eslint --cache --fix ./</span>
+          </div>
+          )
+        },
+        {
+          note: (
+            <span>Or install packages temporarily without making them global!</span>
+          ),
+          output: (
+            <div>
+              <Prompt path="git" />
+              <span>npx cowsay "This has opened up so many possibilities\!"</span>
+        <pre style={{ whiteSpace: "pre-wrap" }}>
+        {`  ____________________________
+ / This has opened up so many \\
+ \\ possibilities!             /
+  ----------------------------
+         \\   ^__^
+          \\  (oo)\\_______
+             (__)\\       )\\/\\
+                 ||----w |
+                 ||     || `}
+        </pre>
+          </div>
+          )
+        },
+        {
+          note: (
+            <span>This is handy for tools you run infrequently, but you want the latest version... like when creating a new react project</span>
+          ),
+          output: (
+            <div>
+              <Prompt path="git" />
+              <span>npx create-react-app my-cool-new-app</span>
+            </div>
+          )
+        },
         <div style={{ whiteSpace: "pre-wrap" }}>
           <span>{`
 Creating a new React app in /Users/elijahm/github/my-cool-new-app.
@@ -164,10 +200,28 @@ We suggest that you begin by typing:
 Happy hacking!
 `}</div>,
         <div>
+        <Prompt path="react-file-size" />
+        <span>
+        cowsay -f kitty "npx is the cat's meow"
+        </span>
+        <pre style={{ whiteSpace: "pre-wrap" }}>
+        {` _______________________
+< npx is the cat's meow >
+ -----------------------
+     \\
+      \\
+       ("\`-'  '-/") .___..--' ' "\`-._
+         \` *_ *  )    \`-.   (      ) .\`-.__. \`)
+         (_Y_.) ' ._   )   \`._\` ;  \`\` -. .-'
+      _.. \`--'_..-_/   /--' _ .' ,4
+   ( i l ),-''  ( l i),'  ( ( ! .-'`}
+        </pre>
+        </div>,
+        <div>
           <Prompt path="git" />
           <span>exit</span>
         </div>
       ]}
     />
   </Slide>
-];
+</SlideSet>;

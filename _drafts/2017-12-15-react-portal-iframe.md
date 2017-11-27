@@ -1,7 +1,13 @@
 ---
+layout: post
+title: React Portal iframe
+date: '2017-11-15 02:29:11'
 published: false
 ---
+
 ## Dynamically Inject iframes that use it's parents Using React's Portal to Dynamically Create an iframe using it's parent's State
+
+Hello
 
 https://twitter.com/elijahmanor/status/928725330952704000
 

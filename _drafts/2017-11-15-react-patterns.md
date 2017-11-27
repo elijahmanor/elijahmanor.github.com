@@ -1,7 +1,11 @@
 ---
+layout: post
+title: React Patterns
+date: '2017-11-15 02:29:11'
 published: false
 ---
-## A New Post
+
+## React Patterns
 
 https://codepen.io/elijahmanor/pen/bYdaeb
 

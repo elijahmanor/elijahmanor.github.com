@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  SlideSet,
   BlockQuote,
   Cite,
   Heading,
@@ -14,7 +15,7 @@ import {
   List,
   ListItem
 } from "spectacle";
-import CodeSlide from "spectacle-code-slide";
+
 import Typist from "react-typist";
 import Loading from "react-loading";
 const cursor = {
@@ -54,12 +55,12 @@ const Changed = ({ children }) => {
   return <Typist cursor={cursor}><Element>{children}</Element></Typist>;
 };
 
-export default (theme, images) => [
-  <Slide bgColor="secondary">
+export default (theme, images) => <SlideSet>
+  <Slide id="lint-staged" bgColor="secondary">
     <Heading size={1} fit caps lineHeight={1} textColor="primary">
       lint staged
     </Heading>
-  </Slide>,
+  </Slide>
   <Slide transition={["spin", "slide"]} bgColor="primary">
     <Terminal
       isMaximized
@@ -73,6 +74,9 @@ export default (theme, images) => [
           isSolo: true,
           isAutoScroll: false,
           scrollTo: 1000,
+          note: (
+            <span>A problem with our previous <code>precommit</code> linting approach is that ALL files were re-linted. <code>lint-staged</code> allows us to only target the files that were changed.</span>
+          ),
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -177,17 +181,21 @@ export default (theme, images) => [
         <div>
           <Prompt path="react-file-size" />
           <span>
-            cowsay "That puts me in a good mooood"
+          cowsay -f sheep "Now ewe too can easily keep your code prettier\!"
           </span>
           <pre style={{ whiteSpace: "pre-wrap" }}>
-            {` _______________________________ 
-< That puts me in a good mooood >
- ------------------------------- 
-        \\   ^__^                    
-         \\  (oo)\\_______            
-            (__)\\       )\\/\\        
-                ||----w |           
-                ||     ||           `}
+            {`  _______________________________________
+ / Now ewe too can easily keep your code \\
+ \\ prettier!                             /
+  ---------------------------------------
+   \\
+    \\
+        __
+       UooU\\.'@@@@@@\`.
+       \\__/(@@@@@@@@@@)
+            (@@@@@@@@)
+            \`YY~~~~YY'
+             ||    ||`}
           </pre>
         </div>,
         <div>
@@ -196,4 +204,4 @@ export default (theme, images) => [
       ]}
     />
   </Slide>
-];
+</SlideSet>;

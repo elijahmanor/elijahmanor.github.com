@@ -19,8 +19,14 @@ import {
 import preloader from "spectacle/lib/utils/preloader";
 import createTheme from "spectacle/lib/themes/default";
 require("normalize.css");
-require("spectacle/lib/themes/default/index.css");
 require("../assets/index.css");
+
+import ReactModal from "react-modal";
+import mousetrap from "mousetrap";
+import Select from "react-select";
+import "react-select/dist/react-select.css";
+import _ from "lodash";
+import Menu from "./Menu";
 
 const images = {
   city: require("../assets/city.jpg"),
@@ -61,69 +67,195 @@ const theme = createTheme(
 
 const progress = "bar"; // pacman, bar, number or none
 
-import introduction from "./00-introduction";
-import createPackage from "./01-create-package";
-import runBasicScripts from "./02-run-basic-scripts";
-import createCustomScript from "./03-create-custom-script";
-import runScriptsInSeries from "./04-run-scripts-in-series";
-import runScriptsInParallel from "./05-run-scripts-in-parallel";
-import npmRunAll from "./06-npm-run-all";
-import npmRunAllWildcard from "./07-npm-run-all-wildcard";
-import prePostLifecycleHooks from "./08-pre-post-lifecycle-hooks";
-import passArgsToScripts from "./09-pass-args-to-scripts";
-import pipeDataFromScriptToScript from "./10-pipe-data-from-script-to-script";
-import onChange from "./11-onchange";
-import usePackageVars from "./12-use-package-vars";
-import customConfigSettings from "./13-custom-config-settings";
-import gitHooks from "./14-git-hooks";
-import lintStaged from "./14b-lint-staged";
-import consoleLogLevel from "./15-console-log-level";
-import crossEnvironment from "./16-cross-environment";
-import listAvailableScripts from "./17-list-available-scripts";
-import bashScripts from "./20-bash-scripts";
-import nodeScripts from "./21-node-scripts";
-import npmCheck from "./22-npm-check";
-import npx from "./23-npx";
-import conclusion from "./99-conclusion";
+const groups = [
+  {
+    id: "introduction",
+    name: "Introduction",
+    slides: require("./00-introduction").default
+  },
+  {
+    id: "create-package",
+    name: "Create Package",
+    slides: require("./01-create-package").default
+  },
+  {
+    id: "run-basic-scripts",
+    name: "Run Basic Scripts",
+    slides: require("./02-run-basic-scripts").default
+  },
+  {
+    id: "create-custom-script",
+    name: "Create Custom Script",
+    slides: require("./03-create-custom-script").default
+  },
+  {
+    id: "run-scripts-in-series",
+    name: "Run Scripts In Series",
+    slides: require("./04-run-scripts-in-series").default
+  },
+  {
+    id: "run-scripts-in-parallel",
+    name: "Run Scripts In Parallel",
+    slides: require("./05-run-scripts-in-parallel").default
+  },
+  {
+    id: "npm-run-all",
+    name: "npm-run-all",
+    slides: require("./06-npm-run-all").default
+  },
+  {
+    id: "npm-run-all-wildcard",
+    name: "npm-run-all Wildcard",
+    slides: require("./07-npm-run-all-wildcard").default
+  },
+  {
+    id: "pre-post-hooks",
+    name: "Pre & Post Hooks",
+    slides: require("./08-pre-post-lifecycle-hooks").default
+  },
+  {
+    id: "pass-args-to-scripts",
+    name: "Pass Args to Scripts",
+    slides: require("./09-pass-args-to-scripts").default
+  },
+  {
+    id: "pipe-script-data",
+    name: "Pipe Script Data",
+    slides: require("./10-pipe-data-from-script-to-script").default
+  },
+  {
+    id: "onchange",
+    name: "onChange",
+    slides: require("./11-onchange").default
+  },
+  {
+    id: "use-package-vars",
+    name: "Use Package Vars",
+    slides: require("./12-use-package-vars").default
+  },
+  {
+    id: "custom-config-settings",
+    name: "Custom Config Settings",
+    slides: require("./13-custom-config-settings").default
+  },
+  {
+    id: "git-hooks",
+    name: "git Hooks",
+    slides: require("./14-git-hooks").default
+  },
+  {
+    id: "lint-staged",
+    name: "Lint Staged",
+    slides: require("./14b-lint-staged").default
+  },
+  {
+    id: "console-log-level",
+    name: "Console Log Level",
+    slides: require("./15-console-log-level").default
+  },
+  {
+    id: "cross-environment",
+    name: "Cross Environment",
+    slides: require("./16-cross-environment").default
+  },
+  {
+    id: "list-available-scripts",
+    name: "List Available Scripts",
+    slides: require("./17-list-available-scripts").default
+  },
+  {
+    id: "bash-scripts",
+    name: "Bash Scripts",
+    slides: require("./20-bash-scripts").default
+  },
+  {
+    id: "node-scripts",
+    name: "Node Scripts",
+    slides: require("./21-node-scripts").default
+  },
+  {
+    id: "npm-check",
+    name: "npm Check",
+    slides: require("./22-npm-check").default
+  },
+  {
+    id: "npx",
+    name: "npx",
+    slides: require("./23-npx").default
+  },
+  {
+    id: "conclusion",
+    name: "Conclusion",
+    slides: require("./99-conclusion").default
+  },
+];
+
+let selectedGroups = window.localStorage.getItem("selectedGroups");
+if (selectedGroups) {
+  selectedGroups = JSON.parse(selectedGroups);
+} else {
+  selectedGroups = groups.map( group => group.name );
+}
 
 export default class Presentation extends React.Component {
-  constructor(props) {
-    super(props);
-    localStorage.clear();
+  constructor() {
+    super();
+    this.state = {
+      isMenuOpen: false,
+      selectedGroups
+    };
   }
+  componentWillMount() {
+    const { context: { goToSlide } } = this;
+    mousetrap.bind("a", () => goToSlide("agenda"));
+    mousetrap.bind("m", () => this.setState({ isMenuOpen: true }));
+    mousetrap.bind("esc", () => this.setState({ isMenuOpen: false }));
+    mousetrap.bind("f", () => {
+      const content = document.querySelector(".spectacle-content");
+      content.classList.toggle( "spectacle-content--full" );
+    });
+  }
+  componentWillUnmount() {
+    mousetrap.unbind("a");
+    mousetrap.unbind("m");
+    mousetrap.unbind("esc");
+    mousetrap.unbind("f");
+  }
+  handleOnClose = () => {
+    this.setState({ isMenuOpen: false });
+  };
+  handleOnUpdate = selectedGroups => {
+    window.localStorage.setItem("selectedGroups", JSON.stringify(selectedGroups));
+    history.pushState("", document.title, window.location.pathname);
+    window.location.reload();
+  };
   render() {
+    const { isMenuOpen, isHelpOpen, selectedGroups } = this.state;
+    const agenda = groups.filter(g => selectedGroups.includes(g.name));
+    
     return (
-      <Deck
-        transition={["zoom", "slide"]}
-        transitionDuration={500}
-        theme={theme}
-        progress={progress}
-      >
-        {introduction(theme, images)}
-        {createPackage(theme, images)}
-        {runBasicScripts(theme, images)}
-        {createCustomScript(theme, images)}
-        {runScriptsInSeries(theme, images)}
-        {runScriptsInParallel(theme, images)}
-        {npmRunAll(theme, images)}
-        {npmRunAllWildcard(theme, images)}
-        {prePostLifecycleHooks(theme, images)}
-        {passArgsToScripts(theme, images)}
-        {pipeDataFromScriptToScript(theme, images)}
-        {onChange(theme, images)}
-        {usePackageVars(theme, images)}
-        {customConfigSettings(theme, images)}
-        {gitHooks(theme, images)}
-        {lintStaged(theme, images)}
-        {consoleLogLevel(theme, images)}
-        {crossEnvironment(theme, images)}
-        {listAvailableScripts(theme, images)}
-        {bashScripts(theme, images)}
-        {nodeScripts(theme, images)}
-        {npmCheck(theme, images)}
-        {npx(theme, images)}
-        {conclusion(theme, images)}
-      </Deck>
+      <main>
+        <Deck
+          transition={["zoom", "slide"]}
+          transitionDuration={500}
+          theme={theme}
+          progress={progress}
+        >
+          {groups.reduce((memo, group, index, groups) => {
+            if (selectedGroups.includes(group.name)) {
+              memo.push(group.slides(theme, images, agenda));
+            }
+            return memo;
+          }, [])}
+        </Deck>
+        <Menu
+          isOpen={isMenuOpen}
+          groups={groups}
+          selectedGroups={selectedGroups}
+          onUpdate={this.handleOnUpdate}
+          onClose={this.handleOnClose}
+        />
+      </main>
     );
   }
 }

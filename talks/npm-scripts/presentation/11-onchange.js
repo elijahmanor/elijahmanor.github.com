@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  SlideSet,
   BlockQuote,
   Cite,
   Heading,
@@ -14,7 +15,7 @@ import {
   List,
   ListItem
 } from "spectacle";
-import CodeSlide from "spectacle-code-slide";
+
 import Typist from "react-typist";
 import Loading from "react-loading";
 const cursor = {
@@ -54,12 +55,12 @@ const Changed = ({ children }) => {
   return <Typist cursor={cursor}><Element>{children}</Element></Typist>;
 };
 
-export default (theme, images) => [
-  <Slide bgColor="secondary">
+export default (theme, images) => <SlideSet>
+  <Slide id="onchange" bgColor="secondary">
     <Heading size={1} fit caps lineHeight={1} textColor="primary">
       onchange
     </Heading>
-  </Slide>,
+  </Slide>
   <Slide transition={["spin", "slide"]} bgColor="primary">
     <Terminal
       isMaximized
@@ -73,6 +74,9 @@ export default (theme, images) => [
           isSolo: true,
           isAutoScroll: false,
           scrollTo: 310,
+          note: (
+            <span>Since we have a watch for our unit testing...</span>
+          ),
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -161,6 +165,9 @@ export default (theme, images) => [
           isSolo: true,
           isAutoScroll: false,
           scrollTo: 310,
+          note: (
+            <span>...wouldn't it be nice to add a watch to our linting?</span>
+          ),
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -250,22 +257,34 @@ export default (theme, images) => [
           )
         },
         <div>
-          <Prompt path="react-file-size" />
-          <span>cowsay "Sorry, but I herd that doesn't work"</span>
-          <pre style={{ whiteSpace: "pre-wrap" }}>
-            {` ____________________________________
-< Sorry, but I herd that doesn't work >
- ------------------------------------
-        \\   ^__^                    
-         \\  (oo)\\_______            
-            (__)\\       )\\/\\        
-                ||----w |           
-                ||     ||           `}
-          </pre>
-        </div>,
-        <div>
-          <Prompt path="react-file-size" /><span>npm i onchange -D</span>
-        </div>,
+        <Prompt path="react-file-size" />
+        <span>cowsay -f moose "Excuse me, I think there's a big mooseunderstanding"</span>
+        <pre style={{ whiteSpace: "pre-wrap" }}>
+          {`  __________________________________
+ / Excuse me, I think there's a big \\
+ \\ mooseunderstanding               /
+  ----------------------------------
+   \\
+    \\   \\_\\_    _/_/
+     \\      \\__/
+            (oo)\\_______
+            (__)\\       )\\/\\
+                ||----w |
+                ||     ||`}
+        </pre>
+      </div>,
+        {
+          note: (
+          <span>
+            <code>eslint</code> doesn't have a <code>--watch</code> flag, but we can use the <code>onchange</code> package to fill the gap.
+          </span>
+          ),
+          output: (
+            <div>
+            <Prompt path="react-file-size" /><span>npm i onchange -D</span>
+          </div>  
+          )
+        },
         <div>{`
 + onchange@3.2.1
 added 2 packages, removed 374 packages and updated 1 package in 9.655s`}</div>,
@@ -453,10 +472,31 @@ added 2 packages, removed 374 packages and updated 1 package in 9.655s`}</div>,
             </div>
           )
         },
+
+        <div>
+        <Prompt path="react-file-size" />
+        <span>cowsay -f moose "That's amazing\! I'm easily amoosed :)"</span>
+        <pre style={{ whiteSpace: "pre-wrap" }}>
+          {`  _______________________________________
+< That's amazing! I'm easily amoosed :) >
+ ---------------------------------------
+  \\
+   \\   \\_\\_    _/_/
+    \\      \\__/
+           (oo)\\_______
+           (__)\\       )\\/\\
+               ||----w |
+               ||     ||`}
+        </pre>
+      </div>,
+
+        
+
+
         <div>
           <Prompt path="react-file-size" /><span>exit</span>
         </div>
       ]}
     />
   </Slide>
-];
+</SlideSet>;

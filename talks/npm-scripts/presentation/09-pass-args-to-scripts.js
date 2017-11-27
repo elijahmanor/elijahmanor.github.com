@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  SlideSet,
   BlockQuote,
   Cite,
   Heading,
@@ -14,7 +15,7 @@ import {
   List,
   ListItem
 } from "spectacle";
-import CodeSlide from "spectacle-code-slide";
+
 import Typist from "react-typist";
 import Loading from "react-loading";
 const cursor = {
@@ -54,15 +55,15 @@ const Changed = ({ children }) => {
   return <Typist cursor={cursor}><Element>{children}</Element></Typist>;
 };
 
-export default (theme, images) => [
-  <Slide bgColor="secondary">
+export default (theme, images) => <SlideSet>
+  <Slide id="pass-args-to-scripts" bgColor="secondary">
     <Heading size={1} fit caps lineHeight={1} textColor="primary">
       pass arguments
     </Heading>
     <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
       to scripts
     </Heading>
-  </Slide>,
+  </Slide>
   <Slide transition={["spin", "slide"]} bgColor="primary">
     <Terminal
       isMaximized
@@ -241,21 +242,28 @@ export default (theme, images) => [
         },
         <div>
           <Prompt path="react-file-size" />
-          <span>cowsay "Boo Moo"</span>
+          <span>cowsay -f vader "Nooooooooooooooooooo\!"</span>
           <pre style={{ whiteSpace: "pre-wrap" }}>
-            {` _________
-< Boo Moo >
- ---------
-        \\   ^__^                    
-         \\  (oo)\\_______            
-            (__)\\       )\\/\\        
-                ||----w |           
-                ||     ||           `}
+            {`  _______________________
+ < Nooooooooooooooooooo! >
+  -----------------------
+         \\    ,-^-.
+          \\   !oYo!
+           \\ /./=\\.\\______
+                ##        )\\/\\
+                 ||-----w||
+                 ||      ||
+ 
+                Cowth Vader 
+`}
           </pre>
         </div>,
         {
           isSolo: true,
           isAutoScroll: false,
+          note: (
+            <span>Instead of repeating yourself, append <code>--</code> to the script you want to run and pass additional parameters</span>
+          ),
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -340,16 +348,20 @@ export default (theme, images) => [
         },
         <div>
           <Prompt path="react-file-size" />
-          <span>cowsay "Boo Yeah"</span>
+          <span>cowsay -f vader "Obi-Wan has taught you well."</span>
           <pre style={{ whiteSpace: "pre-wrap" }}>
-            {` __________
-< Boo Yeah >
- ----------
-        \\   ^__^                    
-         \\  (oo)\\_______            
-            (__)\\       )\\/\\        
-                ||----w |           
-                ||     ||           `}
+            {`  ______________________________
+ < Obi-Wan has taught you well. >
+  ------------------------------
+         \\    ,-^-.
+          \\   !oYo!
+           \\ /./=\\.\\______
+                ##        )\\/\\
+                 ||-----w||
+                 ||      ||
+ 
+                Cowth Vader 
+            `}
           </pre>
         </div>,
 
@@ -359,4 +371,4 @@ export default (theme, images) => [
       ]}
     />
   </Slide>
-];
+</SlideSet>;

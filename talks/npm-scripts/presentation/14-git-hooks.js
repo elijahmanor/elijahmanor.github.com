@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  SlideSet,
   BlockQuote,
   Cite,
   Heading,
@@ -14,7 +15,7 @@ import {
   List,
   ListItem
 } from "spectacle";
-import CodeSlide from "spectacle-code-slide";
+
 import Typist from "react-typist";
 import Loading from "react-loading";
 const cursor = {
@@ -54,12 +55,12 @@ const Changed = ({ children }) => {
   return <Typist cursor={cursor}><Element>{children}</Element></Typist>;
 };
 
-export default (theme, images) => [
-  <Slide bgColor="secondary">
+export default (theme, images) => <SlideSet>
+  <Slide id="git-hooks" bgColor="secondary">
     <Heading size={1} fit caps lineHeight={1} textColor="primary">
       git hooks
     </Heading>
-  </Slide>,
+  </Slide>
   <Slide transition={["spin", "slide"]} bgColor="primary">
     <Terminal
       isMaximized
@@ -73,6 +74,9 @@ export default (theme, images) => [
           isSolo: true,
           isAutoScroll: false,
           scrollTo: 1000,
+          note: (
+            <span>Wouldn't it be nice to lint your code before you commit?</span>
+          ),
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -167,33 +171,79 @@ export default (theme, images) => [
             </div>
           )
         },
+
+
+        {
+          isSolo: true,
+          isAutoScroll: false,
+          scrollTo: 0,
+          output: (
+
+
         <div>
           <Prompt path="react-file-size" />
           <span>
-            cowsay "Wait, it doesn't work like that..."
+          cowsay -f ghostbusters "If it's somethin' weird an' it don't look good. Who ya gonna call?"
           </span>
           <pre style={{ whiteSpace: "pre-wrap" }}>
-            {` ____________________________________ 
-< Wait, it doesn't work like that... >
- ------------------------------------ 
-        \\   ^__^                    
-         \\  (oo)\\_______            
-            (__)\\       )\\/\\        
-                ||----w |           
-                ||     ||           `}
+            {`  ______________________________________
+ / If it's somethin' weird an' it don't \\
+ \\ look good. Who ya gonna call?        /
+  --------------------------------------
+           \\
+            \\
+             \\          __---__
+                     _-       /--______
+                __--( /     \\ )XXXXXXXXXXX\\v.
+              .-XXX(   O   O  )XXXXXXXXXXXXXXX-
+             /XXX(       U     )        XXXXXXX\\
+           /XXXXX(              )--_  XXXXXXXXXXX\\
+          /XXXXX/ (      O     )   XXXXXX   \\XXXXX\\
+          XXXXX/   /            XXXXXX   \\__ \\XXXXX
+          XXXXXX__/          XXXXXX         \\__---->
+  ---___  XXX__/          XXXXXX      \\__         /
+    \\-  --__/   ___/\\  XXXXXX            /  ___--/=
+     \\-\\    ___/    XXXXXX              '--- XXXXXX
+        \\-\\/XXX\\ XXXXXX                      /XXXXX
+          \\XXXXXXXXX   \\                    /XXXXX/
+           \\XXXXXX      >                 _/XXXXX/
+             \\XXXXX--__/              __-- XXXX/
+              -XXXXXXXX---------------  XXXXXX-
+                 \\XXXXXXXXXXXXXXXXXXXXXXXXXX/
+                   ""VXXXXXXXXXXXXXXXXXXV""`}
           </pre>
-        </div>,
-        <div>
-          <Prompt path="react-file-size" /><span>npm i husky -D</span>
-        </div>,
-        <div>{`
+          </div> )
+        },
+        {
+          note: (
+            <span>We'll add the <code>husky</code> package to add <a href="https://github.com/typicode/husky/blob/HEAD/HOOKS.md" target="_blank">git hook</a> support.</span>
+          ),
+          output: (
+            <div>
+              <Prompt path="react-file-size" /><span>npm i husky -D</span>
+              <div>{`
 + husky@0.11.9
 added 4 packages and removed 98 packages in 1.277s
-`}</div>,
-        <div>
-          <Prompt path="react-file-size" />
-          <span>git commit -am "I made a linting error"</span>
-        </div>,
+  `}</div>
+            </div>
+          )
+        },
+        {
+          note: (
+            <span>Now that everything is hooked up (<code>precommit</code> is one of husky's integrations), then you can commit your code...</span>
+          ),
+          output: (
+            <div>
+              <Prompt path="react-file-size" />
+              <span>git commit -am "I made a linting error"</span>
+            </div>
+          )
+        },
+        {
+          note: (
+            <span>And if there is a linting error...</span>
+          ),
+          output: (
         <div>
           {Parser(
             `
@@ -215,7 +265,14 @@ added 4 packages and removed 98 packages in 1.277s
 <span className="u-error">✖ 1 problem (1 error, 0 warnings)</span>
 `
           )}
-        </div>,
+        </div>
+          )
+        },
+        {
+          note: (
+            <span><code>husky</code> will prevent the commit from happening!</span>
+          ),
+          output: (
         <div>
           {Parser(
             `
@@ -254,11 +311,20 @@ npm <span className="u-error">ERR!</span>     /Users/elijahm/.npm/_logs/2017-06-
 husky - pre-commit hook failed (add --no-verify to bypass)
 `
           )}
-        </div>,
-        <div>
-          <Prompt path="react-file-size" />
-          <span>git commit -am "I really want to commit this" --no-verify</span>
-        </div>,
+        </div>
+          )
+        },
+        {
+          note: (
+            <span>But don't worry... you can always add <code>--no-verify</code> to bypass!</span>
+          ),
+          output: (
+            <div>
+              <Prompt path="react-file-size" />
+              <span>git commit -am "I really want to commit this" --no-verify</span>
+            </div>
+          )
+        },
         <div>{`
 [master 11c49c1] I really want to commit this
  1 file changed, 3 insertions(+), 1 deletion(-)
@@ -267,6 +333,9 @@ husky - pre-commit hook failed (add --no-verify to bypass)
           isSolo: true,
           isAutoScroll: false,
           scrollTo: 1000,
+          note: (
+            <span>Your co-workers may not appreciate a <code>precommit</code> hook, so maybe consider <code>prepush</code> instead.</span>
+          ),
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -441,4 +510,4 @@ error: failed to push some refs to 'https://github.com/elijahmanor/react-file-si
       ]}
     />
   </Slide>
-];
+</SlideSet>;

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  SlideSet,
   BlockQuote,
   Cite,
   Heading,
@@ -14,7 +15,7 @@ import {
   List,
   ListItem
 } from "spectacle";
-import CodeSlide from "spectacle-code-slide";
+
 import Typist from "react-typist";
 import Loading from "react-loading";
 const cursor = {
@@ -54,15 +55,15 @@ const Changed = ({ children }) => {
   return <Typist cursor={cursor}><Element>{children}</Element></Typist>;
 };
 
-export default (theme, images) => [
-  <Slide bgColor="secondary">
+export default (theme, images) => <SlideSet>
+  <Slide id="use-package-vars" bgColor="secondary">
     <Heading size={1} fit caps lineHeight={1} textColor="primary">
       use package
     </Heading>
     <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
       variables
     </Heading>
-  </Slide>,
+  </Slide>
   <Slide transition={["spin", "slide"]} bgColor="primary">
     <Terminal
       isMaximized
@@ -76,6 +77,9 @@ export default (theme, images) => [
           isSolo: true,
           isAutoScroll: false,
           scrollTo: 0,
+          note: (
+            <span>Wouldn't it be nice to be able to use the <code>version</code> information from your <code>package.json</code> in your scripts?</span>
+          ),
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
               <span>{`{
@@ -167,45 +171,55 @@ export default (theme, images) => [
         <div>
           <Prompt path="react-file-size" /><span>npm run env | grep "npm_package" | less</span>
         </div>,
-        <div>
-          <span>{`
-npm_package_devDependencies_babel_register=^6.16.3                                                                                
-npm_package_dependencies_request=^2.74.0
-npm_package_gitHead=4074c3f24a7bf8c0524e801ddbca2c8677fd1801
-npm_package_dependencies_when=^3.7.7
-npm_package_dependencies_inquirer=^1.2.2
-npm_package_publishConfig_registry=https://registry.npmjs.org/
-npm_package_scripts_cover=nyc npm t
-npm_package_devDependencies_uglify_js=^2.6.2
-npm_package_dependencies_cheerio=^0.22.0
-npm_package_devDependencies_sinon=^1.17.6
-npm_package_devDependencies_parallelshell=^2.0.0
-npm_package_devDependencies_eslint_config_leankit=^3.0.0
-npm_package_devDependencies_mocha=^3.1.0
-npm_package_devDependencies_jest=^16.0.2
-npm_package_dependencies_ora=^0.3.0
-npm_package_dependencies_shelljs=^0.7.5
-npm_package_dependencies_babel_register=^6.5.2
-npm_package_scripts_watch_lint=onchange 'src/**/*.js' 'src/**/*.scss' -- npm run lint
-npm_package_scripts_lint_css=stylelint '**/*.scss' --syntax scss
-npm_package_scripts_lint=npm-run-all lint:**
-npm_package_devDependencies_mustache=^2.2.1
-npm_package_devDependencies_babel_polyfill=^6.13.0
-`}</span>
-          <Highlight>{"npm_package_version=0.1.0"}</Highlight>
-          <span>{`
-npm_package_scripts_pretest=npm run lint
-npm_package_scripts_build_html=pug --obj data.json src/index.pug --out public/
-npm_package_devDependencies_sinon_chai=^2.8.0
-npm_package_bin_react_file_size=./index.js
-npm_package_readmeFilename=README.md
-npm_package_description=A tool to generate file size changes for the react library
-npm_package_license=MIT
-:`}</span>
-        </div>,
+        {
+          note: (
+            <span>Thankfully there are TONS of environment variables you can leverage (example: <code>npm run env | grep "npm_package" | less</code>)</span>
+          ),
+          output: (
+            <div>
+            <span>{`
+  npm_package_devDependencies_babel_register=^6.16.3                                                                                
+  npm_package_dependencies_request=^2.74.0
+  npm_package_gitHead=4074c3f24a7bf8c0524e801ddbca2c8677fd1801
+  npm_package_dependencies_when=^3.7.7
+  npm_package_dependencies_inquirer=^1.2.2
+  npm_package_publishConfig_registry=https://registry.npmjs.org/
+  npm_package_scripts_cover=nyc npm t
+  npm_package_devDependencies_uglify_js=^2.6.2
+  npm_package_dependencies_cheerio=^0.22.0
+  npm_package_devDependencies_sinon=^1.17.6
+  npm_package_devDependencies_parallelshell=^2.0.0
+  npm_package_devDependencies_eslint_config_leankit=^3.0.0
+  npm_package_devDependencies_mocha=^3.1.0
+  npm_package_devDependencies_jest=^16.0.2
+  npm_package_dependencies_ora=^0.3.0
+  npm_package_dependencies_shelljs=^0.7.5
+  npm_package_dependencies_babel_register=^6.5.2
+  npm_package_scripts_watch_lint=onchange 'src/**/*.js' 'src/**/*.scss' -- npm run lint
+  npm_package_scripts_lint_css=stylelint '**/*.scss' --syntax scss
+  npm_package_scripts_lint=npm-run-all lint:**
+  npm_package_devDependencies_mustache=^2.2.1
+  npm_package_devDependencies_babel_polyfill=^6.13.0
+  `}</span>
+            <Highlight>{"npm_package_version=0.1.0"}</Highlight>
+            <span>{`
+  npm_package_scripts_pretest=npm run lint
+  npm_package_scripts_build_html=pug --obj data.json src/index.pug --out public/
+  npm_package_devDependencies_sinon_chai=^2.8.0
+  npm_package_bin_react_file_size=./index.js
+  npm_package_readmeFilename=README.md
+  npm_package_description=A tool to generate file size changes for the react library
+  npm_package_license=MIT
+  :`}</span>
+          </div>  
+          )
+        },
         {
           isSolo: true,
           isAutoScroll: false,
+          note: (
+            <span>Use the <code>$</code> prefix to reference the environment variable in your scripts.</span>
+          ),
           scrollTo: 600,
           output: (
             <div style={{ whiteSpace: "pre-wrap" }}>
@@ -339,4 +353,4 @@ public
       ]}
     />
   </Slide>
-];
+</SlideSet>;
