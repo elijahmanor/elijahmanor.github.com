@@ -61,7 +61,7 @@ export default (theme, images) => <SlideSet>
       npm-run-all
     </Heading>
     <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
-      shorthand syntax
+      wildcard syntax
     </Heading>
   </Slide>
   <Slide transition={["spin", "slide"]} bgColor="primary">
