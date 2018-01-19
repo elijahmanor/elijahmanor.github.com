@@ -1415,7 +1415,7 @@
   days: '27'
   name: 'Srijan Technologies Webinar'
   type: 'conference'
-  url: 'http://environmentsforhumans.com/2016/javascript-summit/'
+  url: 'https://www.srijan.net/webinar/eliminate-javascript-codesmells'
   location: 'Online'
   employer: 'leankit'
   sessions:
@@ -1609,10 +1609,6 @@
     feedback: ''
   - name: 'React Patterns & Practices'
     slides: '/talks/react-patterns-practices'
-    video: ''
-    feedback: ''
-  - name: 'React Fundamentals Workshop'
-    slides: 'https://github.com/elijahmanor/react-fundamentals-workshop'
     video: ''
     feedback: ''
 
