@@ -19,7 +19,7 @@
 
       {% assign pages_list = site.pages %}
       {% for node in pages_list %}
-        {% if node.title == "About" or node.title == "Archive" or node.title == "Speaking" %}
+        {% if node.title == "About" or node.title == "Archive" or node.title == "Speaking" or node.title == "Videos" %}
           {% if node.layout == "page" %}
             <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
           {% endif %}
@@ -32,7 +32,7 @@
     {% endfor %}
 
 		<section class="Promoted">
-      <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">How to Use npm Scripts as Your Build Tool - <a href="https://twitter.com/hashtag/otherjs?src=hash">#otherjs</a> course by <a href="https://twitter.com/elijahmanor">@elijahmanor</a> <a href="https://twitter.com/hashtag/levelup?src=hash">#levelup</a> <a href="https://t.co/Clp09Ucp23">https://t.co/Clp09Ucp23</a></p>&mdash; egghead.io (@eggheadio) <a href="https://twitter.com/eggheadio/status/827336590322176000">February 3, 2017</a></blockquote>
+        <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">⚡️ Create React App: Part 1 - Getting Started<br><br>📹 <a href="https://t.co/nUo0u43hNQ">https://t.co/nUo0u43hNQ</a><br><br>🏷 <a href="https://twitter.com/hashtag/reactjs?src=hash&amp;ref_src=twsrc%5Etfw">#reactjs</a></p>&mdash; Elijah Manor (@elijahmanor) <a href="https://twitter.com/elijahmanor/status/958424787944198145?ref_src=twsrc%5Etfw">January 30, 2018</a></blockquote>
 		</section>
 
 		<section class="Social">

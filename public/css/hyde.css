@@ -86,8 +86,9 @@ html {
 /* Sidebar nav */
 .sidebar-nav {
   margin-bottom: 0.25rem;
-	display: flex;
-	justify-content: center;;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 .sidebar-nav-item {
   display: block;
