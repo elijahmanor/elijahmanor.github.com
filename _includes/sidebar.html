@@ -6,7 +6,7 @@
           {{ site.title }}
         </a>
       </h1>
-      <p class="lead">{{ site.description }}</p>
+      <!-- <p class="lead">{{ site.description }}</p> -->
     </div>
 
     <nav class="sidebar-nav">
@@ -27,21 +27,27 @@
       {% endfor %}
     </nav>
 
-    {% for local_variable in local_variables %}
-         <p> {{ local_variable }} </p><br>
-    {% endfor %}
-
 		<section class="Promoted">
+      {% if page.title == "Home" %}
         <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">⚡️ Create React App: Part 1 - Getting Started<br><br>📹 <a href="https://t.co/nUo0u43hNQ">https://t.co/nUo0u43hNQ</a><br><br>🏷 <a href="https://twitter.com/hashtag/reactjs?src=hash&amp;ref_src=twsrc%5Etfw">#reactjs</a></p>&mdash; Elijah Manor (@elijahmanor) <a href="https://twitter.com/elijahmanor/status/958424787944198145?ref_src=twsrc%5Etfw">January 30, 2018</a></blockquote>
+      {% elsif page.title == "Getting Started with Create React App" %}
+        <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">📹 Debouncing <a href="https://twitter.com/hashtag/ReactJS?src=hash&amp;ref_src=twsrc%5Etfw">#ReactJS</a> Events <a href="https://t.co/hs8wYa9eeW">https://t.co/hs8wYa9eeW</a> <a href="https://t.co/Lf7QeumVJf">pic.twitter.com/Lf7QeumVJf</a></p>&mdash; Elijah Manor (@elijahmanor) <a href="https://twitter.com/elijahmanor/status/955468750727401474?ref_src=twsrc%5Etfw">January 22, 2018</a></blockquote>
+      {% else %}
+        <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">⚡️ Create React App: Part 1 - Getting Started<br><br>📹 <a href="https://t.co/nUo0u43hNQ">https://t.co/nUo0u43hNQ</a><br><br>🏷 <a href="https://twitter.com/hashtag/reactjs?src=hash&amp;ref_src=twsrc%5Etfw">#reactjs</a></p>&mdash; Elijah Manor (@elijahmanor) <a href="https://twitter.com/elijahmanor/status/958424787944198145?ref_src=twsrc%5Etfw">January 30, 2018</a></blockquote>
+      {% endif %}
 		</section>
 
 		<section class="Social">
 			<a href="https://twitter.com/elijahmanor" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @elijahmanor</a>
-			{% if page.url != site.baseurl %}
+			{% if page.url != "/" %}
 				<a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ page.title }}" data-url="{{ post.url }}" data-via="elijahmanor" data-size="large">Tweet</a>
-			{% endif %}
-		</section>
+      {% endif %}
+      <!-- https://developers.google.com/youtube/youtube_subscribe_button -->
+      <!-- <div class="g-ytsubscribe" data-channelid="UCSUkyvHHdLuFKkHyYxCmmcw" data-layout="full" data-theme="dark" data-count="default"></div> -->
+      <!-- <div class="g-ytsubscribe" data-channelid="UCSUkyvHHdLuFKkHyYxCmmcw" data-layout="default" data-theme="dark" data-count="default"></div> -->
+    </section>
 
+    <script src="https://apis.google.com/js/platform.js"></script>
 		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
     <p class="Copyright">&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>

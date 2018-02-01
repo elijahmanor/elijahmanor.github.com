@@ -71,25 +71,29 @@ html {
 }
 
 /* Sidebar links */
-.sidebar a {
+.sidebar-nav a {
   color: #fff;
+  text-transform: uppercase;
 }
 
 /* About section */
-.sidebar-about h1 {
-  color: #fff;
-  margin-top: 0;
-  font-family: "Abril Fatface", serif;
-  font-size: 3.25rem;
+.sidebar-about a {
+  color: #FDBF2E !important;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 /* Sidebar nav */
 .sidebar-nav {
-  margin-bottom: 0.25rem;
+  margin: 0 0.5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+
 .sidebar-nav-item {
   display: block;
   line-height: 1.75;
@@ -252,3 +256,24 @@ a.sidebar-nav-item:focus {
 .theme-base-0f .related-posts li a:hover {
   color: #8f5536;
 }
+
+.page, .post { position: relative; }
+
+.post [id^="___ytsubscribe_"] {
+  float: right !important;
+  margin-left: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.page [id^="___ytsubscribe_"] {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.Videos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;	
+}
+

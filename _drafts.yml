@@ -8,13 +8,13 @@ highlighter: rouge
 permalink: /:categories/:title/
 exclude: [ 'node_modules', 'talks' ]
 # Setup
-title:            Elijah Manor
+title:            Manorisms
 tagline:          'Front-End Dev Tips, Tricks, and Tools'
 descriptions:     'Front-End Dev Tips, Tricks, and Tools'
 url:              http://elijahmanor.com
 
 author:
-  name:           'Elijah Manor'
+  name:           'Manorisms'
   url:            https://twitter.com/elijahmanor
 
 paginate: 5

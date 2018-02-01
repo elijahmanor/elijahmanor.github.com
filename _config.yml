@@ -5,13 +5,13 @@ permalink: /:categories/:title/
 exclude: [ 'node_modules' ]
 keep_files: [ 'talks' ]
 
-title:            Elijah Manor
+title:            Manorisms
 tagline:          'Front-End Dev Tips, Tricks, and Tools'
-descriptions:     'Front-End Dev Tips, Tricks, and Tools'
+description:      'Front-End Dev Tips, Tricks, and Tools'
 url:              http://elijahmanor.com
 
 author:
-  name:           'Elijah Manor'
+  name:           'Manorisms'
   url:            https://twitter.com/elijahmanor
 
 paginate: 5
