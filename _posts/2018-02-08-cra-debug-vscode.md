@@ -14,6 +14,8 @@ In this post (and the above 4 minute embedded video) we’ll look at how to conf
 
 <!--more-->
 
+> This is the second post in a series about `create-react-app`. You can start the series with [Getting Started with Create React App](/cra-getting-started).
+
 ## Sample Web Application
 
 ![Screenshot of Terminal & Empty Browser](../assets/images/2018/Feb/cra-debug-vscode-1.png)
