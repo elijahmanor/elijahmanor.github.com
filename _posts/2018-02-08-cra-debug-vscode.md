@@ -90,9 +90,11 @@ By looking at the following code, it may not be obvious what is causing the bug.
 
 ## Debugging Unit Tests
 
-Next, let’s move to debugging unit tests. Here we have some code testing the behavior of our `CardFlip` React component.
+Now that we have our web application code all fixed up, let’s move to debugging our Jest unit tests. 
 
 1. **Debug CRA Tests Launch Configuration**
+
+	Here we have some code testing the behavior of our `CardFlip` React component.
 
 	![Screenshot of Failing Tests](../assets/images/2018/Feb/cra-debug-vscode-8.png)
 
