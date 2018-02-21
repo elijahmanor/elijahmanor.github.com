@@ -259,7 +259,8 @@ a.sidebar-nav-item:focus {
 
 .page, .post { position: relative; }
 
-.post [id^="___ytsubscribe_"] {
+.post [id^="___ytsubscribe_"],
+.post-footer [id^="___ytsubscribe_"] {
   float: right !important;
   margin-left: 0.5rem !important;
   margin-bottom: 0.5rem !important;

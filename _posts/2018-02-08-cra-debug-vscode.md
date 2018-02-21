@@ -144,5 +144,4 @@ Now that we have our web application code all fixed up, let’s move to debuggin
 
 ## Conclusion
 
-<div class="g-ytsubscribe" data-channelid="UCSUkyvHHdLuFKkHyYxCmmcw" data-layout="default" data-count="default"></div>
-Thanks for reading this second post in the `create-react-app` series. The above video is the first in a series, so stay tuned. You may also want to subscribe to the [Manorisms YouTube Channel](https://www.youtube.com/manorisms) to make sure you are notified when new material is posted.
+Thanks for reading this second post in the `create-react-app` series. The above video is the first in a series, so stay tuned.

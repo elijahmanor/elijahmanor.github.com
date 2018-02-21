@@ -153,7 +153,6 @@ As your app gets older, newer version of `react-scripts` may come out. These new
 
 ## Conclusion
 
-<div class="g-ytsubscribe" data-channelid="UCSUkyvHHdLuFKkHyYxCmmcw" data-layout="default" data-count="default"></div>
-I hope you found something helpful from this post. The above video is the first in a series about `create-react-app`, so stay tuned. You may also want to subscribe to the [Manorisms YouTube Channel](https://www.youtube.com/manorisms) to make sure you are notified when new material is posted. 
+I hope you found something helpful from this post. The above video is the first in a series about `create-react-app`, so stay tuned. 
 
 > This is the first post in a series about `create-react-app`. The next post in the series is [Debugging a Create React App with VS Code](/cra-debug-vscode).

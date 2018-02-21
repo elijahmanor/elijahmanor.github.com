@@ -144,5 +144,4 @@ npx jscpd -f "src/**/*.css" -e "**/+(lib|test)/**" -t 10
 
 ## Conclusion
 
-<div class="g-ytsubscribe" data-channelid="UCSUkyvHHdLuFKkHyYxCmmcw" data-layout="default" data-count="default"></div>
-Thanks for reading this post and/or watching the above embedded video. I hope you find the `jsinspect` and `jscpd` tools helpful in your projects. You may also want to subscribe to the [Manorisms YouTube Channel](https://www.youtube.com/manorisms) to make sure you are notified when new material is posted.
+Thanks for reading this post and/or watching the above embedded video. I hope you find the `jsinspect` and `jscpd` tools helpful in your projects.
