@@ -70,13 +70,33 @@ a {
   color: #268bd2;
   text-decoration: none;
 }
-a strong {
-  color: inherit;
-}
+
 /* `:focus` is linked to `:hover` for basic accessibility */
 a:hover,
 a:focus {
   text-decoration: underline;
+}
+
+.content a:not(.resp-sharing-button__link) {
+  background-color: rgba(187,239,253,0.3);
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  color: #1a1a1a;
+  font-weight: 400;
+  text-decoration: none;  
+}
+
+.content a:not(.resp-sharing-button__link)hover {
+  background-color: #bbeffd;
+  border-bottom-color: #1a1a1a;
+}
+
+.content a:not(.resp-sharing-button__link) code {
+  color: inherit;
+  background-color: inherit;
+}
+
+a strong {
+  color: inherit;
 }
 
 /* Headings */
