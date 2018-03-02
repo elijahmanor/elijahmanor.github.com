@@ -17,7 +17,7 @@ As for my prompt, I am using the [`spaceship-prompt`](https://github.com/denysdo
 
 ## Editor
 
-I'm currently using the [VS Code](https://code.visualstudio.com/) editor using the [Cobalt2 Official Theme](https://marketplace.visualstudio.com/items?itemName=wesbos.theme-cobalt2) and the [Fire Code](https://github.com/tonsky/FiraCode) font (a monospaced font with programming ligatures).
+I'm currently using the [VS Code](https://code.visualstudio.com/) editor using the [Cobalt2 Official Theme](https://marketplace.visualstudio.com/items?itemName=wesbos.theme-cobalt2) and the [Fira Code](https://github.com/tonsky/FiraCode) font (a monospaced font with programming ligatures).
 
 ### VS Code Extensions
 
