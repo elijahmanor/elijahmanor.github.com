@@ -22,6 +22,21 @@
   /* text-align: justify;   */
 }
 
+.videoWrapper {
+	position: relative !important;
+	padding-bottom: 56.25% !important; /* 16:9 */
+	padding-top: 25px !important;
+	height: 0 !important;
+}
+
+.videoWrapper iframe {
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	width: 100% !important;
+	height: 100% !important;
+}
+
 .focus-code {
   white-space: pre;
   text-align: left;
