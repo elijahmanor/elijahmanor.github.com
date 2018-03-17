@@ -7,7 +7,7 @@
 <!-- .slide: data-title="Conclusion" data-state="somestate" -->
 
 * New Context API
-* New Refs API
+* New Refs API (`createRef` & `forwardRef`)
 * Updated Lifecycle Methods
 * New Strict Mode
 * New Experimental Async Mode

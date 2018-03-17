@@ -9,6 +9,7 @@
 * Legacy String Refs<!-- .element: class="fragment" -->
 * Newer Callback Refs<!-- .element: class="fragment" -->
 * Newest Object Refs<!-- .element: class="fragment" -->
+* Newest forwardRef API<!-- .element: class="fragment" -->
 
 ------
 
@@ -103,14 +104,14 @@ class Hello extends React.Component {
     </section>;
   }
   componentDidMount() {
-    this.myRef.value.focus();
+    this.myRef.current.focus();
   }
 }
 ```
 
 <span class="fragment current-only focus-text" data-code-focus="2">Create a reference from React</span>
 <span class="fragment current-only focus-text" data-code-focus="5">Assign the ref object to the ref prop</span>
-<span class="fragment current-only focus-text" data-code-focus="9">Use the ref's value property</span>
+<span class="fragment current-only focus-text" data-code-focus="9">Use the ref's current property</span>
 
 ------
 
@@ -127,6 +128,36 @@ myRef = React.createRef();
 
 ------
 
+## Newest forwardRef API
+
+<!-- .slide: data-title="Refs API" -->
+
+```js
+const Input = React.forwardRef((props, ref) => (
+  <div className="Input">
+    <input type="text" ref={ref} {...props} />
+  </div>
+));
+
+class Hello extends React.Component {
+  myRef = React.createRef();
+  render() {
+    return <section>
+        <Input ref={this.myRef} />
+    </section>;
+  }
+  componentDidMount() {
+    this.myRef.current.focus();
+  }
+}
+```
+
+<span class="fragment current-only focus-text" data-code-focus="1">Tell React to forward a reference</span>
+<span class="fragment current-only focus-text" data-code-focus="3">Forward Input's ref to the input inside</span>
+<span class="fragment current-only focus-text" data-code-focus="11">The ref points directly to the DOM node</span>
+
+------
+
 ## Take Aways
 
 <!-- .slide: data-title="Refs API" -->
@@ -134,6 +165,7 @@ myRef = React.createRef();
 * String refs will get deprecated<!-- .element: class="fragment" -->
 * Object refs should fit most of your cases<!-- .element: class="fragment" -->
 * Callback refs are there for advanced use cases<!-- .element: class="fragment" -->
+* Use forwardRefs to access a nested element<!-- .element: class="fragment" -->
 
 ------
 

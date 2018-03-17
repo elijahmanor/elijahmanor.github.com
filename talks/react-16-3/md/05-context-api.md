@@ -228,6 +228,14 @@ ReactDOM.render(
 
 ------
 
+## Don't Worry...
+
+<!-- .slide: data-title="Context API" data-state="zeroTopx" -->
+
+> The old context API will keep working for all React 16.x releases, so you will have time to migrate.
+
+------
+
 ## Resources
 
 <!-- .slide: data-title="Context API" data-state="resources" -->
