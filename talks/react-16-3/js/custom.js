@@ -1,4 +1,5 @@
-Reveal.addEventListener('slidechanged', function(event) {
+function handleSlideChanged( event ) {
+  event = event || { currentSlide: { dataset: {} } };
   var header = document.querySelector('.Title');
   var title = event.currentSlide.dataset.title || '';
   var state = event.currentSlide.dataset.state || '';
@@ -7,4 +8,6 @@ Reveal.addEventListener('slidechanged', function(event) {
   header.classList.toggle('Title--show', !!title);
   document.body.classList.toggle('is-recording', isRecording);
   header.innerHTML = title;
-});
+}
+
+Reveal.addEventListener('slidechanged', handleSlideChanged);
