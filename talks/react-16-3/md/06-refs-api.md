@@ -133,8 +133,8 @@ myRef = React.createRef();
 <!-- .slide: data-title="Refs API" -->
 
 ```js
-const Input = React.forwardRef((props, ref) => (
-  <div className="Input">
+const MyInput = React.forwardRef((props, ref) => (
+  <div className="MyInput">
     <input type="text" ref={ref} {...props} />
   </div>
 ));
@@ -143,7 +143,7 @@ class Hello extends React.Component {
   myRef = React.createRef();
   render() {
     return <section>
-        <Input ref={this.myRef} />
+        <MyInput ref={this.myRef} />
     </section>;
   }
   componentDidMount() {
@@ -153,7 +153,7 @@ class Hello extends React.Component {
 ```
 
 <span class="fragment current-only focus-text" data-code-focus="1">Tell React to forward a reference</span>
-<span class="fragment current-only focus-text" data-code-focus="3">Forward Input's ref to the input inside</span>
+<span class="fragment current-only focus-text" data-code-focus="1,3">Forward Input's ref to the input inside</span>
 <span class="fragment current-only focus-text" data-code-focus="11">The ref points directly to the DOM node</span>
 
 ------

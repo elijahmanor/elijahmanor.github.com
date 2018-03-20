@@ -13,5 +13,5 @@
 * New Experimental Async Mode
 * Updated DevTools
 
-These all encourage better practices and designs
-and they move in a direction that preps for Async Mode!
+<!-- These all encourage better practices and designs
+and they move in a direction that preps for Async Mode! -->

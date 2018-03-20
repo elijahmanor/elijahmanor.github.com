@@ -3,6 +3,7 @@
     this.removeModules();
     this.updateDemos();
     this.updateExtendedContent();
+    this.updateResourcesContent();
 
     this.dialog = this.buildDialog();
     this.dialog.querySelector('#update').addEventListener('click', this.update.bind(this));
@@ -18,6 +19,11 @@
               indexv: 0
             };
             Reveal.slide( lastViewedSlide.indexh, lastViewedSlide.indexv );
+        },
+        65: function() {
+          var isAnnotated = window.localStorage.isAnnotated !== "true";
+          window.localStorage.isAnnotated = isAnnotated;
+          document.body.classList.toggle('is-annotated', isAnnotated);
         }
       }
     });
@@ -53,6 +59,15 @@
         extended.parentNode.removeChild(extended);
       });
     }
+  };
+
+  modules.updateResourcesContent = function( isRecording ) {
+    var isRecording = window.localStorage.isRecording === 'true';
+    if (isRecording) {
+      [].forEach.call(document.querySelectorAll("section[data-state='resources']"), function(extended) {
+        extended.parentNode.removeChild(extended);
+      });
+    }    
   };
 
   modules.removeModules = function() {
@@ -111,6 +126,7 @@
     var reenabledExtendedContent = window.localStorage.extendedContent !== extendedContent.toString();
     window.localStorage.extendedContent = extendedContent;
     this.updateExtendedContent( extendedContent );
+    this.updateResourcesContent( isRecording );
 
     this.dialog.close();
 

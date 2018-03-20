@@ -11,4 +11,4 @@
 * Updated Lifecycle Methods<!-- .element: class="fragment" -->
 * New Strict Mode<!-- .element: class="fragment" -->
 * New Experimental Async Mode<!-- .element: class="fragment" -->
-* Updated DevTools<!-- .element: class="fragment" -->
+* Updated React DevTools<!-- .element: class="fragment" -->

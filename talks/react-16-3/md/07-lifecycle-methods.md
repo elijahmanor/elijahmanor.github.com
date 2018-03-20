@@ -35,7 +35,7 @@ For detailed scenarios check out the [RFC to React](https://github.com/reactjs/r
 ```js
 componentWillMount        ➡ componentDidMount
 componentWillUpdate       ➡ componentDidUpdate
-compoenntWillReceiveProps ➡ getDerivedStateFromProps
+componentWillReceiveProps ➡ getDerivedStateFromProps
 ```
 
 ------

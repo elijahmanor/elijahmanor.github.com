@@ -7,11 +7,29 @@
 
 .reveal h2 a.icon { font-size: 0.7em; }
 
+[id*='ytsubscribe'] iframe {
+  position: relative !important;
+  top: -2px !important;
+  transform: scale(1.15) !important;
+  left: 10px !important;
+}
+
 .is-recording .share-reveal,
 .is-recording .controls,
 .is-recording .slide-menu-button,
 .is-recording .progress {
   display: none !important;
+}
+
+[data-code-focus].current-fragment {
+  display: none !important;
+}
+.is-annotated [data-code-focus].current-fragment {
+  display: block !important;
+}
+
+.zeroTop .is-annotated .present {
+  top: 0 !important;
 }
 
 .hljs--responsive {
@@ -43,7 +61,7 @@
   font-size: 0.75em !important;
 }
 
-.zeroTop .present { top: 0 !important; }
+/* .zeroTop .present { top: 0 !important; } */
 
 .introduction .backgrounds .slide-background.present {
   opacity: 0.15;
