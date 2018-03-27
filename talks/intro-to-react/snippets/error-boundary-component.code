@@ -1,0 +1,59 @@
+import React, {Component} from "react";
+import {render} from "react-dom";
+
+class ErrorBoundary extends Component {
+  state = { error: null, info: null };
+  componentDidCatch(error, info) {
+    this.setState({ error, info });
+  }
+  render() {
+    const { error, info } = this.state;
+    if (error) {
+      return (
+        <div>
+          <h2>Something went wrong</h2>
+          <details>
+            {error.toString()}
+            <br />
+            {info.componentStack}
+          </details>
+        </div>
+      );
+    }
+    return this.props.children;
+  }}
+
+const App = () => <ErrorBoundary> 
+  <ThrowUp />
+</ErrorBoundary>;
+
+class ThrowUp extends React.Component {
+  state = { showError: false };
+  throwUp() {
+    throw new Error("Throw Up!");
+  }
+  render() {
+    return (
+      <div>
+        <button onClick={() =>
+          this.setState({
+            showError: true
+          })}>
+          Throw & Catch
+        </button>
+        {this.state.showError &&
+          this.throwUp()}
+        <button
+          onClick={() => {
+            throw new Error("NoCatch");
+          }}
+        >Throw, but not Catch</button>
+      </div>
+    );
+  }
+}
+
+render(
+  <App />,
+  document.getElementById("⚛️")
+);

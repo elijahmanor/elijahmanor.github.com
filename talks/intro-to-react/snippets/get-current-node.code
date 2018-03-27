@@ -1,0 +1,36 @@
+import React, {Component} from "react";
+import {render} from "react-dom";
+
+class HelloWorld extends Component {
+  state = { count: 0 };
+  componentDidMount() {
+    const node =
+      ReactDOM.findDOMNode(this);
+    node.style.backgroundColor = "red";
+  }
+  handleClick() {
+    this.setState({
+      count: this.state.count + 1
+    });
+  }
+  render() {
+    return <div>
+      <p>Hello
+        <span ref={c => this.count =c}>
+          {this.state.count}
+        </span>!
+      </p>
+      <button
+        onClick={
+          this.handleClick.bind(this)
+        }>
+        Click Me
+      </button>
+    </div>;
+  }
+}
+
+render(
+  <HelloWorld />,
+  document.getElementById("⚛️")
+);

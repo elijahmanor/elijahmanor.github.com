@@ -1,0 +1,14 @@
+import { render } from "react-dom";
+import createReactClass
+  from "reate-react-class";
+
+const HelloWorld = createReactClass({
+  return (
+    <div>Hello World!</div>
+  )
+});
+
+render(
+  <HelloWorld />,
+  document.getElementById("⚛️")
+);

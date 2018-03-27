@@ -1,0 +1,49 @@
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { error: false };
+  }
+  componentDidCatch(error, info) {
+    this.setState({ error, info });
+  }
+  render() {
+    const { error, info } = this.state;
+    return error ?
+      <div>
+        KaBoom!
+        <pre>{error.toString()}</pre>
+        <pre>{info.componentStack}</pre>
+      </div> :
+      <ThrowUp />;
+  }
+}
+
+class ThrowUp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { showError: false };
+  }
+  throwUp() {
+    throw new Error( "Throw Up!" );
+  }
+  render() {
+    return (
+      <div>
+        <button onClick={() =>
+          this.setState({ showError: true })}>
+          Throw & Catch
+        </button>
+        {this.state.showError && this.throwUp()}
+        <button
+          onClick={() => {
+            throw new Error("Didn't Catch");
+          }}
+        >Throw, but not Catch</button>
+      </div>
+    );
+  }
+}
+
+render(
+  <App />
+);

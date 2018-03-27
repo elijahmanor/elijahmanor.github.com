@@ -1,0 +1,57 @@
+const Button = styled.button`
+  height: 3em;
+  min-width: 6em;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  outline: 0;
+  padding: 0.5em 1em;
+  line-height: 1em;
+  border: none;
+  border-radius: 0.25em;
+  margin: auto 1em 1em auto;
+  background-color: ${props => (props.primary ? "#95c83e" : "#F0F0F0")};
+  color: ${props => props.primary ? "#fff" : "#7f7f7f"};
+  border-bottom: ${props =>
+    `0.25em solid ${props.primary ? "#5D7C2D" : "#D7D7D7"}`};
+  cursor: ${props => (props.disabled ? "not-allowed" : "inherit")};
+  opacity: ${props => (props.disabled ? ".5" : "1")};
+  &:hover, &:focus {
+      background-color: ${props => (props.primary ? "#80AC3E" : "#E6E6E6")};
+      border-bottom: ${props =>
+        `0.25em solid ${props.primary ? "#5D7C2D" : "#B8B8B8"}`};
+  }
+  &:active {
+      background-color: ${props => (props.primary ? "#6a9029" : "#CCCCCC")};
+      border-bottom: none;
+      color: ${props => (props.primary ? "#FFF" : "#4D4D4D")};
+  }
+`;
+
+const TomatoButton = styled(Button)`
+  color: white;
+  background-color: #ff6347;
+  border-bottom: 0.25em solid ${darken(0.2, "#FF6347")};
+  &:hover, &:focus {
+    background-color: ${darken(0.1, "#FF6347")};
+    border-bottom: 0.25em solid ${darken(0.4, "#FF6347")};
+  }
+  &:active {
+    color: white;
+    background-color: ${darken(0.4, "#FF6347")};
+    border-bottom: none;
+  }
+`;;
+
+const App = () => (
+  <main style={{ display: 'flex', flexDirection: 'column' }}>
+    <Button primary>Primary</Button>
+    <Button>Secondary</Button>
+    <Button primary disabled>
+      Primary Disabled
+    </Button>
+    <TomatoButton>Composed</TomatoButton>
+  </main>
+);
+
+render(<App />);

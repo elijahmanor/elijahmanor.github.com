@@ -1,0 +1,30 @@
+import React, {Component} from "react";
+import {render} from "react-dom";
+
+const speakers = ['Scott Hanselman', 'John Papa', 'Scott Guthrie', 'Michele Bustamante', 'Dan Wahlin', 'Debora Kurata', 'Zoiner Tejada', 'Scott Allen', 'Elijah Manor', 'Ward Bell', 'Todd Anglin', 'Saron Yitbare', 'Scott Hunter'];
+
+class SpeakerList extends Component {
+  handleClick(name, e) {
+    alert(name);
+  }
+  render() {
+    const { names } = this.props;
+    return <div>
+      <ul>
+        {names.map(name =>
+          <li onClick={
+            this.handleClick.bind(
+              this, name
+            )}>
+            {name}
+          </li>
+        )}
+      </ul>
+    </div>;
+  }
+}
+
+render(
+  <SpeakerList names={speakers} />,
+  document.getElementById("⚛️")
+);

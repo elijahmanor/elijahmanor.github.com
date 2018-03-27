@@ -1,0 +1,50 @@
+import React, {Component} from "react";
+import {render} from "react-dom";
+
+const speakers = ['Scott Hanselman', 'John Papa', 'Scott Guthrie', 'Michele Bustamante', 'Dan Wahlin', 'Debora Kurata', 'Zoiner Tejada', 'Scott Allen', 'Elijah Manor', 'Ward Bell', 'Todd Anglin', 'Saron Yitbare', 'Scott Hunter'];
+
+class SpeakerList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      names: props.names
+    };
+  }
+  handleSort = () => {
+    this.setState({
+      names: this.state.names.sort()
+    });
+  }
+  handleScott = () => {
+    var names = this.state.names;
+    var list =
+      names.filter(function(n) {
+        return n.indexOf('Scott') > -1;
+      });
+
+    this.setState({ names: list });
+  }
+  render() {
+    var names = this.state.names;
+    return <div>
+      <ul>
+        {names.map(function(name) {
+          return <li>{name}</li>;
+        })}
+      </ul>
+      <button
+        onClick={this.handleSort}>
+        Sort
+      </button>
+      <button
+        onClick={this.handleScott}>
+        Scott
+      </button>
+    </div>;
+  }
+}
+
+render(
+  <SpeakerList names={speakers} />,
+  document.getElementById("⚛️")
+);

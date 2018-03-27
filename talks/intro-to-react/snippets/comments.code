@@ -1,0 +1,21 @@
+import React, {Component} from "react";
+import {render} from "react-dom";
+
+class HelloWorld extends Component {
+  // Single-line comment
+  /* Multi-line comment */
+  render() {
+    const { name } = this.props;
+    return (
+      <div>
+        {/* JS Expression multiline */}
+        <h1>Hello {name}!</h1>
+      </div>
+    );
+  }
+}
+
+render(
+  <HelloWorld name="Developer" />,
+  document.getElementById("⚛️")
+);

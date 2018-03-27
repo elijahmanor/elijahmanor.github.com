@@ -1,0 +1,40 @@
+const speakers = ['Scott Hanselman', 'John Papa', 'Scott Guthrie', 'Michele Bustamante', 'Dan Wahlin', 'Debora Kurata', 'Zoiner Tejada', 'Scott Allen', 'Elijah Manor', 'Ward Bell', 'Todd Anglin', 'Saron Yitbare', 'Scott Hunter'];
+
+class SpeakerList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { names: this.props.names };
+    this.handleSort = this.handleSort.bind(this);
+    this.handleScott = this.handleScott.bind(this);
+  }
+  handleSort() {
+    this.setState({
+      names: this.state.names.sort()
+    });
+  }
+  handleScott() {
+    let { names } = this.state;
+    names = names.filter(name =>
+      name.includes('Scott'));
+
+    this.setState({ names });
+  }
+  render() {
+    const { names } = this.state;
+    return <div>
+      <ul>
+        {names.map(n => <li>{n}</li>)}
+      </ul>
+      <button onClick={this.handleSort}>
+        Sort
+      </button>
+      <button onClick={this.handleScott}>
+        Scott
+      </button>
+    </div>;
+  }
+}
+
+render(
+  <SpeakerList names={speakers} />
+);

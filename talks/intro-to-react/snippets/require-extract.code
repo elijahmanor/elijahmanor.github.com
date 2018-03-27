@@ -1,0 +1,25 @@
+import React, {Component} from "react";
+import classNames from "classnames";
+
+import "./styles.scss";
+
+class Media extends Component {
+  render() {
+    const {
+      className,
+      imageUrl
+    } = this.props;
+    const classes = classNames("Media", className);
+    return <div className={classes}>
+      <img className="Media-figure" src={imageUrl}>
+      <div className="Media-body">
+        <h3 className="Media-title">
+          {this.props.title}
+        </h3>
+        <p>{this.props.description}</p>
+      </div>
+    </div>;
+  }
+}
+
+export default Media;

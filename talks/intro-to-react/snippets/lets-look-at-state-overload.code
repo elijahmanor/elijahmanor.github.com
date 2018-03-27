@@ -1,0 +1,25 @@
+import React, { Component } from "react";
+import { render } from "react-dom";
+
+class HelloWorld extends Component {
+  constructor() {
+    super();
+    this.state = { count: 0 };
+  }
+  handleClick() {
+    this.setState({ count: this.state.count + 1 });
+  }
+  render() {
+    return <div>
+      <p>Hello {this.state.count}!</p>
+      <button onClick={this.handleClick.bind(this)}>
+        Click Me
+      </button>
+    </div>;
+  }
+}
+
+render(
+  <HelloWorld />,
+  document.getElementById("⚛️")
+);

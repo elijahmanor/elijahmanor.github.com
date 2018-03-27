@@ -1,0 +1,10 @@
+import { render } from "react-dom";
+
+const HelloWorld = ({ name }) => {
+  return <div>Hello {name}!</div>;
+};
+
+render(
+  <HelloWorld name="JavaScript" />,
+  document.getElementById("⚛️")
+);

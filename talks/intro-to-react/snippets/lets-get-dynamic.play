@@ -1,0 +1,10 @@
+const HelloWorld = (props) => {
+  return <h1>Hello {props.name}!</h1>;
+};
+HelloWorld.propTypes = {
+  name: PropTypes.string.isRequired
+};
+
+render(
+  <HelloWorld name="JavaScript" />
+);

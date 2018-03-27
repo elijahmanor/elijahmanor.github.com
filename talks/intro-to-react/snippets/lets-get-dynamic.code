@@ -1,0 +1,14 @@
+import { render } from "react-dom";
+import PropTypes from "prop-types";
+
+const HelloWorld = (props) => {
+  return <h1>Hello {props.name}!</h1>;
+};
+HelloWorld.propTypes = {
+  name: PropTypes.string.isRequired
+};
+
+render(
+  <HelloWorld name="JavaScript" />,
+  document.getElementById("⚛️")
+);
