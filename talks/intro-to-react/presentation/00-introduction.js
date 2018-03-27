@@ -120,7 +120,7 @@ export default (theme, images, agenda) => (<SlideSet>
             textAlign: "left",
             fontFamily: "monospace"
           } } slide={ group.id }
-          >
+                    >
             { `${index.toString().padStart(2, "0")}: ${group.name}` }
           </GoToAction>);
         }
@@ -139,7 +139,7 @@ export default (theme, images, agenda) => (<SlideSet>
         href="https://youtube.com/manorisms"
         textColor="quartenary"
       >
-        Manorisms YouTube Channel
+        youtube.com/manorisms
       </Link>
     </Heading>
     <Layout>

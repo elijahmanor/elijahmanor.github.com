@@ -200,16 +200,13 @@ export default class Presentation extends React.Component {
     history.pushState("", document.title, window.location.pathname);
     window.location.reload();
   };
-  handleActive = (args) => {
-    console.log("active", args);
-  };
   render() {
     const { isMenuOpen, isHelpOpen, selectedGroups } = this.state;
     const agenda = groups.filter((g) => selectedGroups.includes(g.name));
     const { clientHeight, clientWidth } = document.documentElement;
     const contentHeight = clientHeight * 0.9;
     const contentWidth = clientWidth * 0.9;
-    const progress = "number"; // pacman, bar, number or none
+    const progress = "bar"; // pacman, bar, number or none
 
     return (
       <main>
@@ -221,7 +218,6 @@ export default class Presentation extends React.Component {
           controls={false}
           contentHeight={contentHeight /*700*/}
           contentWidth={contentWidth /*1000*/}
-          onActive={ this.handleActive }
         >
           {groups.reduce((memo, group, index, groups) => {
             if (selectedGroups.includes(group.name)) {

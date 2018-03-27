@@ -103,10 +103,6 @@ const snippets = {
   }
 };
 
-function handleActive(args) {
-  console.log("components", "handleActive", args);
-}
-
 export default (theme, images) => ([
   <Slide id="components" bgColor="secondary">
     <Heading size={1} fit caps lineHeight={1} textColor="primary">
@@ -128,9 +124,7 @@ export default (theme, images) => ([
       </Cite>
     </BlockQuote>
   </Slide>,
-  <Slide bgColor="secondary"
-    onActive={ this.handleActive }
-  >
+  <Slide bgColor="secondary" >
     <Heading caps fit>show me the code!</Heading>
     <BlockQuote>
       <Quote textSize={52}>Talk is cheap. Show me the code.</Quote>
@@ -144,7 +138,6 @@ export default (theme, images) => ([
   </Slide>,
   <CodeSlide
     maxHeight="100vh" maxWidth="90vw"
-    onActive={ this.handleActive }
     lang="jsx"
     code={snippets.helloWorldFunction.code}
     ranges={[
@@ -241,8 +234,8 @@ ReactDOM.render(
   document.getElementById('root')
 );
 `}
-      margin="20px auto"
-      overflow = "overflow"
+    margin="20px auto"
+    overflow = "overflow"
     />
   </Slide>,
   <CodeSlide
