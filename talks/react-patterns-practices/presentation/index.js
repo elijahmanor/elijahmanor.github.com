@@ -54,7 +54,9 @@ const images = {
   printWasted: require("../assets/print-wasted.png"),
   whyDidYouUpdate: require("../assets/why-did-you-update.gif"),
   reduxDevTools: require("../assets/redux-devtools.gif"),
-  reduxFlow: require("../assets/ReduxFlow.png")
+  reduxFlow: require("../assets/ReduxFlow.png"),
+  manorisms: require("../assets/manorisms-screenshot.png"),
+  manorismsLogo: require("../assets/manorisms-logo.png")
 };
 
 preloader(images);

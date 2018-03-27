@@ -89,6 +89,33 @@ export default (theme, images) => [
       ⬆️ to go up in a code slide
     </Heading>
   </Slide>,
+  <Slide
+    id="manorisms"
+    transition={["slide"]}
+    bgColor="black"
+    notes="You can even put notes on your slide. How awesome is that?"
+  >
+    <Heading textColor="quartenary" caps fit>
+      <Link
+        href="https://youtube.com/manorisms"
+        textColor="quartenary"
+      >
+        youtube.com/manorisms
+      </Link>
+    </Heading>
+    <Layout>
+      <Fill style={{ flexGrow: "0", flexBasis: "25%" }}>
+        <Link href="https://youtube.com/manorisms">
+          <Image src={images.manorismsLogo} style={{ marginTop: "1rem" }} />
+        </Link>
+      </Fill>
+      <Fill style={{ flexGrow: "0", flexBasis: "75%" }}>
+        <Link href="https://youtube.com/manorisms">
+          <Image src={images.manorisms} style={{ marginTop: "1rem" }} />
+        </Link>
+      </Fill>
+    </Layout>
+  </Slide>,
   // <Slide transition={["fade"]} bgColor="secondary" textColor="quartenary">
   //   <Heading size={2} caps textColor="primary">
   //     Agenda

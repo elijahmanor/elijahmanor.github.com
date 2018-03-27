@@ -1604,7 +1604,7 @@
   employer: 'leankit'
   sessions:
   - name: 'An Introduction to React'
-    slides: '/talks/react-to-the-future/dist'
+    slides: '/talks/intro-to-react'
     video: ''
     feedback: ''
   - name: 'React Patterns & Practices'
