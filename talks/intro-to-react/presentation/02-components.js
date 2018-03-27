@@ -234,16 +234,16 @@ ReactDOM.render(
   document.getElementById('root')
 );
 `}
-    margin="20px auto"
-    overflow = "overflow"
+      margin="20px auto"
+      overflow = "overflow"
     />
   </Slide>,
   <CodeSlide
     lang="jsx"
     code={snippets.letsGetDynamic.code}
     ranges={[
-      { loc: [0, 14], title: "Let's Get Dynamic" },
-      { loc: [11, 12], note: "You can pass read-only properties to a React component via its attributes." },
+      { loc: [0, 10], title: "Let's Get Dynamic" },
+      { loc: [8, 9], note: "You can pass read-only properties to a React component via its attributes." },
       { loc: [3, 6], note: "You can access this data with the props parameter inside of a JavaScript Expression {}" }
     ]}
   />,
@@ -255,8 +255,8 @@ ReactDOM.render(
     lang="jsx"
     code={snippets.letsGetDynamicDestructure.code}
     ranges={[
-      { loc: [0, 14], title: "Props and Destructuring" },
-      { loc: [2, 5], note: "You can use ECMAScript 2015 (ES6) destructuring to pick off the  name property from the  props parameter" }
+      { loc: [0, 11], title: "Props and Destructuring" },
+      { loc: [3, 6], note: "You can use ECMAScript 2015 (ES6) destructuring to pick off the  name property from the  props parameter" }
     ]}
   />,
   <CodeSlide
@@ -295,7 +295,7 @@ ReactDOM.render(
       { loc: [15, 16], note: "Access component state via the  this.state object" },
       { loc: [16, 22], note: "Declaratively wire-up delegated Event Handlers via props" },
       { loc: [18, 19], note: "NOTE: Make sure to bind event handler!!!" },
-      { loc: [9, 12], note: "Update state by calling this.setState passing in difference" }
+      { loc: [8, 13], note: "Update state by calling this.setState passing in difference" }
     ]}
   />,
   <Slide maxHeight="100vh" maxWidth="90vw" bgColor="secondary">
@@ -378,7 +378,7 @@ ReactDOM.render(
     ranges={[
       { loc: [0, 33], title: "Reference to Children" },
       { loc: [16, 20], note: "Add ref attribute to element, ref callback receives the DOM element as argument." },
-      { loc: [6, 7], note: "You can access saved DOM element elsewhere to update it." },
+      { loc: [5, 8], note: "You can access saved DOM element elsewhere to update it." },
       { loc: [6, 7], note: "CAREFUL: You're working outside of React!" }
     ]}
   />,

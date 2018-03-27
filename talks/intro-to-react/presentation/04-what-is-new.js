@@ -221,6 +221,7 @@ render() {
     domNode,
   );
 }
+
 `}
           margin="20px auto"
           overflow = "overflow"
@@ -235,7 +236,7 @@ render() {
           <ListItem textSize={32}>Lightboxes</ListItem>
           <ListItem textSize={32}>Custom Dropdowns</ListItem>
           <ListItem textSize={32}>Loading Bars</ListItem>
-          <ListItem textColor="tertiary" textSize={32}><Link href="https://codepen.io/gaearon/pen/yzMaBd" textColor="tertiary" style={{ display: "inline-block" }}>Example by Dan Abramov</Link></ListItem>
+          <ListItem textSize={32}><Link href="https://codepen.io/gaearon/pen/yzMaBd" textColor="tertiary" style={{ display: "inline-block" }}>Example by Dan Abramov</Link></ListItem>
         </List>
       </Fill>
     </Layout>

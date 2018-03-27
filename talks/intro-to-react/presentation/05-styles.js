@@ -627,7 +627,9 @@ import styles from 'media.css';
       { loc: [4, 16], note: "Uses ES6 tagged templates (back-tick) to return a react component" },
       { loc: [5, 15], note: "Provide real CSS as argument..." },
       { loc: [6, 9], note: "It also supports interpolated functions for dynamic content" },
-      { loc: [20, 21], note: "You can base a new component based on another one and override CSS declarations" }
+      { loc: [20, 21], note: "You can base a new component based on another one and override CSS declarations" },
+      { loc: [27, 39], note: "Leverage new Components as you would normally" },
+      { loc: [31, 34], note: "The props determine styles based on our interpolated functions " }
     ]}
   />,
   <Slide maxHeight="100vh" maxWidth="90vw" bgColor="secondary">

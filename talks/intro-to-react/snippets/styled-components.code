@@ -15,8 +15,8 @@ const Button = styled.button`
   }
 `;
 
-const darken = color => amount =>
-  Color(color).darken(amount).toString();
+const darken = color => amt =>
+  Color(color).darken(amt).toString();
 const darkenTomato = darken('#FF6347');
 const TomatoButton = styled(Button)`
   color: white;
@@ -26,13 +26,15 @@ const TomatoButton = styled(Button)`
 `;
 
 const App = () => (
-  <main style={{ display: 'flex', flexDirection: 'column' }}>
+  <main>
     <Button primary>Primary</Button>
     <Button>Secondary</Button>
     <Button primary disabled>
       Primary Disabled
     </Button>
-    <TomatoButton>Composed</TomatoButton>
+    <TomatoButton>
+      Composed
+    </TomatoButton>
   </main>
 );
 

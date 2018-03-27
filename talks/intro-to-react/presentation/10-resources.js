@@ -29,7 +29,11 @@ export default (theme, images) => ([
     General Resources
     </Heading>
     <List>
+      <ListItem textSize={32}><Link textColor="primary" href="https://www.youtube.com/manorisms">Manorisms YouTube Channel</Link></ListItem>
+      <ListItem textSize={32}><Link textColor="primary" href="https://egghead.io/courses/the-beginner-s-guide-to-reactjs">The Beginner's Guide to ReactJS by @kentcdodds</Link></ListItem>
       <ListItem textSize={32}><Link textColor="primary" href="https://github.com/facebook/react-devtools">React DevTools Extension</Link></ListItem>
+      <ListItem textSize={32}><Link textColor="primary" href="http://codesandbox.io/">CodeSandbox</Link></ListItem>
+      <ListItem textSize={32}><Link textColor="primary" href="https://github.com/facebook/create-react-app">Create React App</Link></ListItem>
       <ListItem textSize={32}><Link textColor="primary" href="https://egghead.io/react-redux-cheatsheets">Egghead.io React & Redux Cheatsheets</Link></ListItem>
       <ListItem textSize={32}><Link textColor="primary" href="https://github.com/enaqx/awesome-react">Huge List of React Resources</Link></ListItem>
       <ListItem textSize={32}><Link textColor="primary" href="https://facebook.github.io/react/docs/perf.html">Performance Tooling</Link></ListItem>

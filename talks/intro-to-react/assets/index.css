@@ -91,3 +91,16 @@ h1[style*='hotpink'] + pre[style*='padding: 40% 0px'] {
 .CodePane--scroll {
     height: 60vh;
 }
+
+.react-live .prism-code {
+    font-size: 1.4rem !important;
+}
+
+.react-live > div > div:first-child {
+    flex-grow: 0 !important;
+    flex-basis: 33.3% !important;
+}
+
+a:hover {
+    text-decoration: underline;
+}

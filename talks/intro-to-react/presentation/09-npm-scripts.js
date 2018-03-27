@@ -188,15 +188,14 @@ Pre-Commit Hooks
   "devDependencies": {
     "eslint": "latest",
     "sass-lint": "latest",
-    "pre-commit": "latest"
+    "husky": "latest"
   },
   "scripts": {
     "lint": "npm run eslint && npm run sass-lint",
     "eslint": "eslint --cache --ext .js --ext .jsx src",
     "sass-lint": "sass-lint",
-    "precommit": "echo 'Running pre-commit checks...' && exit 0"
-  },
-  "pre-commit": [ "precommit", "lint" ]
+    "precommit": "npm run lint"
+  }
 }
 `}
           margin="20px auto"
@@ -226,9 +225,8 @@ npm scripts
     "start": "webpack-dev-server --progress --colors --config webpack.dev.config.js",
     "build": "webpack --progress --colors --config webpack.dev.config.js",
     "dist": "npm run build -- -p --bail --optimize-minimize --optimize-dedupe",
-    "precommit": "echo 'Running pre-commit checks...' && exit 0"
-  },
-  "pre-commit": [ "precommit", "lint" ]
+    "precommit": "npm run lint"
+  }
 }
 `}
       margin="20px auto"

@@ -121,7 +121,7 @@ hydrate(
         />
       </Fill>
       <Fill style={{ leftRight: "0.5rem" }}>
-        <Text textColor="primary" textSize={32} style={{ marginBottom: "1rem" }}><Code bgColor="#ccc" textSize={30}>render()</Code> is deprecated and you should start using  hydrate() instead.</Text>
+        <Text textColor="primary" textSize={32} style={{ margin: "1rem 0" }}><Code bgColor="#ccc" textSize={30}>render()</Code> is deprecated and you should start using <Code bgColor="#ccc" textSize={30}>hydrate()</Code> instead.</Text>
         <Text textColor="primary" textSize={32}><Code bgColor="#ccc" textSize={30}>render()</Code> will no longer work in React v17 to hydrate server-rendered content.</Text>
       </Fill>
     </Layout>
