@@ -28,6 +28,11 @@
   display: block !important;
 }
 
+.focus-text--abs {
+  position: absolute;
+  bottom: 0rem;
+}
+
 .zeroTop .is-annotated .present {
   top: 0 !important;
 }

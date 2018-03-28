@@ -78,36 +78,37 @@
 					{ src: 'plugin/menu/menu.js' },
 					{ src: 'js/highlight.min.js' },
 					{ src: 'plugin/reveal-code-focus/reveal-code-focus.js', async: true, callback: function() { RevealCodeFocus(); } },
+					// { src: 'plugin/prism.js' },
+					// { src: 'plugin/prism-code-focus/prism-code-focus.js', async: true, callback: function() { RevealCodeFocus(); } },
 					{ src: 'plugin/modules/modules.js', async: true, callback: function() { window.modules.init(); } },
 					{ src: 'plugin/data-store/data-store.js', async: true, callback: function() { window.dataStore.init(); } }
 				],
 				menu: {
-						side: 'left',
-						numbers: true,
-						hideMissingTitles: false,
-						markers: true,
-						custom: true,
-						themes: false,
-						transitions: false,
-						openButton: true,
-						openSlideNumber: false,
-						keyboard: true,
-						custom: [
-								{ title: 'About', icon: '<i class="fa fa-info">', src: 'html/about.html' },
-								{ title: 'Links', icon: '<i class="fa fa-external-link">', content: '' }
-						],
-						onOpen: function() {
-							var linkHTML = "";
-							var resources = document.querySelectorAll( "section [data-state*='resources']" );
-							[].forEach.call( resources, function( resource ) {
-								linkHTML += "<h2>" + resource.dataset.title + "</h2>";
-								console.log( resource.innerHTML );
-								linkHTML += resource.innerHTML.replace( /(<h\d.*>Resources<\/h\d>)/, "" ).trim();
-							} );
-							var links = document.querySelector( ".slide-menu-custom-panel[data-panel='Custom1']" );
-							links.innerHTML = "<div style='padding: 1rem 1rem 5rem 1rem;'>" + linkHTML + "</div>";
-						}
-
+					side: 'left',
+					numbers: true,
+					hideMissingTitles: false,
+					markers: true,
+					custom: true,
+					themes: false,
+					transitions: false,
+					openButton: true,
+					openSlideNumber: false,
+					keyboard: true,
+					custom: [
+						{ title: 'About', icon: '<i class="fa fa-info">', src: 'html/about.html' },
+						{ title: 'Links', icon: '<i class="fa fa-external-link">', content: '' }
+					],
+					onOpen: function() {
+						var linkHTML = "";
+						var resources = document.querySelectorAll( "section [data-state*='resources']" );
+						[].forEach.call( resources, function( resource ) {
+							linkHTML += "<h2>" + resource.dataset.title + "</h2>";
+							console.log( resource.innerHTML );
+							linkHTML += resource.innerHTML.replace( /(<h\d.*>Resources<\/h\d>)/, "" ).trim();
+						} );
+						var links = document.querySelector( ".slide-menu-custom-panel[data-panel='Custom1']" );
+						links.innerHTML = "<div style='padding: 1rem 1rem 5rem 1rem;'>" + linkHTML + "</div>";
+					}
 				}
 			});
 		</script>
