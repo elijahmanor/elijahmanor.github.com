@@ -13,6 +13,7 @@
 		<!-- <link rel="stylesheet" href="node_modules/highlight.js/styles/zenburn.css"> -->
 		<link rel="stylesheet" href="css/highlight/vs.css" data-noprefix>
 		<link rel="stylesheet" href="plugin/caniuse/caniuse.css" data-noprefix />
+		<link rel="stylesheet" href="plugin/prism-code-focus/prism.css" data-noprefix />
 		<link rel="stylesheet" href="css/custom.css">
 
 		<!-- Printing and PDF exports -->
@@ -76,10 +77,10 @@
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/menu/menu.js' },
-					{ src: 'js/highlight.min.js' },
-					{ src: 'plugin/reveal-code-focus/reveal-code-focus.js', async: true, callback: function() { RevealCodeFocus(); } },
-					// { src: 'plugin/prism.js' },
-					// { src: 'plugin/prism-code-focus/prism-code-focus.js', async: true, callback: function() { RevealCodeFocus(); } },
+					// { src: 'js/highlight.min.js' },
+					// { src: 'plugin/reveal-code-focus/reveal-code-focus.js', async: true, callback: function() { RevealCodeFocus(); } },
+					{ src: 'plugin/prism-code-focus/prism.js' },
+					{ src: 'plugin/prism-code-focus/prism-code-focus.js', async: true, callback: function() { RevealCodeFocus(); } },
 					{ src: 'plugin/modules/modules.js', async: true, callback: function() { window.modules.init(); } },
 					{ src: 'plugin/data-store/data-store.js', async: true, callback: function() { window.dataStore.init(); } }
 				],

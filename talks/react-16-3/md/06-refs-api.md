@@ -71,8 +71,8 @@ class Hello extends React.Component {
 }
 ```
 
-<span class="fragment current-only focus-text" data-code-focus="4-6">Callback function to ref prop</span>
-<span class="fragment current-only focus-text" data-code-focus="10">Use the ref wherever it was saved</span>
+<span class="fragment current-only focus-text focus-text--abs" data-code-focus="4-6">Callback function to ref prop</span>
+<span class="fragment current-only focus-text focus-text--abs" data-code-focus="10">Use the ref wherever it was saved</span>
 
 ------
 
@@ -152,8 +152,8 @@ class Hello extends React.Component {
 }
 ```
 
-<span class="fragment current-only focus-text" data-code-focus="1">Tell React to forward a reference</span>
-<span class="fragment current-only focus-text" data-code-focus="1,3">Forward Input's ref to the input inside</span>
+<span class="fragment current-only focus-text" data-code-focus="1,5">Tell React to forward a reference</span>
+<span class="fragment current-only focus-text" data-code-focus="1,3,5">Forward Input's ref to the input inside</span>
 <span class="fragment current-only focus-text" data-code-focus="11">The ref points directly to the DOM node</span>
 
 ------

@@ -29,8 +29,8 @@
 }
 
 .focus-text--abs {
-  position: absolute;
-  bottom: 0rem;
+  position: absolute !important;
+  bottom: 0rem !important;
 }
 
 .zeroTop .is-annotated .present {
@@ -148,6 +148,9 @@
 	margin-left: -3px;
     margin-right: -3px;
 }
+
+.prism-line.focus { opacity: 1; }
+.prism-line.blur { opacity: .2; }
 
 .reveal .slides section .fragment.current-only {
   opacity: 1;

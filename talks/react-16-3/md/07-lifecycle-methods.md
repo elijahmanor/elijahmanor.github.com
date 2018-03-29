@@ -38,6 +38,10 @@ componentWillUpdate       ➡ componentDidUpdate
 componentWillReceiveProps ➡ getDerivedStateFromProps
 ```
 
+<span class="fragment current-only focus-text" data-code-focus="1">Instead of componentWillMount, use componentDidMount</span>
+<span class="fragment current-only focus-text" data-code-focus="2">Instead of componentWillUpdate, use componentDidUpdate</span>
+<span class="fragment current-only focus-text" data-code-focus="3">Instead of componentWillReceiveProps, use getDerivedStateFromProps</span>
+
 ------
 
 ### New `getDerivedStateFromProps`
@@ -80,6 +84,7 @@ class MyClass extends Component {
   render() { return <div ref={this.listRef}>{ /*...*/ }</div>; }
 }
 ```
+
 <small>Example from <a href="https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#open-source-project-maintainers">Update on Async Rendering Post</a></small>
 
 <span class="fragment current-only focus-text focus-text--abs" data-code-focus="3-6">Called before mutations are made (e.g. DOM is udpated)</span>
@@ -92,7 +97,7 @@ class MyClass extends Component {
 
 <!-- .slide: data-title="Lifecycle Methods" data-state="zeroTopx" -->
 
-```
+```js
 // will be deprecated in a future v16.x release
 componentWillReceiveProps(nextProps) {}
 
@@ -117,7 +122,7 @@ static getDerivedStateFromProps(nextProps, prevState) {}
 
 ### [React-Codemod](https://github.com/reactjs/react-codemod/#rename-unsafe-lifecycles)
 
-```
+```bash
 jscodeshift -t
   react-codemod/transforms/rename-unsafe-lifecycles.js <path>
 ```
@@ -128,7 +133,7 @@ jscodeshift -t
 
 <!-- .slide: data-title="Lifecycle Methods" -->
 
-```
+```js
 import React, { Component } from "react";
 import polyfill from "react-lifecycles-compat";
 

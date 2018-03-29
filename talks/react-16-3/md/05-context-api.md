@@ -52,7 +52,6 @@ const MyProvider = ({children}) =>
 
 <span class="fragment current-only focus-text" data-code-focus="7,9">Use Provider off of the context created</span>
 <span class="fragment current-only focus-text" data-code-focus="8">Render the children passed</span>
-<span class="fragment current-only focus-text" data-code-focus="8">Render the children passed</span>
 <span class="fragment current-only focus-text" data-code-focus="7">You can change the value</span>
 
 ------
