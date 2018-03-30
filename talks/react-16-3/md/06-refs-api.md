@@ -173,5 +173,7 @@ class Hello extends React.Component {
 
 <!-- .slide: data-title="Refs API" data-state="resources" -->
 
+* [React createRef Documentation](https://reactjs.org/docs/refs-and-the-dom.html#creating-refs)
+* [React forwardRef Documentation](https://reactjs.org/docs/forwarding-refs.html)
 * [RFC to React: New Create Ref](https://github.com/reactjs/rfcs/blob/master/text/0017-new-create-ref.md)
 * [Reasons why String Ref is problematic](https://github.com/facebook/react/issues/1373)

@@ -156,6 +156,7 @@ export default MyComponent;
 
 <!-- .slide: data-title="Lifecycle Methods" data-state="resources" -->
 
+* [React Lifecycle Method Documentation](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html)
 * [RFC to React: Static Lifecycle Methods](https://github.com/reactjs/rfcs/blob/master/text/0006-static-lifecycle-methods.md)
 * [React Components](https://reactjs.org/docs/react-component.html)
 * [Update on Async Rendering](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html)

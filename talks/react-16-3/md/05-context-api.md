@@ -240,6 +240,8 @@ ReactDOM.render(
 
 <!-- .slide: data-title="Context API" data-state="resources" -->
 
+* [React Context API Documentation](https://reactjs.org/docs/context.html)
 * [RFC to React: New Version of Context](https://github.com/reactjs/rfcs/blob/master/text/0002-new-version-of-context.md)
+* [Simple L10n Context Demo](https://codesandbox.io/s/6lxxo1x5vn)
 * [Unstated: Context API based State Management](http://unstated.io) - State so simple
 * [Polyfill: create-react-context](https://github.com/jamiebuilds/create-react-context)

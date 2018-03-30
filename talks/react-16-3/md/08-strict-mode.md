@@ -72,4 +72,5 @@ class Problems extends Component {
 
 <!-- .slide: data-title="Strict Mode" data-state="resources" -->
 
+* [React Strict Mode Documentation](https://reactjs.org/docs/strict-mode.html)
 * [Umbrella: 16.3 release](https://github.com/facebook/react/issues/12152)
