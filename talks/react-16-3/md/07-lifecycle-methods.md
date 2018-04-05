@@ -135,7 +135,7 @@ jscodeshift -t
 
 ```js
 import React, { Component } from "react";
-import polyfill from "react-lifecycles-compat";
+import { polyfill } from "react-lifecycles-compat";
 
 class MyComponent extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {}
@@ -146,9 +146,9 @@ polyfill(MyComponent);
 export default MyComponent;
 ```
 
-<span class="fragment current-only focus-text focus-text--absx" data-code-focus="2">npm install react-lifecycles-compat</span>
-<span class="fragment current-only focus-text focus-text--absx" data-code-focus="4-6">Use the new lifecycle methods as you please</span>
-<span class="fragment current-only focus-text focus-text--absx" data-code-focus="8">Pass your component to the polyfill to work with older versions of React</span>
+<span class="fragment current-only focus-text focus-text--abs" data-code-focus="2">npm install react-lifecycles-compat & import into your project</span>
+<span class="fragment current-only focus-text focus-text--abs" data-code-focus="4-6">Use the new lifecycle methods as you please</span>
+<span class="fragment current-only focus-text focus-text--abs" data-code-focus="8">Pass your component to the polyfill to work with older versions of React</span>
 
 ------
 
