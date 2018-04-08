@@ -19,12 +19,13 @@
 
       {% assign pages_list = site.pages %}
       {% for node in pages_list %}
-        {% if node.title == "About" or node.title == "Archive" or node.title == "Speaking" or node.title == "Uses" or node.title == "Videos" %}
+        {% if node.title == "About" or node.title == "Archive" or node.title == "Speaking" or node.title == "Uses" %}
           {% if node.layout == "page" %}
             <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
           {% endif %}
         {% endif %}
       {% endfor %}
+      <a class="sidebar-nav-item" target="_blank" href="https://www.youtube.com/manorisms">VIDEOS</a>
     </nav>
 
 		<section class="Promoted">
