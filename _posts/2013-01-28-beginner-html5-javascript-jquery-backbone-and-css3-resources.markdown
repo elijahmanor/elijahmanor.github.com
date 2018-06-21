@@ -1,7 +1,8 @@
 ---
 layout: post
-title: Beginner HTML5, JavaScript, jQuery, Backbone, and CSS3 Resources
+title: 'Beginner HTML5, JavaScript, jQuery, Backbone, and CSS3 Resources'
 date: '2013-01-28 14:00:00'
+published: true
 ---
 
 <h2>
@@ -34,7 +35,7 @@ Resources</h3>
 <li><a href="http://movethewebforward.org/">Move the Web Forwards</a> <span class="label label-misc">Misc</span></li>
 <li><a href="http://html5doctor.com/">HTML5 Doctor</a> <span class="label">Blog</span></li>
 <li><a href="http://www.w3.org/TR/html-markup/Overview.html#toc-full">HTML5 Specification</a> <span class="label label-inverse">API</span></li>
-<li><a href="http://diveintohtml5.info/">Dive Into HTML5</a> by Mark Pilgrim <span class="label label-important">Book</span> <span class="label label-free">Free</span></li>
+<li><a href="http://diveinto.html5doctor.com/">Dive Into HTML5</a> by Mark Pilgrim <span class="label label-important">Book</span> <span class="label label-free">Free</span></li>
 </ul>
 
 <div class="separator" style="clear: both; text-align: center;">
