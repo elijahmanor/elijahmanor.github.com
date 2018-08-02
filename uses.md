@@ -36,3 +36,11 @@ Some of the extensions that I regularly use are listed below...
 * [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
 * [Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
 * [Version Lens](https://marketplace.visualstudio.com/items?itemName=pflannery.vscode-versionlens)
+
+## Tools
+
+### Gif
+
+* [LICEcap](https://www.cockos.com/licecap/)
+* [Recordit](http://recordit.co/)
+* [kap](https://getkap.co/)
