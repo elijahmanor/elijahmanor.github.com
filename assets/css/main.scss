@@ -34,8 +34,9 @@
 }
 
 .videoWrapper-hostedBy {
+	display: inline-block;
 	font-size: 0.75rem;
-	float: right;
+	margin-bottom: 1rem;
 	background: rgba(187,239,253,0.3);
 	padding: 5px 10px;
 }

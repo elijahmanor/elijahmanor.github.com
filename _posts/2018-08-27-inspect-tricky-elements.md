@@ -14,15 +14,15 @@ It’s handy to inspect an element in your browser’s DevTools when you need to
 
 ## Problem
 
-<iframe src="https://codesandbox.io/embed/k5mwr4mp4r?autoresize=1&hidenavigation=1" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
-
-In the above [Codesandbox](https://codesandbox.io/s/k5mwr4mp4r?autoresize=1&hidenavigation=1) there are two types of elements that can be difficult to inspect in a browser's DevTools.
+In the following [Codesandbox](https://codesandbox.io/s/k5mwr4mp4r?autoresize=1&hidenavigation=1) there are two types of elements that can be difficult to inspect in a browser's DevTools.
 
 1. Elements that display only when hovered and hide when you leave them
 
 2. Elements that display when clicked (or right-clicked) like a fly-out menu, a context menu, or something like that and will only hide once you click away or tab off (if you are using the keyboard).
 
-These elements are so difficult to inspect because by the time you try to inspect them, they are no longer in the DOM. I've actually adjusted code and/or CSS to keep these types of elements showing so I could inspect them, but there is an easier way with just a small snippet of code.
+<iframe src="https://codesandbox.io/embed/k5mwr4mp4r?autoresize=1&hidenavigation=1" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+These above elements are so difficult to inspect because by the time you try to inspect them, they are no longer in the DOM. I've actually adjusted code and/or CSS to keep these types of elements showing so I could inspect them, but there is an easier way to inspect them with just a small snippet of code.
 
 ## Solution
 
