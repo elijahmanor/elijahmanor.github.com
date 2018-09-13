@@ -14,7 +14,7 @@ A new React [`<CodeSurfer />`](https://github.com/pomber/code-surfer) Component 
 
 ## Free Egghead.io Video
 
-The following 5 minute video is a quick introduction to using the `<CodeSurfer />` React component. The rest of this post unpacks the contents of the video in case you'd rather consume the content via text and images.
+The following 5 minute video is a quick introduction to the `<CodeSurfer />` React component. The rest of this blog post covers the contents of the video via text, code snippets, and images.
 
 {% include eggheadPlayer.html src="https://egghead.io/lessons/react-scroll-zoom-and-highlight-code-in-a-mdx-deck-slide-presentation-with-code-surfer" %}
 
