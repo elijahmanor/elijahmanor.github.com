@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 
 ![](../assets/images/2018/Sep/code-surfer.gif)
 
-A new React [`<CodeSurfer />`](https://github.com/pomber/code-surfer) Component was release by Rodrigo Pombo ([@pomber](https://twitter.com/pomber)) making it easy to hightlight, scroll, and zoom code snippets in a [mdx-deck](https://github.com/jxnblk/mdx-deck) slide presentation. mdx-deck is a great project, written by Brent Jackson ([@jxnblk](https://twitter.com/pomber)), that allows you to create a MDX-based (Markdown and JSX) slide presentation.
+A new React [`<CodeSurfer />`](https://github.com/pomber/code-surfer) Component was release by Rodrigo Pombo ([@pomber](https://twitter.com/pomber)) making it easy to hightlight, scroll, and zoom code snippets in a [mdx-deck](https://github.com/jxnblk/mdx-deck) slide presentation. mdx-deck is a great project, written by Brent Jackson ([@jxnblk](https://twitter.com/pomber)), that allows you to create a MDX-based (Markdown and JSX) slide presentations.
 
 <!--more-->
 
