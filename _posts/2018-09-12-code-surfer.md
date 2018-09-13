@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Highlight, Scroll, and Zoom code in a mdx-deck presentation with Code Surfer <🏄/>
+title: Highlight, Scroll, & Zoom Code Snippets in mdx-deck with Code Surfer <🏄/>
 date: '2018-09-12 22:00:00'
 published: true
 excerpt_separator: <!--more-->
