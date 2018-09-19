@@ -42,6 +42,8 @@ The trick is that if we can pause the JavaScript debugger, then we can inspect w
 
 Once our `debugger` statement is executed, then we can inspect the element in question like we normally would with any other element and proceed to tweak and adjust its styles.
 
+> Note: I was trying to remember where I first saw this trick years ago and it turns out it was an article from CSS Tricks entitled  [Set a Timed Debugger To Web Inspect Hard-To-Grab Elements](https://css-tricks.com/set-timed-debugger-web-inspect-hard-grab-elements/) by Chris Coyier ([@chriscoyier](https://twitter.com/chriscoyier)).
+
 ## Conclusion
 
 You probably won't be using the above snippet of JavaScript very much, but it is so handy to have in your back pocket when you need to inspect those hard to reach elements. And remember, you can always choose whatever timeout works for you. I used 3 seconds because that has seemed to work pretty well for me.
