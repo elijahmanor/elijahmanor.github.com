@@ -6,6 +6,8 @@ published: true
 excerpt_separator: <!--more-->
 ---
 
+[![](../assets/images/2018/Oct/cra2-video-series.png)](https://egghead.io/playlists/create-react-app-2-0-1218245e)
+
 Earlier this month [Create React App 2.0](https://reactjs.org/blog/2018/10/01/create-react-app-v2.html) was released adding a lot of new features. Some of those features include Sass Support, CSS Modules Support, Adding SVGs as React Components, Fragment Short Syntax, and Babel Macros. In this post, I'll be highlighting the above 5 features. For a complete list of all the features of Create React App 2.0 please check out the official post on the [React Blog](https://reactjs.org/blog/2018/10/01/create-react-app-v2.html).
 
 <!--more-->
