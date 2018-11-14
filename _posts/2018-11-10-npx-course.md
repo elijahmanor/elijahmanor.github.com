@@ -20,8 +20,6 @@ I find myself using `npx` all the time. It’s a tool I use most days.
 
 ### Lessons
 
-![](../assets/images/2018/Nov/npx-fun-trim.gif)
-
 The following lessons are included in the `npx`
 [course](https://egghead.io/courses/execute-npm-package-binaries-with-the-npx-package-runner).
 For those that regularly use `npm` and `npm scripts`, lessons 1 and 2 are big
@@ -42,6 +40,15 @@ Variables](https://egghead.io/lessons/npm-execute-npx-commands-with-npm_-environ
 npx](https://egghead.io/lessons/npm-execute-code-from-a-remote-github-branch-with-npx)
 1.  [Use npx to execute code from a GitHub
 gist](https://egghead.io/lessons/npm-use-npx-to-execute-code-from-a-github-gist)
+
+### Having Fun with `npx`
+
+As I teach `npx` I also try to keep things fun and faced paced. The following GIF shows a small clip from the 2nd lesson, [Use npx to Temporarily Install and Invoke a Package from
+npm](https://egghead.io/lessons/npm-use-npx-to-temporarily-install-and-invoke-a-package-from-npm), where I experiment with various packages without installing them globally.
+
+Who knew [`devpun`](https://npm.im/devpun), [`cowsay`](https://npm.im/cowsay), and [`lolcatjs`](https://npm.im/lolcatjs) could be so fun!?!
+
+![](../assets/images/2018/Nov/npx-fun-trim.gif)
 
 ### Course Reviews
 
