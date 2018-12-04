@@ -8,7 +8,7 @@ class HelloWorld extends Component {
   }
   render() {
     return <div>
-      <p>Hello {this.state.count}!</p>
+      <h1>Hello {this.state.count}!</h1>
       <button onClick={this.handleClick.bind(this)}>
         Click Me
       </button>

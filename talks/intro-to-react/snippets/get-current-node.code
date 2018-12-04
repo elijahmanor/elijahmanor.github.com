@@ -15,11 +15,11 @@ class HelloWorld extends Component {
   }
   render() {
     return <div>
-      <p>Hello
+      <h1>Hello
         <span ref={c => this.count =c}>
           {this.state.count}
         </span>!
-      </p>
+      </h1>
       <button
         onClick={
           this.handleClick.bind(this)

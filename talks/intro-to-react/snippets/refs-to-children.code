@@ -3,7 +3,6 @@ import { render } from "react-dom";
 
 class HelloWorld extends Component {
   state = { count: 0 };
-  spanRef = createRef();
   componentDidMount() {
     this.count.textContent = '42';
   }
@@ -14,12 +13,12 @@ class HelloWorld extends Component {
   }
   render() {
     return <div>
-      <p>Hello
+      <h1>Hello
         <span
           ref={el => this.count = el}>
           {this.state.count}
         </span>!
-      </p>
+      </h1>
       <button
         onClick={this.handleClick}>
         Click Me

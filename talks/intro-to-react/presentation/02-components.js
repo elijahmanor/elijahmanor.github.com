@@ -813,12 +813,14 @@ ReactDOM.render(
     maxHeight="100vh"
     maxWidth="90vw"
     bgColor="secondary"
+    id="testing-nine-eight-seven"
   >
     <Heading caps fit>
       Dealing with Lists
     </Heading>
     <ComponentPlayground
       theme="external"
+      className="testing-one-two-three"
       scope={{ PropTypes, Component, ReactDOM }}
       code={snippets.dealingWithLists.play}
     />
