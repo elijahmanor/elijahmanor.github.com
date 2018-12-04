@@ -49,7 +49,7 @@ export default (theme, images) => ([
         <Heading size={5} textColor="primary" margin={10}>
         Bad (Alt React 16+)
         </Heading>
-        <CodePane lang="jsx" theme="light" source={`
+        <CodePane lang="jsx" theme="external" source={`
 return (
   <div>Test 1</div>
   <div>Test 2</div>
@@ -65,7 +65,7 @@ return (
         </Heading>
         <CodePane
           lang="jsx"
-          theme="light"
+          theme="external"
           source={`
 return (
   <div>
@@ -87,7 +87,7 @@ return (
         <Heading size={5} textColor="primary" margin={10}>
           JSX
         </Heading>
-        <CodePane lang="jsx" theme="light" source={`
+        <CodePane lang="jsx" theme="external" source={`
 return (
   <div>
     <div>Test 1</div>
@@ -105,7 +105,7 @@ return (
         </Heading>
         <CodePane
           lang="jsx"
-          theme="light"
+          theme="external"
           source={`
 return (
   React.createElement("div", null,
@@ -127,7 +127,7 @@ return (
         <Heading size={5} textColor="primary" margin={10}>
         HTML
         </Heading>
-        <CodePane lang="jsx" theme="light" source={`
+        <CodePane lang="jsx" theme="external" source={`
 <div class="Media">
   <img class="Media-figure" src="/react.jpg">
   <div class="Media-body">
@@ -146,7 +146,7 @@ return (
         </Heading>
         <CodePane
           lang="jsx"
-          theme="light"
+          theme="external"
           source={`
 return (
   <div className="Media">
@@ -175,7 +175,7 @@ return (
   />,
   <Slide maxHeight="100vh" maxWidth="90vw" bgColor="secondary">
     <Heading caps fit>Passing Arguments to Event Handlers</Heading>
-    <ComponentPlayground theme="light" scope={{ PropTypes, Component }} code={snippets.passingArgs.play} />
+    <ComponentPlayground theme="external" scope={{ PropTypes, Component }} code={snippets.passingArgs.play} />
   </Slide>,
   <CodeSlide
     lang="jsx"

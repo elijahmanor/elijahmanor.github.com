@@ -1,106 +1,116 @@
 .Typist,
 .u-inlineBlock {
-    display: inline-block;
+  display: inline-block;
 }
 
 .u-success {
-    color: #9DCA6A;
+  color: #9dca6a;
 }
 
 .u-ntlSelection {
-    color: #68B1E9;
+  color: #68b1e9;
 }
 
 .u-error {
-    color: #F96361;
+  color: #f96361;
 }
 
 .u-muted,
 .u-should {
-    color: #627D89;
+  color: #627d89;
 }
 
 .u-selected {
-    background-color: #ECEFF1;
-    color: #586267;
+  background-color: #eceff1;
+  color: #586267;
 }
 
 code {
-    background-color: #303539;
-    color: white;
-    padding: .1rem 0.5rem;
-    border-radius: 0.5rem;
+  background-color: #303539;
+  color: white;
+  padding: 0.1rem 0.5rem;
+  border-radius: 0.5rem;
 }
 
 .btn {
-    border-radius: 5px;
-    font-family: Courier New;
-    color: #ffffff;
-    font-size: 20px;
-    background: #1EABF9;
-    padding: 10px 20px 10px 20px;
-    text-decoration: none;
+  border-radius: 5px;
+  font-family: Courier New;
+  color: #ffffff;
+  font-size: 20px;
+  background: #1eabf9;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
 }
 
 .btn:hover {
-    background: rgb(21, 126, 182);
-    text-decoration: none;
+  background: rgb(21, 126, 182);
+  text-decoration: none;
 }
 
 .spectacle-content.spectacle-content--full {
-    max-width: 95vw !important;
-    max-height: 95vh !important;
+  max-width: 95vw !important;
+  max-height: 95vh !important;
 }
 
-code[class*="language-"], pre[class*="language-"] {
-    text-shadow: none !important;
-    border-radius: 0 !important;
+code[class*="language-"],
+pre[class*="language-"] {
+  text-shadow: none !important;
+  border-radius: 0 !important;
 }
 
-code, pre {
-    z-index: -1 !important;
+code,
+pre {
+  z-index: -1 !important;
 }
 
-h1[style*='hotpink'] {
-    background-color: #272823;
+h1[style*="hotpink"] {
+  background-color: #272823;
 }
 
-pre[style*='padding: 40% 0px'] {
-    padding: 30% 0 !important;
-    width: 75%;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+pre[style*="padding: 40% 0px"] {
+  padding: 30% 0 !important;
+  width: 75%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
-pre[style*='padding: 40% 0px'] + div {
-    width: 75% !important;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 12px !important;
+pre[style*="padding: 40% 0px"] + div {
+  width: 75% !important;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 12px !important;
 }
-pre[style*='padding: 40% 0px'] code {
-    width: 100%;
+pre[style*="padding: 40% 0px"] code {
+  width: 100%;
 }
-h1[style*='hotpink'] + pre[style*='padding: 40% 0px'] {
-    padding: 20% 0 !important;
+h1[style*="hotpink"] + pre[style*="padding: 40% 0px"] {
+  padding: 20% 0 !important;
 }
 
 .CodePane--large {
-    font-size: 2rem !important;
+  font-size: 2rem !important;
 }
 .CodePane--scroll {
-    height: 60vh;
+  height: 60vh;
 }
 
 .react-live .prism-code {
-    font-size: 1.4rem !important;
+  font-size: 1.4rem !important;
 }
 
 .react-live > div > div:first-child {
-    flex-grow: 0 !important;
-    flex-basis: 33.3% !important;
+  flex-grow: 0 !important;
+  flex-basis: 33.3% !important;
+}
+
+.react-live > div > div:first-child {
+  order: 2;
+}
+.react-live > div > div:last-child {
+  order: 1;
+  border-bottom: 1px solid white;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }

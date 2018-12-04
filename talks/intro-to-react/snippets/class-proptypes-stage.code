@@ -3,7 +3,7 @@ import {render} from "react-dom";
 import PropTypes from "prop-types";
 
 class HelloWorld extends Component {
-  propTypes = {
+  static propTypes = {
     name: PropTypes.string.isRequired
   };
   render() {

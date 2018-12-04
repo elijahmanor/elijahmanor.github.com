@@ -38,17 +38,32 @@ const snippets = {
   }
 };
 
-export default (theme, images) => ([
+export default (theme, images) => [
   <Slide id="styles" bgColor="secondary">
-    <Heading size={1} fit caps lineHeight={1} textColor="primary">
+    <Heading
+      size={1}
+      fit
+      caps
+      lineHeight={1}
+      textColor="primary"
+    >
       Styles
     </Heading>
   </Slide>,
   <Slide bgColor="secondary">
-    <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
+    <Heading
+      size={1}
+      fit
+      caps
+      lineHeight={1}
+      textColor="tertiary"
+    >
       Huge Controversy
     </Heading>
-    <svg viewBox="-100 0 200 260" style={{ height: "75vh" }}>
+    <svg
+      viewBox="-100 0 200 260"
+      style={{ height: "75vh" }}
+    >
       <title>Pendulum</title>
       <defs>
         <radialGradient id="a" fx="40%" fy="35%" r="65%">
@@ -78,7 +93,7 @@ export default (theme, images) => ([
           fontFamily="Arial"
           fontSize={8}
         >
-        Require Styles
+          Require Styles
         </text>
         <text
           x={-75}
@@ -87,7 +102,7 @@ export default (theme, images) => ([
           fontFamily="Arial"
           fontSize={8}
         >
-        Extract CSS
+          Extract CSS
         </text>
       </g>
       <g transform="rotate(-21 0 10)">
@@ -111,7 +126,7 @@ export default (theme, images) => ([
           fontFamily="Arial"
           fontSize={8}
         >
-        Define in JavaScript
+          Define in JavaScript
         </text>
         <text
           x={22}
@@ -120,7 +135,7 @@ export default (theme, images) => ([
           fontFamily="Arial"
           fontSize={8}
         >
-        Pure Inline Styles
+          Pure Inline Styles
         </text>
       </g>
       <path stroke="#fff" fill="none" d="M0 10v200" />
@@ -136,21 +151,30 @@ export default (theme, images) => ([
         stroke="#ccc"
       />
       <text x={-25} y={160} fontFamily="Arial" fontSize={8}>
-      Require Styles
+        Require Styles
       </text>
       <text x={-41} y={175} fontFamily="Arial" fontSize={8}>
-      Generate Class Names
+        Generate Class Names
       </text>
       <text x={-24} y={190} fontFamily="Arial" fontSize={8}>
-      Extract CSS
+        Extract CSS
       </text>
     </svg>
   </Slide>,
   <Slide bgColor="secondary">
-    <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
-    Require and Extract
+    <Heading
+      size={1}
+      fit
+      caps
+      lineHeight={1}
+      textColor="tertiary"
+    >
+      Require and Extract
     </Heading>
-    <svg viewBox="-100 0 200 260" style={{ height: "75vh" }}>
+    <svg
+      viewBox="-100 0 200 260"
+      style={{ height: "75vh" }}
+    >
       <title>Pendulum</title>
       <defs>
         <radialGradient id="a" fx="40%" fy="35%" r="65%">
@@ -180,7 +204,7 @@ export default (theme, images) => ([
           fontFamily="Arial"
           fontSize={8}
         >
-        Require Styles
+          Require Styles
         </text>
         <text
           x={-75}
@@ -189,7 +213,7 @@ export default (theme, images) => ([
           fontFamily="Arial"
           fontSize={8}
         >
-        Extract CSS
+          Extract CSS
         </text>
       </g>
       <g transform="rotate(-21 0 10)">
@@ -213,7 +237,7 @@ export default (theme, images) => ([
           fontFamily="Arial"
           fontSize={8}
         >
-        Define in JavaScript
+          Define in JavaScript
         </text>
         <text
           x={22}
@@ -222,7 +246,7 @@ export default (theme, images) => ([
           fontFamily="Arial"
           fontSize={8}
         >
-        Pure Inline Styles
+          Pure Inline Styles
         </text>
       </g>
       <path stroke="#fff" fill="none" d="M0 10v200" />
@@ -238,44 +262,73 @@ export default (theme, images) => ([
         stroke="#ccc"
       />
       <text x={-25} y={160} fontFamily="Arial" fontSize={8}>
-      Require Styles
+        Require Styles
       </text>
       <text x={-41} y={175} fontFamily="Arial" fontSize={8}>
-      Generate Class Names
+        Generate Class Names
       </text>
       <text x={-24} y={190} fontFamily="Arial" fontSize={8}>
-      Extract CSS
+        Extract CSS
       </text>
     </svg>
   </Slide>,
   <Slide bgColor="secondary">
-    <Heading size={3} caps lineHeight={1} textColor="primary">
-  Wait... what!?!
+    <Heading
+      size={3}
+      caps
+      lineHeight={1}
+      textColor="primary"
+    >
+      Wait... what!?!
     </Heading>
-    <Image src={images.babyScared.replace("/", "")} style={{ height: "500px" }} />
+    <Image
+      src={images.babyScared.replace("/", "")}
+      style={{ height: "500px" }}
+    />
   </Slide>,
   <Slide bgColor="secondary">
-    <Heading size={1} fit caps lineHeight={1} textColor="primary">
-    Organize Your Files Together
+    <Heading
+      size={1}
+      fit
+      caps
+      lineHeight={1}
+      textColor="primary"
+    >
+      Organize Your Files Together
     </Heading>
-    <Text textColor="primary">(Component, Styles, and Tests)</Text>
-    <CodePane lang="jsx" theme="light" className="CodePane--large" source={`├── media
+    <Text textColor="primary">
+      (Component, Styles, and Tests)
+    </Text>
+    <CodePane
+      lang="jsx"
+      theme="external"
+      className="CodePane--large"
+      source={`├── media
 │   ├── index.jsx
 │   ├── index.spec.js
 │   └── styles.scss
 └── webpack.config.js
 `}
-    margin="20px auto"
-    overflow = "overflow"
+      margin="20px auto"
+      overflow="overflow"
     />
   </Slide>,
   <Slide bgColor="secondary">
-    <Heading size={1} caps lineHeight={1} textColor="tertiary">
-  Your Styles
+    <Heading
+      size={1}
+      caps
+      lineHeight={1}
+      textColor="tertiary"
+    >
+      Your Styles
     </Heading>
     <Layout>
       <Fill style={{ marginRight: "0.5rem" }}>
-        <CodePane lang="css" theme="light" className="CodePane" source={`.Media {
+        <CodePane
+          lang="css"
+          theme="external"
+          className="CodePane"
+          source={`.Media {
   display: flex;
   align-items: flex-start;
   margin-bottom: 1em;
@@ -287,15 +340,27 @@ export default (theme, images) => ([
 
 / ... more ... /`}
           margin="20px auto"
-          overflow = "overflow"
+          overflow="overflow"
         />
         <Heading size={5} textColor="primary" margin={10}>
-          <Code bgColor="#ccc" textSize={30}>styles.scss</Code>
+          <Code bgColor="#ccc" textSize={30}>
+            styles.scss
+          </Code>
         </Heading>
       </Fill>
       <Fill style={{ leftRight: "0.5rem" }}>
-        <Text textSize={42} textColor="primary" margin={10} style={{ marginBottom: "2rem" }}>Define the classes you need only for this component</Text>
-        <Text textSize={42} textColor="primary" margin={10}>Helps you keep your styles focused and isolated</Text>
+        <Text
+          textSize={42}
+          textColor="primary"
+          margin={10}
+          style={{ marginBottom: "2rem" }}
+        >
+          Define the classes you need only for this
+          component
+        </Text>
+        <Text textSize={42} textColor="primary" margin={10}>
+          Helps you keep your styles focused and isolated
+        </Text>
       </Fill>
     </Layout>
   </Slide>,
@@ -304,23 +369,55 @@ export default (theme, images) => ([
     code={snippets.requireAndExtract.code}
     ranges={[
       { loc: [0, 25], title: "Your Component" },
-      { loc: [3, 4], note: "Require the Sass file that is needed for this component" }
+      {
+        loc: [3, 4],
+        note:
+          "Require the Sass file that is needed for this component"
+      }
     ]}
   />,
   <Slide bgColor="secondary">
-    <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
+    <Heading
+      size={1}
+      fit
+      caps
+      lineHeight={1}
+      textColor="tertiary"
+    >
       Why Do This!?!
     </Heading>
     <List>
-      <Appear><ListItem textColor="primary">Component declares what styles it needs</ListItem></Appear>
-      <Appear><ListItem textColor="primary">Styles are removed if Component isn't needed</ListItem></Appear>
+      <Appear>
+        <ListItem textColor="primary">
+          Component declares what styles it needs
+        </ListItem>
+      </Appear>
+      <Appear>
+        <ListItem textColor="primary">
+          Styles are removed if Component isn't needed
+        </ListItem>
+      </Appear>
     </List>
   </Slide>,
   <Slide bgColor="secondary">
-    <Heading size={2} caps lineHeight={1} textColor="tertiary">
-      <Link textColor="tertiary" href="http://glenmaddern.com/articles/css-modules" style={{ display: "inline-block" }}>CSS Modules</Link>
+    <Heading
+      size={2}
+      caps
+      lineHeight={1}
+      textColor="tertiary"
+    >
+      <Link
+        textColor="tertiary"
+        href="http://glenmaddern.com/articles/css-modules"
+        style={{ display: "inline-block" }}
+      >
+        CSS Modules
+      </Link>
     </Heading>
-    <svg viewBox="-100 0 200 260" style={{ height: "75vh" }}>
+    <svg
+      viewBox="-100 0 200 260"
+      style={{ height: "75vh" }}
+    >
       <title>Pendulum</title>
       <defs>
         <radialGradient id="a" fx="40%" fy="35%" r="65%">
@@ -350,7 +447,7 @@ export default (theme, images) => ([
           fontFamily="Arial"
           fontSize={8}
         >
-      Require Styles
+          Require Styles
         </text>
         <text
           x={-75}
@@ -359,7 +456,7 @@ export default (theme, images) => ([
           fontFamily="Arial"
           fontSize={8}
         >
-      Extract CSS
+          Extract CSS
         </text>
       </g>
       <g transform="rotate(-21 0 10)">
@@ -383,7 +480,7 @@ export default (theme, images) => ([
           fontFamily="Arial"
           fontSize={8}
         >
-      Define in JavaScript
+          Define in JavaScript
         </text>
         <text
           x={22}
@@ -392,7 +489,7 @@ export default (theme, images) => ([
           fontFamily="Arial"
           fontSize={8}
         >
-      Pure Inline Styles
+          Pure Inline Styles
         </text>
       </g>
       <path stroke="#fff" fill="none" d="M0 10v200" />
@@ -408,31 +505,47 @@ export default (theme, images) => ([
         stroke="#ccc"
       />
       <text x={-25} y={160} fontFamily="Arial" fontSize={8}>
-    Require Styles
+        Require Styles
       </text>
       <text x={-41} y={175} fontFamily="Arial" fontSize={8}>
-    Generate Class Names
+        Generate Class Names
       </text>
       <text x={-24} y={190} fontFamily="Arial" fontSize={8}>
-    Extract CSS
+        Extract CSS
       </text>
     </svg>
   </Slide>,
   <Slide bgColor="secondary">
-    <Heading size={3} caps lineHeight={1} textColor="tertiary">Sass vs. CSS Modules</Heading>
+    <Heading
+      size={3}
+      caps
+      lineHeight={1}
+      textColor="tertiary"
+    >
+      Sass vs. CSS Modules
+    </Heading>
     <Layout>
       <Fill style={{ marginRight: "0.5rem" }}>
         <Heading size={6} textColor="primary">
-          BEM <br/>(media.scss)
+          BEM <br />
+          (media.scss)
         </Heading>
-        <CodePane lang="css" theme="light" className="CodePane" source={`.Media           { /*all styles*/ }
+        <CodePane
+          lang="css"
+          theme="external"
+          className="CodePane"
+          source={`.Media           { /*all styles*/ }
 .Media--centered { /*some*/ }
 .Media--reversed { /*some*/ }
 `}
           margin="20px auto"
-          overflow = "overflow"
+          overflow="overflow"
         />
-        <CodePane lang="jsx" theme="light" className="CodePane" source={`require('media.scss');
+        <CodePane
+          lang="jsx"
+          theme="external"
+          className="CodePane"
+          source={`require('media.scss');
 
 <div class="Media Media--reversed">
   ...more...
@@ -440,21 +553,29 @@ export default (theme, images) => ([
 
 `}
           margin="20px auto"
-          overflow = "overflow"
+          overflow="overflow"
         />
       </Fill>
       <Fill style={{ leftRight: "0.5rem" }}>
         <Heading size={6} textColor="primary">
           CSS Modules (media.css)
         </Heading>
-        <CodePane lang="css" theme="light" className="CodePane" source={`.normal   { /*all styles*/ }
+        <CodePane
+          lang="css"
+          theme="external"
+          className="CodePane"
+          source={`.normal   { /*all styles*/ }
 .centered { /*all styles*/ }
 .reversed { /*all styles*/ }
 `}
           margin="20px auto"
-          overflow = "overflow"
+          overflow="overflow"
         />
-        <CodePane lang="jsx" theme="light" className="CodePane" source={`/* media.js */
+        <CodePane
+          lang="jsx"
+          theme="external"
+          className="CodePane"
+          source={`/* media.js */
 import styles from 'media.css';
 
 <div class={styles.reversed}>
@@ -462,19 +583,36 @@ import styles from 'media.css';
 </div>
 `}
           margin="20px auto"
-          overflow = "overflow"
+          overflow="overflow"
         />
       </Fill>
     </Layout>
   </Slide>,
   <Slide bgColor="secondary">
-    <Heading size={3} caps lineHeight={1} textColor="tertiary">Composing and Sharing Across Files</Heading>
+    <Heading
+      size={3}
+      caps
+      lineHeight={1}
+      textColor="tertiary"
+    >
+      Composing and Sharing Across Files
+    </Heading>
     <Layout>
-      <Fill style={{ marginRight: "0.5rem", flexGrow: "0", flexBasis: "40%" }}>
+      <Fill
+        style={{
+          marginRight: "0.5rem",
+          flexGrow: "0",
+          flexBasis: "40%"
+        }}
+      >
         <Heading size={6} textColor="primary">
-        colors.css
+          colors.css
         </Heading>
-        <CodePane lang="css" theme="light" className="CodePane" source={`.primary {
+        <CodePane
+          lang="css"
+          theme="external"
+          className="CodePane"
+          source={`.primary {
   color: #720;
 }
 
@@ -482,15 +620,19 @@ import styles from 'media.css';
   color: #777;
 }
 `}
-        margin="20px auto"
-        overflow = "overflow"
+          margin="20px auto"
+          overflow="overflow"
         />
       </Fill>
       <Fill style={{ leftRight: "0.5rem" }}>
         <Heading size={6} textColor="primary">
-        main.css
+          main.css
         </Heading>
-        <CodePane lang="css" theme="light" className="CodePane" source={`.common { /* font-sizes, border-radius */ }
+        <CodePane
+          lang="css"
+          theme="external"
+          className="CodePane"
+          source={`.common { /* font-sizes, border-radius */ }
 
 .normal {
   composes: common;
@@ -498,30 +640,55 @@ import styles from 'media.css';
 }
 
 `}
-        margin="20px auto"
-        overflow = "overflow"
+          margin="20px auto"
+          overflow="overflow"
         />
       </Fill>
     </Layout>
   </Slide>,
   <Slide bgColor="secondary">
-    <Heading size={3} caps lineHeight={1} textColor="tertiary">Self Describing</Heading>
-    <CodePane lang="css" theme="light" className="CodePane--large" source={`.element {
+    <Heading
+      size={3}
+      caps
+      lineHeight={1}
+      textColor="tertiary"
+    >
+      Self Describing
+    </Heading>
+    <CodePane
+      lang="css"
+      theme="external"
+      className="CodePane--large"
+      source={`.element {
   composes: large from "./typography.css";
   composes: dark-text from "./colors.css";
   composes: padding-all-medium from "./layout.css";
   composes: subtle-shadow from "./effect.css";
 }
 `}
-    margin="20px auto"
-    overflow = "overflow"
+      margin="20px auto"
+      overflow="overflow"
     />
   </Slide>,
   <Slide bgColor="secondary">
-    <Heading size={3} caps lineHeight={1} textColor="tertiary">
-      <Link textColor="tertiary" href="https://styled-components.com/" style={{ display: "inline-block" }}>Styled Components</Link>
+    <Heading
+      size={3}
+      caps
+      lineHeight={1}
+      textColor="tertiary"
+    >
+      <Link
+        textColor="tertiary"
+        href="https://styled-components.com/"
+        style={{ display: "inline-block" }}
+      >
+        Styled Components
+      </Link>
     </Heading>
-    <svg viewBox="-100 0 200 260" style={{ height: "75vh" }}>
+    <svg
+      viewBox="-100 0 200 260"
+      style={{ height: "75vh" }}
+    >
       <title>Pendulum</title>
       <defs>
         <radialGradient id="a" fx="40%" fy="35%" r="65%">
@@ -551,7 +718,7 @@ import styles from 'media.css';
           fontFamily="Arial"
           fontSize={8}
         >
-    Require Styles
+          Require Styles
         </text>
         <text
           x={-75}
@@ -560,7 +727,7 @@ import styles from 'media.css';
           fontFamily="Arial"
           fontSize={8}
         >
-    Extract CSS
+          Extract CSS
         </text>
       </g>
       <g transform="rotate(-21 0 10)">
@@ -584,7 +751,7 @@ import styles from 'media.css';
           fontFamily="Arial"
           fontSize={8}
         >
-    Define in JavaScript
+          Define in JavaScript
         </text>
         <text
           x={22}
@@ -593,7 +760,7 @@ import styles from 'media.css';
           fontFamily="Arial"
           fontSize={8}
         >
-    Pure Inline Styles
+          Pure Inline Styles
         </text>
       </g>
       <path stroke="#fff" fill="none" d="M0 10v200" />
@@ -609,13 +776,13 @@ import styles from 'media.css';
         stroke="#ccc"
       />
       <text x={-25} y={160} fontFamily="Arial" fontSize={8}>
-  Require Styles
+        Require Styles
       </text>
       <text x={-41} y={175} fontFamily="Arial" fontSize={8}>
-  Generate Class Names
+        Generate Class Names
       </text>
       <text x={-24} y={190} fontFamily="Arial" fontSize={8}>
-  Extract CSS
+        Extract CSS
       </text>
     </svg>
   </Slide>,
@@ -624,23 +791,64 @@ import styles from 'media.css';
     code={snippets.styledComponents.code}
     ranges={[
       { loc: [0, 43], title: "Styled Components" },
-      { loc: [4, 16], note: "Uses ES6 tagged templates (back-tick) to return a react component" },
-      { loc: [5, 15], note: "Provide real CSS as argument..." },
-      { loc: [6, 9], note: "It also supports interpolated functions for dynamic content" },
-      { loc: [20, 21], note: "You can base a new component based on another one and override CSS declarations" },
-      { loc: [27, 39], note: "Leverage new Components as you would normally" },
-      { loc: [31, 34], note: "The props determine styles based on our interpolated functions " }
+      {
+        loc: [4, 16],
+        note:
+          "Uses ES6 tagged templates (back-tick) to return a react component"
+      },
+      {
+        loc: [5, 15],
+        note: "Provide real CSS as argument..."
+      },
+      {
+        loc: [6, 9],
+        note:
+          "It also supports interpolated functions for dynamic content"
+      },
+      {
+        loc: [20, 21],
+        note:
+          "You can base a new component based on another one and override CSS declarations"
+      },
+      {
+        loc: [27, 39],
+        note:
+          "Leverage new Components as you would normally"
+      },
+      {
+        loc: [31, 34],
+        note:
+          "The props determine styles based on our interpolated functions "
+      }
     ]}
   />,
-  <Slide maxHeight="100vh" maxWidth="90vw" bgColor="secondary">
-    <Heading caps fit>Styled Components</Heading>
-    <ComponentPlayground theme="light" scope={{ PropTypes, styled, Component, darken }} code={snippets.styledComponents.play} />
+  <Slide
+    maxHeight="100vh"
+    maxWidth="90vw"
+    bgColor="secondary"
+  >
+    <Heading caps fit>
+      Styled Components
+    </Heading>
+    <ComponentPlayground
+      theme="external"
+      scope={{ PropTypes, styled, Component, darken }}
+      code={snippets.styledComponents.play}
+    />
   </Slide>,
   <Slide bgColor="secondary">
-    <Heading size={2} caps lineHeight={1} textColor="tertiary">
+    <Heading
+      size={2}
+      caps
+      lineHeight={1}
+      textColor="tertiary"
+    >
       Pure Inline Styles
     </Heading>
-    <svg viewBox="-100 0 200 260" style={{ height: "75vh" }}>
+    <svg
+      viewBox="-100 0 200 260"
+      style={{ height: "75vh" }}
+    >
       <title>Pendulum</title>
       <defs>
         <radialGradient id="a" fx="40%" fy="35%" r="65%">
@@ -670,7 +878,7 @@ import styles from 'media.css';
           fontFamily="Arial"
           fontSize={8}
         >
-  Require Styles
+          Require Styles
         </text>
         <text
           x={-75}
@@ -679,7 +887,7 @@ import styles from 'media.css';
           fontFamily="Arial"
           fontSize={8}
         >
-  Extract CSS
+          Extract CSS
         </text>
       </g>
       <g transform="rotate(-21 0 10)">
@@ -703,7 +911,7 @@ import styles from 'media.css';
           fontFamily="Arial"
           fontSize={8}
         >
-  Define in JavaScript
+          Define in JavaScript
         </text>
         <text
           x={22}
@@ -712,7 +920,7 @@ import styles from 'media.css';
           fontFamily="Arial"
           fontSize={8}
         >
-  Pure Inline Styles
+          Pure Inline Styles
         </text>
       </g>
       <path stroke="#fff" fill="none" d="M0 10v200" />
@@ -728,23 +936,44 @@ import styles from 'media.css';
         stroke="#ccc"
       />
       <text x={-25} y={160} fontFamily="Arial" fontSize={8}>
-Require Styles
+        Require Styles
       </text>
       <text x={-41} y={175} fontFamily="Arial" fontSize={8}>
-Generate Class Names
+        Generate Class Names
       </text>
       <text x={-24} y={190} fontFamily="Arial" fontSize={8}>
-Extract CSS
+        Extract CSS
       </text>
     </svg>
   </Slide>,
   <Slide bgColor="secondary">
-    <Heading size={3} caps lineHeight={1} textColor="tertiary">
-      <Link textColor="tertiary" href="http://projects.formidablelabs.com/radium/" style={{ display: "inline-block" }}>Radium</Link>
+    <Heading
+      size={3}
+      caps
+      lineHeight={1}
+      textColor="tertiary"
+    >
+      <Link
+        textColor="tertiary"
+        href="http://projects.formidablelabs.com/radium/"
+        style={{ display: "inline-block" }}
+      >
+        Radium
+      </Link>
     </Heading>
     <Layout>
-      <Fill style={{ marginRight: "0.5rem", flexGrow: "0", flexBasis: "40%" }}>
-        <CodePane lang="js" theme="light" className="CodePane--scroll" source={`const styles = {
+      <Fill
+        style={{
+          marginRight: "0.5rem",
+          flexGrow: "0",
+          flexBasis: "40%"
+        }}
+      >
+        <CodePane
+          lang="js"
+          theme="external"
+          className="CodePane--scroll"
+          source={`const styles = {
   base: {
     color: '#fff',
     ':hover': {
@@ -763,11 +992,15 @@ Extract CSS
 };
 `}
           margin="20px auto"
-          overflow = "overflow"
+          overflow="overflow"
         />
       </Fill>
       <Fill style={{ leftRight: "0.5rem" }}>
-        <CodePane lang="jsx" theme="light" className="CodePane--scroll" source={`import Radium from 'radium';
+        <CodePane
+          lang="jsx"
+          theme="external"
+          className="CodePane--scroll"
+          source={`import Radium from 'radium';
 import React, {Component} from 'react';
 import color from 'color';
 
@@ -792,22 +1025,70 @@ class Button extends Component {
 }
 `}
           margin="20px auto"
-          overflow = "overflow"
+          overflow="overflow"
         />
       </Fill>
     </Layout>
   </Slide>,
   <Slide bgColor="secondary">
-    <Heading size={1} fit caps lineHeight={1} textColor="primary">
-    Resources
+    <Heading
+      size={1}
+      fit
+      caps
+      lineHeight={1}
+      textColor="primary"
+    >
+      Resources
     </Heading>
     <List>
-      <ListItem textColor="tertiary"><Link textColor="tertiary" href="https://webpack.github.io/">Webpack</Link></ListItem>
-      <ListItem textColor="tertiary"><Link textColor="tertiary" href="https://github.com/FormidableLabs/radium/blob/master/docs/comparison/README.md">Comparison of CSS in JS Libraries for React</Link></ListItem>
-      <ListItem textColor="tertiary"><Link textColor="tertiary" href="https://github.com/MicheleBertoli/css-in-js">React: CSS in JS techniques comparison</Link></ListItem>
-      <ListItem textColor="tertiary"><Link textColor="tertiary" href="http://glenmaddern.com/articles/css-modules">CSS Modules</Link></ListItem>
-      <ListItem textColor="tertiary"><Link textColor="tertiary" href="http://projects.formidablelabs.com/radium/">Radium</Link></ListItem>
-      <ListItem textColor="tertiary"><Link textColor="tertiary" href="https://www.youtube.com/watch?v=ERB1TJBn32c">Inline Styles Video</Link></ListItem>
+      <ListItem textColor="tertiary">
+        <Link
+          textColor="tertiary"
+          href="https://webpack.github.io/"
+        >
+          Webpack
+        </Link>
+      </ListItem>
+      <ListItem textColor="tertiary">
+        <Link
+          textColor="tertiary"
+          href="https://github.com/FormidableLabs/radium/blob/master/docs/comparison/README.md"
+        >
+          Comparison of CSS in JS Libraries for React
+        </Link>
+      </ListItem>
+      <ListItem textColor="tertiary">
+        <Link
+          textColor="tertiary"
+          href="https://github.com/MicheleBertoli/css-in-js"
+        >
+          React: CSS in JS techniques comparison
+        </Link>
+      </ListItem>
+      <ListItem textColor="tertiary">
+        <Link
+          textColor="tertiary"
+          href="http://glenmaddern.com/articles/css-modules"
+        >
+          CSS Modules
+        </Link>
+      </ListItem>
+      <ListItem textColor="tertiary">
+        <Link
+          textColor="tertiary"
+          href="http://projects.formidablelabs.com/radium/"
+        >
+          Radium
+        </Link>
+      </ListItem>
+      <ListItem textColor="tertiary">
+        <Link
+          textColor="tertiary"
+          href="https://www.youtube.com/watch?v=ERB1TJBn32c"
+        >
+          Inline Styles Video
+        </Link>
+      </ListItem>
     </List>
   </Slide>
-]);
+];

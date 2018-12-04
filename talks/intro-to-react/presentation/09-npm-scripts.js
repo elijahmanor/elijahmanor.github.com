@@ -21,19 +21,40 @@ import {
   S
 } from "spectacle";
 
-export default (theme, images) => ([
+export default (theme, images) => [
   <Slide id="npm-scripts" bgColor="secondary">
-    <Heading size={1} fit caps lineHeight={1} textColor="primary">
+    <Heading
+      size={1}
+      fit
+      caps
+      lineHeight={1}
+      textColor="primary"
+    >
       npm scripts
     </Heading>
   </Slide>,
   <Slide bgColor="secondary">
-    <Heading size={4} caps lineHeight={1} textColor="tertiary">
-  Running Scripts
+    <Heading
+      size={4}
+      caps
+      lineHeight={1}
+      textColor="tertiary"
+    >
+      Running Scripts
     </Heading>
     <Layout>
-      <Fill style={{ marginRight: "0.5rem", flexGrow: "0", flexBasis: "50%" }}>
-        <CodePane lang="json" theme="light" className="CodePane" source={`{
+      <Fill
+        style={{
+          marginRight: "0.5rem",
+          flexGrow: "0",
+          flexBasis: "50%"
+        }}
+      >
+        <CodePane
+          lang="json"
+          theme="external"
+          className="CodePane"
+          source={`{
   "name": "myproject",
   "description": "package.json file for myproject",
   "devDependencies": {
@@ -45,23 +66,51 @@ export default (theme, images) => ([
 }
 `}
           margin="20px auto"
-          overflow = "overflow"
+          overflow="overflow"
         />
       </Fill>
       <Fill style={{ leftRight: "0.5rem" }}>
-        <div style={{ margin: "1rem" }}><Code bgColor="#ccc" textSize={40}>npm run-script lint</Code></div>
-        <div><Code bgColor="#ccc" textSize={40}>npm run lint</Code></div>
+        <div style={{ margin: "1rem" }}>
+          <Code bgColor="#ccc" textSize={40}>
+            npm run-script lint
+          </Code>
+        </div>
+        <div>
+          <Code bgColor="#ccc" textSize={40}>
+            npm run lint
+          </Code>
+        </div>
       </Fill>
     </Layout>
-    <Link textColor="tertiary" href="https://egghead.io/courses/how-to-use-npm-scripts-as-your-build-tool">How to Use npm scripts As Your Build Tool</Link>
+    <Link
+      textColor="tertiary"
+      href="https://egghead.io/courses/how-to-use-npm-scripts-as-your-build-tool"
+    >
+      How to Use npm scripts As Your Build Tool
+    </Link>
   </Slide>,
   <Slide bgColor="secondary">
-    <Heading size={4} caps lineHeight={1} textColor="tertiary">
-Shortcut Scripts
+    <Heading
+      size={4}
+      caps
+      lineHeight={1}
+      textColor="tertiary"
+    >
+      Shortcut Scripts
     </Heading>
     <Layout>
-      <Fill style={{ marginRight: "0.5rem", flexGrow: "0", flexBasis: "70%" }}>
-        <CodePane lang="json" theme="light" className="CodePane" source={`{
+      <Fill
+        style={{
+          marginRight: "0.5rem",
+          flexGrow: "0",
+          flexBasis: "70%"
+        }}
+      >
+        <CodePane
+          lang="json"
+          theme="external"
+          className="CodePane"
+          source={`{
   "name": "myproject",
   "devDependencies": {
     "karma": "latest",
@@ -73,24 +122,51 @@ Shortcut Scripts
   }
 }
 `}
-        margin="20px auto"
-        overflow = "overflow"
+          margin="20px auto"
+          overflow="overflow"
         />
       </Fill>
       <Fill style={{ leftRight: "0.5rem" }}>
-        <div style={{ margin: "1rem" }}><Code bgColor="#ccc" textSize={42}>npm test</Code></div>
-        <div style={{ marginBottom: "1rem" }}><Code bgColor="#ccc" textSize={42}>npm start</Code></div>
-        <div><Code bgColor="#ccc" textSize={42}>npm stop</Code></div>
+        <div style={{ margin: "1rem" }}>
+          <Code bgColor="#ccc" textSize={42}>
+            npm test
+          </Code>
+        </div>
+        <div style={{ marginBottom: "1rem" }}>
+          <Code bgColor="#ccc" textSize={42}>
+            npm start
+          </Code>
+        </div>
+        <div>
+          <Code bgColor="#ccc" textSize={42}>
+            npm stop
+          </Code>
+        </div>
       </Fill>
     </Layout>
   </Slide>,
   <Slide bgColor="secondary">
-    <Heading size={4} caps lineHeight={1} textColor="tertiary">
-Pre and Post Hooks
+    <Heading
+      size={4}
+      caps
+      lineHeight={1}
+      textColor="tertiary"
+    >
+      Pre and Post Hooks
     </Heading>
     <Layout>
-      <Fill style={{ marginRight: "0.5rem", flexGrow: "0", flexBasis: "60%" }}>
-        <CodePane lang="json" theme="light" className="CodePane" source={`{
+      <Fill
+        style={{
+          marginRight: "0.5rem",
+          flexGrow: "0",
+          flexBasis: "60%"
+        }}
+      >
+        <CodePane
+          lang="json"
+          theme="external"
+          className="CodePane"
+          source={`{
   "name": "myproject",
   "devDependencies": {
     "eslint": "latest"
@@ -105,26 +181,58 @@ Pre and Post Hooks
 }
 `}
           margin="20px auto"
-          overflow = "overflow"
+          overflow="overflow"
         />
       </Fill>
       <Fill style={{ leftRight: "0.5rem" }}>
-        <div style={{ margin: "1rem", color: "white" }}><Code bgColor="#ccc" textSize={42}>npm test</Code> will run...</div>
+        <div style={{ margin: "1rem", color: "white" }}>
+          <Code bgColor="#ccc" textSize={42}>
+            npm test
+          </Code>{" "}
+          will run...
+        </div>
         <List>
-          <ListItem><Code bgColor="#ccc" textSize={42}>pretest</Code></ListItem>
-          <ListItem><Code bgColor="#ccc" textSize={42}>test</Code></ListItem>
-          <ListItem><Code bgColor="#ccc" textSize={42}>posttest</Code></ListItem>
+          <ListItem>
+            <Code bgColor="#ccc" textSize={42}>
+              pretest
+            </Code>
+          </ListItem>
+          <ListItem>
+            <Code bgColor="#ccc" textSize={42}>
+              test
+            </Code>
+          </ListItem>
+          <ListItem>
+            <Code bgColor="#ccc" textSize={42}>
+              posttest
+            </Code>
+          </ListItem>
         </List>
       </Fill>
     </Layout>
   </Slide>,
   <Slide bgColor="secondary">
-    <Heading size={4} caps lineHeight={1} textColor="tertiary">
-Passing Arguments
+    <Heading
+      size={4}
+      caps
+      lineHeight={1}
+      textColor="tertiary"
+    >
+      Passing Arguments
     </Heading>
     <Layout>
-      <Fill style={{ marginRight: "0.5rem", flexGrow: "0", flexBasis: "60%" }}>
-        <CodePane lang="json" theme="light" className="CodePane" source={`{
+      <Fill
+        style={{
+          marginRight: "0.5rem",
+          flexGrow: "0",
+          flexBasis: "60%"
+        }}
+      >
+        <CodePane
+          lang="json"
+          theme="external"
+          className="CodePane"
+          source={`{
   "name": "myproject",
   "devDependencies": {
     "karma": "latest"
@@ -135,23 +243,54 @@ Passing Arguments
   }
 }
 `}
-        margin="20px auto"
-        overflow = "overflow"
+          margin="20px auto"
+          overflow="overflow"
         />
       </Fill>
       <Fill style={{ leftRight: "0.5rem" }}>
-        <Code bgColor="#ccc" style={{ marginTop: "1rem", display: "inline-block" }} textSize={40}>npm run test-nyan</Code><Text textColor="primary" textSize={36}> will run... </Text>
-        <Code bgColor="#ccc" textSize={40}>karma start --log-leve=error karma.config.js --single-run=true --reporters nyan</Code>
+        <Code
+          bgColor="#ccc"
+          style={{
+            marginTop: "1rem",
+            display: "inline-block"
+          }}
+          textSize={40}
+        >
+          npm run test-nyan
+        </Code>
+        <Text textColor="primary" textSize={36}>
+          {" "}
+          will run...{" "}
+        </Text>
+        <Code bgColor="#ccc" textSize={40}>
+          karma start --log-leve=error karma.config.js
+          --single-run=true --reporters nyan
+        </Code>
       </Fill>
     </Layout>
   </Slide>,
   <Slide bgColor="secondary">
-    <Heading size={4} caps lineHeight={1} textColor="tertiary">
-Chaining
+    <Heading
+      size={4}
+      caps
+      lineHeight={1}
+      textColor="tertiary"
+    >
+      Chaining
     </Heading>
     <Layout>
-      <Fill style={{ marginRight: "0.5rem", flexGrow: "0", flexBasis: "60%" }}>
-        <CodePane lang="json" theme="light" className="CodePane" source={`{
+      <Fill
+        style={{
+          marginRight: "0.5rem",
+          flexGrow: "0",
+          flexBasis: "60%"
+        }}
+      >
+        <CodePane
+          lang="json"
+          theme="external"
+          className="CodePane"
+          source={`{
   "name": "myproject",
   "devDependencies": {
     "eslint": "latest",
@@ -164,26 +303,54 @@ Chaining
   }
 }
 `}
-        margin="20px auto"
-        overflow = "overflow"
+          margin="20px auto"
+          overflow="overflow"
         />
       </Fill>
       <Fill style={{ leftRight: "0.5rem" }}>
-        <div style={{ margin: "1rem", color: "white" }}><Code bgColor="#ccc" textSize={40}>npm run lint</Code> will run...</div>
+        <div style={{ margin: "1rem", color: "white" }}>
+          <Code bgColor="#ccc" textSize={40}>
+            npm run lint
+          </Code>{" "}
+          will run...
+        </div>
         <List>
-          <ListItem><Code bgColor="#ccc" textSize={40}>eslint</Code></ListItem>
-          <ListItem><Code bgColor="#ccc" textSize={40}>sass-lint</Code></ListItem>
+          <ListItem>
+            <Code bgColor="#ccc" textSize={40}>
+              eslint
+            </Code>
+          </ListItem>
+          <ListItem>
+            <Code bgColor="#ccc" textSize={40}>
+              sass-lint
+            </Code>
+          </ListItem>
         </List>
       </Fill>
     </Layout>
   </Slide>,
   <Slide bgColor="secondary">
-    <Heading size={4} caps lineHeight={1} textColor="tertiary">
-Pre-Commit Hooks
+    <Heading
+      size={4}
+      caps
+      lineHeight={1}
+      textColor="tertiary"
+    >
+      Pre-Commit Hooks
     </Heading>
     <Layout>
-      <Fill style={{ marginRight: "0.5rem", flexGrow: "0", flexBasis: "60%" }}>
-        <CodePane lang="json" theme="light" className="CodePane" source={`{
+      <Fill
+        style={{
+          marginRight: "0.5rem",
+          flexGrow: "0",
+          flexBasis: "60%"
+        }}
+      >
+        <CodePane
+          lang="json"
+          theme="external"
+          className="CodePane"
+          source={`{
   "name": "myproject",
   "devDependencies": {
     "eslint": "latest",
@@ -199,23 +366,45 @@ Pre-Commit Hooks
 }
 `}
           margin="20px auto"
-          overflow = "overflow"
+          overflow="overflow"
         />
       </Fill>
       <Fill style={{ leftRight: "0.5rem" }}>
-        <div style={{ margin: "1rem", color: "white" }}><Code bgColor="#ccc" textSize={40}>git commit -am "WIP"</Code> will run...</div>
+        <div style={{ margin: "1rem", color: "white" }}>
+          <Code bgColor="#ccc" textSize={40}>
+            git commit -am "WIP"
+          </Code>{" "}
+          will run...
+        </div>
         <List>
-          <ListItem><Code bgColor="#ccc" textSize={40}>precommit</Code></ListItem>
-          <ListItem><Code bgColor="#ccc" textSize={40}>lint</Code></ListItem>
+          <ListItem>
+            <Code bgColor="#ccc" textSize={40}>
+              precommit
+            </Code>
+          </ListItem>
+          <ListItem>
+            <Code bgColor="#ccc" textSize={40}>
+              lint
+            </Code>
+          </ListItem>
         </List>
       </Fill>
     </Layout>
   </Slide>,
   <Slide bgColor="secondary">
-    <Heading size={4} caps lineHeight={1} textColor="tertiary">
-npm scripts
+    <Heading
+      size={4}
+      caps
+      lineHeight={1}
+      textColor="tertiary"
+    >
+      npm scripts
     </Heading>
-    <CodePane lang="json" theme="light" className="CodePane" source={`{
+    <CodePane
+      lang="json"
+      theme="external"
+      className="CodePane"
+      source={`{
   "scripts": {
     "lint": "npm run eslint && npm run sass-lint",
     "eslint": "eslint --cache --ext .js --ext .jsx src spec",
@@ -230,7 +419,7 @@ npm scripts
 }
 `}
       margin="20px auto"
-      overflow = "overflow"
+      overflow="overflow"
     />
   </Slide>
-]);
+];

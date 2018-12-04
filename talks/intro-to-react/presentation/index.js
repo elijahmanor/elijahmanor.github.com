@@ -31,13 +31,12 @@ import _ from "lodash";
 import Menu from "./Menu";
 import Help from "./Help";
 
-const requestFullscreen = (element) => {
-  const request = (
+const requestFullscreen = element => {
+  const request =
     element.requestFullscreen ||
     element.webkitRequestFullscreen ||
     element.mozRequestFullScreen ||
-    element.mozRequestFullScreen
-  );
+    element.mozRequestFullScreen;
 
   if (typeof request === "function") {
     request.call(element);
@@ -141,11 +140,11 @@ const groups = [
     name: "node modules",
     slides: require("./08-node-modules").default
   },
-  {
-    id: "npm-scripts",
-    name: "npm scripts",
-    slides: require("./09-npm-scripts").default
-  },
+  // {
+  //   id: "npm-scripts",
+  //   name: "npm scripts",
+  //   slides: require("./09-npm-scripts").default
+  // },
   {
     id: "resources",
     name: "Resources",
@@ -158,11 +157,13 @@ const groups = [
   }
 ];
 
-let selectedGroups = window.localStorage.getItem("selectedGroups");
+let selectedGroups = window.localStorage.getItem(
+  "selectedGroups"
+);
 if (selectedGroups) {
   selectedGroups = JSON.parse(selectedGroups);
 } else {
-  selectedGroups = groups.map((group) => group.name);
+  selectedGroups = groups.map(group => group.name);
 }
 
 export default class Presentation extends React.Component {
@@ -176,14 +177,25 @@ export default class Presentation extends React.Component {
     localStorage.clear();
   }
   componentWillMount() {
-    const { context: { goToSlide } } = this;
+    const {
+      context: { goToSlide }
+    } = this;
     mousetrap.bind("a", () => goToSlide("agenda"));
-    mousetrap.bind("m", () => this.setState({ isMenuOpen: true }));
-    mousetrap.bind("esc", () => this.setState({ isMenuOpen: false, isHelpOpen: false }));
+    mousetrap.bind("m", () =>
+      this.setState({ isMenuOpen: true })
+    );
+    mousetrap.bind("esc", () =>
+      this.setState({
+        isMenuOpen: false,
+        isHelpOpen: false
+      })
+    );
     mousetrap.bind("f", () => {
       requestFullscreen(document.documentElement);
     });
-    mousetrap.bind("?", () => this.setState({ isHelpOpen: true }));
+    mousetrap.bind("?", () =>
+      this.setState({ isHelpOpen: true })
+    );
   }
   componentWillUnmount() {
     mousetrap.unbind("a");
@@ -195,15 +207,31 @@ export default class Presentation extends React.Component {
   handleOnClose = () => {
     this.setState({ isMenuOpen: false });
   };
-  handleOnUpdate = (selectedGroups) => {
-    window.localStorage.setItem("selectedGroups", JSON.stringify(selectedGroups));
-    history.pushState("", document.title, window.location.pathname);
+  handleOnUpdate = selectedGroups => {
+    window.localStorage.setItem(
+      "selectedGroups",
+      JSON.stringify(selectedGroups)
+    );
+    history.pushState(
+      "",
+      document.title,
+      window.location.pathname
+    );
     window.location.reload();
   };
   render() {
-    const { isMenuOpen, isHelpOpen, selectedGroups } = this.state;
-    const agenda = groups.filter((g) => selectedGroups.includes(g.name));
-    const { clientHeight, clientWidth } = document.documentElement;
+    const {
+      isMenuOpen,
+      isHelpOpen,
+      selectedGroups
+    } = this.state;
+    const agenda = groups.filter(g =>
+      selectedGroups.includes(g.name)
+    );
+    const {
+      clientHeight,
+      clientWidth
+    } = document.documentElement;
     const contentHeight = clientHeight * 0.9;
     const contentWidth = clientWidth * 0.9;
     const progress = "bar"; // pacman, bar, number or none
@@ -221,7 +249,9 @@ export default class Presentation extends React.Component {
         >
           {groups.reduce((memo, group, index, groups) => {
             if (selectedGroups.includes(group.name)) {
-              memo.push(group.slides(theme, images, agenda));
+              memo.push(
+                group.slides(theme, images, agenda)
+              );
             }
             return memo;
           }, [])}
@@ -233,7 +263,10 @@ export default class Presentation extends React.Component {
           onUpdate={this.handleOnUpdate}
           onClose={this.handleOnClose}
         />
-        <Help isOpen={isHelpOpen} onClose={this.handleOnClose} />
+        <Help
+          isOpen={isHelpOpen}
+          onClose={this.handleOnClose}
+        />
       </main>
     );
   }

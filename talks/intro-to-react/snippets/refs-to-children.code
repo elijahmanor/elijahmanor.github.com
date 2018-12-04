@@ -3,6 +3,7 @@ import { render } from "react-dom";
 
 class HelloWorld extends Component {
   state = { count: 0 };
+  spanRef = createRef();
   componentDidMount() {
     this.count.textContent = '42';
   }
