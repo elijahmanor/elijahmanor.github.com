@@ -220,7 +220,7 @@ export default (theme, images) => [
       <Appear>
         <ListItem>Introducing Immutability</ListItem>
       </Appear>
-      <Appear>
+      {/* <Appear>
         <ListItem>
           Adding <code>redux</code> &{" "}
           <code>redux-devtools</code>
@@ -235,7 +235,7 @@ export default (theme, images) => [
         <ListItem>
           Adding <code>recompose</code>
         </ListItem>
-      </Appear>
+      </Appear> */}
       <Appear>
         <ListItem>
           Introducing <code>Context API</code>

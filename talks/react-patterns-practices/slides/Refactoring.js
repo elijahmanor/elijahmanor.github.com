@@ -1176,8 +1176,68 @@ export default (theme, images) => [
     >
       why-did-you-update
     </Heading>
-    <Image src={images.whyDidYouUpdate} height="650px" />
+    <Image src={images.whyDidYouUpdate} height="600px" />
   </Slide>,
+
+  <Slide
+    transition={["slide"]}
+    bgColor="black"
+    notes="You can even put notes on your slide. How awesome is that?"
+    className="spectacle-content--full"
+  >
+    <Heading
+      size={6}
+      caps
+      textColor="quartenary"
+      margin={10}
+    >
+      React Profiler
+    </Heading>
+    <Text textColor="tertiary" textSize="24">
+      Image from{" "}
+      <Link
+        href="https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html"
+        margin="0 0 0 10px"
+        textColor="primary"
+      >
+        Introducing the React Profiler
+      </Link>
+    </Text>
+    <Image
+      src={images.reactProfiler1}
+      style={{ height: "425px" }}
+    />
+  </Slide>,
+  <Slide
+    transition={["slide"]}
+    bgColor="black"
+    notes="You can even put notes on your slide. How awesome is that?"
+    className="spectacle-content--full"
+  >
+    <Heading
+      size={6}
+      caps
+      textColor="quartenary"
+      margin={10}
+    >
+      React Profiler
+    </Heading>
+    <Text textColor="tertiary" textSize="24">
+      Image from{" "}
+      <Link
+        href="https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html"
+        margin="0 0 0 10px"
+        textColor="primary"
+      >
+        Introducing the React Profiler
+      </Link>
+    </Text>
+    <Image
+      src={images.reactProfiler2}
+      style={{ height: "425px" }}
+    />
+  </Slide>,
+
   <CodeSlide
     transition={[]}
     lang="js"
@@ -1271,7 +1331,11 @@ export default (theme, images) => [
   >
     <Image src={images.butWillItBlend} width="100%" />
   </Slide>,
-  <Slide maxHeight="100vh" maxWidth="90vw">
+  <Slide
+    maxHeight="100vh"
+    maxWidth="90vw"
+    className="spectacle-content--full"
+  >
     <div>
       <a href="https://codesandbox.io/s/32853L56M">
         <img
@@ -1325,7 +1389,11 @@ export default (theme, images) => [
       { loc: [95, 101], note: "...but, will it blend!?!" }
     ]}
   />,
-  <Slide maxHeight="100vh" maxWidth="90vw">
+  <Slide
+    maxHeight="100vh"
+    maxWidth="90vw"
+    className="spectacle-content--full"
+  >
     <div>
       <a href="https://codesandbox.io/s/32853L56M">
         <img

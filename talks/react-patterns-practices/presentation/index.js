@@ -56,7 +56,9 @@ const images = {
   reduxDevTools: require("../assets/redux-devtools.gif"),
   reduxFlow: require("../assets/ReduxFlow.png"),
   manorisms: require("../assets/manorisms-screenshot.png"),
-  manorismsLogo: require("../assets/manorisms-logo.png")
+  manorismsLogo: require("../assets/manorisms-logo.png"),
+  reactProfiler1: require("../assets/reactProfiler1.gif"),
+  reactProfiler2: require("../assets/reactProfiler2.gif")
 };
 
 preloader(images);
@@ -116,13 +118,13 @@ export default class Presentation extends React.Component {
         {introduction(theme, images)}
         {/* {experimental(theme, images)} */}
         {refactoring(theme, images)}
-        {redux(theme, images)}
-        {router(theme, images)}
-        {recompose(theme, images)}
+        {/* {redux(theme, images)} */}
+        {/* {router(theme, images)} */}
+        {/* {recompose(theme, images)} */}
         {context(theme, images)}
         {hooks(theme, images)}
-        {unitTesting(theme, images)}
-        {patternLibrary(theme, images)}
+        {/* {unitTesting(theme, images)} */}
+        {/* {patternLibrary(theme, images)} */}
         {conclusion(theme, images)}
       </Deck>
     );
