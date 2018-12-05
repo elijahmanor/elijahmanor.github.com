@@ -1,15 +1,15 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .Jokes {
-    height: 90vh;
-    overflow-y: auto;
-    margin-bottom: 5rem;
-    font-size: 24px;
-    color: #222;
-    font-family: Verdana, Geneva, sans-serif;
-    margin-bottom: 10rem;
+  height: 90vh;
+  overflow-y: auto;
+  margin-bottom: 5rem;
+  font-size: 24px;
+  color: #222;
+  font-family: Verdana, Geneva, sans-serif;
+  margin-bottom: 10rem;
 }
 
 .ReactFlipCard {
@@ -35,11 +35,11 @@
 }
 
 .ReactFlipCard__Front {
-  background-color: #FFD399;
+  background-color: #ffd399;
   /* background-color: #eee; */
 }
 
 .ReactFlipCard__Back {
-  background-color: #6BAFE1;
+  background-color: #6bafe1;
   color: white;
 }

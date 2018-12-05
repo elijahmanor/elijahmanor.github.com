@@ -84,6 +84,11 @@ import JokesAddBroken from "../assets/JokesAddBroken.js";
 // import slidesMarkdown from "raw-loader!../assets/markdown.md";
 import introduction from "../slides/Introduction.js";
 import experimental from "../slides/Experimental.js";
+import redux from "../slides/Redux.js";
+import router from "../slides/Router.js";
+import recompose from "../slides/Recompose.js";
+import context from "../slides/Context.js";
+import hooks from "../slides/Hooks.js";
 import refactoring from "../slides/Refactoring.js";
 import unitTesting from "../slides/UnitTesting.js";
 import patternLibrary from "../slides/PatternLibrary.js";
@@ -92,15 +97,30 @@ import conclusion from "../slides/Conclusion.js";
 export default class Presentation extends React.Component {
   constructor(props) {
     super(props);
-    localStorage.clear();
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key.includes("code-slide:")) {
+        window.localStorage.removeItem(key);
+      }
+    }
   }
   render() {
     // progress - pacman, bar, number or none
     return (
-      <Deck transition={["slide"]} transitionDuration={500} theme={theme} progress="bar">
+      <Deck
+        transition={["slide"]}
+        transitionDuration={500}
+        theme={theme}
+        progress="bar"
+      >
         {introduction(theme, images)}
         {/* {experimental(theme, images)} */}
         {refactoring(theme, images)}
+        {redux(theme, images)}
+        {router(theme, images)}
+        {recompose(theme, images)}
+        {context(theme, images)}
+        {hooks(theme, images)}
         {unitTesting(theme, images)}
         {patternLibrary(theme, images)}
         {conclusion(theme, images)}

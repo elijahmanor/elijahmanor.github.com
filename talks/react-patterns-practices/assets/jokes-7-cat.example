@@ -31,11 +31,25 @@ const fetchResource = get =>
     };
 
 const fetchJokes = fetchResource(props =>
-  fetch(
-    '.../kevinchandler/.../CatJokes.json',
-  )
-    .then(response => response.text())
-    .then(response => eval(response)),
+  fetch("https://icanhazdadjoke.com/search", {
+    headers: {
+      Accept: "application/json",
+      "User-Agent": "DevIntersection"
+    }
+  })
+    .then(response => response.json())
+    .then(response =>
+      response.results.reduce(
+        (memo, { joke }) => {
+          if (joke.includes("?")) {
+            const [question, answer] =
+              joke.split("?");
+            memo.push({ question, answer });
+          }
+          return memo;
+        }, []
+      )
+    )
 );
 
 const JokesContainer = fetchJokes(Jokes);

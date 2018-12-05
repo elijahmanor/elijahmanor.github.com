@@ -34,5 +34,5 @@ class App extends React.Component {
   }
 };
 
-render(<App />, mountNode);
+render(<App />, mountNode); // is-special
 `;

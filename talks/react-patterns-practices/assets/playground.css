@@ -1,3 +1,9 @@
+.spectacle-content.spectacle-content--full {
+  max-width: 95vw !important;
+  max-height: 95vh !important;
+  overflow: scroll;
+}
+
 .playground {
   display: flex;
   align-items: center;
@@ -17,7 +23,8 @@
 .playground .playgroundCode:before {
   bottom: 100%;
   display: block;
-  font-family: "Roboto Mono", "Menlo", "Andale Mono", monospace;
+  font-family: "Roboto Mono", "Menlo", "Andale Mono",
+    monospace;
   font-size: 1.15vw;
   left: 0;
   padding: 0.4rem 0;
@@ -63,7 +70,11 @@
   border-radius: 0 0 6px 0;
 }
 
-.theme-light .playground .playgroundCode .playgroundStage .CodeMirror {
+.theme-light
+  .playground
+  .playgroundCode
+  .playgroundStage
+  .CodeMirror {
   border-left: 1px solid #999;
 }
 
@@ -81,14 +92,87 @@
   font-size: 3rem;
   text-align: center;
   margin: 1rem 0 0 0;
-  text-shadow: 3px 0 0 rgb(217, 31, 38), 6px 0 0 rgb(226, 91, 14), 9px 0 0 rgb(245, 221, 8),
-    12px 0 0 rgb(5, 148, 68), 15px 0 0 rgb(2, 135, 206), 18px 0 0 rgb(4, 77, 145),
-    21px 0 0 rgb(42, 21, 113);
-  transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  text-shadow: 3px 0 0 rgb(217, 31, 38),
+    6px 0 0 rgb(226, 91, 14), 9px 0 0 rgb(245, 221, 8),
+    12px 0 0 rgb(5, 148, 68), 15px 0 0 rgb(2, 135, 206),
+    18px 0 0 rgb(4, 77, 145), 21px 0 0 rgb(42, 21, 113);
+  transition: all 500ms
+    cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .is-special:hover {
-  text-shadow: -3px 0 0 rgb(217, 31, 38), -6px 0 0 rgb(226, 91, 14), -9px 0 0 rgb(245, 221, 8),
-    -12px 0 0 rgb(5, 148, 68), -15px 0 0 rgb(2, 135, 206), -18px 0 0 rgb(4, 77, 145),
-    -21px 0 0 rgb(42, 21, 113);
+  text-shadow: -3px 0 0 rgb(217, 31, 38),
+    -6px 0 0 rgb(226, 91, 14), -9px 0 0 rgb(245, 221, 8),
+    -12px 0 0 rgb(5, 148, 68), -15px 0 0 rgb(2, 135, 206),
+    -18px 0 0 rgb(4, 77, 145), -21px 0 0 rgb(42, 21, 113);
+}
+
+.CodePane--large {
+  font-size: 1.25rem !important;
+}
+.CodePane--scroll {
+  height: 60vh;
+}
+
+.react-live .prism-code {
+  font-size: 1.4rem !important;
+}
+
+/* TextToggle */
+
+section.TextToggle {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+}
+section.TextToggle input[type="text"] {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  font-size: 1.75em;
+  padding: 0.25em 0.5em;
+  color: white;
+  border-radius: 0.25em;
+  background: transparent;
+  margin-bottom: 1rem;
+  width: 50vw;
+}
+section.TextToggle input[type="checkbox"] {
+  transform: scale(2);
+  margin-bottom: 2rem;
+}
+section.TextToggle ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  width: 50vw;
+}
+section.TextToggle li {
+  border: 2px dotted rgba(255, 255, 255, 0.5);
+  padding: 0.25em;
+  font-size: 1.75em;
+  margin-bottom: 1rem;
+  color: white;
+  height: 6rem;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+section.TextToggle ul > li:after {
+  position: absolute;
+  right: 0; /* -1rem; */
+  font-size: 1.5rem;
+  background-color: white;
+  color: black;
+  padding: 0.5rem 0.5rem;
+  line-height: 1rem;
+  border-radius: 0.25rem;
+  top: 0; /* -0.5rem; */
+}
+section.TextToggle ul > li:first-of-type:after {
+  content: "text";
+}
+section.TextToggle ul > li:last-of-type:after {
+  content: "checked";
 }
