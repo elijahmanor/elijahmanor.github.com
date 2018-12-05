@@ -118,9 +118,9 @@ export default class Presentation extends React.Component {
         {introduction(theme, images)}
         {/* {experimental(theme, images)} */}
         {refactoring(theme, images)}
-        {/* {redux(theme, images)} */}
-        {/* {router(theme, images)} */}
-        {/* {recompose(theme, images)} */}
+        {redux(theme, images)}
+        {router(theme, images)}
+        {recompose(theme, images)}
         {context(theme, images)}
         {hooks(theme, images)}
         {/* {unitTesting(theme, images)} */}
