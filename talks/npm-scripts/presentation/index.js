@@ -39,7 +39,8 @@ const images = {
   egghead: require("../assets/logo-egghead.png"),
   leankit: require("../assets/logo-leankit.png"),
   mvp: require("../assets/logo-mvp.png"),
-  course: require("../assets/egghead-course.png")
+  course: require("../assets/egghead-course.png"),
+  npxCourse: require("../assets/egghead-course-npx.png")
 };
 preloader(images);
 

@@ -25,7 +25,39 @@ import LocalStorage from "./LocalStorage";
 
 const groupsToSkip = [ "introduction", "conclusion" ];
 
-export default (theme, images, agenda) => <SlideSet>
+class TitleSlide extends React.Component {
+  constructor(...args) {
+    super(...args);
+    let showSlideUrl = window.localStorage.getItem(
+      "showSlideUrl"
+    );
+    showSlideUrl =
+      showSlideUrl === null || showSlideUrl === "true";
+    this.state = { showSlideUrl };
+  }
+  componentDidMount() {
+    document.addEventListener("keydown", this.handleKey);
+  }
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.handleKey);
+  }
+  handleKey = e => {
+    this.setState(prevState => {
+      const showSlideUrl =
+        e.key === "s"
+          ? !prevState.showSlideUrl
+          : prevState.showSlideUrl;
+      window.localStorage.setItem(
+        "showSlideUrl",
+        showSlideUrl
+      );
+      return { showSlideUrl };
+    });
+  };
+  render() {
+	  const { images } = this.props;
+	  const { showSlideUrl } = this.state;
+    return (
   <Slide id="introduction" bgColor="primary" bgImage={images.react} bgDarken={0.8}>
     <Heading size={1} fit caps lineHeight={1} textColor="tertiary">
       npm scripts
@@ -33,6 +65,7 @@ export default (theme, images, agenda) => <SlideSet>
     <Heading size={1} fit caps lineHeight={1} textColor="primary" margin="0 0 20px 0">
       as your build tool
     </Heading>
+	    { showSlideUrl ?
     <Layout>
       <Fill>
         <Heading size={1} fit lineHeight={1}>
@@ -49,10 +82,23 @@ export default (theme, images, agenda) => <SlideSet>
         </Heading>
       </Fill>
     </Layout>
+		    :
+        <Heading size={1} fit lineHeight={1}>
+          <Link href="http://twitter.com/elijahmanor" margin="0 10px 0 0" textColor="quartenary">
+            by @elijahmanor
+          </Link>
+        </Heading>
+	    }
     <Heading size={5} textColor="tertiary" margin="20px 0 0 0">
       <LocalStorage id="contenteditable.introduction" />
     </Heading>
   </Slide>
+    );
+  }
+};
+
+export default (theme, images, agenda) => <SlideSet>
+  <TitleSlide images={images} />
   <Slide
     id="aboutme"
     transition={["slide"]}
@@ -137,7 +183,7 @@ export default (theme, images, agenda) => <SlideSet>
         href="https://egghead.io/courses/how-to-use-npm-scripts-as-your-build-tool"
         textColor="quartenary"
       >
-        Free egghead.io Course
+        egghead.io Course
       </Link>
     </Heading>
     <Link href="https://egghead.io/courses/how-to-use-npm-scripts-as-your-build-tool">
@@ -150,12 +196,12 @@ export default (theme, images, agenda) => <SlideSet>
     notes="You can even put notes on your slide. How awesome is that?"
   >
     <Heading caps fit>
-      <Link href="http://elijahmanor.com/react-file-size/" textColor="quartenary">
+      <Link href="https://elijahmanor.com/react-file-size/" textColor="quartenary">
         react-file-size
       </Link>
     </Heading>
     <iframe
-      src="http://elijahmanor.com/react-file-size/"
+      src="https://elijahmanor.com/react-file-size/"
       frameBorder="0"
       style={{ overflow: "hidden", height: "75vh", width: "100%" }}
       height="100%"

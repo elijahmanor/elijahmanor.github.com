@@ -224,4 +224,22 @@ Happy hacking!
       ]}
     />
   </Slide>
+  <Slide
+    id="egghead-npx"
+    transition={["slide"]}
+    bgColor="black"
+    notes="You can even put notes on your slide. How awesome is that?"
+  >
+    <Heading textColor="quartenary" caps fit>
+      <Link
+        href="https://egghead.io/courses/execute-npm-package-binaries-with-the-npx-package-runner"
+        textColor="quartenary"
+      >
+        egghead.io Course
+      </Link>
+    </Heading>
+    <Link href="https://egghead.io/courses/execute-npm-package-binaries-with-the-npx-package-runner">
+      <Image src={images.npxCourse} width="50%" style={{ marginTop: "5rem" }} />
+    </Link>
+  </Slide>
 </SlideSet>;
