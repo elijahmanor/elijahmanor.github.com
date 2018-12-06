@@ -6,24 +6,27 @@ import "./Jokes.css";
 function renderJoke(joke) {
   return (
     <FlipCard>
-      <div>
-        <div>{joke.question}</div>
-      </div>
+      <div>{joke.question}</div>
       <div>{joke.answer}</div>
     </FlipCard>
   );
 }
 
 function Jokes({ jokes }) {
-  return <div className="Jokes">{jokes.map(joke => renderJoke(joke))}</div>;
+  return (
+    <div className="Jokes">
+      {jokes.map(joke => renderJoke(joke))}
+    </div>
+  );
 }
 
 class JokeResource extends React.Component {
   state = { jokes: [] };
   componentDidMount() {
+    const { url, headers, parser } = this.props;
     window
-      .fetch(this.props.url)
-      .then(this.props.parser)
+      .fetch(url, { headers })
+      .then(parser)
       .then(jokes => this.setState({ jokes }));
   }
   render() {
@@ -31,17 +34,34 @@ class JokeResource extends React.Component {
   }
 }
 JokeResource.defaultProps = {
-  parser: r => r.json()
+  parser: r => r.json(),
+  headers: {}
 };
 
+const headers = {
+  Accept: "application/json",
+  "User-Agent": "https://codesandbox.io/s/YE3GrJ0BY"
+};
+const parser = resource =>
+  resource.json().then(resource =>
+    resource.results.reduce((memo, { joke }) => {
+      if (joke.includes("?") && !joke.includes(":")) {
+        const [question, answer] = joke.split("?");
+        memo.push({ question, answer });
+      }
+      return memo;
+    }, [])
+  );
 class JokesContainer extends React.Component {
   render() {
-    // const url = "https://rawgit.com/elijahmanor/cyberpun/master/jokes.json";
     const url =
-      "https://cdn.rawgit.com/kevinchandler/5867d55f2df364e72355/raw/fe68104a9feeda4e8dc7d8788370bc31ffc40781/CatJokes.json";
-    const parser = r => r.text().then(r => eval(r));
+      "https://icanhazdadjoke.com/search?limit=30";
     return (
-      <JokeResource url={url} parser={parser}>
+      <JokeResource
+        url={url}
+        headers={headers}
+        parser={parser}
+      >
         {jokes => <Jokes jokes={jokes} />}
       </JokeResource>
     );

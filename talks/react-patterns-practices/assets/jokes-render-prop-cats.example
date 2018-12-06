@@ -1,13 +1,13 @@
-import React from "react";
-import Jokes from "./Jokes";
-
 class JokeResource extends React.Component {
   state = { jokes: [] };
   componentDidMount() {
+    const {url, headers, parser} = this.props;
     window
-      .fetch(this.props.url)
-      .then(this.props.parser)
-      .then(jokes => this.setState({jokes}));
+      .fetch(url, { headers })
+      .then(parser)
+      .then(jokes => this.setState({
+        jokes
+      }));
   }
   render() {
     return this.props.children(
@@ -16,17 +16,35 @@ class JokeResource extends React.Component {
   }
 }
 JokeResource.defaultProps = {
-  parser: r => r.json()
+  parser: r => r.json(),
+  headers: {}
 };
 
+const headers = {
+  Accept: "application/json",
+  "User-Agent": "DevIntersection"
+};
+const parser = r =>
+  r.json().then(r =>
+    r.results.reduce((memo, { joke }) => {
+      if (joke.includes("?")) {
+        const [question, answer] =
+          joke.split("?");
+        memo.push({ question, answer });
+      }
+      return memo;
+    }, [])
+  );
 class JokesContainer extends React.Component {
   render() {
     const url =
-      "//.../kevinchandler/.../CatJokes.json";
-    const parser =
-      r => r.text().then(r => eval(r));
+      "https://icanhazdadjoke.com/search";
     return (
-      <JokeResource url={url} parser={parser}>
+      <JokeResource
+        url={url}
+        headers={headers}
+        parser={parser}
+      >
         {jokes => <Jokes jokes={jokes} />}
       </JokeResource>
     );

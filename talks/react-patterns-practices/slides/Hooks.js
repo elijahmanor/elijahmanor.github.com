@@ -207,9 +207,7 @@ export default function Playground() {
   </Slide>,
   <Slide transition={["fade"]} bgColor="secondary">
     <Heading
-      size={1}
-      fit
-      caps
+      size={3}
       lineHeight={1}
       textColor="primary"
       margin="0 0 2rem 0"
@@ -512,9 +510,7 @@ export default function Playground() {
   // />,
   <Slide transition={["fade"]} bgColor="secondary">
     <Heading
-      size={1}
-      fit
-      caps
+      size={3}
       lineHeight={1}
       textColor="primary"
       margin="0 0 2rem 0"

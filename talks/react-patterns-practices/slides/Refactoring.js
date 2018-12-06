@@ -790,22 +790,22 @@ export default (theme, images) => [
           "JokeResource uses `url` and `parser` props to fetch jokes and invoke the children function prop."
       },
       {
-        loc: [5, 11],
+        loc: [5, 14],
         note:
           "`componentDidMount` calls `window.fetch` and updates state with resulting jokes."
       },
       {
-        loc: [11, 16],
+        loc: [14, 19],
         note:
           "`render` invokes the children prop with jokes from state."
       },
       {
-        loc: [25, 28],
+        loc: [29, 33],
         note:
           "Using JokeResoure is easy, just pass a `url` and provide a function as it's child"
       },
       {
-        loc: [26, 27],
+        loc: [30, 31],
         note:
           "Whatever is returned from the child function is what is rendered in `JokeResource`"
       }
@@ -861,13 +861,12 @@ export default (theme, images) => [
       <Fill>
         <Heading
           size={1}
-          fit
           caps
           lineHeight={1}
           textColor="primary"
-          margin="0 1rem 0 0"
+          margin="0 1rem 2rem 0"
         >
-          yes
+          yes!
         </Heading>
         <Heading
           size={3}
@@ -876,7 +875,7 @@ export default (theme, images) => [
           textColor="quartenary"
           margin="0 1rem 0 0"
         >
-          supports cat jokes
+          icanhaz-dadjoke
         </Heading>
       </Fill>
       <Fill>
@@ -895,17 +894,27 @@ export default (theme, images) => [
     ranges={[
       {
         loc: [0, 270],
-        title: "JokeResource: Cat Edition!"
+        title: "JokeResource: icanhazdadjoke"
       },
       {
-        loc: [17, 20],
+        loc: [39, 50],
         note:
-          "Previous code worked because default `parser` handled valid JSON"
+          "Provide a `url` and pass custom `headers` and `parser`"
       },
       {
-        loc: [23, 29],
+        loc: [17, 21],
+        note:
+          "Previous code worked because default `parser` and `headers`"
+      },
+      {
+        loc: [22, 26],
         note:
           "Update `url` and provide custom `parser` that understands a text resource and pass it to `JokeResource`."
+      },
+      {
+        loc: [26, 37],
+        note:
+          "We can provide our own complex parser and filter/map as needed."
       }
     ]}
   />,
