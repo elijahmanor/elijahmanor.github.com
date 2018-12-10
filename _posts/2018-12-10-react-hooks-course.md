@@ -24,7 +24,7 @@ Previously, in order to add state or side-effects in React you had to create a C
 The following is a list of lessons that are included in this `React Hooks`
 [course](https://egghead.io/courses/reusable-state-and-effects-with-react-hooks).
 
-- Introduction to Reusable State and Effects with React Hooks
+- Environment Setup for React Hooks
 - Add State with the useState Hook to a React Function Component
 - Add Linting to Help Enforce Rules when Using React Hooks
 - Add a Lifecycle Event with the useEffect Hook to a React Function Component
