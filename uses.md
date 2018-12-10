@@ -14,7 +14,7 @@ I use the [Hyper](https://hyper.is/) terminal using the `hyper-snazzy` plugin an
 
 I use the [`oh-my-zsh`](https://github.com/robbyrussell/oh-my-zsh) shell using the `git npm z node brew zsh-syntax-highlighting zsh-nvm` plugins.
 
-As for my prompt, I am using the [`spaceship-prompt`](https://github.com/denysdovhan/spaceship-prompt).
+As for my prompt, I either use the [`spaceship-prompt`](https://github.com/denysdovhan/spaceship-prompt) or the [`agnoster` `ZSH_THEME`](https://github.com/agnoster/agnoster-zsh-theme) that comes baked into [Oh My ZSH!](https://ohmyz.sh/).
 
 ## Editor
 
@@ -24,24 +24,24 @@ I'm currently using the [VS Code](https://code.visualstudio.com/) editor using t
 
 Some of the extensions that I regularly use are listed below...
 
-* [advanced-new-file](https://marketplace.visualstudio.com/items?itemName=patbenatar.advanced-new-file)
-* [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
-* [Duplicate action](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-duplicate)
-* [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-* [Formatting toggle](https://marketplace.visualstudio.com/items?itemName=tombonnike.vscode-status-bar-format-toggle)
-* [GitLens — Git supercharged](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
-* [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost)
-* [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
-* [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-* [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) 
-* [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
-* [Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
-* [Version Lens](https://marketplace.visualstudio.com/items?itemName=pflannery.vscode-versionlens)
+- [advanced-new-file](https://marketplace.visualstudio.com/items?itemName=patbenatar.advanced-new-file)
+- [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
+- [Duplicate action](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-duplicate)
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Formatting toggle](https://marketplace.visualstudio.com/items?itemName=tombonnike.vscode-status-bar-format-toggle)
+- [GitLens — Git supercharged](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+- [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost)
+- [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
+- [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
+- [Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
+- [Version Lens](https://marketplace.visualstudio.com/items?itemName=pflannery.vscode-versionlens)
 
 ## Tools
 
 ### Gif
 
-* [LICEcap](https://www.cockos.com/licecap/)
-* [Recordit](http://recordit.co/)
-* [kap](https://getkap.co/)
+- [LICEcap](https://www.cockos.com/licecap/)
+- [Recordit](http://recordit.co/)
+- [kap](https://getkap.co/)
