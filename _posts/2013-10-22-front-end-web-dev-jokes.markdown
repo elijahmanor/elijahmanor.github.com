@@ -8,7 +8,7 @@ You may have noticed recently that I've tweeted some Front-End Web Developer jok
 
 So, without further ado here are the jokes I've authored thus far. Please, don't groan all at once...
 
-> NOTE: I've created several new puns since this post. I'll list them at the bottom in a new section. I've also created a JavaScript library and CLI program called [devpun](https://npm.im/devpun) that includes all of these puns.
+> NOTE: I've created several new puns since this post. I'll list them at the bottom in a [new section](#newer-puns). I've also created a JavaScript library and CLI program called [devpun](https://npm.im/devpun) that includes all of these puns.
 
 * q. How do you comfort a JavaScript bug? a. You console it
 
