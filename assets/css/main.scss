@@ -5,228 +5,244 @@
 
 /* We need to add display:inline in order to align the >> of the read more link */
 .post-excerpt p {
-	display: inline;
+  display: inline;
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import
-	"syntax"
-;
+@import 'syntax';
 
 .videoWrapper {
-	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
-	padding-top: 25px;
-	height: 0;
-	margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+  margin-bottom: 1rem;
 }
 
 .videoWrapper.videoWrapper--egghead {
-	padding-top: 0;
+  padding-top: 0;
 }
 
 .videoWrapper iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .videoWrapper-hostedBy {
-	display: inline-block;
-	font-size: 0.75rem;
-	margin-bottom: 1rem;
-	background: rgba(187,239,253,0.3);
-	padding: 5px 10px;
+  display: inline-block;
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+  background: rgba(187, 239, 253, 0.3);
+  padding: 5px 10px;
 }
 
 .flex-container {
-	display: -webkit-flex;
-	display: flex;
-	-webkit-flex-flow: row wrap;
-	flex-flow: row wrap;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
 }
 
 .flex-item {
-	-webkit-flex: 1 auto;
-	flex: 1 auto;
+  -webkit-flex: 1 auto;
+  flex: 1 auto;
 }
 
 .post > .social {
-	float: right;
+  float: right;
 }
 
 .Social {
-	.twitter-follow-button, .twitter-share-button {
-		display: inline-block !important;
-		background: #1b95e0;
-		border-radius: 0.2em;
-		padding: 0.2em 0.8em;
-		font-size: 0.7em;
-		line-height: 1.7em;
-		font-weight: bold;
-		margin-bottom: 0.8em;
-	}
+  .twitter-follow-button,
+  .twitter-share-button {
+    display: inline-block !important;
+    background: #1b95e0;
+    border-radius: 0.2em;
+    padding: 0.2em 0.8em;
+    font-size: 0.7em;
+    line-height: 1.7em;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 0.8em;
+  }
 
-	.twitter-follow-button-rendered, .twitter-share-button-rendered {
-		padding: 0;
-	}
+  .twitter-follow-button-rendered,
+  .twitter-share-button-rendered {
+    padding: 0;
+  }
 }
 
 .Social {
-	text-align: center;
+  text-align: center;
 }
 
 .Promoted {
-	margin: 0 auto 1rem auto;
-	display: none;
+  margin: 0 auto 1rem auto;
+  display: none;
 
-	blockquote {
-		font-size: 0.7em;
-		background: white;
-		border-radius: 0.3em;
-		color: black;
-		border-left: none;
-		padding: 1.5em 3em 1.5em 1.5em;
-	}
+  blockquote {
+    font-size: 0.7em;
+    background: white;
+    border-radius: 0.3em;
+    color: black;
+    border-left: none;
+    padding: 1.5em 3em 1.5em 1.5em;
+  }
 
-	a {
-		color: #268bd2;
-	}
+  a {
+    color: #268bd2;
+  }
 }
 
 @media (min-width: 48em) {
-	.Promoted {
-		display: block;
-	}
+  .Promoted {
+    display: block;
+  }
 }
 
 .Copyright {
-	text-align: center;
-	font-size: 0.6rem;
+  text-align: center;
+  font-size: 0.6rem;
 }
 
 .speaking .content {
-	max-width: none;
+  max-width: none;
 }
 
 .Events {
-	display: flex;
-	flex-flow: row wrap;
-	list-style: none;
-	padding: 0;
-	font-family: 'Open Sans', sans-serif;
-	margin-top: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 1rem;
 }
 
 .Event {
-	background-color: #eee;
-	border: 1px solid #CCC;
-	border-radius: 1rem;
-	flex: 1 auto;
-	margin: 0.5rem;
-	padding: 0.5rem;
-	max-width: 12rem;
-	position: relative;
-	min-width: 12rem;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  flex: 1 auto;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  max-width: 12rem;
+  position: relative;
+  min-width: 12rem;
 
-	&--upcoming {
-		&:before {
-			content: 'Upcoming';
-			display: block;
-			position: absolute;
-			background-color: #D9EDF7;
-			right: 0;
-			bottom: 0;
-			width: 5rem;
-			text-align: center;
-			font-size: 0.5rem;
-			line-height: 1.3rem;
-			BORDER-RADIUS: 0.5rem 0rem;
-			border-top: 1px solid #CCC;
-			border-left: 1px solid #CCC;
-		}
-	}
+  &--upcoming {
+    &:before {
+      content: 'Upcoming';
+      display: block;
+      position: absolute;
+      background-color: #d9edf7;
+      right: 0;
+      bottom: 0;
+      width: 5rem;
+      text-align: center;
+      font-size: 0.5rem;
+      line-height: 1.3rem;
+      border-radius: 0.5rem 0rem;
+      border-top: 1px solid #ccc;
+      border-left: 1px solid #ccc;
+    }
+  }
 
-	&-date {
-		margin-bottom: 0.5rem;
-	}
+  &-date {
+    margin-bottom: 0.5rem;
+  }
 
-	&-name {
-		font-size: 1rem;
-		line-height: 1rem;
-		margin-bottom: 0.5rem;
-		font-weight: bold;
-		a { color: black; }
-	}
+  &-name {
+    font-size: 1rem;
+    line-height: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    a {
+      color: black;
+    }
+  }
 
-	&-title { font-weight: bold; font-size: 0.8rem; margin-bottom: 0.25rem; }
+  &-title {
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+  }
 
-	&-description { font-size: 0.75rem; }
+  &-description {
+    font-size: 0.75rem;
+  }
 
-	&-location {
-		font-style: italic;
-		color: #555;
-		margin-bottom: 0.75rem;
-	}
+  &-location {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 0.75rem;
+  }
 }
 
 .Date {
-	display: flex;
-	flex-flow: row wrap;
-	color: #777;
-	justifiy-content: center;
-	align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  color: #777;
+  justifiy-content: center;
+  align-items: center;
 
-	&-day {
-		font-size: 2rem;
-		margin-right: 1rem;
-		font-weight: bold;
-	}
-	&-summary {
-		display: flex;
-		flex-flow: column wrap;
-		align-items: center;
-		font-size: 1rem;
-		line-height: 1rem;
-		text-transform: uppercase;
-	}
-	&-month {
-		flex: 1 auto;
-	}
-	&-year {
-		flex: 1 auto;
-	}
+  &-day {
+    font-size: 2rem;
+    margin-right: 1rem;
+    font-weight: bold;
+  }
+  &-summary {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    font-size: 1rem;
+    line-height: 1rem;
+    text-transform: uppercase;
+  }
+  &-month {
+    flex: 1 auto;
+  }
+  &-year {
+    flex: 1 auto;
+  }
 }
 
 .Sessions {
-	padding-left: 1rem;
+  padding-left: 1rem;
 }
 
 .Session {
-	margin-bottom: 1rem;
+  margin-bottom: 1rem;
 
-	&:last-of-type { margin-bottom: 0; }
-	&-name { font-weight: bold; font-size: 1rem; }
-	&-links {
-		display: flex;
-		flex-flow: row wrap;
-		list-style: none;
-		padding: 0;
-		font-size: 0.5rem;
-	}
-	&-link {
-		margin-right: 0.5rem;
-		a { color: black; }
-	}
-	&-link--unavailable {
-    	a {
-			color: #ccc;
-			pointer-events: none;
-			cursor: default;
-		}
-	}
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+  &-name {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  &-links {
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    padding: 0;
+    font-size: 0.5rem;
+  }
+  &-link {
+    margin-right: 0.5rem;
+    a {
+      color: black;
+    }
+  }
+  &-link--unavailable {
+    a {
+      color: #ccc;
+      pointer-events: none;
+      cursor: default;
+    }
+  }
 }
 
 /*
@@ -237,85 +253,85 @@
 </div>
 */
 .ButtonGroups {
-	display: none;
+  display: none;
 }
 
 .ButtonGroup {
-	display: inline-block;
+  display: inline-block;
 
-	&-button {
-		float: left;
-		display: inline-block;
-		border: 1px solid #ccc;
-		background-color: #eee;
-		margin-left: -1px;
-	}
+  &-button {
+    float: left;
+    display: inline-block;
+    border: 1px solid #ccc;
+    background-color: #eee;
+    margin-left: -1px;
+  }
 
-	&-button:focus {
-		outline: thin dotted;
-		outline: 5px auto -webkit-focus-ring-color;
-		outline-offset: -3px;
-	}
+  &-button:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -3px;
+  }
 
-	&-button:first-of-type {
-		border-radius: 0.5rem 0rem 0rem 0.5rem;
-	}
+  &-button:first-of-type {
+    border-radius: 0.5rem 0rem 0rem 0.5rem;
+  }
 
-	&-button:last-of-type {
-		border-radius: 0rem 0.5rem 0.5rem 0rem;
-	}
+  &-button:last-of-type {
+    border-radius: 0rem 0.5rem 0.5rem 0rem;
+  }
 
-	&-button--selected {
-		background-color: #ccc;
-	}
+  &-button--selected {
+    background-color: #ccc;
+  }
 }
 
 .Badges {
-	position: absolute;
-	right: -0.5rem;
-	top: -0.5rem;
-	font-size: 0.5rem;
-	text-align: right;
-	display: flex;
-	align-items: flex-end;
-	flex-direction: column;
+  position: absolute;
+  right: -0.5rem;
+  top: -0.5rem;
+  font-size: 0.5rem;
+  text-align: right;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
 
-	&-badge {
-		border-radius: 0.3rem;
-		line-height: 0.5rem;
-		padding: 0.25rem .25rem;
-		margin-bottom: .25rem;
-		border: 1px solid #ccc;
-		outline: none;
-	}
+  &-badge {
+    border-radius: 0.3rem;
+    line-height: 0.5rem;
+    padding: 0.25rem 0.25rem;
+    margin-bottom: 0.25rem;
+    border: 1px solid #ccc;
+    outline: none;
+  }
 
-	&-badge--type {
-		background-color: #DFF0D8;
-	}
+  &-badge--type {
+    background-color: #dff0d8;
+  }
 
-	&-badge--employer {
-		background-color: #FCF8E3;
-	}
+  &-badge--employer {
+    background-color: #fcf8e3;
+  }
 }
 
 @media only screen and (max-width: 900px) {
-	.Event {
-		max-width: 100%;
-	}
+  .Event {
+    max-width: 100%;
+  }
 }
 
 .archive .posts {
-	time {
-		width: 4rem;
-		display: inline-block;
-	}
+  time {
+    width: 4rem;
+    display: inline-block;
+  }
 }
 
 .resp-sharing-buttons {
-	display: flex;
-	font-size: 0.8rem;
-	justify-content: flex-start;
-	margin-bottom: 2rem;
+  display: flex;
+  font-size: 0.8rem;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
 }
 
 .resp-sharing-button__link,
@@ -327,14 +343,14 @@
 .resp-sharing-button__link {
   text-decoration: none;
   color: #fff;
-  margin: 0.5em
+  margin: 0.5em;
 }
 
 .resp-sharing-button__link:first-child {
-	margin-left: 0;
+  margin-left: 0;
 }
 .resp-sharing-button__link:last-child {
-	margin-right: 0
+  margin-right: 0;
 }
 
 .resp-sharing-button {
@@ -347,118 +363,121 @@
   width: 1em;
   height: 1em;
   margin-right: 0.4em;
-  vertical-align: top
+  vertical-align: top;
 }
 
 .resp-sharing-button--small svg {
   margin: 0;
-  vertical-align: middle
+  vertical-align: middle;
 }
 
 /* Non solid icons get a stroke */
 .resp-sharing-button__icon {
   stroke: #fff;
-  fill: none
+  fill: none;
 }
 
 /* Solid icons get a fill */
 .resp-sharing-button__icon--solid,
 .resp-sharing-button__icon--solidcircle {
   fill: #fff;
-  stroke: none
+  stroke: none;
 }
 
 .resp-sharing-button--twitter {
-  background-color: #55acee
+  background-color: #55acee;
 }
 
 .resp-sharing-button--twitter:hover {
-  background-color: #2795e9
+  background-color: #2795e9;
 }
 
 .resp-sharing-button--pinterest {
-  background-color: #bd081c
+  background-color: #bd081c;
 }
 
 .resp-sharing-button--pinterest:hover {
-  background-color: #8c0615
+  background-color: #8c0615;
 }
 
 .resp-sharing-button--facebook {
-  background-color: #3b5998
+  background-color: #3b5998;
 }
 
 .resp-sharing-button--facebook:hover {
-  background-color: #2d4373
+  background-color: #2d4373;
 }
 
 .resp-sharing-button--tumblr {
-  background-color: #35465C
+  background-color: #35465c;
 }
 
 .resp-sharing-button--tumblr:hover {
-  background-color: #222d3c
+  background-color: #222d3c;
 }
 
 .resp-sharing-button--reddit {
-  background-color: #5f99cf
+  background-color: #5f99cf;
 }
 
 .resp-sharing-button--reddit:hover {
-  background-color: #3a80c1
+  background-color: #3a80c1;
 }
 
 .resp-sharing-button--google {
-  background-color: #dd4b39
+  background-color: #dd4b39;
 }
 
 .resp-sharing-button--google:hover {
-  background-color: #c23321
+  background-color: #c23321;
 }
 
 .resp-sharing-button--linkedin {
-  background-color: #0077b5
+  background-color: #0077b5;
 }
 
 .resp-sharing-button--linkedin:hover {
-  background-color: #046293
+  background-color: #046293;
 }
 
 .resp-sharing-button--email {
-  background-color: #777
+  background-color: #777;
 }
 
 .resp-sharing-button--email:hover {
-  background-color: #5e5e5e
+  background-color: #5e5e5e;
 }
 
 .resp-sharing-button--xing {
-  background-color: #1a7576
+  background-color: #1a7576;
 }
 
 .resp-sharing-button--xing:hover {
-  background-color: #114c4c
+  background-color: #114c4c;
 }
 
 .resp-sharing-button--whatsapp {
-  background-color: #25D366
+  background-color: #25d366;
 }
 
 .resp-sharing-button--whatsapp:hover {
-  background-color: #1da851
+  background-color: #1da851;
 }
 
 .resp-sharing-button--hackernews {
-background-color: #FF6600
+  background-color: #ff6600;
 }
-.resp-sharing-button--hackernews:hover, .resp-sharing-button--hackernews:focus {   background-color: #FB6200 }
+.resp-sharing-button--hackernews:hover,
+.resp-sharing-button--hackernews:focus {
+  background-color: #fb6200;
+}
 
 .resp-sharing-button--vk {
-  background-color: #507299
+  background-color: #507299;
 }
 
 .resp-sharing-button--vk:hover {
-  background-color: #43648c
+  background-color: #43648c;
 }
 
 .resp-sharing-button--facebook {
@@ -517,12 +536,12 @@ background-color: #FF6600
 }
 
 .resp-sharing-button--hackernews {
-  background-color: #FF6600;
-  border-color: #FF6600;
+  background-color: #ff6600;
+  border-color: #ff6600;
 }
 
 .resp-sharing-button--hackernews:hover
-.resp-sharing-button--hackernews:active {
-  background-color: #FB6200;
-  border-color: #FB6200;
+  .resp-sharing-button--hackernews:active {
+  background-color: #fb6200;
+  border-color: #fb6200;
 }

@@ -10,24 +10,35 @@
     </div>
 
     <nav class="sidebar-nav">
-      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/">Home</a>
+      <a
+        class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}"
+        href="{{ site.baseurl }}/"
+        >Home</a
+      >
 
-      {% comment %}
-        The code below dynamically generates a sidebar nav of pages with
-        `layout: page` in the front-matter. See readme for usage.
-      {% endcomment %}
-
-      {% assign pages_list = site.pages %}
-      {% for node in pages_list %}
-        {% if node.title == "About" or node.title == "Archive" or node.title == "Speaking" or node.title == "Uses" %}
-          {% if node.layout == "page" %}
-            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-      <a class="sidebar-nav-item" target="_blank" href="https://www.youtube.com/manorisms">VIDEOS</a>
+      {% comment %} The code below dynamically
+      generates a sidebar nav of pages with `layout:
+      page` in the front-matter. See readme for usage.
+      {% endcomment %} {% assign pages_list =
+      site.pages %} {% for node in pages_list %} {% if
+      node.title == "About" or node.title == "Archive"
+      or node.title == "Speaking" or node.title ==
+      "Uses" %} {% if node.layout == "page" %}
+      <a
+        class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}"
+        href="{{ node.url }}"
+        >{{ node.title }}</a
+      >
+      {% endif %} {% endif %} {% endfor %}
+      <a
+        class="sidebar-nav-item"
+        target="_blank"
+        href="https://www.youtube.com/manorisms"
+        >VIDEOS</a
+      >
     </nav>
 
+    <!--
 		<section class="Promoted">
       {% if page.title == "Home" %}
         <blockquote class="twitter-tweet" data-cards="hidden" data-lang="en"><p lang="en" dir="ltr">🆕 Use the New Profiler in React Developer Tools (<a href="https://twitter.com/ChromeDevTools?ref_src=twsrc%5Etfw">@ChromeDevTools</a> or <a href="https://twitter.com/firefox?ref_src=twsrc%5Etfw">@Firefox</a>) to Generate Flame Charts and Interaction Tracking<br><br>⚛️ React 16.5.0 has been released and supports the new Profiler in the React Developer Tools <a href="https://t.co/GBKCPAaEJd">https://t.co/GBKCPAaEJd</a><br><br>🎥 <a href="https://t.co/PJ1rHfSpIH">https://t.co/PJ1rHfSpIH</a> <a href="https://t.co/jpvoU3smqp">pic.twitter.com/jpvoU3smqp</a></p>&mdash; 𝙴𝚕𝚒𝚓𝚊𝚑 𝙼𝚊𝚗𝚘𝚛 (@elijahmanor) <a href="https://twitter.com/elijahmanor/status/1038057481057050624?ref_src=twsrc%5Etfw">September 7, 2018</a></blockquote>
@@ -40,11 +51,18 @@
       {% else %}
         <blockquote class="twitter-tweet" data-cards="hidden" data-lang="en"><p lang="en" dir="ltr">🆕 Use the New Profiler in React Developer Tools (<a href="https://twitter.com/ChromeDevTools?ref_src=twsrc%5Etfw">@ChromeDevTools</a> or <a href="https://twitter.com/firefox?ref_src=twsrc%5Etfw">@Firefox</a>) to Generate Flame Charts and Interaction Tracking<br><br>⚛️ React 16.5.0 has been released and supports the new Profiler in the React Developer Tools <a href="https://t.co/GBKCPAaEJd">https://t.co/GBKCPAaEJd</a><br><br>🎥 <a href="https://t.co/PJ1rHfSpIH">https://t.co/PJ1rHfSpIH</a> <a href="https://t.co/jpvoU3smqp">pic.twitter.com/jpvoU3smqp</a></p>&mdash; 𝙴𝚕𝚒𝚓𝚊𝚑 𝙼𝚊𝚗𝚘𝚛 (@elijahmanor) <a href="https://twitter.com/elijahmanor/status/1038057481057050624?ref_src=twsrc%5Etfw">September 7, 2018</a></blockquote>
       {% endif %}
-		</section>
+    </section>
+    -->
 
-		<section class="Social">
-      <a href="https://twitter.com/elijahmanor" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @elijahmanor</a>
-			<!-- {% if page.url != "/" %}
+    <section class="Social">
+      <a
+        href="https://twitter.com/elijahmanor"
+        class="twitter-follow-button"
+        data-show-count="false"
+        data-size="large"
+        >Follow @elijahmanor</a
+      >
+      <!-- {% if page.url != "/" %}
 				<a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ page.title }}" data-url="{{ post.url }}" data-via="elijahmanor" data-size="large">Tweet</a>
       {% endif %} -->
       <!-- https://developers.google.com/youtube/youtube_subscribe_button -->
@@ -53,8 +71,26 @@
     </section>
 
     <script src="https://apis.google.com/js/platform.js"></script>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <script>
+      !(function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0],
+          p = /^http:/.test(d.location)
+            ? 'http'
+            : 'https'
+        if (!d.getElementById(id)) {
+          js = d.createElement(s)
+          js.id = id
+          js.src =
+            p + '://platform.twitter.com/widgets.js'
+          fjs.parentNode.insertBefore(js, fjs)
+        }
+      })(document, 'script', 'twitter-wjs')
+    </script>
 
-    <p class="Copyright">&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
+    <p class="Copyright">
+      &copy; {{ site.time | date: '%Y' }}. All rights
+      reserved.
+    </p>
   </div>
 </div>
