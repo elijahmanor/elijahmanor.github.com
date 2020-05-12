@@ -2,20 +2,21 @@ markdown: kramdown
 highlighter: rouge
 
 permalink: /:categories/:title/
-exclude: [ 'node_modules' ]
-keep_files: [ 'talks' ]
+exclude: ['node_modules']
+keep_files: ['talks']
 
-title:            Manorisms
-tagline:          'Front-End Dev Tips, Tricks, and Tools'
-description:      'Front-End Dev Tips, Tricks, and Tools'
-url:              http://elijahmanor.com
+title: Manorisms
+title_image:
+tagline: 'Front-End Dev Tips, Tricks, and Tools'
+description: 'Front-End Dev Tips, Tricks, and Tools'
+url: http://elijahmanor.com
 
 author:
-  name:           'Manorisms'
-  url:            https://twitter.com/elijahmanor
+  name: 'Manorisms'
+  url: https://twitter.com/elijahmanor
 
 paginate: 5
 
-version:          2.1.0
+version: 2.1.0
 github:
-  repo:           https://github.com/elijahmanor/elijahmanor.github.com
+  repo: https://github.com/elijahmanor/elijahmanor.github.com
