@@ -5,7 +5,7 @@ date: '2020-05-11 12:00:00'
 published: true
 excerpt_separator: <!--more-->
 summary: Help yourself know to use npm or yarn commands per project
-image: /images/2020/2020-05-11-zsh-function-alias-yarn.png
+image: /assets/images/2020/2020-05-11-thumbnail.png
 ---
 
 {% include eggheadPlayer.html src="https://egghead.io/lessons/node-js-make-a-zsh-function-alias-to-enforce-using-yarn-commands-when-in-a-yarn-project" %}
