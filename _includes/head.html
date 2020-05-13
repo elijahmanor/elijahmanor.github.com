@@ -28,7 +28,6 @@
     name="twitter:title"
     content="{{ page.title }}"
   />
-
   {% if page.summary %}
   <meta
     name="twitter:description"
@@ -56,6 +55,37 @@
   />
   {% endif %}
   <!-- end of Twitter cards -->
+
+  <!-- Facebook cards -->
+  <meta property="og:url" content="{{ site.url }}" />
+  <meta property="og:type" content="article" />
+  <meta
+    property="og:title"
+    content="{{ page.title }}"
+  />
+  {% if page.summary %}
+  <meta
+    property="og:description"
+    content="{{ page.summary }}"
+  />
+  {% else %}
+  <meta
+    property="og:description"
+    content="{{ site.description }}"
+  />
+  {% endif %} {% if page.image %}
+  <meta
+    property="og:image"
+    content="{{ site.url }}{{ page.image }}"
+  />
+
+  {% else %}
+  <meta
+    property="og:image"
+    content="{{ site.title_image }}"
+  />
+  {% endif %}
+  <!-- end of Facebook cards -->
 
   <title>
     {% if page.title == "Home" %} {{ site.title }}
