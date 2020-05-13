@@ -12,7 +12,7 @@ image: /assets/images/2020/2020-05-13-thumbnail.png
 
 In this post we focus on toggling animations on and off using the [`prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) media query. We will take a look at addressing 3 types of animations (CSS, SVG SMIL, and JavaScript) and we will toggle these animations using different techniques such as @media, matchMedia, and a custom React hook.
 
-> NOTE: You can find the [code for this project](https://github.com/elijahmanor/egghead-prefers-reduced-motion/tree/final) in GitHub.
+> NOTE: You can find the [code for this project](https://github.com/elijahmanor/egghead-prefers-reduced-motion/tree/final) in GitHub and you can see a GIF of the final experience at the end of this post.
 
 <!--more-->
 
@@ -129,5 +129,7 @@ const shouldReduceMotion = useReducedMotion()
 ```
 
 ## Conclusion
+
+![](../assets/images/2020/2020-05-13-animation.gif)
 
 I hope that this helped show different ways that you can manage turning on and off animations depending on the Operating System's Reduce Motion setting. Please be kind to your users. Some may not like animations and others may have medical issues concerning animations.
