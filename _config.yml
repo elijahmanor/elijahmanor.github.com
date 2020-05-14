@@ -1,5 +1,6 @@
 markdown: kramdown
-highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
 
 permalink: /:categories/:title/
 exclude: ['node_modules']
