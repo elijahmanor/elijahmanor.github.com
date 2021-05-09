@@ -19,7 +19,7 @@
     "asciicast-to-svg": "^0.2.0",
     "html-entities": "^1.2.1",
     "html-react-parser": "^0.4.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "memory-streams": "^0.1.2",
     "mousetrap": "^1.6.1",
     "node-ansiparser": "^2.2.0",
