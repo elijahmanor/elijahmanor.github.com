@@ -14,7 +14,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "mermaid": "^8.0.0-rc.6",
+    "mermaid": "^8.14.0",
     "mousetrap": "^1.6.1",
     "normalize.css": "7.0.0",
     "polished": "^1.9.2",
@@ -27,7 +27,7 @@
     "react-modal": "^3.1.3",
     "react-select": "^1.0.0-rc.10",
     "react-typist": "^1.1.0",
-    "spectacle": "^4.2.2",
+    "spectacle": "^9.6.0",
     "spectacle-code-slide": "^0.5.2",
     "spectacle-renderer": "^0.0.3",
     "spectacle-terminal": "^0.4.0",
